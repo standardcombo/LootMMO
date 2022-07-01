@@ -15,17 +15,17 @@ Design Direction
 ================
 
 Gameplay
-	- Third-person, action RPG ("western RPG").
-	- Multiplayer co-op, with some PvP areas.
-	- Fighting, treasures, harvesting, crafting, building.
-	- Deep and multi-dimensional character/item progression.
+- Third-person, action RPG ("western RPG").
+- Multiplayer co-op, with some PvP areas.
+- Fighting, treasures, harvesting, crafting, building.
+- Deep and multi-dimensional character/item progression.
 
 NFT Ownership
-	- Free to play. To fully enjoy the game it's not required to own a Loot bag NFT.
-	- Owners of Loot bag NFTs should have small, but meaningful benefits.
-	- F2P players should not be at a disadvantage compared to Loot owners.
-	- The player's on-boarding experience should be smooth, regardless of NFT ownership.
-	- The game should support the various Lootverse derivative collections.
+- Free to play. To fully enjoy the game it's not required to own a Loot bag NFT.
+- Owners of Loot bag NFTs should have small, but meaningful benefits.
+- F2P players should not be at a disadvantage compared to Loot owners.
+- The player's on-boarding experience should be smooth, regardless of NFT ownership.
+- The game should support the various Lootverse derivative collections.
 
 
 Social Hub
