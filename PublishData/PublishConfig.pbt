@@ -14,6 +14,7 @@ ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\5_adventure.
 ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\6_monsters.png"
 OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
+PublishedState: Public
 SceneNameToSceneIdMap {
   key: "Crypts n Caverns - 2768"
   value: "a84f07554da76d3b7aa734bb5ec10cf0"
