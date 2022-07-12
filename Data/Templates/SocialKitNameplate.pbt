@@ -48,6 +48,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 131023984302372597
@@ -92,6 +93,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13207552084160198172
@@ -154,6 +156,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 652177749933555852
@@ -218,6 +221,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17375640927392651006
@@ -279,6 +283,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17717850092820209359
@@ -363,6 +368,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11865778173226847616
@@ -448,6 +454,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13688396299552139553
@@ -505,6 +512,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8593549430495508373
@@ -551,6 +559,7 @@ Assets {
             Id: 17805724559486721079
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9398768574592971081
@@ -597,6 +606,7 @@ Assets {
             Id: 614208118390181457
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 775742064495504045
@@ -643,6 +653,7 @@ Assets {
             Id: 4179537314325096722
           }
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -659,6 +670,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
   VirtualFolderPath: "Social Elements"
 }

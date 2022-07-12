@@ -2,7 +2,7 @@ Assets {
   Id: 5017417275795307370
   Name: "Ghost Wand Magic Glass"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 6717054932271956401
     ParameterOverrides {

@@ -38,6 +38,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     PrimaryAssetId {
@@ -45,5 +46,5 @@ Assets {
       AssetId: "Default_Bindings"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
 }

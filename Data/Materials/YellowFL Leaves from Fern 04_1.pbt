@@ -2,7 +2,7 @@ Assets {
   Id: 17201051112233946141
   Name: "YellowFL Leaves from Fern 04_1"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 13385818056540576162
     ParameterOverrides {

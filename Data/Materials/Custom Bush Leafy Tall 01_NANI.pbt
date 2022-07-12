@@ -2,7 +2,7 @@ Assets {
   Id: 10113389368942546020
   Name: "Custom Bush Leafy Tall 01_NANI"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 10024929329115862424
     ParameterOverrides {

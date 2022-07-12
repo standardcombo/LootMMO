@@ -63,6 +63,7 @@ Objects {
       Id: 6849404748753654496
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14747225563330860193
@@ -108,6 +109,7 @@ Objects {
       Id: 2897790951431672504
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 1957929228632772430
@@ -152,6 +154,7 @@ Objects {
       Id: 7981189284008290458
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 10982707308605229918
@@ -196,6 +199,7 @@ Objects {
       Id: 7147011904097638721
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 12671485090722506754
@@ -240,6 +244,7 @@ Objects {
       Id: 3910002602938311685
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 11711144464673395296
@@ -284,6 +289,7 @@ Objects {
       Id: 14995466715669634453
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 10527296034282674021
@@ -328,4 +334,5 @@ Objects {
       Id: 3457476505400084271
     }
   }
+  IsReplicationEnabledByDefault: true
 }

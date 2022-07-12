@@ -2,7 +2,7 @@ Assets {
   Id: 9853941400010072939
   Name: "Custom Window Blind Horizontal 01"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 2047431417328948743
     ParameterOverrides {
