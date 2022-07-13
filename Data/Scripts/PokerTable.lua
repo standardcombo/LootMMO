@@ -44,6 +44,8 @@ local function PlayerLeft(player)
 	        else
 	        	player.animationStance = 'unarmed_stance'
 	        end
+        
+        	player.serverUserData.isImmortal = false
         end
         seat.occupied = false
     end
@@ -93,6 +95,8 @@ local function AttempToJoin(player, id)
         else
         	player.animationStance = 'unarmed_sit_chair_upright'
         end
+        
+        player.serverUserData.isImmortal = true
     end
 end
 
