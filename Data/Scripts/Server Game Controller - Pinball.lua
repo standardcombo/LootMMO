@@ -34,6 +34,7 @@ function handleInteracted(_, player)
       eq.visibility = Visibility.FORCE_OFF
     end
   end
+  player.serverUserData.isInvulnerable = true
 
   Events.BroadcastToPlayer(player, "StartPinball", thisMachine.id, player)
   currentPlayer = player
@@ -55,6 +56,7 @@ function handleQuit(machineId, player)
         eq.visibility = Visibility.INHERIT
       end
     end
+    player.serverUserData.isInvulnerable = false
   end
 
   PLAY_TRIGGER.isInteractable = true
