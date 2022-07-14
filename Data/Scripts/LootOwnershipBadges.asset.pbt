@@ -38,7 +38,7 @@ Assets {
       }
       Overrides {
         Name: "cs:Spacing"
-        Int: 4
+        Int: 3
       }
       Overrides {
         Name: "cs:OwnershipPanel:isrep"

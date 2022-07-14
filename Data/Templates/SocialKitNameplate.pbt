@@ -199,7 +199,7 @@ Assets {
             }
             Opacity: 1
             CanvasWorldSize {
-              X: 1024
+              X: 1124
               Y: 1024
             }
             RedrawTime: 30
@@ -267,6 +267,7 @@ Assets {
               Value: "mc:euianchor:middlecenter"
             }
           }
+          UseParentWidth: true
           Panel {
             Opacity: 1
           }

@@ -38,14 +38,13 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 78
-          Height: 100
+          Width: 68
+          Height: 80
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
-          UseParentHeight: true
           Panel {
             Opacity: 1
           }
@@ -93,8 +92,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 74
-          Height: 74
+          Width: 62
+          Height: 62
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
