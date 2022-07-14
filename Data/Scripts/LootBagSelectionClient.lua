@@ -24,13 +24,12 @@ local TEST_COLLECTIONS = false
 local COLLECTIONS = {
 	LOOT_BAG_PARSER.Collection.Loot,
 	LOOT_BAG_PARSER.Collection.mLoot,
-	LOOT_BAG_PARSER.Collection.Genesis,
 }
 
 local TEST_TOKEN_IDS = {
+	"136", -- Genesis Adventurers
 	"1", -- Loot (for Adventurers)
 	"8001", -- More Loot
-	"136", -- Genesis Adventurers
 }
 
 -- Results of blockchain requests
