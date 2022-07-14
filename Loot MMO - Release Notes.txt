@@ -1,0 +1,13 @@
+
+**Version 0.1**
+Improvements
+- Players can no longer be killed while playing Poker or Pinball.
+- Genesis Adventurer bags are now sorted to the top, above Loot.
+- Updated door knobs and other minor environment polishing.
+
+Bugs
+- Fixed bug where some weapons could obstruct view of the Pinball table.
+- Fixed a bug in bag selection screen where players could only see up to 12 bags.
+- Reworked nameplate to better fit the token icons, for players with a very large collection.
+- Fixed Loot collection size which is actually limited to 7777 instead of 8000.
+

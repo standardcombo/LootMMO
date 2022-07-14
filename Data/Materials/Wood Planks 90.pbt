@@ -2,7 +2,7 @@ Assets {
   Id: 9730528016557977664
   Name: "Wood Planks 90"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 10634098119816284342
     ParameterOverrides {

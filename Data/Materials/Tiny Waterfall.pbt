@@ -2,7 +2,7 @@ Assets {
   Id: 18252298884819240422
   Name: "Tiny Waterfall"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 16572069779463765629
     ParameterOverrides {

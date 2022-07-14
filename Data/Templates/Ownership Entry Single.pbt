@@ -38,14 +38,13 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 78
-          Height: 100
+          Width: 68
+          Height: 80
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
-          UseParentHeight: true
           Panel {
             Opacity: 1
           }
@@ -62,6 +61,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11486317502885304925
@@ -92,8 +92,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 74
-          Height: 74
+          Width: 62
+          Height: 62
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -131,6 +131,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14997531954623837663
@@ -202,6 +203,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     PrimaryAssetId {
@@ -209,5 +211,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
 }

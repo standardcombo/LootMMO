@@ -2,7 +2,7 @@ Assets {
   Id: 3088638702347079271
   Name: "Hammer Gold"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 13583781157588536152
     ParameterOverrides {

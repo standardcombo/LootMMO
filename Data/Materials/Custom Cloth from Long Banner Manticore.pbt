@@ -2,7 +2,7 @@ Assets {
   Id: 13555409310507388924
   Name: "Custom Cloth from Long Banner Manticore"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 8960969514190589221
     ParameterOverrides {

@@ -160,6 +160,12 @@ function initGame(machineId, player)
   resetMachineState()
   showControls()
 
+  for _, eq in ipairs(player:GetAttachedObjects()) do
+    if eq.isClientOnly then
+      eq.visibility = Visibility.FORCE_OFF
+    end
+  end
+
   playMusic(thisMachine.id, {track = DEFAULT_MUSIC, volume = 0.4})
 
   bindingPressedEvent = player.bindingPressedEvent:Connect(handleBindingPressed)
@@ -266,6 +272,12 @@ function quitGame()
     insertCoinEvent:Disconnect()
     quitGameEvent:Disconnect()
     clearMessage()
+
+    for _, eq in ipairs(currentPlayer:GetAttachedObjects()) do
+      if eq.isClientOnly then
+        eq.visibility = Visibility.INHERIT
+      end
+    end
   end
 
   resetMachineState()

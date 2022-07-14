@@ -7,7 +7,7 @@ Assets {
       RootId: 3745387807024223457
       Objects {
         Id: 3745387807024223457
-        Name: "Mace and Shield"
+        Name: "Mace and Shield_Hollow"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7487204750940224804
+        ParentId: 4781671109827199097
         ChildIds: 3514713312137985011
         ChildIds: 1566953993139895785
         ChildIds: 6535090242445953989
@@ -163,6 +163,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3514713312137985011
@@ -331,6 +332,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1566953993139895785
@@ -496,6 +498,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6535090242445953989
@@ -568,6 +571,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8690955215761233262
@@ -648,6 +652,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17698976483492225292
@@ -670,6 +675,7 @@ Assets {
         NetworkContext {
           Type: Local
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16897474759971515496
@@ -705,6 +711,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14774544771309407551
@@ -741,6 +748,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10256956109011524342
@@ -776,6 +784,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16384862758443831406
@@ -825,6 +834,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14908443400059625468
@@ -870,6 +880,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14632452247174376323
@@ -913,6 +924,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12408787806015397409
@@ -954,6 +966,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17228462346857688741
@@ -989,6 +1002,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13795461874531787307
@@ -1030,6 +1044,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5085121405783551710
@@ -1047,12 +1062,6 @@ Assets {
         }
         ParentId: 14632452247174376323
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:Object"
-            ObjectReference {
-              SubObjectId: 8511277964692291333
-            }
-          }
           Overrides {
             Name: "cs:PlayerSocket"
             String: "left_arm_prop"
@@ -1073,6 +1082,12 @@ Assets {
             Name: "cs:Object:tooltip"
             String: "Set object to attach to player on equip event."
           }
+          Overrides {
+            Name: "cs:Object"
+            ObjectReference {
+              SubObjectId: 10391473855082155934
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1091,6 +1106,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13016691559125716021
@@ -1107,8 +1123,8 @@ Assets {
           }
         }
         ParentId: 14632452247174376323
-        ChildIds: 8511277964692291333
-        ChildIds: 197775973369214513
+        ChildIds: 10391473855082155934
+        ChildIds: 78224877148135091
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -1126,9 +1142,10 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8511277964692291333
+        Id: 10391473855082155934
         Name: "Shield"
         Transform {
           Location {
@@ -1143,6 +1160,7 @@ Assets {
           }
         }
         ParentId: 13016691559125716021
+        ChildIds: 13536261746694809252
         ChildIds: 4853499522167028483
         ChildIds: 11546027063915748638
         ChildIds: 8521761173880419905
@@ -1170,6 +1188,46 @@ Assets {
         ChildIds: 16765455430560600376
         ChildIds: 9087758768651342662
         ChildIds: 11287566296757782067
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          Model {
+            AggressiveMerge: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13536261746694809252
+        Name: "Fantasy Shield 02"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1227,6 +1285,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4853499522167028483
@@ -1245,7 +1304,7 @@ Assets {
             Z: 0.320611984
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1296,6 +1355,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11546027063915748638
@@ -1307,8 +1367,8 @@ Assets {
             Z: 21.2387695
           }
           Rotation {
-            Pitch: 37.8155136
-            Yaw: 172.144699
+            Pitch: 37.815506
+            Yaw: 172.144684
             Roll: -174.134399
           }
           Scale {
@@ -1317,7 +1377,7 @@ Assets {
             Z: 0.0821536854
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1404,6 +1464,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8521761173880419905
@@ -1416,8 +1477,8 @@ Assets {
           }
           Rotation {
             Pitch: -53.25317
-            Yaw: -8.19622583e-05
-            Roll: -1.6244586e-06
+            Yaw: -8.19622655e-05
+            Roll: -1.62443132e-06
           }
           Scale {
             X: 0.422976106
@@ -1425,7 +1486,7 @@ Assets {
             Z: 0.416215748
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1512,6 +1573,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13390835970012366979
@@ -1524,8 +1586,8 @@ Assets {
           }
           Rotation {
             Pitch: -36.9974365
-            Yaw: 13.6821938
-            Roll: -1.22935498e-05
+            Yaw: 13.6822128
+            Roll: -1.12245452e-05
           }
           Scale {
             X: 0.282557309
@@ -1533,7 +1595,7 @@ Assets {
             Z: 0.508313417
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1620,6 +1682,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15988014312816011046
@@ -1631,8 +1694,8 @@ Assets {
             Z: -12.7358398
           }
           Rotation {
-            Pitch: -26.2294407
-            Yaw: 10.5292025
+            Pitch: -26.229435
+            Yaw: 10.5292139
             Roll: -170.882492
           }
           Scale {
@@ -1641,7 +1704,7 @@ Assets {
             Z: 0.0600868464
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1728,6 +1791,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5033286680421643132
@@ -1740,8 +1804,8 @@ Assets {
           }
           Rotation {
             Pitch: 41.4684029
-            Yaw: 22.8078156
-            Roll: -168.175735
+            Yaw: 22.8078
+            Roll: -168.17569
           }
           Scale {
             X: 0.20843108
@@ -1749,7 +1813,7 @@ Assets {
             Z: 0.189748451
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1836,6 +1900,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18431578732577812564
@@ -1849,7 +1914,7 @@ Assets {
           Rotation {
             Pitch: 5.13591957
             Yaw: -8.19622728e-05
-            Roll: -7.22221694e-06
+            Roll: -7.22221648e-06
           }
           Scale {
             X: 0.48023966
@@ -1857,7 +1922,7 @@ Assets {
             Z: 1.23351324
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1944,6 +2009,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6326473593214731661
@@ -1955,9 +2021,9 @@ Assets {
             Z: 12.8989258
           }
           Rotation {
-            Pitch: 72.9606552
-            Yaw: -24.3717194
-            Roll: -13.9558935
+            Pitch: 72.96064
+            Yaw: -24.3716965
+            Roll: -13.9559135
           }
           Scale {
             X: 0.284977227
@@ -1965,7 +2031,7 @@ Assets {
             Z: 0.259433389
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2052,6 +2118,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12307861900194241296
@@ -2063,9 +2130,9 @@ Assets {
             Z: 13.6958008
           }
           Rotation {
-            Pitch: 74.6177521
-            Yaw: -165.024109
-            Roll: 7.05737114
+            Pitch: 74.6177063
+            Yaw: -165.024078
+            Roll: 7.05736923
           }
           Scale {
             X: 0.284977227
@@ -2073,7 +2140,7 @@ Assets {
             Z: 0.259433389
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2160,6 +2227,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3413865843896513622
@@ -2171,8 +2239,8 @@ Assets {
             Z: 22.0043945
           }
           Rotation {
-            Pitch: 36.6037292
-            Yaw: 6.77474928
+            Pitch: 36.6037254
+            Yaw: 6.77475405
             Roll: 178.405884
           }
           Scale {
@@ -2181,7 +2249,7 @@ Assets {
             Z: 0.0821536854
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2268,6 +2336,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4586949155644230618
@@ -2279,9 +2348,9 @@ Assets {
             Z: -19.1538086
           }
           Rotation {
-            Pitch: -53.2531548
+            Pitch: -53.2531395
             Yaw: -179.999954
-            Roll: 1.62446645e-06
+            Roll: 1.62446577e-06
           }
           Scale {
             X: 0.422976106
@@ -2289,7 +2358,7 @@ Assets {
             Z: 0.416215748
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2376,6 +2445,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11264378209052652107
@@ -2388,8 +2458,8 @@ Assets {
           }
           Rotation {
             Pitch: -36.9974365
-            Yaw: 166.317764
-            Roll: 1.17590489e-05
+            Yaw: 166.317734
+            Roll: 1.22935498e-05
           }
           Scale {
             X: 0.282557309
@@ -2397,7 +2467,7 @@ Assets {
             Z: 0.508313417
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2484,6 +2554,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8441363926272544113
@@ -2496,7 +2567,7 @@ Assets {
           }
           Rotation {
             Pitch: -26.2294483
-            Yaw: 169.470734
+            Yaw: 169.470718
             Roll: 170.882492
           }
           Scale {
@@ -2505,7 +2576,7 @@ Assets {
             Z: 0.0600868464
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2592,6 +2663,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16257272207226326231
@@ -2603,9 +2675,9 @@ Assets {
             Z: -12.8198242
           }
           Rotation {
-            Pitch: 41.4683571
+            Pitch: 41.4683342
             Yaw: 157.192123
-            Roll: 168.175735
+            Roll: 168.17569
           }
           Scale {
             X: 0.20843108
@@ -2613,7 +2685,7 @@ Assets {
             Z: 0.189748451
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2700,6 +2772,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8873457861351814945
@@ -2713,7 +2786,7 @@ Assets {
           Rotation {
             Pitch: 5.13591957
             Yaw: -179.999954
-            Roll: 7.22221557e-06
+            Roll: 7.22221375e-06
           }
           Scale {
             X: 0.48023966
@@ -2721,7 +2794,7 @@ Assets {
             Z: 1.23351324
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2808,6 +2881,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17367510388970813589
@@ -2819,9 +2893,9 @@ Assets {
             Z: 8.93554688
           }
           Rotation {
-            Pitch: -41.5691795
+            Pitch: -41.5691757
             Yaw: -179.999893
-            Roll: 0.00022984168
+            Roll: 0.000229841651
           }
           Scale {
             X: 0.315849841
@@ -2829,7 +2903,7 @@ Assets {
             Z: 0.217132404
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -2916,6 +2990,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13076016268607109860
@@ -2927,8 +3002,8 @@ Assets {
             Z: 8.79052734
           }
           Rotation {
-            Pitch: -40.8350677
-            Yaw: 7.41289914e-05
+            Pitch: -40.8350639
+            Yaw: 7.41289768e-05
             Roll: 0.000225913638
           }
           Scale {
@@ -2937,7 +3012,7 @@ Assets {
             Z: 0.217132404
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3024,6 +3099,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5676119359493558622
@@ -3035,8 +3111,8 @@ Assets {
             Z: 24.1494141
           }
           Rotation {
-            Pitch: 61.0802193
-            Yaw: 167.097229
+            Pitch: 61.0801735
+            Yaw: 167.097214
             Roll: 179.363708
           }
           Scale {
@@ -3045,7 +3121,7 @@ Assets {
             Z: 0.0571341589
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3132,6 +3208,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17115104463124231366
@@ -3144,7 +3221,7 @@ Assets {
           }
           Rotation {
             Pitch: 57.147213
-            Yaw: 10.0549688
+            Yaw: 10.0549822
             Roll: -177.174026
           }
           Scale {
@@ -3153,7 +3230,7 @@ Assets {
             Z: 0.0571341589
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3240,6 +3317,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3066544744046805165
@@ -3251,7 +3329,7 @@ Assets {
             Z: 10.7607422
           }
           Rotation {
-            Pitch: -40.835022
+            Pitch: -40.8350105
             Yaw: 7.41289259e-05
             Roll: 0.000225913609
           }
@@ -3261,7 +3339,7 @@ Assets {
             Z: 0.217132404
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3348,6 +3426,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9501849260138799285
@@ -3359,9 +3438,9 @@ Assets {
             Z: 32.7202148
           }
           Rotation {
-            Pitch: 85.7715759
-            Yaw: -139.141525
-            Roll: 29.9388
+            Pitch: 85.7716293
+            Yaw: -139.141586
+            Roll: 29.9388218
           }
           Scale {
             X: 0.089781478
@@ -3369,7 +3448,7 @@ Assets {
             Z: 0.0686730072
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3456,6 +3535,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7127073026477015363
@@ -3467,9 +3547,9 @@ Assets {
             Z: 31.9711914
           }
           Rotation {
-            Pitch: 75.8861313
-            Yaw: -9.69940853
-            Roll: 5.87733412
+            Pitch: 75.886116
+            Yaw: -9.69942093
+            Roll: 5.87733841
           }
           Scale {
             X: 0.089781478
@@ -3477,7 +3557,7 @@ Assets {
             Z: 0.0686730072
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3564,6 +3644,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 178721475478142066
@@ -3576,7 +3657,7 @@ Assets {
           }
           Rotation {
             Pitch: 4.18825817
-            Roll: 4.07124844e-06
+            Roll: 4.07124799e-06
           }
           Scale {
             X: 0.195963234
@@ -3584,7 +3665,7 @@ Assets {
             Z: 0.195963234
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3671,6 +3752,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6287993535708412423
@@ -3684,7 +3766,7 @@ Assets {
           Rotation {
             Pitch: 4.18825817
             Yaw: -179.999954
-            Roll: 1.96454e-06
+            Roll: 1.96453948e-06
           }
           Scale {
             X: 0.195963234
@@ -3692,7 +3774,7 @@ Assets {
             Z: 0.195963234
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3779,6 +3861,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16765455430560600376
@@ -3790,9 +3873,9 @@ Assets {
             Z: 10.9057617
           }
           Rotation {
-            Pitch: -41.5691833
+            Pitch: -41.5691795
             Yaw: -179.999893
-            Roll: 0.00022984168
+            Roll: 0.000229841651
           }
           Scale {
             X: 0.315849841
@@ -3800,7 +3883,7 @@ Assets {
             Z: 0.217132404
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3887,6 +3970,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9087758768651342662
@@ -3898,7 +3982,7 @@ Assets {
             Z: 13.1000977
           }
           Rotation {
-            Pitch: -40.8349915
+            Pitch: -40.83498
             Yaw: 7.41289186e-05
             Roll: 0.000225913609
           }
@@ -3908,7 +3992,7 @@ Assets {
             Z: 0.207499221
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -3995,6 +4079,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11287566296757782067
@@ -4006,9 +4091,9 @@ Assets {
             Z: 13.3798828
           }
           Rotation {
-            Pitch: -41.5691833
+            Pitch: -41.5691795
             Yaw: -179.999893
-            Roll: 0.00022984168
+            Roll: 0.000229841651
           }
           Scale {
             X: 0.301837027
@@ -4016,7 +4101,7 @@ Assets {
             Z: 0.207499221
           }
         }
-        ParentId: 8511277964692291333
+        ParentId: 10391473855082155934
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -4103,9 +4188,10 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 197775973369214513
+        Id: 78224877148135091
         Name: "Mace"
         Transform {
           Location {
@@ -4131,14 +4217,23 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Folder {
-          IsGroup: true
+          Model {
+            AggressiveMerge: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9659098403467650547
@@ -4150,7 +4245,7 @@ Assets {
             Z: 62.6513672
           }
           Rotation {
-            Roll: 3.00000286
+            Roll: 3.00000358
           }
           Scale {
             X: 1
@@ -4158,7 +4253,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 197775973369214513
+        ParentId: 78224877148135091
         ChildIds: 13135511001021471246
         ChildIds: 13622795460529101760
         ChildIds: 11561236712847708155
@@ -4190,6 +4285,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13135511001021471246
@@ -4298,6 +4394,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13622795460529101760
@@ -4406,6 +4503,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11561236712847708155
@@ -4514,6 +4612,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17096151580616311712
@@ -4622,6 +4721,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1017889564361437893
@@ -4730,6 +4830,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10546030682411795091
@@ -4838,6 +4939,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15842724136084306522
@@ -4945,6 +5047,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4021942677173490470
@@ -5052,6 +5155,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12272496640451915701
@@ -5159,6 +5263,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 860669917059265390
@@ -5267,6 +5372,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7802881330595717572
@@ -5375,6 +5481,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18222622529298672344
@@ -5447,6 +5554,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16999909864052070732
@@ -5519,6 +5627,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5623715250316887913
@@ -5591,6 +5700,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6055937845028646206
@@ -5663,6 +5773,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4277739818811793659
@@ -5771,6 +5882,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13081787079263901213
@@ -5783,7 +5895,7 @@ Assets {
           }
           Rotation {
             Yaw: 89.9999466
-            Roll: 3.00000262
+            Roll: 3.00000334
           }
           Scale {
             X: 1
@@ -5791,7 +5903,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 197775973369214513
+        ParentId: 78224877148135091
         ChildIds: 7028781414813206195
         ChildIds: 4096185509955559143
         ChildIds: 11253581795248103401
@@ -5823,6 +5935,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7028781414813206195
@@ -5931,6 +6044,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4096185509955559143
@@ -6039,6 +6153,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11253581795248103401
@@ -6146,6 +6261,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14524673657460727180
@@ -6254,6 +6370,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13706619996503004085
@@ -6362,6 +6479,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 243988246488732248
@@ -6470,6 +6588,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4464931808676456587
@@ -6577,6 +6696,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18239358225808996888
@@ -6684,6 +6804,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4469165953842444273
@@ -6792,6 +6913,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7437774911570804188
@@ -6900,6 +7022,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15102678015358853743
@@ -7008,6 +7131,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15971639596931874175
@@ -7080,6 +7204,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6905948080627766279
@@ -7152,6 +7277,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7598010314351218302
@@ -7224,6 +7350,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5451980108954623804
@@ -7296,6 +7423,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3341735074530571071
@@ -7404,6 +7532,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7841958147749988476
@@ -7416,7 +7545,7 @@ Assets {
           }
           Rotation {
             Yaw: 179.999954
-            Roll: 3.00000095
+            Roll: 3.00000119
           }
           Scale {
             X: 1
@@ -7424,7 +7553,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 197775973369214513
+        ParentId: 78224877148135091
         ChildIds: 7576287325651085560
         ChildIds: 5545813542183716809
         ChildIds: 14790106060405593343
@@ -7456,6 +7585,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7576287325651085560
@@ -7564,6 +7694,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5545813542183716809
@@ -7672,6 +7803,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14790106060405593343
@@ -7779,6 +7911,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2369301313938319481
@@ -7887,6 +8020,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13507107340716123291
@@ -7995,6 +8129,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7512934853688355524
@@ -8103,6 +8238,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15746378059911659963
@@ -8211,6 +8347,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15706228863441560767
@@ -8319,6 +8456,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13706666760919984616
@@ -8427,6 +8565,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12451021014319384191
@@ -8535,6 +8674,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3299050386921873820
@@ -8643,6 +8783,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11820236116897938113
@@ -8715,6 +8856,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8811007274684037328
@@ -8787,6 +8929,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 395302804364124546
@@ -8859,6 +9002,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5565180816993983563
@@ -8931,6 +9075,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4680943180655011413
@@ -9039,6 +9184,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12259526541171711331
@@ -9051,7 +9197,7 @@ Assets {
           }
           Rotation {
             Yaw: -90
-            Roll: 3.00000191
+            Roll: 3.00000238
           }
           Scale {
             X: 1
@@ -9059,7 +9205,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 197775973369214513
+        ParentId: 78224877148135091
         ChildIds: 17742702142778718960
         ChildIds: 1893820117190724690
         ChildIds: 4210200669314891046
@@ -9091,6 +9237,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17742702142778718960
@@ -9199,6 +9346,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1893820117190724690
@@ -9307,6 +9455,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4210200669314891046
@@ -9414,6 +9563,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4296526607674073245
@@ -9522,6 +9672,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8819942645719530068
@@ -9630,6 +9781,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17567525722392633170
@@ -9738,6 +9890,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3413590037122023705
@@ -9845,6 +9998,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8030600309782714375
@@ -9952,6 +10106,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8253157536835888248
@@ -10059,6 +10214,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16177033843950326103
@@ -10167,6 +10323,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14488042427776832678
@@ -10275,6 +10432,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9708843832002202
@@ -10347,6 +10505,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10629194885727964654
@@ -10419,6 +10578,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15945157828964745009
@@ -10491,6 +10651,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15664101759402298049
@@ -10563,6 +10724,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14163311566908209534
@@ -10671,6 +10833,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16422182367059495902
@@ -10689,7 +10852,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 197775973369214513
+        ParentId: 78224877148135091
         ChildIds: 2244393700111345445
         ChildIds: 6601156706777776447
         ChildIds: 2261078532103429026
@@ -10713,6 +10876,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2244393700111345445
@@ -10822,6 +10986,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6601156706777776447
@@ -10878,6 +11043,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2261078532103429026
@@ -10934,6 +11100,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2168259287110106795
@@ -10990,6 +11157,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10001720707453278272
@@ -11044,6 +11212,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3261244875198737891
@@ -11100,6 +11269,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18257429418158973634
@@ -11156,6 +11326,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9724859998559376015
@@ -11212,6 +11383,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -11390,6 +11562,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
   VirtualFolderPath: "Weapons"
 }

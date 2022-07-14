@@ -413,15 +413,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15377096960086681777
-  Name: "Marble Basic 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_gen_marble_tiles_001_uv"
-  }
-}
-Assets {
   Id: 15339827692159902109
   Name: "Heart - Polished"
   PlatformAssetType: 1
@@ -1229,15 +1220,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_007"
-  }
-}
-Assets {
-  Id: 11049358012930972197
-  Name: "Japanese Stone Lantern Roof Small 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_jpn_lantern_stone_small_roof_001_ref"
   }
 }
 Assets {
@@ -2177,15 +2159,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4755534378174475627
-  Name: "Text 04: ,"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "F7_Text_062"
-  }
-}
-Assets {
   Id: 4656921755269338857
   Name: "Pyramid - 4-Sided"
   PlatformAssetType: 1
@@ -2393,15 +2366,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3355003379134529538
-  Name: "Plane Triangle - One Sided Isosceles"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_plane_triangle_001"
-  }
-}
-Assets {
   Id: 3337256621200851928
   Name: "Fantasy Crossbow Bolt 01"
   PlatformAssetType: 1
@@ -2444,6 +2408,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_post_process_vignette_grain"
+  }
+}
+Assets {
+  Id: 2635330027741249494
+  Name: "Diamond - 6-Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_diamond_6_sided_001"
   }
 }
 Assets {

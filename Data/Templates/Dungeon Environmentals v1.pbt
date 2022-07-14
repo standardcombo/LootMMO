@@ -39,6 +39,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8434685649711827560
@@ -142,6 +143,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6062354529811064869
@@ -194,6 +196,7 @@ Assets {
           TeamSettings {
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4320790115042319025
@@ -300,6 +303,7 @@ Assets {
           TeamSettings {
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1467669975471724124
@@ -394,6 +398,7 @@ Assets {
           TeamSettings {
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7546830474050795297
@@ -450,6 +455,7 @@ Assets {
           TeamSettings {
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4150405809853357534
@@ -487,6 +493,7 @@ Assets {
           TeamSettings {
           }
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -548,5 +555,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
 }

@@ -91,13 +91,15 @@ function BlockchainResults(tokens)
 		local contractAddress = tokens[1].contractAddress
 		local icon = LOOT_COLLECTION_DATA.GetIcon(contractAddress)
 		AddEntry(#tokens, icon)
+		UpdatePositions()
+	end
+end
 
-		-- Shift all entries to the left, so collectively they are centered
-		local x = -totalWidth / 2
-		for _,entry in ipairs(entries) do
-			entry.x = x + entry.width / 2
-			x = x + entry.width + SPACING
-		end
+function UpdatePositions()
+	local x = -totalWidth / 2
+	for _,entry in ipairs(entries) do
+		entry.x = x + entry.width / 2
+		x = x + entry.width + SPACING
 	end
 end
 

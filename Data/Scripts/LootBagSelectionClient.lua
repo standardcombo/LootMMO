@@ -22,15 +22,15 @@ local TEST_COLLECTIONS = false
 
 -- List of supported NFT collections, for character select
 local COLLECTIONS = {
+	LOOT_BAG_PARSER.Collection.Genesis,
 	LOOT_BAG_PARSER.Collection.Loot,
 	LOOT_BAG_PARSER.Collection.mLoot,
-	LOOT_BAG_PARSER.Collection.Genesis,
 }
 
 local TEST_TOKEN_IDS = {
+	"136", -- Genesis Adventurers
 	"1", -- Loot (for Adventurers)
 	"8001", -- More Loot
-	"136", -- Genesis Adventurers
 }
 
 -- Results of blockchain requests
@@ -131,6 +131,8 @@ function AddRow(row)
 		r.y = y
 		y = y + rowHeight + ROW_SPACING
 	end
+	
+	container.height = y
 end
 
 
@@ -227,7 +229,7 @@ function OnTokensLoaded(tokens)
 	end
 end
 
-
+-- Add daily free bags
 local freeDailySerialized = {}
 function OnFreeDailyBagPropertyChanged(_, key)
 	local serializedBag, exists = SERVER_SCRIPT:GetCustomProperty(key)
@@ -248,7 +250,7 @@ for i = 1,6 do
 	OnFreeDailyBagPropertyChanged(SERVER_SCRIPT, key)
 end
 
-
+-- Add test collections
 if TEST_COLLECTIONS then
 	for i,id in ipairs(COLLECTIONS) do
 		local tokenId = TEST_TOKEN_IDS[i]
@@ -256,6 +258,7 @@ if TEST_COLLECTIONS then
 	end
 end
 
+-- Add loot bags owned by the local player
 for _,id in ipairs(COLLECTIONS) do
 	ASYNC_BLOCKCHAIN.GetTokensForPlayer(player, {contractAddress = id}, OnTokensLoaded)
 end

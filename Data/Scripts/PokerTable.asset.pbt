@@ -25,6 +25,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
   VirtualFolderPath: "TexasPokerTable"
 }

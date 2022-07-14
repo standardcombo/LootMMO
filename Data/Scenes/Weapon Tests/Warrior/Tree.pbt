@@ -37,6 +37,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 10830530252099254700
@@ -79,6 +80,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14723256786533503015
@@ -117,6 +119,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 6118965296011931528
@@ -159,6 +162,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 11789833469123843792
@@ -196,6 +200,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 4430367305996373700
@@ -238,6 +243,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 9971864348904829628
@@ -276,6 +282,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 2651051822813887990
@@ -318,6 +325,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 11042988792689468655
@@ -356,6 +364,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 9221174122135636037
@@ -398,6 +407,7 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 3295244684787252541
@@ -442,6 +452,7 @@ Objects {
       Id: 3869894161005384758
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14693847887828622324
@@ -486,6 +497,7 @@ Objects {
       Id: 17636826899209440575
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 11487477156081329721
@@ -530,6 +542,7 @@ Objects {
       Id: 7226179751205662267
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14111704080875600776
@@ -574,6 +587,7 @@ Objects {
       Id: 17965050482922036577
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 13896726334407950109
@@ -619,4 +633,5 @@ Objects {
       Id: 11721440620125537407
     }
   }
+  IsReplicationEnabledByDefault: true
 }

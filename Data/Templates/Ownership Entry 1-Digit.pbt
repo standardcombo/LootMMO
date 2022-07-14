@@ -45,14 +45,13 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 124
-          Height: 100
+          Width: 100
+          Height: 80
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
-          UseParentHeight: true
           Panel {
             Opacity: 1
           }
@@ -69,6 +68,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1741799305561954242
@@ -99,9 +99,9 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 74
-          Height: 74
-          UIX: 23
+          Width: 62
+          Height: 62
+          UIX: 18
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -139,6 +139,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6298963638001743936
@@ -210,6 +211,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11862856072947076465
@@ -240,9 +242,9 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 150
+          Width: 100
           Height: 60
-          UIX: -5
+          UIX: -4
           UIY: 15
           RenderTransformPivot {
             Anchor {
@@ -257,7 +259,7 @@ Assets {
               B: 0.509
               A: 1
             }
-            Size: 33
+            Size: 27
             Justification {
               Value: "mc:etextjustify:right"
             }
@@ -296,6 +298,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -312,5 +315,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
 }

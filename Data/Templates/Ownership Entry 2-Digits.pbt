@@ -45,14 +45,13 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 152
-          Height: 100
+          Width: 118
+          Height: 80
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
-          UseParentHeight: true
           Panel {
             Opacity: 1
           }
@@ -69,6 +68,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12614532333639817638
@@ -99,9 +99,9 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 74
-          Height: 74
-          UIX: 37
+          Width: 62
+          Height: 62
+          UIX: 27
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -139,6 +139,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16161630578062341668
@@ -210,6 +211,7 @@ Assets {
             }
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1405857354667623189
@@ -240,9 +242,9 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 150
+          Width: 100
           Height: 60
-          UIX: 9
+          UIX: 8
           UIY: 15
           RenderTransformPivot {
             Anchor {
@@ -257,7 +259,7 @@ Assets {
               B: 0.509
               A: 1
             }
-            Size: 33
+            Size: 27
             Justification {
               Value: "mc:etextjustify:right"
             }
@@ -296,6 +298,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -312,5 +315,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 116
+  SerializationVersion: 118
 }

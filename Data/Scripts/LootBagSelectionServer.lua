@@ -3,7 +3,7 @@ local ASYNC_BLOCKCHAIN = require(script:GetCustomProperty("AsyncBlockchain"))
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 
 local COLLECTION = LOOT_BAG_PARSER.Collection.Loot
-local COLLECTION_SIZE = 8000
+local COLLECTION_SIZE = 7777
 local FREE_CHOICE_AMOUNT = 5
 
 -- Prepare random number generator. Seed is based on the date

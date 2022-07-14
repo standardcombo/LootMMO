@@ -2,7 +2,7 @@ Assets {
   Id: 1656527059221567549
   Name: "WoodPlanks_InvertedMetallic - Rotated"
   PlatformAssetType: 13
-  SerializationVersion: 116
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 10634098119816284342
     ParameterOverrides {
