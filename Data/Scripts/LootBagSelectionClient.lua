@@ -22,6 +22,7 @@ local TEST_COLLECTIONS = false
 
 -- List of supported NFT collections, for character select
 local COLLECTIONS = {
+	LOOT_BAG_PARSER.Collection.Genesis,
 	LOOT_BAG_PARSER.Collection.Loot,
 	LOOT_BAG_PARSER.Collection.mLoot,
 }
