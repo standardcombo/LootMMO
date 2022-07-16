@@ -50,7 +50,10 @@ function OnPickup(player, equipment)
 		resetTask = nil
 	end
 	
+	--EQUIPMENT:SetReplicationEnabled(true)
+	
 	if COLLIDER then
+		COLLIDER:SetReplicationEnabled(true)
 		COLLIDER.collision = Collision.FORCE_OFF
 	end
 	
@@ -145,6 +148,11 @@ function OnThrow(ability)
 		EQUIPMENT.parent = World.GetRootObject()
 		lastPos = EQUIPMENT:GetWorldPosition()
 		lastRot = EQUIPMENT:GetWorldRotation()
+		
+		--EQUIPMENT:SetReplicationEnabled(false)
+	end
+	if Object.IsValid(COLLIDER) then
+		COLLIDER:SetReplicationEnabled(false)
 	end
 	if Object.IsValid(obj) then
 		obj:Destroy()

@@ -119,7 +119,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17985283007898727319
@@ -158,7 +157,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2289131706036044697
@@ -345,7 +343,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11308983517929960453

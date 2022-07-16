@@ -7,7 +7,7 @@ Assets {
       RootId: 1550651346007304081
       Objects {
         Id: 1550651346007304081
-        Name: "Short Sword"
+        Name: "Short Sword_Hollow"
         Transform {
           Scale {
             X: 1
@@ -104,7 +104,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -221,7 +221,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -339,7 +339,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -374,9 +374,8 @@ Assets {
           Type: Server
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12525221748800137288
@@ -484,9 +483,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8377405643480515226

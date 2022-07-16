@@ -7,7 +7,7 @@ Assets {
       RootId: 11456792952658440010
       Objects {
         Id: 11456792952658440010
-        Name: "Melee Swipe Effect Full Circle Rusty"
+        Name: "Melee Swipe Effect Full Circle"
         Transform {
           Scale {
             X: 1
@@ -42,7 +42,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }

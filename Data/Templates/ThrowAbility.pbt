@@ -82,7 +82,7 @@ Assets {
           Version: 3
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }

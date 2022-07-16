@@ -77,7 +77,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -118,9 +118,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5075932351039994910

@@ -12558,7 +12558,6 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 16623495198000661803

@@ -42,7 +42,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -119,7 +119,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -193,7 +193,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -267,7 +267,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -293,7 +293,9 @@ Assets {
         NetworkContext {
           Type: Local
         }
-        IsReplicationEnabledByDefault: true
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 780868951588068244

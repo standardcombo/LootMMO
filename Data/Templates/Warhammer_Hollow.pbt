@@ -7,7 +7,7 @@ Assets {
       RootId: 3463194666526297834
       Objects {
         Id: 3463194666526297834
-        Name: "Warhammer"
+        Name: "Warhammer_Hollow"
         Transform {
           Scale {
             X: 1
@@ -104,7 +104,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -222,7 +222,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -339,7 +339,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -374,9 +374,8 @@ Assets {
           Type: Server
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9167867446322450177
@@ -485,9 +484,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10782419736635186199

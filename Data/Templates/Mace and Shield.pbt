@@ -19,7 +19,6 @@ Assets {
         ChildIds: 3514713312137985011
         ChildIds: 1566953993139895785
         ChildIds: 6535090242445953989
-        ChildIds: 8690955215761233262
         ChildIds: 17698976483492225292
         UnregisteredParameters {
           Overrides {
@@ -161,7 +160,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -330,7 +329,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -496,7 +495,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -569,88 +568,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8690955215761233262
-        Name: "Heal"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-          }
-        }
-        ParentId: 3745387807024223457
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:IsAbilityChain"
-            Bool: false
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Ability {
-          IsEnabled: true
-          KeyBinding: "ability_primary"
-          CastPhaseSettings {
-            Duration: 0.2
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 0.25
-            CanMove: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.02
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 30
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-          }
-          Animation: "unarmed_magic_up"
-          CanBePrevented: true
-          KeyBinding_v2 {
-            Value: "mc:egameaction:extraaction_32"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -675,7 +593,9 @@ Assets {
         NetworkContext {
           Type: Local
         }
-        IsReplicationEnabledByDefault: true
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 16897474759971515496
@@ -852,12 +772,6 @@ Assets {
         }
         ParentId: 16897474759971515496
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 8690955215761233262
-            }
-          }
           Overrides {
             Name: "cs:HealPercent"
             Float: 50

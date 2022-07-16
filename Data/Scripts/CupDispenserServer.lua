@@ -9,6 +9,7 @@ local REFILL_DELAY = 20
 
 Events.ConnectForPlayer("TakeCup", function(player, cupNumber)
 	NET_OBJECT:SetCustomProperty("Cup" .. cupNumber, false)
+	NET_OBJECT:ForceReplication()
 	
 	local item = _G.ItemFactory.Spawn(ITEM_ID)
 	item:SetCustomProperty("usesRemaining", 0)
@@ -21,4 +22,5 @@ Events.ConnectForPlayer("TakeCup", function(player, cupNumber)
 	
 	Task.Wait(REFILL_DELAY)
 	NET_OBJECT:SetCustomProperty("Cup" .. cupNumber, true)
+	NET_OBJECT:ForceReplication()
 end)

@@ -7,7 +7,7 @@ Assets {
       RootId: 9441341392471324808
       Objects {
         Id: 9441341392471324808
-        Name: "Stop Sign Full Swipe Effect"
+        Name: "Quarterstaff Full Swipe Effect"
         Transform {
           Scale {
             X: 1
@@ -40,7 +40,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }

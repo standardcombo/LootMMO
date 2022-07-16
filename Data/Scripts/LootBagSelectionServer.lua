@@ -36,6 +36,7 @@ function OnTokensLoaded(freeChoiceTokens)
 		
 		print("  "..serializedBag)
 	end
+	script:ForceReplication()
 end
 
 InitDailyFreeBags()
