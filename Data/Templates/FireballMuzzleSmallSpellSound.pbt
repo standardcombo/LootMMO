@@ -7,7 +7,7 @@ Assets {
       RootId: 8646440493046669735
       Objects {
         Id: 8646440493046669735
-        Name: "ClientContext"
+        Name: "FireballMuzzleSmallSpellSound"
         Transform {
           Scale {
             X: 1
@@ -38,9 +38,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5817557262452211023

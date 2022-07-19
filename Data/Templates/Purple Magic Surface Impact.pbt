@@ -7,7 +7,7 @@ Assets {
       RootId: 8993284519149197196
       Objects {
         Id: 8993284519149197196
-        Name: "Generic Impact Surface Aligned"
+        Name: "Purple Magic Surface Impact"
         Transform {
           Scale {
             X: 1
@@ -39,9 +39,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17576731910299627689
