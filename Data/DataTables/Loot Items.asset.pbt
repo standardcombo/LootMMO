@@ -141,6 +141,15 @@ Assets {
       }
     }
     Assets {
+      Id: 4850117195754212488
+      Name: "Fantasy Book 005"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Book_005"
+      }
+    }
+    Assets {
       Id: 15970407502253314222
       Name: "Fantasy Book 009"
       PlatformAssetType: 9
@@ -150,21 +159,12 @@ Assets {
       }
     }
     Assets {
-      Id: 16585111650500069428
-      Name: "Fantasy Book 001"
+      Id: 6769695792501126404
+      Name: "Fantasy Book 007"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Equip_Book_001"
-      }
-    }
-    Assets {
-      Id: 4850117195754212488
-      Name: "Fantasy Book 005"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Equip_Book_005"
+        AssetId: "UI_Fantasy_Equip_Book_007"
       }
     }
     Assets {

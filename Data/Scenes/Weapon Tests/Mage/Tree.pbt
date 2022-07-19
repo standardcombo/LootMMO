@@ -330,15 +330,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2172817917620891649
-  Name: "TODO: Book"
+  Id: 17928104747294208333
+  Name: "Book"
   Transform {
-    Location {
-      X: -100
-      Y: 150
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -346,36 +340,45 @@ Objects {
     }
   }
   ParentId: 11002928437595490801
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14033755759061308699
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Book"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -300
+            Y: 150
+            Z: 300
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2026440057022008005
+    }
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16746005604417075502
-  Name: "TODO: Tome"
+  Id: 13166097305893446491
+  Name: "Tome"
   Transform {
-    Location {
-      X: -100
-      Y: 50
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -383,36 +386,45 @@ Objects {
     }
   }
   ParentId: 11002928437595490801
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4468421530148315437
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Tome"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -300
+            Y: 50
+            Z: 300
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5782802848812180595
+    }
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2601220709076936961
-  Name: "TODO: Chronicle"
+  Id: 6858440732574831954
+  Name: "Chronicle"
   Transform {
-    Location {
-      X: -100
-      Y: -50
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -420,25 +432,40 @@ Objects {
     }
   }
   ParentId: 11002928437595490801
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13617187607247653459
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Chronicle"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -300
+            Y: -50
+            Z: 300
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1885662134739622137
+    }
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 3315559388721586162
@@ -463,8 +490,9 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -100
+            X: -300
             Y: -150
+            Z: 300
           }
         }
       }
