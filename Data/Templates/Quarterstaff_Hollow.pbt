@@ -119,7 +119,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -193,7 +193,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -267,7 +267,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }

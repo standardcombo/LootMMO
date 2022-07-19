@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5382801373363241026
+        ParentId: 4781671109827199097
         ChildIds: 1862730689175922306
         ChildIds: 5515190191202724754
         ChildIds: 12091375890611428173
@@ -119,7 +119,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -193,7 +193,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -264,7 +264,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -758,7 +758,7 @@ Assets {
         ParentId: 7864363674088268438
         ChildIds: 10312655616637880126
         ChildIds: 14214122715853220730
-        ChildIds: 18322133153243236983
+        ChildIds: 3257625093965107501
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -1062,18 +1062,17 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 18322133153243236983
-        Name: "Geo"
+        Id: 3257625093965107501
+        Name: "MergedModel"
         Transform {
           Location {
           }
           Rotation {
-            Pitch: -3.15731621
           }
           Scale {
-            X: 0.925064683
-            Y: 0.925064683
-            Z: 0.925064683
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 14571185692777751389
@@ -1095,8 +1094,15 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
         Folder {
-          IsGroup: true
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1108,20 +1114,22 @@ Assets {
         Name: "Fantasy Sword Grip 01"
         Transform {
           Location {
-            X: -0.279499739
-            Y: 0.244915292
-            Z: -16.3999977
+            X: -1.09375
+            Y: 0.2265625
+            Z: -15.13379
           }
           Rotation {
+            Pitch: 3.15731621
             Yaw: -179.999954
+            Roll: 2.26057682e-06
           }
           Scale {
-            X: 1.5
-            Y: 1
-            Z: 1
+            X: 1.38759708
+            Y: 0.925064683
+            Z: 0.925064683
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1208,20 +1216,22 @@ Assets {
         Name: "Fantasy Pommel 01"
         Transform {
           Location {
-            X: -0.782444656
-            Y: 0.24319984
-            Z: -28.5959091
+            X: -2.1796875
+            Y: 0.224975586
+            Z: -26.3730469
           }
           Rotation {
+            Pitch: 3.15731621
             Yaw: -179.999954
+            Roll: 2.26057682e-06
           }
           Scale {
-            X: 1.22500563
-            Y: 0.993789792
-            Z: 1.22500587
+            X: 1.13320947
+            Y: 0.919319868
+            Z: 1.13320971
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -1285,21 +1295,21 @@ Assets {
         Name: "Text 05: O"
         Transform {
           Location {
-            X: 0.0315580741
-            Z: 12.7680626
+            X: 0.6796875
+            Z: 11.7917471
           }
           Rotation {
-            Pitch: 4.09811328e-05
-            Yaw: 171.344574
-            Roll: 3.25688781e-12
+            Pitch: 3.12136221
+            Yaw: 171.331604
+            Roll: -0.475620568
           }
           Scale {
-            X: 0.139778256
-            Y: 0.0934568197
-            Z: 0.164322034
+            X: 0.129303932
+            Y: 0.0864536
+            Z: 0.152008504
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1379,22 +1389,22 @@ Assets {
         Name: "Fantasy Sword Blade 04"
         Transform {
           Location {
-            X: 8.75596523
-            Y: 0.874094248
-            Z: 6.69272661
+            X: 8.42853546
+            Y: 0.80859375
+            Z: 5.73568678
           }
           Rotation {
-            Pitch: -7.70697
-            Yaw: 179.967087
-            Roll: -0.460662842
+            Pitch: -4.54965
+            Yaw: 179.967285
+            Roll: -0.46248138
           }
           Scale {
-            X: 0.611822
-            Y: 0.0421728343
-            Z: 1.63513756
+            X: 0.565974951
+            Y: 0.0390126
+            Z: 1.51260805
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1453,22 +1463,22 @@ Assets {
         Name: "Fantasy Sword Blade 04"
         Transform {
           Location {
-            X: 5.56687069
-            Y: 1.00077462
-            Z: 8.47566
+            X: 5.5737381
+            Y: 0.92578125
+            Z: 7.54499865
           }
           Rotation {
-            Pitch: -7.11703491
-            Yaw: 180
-            Roll: -0.464935303
+            Pitch: -3.95971322
+            Yaw: -179.999985
+            Roll: -0.464934379
           }
           Scale {
-            X: 0.40869692
-            Y: 0.0681101456
-            Z: 1.5023495
+            X: 0.3780711
+            Y: 0.0630062893
+            Z: 1.38977051
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1554,21 +1564,21 @@ Assets {
         Name: "Text 05: O"
         Transform {
           Location {
-            X: 0.0730001181
-            Z: 12.0167761
+            X: 0.6796875
+            Z: 11.0957022
           }
           Rotation {
-            Pitch: 4.09811328e-05
-            Yaw: 171.344574
-            Roll: 3.25688781e-12
+            Pitch: 3.12136221
+            Yaw: 171.331604
+            Roll: -0.475620568
           }
           Scale {
-            X: 0.129399061
-            Y: 0.0865171
-            Z: 0.185685039
+            X: 0.119702503
+            Y: 0.0800339133
+            Z: 0.171770677
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1657,20 +1667,22 @@ Assets {
         Name: "Fantasy Sword Grip 01"
         Transform {
           Location {
-            X: -0.331151694
-            Y: 0.24319984
-            Z: -34.5921936
+            X: -2.06835938
+            Y: 0.224975586
+            Z: -31.9345684
           }
           Rotation {
+            Pitch: 3.15731621
             Yaw: -179.999954
+            Roll: 2.26057682e-06
           }
           Scale {
-            X: 1.5
-            Y: 0.999999583
-            Z: 0.999999583
+            X: 1.38759708
+            Y: 0.925064325
+            Z: 0.925064325
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1757,22 +1769,22 @@ Assets {
         Name: "Text 05: I"
         Transform {
           Location {
-            X: 19.7664089
-            Y: -1.69052255
-            Z: 16.3372955
+            X: 19.0898438
+            Y: -1.56384277
+            Z: 14.0830078
           }
           Rotation {
-            Pitch: -11.3277893
-            Yaw: 180
-            Roll: 180
+            Pitch: -8.17047
+            Yaw: -179.999985
+            Roll: -179.999985
           }
           Scale {
-            X: 0.314670354
-            Y: 0.164366901
-            Z: 0.333637625
+            X: 0.291090429
+            Y: 0.152050018
+            Z: 0.308636397
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Bevel:id"
@@ -1834,22 +1846,22 @@ Assets {
         Name: "Text 05: )"
         Transform {
           Location {
-            X: -1.85551643
-            Y: 2.23366451
-            Z: 18.9560738
+            X: -0.748046875
+            Y: 2.06628418
+            Z: 17.6035175
           }
           Rotation {
-            Pitch: -57.1416626
-            Yaw: 180
-            Roll: 1.36603776e-05
+            Pitch: -53.9843178
+            Yaw: -179.999985
+            Roll: 1.49399157e-05
           }
           Scale {
-            X: 0.23285155
-            Y: 0.164367065
-            Z: 0.190524712
+            X: 0.215402752
+            Y: 0.152050167
+            Z: 0.176247686
           }
         }
-        ParentId: 18322133153243236983
+        ParentId: 3257625093965107501
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font.Sides:id"

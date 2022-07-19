@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7487204750940224804
+        ParentId: 4781671109827199097
         ChildIds: 7261027818024292780
         ChildIds: 11847081370223194815
         ChildIds: 17274442556924407997
@@ -224,7 +224,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -343,7 +343,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -505,16 +505,16 @@ Assets {
         ParentId: 17992957111025546175
         ChildIds: 17096457173922786757
         ChildIds: 13809195375048728752
-        ChildIds: 2071351189087049389
+        ChildIds: 17382638633573787527
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
           MinDetailLevel {
@@ -607,14 +607,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2071351189087049389
-        Name: "Geo"
+        Id: 17382638633573787527
+        Name: "MergedModel"
         Transform {
           Location {
             Z: -15.9365463
           }
           Rotation {
-            Yaw: 180
           }
           Scale {
             X: 1
@@ -640,7 +639,11 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Folder {
-          IsGroup: true
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -654,6 +657,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -179.999969
           }
           Scale {
             X: 0.0528478883
@@ -661,7 +665,7 @@ Assets {
             Z: 1.31573796
           }
         }
-        ParentId: 2071351189087049389
+        ParentId: 17382638633573787527
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -731,6 +735,7 @@ Assets {
             Z: -61.9547501
           }
           Rotation {
+            Yaw: -179.999969
           }
           Scale {
             X: 1.1
@@ -738,7 +743,7 @@ Assets {
             Z: 1.1
           }
         }
-        ParentId: 2071351189087049389
+        ParentId: 17382638633573787527
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -800,6 +805,7 @@ Assets {
             Z: -0.861587524
           }
           Rotation {
+            Yaw: -179.999969
           }
           Scale {
             X: 1.1
@@ -807,7 +813,7 @@ Assets {
             Z: 1.1
           }
         }
-        ParentId: 2071351189087049389
+        ParentId: 17382638633573787527
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -866,12 +872,14 @@ Assets {
         Name: "Head"
         Transform {
           Location {
-            X: 3.09725666
-            Y: 1.1920929e-05
+            X: -3.09725952
+            Y: -1.52587891e-05
             Z: 71.1070557
           }
           Rotation {
-            Pitch: 19.9365501
+            Pitch: 19.9365425
+            Yaw: -179.999969
+            Roll: -4.33064175e-13
           }
           Scale {
             X: 0.260744631
@@ -879,7 +887,7 @@ Assets {
             Z: 0.260744631
           }
         }
-        ParentId: 2071351189087049389
+        ParentId: 17382638633573787527
         ChildIds: 3871737479344674445
         ChildIds: 6845388610544192594
         ChildIds: 18304492398819852353
