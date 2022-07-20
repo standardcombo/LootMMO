@@ -452,7 +452,6 @@ Objects {
       Id: 3869894161005384758
     }
   }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14693847887828622324

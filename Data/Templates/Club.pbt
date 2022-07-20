@@ -513,7 +513,7 @@ Assets {
         ParentId: 4760522729276074298
         ChildIds: 4382010085747243663
         ChildIds: 16987135219229852956
-        ChildIds: 4679425709683534145
+        ChildIds: 93760277482779226
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -754,23 +754,31 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4679425709683534145
-        Name: "Geo"
+        Id: 93760277482779226
+        Name: "Group"
         Transform {
           Location {
+            X: -0.237884521
+            Y: 0.00323486328
+            Z: 0.0433959961
           }
           Rotation {
+            Pitch: 1.26613939
+            Yaw: -0.00372314407
+            Roll: -0.1679077
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.4518919
+            Y: 1.4518919
+            Z: 1.4518919
           }
         }
         ParentId: 1395599491891686338
-        ChildIds: 14589305863316815423
-        ChildIds: 2531422141915839532
-        ChildIds: 9637618365247477390
+        ChildIds: 4440263693199094148
+        ChildIds: 4073809488058927480
+        ChildIds: 3410149538561734144
+        ChildIds: 11369046160310004537
+        ChildIds: 5445267571680099901
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -779,6 +787,9 @@ Assets {
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Folder {
           IsGroup: true
@@ -789,61 +800,26 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14589305863316815423
-        Name: "Baseball Bat"
+        Id: 4440263693199094148
+        Name: "Cylinder"
         Transform {
           Location {
-            X: -0.1640625
-            Y: 0.171875
-            Z: -18.6879
           }
           Rotation {
-            Pitch: -0.0492320023
-            Yaw: -176.782425
-            Roll: 0.460757077
+            Pitch: -2.58257627
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.0564314537
+            Y: 0.0473148264
+            Z: 0.0725513473
           }
         }
-        ParentId: 4679425709683534145
+        ParentId: 93760277482779226
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 5512000712628422335
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:utile"
-            Float: 2
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 1
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.670233369
-              B: 0.238999963
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_Detail1:color"
-            Color {
-              R: 0.682000041
-              G: 0.407313138
-              B: 0.298715979
-              A: 1
+              Id: 13125283898653935109
             }
           }
         }
@@ -854,19 +830,23 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         CoreMesh {
           MeshAsset {
-            Id: 1582692519134201311
+            Id: 13950225922132296555
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
             BoundsScale: 1
           }
@@ -880,32 +860,37 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2531422141915839532
-        Name: "Decal Stains Round 01"
+        Id: 4073809488058927480
+        Name: "Urban - Stone Axe 01 - Handle 01"
         Transform {
           Location {
-            X: 0.078125
-            Y: 2.6875
-            Z: 66.6064148
+            X: 0.535163879
+            Y: -0.0802001953
+            Z: 29.3798294
           }
           Rotation {
-            Pitch: 0.521266341
-            Yaw: -7.64763
-            Roll: 88.0828629
+            Pitch: 1.1667943
+            Yaw: 180
+            Roll: 180
           }
           Scale {
-            X: 0.0167953279
-            Y: 0.0934963152
-            Z: 0.0512496978
+            X: 1.14425492
+            Y: 1.14425492
+            Z: 1.14425492
           }
         }
-        ParentId: 4679425709683534145
+        ParentId: 93760277482779226
         UnregisteredParameters {
           Overrides {
-            Name: "bp:color"
-            Color {
-              R: 0.206000015
-              A: 1
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 422605311160428204
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 13125283898653935109
             }
           }
         }
@@ -918,13 +903,23 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Blueprint {
-          BlueprintAsset {
-            Id: 12385794193739794509
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 13829076692580139798
           }
-          TeamSettings {
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
           }
-          DecalBP {
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
           }
         }
         Relevance {
@@ -936,31 +931,161 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9637618365247477390
+        Id: 3410149538561734144
+        Name: "Urban Pipe Wrap 01"
+        Transform {
+          Location {
+            X: -0.263343811
+            Y: -0.312561035
+            Z: -4.7244339
+          }
+          Rotation {
+            Pitch: 4.01095343
+            Yaw: -172.950058
+            Roll: -2.06082153
+          }
+          Scale {
+            X: 0.211306885
+            Y: 0.184418917
+            Z: 0.224148765
+          }
+        }
+        ParentId: 93760277482779226
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 422605311160428204
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 2928617361847387870
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11369046160310004537
+        Name: "Urban Pipe Wrap 01"
+        Transform {
+          Location {
+            X: -0.113594055
+            Y: -0.233215332
+            Z: -0.1067276
+          }
+          Rotation {
+            Pitch: -1.42797387
+            Yaw: 93.9653091
+            Roll: -1.36444092
+          }
+          Scale {
+            X: 0.188558117
+            Y: 0.215136096
+            Z: 0.226808921
+          }
+        }
+        ParentId: 93760277482779226
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 422605311160428204
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 2928617361847387870
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5445267571680099901
         Name: "Decal Stains Round 01"
         Transform {
           Location {
-            X: 0.078125
-            Y: -7.03515625
-            Z: 66.6064148
+            X: 0.967213
+            Y: 0.273153841
+            Z: 55.1001282
           }
           Rotation {
-            Pitch: -0.521423459
-            Yaw: 172.352188
-            Roll: 91.91716
+            Pitch: 76.6453781
+            Yaw: -0.895333886
+            Roll: -27.2872944
           }
           Scale {
-            X: 0.0166548491
-            Y: 0.0935013443
-            Z: 0.0605395362
+            X: 0.0321308039
+            Y: 0.0328996666
+            Z: 0.0385978036
           }
         }
-        ParentId: 4679425709683534145
+        ParentId: 93760277482779226
         UnregisteredParameters {
           Overrides {
-            Name: "bp:color"
+            Name: "bp:Color"
             Color {
-              R: 0.206000015
+              R: 0.269999981
               A: 1
             }
           }
@@ -974,6 +1099,9 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
         Blueprint {
           BlueprintAsset {
             Id: 12385794193739794509
@@ -984,30 +1112,36 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
     }
     Assets {
-      Id: 1582692519134201311
-      Name: "Baseball Bat"
+      Id: 13950225922132296555
+      Name: "Cylinder"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_bat_001"
+        AssetId: "sm_cylinder_002"
       }
     }
     Assets {
-      Id: 5512000712628422335
-      Name: "Bark Dead 01"
-      PlatformAssetType: 2
+      Id: 13829076692580139798
+      Name: "Urban - Stone Axe 01 - Handle 01"
+      PlatformAssetType: 1
       PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_bark_dead_001_uv"
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_axe_stone_001_handle_001_ref"
+      }
+    }
+    Assets {
+      Id: 2928617361847387870
+      Name: "Urban Pipe Wrap 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_pipes_acc_coupling_005_ref"
       }
     }
     Assets {

@@ -505,13 +505,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12824532777698172491
-  Name: "TODO: Falchion"
+  Id: 18357021972592909586
+  Name: "Falchion"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -519,25 +515,21 @@ Objects {
     }
   }
   ParentId: 5382801373363241026
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12321340739263921609
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Falchion"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3747445361788604316
+    }
   }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 7416583304225554458
