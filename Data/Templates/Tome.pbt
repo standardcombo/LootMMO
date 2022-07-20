@@ -17,7 +17,6 @@ Assets {
         }
         ParentId: 11002928437595490801
         ChildIds: 1316876092790893906
-        ChildIds: 5970007924425421690
         ChildIds: 414673183947656760
         UnregisteredParameters {
         }
@@ -38,16 +37,16 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 3607790562801961248
+              Id: 11342239295631167250
             }
             MuzzleFlashAssetRef {
-              Id: 12412596681710817044
+              Id: 11071604239389858770
             }
             TrailAssetRef {
               Id: 9023864673320310867
             }
             ImpactAssetRef {
-              Id: 4093533104082016647
+              Id: 2758744785506240642
             }
             UseReticle: true
             Muzzle {
@@ -75,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 6809355319754973972
+              Id: 2731170286348851048
             }
             ReticleType {
               Value: "mc:ereticletype:none"
@@ -190,82 +189,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5970007924425421690
-        Name: "Secondary Attack"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: 2.04905591e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4468421530148315437
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          IsEnabled: true
-          KeyBinding: "ability_ult"
-          CastPhaseSettings {
-            Duration: 0.6
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 0.3
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.2
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 16
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_magic_up"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:secondaryaction"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 414673183947656760
         Name: "LocalContext"
         Transform {
@@ -306,7 +229,6 @@ Assets {
         }
         ParentId: 414673183947656760
         ChildIds: 1916888241269667647
-        ChildIds: 12057404945430651068
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -380,58 +302,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12057404945430651068
-        Name: "AOESpawnAbilityServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1622317344091291121
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:AOEAsset"
-            AssetReference {
-              Id: 16737318897597383360
-            }
-          }
-          Overrides {
-            Name: "cs:ForwardSpawnOffset"
-            Float: 3500
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 5970007924425421690
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9967702307892939268
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 17708929596515305777
         Name: "Client Context"
         Transform {
@@ -448,7 +318,6 @@ Assets {
         }
         ParentId: 414673183947656760
         ChildIds: 2072656159811624266
-        ChildIds: 10081639728700552771
         ChildIds: 15360388279545762639
         UnregisteredParameters {
         }
@@ -529,60 +398,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10081639728700552771
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17708929596515305777
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 17586717826906491926
-            }
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 5970007924425421690
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 15360388279545762639
         Name: "Geo"
         Transform {
@@ -597,7 +412,7 @@ Assets {
           }
         }
         ParentId: 17708929596515305777
-        ChildIds: 2169868635750523287
+        ChildIds: 12347501327441993074
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -618,7 +433,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2169868635750523287
+        Id: 12347501327441993074
         Name: "Fantasy Book 02"
         Transform {
           Location {
@@ -629,6 +444,7 @@ Assets {
           Rotation {
             Pitch: 6.63431931
             Yaw: -143.815506
+            Roll: 180
           }
           Scale {
             X: 6.39844656
@@ -638,6 +454,7 @@ Assets {
         }
         ParentId: 15360388279545762639
         ChildIds: 13523409349119215677
+        ChildIds: 5185835565189009689
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -687,14 +504,14 @@ Assets {
         Name: "Decal Elven Symbols"
         Transform {
           Location {
-            X: 4.55337954
-            Y: 6.89595032
-            Z: 3.65402222
+            X: 4.68987894
+            Y: -6.89630175
+            Z: -2.37568784
           }
           Rotation {
-            Pitch: 6.1007247
-            Yaw: 0.1316237
-            Roll: 89.9972305
+            Pitch: -6.10073853
+            Yaw: -0.131622314
+            Roll: -90.0027466
           }
           Scale {
             X: 0.0898410529
@@ -702,7 +519,7 @@ Assets {
             Z: 0.00513599627
           }
         }
-        ParentId: 2169868635750523287
+        ParentId: 12347501327441993074
         UnregisteredParameters {
           Overrides {
             Name: "bp:Emissive Boost"
@@ -747,6 +564,59 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 5185835565189009689
+        Name: "Decal Carved Font 01"
+        Transform {
+          Location {
+            X: 4.86490488
+            Y: -8.9
+            Z: -1.81604481
+          }
+          Rotation {
+            Pitch: 92.2010574
+            Yaw: -0.00726318359
+            Roll: -90
+          }
+          Scale {
+            X: 1.10099876
+            Y: 0.708497226
+            Z: 0.1
+          }
+        }
+        ParentId: 12347501327441993074
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 14
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9228433102353723413
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 10775690701242070163
@@ -755,15 +625,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Ability_Purple_033"
-      }
-    }
-    Assets {
-      Id: 17586717826906491926
-      Name: "Fantasy Ability Purple 032"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_032"
       }
     }
     Assets {
@@ -782,6 +643,15 @@ Assets {
       PrimaryAsset {
         AssetType: "DecalBlueprintAssetRef"
         AssetId: "bp_decal_elven_symbols_001"
+      }
+    }
+    Assets {
+      Id: 9228433102353723413
+      Name: "Decal Carved Font 01"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_carved_letters_001_ref"
       }
     }
     PrimaryAssetId {

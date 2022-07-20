@@ -1,13 +1,13 @@
 Assets {
-  Id: 209252807676211461
-  Name: "PurpleBallShrinkVFX"
+  Id: 5308787180519795264
+  Name: "GreenBallShrinkVFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6132823198539865067
+      RootId: 15732612666659607760
       Objects {
-        Id: 6132823198539865067
-        Name: "PurpleBallShrinkVFX"
+        Id: 15732612666659607760
+        Name: "GreenBallShrinkVFX"
         Transform {
           Scale {
             X: 1
@@ -16,19 +16,19 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 14045764263729246967
-        ChildIds: 7722165203173043125
+        ChildIds: 11355739836946747316
+        ChildIds: 10275101271011741132
         UnregisteredParameters {
           Overrides {
             Name: "cs:ScaleRoot"
             ObjectReference {
-              SubObjectId: 14045764263729246967
+              SubObjectId: 11355739836946747316
             }
           }
           Overrides {
             Name: "cs:PointLight"
             ObjectReference {
-              SubObjectId: 7722165203173043125
+              SubObjectId: 10275101271011741132
             }
           }
         }
@@ -56,7 +56,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14045764263729246967
+        Id: 11355739836946747316
         Name: "Ball"
         Transform {
           Location {
@@ -69,7 +69,7 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 6132823198539865067
+        ParentId: 15732612666659607760
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -80,8 +80,8 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.45
-              B: 1.8
+              G: 1.8
+              B: 0.240000188
               A: 1
             }
           }
@@ -120,7 +120,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 7722165203173043125
+        Id: 10275101271011741132
         Name: "Point Light"
         Transform {
           Location {
@@ -133,7 +133,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6132823198539865067
+        ParentId: 15732612666659607760
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -149,8 +149,8 @@ Assets {
         Light {
           Intensity: 10
           Color {
-            R: 0.500001907
-            B: 5
+            G: 5
+            B: 0.333334208
             A: 1
           }
           VolumetricIntensity: 5

@@ -15,9 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 11002928437595490801
         ChildIds: 413126257713324221
-        ChildIds: 3690201477111959564
         ChildIds: 3647014928682784410
         UnregisteredParameters {
         }
@@ -190,82 +189,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3690201477111959564
-        Name: "Secondary Attack"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: 2.04905591e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 18226393427950895041
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          IsEnabled: true
-          KeyBinding: "ability_ult"
-          CastPhaseSettings {
-            Duration: 0.6
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 0.3
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.2
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 16
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_magic_up"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:secondaryaction"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 3647014928682784410
         Name: "LocalContext"
         Transform {
@@ -306,7 +229,6 @@ Assets {
         }
         ParentId: 3647014928682784410
         ChildIds: 17204856750371083961
-        ChildIds: 11015364965358145349
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -380,58 +302,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11015364965358145349
-        Name: "AOESpawnAbilityServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7991158774493586067
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:AOEAsset"
-            AssetReference {
-              Id: 16737318897597383360
-            }
-          }
-          Overrides {
-            Name: "cs:ForwardSpawnOffset"
-            Float: 3500
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 3690201477111959564
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9967702307892939268
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 17699307794141076392
         Name: "Client Context"
         Transform {
@@ -448,7 +318,6 @@ Assets {
         }
         ParentId: 3647014928682784410
         ChildIds: 13175576264781756141
-        ChildIds: 16963142306600634779
         ChildIds: 4339855998963457602
         UnregisteredParameters {
         }
@@ -506,60 +375,6 @@ Assets {
             Name: "cs:Icon"
             AssetReference {
               Id: 10775690701242070163
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 16963142306600634779
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17699307794141076392
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 17586717826906491926
-            }
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 3690201477111959564
             }
           }
         }
@@ -810,15 +625,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Ability_Purple_033"
-      }
-    }
-    Assets {
-      Id: 17586717826906491926
-      Name: "Fantasy Ability Purple 032"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_032"
       }
     }
     Assets {

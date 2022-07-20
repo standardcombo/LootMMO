@@ -1,13 +1,13 @@
 Assets {
-  Id: 3607790562801961248
-  Name: "PurpleFireballProjectileSmall"
+  Id: 3806044205960214803
+  Name: "PinkFireballProjectileSmall"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 16316256613863683424
+      RootId: 9209367962606186447
       Objects {
-        Id: 16316256613863683424
-        Name: "PurpleFireballProjectileSmall"
+        Id: 9209367962606186447
+        Name: "PinkFireballProjectileSmall"
         Transform {
           Scale {
             X: 1
@@ -16,11 +16,11 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 5543664476789432740
-        ChildIds: 2194449405296804175
-        ChildIds: 10681555797624662938
-        ChildIds: 1972879049163831141
-        ChildIds: 16017104486636181346
+        ChildIds: 15082501101385890571
+        ChildIds: 9499362325501565920
+        ChildIds: 692500772534481205
+        ChildIds: 9710271682204085706
+        ChildIds: 4893420497401056717
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -46,7 +46,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5543664476789432740
+        Id: 15082501101385890571
         Name: "SpawnOnDestroy"
         Transform {
           Location {
@@ -60,7 +60,15 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16316256613863683424
+        ParentId: 9209367962606186447
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SpawnOnDestroy"
+            AssetReference {
+              Id: 13947548636779725957
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -84,7 +92,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2194449405296804175
+        Id: 9499362325501565920
         Name: "Ball"
         Transform {
           Location {
@@ -98,7 +106,7 @@ Assets {
             Z: 0.3
           }
         }
-        ParentId: 16316256613863683424
+        ParentId: 9209367962606186447
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -109,8 +117,8 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.45
-              B: 1.8
+              R: 1.8
+              B: 0.659999371
               A: 1
             }
           }
@@ -148,7 +156,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10681555797624662938
+        Id: 692500772534481205
         Name: "Fire and Flame Burning Loop Set 01 SFX"
         Transform {
           Location {
@@ -161,7 +169,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16316256613863683424
+        ParentId: 9209367962606186447
         UnregisteredParameters {
           Overrides {
             Name: "bp:Type"
@@ -198,7 +206,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1972879049163831141
+        Id: 9710271682204085706
         Name: "Point Light"
         Transform {
           Location {
@@ -212,7 +220,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16316256613863683424
+        ParentId: 9209367962606186447
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -227,8 +235,8 @@ Assets {
         Light {
           Intensity: 10
           Color {
-            R: 0.500001907
-            B: 5
+            R: 5
+            B: 0.0833320618
             A: 1
           }
           VolumetricIntensity: 5
@@ -257,7 +265,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16017104486636181346
+        Id: 4893420497401056717
         Name: "Magic Projectile VFX"
         Transform {
           Location {
@@ -270,7 +278,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16316256613863683424
+        ParentId: 9209367962606186447
         UnregisteredParameters {
           Overrides {
             Name: "bp:ColorB"
@@ -287,16 +295,16 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              R: 0.625004768
-              B: 15
+              R: 15
+              B: 6.99999332
               A: 1
             }
           }
           Overrides {
             Name: "bp:Secondary Color"
             Color {
-              R: 0.750000477
-              B: 5
+              R: 5
+              B: 2.66666412
               A: 1
             }
           }

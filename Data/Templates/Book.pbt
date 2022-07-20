@@ -17,7 +17,6 @@ Assets {
         }
         ParentId: 11002928437595490801
         ChildIds: 10795766514158492963
-        ChildIds: 12096268072727033709
         ChildIds: 17737520260251820957
         UnregisteredParameters {
         }
@@ -38,16 +37,16 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 3607790562801961248
+              Id: 18419566054016018930
             }
             MuzzleFlashAssetRef {
-              Id: 12412596681710817044
+              Id: 15896015469914509465
             }
             TrailAssetRef {
               Id: 9023864673320310867
             }
             ImpactAssetRef {
-              Id: 4093533104082016647
+              Id: 1653371173634367754
             }
             UseReticle: true
             Muzzle {
@@ -75,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 6809355319754973972
+              Id: 16594282996812392491
             }
             ReticleType {
               Value: "mc:ereticletype:none"
@@ -190,82 +189,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12096268072727033709
-        Name: "Secondary Attack"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: 2.04905591e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14033755759061308699
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          IsEnabled: true
-          KeyBinding: "ability_ult"
-          CastPhaseSettings {
-            Duration: 0.6
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 0.3
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.2
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 16
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_magic_up"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:secondaryaction"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 17737520260251820957
         Name: "LocalContext"
         Transform {
@@ -306,7 +229,6 @@ Assets {
         }
         ParentId: 17737520260251820957
         ChildIds: 8837143718029923600
-        ChildIds: 4894640315801583269
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -380,58 +302,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4894640315801583269
-        Name: "AOESpawnAbilityServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14022348584990152845
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:AOEAsset"
-            AssetReference {
-              Id: 16737318897597383360
-            }
-          }
-          Overrides {
-            Name: "cs:ForwardSpawnOffset"
-            Float: 3500
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 12096268072727033709
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9967702307892939268
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 12598683513145361947
         Name: "Client Context"
         Transform {
@@ -448,7 +318,6 @@ Assets {
         }
         ParentId: 17737520260251820957
         ChildIds: 1071681442081926185
-        ChildIds: 2609779878541916334
         ChildIds: 5920895666931999875
         UnregisteredParameters {
         }
@@ -506,60 +375,6 @@ Assets {
             Name: "cs:Icon"
             AssetReference {
               Id: 10775690701242070163
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2609779878541916334
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12598683513145361947
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 17586717826906491926
-            }
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 12096268072727033709
             }
           }
         }
@@ -689,15 +504,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Ability_Purple_033"
-      }
-    }
-    Assets {
-      Id: 17586717826906491926
-      Name: "Fantasy Ability Purple 032"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_032"
       }
     }
     Assets {

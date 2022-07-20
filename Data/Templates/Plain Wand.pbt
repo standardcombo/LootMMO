@@ -1,13 +1,13 @@
 Assets {
-  Id: 17055893472154878672
-  Name: "Bone Wand"
+  Id: 1648597042611263724
+  Name: "Plain Wand"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9901109355884061414
+      RootId: 9126203374417609094
       Objects {
-        Id: 9901109355884061414
-        Name: "Bone Wand"
+        Id: 9126203374417609094
+        Name: "Plain Wand"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,8 @@ Assets {
           }
         }
         ParentId: 11002928437595490801
-        ChildIds: 8083221244245278106
-        ChildIds: 4586392851123864366
+        ChildIds: 9794302215199350522
+        ChildIds: 13291275929647924181
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -37,10 +37,10 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 3806044205960214803
+              Id: 11342239295631167250
             }
             MuzzleFlashAssetRef {
-              Id: 4871977335085048357
+              Id: 14938384217879607107
             }
             TrailAssetRef {
               Id: 9023864673320310867
@@ -63,7 +63,7 @@ Assets {
             }
             ShootAnimation: "2hand_rifle_shoot"
             ImpactProjectileAssetRef {
-              Id: 5852617607976019891
+              Id: 2758744785506240642
             }
             BeamAssetRef {
               Id: 841534158063459245
@@ -73,7 +73,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 17377690518078003600
+              Id: 2731170286348851048
             }
             ReticleType {
               Value: "mc:ereticletype:none"
@@ -92,7 +92,7 @@ Assets {
             SpreadMax: 2
             SpreadDecreaseSpeed: 8
             DefaultAbility {
-              SubObjectId: 8083221244245278106
+              SubObjectId: 9794302215199350522
             }
             ReloadAbility {
             }
@@ -104,7 +104,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8083221244245278106
+        Id: 9794302215199350522
         Name: "Basic Attack"
         Transform {
           Location {
@@ -117,7 +117,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9901109355884061414
+        ParentId: 9126203374417609094
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -188,7 +188,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4586392851123864366
+        Id: 13291275929647924181
         Name: "LocalContext"
         Transform {
           Location {
@@ -201,9 +201,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9901109355884061414
-        ChildIds: 15046879020073122829
-        ChildIds: 9238699678144792207
+        ParentId: 9126203374417609094
+        ChildIds: 2056707926547586406
+        ChildIds: 8644504957882476015
         WantsNetworking: true
         NetworkContext {
           Type: Local
@@ -213,7 +213,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15046879020073122829
+        Id: 2056707926547586406
         Name: "ServerContext"
         Transform {
           Location {
@@ -226,8 +226,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4586392851123864366
-        ChildIds: 11810730755910875658
+        ParentId: 13291275929647924181
+        ChildIds: 17754197353409754037
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -249,7 +249,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11810730755910875658
+        Id: 17754197353409754037
         Name: "DestructibleWeaponServer"
         Transform {
           Location {
@@ -262,7 +262,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15046879020073122829
+        ParentId: 2056707926547586406
         UnregisteredParameters {
           Overrides {
             Name: "cs:DamageToObjects"
@@ -301,13 +301,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9238699678144792207
+        Id: 8644504957882476015
         Name: "Client Context"
         Transform {
           Location {
           }
           Rotation {
-            Yaw: -36.1845
           }
           Scale {
             X: 1
@@ -315,8 +314,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4586392851123864366
-        ChildIds: 5308797044881769317
+        ParentId: 13291275929647924181
+        ChildIds: 2791699928029204304
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -342,28 +341,26 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5308797044881769317
+        Id: 2791699928029204304
         Name: "Magic Staff"
         Transform {
           Location {
-            X: -3.83799314
-            Y: 0.000109523535
-            Z: 15.8408203
+            Z: 28.396
           }
           Rotation {
-            Yaw: -6.74981689
           }
           Scale {
-            X: 0.109917767
-            Y: 0.109917767
-            Z: 0.109917767
+            X: 0.0754625946
+            Y: 0.0754625946
+            Z: 0.0754625946
           }
         }
-        ParentId: 9238699678144792207
-        ChildIds: 15205763999552872246
-        ChildIds: 4530259554708720867
-        ChildIds: 1560120437709966329
-        ChildIds: 17472060044579823531
+        ParentId: 8644504957882476015
+        ChildIds: 15333787781196113991
+        ChildIds: 17428361229297197967
+        ChildIds: 12866903953169148315
+        ChildIds: 5359440763156360408
+        ChildIds: 4119446727935849299
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -384,25 +381,317 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15205763999552872246
-        Name: "Bone Human Skull 01"
+        Id: 15333787781196113991
+        Name: "Body"
         Transform {
           Location {
-            X: -3.23938942
-            Y: 0.0123292934
-            Z: 356.027863
+            Z: -593.449036
           }
           Rotation {
-            Yaw: -90
-            Roll: -16.208252
           }
           Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
+            X: 0.85
+            Y: 0.85
+            Z: 20.0757713
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 2791699928029204304
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 8577311143671657918
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:utile"
+            Float: 0.16092065
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:vtile"
+            Float: 7.08957434
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.0599999428
+              G: 0.0377999619
+              B: 0.0377999619
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 3255814708276840062
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          DisableReceiveDecals: true
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17428361229297197967
+        Name: "Gem - Diamond 8-Sided Polished"
+        Transform {
+          Location {
+            Z: 483.519958
+          }
+          Rotation {
+            Yaw: -30.0000324
+            Roll: -179.999954
+          }
+          Scale {
+            X: 1.2986604
+            Y: 1.29866731
+            Z: 3.77520323
+          }
+        }
+        ParentId: 2791699928029204304
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 8773975753237380078
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 0.256291062
+              B: 0.9
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 13831380095466182764
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          DisableCastShadows: true
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 12866903953169148315
+        Name: "Snow Volume VFX"
+        Transform {
+          Location {
+            Z: 549.32605
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -90.000061
+          }
+          Scale {
+            X: 6.62580252
+            Y: 6.6258
+            Z: 9.98296833
+          }
+        }
+        ParentId: 2791699928029204304
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.5
+              G: 1
+              B: 0.602649
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 0.165559053
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 1.527426
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 5.87960386
+          }
+          Overrides {
+            Name: "bp:Volume Color"
+            Color {
+              R: 1
+              G: 0.96
+              B: 0.96
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Volume Type"
+            Enum {
+              Value: "mc:evfxvolumetype:2"
+            }
+          }
+          Overrides {
+            Name: "bp:Curl Offset"
+            Vector {
+              X: 20
+              Y: 15
+              Z: 10
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 2950605510214515591
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5359440763156360408
+        Name: "Point Light"
+        Transform {
+          Location {
+            Z: 512.500366
+          }
+          Rotation {
+          }
+          Scale {
+            X: 19.8773956
+            Y: 19.8773956
+            Z: 19.8773956
+          }
+        }
+        ParentId: 2791699928029204304
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 2
+          Color {
+            G: 0.449602425
+            B: 0.929999948
+            A: 1
+          }
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 300
+              PointLight {
+                SourceRadius: 20
+                SoftSourceRadius: 20
+                FallOffExponent: 8
+                UseFallOffExponent: true
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
+          ShadowBias: 0.4
+          ShadowSlopeBias: 0.6
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 4119446727935849299
+        Name: "Fantasy Staff Guard 02"
+        Transform {
+          Location {
+            Z: 354.800537
+          }
+          Rotation {
+          }
+          Scale {
+            X: 13.2515984
+            Y: 13.2515984
+            Z: 13.2515984
+          }
+        }
+        ParentId: 2791699928029204304
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -417,7 +706,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 11594524757616528940
+            Id: 5553060217134528479
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -439,199 +728,50 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
-      Objects {
-        Id: 4530259554708720867
-        Name: "Bone Human Spine 01"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: -90
-          }
-          Scale {
-            X: 6.39844656
-            Y: 6.39844656
-            Z: 6.39844656
-          }
-        }
-        ParentId: 5308797044881769317
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14322091523152053562
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1560120437709966329
-        Name: "Point Light"
-        Transform {
-          Location {
-            X: 87.128067
-            Y: -31.4846478
-            Z: 422.865814
-          }
-          Rotation {
-            Pitch: 16.208004
-          }
-          Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
-          }
-        }
-        ParentId: 5308797044881769317
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 1
-            B: 0.166666508
-            A: 1
-          }
-          VolumetricIntensity: 5
-          TeamSettings {
-          }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
-          }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 17472060044579823531
-        Name: "Point Light"
-        Transform {
-          Location {
-            X: 87.1329727
-            Y: 31.4825268
-            Z: 422.865814
-          }
-          Rotation {
-            Pitch: 16.208004
-          }
-          Scale {
-            X: 6.39844561
-            Y: 6.39844561
-            Z: 6.39844561
-          }
-        }
-        ParentId: 5308797044881769317
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 1
-            B: 0.166666508
-            A: 1
-          }
-          VolumetricIntensity: 5
-          TeamSettings {
-          }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
-          }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
     }
     Assets {
-      Id: 11594524757616528940
-      Name: "Bone Human Skull 01"
+      Id: 3255814708276840062
+      Name: "Cone - Truncated"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_bones_human_skull_01_ref"
+        AssetId: "sm_cone_truncated_001"
       }
     }
     Assets {
-      Id: 14322091523152053562
-      Name: "Bone Human Spine 01"
+      Id: 8577311143671657918
+      Name: "Wood Planks White"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_wood_planks_white_001_uv"
+      }
+    }
+    Assets {
+      Id: 13831380095466182764
+      Name: "Gem - Diamond 8-Sided Polished"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_bones_human_spine_01_ref"
+        AssetId: "sm_diamond_8_sided_polished_001"
+      }
+    }
+    Assets {
+      Id: 2950605510214515591
+      Name: "Snow Volume VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_snow_volume"
+      }
+    }
+    Assets {
+      Id: 5553060217134528479
+      Name: "Fantasy Staff Guard 02"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_guard_staff_002"
       }
     }
     PrimaryAssetId {
@@ -640,5 +780,4 @@ Assets {
     }
   }
   SerializationVersion: 118
-  VirtualFolderPath: "Weapons"
 }

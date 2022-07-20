@@ -105,12 +105,12 @@ Assets {
       }
     }
     Assets {
-      Id: 8192909489262568094
-      Name: "Fantasy Staff 012"
+      Id: 14007596508070034618
+      Name: "Fantasy Staff 029"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Weapon_Staff_012"
+        AssetId: "UI_Fantasy_Weapon_Staff_029"
       }
     }
     Assets {
