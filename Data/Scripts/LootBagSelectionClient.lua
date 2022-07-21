@@ -30,7 +30,24 @@ local COLLECTIONS = {
 local TEST_TOKEN_IDS = {
 	"136", -- Genesis Adventurers
 	"1", -- Loot (for Adventurers)
-	"8001", -- More Loot
+	{ -- More Loot
+	"120901", -- (Warhammer)
+	"205360", -- (Quarterstaff)
+	"335391", -- (Maul)
+	"513627", -- (Mace)
+	"603886", -- (Club)
+	"912983", -- (Katana)
+	"637335", -- (Scimitar)
+	"763728", -- (Falchion)
+	"205358", -- (Long Sword)
+	"10728",  -- (Short Sword)
+	"205356", -- (Grimoire)
+	"27890",  -- (Tome)
+	"58058",  -- (Book)
+	"979637", -- (Ghost Wand)
+	"17873",  -- (Bone Wand)
+	"763729", -- (Wand)
+	}
 }
 
 -- Results of blockchain requests
@@ -254,7 +271,14 @@ end
 if TEST_COLLECTIONS then
 	for i,id in ipairs(COLLECTIONS) do
 		local tokenId = TEST_TOKEN_IDS[i]
-		ASYNC_BLOCKCHAIN.GetToken(id, tokenId, function(t) OnTokensLoaded({t}) end)
+		if type(tokenId) == "string" then
+			ASYNC_BLOCKCHAIN.GetToken(id, tokenId, function(t) OnTokensLoaded({t}) end)
+		else -- table
+			local params = {
+				tokenIds = tokenId
+			}
+			ASYNC_BLOCKCHAIN.GetTokens(id, params, function(t) OnTokensLoaded(t) end)
+		end
 	end
 end
 
