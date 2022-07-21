@@ -432,9 +432,8 @@ Assets {
           }
         }
         ParentId: 798874267425681073
-        ChildIds: 10001009942977749277
-        ChildIds: 1648862371606827639
-        ChildIds: 17904974332903986635
+        ChildIds: 13632245693417132450
+        ChildIds: 16338455482225606811
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -460,49 +459,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10001009942977749277
-        Name: "EquipmentSetIconClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 671482780888293216
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 7524651856908893815
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1648862371606827639
+        Id: 13632245693417132450
         Name: "AbilityScripts"
         Transform {
           Location {
@@ -516,12 +473,9 @@ Assets {
           }
         }
         ParentId: 671482780888293216
-        ChildIds: 9616619537317808162
-        ChildIds: 17800299891941007113
-        ChildIds: 16371174188331787584
-        ChildIds: 3857439884914929318
-        ChildIds: 16654360985115984244
-        ChildIds: 4190464599966395736
+        ChildIds: 10037656994104312711
+        ChildIds: 17852985239399650318
+        ChildIds: 7607710493036055915
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -540,7 +494,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9616619537317808162
+        Id: 10037656994104312711
         Name: "MeleeAbilityClient"
         Transform {
           Location {
@@ -553,7 +507,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1648862371606827639
+        ParentId: 13632245693417132450
         UnregisteredParameters {
           Overrides {
             Name: "cs:Ability"
@@ -606,7 +560,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17800299891941007113
+        Id: 17852985239399650318
         Name: "MeleeAbilityClient"
         Transform {
           Location {
@@ -619,7 +573,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1648862371606827639
+        ParentId: 13632245693417132450
         UnregisteredParameters {
           Overrides {
             Name: "cs:Ability"
@@ -673,7 +627,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16371174188331787584
+        Id: 7607710493036055915
         Name: "MeleeAbilityClient"
         Transform {
           Location {
@@ -686,7 +640,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1648862371606827639
+        ParentId: 13632245693417132450
         UnregisteredParameters {
           Overrides {
             Name: "cs:Ability"
@@ -741,152 +695,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3857439884914929318
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1648862371606827639
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 4382029622483490868
-            }
-          }
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 16654360985115984244
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1648862371606827639
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 11907369832341594158
-            }
-          }
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 4190464599966395736
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1648862371606827639
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 2104335179980032081
-            }
-          }
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 17904974332903986635
-        Name: "Geo"
+        Id: 16338455482225606811
+        Name: "MergedModel"
         Transform {
           Location {
           }
@@ -899,7 +709,6 @@ Assets {
           }
         }
         ParentId: 671482780888293216
-        ChildIds: 15721364614053920285
         ChildIds: 16098449630063700811
         ChildIds: 13483059613351690539
         ChildIds: 6254461439389578115
@@ -915,8 +724,6 @@ Assets {
         ChildIds: 15977793811371162151
         ChildIds: 8830598606090138631
         ChildIds: 3777428827502239319
-        UnregisteredParameters {
-        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -925,45 +732,16 @@ Assets {
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Folder {
-          IsGroup: true
+          Model {
+          }
         }
-        NetworkRelevanceDistance {
+        Relevance {
           Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15721364614053920285
-        Name: "Weapon Guide 2hand_sword"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17904974332903986635
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 1400052080966312718
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -986,7 +764,7 @@ Assets {
             Z: 0.562199235
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1048,7 +826,7 @@ Assets {
             Z: 0.983848691
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1106,7 +884,7 @@ Assets {
             Z: 0.562199235
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1164,7 +942,7 @@ Assets {
             Z: 0.562199235
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1222,7 +1000,7 @@ Assets {
             Z: 0.562199235
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1280,7 +1058,7 @@ Assets {
             Z: 0.562199235
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1337,7 +1115,7 @@ Assets {
             Z: 0.0562199242
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1400,7 +1178,7 @@ Assets {
             Z: 0.0449759364
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1465,7 +1243,7 @@ Assets {
             Z: 0.112439848
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1522,7 +1300,7 @@ Assets {
           Rotation {
             Pitch: 9.56226431e-05
             Yaw: -179.999802
-            Roll: 3.5858644e-05
+            Roll: 3.58586476e-05
           }
           Scale {
             X: 0.0449759364
@@ -1530,7 +1308,7 @@ Assets {
             Z: 0.0449759364
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1587,7 +1365,7 @@ Assets {
           Rotation {
             Pitch: 1.29243565
             Yaw: -94.8306
-            Roll: -90.0547943
+            Roll: -90.0547791
           }
           Scale {
             X: 0.0562199242
@@ -1595,7 +1373,7 @@ Assets {
             Z: 0.112439848
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1658,7 +1436,7 @@ Assets {
             Z: 0.674639106
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1728,7 +1506,7 @@ Assets {
             Z: 0.0281099621
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1793,7 +1571,7 @@ Assets {
             Z: 0.0843298882
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1857,7 +1635,7 @@ Assets {
             Z: 0.0281099621
           }
         }
-        ParentId: 17904974332903986635
+        ParentId: 16338455482225606811
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1914,15 +1692,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_WeaponSword"
-      }
-    }
-    Assets {
-      Id: 1400052080966312718
-      Name: "Weapon Guide 2hand_sword"
-      PlatformAssetType: 6
-      PrimaryAsset {
-        AssetType: "BlueprintAssetRef"
-        AssetId: "weapon_guide_sword_BP_ref"
       }
     }
     Assets {

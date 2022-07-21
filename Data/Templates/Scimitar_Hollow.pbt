@@ -415,7 +415,6 @@ Assets {
           }
         }
         ParentId: 7575138137073323729
-        ChildIds: 10024573777941244793
         ChildIds: 13925460266297624381
         ChildIds: 6338670759620775218
         UnregisteredParameters {
@@ -435,48 +434,6 @@ Assets {
           }
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 10024573777941244793
-        Name: "EquipmentSetIconClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14858739903868751642
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 7524651856908893815
           }
         }
         NetworkRelevanceDistance {
