@@ -37,13 +37,13 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 11342239295631167250
+              Id: 841534158063459245
             }
             MuzzleFlashAssetRef {
               Id: 14938384217879607107
             }
             TrailAssetRef {
-              Id: 9023864673320310867
+              Id: 841534158063459245
             }
             ImpactAssetRef {
               Id: 841534158063459245
@@ -63,7 +63,7 @@ Assets {
             }
             ShootAnimation: "2hand_rifle_shoot"
             ImpactProjectileAssetRef {
-              Id: 2758744785506240642
+              Id: 841534158063459245
             }
             BeamAssetRef {
               Id: 841534158063459245
@@ -73,7 +73,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 2731170286348851048
+              Id: 841534158063459245
             }
             ReticleType {
               Value: "mc:ereticletype:none"

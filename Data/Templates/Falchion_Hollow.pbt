@@ -7,7 +7,7 @@ Assets {
       RootId: 4503096759135138020
       Objects {
         Id: 4503096759135138020
-        Name: "Falchion"
+        Name: "Falchion_Hollow"
         Transform {
           Scale {
             X: 1
@@ -15,9 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5382801373363241026
+        ParentId: 4781671109827199097
         ChildIds: 14970912461694677656
         ChildIds: 13052737921108178792
+        ChildIds: 11228236756567187316
         ChildIds: 15961449111124192228
         UnregisteredParameters {
           Overrides {
@@ -343,6 +344,74 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 11228236756567187316
+        Name: "ServerContext"
+        Transform {
+          Location {
+            Z: -2.28881836e-05
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4503096759135138020
+        ChildIds: 9068760220663421854
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:high"
+        }
+      }
+      Objects {
+        Id: 9068760220663421854
+        Name: "EquipmentStanceServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11228236756567187316
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1427829216143793458
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 15961449111124192228
         Name: "ClientContext"
         Transform {
@@ -357,6 +426,7 @@ Assets {
           }
         }
         ParentId: 4503096759135138020
+        ChildIds: 10396713544321207822
         ChildIds: 4503990250855717002
         WantsNetworking: true
         Collidable_v2 {
@@ -379,6 +449,43 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:high"
         }
+      }
+      Objects {
+        Id: 10396713544321207822
+        Name: "EquipmentMeleeAttacksClient"
+        Transform {
+          Location {
+            Z: -2.28881836e-05
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15961449111124192228
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12971704803185333098
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4503990250855717002

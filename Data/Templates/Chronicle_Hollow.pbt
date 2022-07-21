@@ -7,7 +7,7 @@ Assets {
       RootId: 839242942405992323
       Objects {
         Id: 839242942405992323
-        Name: "Chronicle"
+        Name: "Chronicle_Hollow"
         Transform {
           Scale {
             X: 1
@@ -37,16 +37,16 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 3806044205960214803
+              Id: 841534158063459245
             }
             MuzzleFlashAssetRef {
               Id: 4871977335085048357
             }
             TrailAssetRef {
-              Id: 9023864673320310867
+              Id: 841534158063459245
             }
             ImpactAssetRef {
-              Id: 5852617607976019891
+              Id: 841534158063459245
             }
             UseReticle: true
             Muzzle {
@@ -74,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 17377690518078003600
+              Id: 841534158063459245
             }
             ReticleType {
               Value: "mc:ereticletype:none"

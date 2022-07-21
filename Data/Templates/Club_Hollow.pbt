@@ -7,7 +7,7 @@ Assets {
       RootId: 15742455568535793833
       Objects {
         Id: 15742455568535793833
-        Name: "Club"
+        Name: "Club_Hollow"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7487204750940224804
+        ParentId: 4781671109827199097
         ChildIds: 10209833417678124194
         ChildIds: 13044381159487096436
         ChildIds: 1555908129823661805
@@ -211,6 +211,7 @@ Assets {
           }
         }
         ParentId: 15742455568535793833
+        ChildIds: 4394773048317689473
         ChildIds: 4961100194428951573
         WantsNetworking: true
         NetworkContext {
@@ -219,6 +220,113 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:high"
         }
+      }
+      Objects {
+        Id: 4394773048317689473
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1555908129823661805
+        ChildIds: 3915444717881569636
+        ChildIds: 3689948735363501960
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3915444717881569636
+        Name: "EquipmentStanceServer"
+        Transform {
+          Location {
+            X: -21205.8418
+            Y: 15631.2627
+            Z: -2663.97021
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4394773048317689473
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1427829216143793458
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3689948735363501960
+        Name: "EquipmentAbilityChainServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4394773048317689473
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14150736440545289263
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4961100194428951573
@@ -235,6 +343,7 @@ Assets {
           }
         }
         ParentId: 1555908129823661805
+        ChildIds: 5909273039175619419
         ChildIds: 6253932501673395597
         UnregisteredParameters {
         }
@@ -253,6 +362,179 @@ Assets {
           }
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5909273039175619419
+        Name: "AbilityScripts"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4961100194428951573
+        ChildIds: 16787161096030620422
+        ChildIds: 14283011299648736938
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16787161096030620422
+        Name: "MeleeAbilityClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5909273039175619419
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 13044381159487096436
+            }
+          }
+          Overrides {
+            Name: "cs:CalibrateSwipe"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:SwipeEffect"
+            AssetReference {
+              Id: 6127107864223153877
+            }
+          }
+          Overrides {
+            Name: "cs:SwipePosition"
+            Vector {
+              X: 75
+              Z: 32.5
+            }
+          }
+          Overrides {
+            Name: "cs:SwipeRotation"
+            Rotator {
+              Pitch: -3.62
+              Yaw: 21.1
+              Roll: 179.35
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5623274323220197328
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14283011299648736938
+        Name: "MeleeAbilityClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5909273039175619419
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 10209833417678124194
+            }
+          }
+          Overrides {
+            Name: "cs:CalibrateSwipe"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:SwipeRotation"
+            Rotator {
+              Pitch: 3.9
+              Yaw: 40
+              Roll: -5.8
+            }
+          }
+          Overrides {
+            Name: "cs:SwipePosition"
+            Vector {
+              X: 30
+              Y: -50
+              Z: 5
+            }
+          }
+          Overrides {
+            Name: "cs:SwipeDelay"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:SwipeEffect"
+            AssetReference {
+              Id: 6127107864223153877
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5623274323220197328
           }
         }
         NetworkRelevanceDistance {

@@ -7,7 +7,7 @@ Assets {
       RootId: 8362154673811862221
       Objects {
         Id: 8362154673811862221
-        Name: "Tome"
+        Name: "Tome_Hollow"
         Transform {
           Scale {
             X: 1
@@ -37,16 +37,16 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 11342239295631167250
+              Id: 841534158063459245
             }
             MuzzleFlashAssetRef {
               Id: 11071604239389858770
             }
             TrailAssetRef {
-              Id: 9023864673320310867
+              Id: 841534158063459245
             }
             ImpactAssetRef {
-              Id: 2758744785506240642
+              Id: 841534158063459245
             }
             UseReticle: true
             Muzzle {
@@ -74,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 2731170286348851048
+              Id: 841534158063459245
             }
             ReticleType {
               Value: "mc:ereticletype:none"

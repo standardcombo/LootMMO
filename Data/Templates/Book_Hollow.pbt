@@ -7,7 +7,7 @@ Assets {
       RootId: 4082527076445335896
       Objects {
         Id: 4082527076445335896
-        Name: "Book"
+        Name: "Book_Hollow"
         Transform {
           Scale {
             X: 1
@@ -37,16 +37,16 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 18419566054016018930
+              Id: 841534158063459245
             }
             MuzzleFlashAssetRef {
               Id: 15896015469914509465
             }
             TrailAssetRef {
-              Id: 9023864673320310867
+              Id: 841534158063459245
             }
             ImpactAssetRef {
-              Id: 1653371173634367754
+              Id: 841534158063459245
             }
             UseReticle: true
             Muzzle {
@@ -74,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 16594282996812392491
+              Id: 841534158063459245
             }
             ReticleType {
               Value: "mc:ereticletype:none"
