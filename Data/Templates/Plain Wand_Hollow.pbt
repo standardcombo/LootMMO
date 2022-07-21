@@ -1,13 +1,13 @@
 Assets {
-  Id: 1648597042611263724
-  Name: "Plain Wand"
+  Id: 18217447972270374636
+  Name: "Plain Wand_Hollow"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9126203374417609094
+      RootId: 2042307073172166674
       Objects {
-        Id: 9126203374417609094
-        Name: "Plain Wand"
+        Id: 2042307073172166674
+        Name: "Plain Wand_Hollow"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,8 @@ Assets {
           }
         }
         ParentId: 11002928437595490801
-        ChildIds: 9794302215199350522
-        ChildIds: 13291275929647924181
+        ChildIds: 16509399170911864686
+        ChildIds: 15746110290658236993
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -92,7 +92,7 @@ Assets {
             SpreadMax: 2
             SpreadDecreaseSpeed: 8
             DefaultAbility {
-              SubObjectId: 9794302215199350522
+              SubObjectId: 16509399170911864686
             }
             ReloadAbility {
             }
@@ -104,7 +104,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9794302215199350522
+        Id: 16509399170911864686
         Name: "Basic Attack"
         Transform {
           Location {
@@ -117,7 +117,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9126203374417609094
+        ParentId: 2042307073172166674
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -188,7 +188,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13291275929647924181
+        Id: 15746110290658236993
         Name: "LocalContext"
         Transform {
           Location {
@@ -201,9 +201,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9126203374417609094
-        ChildIds: 2056707926547586406
-        ChildIds: 8644504957882476015
+        ParentId: 2042307073172166674
+        ChildIds: 1514900106047126651
         WantsNetworking: true
         NetworkContext {
           Type: Local
@@ -213,95 +212,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2056707926547586406
-        Name: "ServerContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 13291275929647924181
-        ChildIds: 17754197353409754037
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-          Type: Server
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 17754197353409754037
-        Name: "DestructibleWeaponServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 2056707926547586406
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToObjects"
-            Int: 35
-          }
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 35
-          }
-          Overrides {
-            Name: "cs:HeadshotNPCs"
-            Int: 50
-          }
-          Overrides {
-            Name: "cs:HeadshotPlayers"
-            Int: 50
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11462786613475885873
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8644504957882476015
+        Id: 1514900106047126651
         Name: "Client Context"
         Transform {
           Location {
@@ -314,8 +225,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13291275929647924181
-        ChildIds: 2791699928029204304
+        ParentId: 15746110290658236993
+        ChildIds: 4922274553548887748
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -341,7 +252,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2791699928029204304
+        Id: 4922274553548887748
         Name: "Magic Staff"
         Transform {
           Location {
@@ -355,13 +266,13 @@ Assets {
             Z: 0.0754625946
           }
         }
-        ParentId: 8644504957882476015
-        ChildIds: 15333787781196113991
-        ChildIds: 17428361229297197967
-        ChildIds: 12866903953169148315
-        ChildIds: 5359440763156360408
-        ChildIds: 4119446727935849299
-        ChildIds: 3704761895120890859
+        ParentId: 1514900106047126651
+        ChildIds: 13131929530853274067
+        ChildIds: 10605001690084080155
+        ChildIds: 15015315697790398479
+        ChildIds: 2923394783759906124
+        ChildIds: 6618677448677599943
+        ChildIds: 5153447147194252088
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -382,7 +293,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15333787781196113991
+        Id: 13131929530853274067
         Name: "Body"
         Transform {
           Location {
@@ -396,7 +307,7 @@ Assets {
             Z: 20.0757713
           }
         }
-        ParentId: 2791699928029204304
+        ParentId: 4922274553548887748
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -460,7 +371,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17428361229297197967
+        Id: 10605001690084080155
         Name: "Gem - Diamond 8-Sided Polished"
         Transform {
           Location {
@@ -476,7 +387,7 @@ Assets {
             Z: 3.77520323
           }
         }
-        ParentId: 2791699928029204304
+        ParentId: 4922274553548887748
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -527,7 +438,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12866903953169148315
+        Id: 15015315697790398479
         Name: "Snow Volume VFX"
         Transform {
           Location {
@@ -543,7 +454,7 @@ Assets {
             Z: 9.98296833
           }
         }
-        ParentId: 2791699928029204304
+        ParentId: 4922274553548887748
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -621,7 +532,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5359440763156360408
+        Id: 2923394783759906124
         Name: "Point Light"
         Transform {
           Location {
@@ -635,7 +546,7 @@ Assets {
             Z: 19.8773956
           }
         }
-        ParentId: 2791699928029204304
+        ParentId: 4922274553548887748
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -678,7 +589,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4119446727935849299
+        Id: 6618677448677599943
         Name: "Fantasy Staff Guard 02"
         Transform {
           Location {
@@ -692,15 +603,7 @@ Assets {
             Z: 13.2515984
           }
         }
-        ParentId: 2791699928029204304
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_Trim:id"
-            AssetReference {
-              Id: 14953270205001059627
-            }
-          }
-        }
+        ParentId: 4922274553548887748
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -738,15 +641,15 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3704761895120890859
+        Id: 5153447147194252088
         Name: "Fantasy Pommel 03"
         Transform {
           Location {
             Z: -735.003906
           }
           Rotation {
-            Yaw: -179.999985
-            Roll: -179.999985
+            Yaw: -179.999954
+            Roll: -179.999954
           }
           Scale {
             X: 14.0792923
@@ -754,7 +657,7 @@ Assets {
             Z: 14.0792923
           }
         }
-        ParentId: 2791699928029204304
+        ParentId: 4922274553548887748
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -860,4 +763,5 @@ Assets {
     }
   }
   SerializationVersion: 118
+  VirtualFolderPath: "Weapons"
 }

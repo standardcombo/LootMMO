@@ -40,7 +40,7 @@ Assets {
               Id: 18419566054016018930
             }
             MuzzleFlashAssetRef {
-              Id: 15896015469914509465
+              Id: 14938384217879607107
             }
             TrailAssetRef {
               Id: 9023864673320310867
@@ -365,6 +365,9 @@ Assets {
         ChildIds: 3675844018970970539
         ChildIds: 4535195566721592569
         ChildIds: 11707906141184064361
+        ChildIds: 17918098800808614923
+        ChildIds: 13983327431961075425
+        ChildIds: 5667353781302321762
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -800,7 +803,7 @@ Assets {
       }
       Objects {
         Id: 3675844018970970539
-        Name: "Plane 1m - Two Sided"
+        Name: "Leaves"
         Transform {
           Location {
             X: 1.70983148
@@ -864,7 +867,7 @@ Assets {
       }
       Objects {
         Id: 4535195566721592569
-        Name: "Plane 1m - Two Sided"
+        Name: "Leaves"
         Transform {
           Location {
             Z: 144.87764
@@ -926,7 +929,7 @@ Assets {
       }
       Objects {
         Id: 11707906141184064361
-        Name: "Plane 1m - Two Sided"
+        Name: "Leaves"
         Transform {
           Location {
             X: 1.70983148
@@ -967,6 +970,188 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 9403907716608607511
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17918098800808614923
+        Name: "Leaves"
+        Transform {
+          Location {
+            Z: -778.664429
+          }
+          Rotation {
+            Yaw: 58.7255669
+            Roll: -179.336914
+          }
+          Scale {
+            X: 1.39752102
+            Y: 1.39752352
+            Z: 1.23792458
+          }
+        }
+        ParentId: 5328641199200528104
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12014003355559678959
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 13515470150110763774
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13983327431961075425
+        Name: "Rock 03"
+        Transform {
+          Location {
+            X: -3.92355371
+            Z: -819.370239
+          }
+          Rotation {
+            Pitch: -19.8222656
+            Roll: 180
+          }
+          Scale {
+            X: 0.338088036
+            Y: 0.354142398
+            Z: 0.354142398
+          }
+        }
+        ParentId: 5328641199200528104
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6981536508008379085
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5667353781302321762
+        Name: "Urban Pipe Wrap 01"
+        Transform {
+          Location {
+            X: -1.1153537
+            Y: -0.037609823
+            Z: -812.188477
+          }
+          Rotation {
+          }
+          Scale {
+            X: 3.14862418
+            Y: 3.14862418
+            Z: 2.73838186
+          }
+        }
+        ParentId: 5328641199200528104
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.204000011
+              G: 0.129281625
+              B: 0.0946560055
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 2928617361847387870
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1050,6 +1235,24 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_torus_006"
+      }
+    }
+    Assets {
+      Id: 6981536508008379085
+      Name: "Rock 03"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_rock_generic_003"
+      }
+    }
+    Assets {
+      Id: 2928617361847387870
+      Name: "Urban Pipe Wrap 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_pipes_acc_coupling_005_ref"
       }
     }
     PrimaryAssetId {

@@ -22,6 +22,7 @@ Objects {
   ChildIds: 15290793263602586076
   ChildIds: 13017366107385807032
   ChildIds: 2709057167202234490
+  ChildIds: 2050300312396139547
   ChildIds: 7487204750940224804
   ChildIds: 5382801373363241026
   ChildIds: 11002928437595490801
@@ -150,6 +151,44 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Warrior"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2050300312396139547
+  Name: "Ideas"
+  Transform {
+    Location {
+      X: 300
+      Y: 550
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Ideas"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

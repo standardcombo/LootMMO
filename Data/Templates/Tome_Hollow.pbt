@@ -1,13 +1,13 @@
 Assets {
-  Id: 464592177448235645
-  Name: "Bone Wand_Hollow"
+  Id: 1616257693100126558
+  Name: "Tome_Hollow"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9901109355884061414
+      RootId: 8362154673811862221
       Objects {
-        Id: 9901109355884061414
-        Name: "Bone Wand_Hollow"
+        Id: 8362154673811862221
+        Name: "Tome"
         Transform {
           Scale {
             X: 1
@@ -15,9 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 8083221244245278106
-        ChildIds: 4586392851123864366
+        ParentId: 11002928437595490801
+        ChildIds: 6361661302391078578
+        ChildIds: 5750645905615986136
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -37,21 +37,22 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 841534158063459245
+              Id: 11342239295631167250
             }
             MuzzleFlashAssetRef {
-              Id: 14938384217879607107
+              Id: 11071604239389858770
             }
             TrailAssetRef {
-              Id: 841534158063459245
+              Id: 9023864673320310867
             }
             ImpactAssetRef {
-              Id: 841534158063459245
+              Id: 2758744785506240642
             }
             UseReticle: true
             Muzzle {
               Location {
-                Z: 75
+                X: 5
+                Z: 15
               }
             }
             AnimationSet: "2hand_staff_stance"
@@ -73,7 +74,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 841534158063459245
+              Id: 2731170286348851048
             }
             ReticleType {
               Value: "mc:ereticletype:none"
@@ -83,8 +84,8 @@ Assets {
             MaxAmmo: -1
             AmmoType: "resource"
             MultiShot: 1
-            ProjectileSpeed: 7000
-            ProjectileLifeSpan: 0.3
+            ProjectileSpeed: 5000
+            ProjectileLifeSpan: 0.4
             ProjectileLength: 50
             ProjectileRadius: 5
             ProjectileDrag: 0.5
@@ -92,7 +93,7 @@ Assets {
             SpreadMax: 2
             SpreadDecreaseSpeed: 8
             DefaultAbility {
-              SubObjectId: 8083221244245278106
+              SubObjectId: 6361661302391078578
             }
             ReloadAbility {
             }
@@ -104,7 +105,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8083221244245278106
+        Id: 6361661302391078578
         Name: "Basic Attack"
         Transform {
           Location {
@@ -117,7 +118,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9901109355884061414
+        ParentId: 8362154673811862221
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -134,7 +135,7 @@ Assets {
           IsEnabled: true
           KeyBinding: "ability_primary"
           CastPhaseSettings {
-            Duration: 0.027
+            Duration: 0.25
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -176,7 +177,7 @@ Assets {
               Value: "mc:eabilitysetfacing:none"
             }
           }
-          Animation: "2hand_staff_magic_bolt"
+          Animation: "unarmed_magic_bolt"
           CanBePrevented: true
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
@@ -188,7 +189,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4586392851123864366
+        Id: 5750645905615986136
         Name: "LocalContext"
         Transform {
           Location {
@@ -201,8 +202,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9901109355884061414
-        ChildIds: 9238699678144792207
+        ParentId: 8362154673811862221
+        ChildIds: 13820864801446648529
         WantsNetworking: true
         NetworkContext {
           Type: Local
@@ -212,7 +213,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9238699678144792207
+        Id: 13820864801446648529
         Name: "Client Context"
         Transform {
           Location {
@@ -226,8 +227,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4586392851123864366
-        ChildIds: 5308797044881769317
+        ParentId: 5750645905615986136
+        ChildIds: 11467392986501415087
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -253,28 +254,21 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5308797044881769317
-        Name: "Magic Staff"
+        Id: 11467392986501415087
+        Name: "Geo"
         Transform {
           Location {
-            X: -3.83799314
-            Y: 0.000109523535
-            Z: 15.8408203
           }
           Rotation {
-            Yaw: -6.74981689
           }
           Scale {
-            X: 0.109917767
-            Y: 0.109917767
-            Z: 0.109917767
+            X: 0.156287938
+            Y: 0.156287938
+            Z: 0.156287938
           }
         }
-        ParentId: 9238699678144792207
-        ChildIds: 15205763999552872246
-        ChildIds: 4530259554708720867
-        ChildIds: 1560120437709966329
-        ChildIds: 17472060044579823531
+        ParentId: 13820864801446648529
+        ChildIds: 16236727773790932626
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -295,69 +289,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15205763999552872246
-        Name: "Bone Human Skull 01"
+        Id: 16236727773790932626
+        Name: "Fantasy Book 02"
         Transform {
           Location {
-            X: -3.23938942
-            Y: 0.0123292934
-            Z: 356.027863
+            X: -60.6543732
+            Y: -76.7337112
+            Z: 61.1148491
           }
           Rotation {
-            Yaw: -90
-            Roll: -16.208252
-          }
-          Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
-          }
-        }
-        ParentId: 5308797044881769317
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 11594524757616528940
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 4530259554708720867
-        Name: "Bone Human Spine 01"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: -90
+            Pitch: 6.63431931
+            Yaw: -143.815506
+            Roll: 180
           }
           Scale {
             X: 6.39844656
@@ -365,7 +308,17 @@ Assets {
             Z: 6.39844656
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 11467392986501415087
+        ChildIds: 17411936286426373085
+        ChildIds: 1006725024586040057
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 1488667178903867229
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -380,7 +333,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 14322091523152053562
+            Id: 10688306993464757657
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -403,24 +356,44 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1560120437709966329
-        Name: "Point Light"
+        Id: 17411936286426373085
+        Name: "Decal Elven Symbols"
         Transform {
           Location {
-            X: 87.128067
-            Y: -31.4846478
-            Z: 422.865814
+            X: 4.68987894
+            Y: -6.89630175
+            Z: -2.37568784
           }
           Rotation {
-            Pitch: 16.208004
+            Pitch: -6.10073853
+            Yaw: -0.131622314
+            Roll: -90.0027466
           }
           Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
+            X: 0.0898410529
+            Y: 0.0898409933
+            Z: 0.00513599627
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 16236727773790932626
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 20
+          }
+          Overrides {
+            Name: "bp:Color Emissive"
+            Color {
+              G: 0.900662422
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 8
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -433,56 +406,47 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 1
-            B: 0.166666508
-            A: 1
+        Blueprint {
+          BlueprintAsset {
+            Id: 6289363088155023181
           }
-          VolumetricIntensity: 5
           TeamSettings {
           }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
+          DecalBP {
           }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17472060044579823531
-        Name: "Point Light"
+        Id: 1006725024586040057
+        Name: "Decal Carved Font 01"
         Transform {
           Location {
-            X: 87.1329727
-            Y: 31.4825268
-            Z: 422.865814
+            X: 4.86490488
+            Y: -8.9
+            Z: -1.81604481
           }
           Rotation {
-            Pitch: 16.208004
+            Pitch: 92.2010574
+            Yaw: -0.00726318359
+            Roll: -90
           }
           Scale {
-            X: 6.39844561
-            Y: 6.39844561
-            Z: 6.39844561
+            X: 1.10099876
+            Y: 0.708497226
+            Z: 0.1
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 16236727773790932626
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 14
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -495,54 +459,46 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 1
-            B: 0.166666508
-            A: 1
+        Blueprint {
+          BlueprintAsset {
+            Id: 9228433102353723413
           }
-          VolumetricIntensity: 5
           TeamSettings {
           }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
+          DecalBP {
           }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
     }
     Assets {
-      Id: 11594524757616528940
-      Name: "Bone Human Skull 01"
+      Id: 10688306993464757657
+      Name: "Fantasy Book 02"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_bones_human_skull_01_ref"
+        AssetId: "sm_prop_fan_book_002_ref"
       }
     }
     Assets {
-      Id: 14322091523152053562
-      Name: "Bone Human Spine 01"
-      PlatformAssetType: 1
+      Id: 6289363088155023181
+      Name: "Decal Elven Symbols"
+      PlatformAssetType: 14
       PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_bones_human_spine_01_ref"
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_elven_symbols_001"
+      }
+    }
+    Assets {
+      Id: 9228433102353723413
+      Name: "Decal Carved Font 01"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_carved_letters_001_ref"
       }
     }
     PrimaryAssetId {
