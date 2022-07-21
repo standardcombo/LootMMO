@@ -921,19 +921,12 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "MuzzleFlashId"
-          AssetReference {
-            Id: 14938384217879607107
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 17055893472154878672
     }
   }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 2421392458789523197

@@ -51,6 +51,7 @@ Objects {
     Location {
       X: 300
       Y: 550
+      Z: 50
     }
     Rotation {
     }
@@ -88,6 +89,7 @@ Objects {
   Transform {
     Location {
       X: 300
+      Z: 50
     }
     Rotation {
     }
@@ -126,6 +128,7 @@ Objects {
     Location {
       X: 300
       Y: -600
+      Z: 50
     }
     Rotation {
     }

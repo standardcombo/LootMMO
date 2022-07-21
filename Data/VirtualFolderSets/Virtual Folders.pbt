@@ -118,5 +118,14 @@ Assets {
       VirtualFolderPath: "TexasPokerTable"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Vehicles"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Vehicles"
+      VirtualFolderPath: "Dependencies"
+      PlatformAssetType: 5
+    }
   }
 }
