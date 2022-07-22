@@ -118,7 +118,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceon"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -126,7 +126,8 @@ Assets {
         Control {
           Width: -20
           Height: 100
-          UIX: 11.0747986
+          UIX: 10
+          UIY: 10
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -484,8 +485,8 @@ Assets {
               Id: 9008238566657320754
             }
             Color {
-              R: 0.65
-              G: 0.348675489
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             TeamSettings {
@@ -963,8 +964,8 @@ Assets {
               Id: 6782122311402690024
             }
             Color {
-              R: 0.791298151
-              G: 0.456411064
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             TeamSettings {
@@ -1029,7 +1030,7 @@ Assets {
             }
             Color {
               R: 0.982250869
-              G: 0.467783839
+              G: 0.520995677
               A: 1
             }
             TeamSettings {
@@ -1487,8 +1488,8 @@ Assets {
               Id: 2764905514123890102
             }
             Color {
-              R: 0.651405811
-              G: 0.351532698
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             TeamSettings {
@@ -1994,8 +1995,8 @@ Assets {
               Id: 13591847256893365151
             }
             Color {
-              R: 0.590000033
-              G: 0.304768234
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             TeamSettings {
