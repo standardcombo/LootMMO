@@ -358,10 +358,9 @@ Assets {
               Id: 14060330023043759337
             }
             Color {
-              R: 0.00749903219
-              G: 0.00913405418
-              B: 0.024157634
-              A: 0.7
+              R: 0.234550595
+              G: 0.124771841
+              A: 0.235294133
             }
             TeamSettings {
             }
@@ -490,10 +489,9 @@ Assets {
               Id: 14060330023043759337
             }
             Color {
-              R: 0.00749903172
-              G: 0.00913406
-              B: 0.024157634
-              A: 0.90196085
+              R: 0.982250869
+              G: 0.520995677
+              A: 1
             }
             TeamSettings {
             }
@@ -547,7 +545,6 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          UIY: 4
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -556,7 +553,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Text {
-            Label: "Pot:"
+            Label: "POT:"
             Color {
               R: 1
               G: 1
@@ -569,7 +566,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 8408720777229054844
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -654,7 +651,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 10737131002278560872
+              Id: 18283604462096221912
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -827,21 +824,21 @@ Assets {
       }
     }
     Assets {
-      Id: 8408720777229054844
-      Name: "Luckiest Guy"
+      Id: 11336346532215892341
+      Name: "Germania One"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "LuckiestGuyRegular_ref"
+        AssetId: "GermaniaOneRegular_ref"
       }
     }
     Assets {
-      Id: 10737131002278560872
-      Name: "Oswald Semi Bold"
+      Id: 18283604462096221912
+      Name: "Roboto Slab Black"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "OswaldSemiBold_ref"
+        AssetId: "RobotoSlabBlack_ref"
       }
     }
     PrimaryAssetId {

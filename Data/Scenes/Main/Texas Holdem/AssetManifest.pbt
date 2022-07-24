@@ -170,15 +170,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11336346532215892341
-  Name: "Germania One"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "GermaniaOneRegular_ref"
-  }
-}
-Assets {
   Id: 11162297399913732681
   Name: "Cube - Polished"
   PlatformAssetType: 1
@@ -260,15 +251,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7475179322928739309
-  Name: "Frame Beveled 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid8px_020"
-  }
-}
-Assets {
   Id: 7363477334452929865
   Name: "Sphere"
   PlatformAssetType: 1
@@ -293,15 +275,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_rope_001"
-  }
-}
-Assets {
-  Id: 5827284589467628162
-  Name: "Fantasy Ability Teal 005"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Teal_005"
   }
 }
 Assets {
@@ -383,15 +356,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ring_half_faceted_half_z_lg_001_ref"
-  }
-}
-Assets {
-  Id: 2764905514123890102
-  Name: "Frame Outlined 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid4px_020"
   }
 }
 Assets {

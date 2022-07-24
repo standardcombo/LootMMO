@@ -35,8 +35,7 @@ Assets {
         Control {
           Width: 140
           Height: 40
-          UIX: 36
-          UIY: 358.805786
+          UIY: 222
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -108,21 +107,18 @@ Assets {
             }
             FontSize: 20
             ButtonColor {
-              R: 0.000607054
-              G: 0.141263306
-              B: 0.58407861
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             HoveredColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.669
+              G: 0.289900064
               A: 1
             }
             PressedColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.585000038
+              G: 0.185250044
               A: 1
             }
             DisabledColor {
@@ -441,7 +437,6 @@ Assets {
         Control {
           Width: 200
           Height: 60
-          UIY: 1.86953878
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -462,7 +457,7 @@ Assets {
               Value: "mc:etextjustify:center"
             }
             Font {
-              Id: 8408720777229054844
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -474,8 +469,8 @@ Assets {
               Y: 1
             }
             OutlineColor {
-              G: 0.0537747554
-              B: 0.139999986
+              R: 0.136
+              G: 0.0721357316
               A: 1
             }
             OutlineSize: 1
@@ -506,12 +501,12 @@ Assets {
       }
     }
     Assets {
-      Id: 8408720777229054844
-      Name: "Luckiest Guy"
+      Id: 11336346532215892341
+      Name: "Germania One"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "LuckiestGuyRegular_ref"
+        AssetId: "GermaniaOneRegular_ref"
       }
     }
     PrimaryAssetId {

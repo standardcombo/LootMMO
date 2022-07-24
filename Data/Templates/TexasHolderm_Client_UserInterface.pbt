@@ -210,9 +210,7 @@ Assets {
           }
         }
         ParentId: 11738439416187395102
-        ChildIds: 3987167418100111340
-        ChildIds: 16917239899625329018
-        ChildIds: 4305087931336515231
+        ChildIds: 299352723392962736
         ChildIds: 551748883242624688
         ChildIds: 16519044021076646521
         ChildIds: 2992695098268632867
@@ -265,15 +263,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3987167418100111340
-        Name: "BG"
+        Id: 299352723392962736
+        Name: "BG_1"
         Transform {
           Location {
-            X: 288.918549
-            Y: 296.117493
-            Z: 95.7931061
           }
           Rotation {
+            Yaw: 1.51496542e-05
           }
           Scale {
             X: 1
@@ -291,38 +287,27 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
         Control {
-          Width: 14
-          Height: 14
+          Width: 700
+          Height: 200
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
           AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
           UseParentHeight: true
           Image {
             Brush {
-              Id: 14060330023043759337
+              Id: 48307754774318265
             }
             Color {
-              R: 0.00749903172
-              G: 0.00913406
-              B: 0.024157634
-              A: 0.90196085
+              R: 0.03
+              G: 0.00774833653
+              A: 1
             }
             TeamSettings {
             }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            ScreenshotIndex: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -337,158 +322,8 @@ Assets {
             }
           }
         }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 16917239899625329018
-        Name: "BG_Light"
-        Transform {
-          Location {
-            X: 288.918549
-            Y: 296.117493
-            Z: 95.7931061
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6889409947344839143
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: 12
-          Height: 12
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          UseParentHeight: true
-          Image {
-            Brush {
-              Id: 2014258926635376275
-            }
-            Color {
-              R: 1
-              G: 1
-              B: 1
-              A: 0.157
-            }
-            TeamSettings {
-            }
-            ShadowColor {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-            ShadowOffset {
-            }
-            ScreenshotIndex: 1
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 4305087931336515231
-        Name: "BG_Shadow"
-        Transform {
-          Location {
-            X: 288.918549
-            Y: 296.117493
-            Z: 95.7931061
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6889409947344839143
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: 14
-          Height: 14
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          UseParentHeight: true
-          Image {
-            Brush {
-              Id: 2014258926635376275
-            }
-            Color {
-              A: 1
-            }
-            TeamSettings {
-            }
-            ShadowColor {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-            ShadowOffset {
-            }
-            ScreenshotIndex: 1
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-          }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -928,7 +763,6 @@ Assets {
           }
         }
         ParentId: 14517408769735157572
-        ChildIds: 7496240733207882683
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -965,7 +799,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -988,88 +822,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 7496240733207882683
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11524574776767161533
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "ROYAL FLUSH"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -3857,7 +3609,6 @@ Assets {
           }
         }
         ParentId: 2972152926867146066
-        ChildIds: 9328537315713810128
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3894,7 +3645,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -3917,88 +3668,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9328537315713810128
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6684001888106570159
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "STRAIGHT FLUSH"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -6796,7 +6465,6 @@ Assets {
           }
         }
         ParentId: 17428373253532587067
-        ChildIds: 2260405421607081801
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6833,7 +6501,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -6856,88 +6524,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2260405421607081801
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11715010266209373713
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "FOUR OF A KIND"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -9525,7 +9111,6 @@ Assets {
           }
         }
         ParentId: 11755536823395122888
-        ChildIds: 615470049139206881
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9562,7 +9147,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -9585,88 +9170,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 615470049139206881
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11722228119205903537
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "FULL HOUSE"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -12456,7 +11959,6 @@ Assets {
           }
         }
         ParentId: 17601404855123971068
-        ChildIds: 8201055694585301448
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12493,7 +11995,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -12516,88 +12018,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8201055694585301448
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1808272334876963734
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "FLUSH"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -15398,7 +14818,6 @@ Assets {
           }
         }
         ParentId: 18187123088551906853
-        ChildIds: 11951050937408209088
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -15435,7 +14854,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -15458,88 +14877,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 11951050937408209088
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1423178734605590718
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "STRAIGHT"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -18331,7 +17668,6 @@ Assets {
           }
         }
         ParentId: 14259005751033318017
-        ChildIds: 9732837018557147808
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -18368,7 +17704,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -18391,88 +17727,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9732837018557147808
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15981202294831367767
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "THREE OF A KIND"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -20858,7 +20112,6 @@ Assets {
           }
         }
         ParentId: 3746993195643476341
-        ChildIds: 6769604134336572402
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -20895,7 +20148,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -20918,88 +20171,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6769604134336572402
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14559066962004416470
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "TWO PAIR"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -23589,7 +22760,6 @@ Assets {
           }
         }
         ParentId: 263896300433405399
-        ChildIds: 2980052002927454534
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -23626,7 +22796,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -23649,88 +22819,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2980052002927454534
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 2163794636745844120
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "PAIR"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -25916,7 +25004,6 @@ Assets {
           }
         }
         ParentId: 15263268569686341112
-        ChildIds: 1930108371806650914
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -25953,7 +25040,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -25976,88 +25063,6 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topright"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1930108371806650914
-        Name: "Title_Text_Dark"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10734115644335556017
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -50
-          Height: 8
-          UIY: -6
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Text {
-            Label: "HIGH CARD"
-            Color {
-              R: 0.658374965
-              G: 0.287440896
-              B: 0.000910581031
-              A: 1
-            }
-            Size: 11
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            ClipTextToSize: true
-            Font {
-              Id: 15530901710823689110
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:bottom"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            OutlineColor {
-              A: 1
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -37265,15 +36270,13 @@ Assets {
               A: 1
             }
             HoveredColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.67954272
+              G: 0.246201396
               A: 1
             }
             PressedColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.523
+              G: 0.165616691
               A: 1
             }
             DisabledColor {
@@ -37766,15 +36769,13 @@ Assets {
               A: 1
             }
             HoveredColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.67954272
+              G: 0.246201396
               A: 1
             }
             PressedColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.523
+              G: 0.165616691
               A: 1
             }
             DisabledColor {
@@ -38269,15 +37270,13 @@ Assets {
               A: 1
             }
             HoveredColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.67954272
+              G: 0.246201396
               A: 1
             }
             PressedColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.523
+              G: 0.165616691
               A: 1
             }
             DisabledColor {
@@ -38772,15 +37771,13 @@ Assets {
               A: 1
             }
             HoveredColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.67954272
+              G: 0.246201396
               A: 1
             }
             PressedColor {
-              R: 0.000910581031
-              G: 0.242281199
-              B: 1
+              R: 0.523
+              G: 0.165616691
               A: 1
             }
             DisabledColor {
@@ -45905,21 +44902,21 @@ Assets {
       }
     }
     Assets {
+      Id: 48307754774318265
+      Name: "UI Gradient Rectangular 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Shape_002"
+      }
+    }
+    Assets {
       Id: 14060330023043759337
       Name: "BG Flat 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "BackgroundNoOutline_020"
-      }
-    }
-    Assets {
-      Id: 2014258926635376275
-      Name: "Frame Outlined Thick 001"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "FrameFlat_020"
       }
     }
     Assets {
@@ -45932,12 +44929,12 @@ Assets {
       }
     }
     Assets {
-      Id: 15530901710823689110
-      Name: "Play Bold"
+      Id: 11336346532215892341
+      Name: "Germania One"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "PlayBold_ref"
+        AssetId: "GermaniaOneRegular_ref"
       }
     }
     Assets {
@@ -46022,6 +45019,15 @@ Assets {
       }
     }
     Assets {
+      Id: 2014258926635376275
+      Name: "Frame Outlined Thick 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "FrameFlat_020"
+      }
+    }
+    Assets {
       Id: 10399219664974086173
       Name: "BG Gradient 001"
       PlatformAssetType: 9
@@ -46037,15 +45043,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Chat"
-      }
-    }
-    Assets {
-      Id: 48307754774318265
-      Name: "UI Gradient Rectangular 001"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Basic_Shape_002"
       }
     }
     Assets {
@@ -46103,15 +45100,6 @@ Assets {
       }
     }
     Assets {
-      Id: 11336346532215892341
-      Name: "Germania One"
-      PlatformAssetType: 28
-      PrimaryAsset {
-        AssetType: "FontAssetRef"
-        AssetId: "GermaniaOneRegular_ref"
-      }
-    }
-    Assets {
       Id: 16532880832873788683
       Name: "BG Flat 002"
       PlatformAssetType: 9
@@ -46136,6 +45124,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "BackgroundHighlighted_019"
+      }
+    }
+    Assets {
+      Id: 15530901710823689110
+      Name: "Play Bold"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "PlayBold_ref"
       }
     }
     Assets {
