@@ -12233,12 +12233,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:LootIDShadow"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
       Name: "cs:LootID"
       ObjectReference {
         SelfId: 16380896464292500347
