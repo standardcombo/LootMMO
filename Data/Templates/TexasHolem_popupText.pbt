@@ -41,8 +41,7 @@ Assets {
             Label: "Text"
             Color {
               R: 1
-              G: 1
-              B: 1
+              G: 0.434153706
               A: 1
             }
             Size: 20
@@ -51,7 +50,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 841534158063459245
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -60,11 +59,12 @@ Assets {
               A: 1
             }
             ShadowOffset {
+              Y: 1
             }
             OutlineColor {
               A: 1
             }
-            OutlineSize: 2
+            OutlineSize: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -120,6 +120,15 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
+      }
+    }
+    Assets {
+      Id: 11336346532215892341
+      Name: "Germania One"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "GermaniaOneRegular_ref"
       }
     }
     PrimaryAssetId {
