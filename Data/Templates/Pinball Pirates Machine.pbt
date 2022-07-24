@@ -88,7 +88,6 @@ Assets {
         Folder {
           IsGroup: true
         }
-        IsAdvanced: true
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -25044,6 +25043,7 @@ Assets {
           }
         }
         ParentId: 2218233695318613849
+        ChildIds: 17020586671769783093
         ChildIds: 12863751096875230064
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -25080,6 +25080,73 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17020586671769783093
+        Name: "Glow"
+        Transform {
+          Location {
+            X: -0.000345266948
+            Y: 0.00103580114
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16750914041688503704
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 100
+          Height: 20
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              R: 0.982250869
+              G: 0.520995677
+              A: 0.298039228
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }
