@@ -346,14 +346,13 @@ Assets {
         Name: "MergedModel"
         Transform {
           Location {
-            X: -1.37899792
-            Y: 0.213862017
-            Z: -1.29653931
+            X: 0.671611309
+            Y: -1.19961751
+            Z: -1.32175827
           }
           Rotation {
             Pitch: 0.644134641
             Yaw: 171.18428
-            Roll: -6.67052831e-08
           }
           Scale {
             X: 1
