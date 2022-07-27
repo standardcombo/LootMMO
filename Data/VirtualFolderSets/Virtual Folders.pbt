@@ -127,5 +127,82 @@ Assets {
       VirtualFolderPath: "Dependencies"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "StatusEffects"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "StatusEffects"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Componants"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Componants"
+      VirtualFolderPath: "AbilityCycle"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Abilities"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Componants"
+      VirtualFolderPath: "CastType"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "AbilityTemplates"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Assets"
+      PlatformAssetType: 5
+    }
   }
 }
