@@ -44,12 +44,12 @@ Assets {
         Name: "Spawn Point"
         Transform {
           Location {
-            X: 451.297089
-            Y: -66.0010071
+            X: 454.06546
+            Y: -54.997303
             Z: 142.000977
           }
           Rotation {
-            Yaw: -37.6405716
+            Yaw: -37.640564
           }
           Scale {
             X: 1
@@ -75,6 +75,7 @@ Assets {
         PlayerSpawnPoint {
           TeamInt: 1
           PlayerScaleMultiplier: 1
+          SpawnKey: "BagSelection"
           SpawnEffectsTemplate {
             Id: 841534158063459245
           }
@@ -206,8 +207,8 @@ Assets {
         Name: "Third Person Camera"
         Transform {
           Location {
-            X: 734.648132
-            Y: -141.097244
+            X: 737.371643
+            Y: -120.782364
             Z: 191.693359
           }
           Rotation {
@@ -259,7 +260,7 @@ Assets {
       }
       Objects {
         Id: 9433742131407804268
-        Name: "CharacterSelectCamera"
+        Name: "BagSelectionCameraScript"
         Transform {
           Location {
           }

@@ -2236,24 +2236,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7178602346230973161
-      value {
-        Overrides {
-          Name: "PlayerStart.SpawnKey"
-          String: "BagSelection"
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 9433742131407804268
-      value {
-        Overrides {
-          Name: "Name"
-          String: "BagSelectionCameraScript"
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 12295150610950578052
       value {
         Overrides {

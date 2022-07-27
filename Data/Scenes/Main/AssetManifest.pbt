@@ -21,6 +21,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17440982127418626575
+  Name: "Frame Tri 001 Wedge"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameTri_001Wedge"
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
+  }
+}
+Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
@@ -83,6 +101,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16259713446874198849
+  Name: "Military Frame 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Frame_006"
+  }
+}
+Assets {
   Id: 15969669977645369301
   Name: "SERVERXPBOOST"
   PlatformAssetType: 24
@@ -118,6 +145,24 @@ Assets {
   }
 }
 Assets {
+  Id: 15822423868574331112
+  Name: "Fantasy Glove 013"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Glove_013"
+  }
+}
+Assets {
+  Id: 15799788021255199994
+  Name: "Fantasy Jewelry 022"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_022"
+  }
+}
+Assets {
   Id: 15329646696100681115
   Name: "JewelPack1"
   PlatformAssetType: 24
@@ -141,6 +186,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 15204381781527651531
+  Name: "Line Full 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "LineFull_003"
   }
 }
 Assets {
@@ -172,6 +226,24 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 15111121232164291161
+  Name: "Triangle Sign"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Racing_Icon_023"
+  }
+}
+Assets {
+  Id: 14950569642219201732
+  Name: "Humanoid 2 Peasant Shirt"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_upper_fantasy_000_ref_temp"
   }
 }
 Assets {
@@ -210,12 +282,57 @@ Assets {
   }
 }
 Assets {
+  Id: 14060330023043759337
+  Name: "BG Flat 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_020"
+  }
+}
+Assets {
+  Id: 14002637459053075183
+  Name: "4 Point Star"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_SciFI_Icon_020"
+  }
+}
+Assets {
   Id: 13800436588944964225
   Name: "Bush 02"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bush_generic_002"
+  }
+}
+Assets {
+  Id: 13567574230979684662
+  Name: "Fantasy Belt 014"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Belt_014"
+  }
+}
+Assets {
+  Id: 13462854128336502995
+  Name: "Center Circle 001 Outline"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterCircle_001Outline"
+  }
+}
+Assets {
+  Id: 13435556322344654088
+  Name: "UI Basic Shape Triangle"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_Triangle"
   }
 }
 Assets {
@@ -232,6 +349,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12978135121763375046
+  Name: "Fantasy Craft Stone 028"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Stone_028"
+  }
+}
+Assets {
   Id: 12913628546500597405
   Name: "Premium 1"
   PlatformAssetType: 24
@@ -242,6 +368,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 12903613763615525878
+  Name: "Fantasy Gear Head 010"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Head_010"
   }
 }
 Assets {
@@ -293,6 +428,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11726854071015571091
+  Name: "Fantasy Craft Crystal 042"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_042"
+  }
+}
+Assets {
   Id: 11588052875130059778
   Name: "SELFXPBOOST"
   PlatformAssetType: 24
@@ -303,6 +447,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 11569271256789181933
+  Name: "Fantasy Craft Crystal 005"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_005"
   }
 }
 Assets {
@@ -325,6 +478,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Skylight"
+  }
+}
+Assets {
+  Id: 11336346532215892341
+  Name: "Germania One"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "GermaniaOneRegular_ref"
   }
 }
 Assets {
@@ -394,6 +556,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9622238984041529954
+  Name: "Fantasy Boot 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Boot_006"
+  }
+}
+Assets {
   Id: 9360906347466037585
   Name: "Self Boost Gold"
   PlatformAssetType: 24
@@ -433,6 +604,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9008238566657320754
+  Name: "Sci-fi Frame 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_SciFi_Frame_006"
+  }
+}
+Assets {
   Id: 8912770877519493962
   Name: "Screen Space Reflection Post Process"
   PlatformAssetType: 6
@@ -465,6 +645,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 8610717168075075089
+  Name: "Survival Ring 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Survival_Equip_Ring_001"
   }
 }
 Assets {
@@ -508,6 +697,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7845803738723290617
+  Name: "Humanoid 2 Kamil"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_basic_007_ref"
+  }
+}
+Assets {
   Id: 7683608552441739235
   Name: "JewelPack2"
   PlatformAssetType: 24
@@ -518,6 +716,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 7615847344375253670
+  Name: "UI Basic Frame 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Frame_001"
   }
 }
 Assets {
@@ -540,6 +747,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_003"
+  }
+}
+Assets {
+  Id: 6724534832103276994
+  Name: "BG Flat 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_015"
   }
 }
 Assets {
@@ -569,6 +785,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5906388625174322798
+  Name: "Fantasy Gear Top 010"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Top_010"
+  }
+}
+Assets {
   Id: 5903239611249009820
   Name: "GoldPack2"
   PlatformAssetType: 24
@@ -592,6 +817,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 5534966918476805443
+  Name: "Fantasy Sword 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Weapon_Sword_001"
   }
 }
 Assets {
@@ -682,6 +916,24 @@ Assets {
   }
 }
 Assets {
+  Id: 3483798833601977176
+  Name: "Fantasy Shape 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Shape_003"
+  }
+}
+Assets {
+  Id: 3436198721449977543
+  Name: "Fantasy Craft Crystal 009"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_009"
+  }
+}
+Assets {
   Id: 2920556432021751741
   Name: "Vignette Grain Post Process"
   PlatformAssetType: 6
@@ -691,12 +943,39 @@ Assets {
   }
 }
 Assets {
+  Id: 2604353830693238371
+  Name: "BG Highlighted 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundHighlighted_020"
+  }
+}
+Assets {
+  Id: 2304171879981945904
+  Name: "Humanoid 2 Peasant Pants"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_lower_fantasy_000_ref"
+  }
+}
+Assets {
   Id: 2224571462023946700
   Name: "Environment Fog Default VFX"
   PlatformAssetType: 6
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_env_fog_default"
+  }
+}
+Assets {
+  Id: 2182215656788171490
+  Name: "Fantasy Craft Crystal 015"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_015"
   }
 }
 Assets {
@@ -723,6 +1002,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 1046635934407451220
+  Name: "Fantasy Craft Crystal 018"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_018"
   }
 }
 Assets {
@@ -780,5 +1068,14 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_foliage_gen_leafy_bush_002"
+  }
+}
+Assets {
+  Id: 48307754774318265
+  Name: "UI Gradient Rectangular 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_002"
   }
 }
