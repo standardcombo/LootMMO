@@ -2304,13 +2304,13 @@ Objects {
   }
   Control {
     Width: 467
+    Height: 200
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     AddSizeToParentIfUsingParentSize: true
-    UseParentHeight: true
     Panel {
       Opacity: 1
     }
@@ -5086,9 +5086,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 720
+    UIX: 15
+    UIY: 714
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5170,9 +5171,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 620
+    UIX: 15
+    UIY: 614
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5254,9 +5256,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 520
+    UIX: 15
+    UIY: 514
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5338,9 +5341,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 420
+    UIX: 15
+    UIY: 414
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5422,9 +5426,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 320
+    UIX: 15
+    UIY: 314
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5506,9 +5511,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 220
+    UIX: 15
+    UIY: 214
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5590,9 +5596,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 120
+    UIX: 15
+    UIY: 114
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5674,9 +5681,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 300
+    Width: 340
     Height: 60
-    UIY: 20
+    UIX: 15
+    UIY: 14
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -6448,13 +6456,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 14432093458167740677
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -7285,13 +7290,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 12036133539530744069
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -8122,13 +8124,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 9690905488522305099
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -8959,13 +8958,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 4517909308155825410
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -9796,13 +9792,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 17568965019702474508
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -10633,13 +10626,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 17752702521577453302
+        Id: 1281351767004184340
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -11470,13 +11460,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 3390135657390988868
+        Id: 12385328426085025461
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }
@@ -12306,13 +12293,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
-        Id: 5335018611359149694
+        Id: 15201232689808388272
       }
       Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
+        A: 0.332000017
       }
       TeamSettings {
       }

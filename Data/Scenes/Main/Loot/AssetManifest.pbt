@@ -8,12 +8,12 @@ Assets {
   }
 }
 Assets {
-  Id: 17752702521577453302
-  Name: "Fantasy Ability Yellow 027"
+  Id: 17568965019702474508
+  Name: "Rope"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Yellow_027"
+    AssetId: "UI_Military_Icon_030"
   }
 }
 Assets {
@@ -53,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15201232689808388272
+  Name: "Icon Weapon Sword"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_WeaponSword"
+  }
+}
+Assets {
   Id: 15165554833363844727
   Name: "Amarante"
   PlatformAssetType: 28
@@ -68,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Racing_Icon_023"
+  }
+}
+Assets {
+  Id: 14432093458167740677
+  Name: "Ring"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Ring"
   }
 }
 Assets {
@@ -116,6 +134,24 @@ Assets {
   }
 }
 Assets {
+  Id: 12385328426085025461
+  Name: "Chest Piece"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_ChestPiece"
+  }
+}
+Assets {
+  Id: 12036133539530744069
+  Name: "Award"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Icon_036"
+  }
+}
+Assets {
   Id: 11726854071015571091
   Name: "Fantasy Craft Crystal 042"
   PlatformAssetType: 9
@@ -140,6 +176,15 @@ Assets {
   PrimaryAsset {
     AssetType: "FontAssetRef"
     AssetId: "GermaniaOneRegular_ref"
+  }
+}
+Assets {
+  Id: 9690905488522305099
+  Name: "Icon Fist"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Fist"
   }
 }
 Assets {
@@ -179,12 +224,12 @@ Assets {
   }
 }
 Assets {
-  Id: 5335018611359149694
-  Name: "Fantasy Axe 007"
+  Id: 4517909308155825410
+  Name: "Boot"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Weapon_Axe_007"
+    AssetId: "UI_Fantasy_Icon_Boot"
   }
 }
 Assets {
@@ -203,15 +248,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Crafting_Crystal_009"
-  }
-}
-Assets {
-  Id: 3390135657390988868
-  Name: "Fantasy Spell Potion 002"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Potion_002"
   }
 }
 Assets {
@@ -248,6 +284,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Crafting_Crystal_015"
+  }
+}
+Assets {
+  Id: 1281351767004184340
+  Name: "Helm"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Helm"
   }
 }
 Assets {

@@ -81,6 +81,7 @@ function EquipLoot(lootBag)
 		table.insert(definitions, def)
 		
 		itemImages[i]:SetImage(def.icon)
+		itemImages[i]:SetColor(Color.WHITE)
 		
 		itemTexts[i].text = item.fullName
 		
