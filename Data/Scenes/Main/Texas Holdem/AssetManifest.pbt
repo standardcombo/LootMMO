@@ -170,15 +170,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10737131002278560872
-  Name: "Oswald Semi Bold"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "OswaldSemiBold_ref"
-  }
-}
-Assets {
   Id: 10399219664974086173
   Name: "BG Gradient 001"
   PlatformAssetType: 9
@@ -206,24 +197,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10067297865473811114
-  Name: "Center Circle 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterCircle_001"
-  }
-}
-Assets {
-  Id: 8578995028087510781
-  Name: "UI Gradient Circular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_001"
-  }
-}
-Assets {
   Id: 8491637729159278191
   Name: "Metal 9 Slice Lockers 01"
   PlatformAssetType: 2
@@ -248,15 +221,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_sphere_002"
-  }
-}
-Assets {
-  Id: 6724534832103276994
-  Name: "BG Flat 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_015"
   }
 }
 Assets {

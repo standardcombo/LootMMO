@@ -37,7 +37,7 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 3607790562801961248
+              Id: 3806044205960214803
             }
             MuzzleFlashAssetRef {
               Id: 14938384217879607107
@@ -46,7 +46,7 @@ Assets {
               Id: 9023864673320310867
             }
             ImpactAssetRef {
-              Id: 4093533104082016647
+              Id: 841534158063459245
             }
             UseReticle: true
             Muzzle {
@@ -63,7 +63,7 @@ Assets {
             }
             ShootAnimation: "2hand_rifle_shoot"
             ImpactProjectileAssetRef {
-              Id: 841534158063459245
+              Id: 5852617607976019891
             }
             BeamAssetRef {
               Id: 841534158063459245
@@ -73,7 +73,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 6809355319754973972
+              Id: 17377690518078003600
             }
             ReticleType {
               Value: "mc:ereticletype:none"
@@ -99,7 +99,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -183,7 +183,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -208,7 +208,9 @@ Assets {
         NetworkContext {
           Type: Local
         }
-        IsReplicationEnabledByDefault: true
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 15046879020073122829
@@ -314,7 +316,7 @@ Assets {
           }
         }
         ParentId: 4586392851123864366
-        ChildIds: 5308797044881769317
+        ChildIds: 8972377356310831894
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -340,32 +342,31 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5308797044881769317
-        Name: "Magic Staff"
+        Id: 8972377356310831894
+        Name: "MergedModel"
         Transform {
           Location {
-            X: -3.83799314
-            Y: 0.000109523535
-            Z: 15.8408203
+            X: 0.671611309
+            Y: -1.19961751
+            Z: -1.32175827
           }
           Rotation {
-            Yaw: -6.74981689
+            Pitch: 0.644134641
+            Yaw: 171.18428
           }
           Scale {
-            X: 0.109917767
-            Y: 0.109917767
-            Z: 0.109917767
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 9238699678144792207
-        ChildIds: 15205763999552872246
-        ChildIds: 4530259554708720867
-        ChildIds: 1560120437709966329
-        ChildIds: 17472060044579823531
-        UnregisteredParameters {
-        }
+        ChildIds: 620189423001956460
+        ChildIds: 11635017901928504944
+        ChildIds: 17525357563907787731
+        ChildIds: 9390507508716847431
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -373,8 +374,15 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
         Folder {
-          IsGroup: true
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -382,25 +390,26 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15205763999552872246
-        Name: "Bone Human Skull 01"
+        Id: 620189423001956460
+        Name: "Bone Human Femur 01"
         Transform {
           Location {
-            X: -3.23938942
-            Y: 0.0123292934
-            Z: 356.027863
+            X: 1.35478401
+            Y: -0.0187687874
+            Z: -2.25566328e-06
           }
           Rotation {
-            Yaw: -90
-            Roll: -16.208252
+            Pitch: 5.28356791
+            Yaw: -179.999985
+            Roll: -179.999954
           }
           Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
+            X: 0.521660089
+            Y: 0.521660089
+            Z: 0.521660089
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 8972377356310831894
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -415,7 +424,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 11594524757616528940
+            Id: 1338166724888536493
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -438,21 +447,25 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4530259554708720867
+        Id: 11635017901928504944
         Name: "Bone Human Spine 01"
         Transform {
           Location {
+            X: -0.0356275439
+            Y: -0.0187971
+            Z: 35.925705
           }
           Rotation {
-            Yaw: -90
+            Yaw: -89.9999924
+            Roll: -3.21173167
           }
           Scale {
-            X: 6.39844656
-            Y: 6.39844656
-            Z: 6.39844656
+            X: 0.352931142
+            Y: 0.4122307
+            Z: 0.499153107
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 8972377356310831894
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -490,24 +503,38 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1560120437709966329
-        Name: "Point Light"
+        Id: 17525357563907787731
+        Name: "Clay Form 18"
         Transform {
           Location {
-            X: 87.128067
-            Y: -31.4846478
-            Z: 422.865814
+            X: -0.0629440248
+            Y: 0.057613492
+            Z: 66.210228
           }
           Rotation {
-            Pitch: 16.208004
+            Pitch: -11.4997501
+            Yaw: -179.999954
+            Roll: 176.958725
           }
           Scale {
-            X: 6.39844322
-            Y: 6.39844322
-            Z: 6.39844322
+            X: 0.0279912706
+            Y: 0.0263884608
+            Z: 0.0369194262
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 8972377356310831894
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 10373577859092754191
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -520,31 +547,24 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 0.657483459
-            B: 0.679999948
-            A: 1
+        CoreMesh {
+          MeshAsset {
+            Id: 4742343644533370028
           }
-          VolumetricIntensity: 5
-          TeamSettings {
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
           }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
+            BoundsScale: 1
           }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -552,24 +572,38 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17472060044579823531
-        Name: "Point Light"
+        Id: 9390507508716847431
+        Name: "Clay Form 02"
         Transform {
           Location {
-            X: 87.1329727
-            Y: 31.4825268
-            Z: 422.865814
+            X: -1.14193761
+            Y: -0.0200977325
+            Z: 69.2172775
           }
           Rotation {
-            Pitch: 16.208004
+            Pitch: 14.490922
+            Yaw: 2.40491299e-05
+            Roll: -3.85083808e-07
           }
           Scale {
-            X: 6.39844561
-            Y: 6.39844561
-            Z: 6.39844561
+            X: 0.0272461697
+            Y: 0.0344435386
+            Z: 0.0764693096
           }
         }
-        ParentId: 5308797044881769317
+        ParentId: 8972377356310831894
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 5958878754776095236
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -582,31 +616,24 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Light {
-          Intensity: 0.0414328575
-          Color {
-            R: 0.657483459
-            B: 0.679999948
-            A: 1
+        CoreMesh {
+          MeshAsset {
+            Id: 5794111049191083808
           }
-          VolumetricIntensity: 5
-          TeamSettings {
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
           }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-              }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
+            BoundsScale: 1
           }
-          ShadowBias: 0.4
-          ShadowSlopeBias: 0.6
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -615,12 +642,12 @@ Assets {
       }
     }
     Assets {
-      Id: 11594524757616528940
-      Name: "Bone Human Skull 01"
+      Id: 1338166724888536493
+      Name: "Bone Human Femur 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_bones_human_skull_01_ref"
+        AssetId: "sm_bones_human_femur_01_ref"
       }
     }
     Assets {
@@ -630,6 +657,33 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_bones_human_spine_01_ref"
+      }
+    }
+    Assets {
+      Id: 4742343644533370028
+      Name: "Clay Form 18"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prim_org_clayform_018_ref"
+      }
+    }
+    Assets {
+      Id: 10373577859092754191
+      Name: "Bone Raw"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_bone_raw_001_uv_ref"
+      }
+    }
+    Assets {
+      Id: 5794111049191083808
+      Name: "Clay Form 02"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prim_org_clayform_002_ref"
       }
     }
     PrimaryAssetId {

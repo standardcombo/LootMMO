@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5382801373363241026
+        ParentId: 4781671109827199097
         ChildIds: 16445015100220171757
         ChildIds: 11448027595919400989
         ChildIds: 3297314632271737610
@@ -104,7 +104,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -221,7 +221,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -339,7 +339,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -374,9 +374,8 @@ Assets {
           Type: Server
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12525221748800137288
@@ -464,16 +463,16 @@ Assets {
         }
         ParentId: 1550651346007304081
         ChildIds: 8377405643480515226
-        ChildIds: 16008354779414456412
+        ChildIds: 1547638272922652671
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
           MinDetailLevel {
@@ -484,9 +483,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8377405643480515226
@@ -525,9 +523,11 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16008354779414456412
-        Name: "Geo"
+        Id: 1547638272922652671
+        Name: "MergedModel"
         Transform {
+          Location {
+          }
           Rotation {
           }
           Scale {
@@ -550,8 +550,15 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
         Folder {
-          IsGroup: true
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -573,7 +580,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16008354779414456412
+        ParentId: 1547638272922652671
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -622,7 +629,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16008354779414456412
+        ParentId: 1547638272922652671
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -682,7 +689,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16008354779414456412
+        ParentId: 1547638272922652671
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -742,7 +749,24 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16008354779414456412
+        ParentId: 1547638272922652671
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 9735399745636622192
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }

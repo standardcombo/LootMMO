@@ -65,6 +65,12 @@ end
 -- nil Tick(float)
 -- Check for changes to our resource and update UI
 function Tick(deltaTime)
+	if not IsInSocialSpace() then
+		lastResource = -1
+		PANEL.visibility = Visibility.FORCE_OFF
+		return
+	end
+	
     local resource = LOCAL_PLAYER:GetResource(RESOURCE_NAME)
 
     -- Update things if our resource changed
@@ -92,6 +98,11 @@ function Tick(deltaTime)
             PANEL.visibility = Visibility.FORCE_OFF
         end
     end
+end
+
+function IsInSocialSpace()
+	local pos = LOCAL_PLAYER:GetWorldPosition()
+	return pos.z < 7000
 end
 
 -- Initialize

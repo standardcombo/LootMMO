@@ -9,10 +9,6 @@ Assets {
         Id: 5028109460282341215
         Name: "FireballMuzzleBigSpellSound"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -38,9 +34,8 @@ Assets {
           IsGroup: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8975524446121914379
@@ -80,9 +75,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16874148203848077492

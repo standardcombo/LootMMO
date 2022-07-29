@@ -7,7 +7,7 @@ Assets {
       RootId: 5015312009504924698
       Objects {
         Id: 5015312009504924698
-        Name: "Client Context"
+        Name: "Pistol Muzzle Flash"
         Transform {
           Scale {
             X: 1
@@ -39,9 +39,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 409040435785925956

@@ -31,7 +31,7 @@ Assets {
         Text {
           Text: "1000"
           FontAsset {
-            Id: 15530901710823689110
+            Id: 18283604462096221912
           }
           Color {
             R: 1
@@ -54,12 +54,12 @@ Assets {
       }
     }
     Assets {
-      Id: 15530901710823689110
-      Name: "Play Bold"
+      Id: 18283604462096221912
+      Name: "Roboto Slab Black"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "PlayBold_ref"
+        AssetId: "RobotoSlabBlack_ref"
       }
     }
     PrimaryAssetId {

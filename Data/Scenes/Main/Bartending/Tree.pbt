@@ -234,92 +234,7 @@ Objects {
   ChildIds: 10285863888090927672
   ChildIds: 1139522334084889430
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Cup1"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup2"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup3"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup4"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup5"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup6"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup7"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup8"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup9"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup10"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup1:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup1:ml"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:Cup2:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup3:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup4:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup5:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup6:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup7:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup8:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup9:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:Cup10:isrep"
-      Bool: true
-    }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -341,7 +256,7 @@ Objects {
     }
   }
   NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:eproxyrelevance:medium"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -959,9 +874,8 @@ Objects {
     }
   }
   NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:eproxyrelevance:medium"
   }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 2075009526444775650

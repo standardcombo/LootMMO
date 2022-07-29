@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7487204750940224804
+        ParentId: 4781671109827199097
         ChildIds: 15149687429504703265
         ChildIds: 12360286784164110587
         ChildIds: 5181189977997788531
@@ -42,7 +42,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -119,7 +119,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -193,7 +193,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -267,7 +267,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -293,7 +293,9 @@ Assets {
         NetworkContext {
           Type: Local
         }
-        IsReplicationEnabledByDefault: true
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 780868951588068244
@@ -976,8 +978,6 @@ Assets {
         }
         ParentId: 13229308031033666697
         ChildIds: 11272337388699038611
-        ChildIds: 17982736057220696234
-        ChildIds: 13479642467983467380
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1037,8 +1037,8 @@ Assets {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
               R: 1
-              G: 0.329
-              B: 0.329
+              G: 0.50955
+              B: 0.422999978
               A: 1
             }
           }
@@ -1069,143 +1069,6 @@ Assets {
         }
         Relevance {
           Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 17982736057220696234
-        Name: "VFX Outline"
-        Transform {
-          Location {
-            X: -1.54882812
-            Y: 16.631958
-            Z: 40.7451172
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.08
-            Y: 0.08
-            Z: 2.19
-          }
-        }
-        ParentId: 1087434336457352349
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 675563715440209277
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:utile"
-            Float: 0.214086175
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 1.52223814
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.966159
-              B: 0.269999981
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 13950225922132296555
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 13479642467983467380
-        Name: "ShiftAwayFromView"
-        Transform {
-          Location {
-            X: -1.54882812
-            Y: 16.631958
-            Z: 40.7451172
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.0826627612
-            Y: 0.0826627612
-            Z: 2.18869781
-          }
-        }
-        ParentId: 1087434336457352349
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:ObjectToShift"
-            ObjectReference {
-              SubObjectId: 17982736057220696234
-            }
-          }
-          Overrides {
-            Name: "cs:ReferenceObject"
-            ObjectReference {
-              SubObjectId: 11272337388699038611
-            }
-          }
-          Overrides {
-            Name: "cs:Distance"
-            Float: 2
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 5812207274093898161
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1229,15 +1092,6 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_bark_redwood_001_uv"
-      }
-    }
-    Assets {
-      Id: 675563715440209277
-      Name: "Emissive Glow Transparent"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_basic_emissive_001"
       }
     }
     PrimaryAssetId {

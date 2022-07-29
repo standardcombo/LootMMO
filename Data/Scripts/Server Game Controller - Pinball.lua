@@ -18,6 +18,7 @@ local hasLeaderboard = false
 
 function handleInteracted(_, player)
   PLAY_TRIGGER.isInteractable = false
+  PLAY_TRIGGER:ForceReplication()
 
   player:SetWorldRotation(Rotation.New(0, 0, 180) * PLAY_TRIGGER:GetWorldRotation())
   player.isMovementEnabled = false
@@ -60,11 +61,13 @@ function handleQuit(machineId, player)
   end
 
   PLAY_TRIGGER.isInteractable = true
+  PLAY_TRIGGER:ForceReplication()
 end
 
 function handlePlayerLeft(player)
   if player == currentPlayer then
     PLAY_TRIGGER.isInteractable = true
+    PLAY_TRIGGER:ForceReplication()
   end
 end
 
@@ -94,6 +97,8 @@ function updateHighScore()
 
   SCORE_DISPLAY.text = formatInt(highScore.score)
   NAME_DISPLAY.text = highScore.name
+  SCORE_DISPLAY:ForceReplication()
+  NAME_DISPLAY:ForceReplication()
 end
 
 function submitHighScore(machineId, player, score)

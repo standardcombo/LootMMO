@@ -9,13 +9,6 @@ Assets {
         Id: 12771375585045237236
         Name: "FireballImpactSmall"
         Transform {
-          Location {
-            X: 605.538208
-            Y: 1352.34729
-            Z: 15
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -41,9 +34,8 @@ Assets {
           IsGroup: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2460994853181292360
@@ -86,7 +78,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2802098637821803852

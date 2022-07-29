@@ -3,7 +3,6 @@ local LOOT_COLLECTION_DATA = require(script:GetCustomProperty("LootCollectionDat
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local UI_ROOT = script:GetCustomProperty("UIRoot"):WaitForObject()
 local INSTRUCTION = script:GetCustomProperty("InstructionText"):WaitForObject()
-local LOOT_ID_SHADOW = script:GetCustomProperty("LootIDShadow"):WaitForObject()
 local LOOT_ID = script:GetCustomProperty("LootID"):WaitForObject()
 
 local WEAPON_IMAGE = script:GetCustomProperty("WeaponImage"):WaitForObject()
@@ -68,7 +67,6 @@ function EquipLoot(lootBag)
 	
 	INSTRUCTION.text = ""
 	LOOT_ID.text = headerPrefix .. lootBag.tokenId
-	LOOT_ID_SHADOW.text = LOOT_ID.text
 	
 	UIPANEL.visibility = Visibility.INHERIT
 	PLAY_BUTTON_ROOT.visibility = Visibility.INHERIT
@@ -83,6 +81,7 @@ function EquipLoot(lootBag)
 		table.insert(definitions, def)
 		
 		itemImages[i]:SetImage(def.icon)
+		itemImages[i]:SetColor(Color.WHITE)
 		
 		itemTexts[i].text = item.fullName
 		

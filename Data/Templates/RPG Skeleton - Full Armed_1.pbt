@@ -532,7 +532,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:low"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14869856828657627160

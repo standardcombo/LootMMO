@@ -7,7 +7,7 @@ Assets {
       RootId: 11040313151905138811
       Objects {
         Id: 11040313151905138811
-        Name: "Purple Surface Impact"
+        Name: "Purple Magic Character Impact"
         Transform {
           Scale {
             X: 1
@@ -40,9 +40,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11581352141257614718

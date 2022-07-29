@@ -42,9 +42,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5543664476789432740
@@ -110,7 +109,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.570001602
+              R: 0.45
               B: 1.8
               A: 1
             }
@@ -228,7 +227,7 @@ Assets {
         Light {
           Intensity: 10
           Color {
-            R: 1.41666889
+            R: 0.500001907
             B: 5
             A: 1
           }
@@ -288,8 +287,16 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              R: 2.75000095
+              R: 0.625004768
               B: 15
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.750000477
+              B: 5
               A: 1
             }
           }

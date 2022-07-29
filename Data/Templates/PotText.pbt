@@ -40,8 +40,7 @@ Assets {
         Control {
           Width: 170
           Height: 31
-          UIX: -1392.47925
-          UIY: -540.631226
+          UIY: -122
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -192,28 +191,24 @@ Assets {
             }
             FontSize: 20
             ButtonColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
-              A: 0.498039246
+              R: 0.234550595
+              G: 0.124771841
+              A: 0.235294133
             }
             HoveredColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
-              A: 0.498039246
+              R: 0.234550595
+              G: 0.124771841
+              A: 0.235294133
             }
             PressedColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
-              A: 0.498039246
+              R: 0.234550595
+              G: 0.124771841
+              A: 0.235294133
             }
             DisabledColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
-              A: 0.498039246
+              R: 0.234550595
+              G: 0.124771841
+              A: 0.235294133
             }
             Brush {
               Id: 841534158063459245
@@ -357,7 +352,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 17768095596681760929
+              Id: 7654127839654482081
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -491,27 +486,23 @@ Assets {
             }
             FontSize: 20
             ButtonColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             HoveredColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             PressedColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             DisabledColor {
-              R: 0.00699541
-              G: 0.00651209
-              B: 0.00972121768
+              R: 0.982250869
+              G: 0.520995677
               A: 1
             }
             Brush {
@@ -593,13 +584,13 @@ Assets {
               B: 1
               A: 1
             }
-            Size: 11
+            Size: 14
             Justification {
               Value: "mc:etextjustify:center"
             }
             AutoWrapText: true
             Font {
-              Id: 15530901710823689110
+              Id: 11336346532215892341
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -643,12 +634,21 @@ Assets {
       }
     }
     Assets {
-      Id: 15530901710823689110
-      Name: "Play Bold"
+      Id: 7654127839654482081
+      Name: "Roboto Slab"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "PlayBold_ref"
+        AssetId: "RobotoSlabRegular_ref"
+      }
+    }
+    Assets {
+      Id: 11336346532215892341
+      Name: "Germania One"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "GermaniaOneRegular_ref"
       }
     }
     PrimaryAssetId {

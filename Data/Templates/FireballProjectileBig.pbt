@@ -9,11 +9,6 @@ Assets {
         Id: 12594336507850562923
         Name: "FireballProjectileBig"
         Transform {
-          Location {
-            Z: 60
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -38,7 +33,7 @@ Assets {
           IsGroup: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -84,7 +79,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9054315551552279527

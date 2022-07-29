@@ -7,7 +7,7 @@ Assets {
       RootId: 5757097722660440297
       Objects {
         Id: 5757097722660440297
-        Name: "Ice Full Circle Swipe Effect"
+        Name: "Ice Full Circle Swipe Effect_1"
         Transform {
           Scale {
             X: 1
@@ -42,9 +42,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12298638062362838851

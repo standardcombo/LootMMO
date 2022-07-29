@@ -51,7 +51,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -80,7 +80,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.570001602
+              R: 0.45
               B: 1.8
               A: 1
             }
@@ -149,7 +149,7 @@ Assets {
         Light {
           Intensity: 10
           Color {
-            R: 1.41666889
+            R: 0.500001907
             B: 5
             A: 1
           }

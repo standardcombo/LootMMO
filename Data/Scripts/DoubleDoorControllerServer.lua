@@ -152,6 +152,8 @@ function OnInteracted(trigger, player)
 
 		ROTATING_TRIGGER1.interactionLabel = CLOSE_LABEL
 		ROTATING_TRIGGER2.interactionLabel = CLOSE_LABEL
+		ROTATING_TRIGGER1:ForceReplication()
+		ROTATING_TRIGGER2:ForceReplication()
 	else															-- Door is open or moving, clsoe it
 		CloseDoor()
 	end
@@ -185,6 +187,8 @@ function Tick(deltaTime)
 		if not AUTO_OPEN then
 			ROTATING_TRIGGER1.interactionLabel = OPEN_LABEL
 			ROTATING_TRIGGER2.interactionLabel = OPEN_LABEL
+			ROTATING_TRIGGER1:ForceReplication()
+			ROTATING_TRIGGER2:ForceReplication()
 		end
 
 		Events.Broadcast("DoorClosed", COMPONENT_ROOT)
@@ -212,6 +216,8 @@ else
 	ROTATING_TRIGGER2.interactedEvent:Connect(OnInteracted)
 	ROTATING_TRIGGER1.isInteractable = true
 	ROTATING_TRIGGER2.isInteractable = true
+	ROTATING_TRIGGER1:ForceReplication()
+	ROTATING_TRIGGER2:ForceReplication()
 end
 
 if RESET_ON_ROUND_START then

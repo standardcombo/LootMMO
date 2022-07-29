@@ -7,7 +7,7 @@ Assets {
       RootId: 9431749848711998151
       Objects {
         Id: 9431749848711998151
-        Name: "ClientContext"
+        Name: "FireballProjectileSmall"
         Transform {
           Scale {
             X: 1
@@ -42,7 +42,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
