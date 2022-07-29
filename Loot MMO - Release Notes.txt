@@ -1,4 +1,14 @@
 
+
+**Version 0.2**
+- Final art for all weapon types.
+- Updated all UI (bag selection, poker, pinball, etc).
+- New HUD element indicates your total coins.
+- Optimized networked objects, meshes and refresh rate of paintings.
+
+Known issue: Wallet integration is currently bugged. You don't see your Loot bags in the bag selection screen. Tokens under your nameplate are also wrong.
+
+
 **Version 0.1**
 Improvements
 - Players can no longer be killed while playing Poker or Pinball.
@@ -10,4 +20,7 @@ Bugs
 - Fixed a bug in bag selection screen where players could only see up to 12 bags.
 - Reworked nameplate to better fit the token icons, for players with a very large collection.
 - Fixed Loot collection size which is actually limited to 7777 instead of 8000.
+
+
+
 
