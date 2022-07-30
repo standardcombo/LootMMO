@@ -15,6 +15,9 @@ local HAND_IMAGE = script:GetCustomProperty("HandImage"):WaitForObject()
 local NECKLACE_IMAGE = script:GetCustomProperty("NecklaceImage"):WaitForObject()
 local RING_IMAGE = script:GetCustomProperty("RingImage"):WaitForObject()
 
+local ITEM_DETAILS = script:GetCustomProperty("ItemDetailsFloatingPanel"):WaitForObject()
+ITEM_DETAILS = ITEM_DETAILS:FindDescendantByType("Script")
+
 local PLAY_BUTTON_ROOT = script:GetCustomProperty("PlayButtonRoot"):WaitForObject()
 local PLAY_BUTTON = script:GetCustomProperty("PlayButton"):WaitForObject()
 local PLAY_BUTTON_SFX = script:GetCustomProperty("PlayButtonSFX"):WaitForObject()
@@ -70,6 +73,11 @@ function EquipLoot(lootBag)
 		
 		if def.equipment then
 			Events.BroadcastToServer("Equip", item.name)
+		end
+		
+		if i == 1 then
+			-- TEMPORARY TEST
+			ITEM_DETAILS.context.SetItem(item)
 		end
 	end
 	
