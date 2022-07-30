@@ -15,8 +15,17 @@ local HAND_IMAGE = script:GetCustomProperty("HandImage"):WaitForObject()
 local NECKLACE_IMAGE = script:GetCustomProperty("NecklaceImage"):WaitForObject()
 local RING_IMAGE = script:GetCustomProperty("RingImage"):WaitForObject()
 
-local ITEM_DETAILS = script:GetCustomProperty("ItemDetailsFloatingPanel"):WaitForObject()
-ITEM_DETAILS = ITEM_DETAILS:FindDescendantByType("Script")
+local WEAPON_BUTTON = script:GetCustomProperty("WeaponButton"):WaitForObject()
+local CHEST_BUTTON = script:GetCustomProperty("ChestButton"):WaitForObject()
+local HEAD_BUTTON = script:GetCustomProperty("HeadButton"):WaitForObject()
+local WAIST_BUTTON = script:GetCustomProperty("WaistButton"):WaitForObject()
+local FOOT_BUTTON = script:GetCustomProperty("FootButton"):WaitForObject()
+local HAND_BUTTON = script:GetCustomProperty("HandButton"):WaitForObject()
+local NECKLACE_BUTTON = script:GetCustomProperty("NecklaceButton"):WaitForObject()
+local RING_BUTTON = script:GetCustomProperty("RingButton"):WaitForObject()
+
+local ITEM_DETAILS_PANEL = script:GetCustomProperty("ItemDetailsFloatingPanel"):WaitForObject()
+local ITEM_DETAILS_SCRIPT = ITEM_DETAILS_PANEL:FindDescendantByType("Script")
 
 local PLAY_BUTTON_ROOT = script:GetCustomProperty("PlayButtonRoot"):WaitForObject()
 local PLAY_BUTTON = script:GetCustomProperty("PlayButton"):WaitForObject()
@@ -32,6 +41,16 @@ local itemImages = {
 	HAND_IMAGE,
 	NECKLACE_IMAGE,
 	RING_IMAGE
+}
+local itemButtons = {
+	WEAPON_BUTTON,
+	CHEST_BUTTON,
+	HEAD_BUTTON,
+	WAIST_BUTTON,
+	FOOT_BUTTON,
+	HAND_BUTTON,
+	NECKLACE_BUTTON,
+	RING_BUTTON
 }
 
 local classes = {
@@ -69,15 +88,10 @@ function EquipLoot(lootBag)
 		itemImages[i].isFlippedHorizontal = def.flipIconH
 		itemImages[i].isFlippedVertical = def.flipIconV
 		
-		--itemTexts[i].text = item.fullName
+		itemButtons[i].clientUserData.item = item
 		
 		if def.equipment then
 			Events.BroadcastToServer("Equip", item.name)
-		end
-		
-		if i == 1 then
-			-- TEMPORARY TEST
-			ITEM_DETAILS.context.SetItem(item)
 		end
 	end
 	
@@ -136,6 +150,30 @@ function IsInSocialSpace()
 	local pos = player:GetWorldPosition()
 	return pos.z < 7000
 end
+
+
+function Tick()
+	if ITEM_DETAILS_PANEL.visibility == Visibility.INHERIT then
+		local pos = Input.GetCursorPosition()
+		ITEM_DETAILS_PANEL.x = pos.x
+		ITEM_DETAILS_PANEL.y = pos.y
+	end
+end
+
+
+for _,button in ipairs(itemButtons) do
+	button.hoveredEvent:Connect(function(b)
+		local item = b.clientUserData.item
+		if item then
+			ITEM_DETAILS_SCRIPT.context.SetItem(item)
+			ITEM_DETAILS_PANEL.visibility = Visibility.INHERIT
+		end
+	end)
+	button.unhoveredEvent:Connect(function(b)
+		ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
+	end)
+end
+ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
 
 
 if Environment.IsPreview() then
