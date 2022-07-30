@@ -63,6 +63,8 @@ function EquipLoot(lootBag)
 		
 		itemImages[i]:SetImage(def.icon)
 		itemImages[i]:SetColor(Color.WHITE)
+		itemImages[i].isFlippedHorizontal = def.flipIconH
+		itemImages[i].isFlippedVertical = def.flipIconV
 		
 		--itemTexts[i].text = item.fullName
 		
