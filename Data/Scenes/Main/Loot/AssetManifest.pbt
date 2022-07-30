@@ -8,21 +8,21 @@ Assets {
   }
 }
 Assets {
-  Id: 17568965019702474508
-  Name: "Rope"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Military_Icon_030"
-  }
-}
-Assets {
   Id: 17440982127418626575
   Name: "Frame Tri 001 Wedge"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameTri_001Wedge"
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
   }
 }
 Assets {
@@ -44,30 +44,21 @@ Assets {
   }
 }
 Assets {
+  Id: 15822423868574331112
+  Name: "Fantasy Glove 013"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Glove_013"
+  }
+}
+Assets {
   Id: 15204381781527651531
   Name: "Line Full 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "LineFull_003"
-  }
-}
-Assets {
-  Id: 15201232689808388272
-  Name: "Icon Weapon Sword"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_WeaponSword"
-  }
-}
-Assets {
-  Id: 15165554833363844727
-  Name: "Amarante"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "AmaranteRegular_ref"
   }
 }
 Assets {
@@ -80,12 +71,21 @@ Assets {
   }
 }
 Assets {
-  Id: 14432093458167740677
-  Name: "Ring"
+  Id: 14950569642219201732
+  Name: "Humanoid 2 Peasant Shirt"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_upper_fantasy_000_ref_temp"
+  }
+}
+Assets {
+  Id: 14401535753645096251
+  Name: "Fantasy Jewelry 009"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Icon_Ring"
+    AssetId: "UI_Fantasy_Equip_Jewelry_009"
   }
 }
 Assets {
@@ -143,15 +143,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12036133539530744069
-  Name: "Award"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Military_Icon_036"
-  }
-}
-Assets {
   Id: 11726854071015571091
   Name: "Fantasy Craft Crystal 042"
   PlatformAssetType: 9
@@ -179,12 +170,21 @@ Assets {
   }
 }
 Assets {
-  Id: 9690905488522305099
-  Name: "Icon Fist"
+  Id: 9709214148658914443
+  Name: "Fantasy Dagger 021"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Fist"
+    AssetId: "UI_Fantasy_Weapon_Dagger_021"
+  }
+}
+Assets {
+  Id: 9622238984041529954
+  Name: "Fantasy Boot 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Boot_006"
   }
 }
 Assets {
@@ -206,6 +206,33 @@ Assets {
   }
 }
 Assets {
+  Id: 8911037067941999165
+  Name: "Fantasy Jewelry 023"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_023"
+  }
+}
+Assets {
+  Id: 8634195622628323616
+  Name: "Fantasy Belt 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Belt_002"
+  }
+}
+Assets {
+  Id: 7845803738723290617
+  Name: "Humanoid 2 Kamil"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_basic_007_ref"
+  }
+}
+Assets {
   Id: 7615847344375253670
   Name: "UI Basic Frame 001"
   PlatformAssetType: 9
@@ -221,15 +248,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_015"
-  }
-}
-Assets {
-  Id: 4517909308155825410
-  Name: "Boot"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Icon_Boot"
   }
 }
 Assets {
@@ -275,6 +293,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundHighlighted_020"
+  }
+}
+Assets {
+  Id: 2304171879981945904
+  Name: "Humanoid 2 Peasant Pants"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_lower_fantasy_000_ref"
   }
 }
 Assets {

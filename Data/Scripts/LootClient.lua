@@ -2,8 +2,9 @@
 local LOOT_COLLECTION_DATA = require(script:GetCustomProperty("LootCollectionData"))
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local UI_ROOT = script:GetCustomProperty("UIRoot"):WaitForObject()
-local INSTRUCTION = script:GetCustomProperty("InstructionText"):WaitForObject()
-local LOOT_ID = script:GetCustomProperty("LootID"):WaitForObject()
+
+local HEADER_TEXT = script:GetCustomProperty("HeaderText"):WaitForObject()
+local COLLECTION_TEXT = script:GetCustomProperty("CollectionText"):WaitForObject()
 
 local WEAPON_IMAGE = script:GetCustomProperty("WeaponImage"):WaitForObject()
 local CHEST_IMAGE = script:GetCustomProperty("ChestImage"):WaitForObject()
@@ -13,15 +14,7 @@ local FOOT_IMAGE = script:GetCustomProperty("FootImage"):WaitForObject()
 local HAND_IMAGE = script:GetCustomProperty("HandImage"):WaitForObject()
 local NECKLACE_IMAGE = script:GetCustomProperty("NecklaceImage"):WaitForObject()
 local RING_IMAGE = script:GetCustomProperty("RingImage"):WaitForObject()
-local WEAPON_TEXT = script:GetCustomProperty("WeaponText"):WaitForObject()
-local CHEST_TEXT = script:GetCustomProperty("ChestText"):WaitForObject()
-local HEAD_TEXT = script:GetCustomProperty("HeadText"):WaitForObject()
-local WAIST_TEXT = script:GetCustomProperty("WaistText"):WaitForObject()
-local FOOT_TEXT = script:GetCustomProperty("FootText"):WaitForObject()
-local HAND_TEXT = script:GetCustomProperty("HandText"):WaitForObject()
-local NECKLACE_TEXT = script:GetCustomProperty("NecklaceText"):WaitForObject()
-local RING_TEXT = script:GetCustomProperty("RingText"):WaitForObject()
-local UIPANEL = script:GetCustomProperty("UIPanel"):WaitForObject()
+
 local PLAY_BUTTON_ROOT = script:GetCustomProperty("PlayButtonRoot"):WaitForObject()
 local PLAY_BUTTON = script:GetCustomProperty("PlayButton"):WaitForObject()
 local PLAY_BUTTON_SFX = script:GetCustomProperty("PlayButtonSFX"):WaitForObject()
@@ -36,16 +29,6 @@ local itemImages = {
 	HAND_IMAGE,
 	NECKLACE_IMAGE,
 	RING_IMAGE
-}
-local itemTexts = {
-	WEAPON_TEXT,
-	CHEST_TEXT,
-	HEAD_TEXT,
-	WAIST_TEXT,
-	FOOT_TEXT,
-	HAND_TEXT,
-	NECKLACE_TEXT,
-	RING_TEXT
 }
 
 local classes = {
@@ -65,10 +48,8 @@ function EquipLoot(lootBag)
 	
 	local headerPrefix = LOOT_COLLECTION_DATA.GetHeaderPrefix(lootBag.collection)
 	
-	INSTRUCTION.text = ""
-	LOOT_ID.text = headerPrefix .. lootBag.tokenId
+	HEADER_TEXT.text = headerPrefix .. lootBag.tokenId
 	
-	UIPANEL.visibility = Visibility.INHERIT
 	PLAY_BUTTON_ROOT.visibility = Visibility.INHERIT
 	
 	Events.BroadcastToServer("ClearEquipment")
@@ -83,7 +64,7 @@ function EquipLoot(lootBag)
 		itemImages[i]:SetImage(def.icon)
 		itemImages[i]:SetColor(Color.WHITE)
 		
-		itemTexts[i].text = item.fullName
+		--itemTexts[i].text = item.fullName
 		
 		if def.equipment then
 			Events.BroadcastToServer("Equip", item.name)
