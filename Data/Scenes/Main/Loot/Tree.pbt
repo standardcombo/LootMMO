@@ -9939,7 +9939,7 @@ Objects {
 }
 Objects {
   Id: 17013825727618971657
-  Name: "Header"
+  Name: "Top"
   Transform {
     Location {
       X: 29709.9512
@@ -9956,9 +9956,8 @@ Objects {
     }
   }
   ParentId: 2096654775086479092
-  ChildIds: 6617925834648564699
-  ChildIds: 11301411893861126364
   ChildIds: 14253174011542486824
+  ChildIds: 15532329333308289779
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -9999,16 +9998,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14253174011542486824
-  Name: "Collection Description"
+  Id: 15532329333308289779
+  Name: "Header Panel"
   Transform {
     Location {
-      X: 2499.99146
-      Y: 220.028564
-      Z: 31172.834
+      X: 31461.1758
+      Y: 1898.45508
+      Z: 14283.2715
     }
     Rotation {
-      Yaw: -76.9686127
+      Yaw: 163.949936
     }
     Scale {
       X: 1
@@ -10017,6 +10016,8 @@ Objects {
     }
   }
   ParentId: 17013825727618971657
+  ChildIds: 6617925834648564699
+  ChildIds: 11301411893861126364
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -10030,41 +10031,17 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 490
-    Height: 131
+    Width: 100
+    Height: 100
+    UIY: -126
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    Text {
-      Label: "Brought forth through the ether, what appears to be a simple bag of armaments is actually a window into much of an adventurer\342\200\231s life-- an artefact of centuries of war and destruction."
-      Color {
-        R: 0.795
-        G: 0.69484055
-        B: 0.53424
-        A: 1
-      }
-      Size: 19
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
-        Id: 11336346532215892341
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:top"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-        Y: 2
-      }
-      OutlineColor {
-        A: 1
-      }
+    UseParentWidth: true
+    Panel {
+      Opacity: 1
     }
     AnchorLayout {
       SelfAnchor {
@@ -10095,7 +10072,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17013825727618971657
+  ParentId: 15532329333308289779
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -10110,7 +10087,7 @@ Objects {
   Control {
     Width: 400
     Height: 37
-    UIY: 111.360657
+    UIY: 10.2373505
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -10173,7 +10150,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17013825727618971657
+  ParentId: 15532329333308289779
   ChildIds: 2289727984407326149
   ChildIds: 1643327964398537830
   ChildIds: 2135426337718371645
@@ -10198,7 +10175,6 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIY: 101.123306
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -11972,6 +11948,89 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14253174011542486824
+  Name: "Collection Description"
+  Transform {
+    Location {
+      X: 2499.99146
+      Y: 220.028564
+      Z: 31172.834
+    }
+    Rotation {
+      Yaw: -76.9686127
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17013825727618971657
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 490
+    Height: 131
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Brought forth through the ether, what appears to be a simple bag of armaments is actually a window into much of an adventurer\342\200\231s life-- an artefact of centuries of war and destruction."
+      Color {
+        R: 0.795
+        G: 0.69484055
+        B: 0.53424
+        A: 1
+      }
+      Size: 19
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 11336346532215892341
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:top"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+        Y: 2
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
   }
   IsReplicationEnabledByDefault: true
 }
@@ -14226,6 +14285,12 @@ Objects {
       Name: "cs:UIRoot"
       ObjectReference {
         SelfId: 10441961461076717697
+      }
+    }
+    Overrides {
+      Name: "cs:HeaderPanel"
+      ObjectReference {
+        SelfId: 15532329333308289779
       }
     }
     Overrides {

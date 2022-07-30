@@ -3,6 +3,7 @@ local LOOT_COLLECTION_DATA = require(script:GetCustomProperty("LootCollectionDat
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local UI_ROOT = script:GetCustomProperty("UIRoot"):WaitForObject()
 
+local HEADER_PANEL = script:GetCustomProperty("HeaderPanel"):WaitForObject()
 local HEADER_TEXT = script:GetCustomProperty("HeaderText"):WaitForObject()
 local COLLECTION_TEXT = script:GetCustomProperty("CollectionText"):WaitForObject()
 
@@ -65,12 +66,18 @@ local classes = {
 UI.SetCanCursorInteractWithUI(true)
 UI.SetCursorVisible(true)
 
+local HEADER_START_Y = HEADER_PANEL.y
+HEADER_PANEL.y = 0
+COLLECTION_TEXT.text = ""
+
 
 function EquipLoot(lootBag)
 	
 	local headerPrefix = LOOT_COLLECTION_DATA.GetHeaderPrefix(lootBag.collection)
 	
 	HEADER_TEXT.text = headerPrefix .. lootBag.tokenId
+	
+	COLLECTION_TEXT.text = LOOT_COLLECTION_DATA.GetDescription(lootBag.collection)
 	
 	PLAY_BUTTON_ROOT.visibility = Visibility.INHERIT
 	
@@ -152,7 +159,11 @@ function IsInSocialSpace()
 end
 
 
-function Tick()
+function Tick(deltaTime)
+	if COLLECTION_TEXT.text ~= "" then
+		local t = deltaTime * 5
+		HEADER_PANEL.y = CoreMath.Lerp(HEADER_PANEL.y, HEADER_START_Y, t)
+	end
 	if ITEM_DETAILS_PANEL.visibility == Visibility.INHERIT then
 		local pos = Input.GetCursorPosition()
 		ITEM_DETAILS_PANEL.x = pos.x
