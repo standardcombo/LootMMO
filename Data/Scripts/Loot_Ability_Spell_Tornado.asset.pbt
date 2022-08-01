@@ -11,39 +11,20 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
+        Name: "cs:MageOrcTornadoPlacementBasic"
         AssetReference {
-          Id: 2396467018832549261
+          Id: 7827469757850190083
         }
       }
       Overrides {
-        Name: "cs:Description"
-        String: "Placement \342\200\223 Press Q to preview and LMB to summon a powerful whirlwind that slows and damages enemies caught in its radius. Placement Range = 4000."
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 2396467018832549261
-      Name: "Fantasy Ability Blue 023"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_023"
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
     }
   }

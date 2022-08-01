@@ -11,39 +11,50 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 18132479792113096322
+        Name: "cs:Root"
+        ObjectReference {
         }
       }
       Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press E to disappear to the shadow realm for a short duration. Attacking while invisible will deal area damage and end the effect. Attack Damage Radius = 650."
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Combat_Connector"
+        AssetReference {
+          Id: 12483969483192492711
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
+        Name: "cs:AssassinDeathsShadowBeginningBasic"
+        AssetReference {
+          Id: 15761765853344411097
+        }
       }
       Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
+        Name: "cs:AssassinDeathsShadowEndingBasic"
+        AssetReference {
+          Id: 1429104248892819753
+        }
       }
       Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
+        Name: "cs:AssassinOrcDeathsShadowAttackBasic"
+        AssetReference {
+          Id: 13238733542099491570
+        }
       }
-    }
-    Assets {
-      Id: 18132479792113096322
-      Name: "Fantasy Ability Purple 032"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_032"
+      Overrides {
+        Name: "cs:AssassinOrcDeathsShadowAttackTarget"
+        AssetReference {
+          Id: 15956959895870896180
+        }
+      }
+      Overrides {
+        Name: "cs:AssassinOrcDeathsShadowCostumeBasic"
+        AssetReference {
+          Id: 13347412244189647636
+        }
       }
     }
   }

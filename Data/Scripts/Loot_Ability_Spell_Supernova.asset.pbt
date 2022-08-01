@@ -11,16 +11,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 13468123306975365733
-        }
-      }
-      Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press 4 to create powerful targeted explosion of sunlight. When it reaches its limit, allies in its radius are healed and enemies are damaged and stunned."
-      }
-      Overrides {
         Name: "cs:HealerOrcSupernovaChargeBasic"
         AssetReference {
           Id: 18127499291287709125
@@ -39,29 +29,14 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 13468123306975365733
-      Name: "Fantasy Ability Yellow 002"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_002"
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
     }
   }

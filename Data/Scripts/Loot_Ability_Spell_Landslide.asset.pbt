@@ -11,39 +11,37 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 5751567816530114738
+        Name: "cs:Root"
+        ObjectReference {
         }
       }
       Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press R to charge forward, dealing damage and knocking back enemies. Activating another ability will interrupt the charge."
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Trigger"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
+        Name: "cs:BashVFX"
+        AssetReference {
+          Id: 3001366697168823164
+        }
       }
       Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
+        Name: "cs:AttachedVFX"
+        AssetReference {
+          Id: 8644628869217574717
+        }
       }
       Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 5751567816530114738
-      Name: "Fantasy Ability Red 029"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_029"
+        Name: "cs:Combat_Connector"
+        AssetReference {
+          Id: 12483969483192492711
+        }
       }
     }
   }

@@ -12,6 +12,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16910278292812118833
+  Name: "Sun Light"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "CORESKY_SunLight"
+  }
+}
+Assets {
   Id: 16772265683136066156
   Name: "JewelPack4"
   PlatformAssetType: 24
@@ -48,6 +57,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 15946579520938017950
+  Name: "Motion Blur Post Process"
+  PlatformAssetType: 20
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_advanced_motion_blur"
   }
 }
 Assets {
@@ -181,6 +199,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12095835209017042614
+  Name: "Cube"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_002"
+  }
+}
+Assets {
   Id: 11738101196508092081
   Name: "Server Gold"
   PlatformAssetType: 24
@@ -220,6 +247,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11515840070784317904
+  Name: "Skylight"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "CORESKY_Skylight"
+  }
+}
+Assets {
   Id: 11232852364461677985
   Name: "JewelPack3"
   PlatformAssetType: 24
@@ -233,12 +269,30 @@ Assets {
   }
 }
 Assets {
+  Id: 11221279654899718078
+  Name: "Ambient Occlusion Post Process"
+  PlatformAssetType: 20
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_ao"
+  }
+}
+Assets {
   Id: 10954008740118234483
   Name: "Magic Circle Generator: Basic VFX"
   PlatformAssetType: 8
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_magic_circle_generator_simple_basic"
+  }
+}
+Assets {
+  Id: 10577491396371571795
+  Name: "Depth of Field Post Process"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_DOF"
   }
 }
 Assets {
@@ -502,6 +556,24 @@ Assets {
   }
 }
 Assets {
+  Id: 2920556432021751741
+  Name: "Vignette Grain Post Process"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_vignette_grain"
+  }
+}
+Assets {
+  Id: 2912776547240206957
+  Name: "Advanced Bloom Post Process"
+  PlatformAssetType: 20
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_bloom_advanced"
+  }
+}
+Assets {
   Id: 2175052947894896062
   Name: "Gold Pack 4"
   PlatformAssetType: 24
@@ -564,5 +636,14 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 198353679974341757
+  Name: "Cube - Bottom-Aligned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_001"
   }
 }

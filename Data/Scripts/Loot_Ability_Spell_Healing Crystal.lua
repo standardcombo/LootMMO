@@ -1,53 +1,34 @@
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
 
-modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Duration.name] = setmetatable({}, {__index = MODIFIERS.Duration}),
-    [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Heal}),
-    [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range})
-}
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Duration.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Heal.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Range.name].calculation = function(self, stats)
-    return 500
-end
 local healingCrystal = script:GetCustomProperty('HealerOrcHealingCrystalPlacementBasic')
 local DEFAULT_Radius = 500
 
-function Execute(self, stats)
-    local player = self.owner
+function Execute()
+    local player = ABILITY.owner
 
     if not Object.IsValid(player) then
         return
     end
-    local mod = self:CalculateStats(stats)
-    
-    local thisAbility = self:GetCurrentAbility()
+    local mod = ROOT.serverUserData.calculateModifier()
+
+    local thisAbility = ABILITY
     local targetData = thisAbility:GetTargetData()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
 
-    local newObject = World.SpawnAsset(healingCrystal, {position = position, rotation = rotation})
+    local newObject =
+        World.SpawnAsset(
+        healingCrystal,
+        {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
+    )
     local radius = mod[MODIFIERS.Range.name]
     newObject:SetWorldScale(Vector3.New(CoreMath.Round(radius / DEFAULT_Radius, 3)))
     newObject:SetCustomProperty('Heal', mod[MODIFIERS.Heal.name])
-    newObject:SetCustomProperty('Ability', self:GetCurrentAbility())
+    newObject:SetCustomProperty('Ability', ABILITY)
     newObject.lifeSpan = mod[MODIFIERS.Duration.name]
 end
+ABILITY.executeEvent:Connect(Execute)

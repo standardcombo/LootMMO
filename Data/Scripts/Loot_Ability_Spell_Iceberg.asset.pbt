@@ -11,45 +11,32 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 4051655398668448529
-        }
-      }
-      Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press 4 to encase yourself in ice, damage nearby enemies, and prevent all damage while it is active.  You will be immobile while encased in ice.  Also heals when cast. Damage Radius = 1200."
-      }
-      Overrides {
         Name: "cs:MageIcebergBreakBasic"
         AssetReference {
           Id: 12874348109318974616
         }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:MageOrcIcebergAttachmentBasic"
+        AssetReference {
+          Id: 7816712407552257158
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
+        Name: "cs:Combat_Connector"
+        AssetReference {
+          Id: 12483969483192492711
+        }
       }
       Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 4051655398668448529
-      Name: "Fantasy Ability Blue 004"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_004"
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
     }
   }

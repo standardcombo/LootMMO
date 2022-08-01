@@ -11,39 +11,69 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
+        Name: "cs:Combat_Connector"
         AssetReference {
-          Id: 13163109526252587430
+          Id: 12483969483192492711
         }
       }
       Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press 4 to unearth a massive boulder and throw it in the direction you\342\200\231re facing. It will damage and stun enemies and pass through allies. Projectile Speed = 2000. Lifespan = 3 seconds.  Stun = 2 seconds."
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
+        Name: "cs:Throw"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:Root"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:pickupVFX"
+        AssetReference {
+          Id: 15867696918606394905
+        }
+      }
+      Overrides {
+        Name: "cs:throwVFX"
+        AssetReference {
+          Id: 10282757879352826607
+        }
+      }
+      Overrides {
+        Name: "cs:Ability:isrep"
         Bool: false
       }
       Overrides {
-        Name: "cs:Icon:ml"
+        Name: "cs:Ability:ml"
         Bool: false
       }
       Overrides {
-        Name: "cs:Description:isrep"
+        Name: "cs:Throw:isrep"
         Bool: false
       }
       Overrides {
-        Name: "cs:Description:ml"
+        Name: "cs:Throw:ml"
         Bool: false
       }
-    }
-    Assets {
-      Id: 13163109526252587430
-      Name: "Fantasy Ability Yellow 034"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_034"
+      Overrides {
+        Name: "cs:Root:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:Root:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:pickupVFX:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:pickupVFX:ml"
+        Bool: false
       }
     }
   }

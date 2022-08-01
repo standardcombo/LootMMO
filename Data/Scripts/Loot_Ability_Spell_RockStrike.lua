@@ -3,88 +3,66 @@ local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
-
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
-
-modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius})
-}
-
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ProjectileVelocity = Vector3.ZERO
+local CurrentProjectile = nil
+local mods = {}
 local DEFAULT_ProjectileSpeed = 4000
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return stats.level * 10 + 100
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 100 - stats.level * 10
-end
-modifiers[MODIFIERS.Radius.name].calculation = function(self, stats)
-    return 300 * stats.level
-end
 
-if Environment.IsClient() then
-    return
-end
+function HitObject(other)
+    if not COMBAT().IsDead(other) then
+        local owner = ABILITY.owner
+        local currentAbility = ABILITY
+        if not Object.IsValid(owner) or other == owner then
+            return
+        end
 
-function HitObject(self, other, stats)
-    if not other:IsA('Player') or COMBAT().IsDead(other) then
-        return
+        local otherTeam = COMBAT().GetTeam(other)
+        if not Object.IsValid(owner) then
+            return
+        end
+        if otherTeam and Teams.AreTeamsFriendly(otherTeam, owner.team) then
+            return
+        end
+
+        local dmg = Damage.New()
+        dmg.amount = mods[MODIFIERS.Damage.name]
+        dmg.reason = DamageReason.COMBAT
+        dmg.sourcePlayer = owner
+        dmg.sourceAbility = currentAbility
+
+        local attackData = {
+            object = other,
+            damage = dmg,
+            source = owner,
+            position = nil,
+            rotation = nil,
+            tags = {id = 'Warrior_Q'}
+        }
+        COMBAT().ApplyDamage(attackData)
+
+        if not CurrentProjectile or not Object.IsValid(CurrentProjectile) then
+            return
+        end
+
+        local directionVector = CurrentProjectile:GetWorldRotation() * Vector3.FORWARD
+        directionVector = -directionVector
+        directionVector.z = 1
+        local impulseVector = directionVector * 1000
+        other:AddImpulse(impulseVector)
     end
-
-    local owner = self.owner
-    local currentAbility = self:GetCurrentAbility()
-    if not Object.IsValid(self.owner) or other == self.owner then
-        return
-    end
-
-    local otherTeam = COMBAT().GetTeam(other)
-    if not Object.IsValid(self.owner) then
-        return
-    end
-    if otherTeam and Teams.AreTeamsFriendly(otherTeam, owner.team) then
-        return
-    end
-
-    local dmg = Damage.New()
-    dmg.amount = stats[MODIFIERS.Damage.name]
-    dmg.reason = DamageReason.COMBAT
-    dmg.sourcePlayer = owner
-    dmg.sourceAbility = currentAbility
-
-    local attackData = {
-        object = other,
-        damage = dmg,
-        source = owner,
-        position = nil,
-        rotation = nil,
-        tags = {id = 'Warrior_Q'}
-    }
-    COMBAT().ApplyDamage(attackData)
-
-    if not self.CurrentProjectile or not Object.IsValid(self.CurrentProjectile) then
-        return
-    end
-
-    local directionVector = self.CurrentProjectile:GetWorldRotation() * Vector3.FORWARD
-    directionVector = -directionVector
-    directionVector.z = 1
-    local impulseVector = directionVector * 1000
-    other:AddImpulse(impulseVector)
 end
-function Cast(self)
+function Cast()
     if Environment.IsServer() then
-        if not self.owner.isGrounded then
-            self.currentAbility:Interrupt()
+        if not ABILITY.owner.isGrounded then
+            ABILITY:Interrupt()
         end
     end
 end
-function Execute(self, stats)
-    local mods = self:CalculateStats(stats)
-    local currentAbility = self:GetCurrentAbility()
+function Execute()
+    mods = ROOT.serverUserData.calculateModifier()
+    local currentAbility = ABILITY
     if
         currentAbility:GetCurrentPhase() == AbilityPhase.READY or not currentAbility.owner or
             not Object.IsValid(currentAbility.owner)
@@ -101,7 +79,7 @@ function Execute(self, stats)
     local ForwardVector = LookQuaternion:GetForwardVector()
     ForwardVector.z = 0
     local VelocityVector = ForwardVector * ProjectileSpeed
-    self.ProjectileVelocity = VelocityVector
+    ProjectileVelocity = VelocityVector
 
     local spawnPosition
     local PlayerPosition = player:GetWorldPosition()
@@ -136,7 +114,7 @@ function Execute(self, stats)
 
     for _, other in ipairs(DamageTrigger:GetOverlappingObjects()) do
         if COMBAT().IsValidObject(other) then
-            HitObject(self, other)
+            HitObject(other)
         end
     end
 
@@ -145,26 +123,26 @@ function Execute(self, stats)
         function()
         end
     )
-    local ViewRotation = self.owner:GetViewWorldRotation()
+    local ViewRotation = ABILITY.owner:GetViewWorldRotation()
     ViewRotation.x = 0
     ViewRotation.y = 0
     RockProjectile:SetWorldRotation(ViewRotation)
     RockProjectile.lifeSpan = LifeSpan
     RockProjectile:MoveContinuous(VelocityVector)
-    self.CurrentProjectile = RockProjectile
+    CurrentProjectile = RockProjectile
 
     Task.Spawn(
         function()
-            self.CurrentProjectile = nil
+            CurrentProjectile = nil
             OverlapEvent:Disconnect()
             RockProjectile:StopMove()
         end,
         MoveDuration
     )
 end
-function Update(self)
-    if self.CurrentProjectile and Object.IsValid(self.CurrentProjectile) then
-        local rayStart = self.CurrentProjectile:GetWorldPosition()
+function Tick()
+    if CurrentProjectile and Object.IsValid(CurrentProjectile) then
+        local rayStart = CurrentProjectile:GetWorldPosition()
         local rayEnd = Vector3.New(rayStart.x, rayStart.y, rayStart.z - 5000)
         local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
         if not hitResult then
@@ -175,8 +153,11 @@ function Update(self)
         local Zdiff = rayStart.z - impactPosition.z
         if Zdiff > 205 or Zdiff < 195 then
             local targetPosition = Vector3.New(rayStart.x, rayStart.y, impactPosition.z + 200)
-            self.CurrentProjectile:MoveTo(targetPosition, 0)
-            self.CurrentProjectile:MoveContinuous(self.ProjectileVelocity)
+            CurrentProjectile:MoveTo(targetPosition, 0)
+            CurrentProjectile:MoveContinuous(ProjectileVelocity)
         end
     end
 end
+
+ABILITY.executeEvent:Connect(Execute)
+ABILITY.castEvent:Connect(Cast)

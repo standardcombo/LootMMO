@@ -1,31 +1,12 @@
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
-
-modifiers = {
-    [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Heal})
-}
-modifiers[MODIFIERS.Radius.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 6 - stats.level / 4
-end
-modifiers[MODIFIERS.Heal.name].calculation = function(self, stats)
-    return 2
-end
-
-
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
 local activateVFX = script:GetCustomProperty('HealerOrcDivineLightActiveBasic')
 local ImpulseAmount = 14000
 
-function AddImpulseToPlayer(self, player)
-    local directionVector = player:GetWorldPosition() - self.owner:GetWorldPosition()
+function AddImpulseToPlayer(ABILITY, player)
+    local directionVector = player:GetWorldPosition() - ABILITY.owner:GetWorldPosition()
     directionVector = directionVector / directionVector.size
     directionVector.z = 0.5
     local impulseVector = directionVector * ImpulseAmount
@@ -34,20 +15,20 @@ function AddImpulseToPlayer(self, player)
     player:AddImpulse(impulseVector)
 end
 
-function Execute(self, stats)
-    if Environment.IsClient() then
+function Execute()
+    if ABILITY:GetCurrentPhase() == AbilityPhase.READY then
         return
     end
-
-    if self:GetCurrentPhase() == AbilityPhase.READY then
-        return
-    end
-    local mod = self:CalculateStats(stats)
-    local newObject = World.SpawnAsset(activateVFX, {position = self.owner:GetWorldPosition(), networkContext  = NetworkContextType.NETWORKED})
+    local mod = ROOT.serverUserData.calculateModifier()
+    local newObject =
+        World.SpawnAsset(
+        activateVFX,
+        {position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED}
+    )
 
     local StunRadius = mod[MODIFIERS.Radius.name]
     local nearbyEnemies =
-        Game.FindPlayersInCylinder(self.owner:GetWorldPosition(), StunRadius, {ignoreTeams = self.owner.team})
+        Game.FindPlayersInCylinder(ABILITY.owner:GetWorldPosition(), StunRadius, {ignoreTeams = ABILITY.owner.team})
 
     ImpulseAmount = ImpulseAmount
 
@@ -57,9 +38,10 @@ function Execute(self, stats)
     local speedStatus = statusEffects.SPEED
     local healAmmount = mod[MODIFIERS.Heal.name]
 
-    self.owner.hitPoints = CoreMath.Clamp(self.owner.hitPoints + healAmmount, self.owner.maxHitPoints)
+    ABILITY.owner.hitPoints = CoreMath.Clamp(ABILITY.owner.hitPoints + healAmmount, ABILITY.owner.maxHitPoints)
 
     for _, enemy in pairs(nearbyEnemies) do
-        AddImpulseToPlayer(self, enemy)
+        AddImpulseToPlayer(ABILITY, enemy)
     end
 end
+ABILITY.executeEvent:Connect(Execute)

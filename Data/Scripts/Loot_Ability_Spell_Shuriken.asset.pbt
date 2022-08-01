@@ -11,16 +11,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 17753357011527774418
-        }
-      }
-      Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press  R to throw 3 deadly shurikens forward.  Marks the target, healing for 50% of damage done while the target is marked. Max Range = 3000."
-      }
-      Overrides {
         Name: "cs:AssassinOrcShurikenProjectileBasic"
         AssetReference {
           Id: 647366899210104021
@@ -51,29 +41,14 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 17753357011527774418
-      Name: "Fantasy Ability Green 004"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Green_004"
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
     }
   }

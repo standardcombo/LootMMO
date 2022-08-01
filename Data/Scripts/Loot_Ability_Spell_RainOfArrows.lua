@@ -1,34 +1,16 @@
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
-
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
-
-modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius})
-}
-
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Radius.name].calculation = function(self, stats)
-    return 2
-end
 local placementTemplate = script:GetCustomProperty('HunterOrcRainOfArrowsPlacementBasic')
 
-function Execute(self, stats)
-    local mod = self:CalculateStats(stats)
+function Execute()
+    local mod = ROOT.serverUserData.calculateModifier()
 
-    local SpecialAbility = self:GetCurrentAbility()
+    local SpecialAbility = ABILITY
     local targetData = SpecialAbility:GetTargetData()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
@@ -37,7 +19,10 @@ function Execute(self, stats)
     local radius = mod[MODIFIERS.Radius.name]
     local vfxScale = Vector3.New(CoreMath.Round(radius / 650, 3))
 
-    World.SpawnAsset(placementTemplate, {position = position, rotation = rotation, scale = vfxScale})
+    World.SpawnAsset(
+        placementTemplate,
+        {position = position, rotation = rotation, scale = vfxScale, networkContext = NetworkContextType.NETWORKED}
+    )
 
     Task.Wait(0.25)
     if
@@ -52,10 +37,10 @@ function Execute(self, stats)
 
     for _, enemy in pairs(nearbyEnemies) do
         local dmg = Damage.New()
-        local player = self.owner
+        local player = ABILITY.owner
         dmg.amount = mod[MODIFIERS.Damage.name]
         dmg.reason = DamageReason.COMBAT
-        dmg.sourcePlayer = self.owner
+        dmg.sourcePlayer = player
         dmg.sourceAbility = SpecialAbility
 
         local attackData = {
@@ -69,3 +54,4 @@ function Execute(self, stats)
         COMBAT().ApplyDamage(attackData)
     end
 end
+ABILITY.executeEvent:Connect(Execute)

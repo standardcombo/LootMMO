@@ -1,42 +1,12 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local MODIFIERS = require(script:GetCustomProperty('MODIFIERS'))
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local projectileVFX = script:GetCustomProperty('HealerOrcSunBeamProjectileBasic')
 
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
-
-modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Speed.name] = setmetatable({}, {__index = MODIFIERS.Speed}),
-    [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range}),
-    [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Speed})
-}
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return stats.level * 50
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 10 - stats.level
-end
-modifiers[MODIFIERS.Speed.name].calculation = function(self, stats)
-    return 600
-end
-modifiers[MODIFIERS.Range.name].calculation = function(self, stats)
-    return 400
-end
-modifiers[MODIFIERS.Heal.name].calculation = function(self, stats)
-    local level = stats.level or 0
-    return level * 50
-end
-local projectileVFX = script:GetCustomProperty('ProjectileVFX')
-
-if Environment.IsClient() then
-    return
-end
-function Execute(self, stats)
-    local player = self.owner
-    local SpecialAbility = self:GetCurrentAbility()
-    local mod = self:CalculateStats(stats)
+function Execute()
+    local player = ROOT.owner
+    local SpecialAbility = ABILITY
+    local mod = ROOT.serverUserData.calculateModifier()
     if SpecialAbility:GetCurrentPhase() == AbilityPhase.READY then
         return
     end
@@ -54,7 +24,8 @@ function Execute(self, stats)
 
     local WorldPosition = player:GetWorldPosition() + (ForwardVector * 200)
 
-    local newProjectile = World.SpawnAsset(projectileVFX, {position = WorldPosition})
+    local newProjectile =
+        World.SpawnAsset(projectileVFX, {position = WorldPosition, networkContext = NetworkContextType.NETWORKED})
     newProjectile:SetCustomProperty('damage', mod[MODIFIERS.Damage.name])
     newProjectile:SetCustomProperty('heal', mod[MODIFIERS.Heal.name])
     newProjectile:SetCustomProperty('ability', SpecialAbility)
@@ -66,3 +37,5 @@ function Execute(self, stats)
     newProjectile:MoveContinuous(VelocityVector)
     newProjectile.lifeSpan = LIFE_SPAN
 end
+
+ABILITY.executeEvent:Connect(Execute)

@@ -1,50 +1,29 @@
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
 
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
-
-modifiers = {
-    [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Heal}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Stun.name] = setmetatable({}, {__index = MODIFIERS.Stun})
-}
-modifiers[MODIFIERS.Heal.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Stun.name].calculation = function(self, stats)
-    return 2
-end
-
-local radius = 2000
 local scaleDuration = 3
 local chargeUpVFX = script:GetCustomProperty('HealerOrcSupernovaChargeBasic')
 local endingVFX = script:GetCustomProperty('HealerOrcSupernovaEndingBasic')
 
-function Execute(self, stats)
-    local player = self.owner
+function Execute()
+    local mods = ROOT.serverUserData.calculateModifier()
+    local player = ABILITY.owner
 
     if not Object.IsValid(player) then
         return
     end
 
-    local thisAbility = self:GetCurrentAbility()
+    local thisAbility = ABILITY
     local targetData = thisAbility:GetTargetData()
     local position = targetData:GetHitPosition()
 
-    local CurrentChargeUp = World.SpawnAsset(chargeUpVFX, {position = position})
-    local EffectRadius = radius
+    local CurrentChargeUp =
+        World.SpawnAsset(chargeUpVFX, {position = position, networkContext = NetworkContextType.NETWORKED})
+    local EffectRadius = mods[MODIFIERS.Radius.name]
     local InnerSphere = CurrentChargeUp:GetCustomProperty('InnerSphere'):WaitForObject()
     local OuterSphere = CurrentChargeUp:GetCustomProperty('OuterSphere'):WaitForObject()
     local Beam = CurrentChargeUp:GetCustomProperty('Beam'):WaitForObject()
@@ -57,24 +36,24 @@ function Execute(self, stats)
 
     Task.Spawn(
         function()
-            SupernovaEnding(self, stats, CurrentChargeUp, EffectRadius)
+            SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
         end,
         scaleDuration
     )
 end
 
-function SupernovaEnding(self, stats, CurrentChargeUp, EffectRadius)
-    local mod = self:CalculateStats(stats)
+function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
+    local mod = mods
     local dmgPosition
 
     if Object.IsValid(CurrentChargeUp) then
         dmgPosition = CurrentChargeUp:GetWorldPosition()
-        World.SpawnAsset(endingVFX, {position = dmgPosition})
+        World.SpawnAsset(endingVFX, {position = dmgPosition, networkContext = NetworkContextType.NETWORKED})
         CurrentChargeUp:Destroy()
     else
         return
     end
-    local SpecialAbility = self:GetCurrentAbility()
+    local SpecialAbility = ABILITY
 
     if not SpecialAbility.owner or not Object.IsValid(SpecialAbility.owner) then
         return
@@ -116,3 +95,5 @@ function SupernovaEnding(self, stats, CurrentChargeUp, EffectRadius)
         end
     end
 end
+
+ABILITY.executeEvent:Connect(Execute)

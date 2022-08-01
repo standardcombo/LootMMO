@@ -11,16 +11,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 1221213810114228531
-        }
-      }
-      Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Press and hold E to show a preview of where your throw will go. Release E to throw a small bottle filled with magical liquid that shatters when it lands, transforming nearby enemies into harmless chickens for a short time.  Warning, it will also reset their cooldowns."
-      }
-      Overrides {
         Name: "cs:Combat_Connector"
         AssetReference {
           Id: 12483969483192492711
@@ -39,20 +29,14 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
         Name: "cs:Modifiers:isrep"
@@ -85,15 +69,6 @@ Assets {
       Overrides {
         Name: "cs:MageAnimorphPotionProjectileBasic:ml"
         Bool: false
-      }
-    }
-    Assets {
-      Id: 1221213810114228531
-      Name: "Fantasy Ability Yellow 023"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_023"
       }
     }
   }

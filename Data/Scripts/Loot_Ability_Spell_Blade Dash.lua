@@ -1,76 +1,61 @@
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ASSASSIN_ORC_BLADE_DASH_PLACEMENT_BASIC = script:GetCustomProperty('AssassinOrcBladeDashPlacementBasic')
+local ASSASSIN_ORC_BLADE_DASH_ENDING_FXBASIC = script:GetCustomProperty('AssassinOrcBladeDashEndingFXBasic')
+
 function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
 
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
+local placement = ASSASSIN_ORC_BLADE_DASH_PLACEMENT_BASIC
+local ending = ASSASSIN_ORC_BLADE_DASH_ENDING_FXBASIC
 
-modifiers = {
-    [MODIFIERS.DamageRange.name] = setmetatable({}, {__index = MODIFIERS.DamageRange}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range})
-}
-modifiers[MODIFIERS.DamageRange.name].calculation = function(self, stats)
-    return {min = 2, max = 3}
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Range.name].calculation = function(self, stats)
-    return 2
-end
-
-local placement = nil
-local ending = nil
-
-function Execute(self, stats)
-    local mods = self:CalculateStats(stats)
-    local targetData = self:GetCurrentAbility():GetTargetData()
+function Execute()
+    local mods = ROOT.serverUserData.calculateModifier()
+    local targetData = ABILITY:GetTargetData()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
-
-    World.SpawnAsset(placement, {position = position, rotation = rotation})
+    World.SpawnAsset(placement, {position = position, rotation = rotation, networkContext = NetReferenceType.NETWORKED})
     Task.Wait(.4)
 
-    if not Object.IsValid(self:GetCurrentAbility()) or not self.owner or not Object.IsValid(self.owner) then
+    if not Object.IsValid(ABILITY) or not ABILITY.owner or not Object.IsValid(ABILITY.owner) then
         return
     end
 
-    if not self.owner.isFlying then -- Allows for a quick Q-T combo without teleporting
-        self.owner:SetWorldPosition(position + Vector3.New(0, 0, 180))
-        self.owner:ResetVelocity()
+    if not ABILITY.owner.isFlying then -- Allows for a quick Q-T combo without teleporting
+        ABILITY.owner:SetWorldPosition(position + Vector3.New(0, 0, 180))
+        ABILITY.owner:ResetVelocity()
     end
 
-    World.SpawnAsset(ending, {position = position, rotation = rotation})
+    World.SpawnAsset(ending, {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED})
     local radius = mods[MODIFIERS.Range.name]
     local enemiesInRange =
         Game.FindPlayersInCylinder(
-        self.owner:GetWorldPosition(),
+        ABILITY.owner:GetWorldPosition(),
         radius,
-        {ignoreDead = true, ignoreTeams = self.owner.team}
+        {ignoreDead = true, ignoreTeams = ABILITY.owner.team}
     )
 
     local dmgMod = mods[MODIFIERS.DamageRange.name]
     local dmg = Damage.New()
-    dmg.amount = math.random(dmgMod.min, dmgMod.max)
+    local dmgAmount = math.random(dmgMod.min, dmgMod.max)
+    dmg.amount = dmgAmount
     dmg.reason = DamageReason.COMBAT
-    dmg.sourcePlayer = self.owner
-    dmg.sourceAbility = self
+    dmg.sourcePlayer = ABILITY.owner
+    dmg.sourceAbility = ABILITY
 
     local selfHeal = Damage.New()
-    selfHeal.amount = -dmg
+    selfHeal.amount = -dmgAmount
     selfHeal.reason = DamageReason.COMBAT
-    selfHeal.sourcePlayer = self.owner
-    selfHeal.sourceAbility = self
+    selfHeal.sourcePlayer = ABILITY.owner
+    selfHeal.sourceAbility = ABILITY
 
     local healData = {
-        object = self.owner,
+        object = ABILITY.owner,
         damage = selfHeal,
-        source = self.owner,
+        source = ABILITY.owner,
         position = nil,
         rotation = nil,
         tags = {id = 'Assassin_Q'}
@@ -80,7 +65,7 @@ function Execute(self, stats)
         local attackData = {
             object = enemy,
             damage = dmg,
-            source = self.owner,
+            source = ABILITY.owner,
             position = nil,
             rotation = nil,
             tags = {id = 'Assassin_Q'}
@@ -89,3 +74,5 @@ function Execute(self, stats)
         COMBAT().ApplyDamage(healData) -- heal caster
     end
 end
+
+ABILITY.executeEvent:Connect(Execute)

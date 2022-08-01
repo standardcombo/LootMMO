@@ -10,7 +10,7 @@ local ACTIVE_FRAME = script:GetCustomProperty('ActiveFrame'):WaitForObject()
 local ACTIVE_FLASH = script:GetCustomProperty('ActiveFlash'):WaitForObject()
 local DURATION_BAR = script:GetCustomProperty('DurationIndicator'):WaitForObject()
 local LEVEL_TEXT = script:GetCustomProperty('LevelText'):WaitForObject()
-
+local ACTION_NAME = script:GetCustomProperty('ActionName'):WaitForObject()
 -- Constants
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local DEFAULT_IMAGE = ICON:GetImage()
@@ -24,30 +24,11 @@ local cooldownDuration = 0.0
 local cooldownOverride = nil
 local networkedEventListener = nil
 
-function OnAbilityIconSet(thisAbility)
-    if not thisAbility:IsA('Ability') then
-        return
-    end
-    currentAbility = thisAbility
-    if thisAbility.icon then
-        ICON:SetImage(thisAbility.icon)
-    else
-        ICON:SetImage(DEFAULT_IMAGE)
-    end
-
-    local ability = currentAbility:GetCurrentAbility() 
-    executeDuration = ability.executePhaseSettings.duration
-    recoveryDuration = ability.recoveryPhaseSettings.duration
-    cooldownDuration = ability.cooldownPhaseSettings.duration
-
-    DURATION_BAR.progress = 0 
-end
-
 -- nil Tick(float)
 -- Checks for changes to the players abiltiies, or icons on those abilities
-function Tick(deltaTime) 
+function Tick(deltaTime)
     if currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner) then
-        local ability = currentAbility:GetCurrentAbility()  
+        local ability = currentAbility:GetCurrentAbility()
         local currentPhase = ability:GetCurrentPhase()
         local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
         PANEL.visibility = Visibility.INHERIT
@@ -114,4 +95,37 @@ function Tick(deltaTime)
         end
     end
 end
+
+function SetIcon(Icon)
+    if Icon then
+        ICON:SetImage(Icon)
+    else
+        ICON:SetImage(DEFAULT_IMAGE)
+    end
+end
+
+function SetActionName(name)
+    if name then
+        for key, child in pairs(ACTION_NAME:GetChildren()) do
+            child.text = name
+        end
+    end
+end
+
+function SetAbility(ability)
+    if not ability:IsA('Ability') then
+        return
+    end
+    currentAbility = ability
+    executeDuration = ability.executePhaseSettings.duration
+    recoveryDuration = ability.recoveryPhaseSettings.duration
+    cooldownDuration = ability.cooldownPhaseSettings.duration
+
+    DURATION_BAR.progress = 0
+end
+
+PANEL.clientUserData.SetIcon = SetIcon
+PANEL.clientUserData.SetIcon = SetActionName
+PANEL.clientUserData.SetIcon = SetAbility
+
 Events.Connect('Set Ability Icon', OnAbilityIconSet)

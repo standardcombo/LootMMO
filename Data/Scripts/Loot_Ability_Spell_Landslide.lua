@@ -1,42 +1,35 @@
+local function COMBAT()
+    return require(script:GetCustomProperty('Combat_Connector'))
+end
 local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
-properties = {
-    description = script:GetCustomProperty('Description'),
-    icon = script:GetCustomProperty('Icon')
-}
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local Trigger = script:GetCustomProperty('Trigger'):WaitForObject()
 
-modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.BashRadius.name] = setmetatable({}, {__index = MODIFIERS.BashRadius})
-}
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
-end
-modifiers[MODIFIERS.BashRadius.name].calculation = function(self, stats)
-    return 2
-end
-local OwnerImpulseAmount = 150000
+local OwnerImpulseAmount = 50000
 local DEFAULT_Stun = {duration = 4.0, damage = 0, multiplier = 0}
-local PlayerVFX = nil
 local DashImpulseVector = nil
 local TriggerEventConnection = nil
 
-local AttachedFX = nil
-local bashVFX = nil
+local originalPlayerSettings = {}
+local isDashing = false
 
-function AddImpulseToPlayer(self, player)
-    local mod = self:CalculateStats(self)
+local mod = {}
+
+local ATTACHED_VFX = script:GetCustomProperty('AttachedVFX')
+local BASH_VFX = script:GetCustomProperty('BashVFX')
+
+local SpawnedAttachedVFX = nil
+
+function AddImpulseToPlayer(player)
     warn('Apply effect stun')
 
     -- Do damage
     local dmgAmount = mod[MODIFIERS.Damage.name]
     local dmg = Damage.New(dmgAmount)
     dmg.reason = DamageReason.COMBAT
-    dmg.sourcePlayer = self.owner
-    dmg.sourceAbility = self
+    dmg.sourcePlayer = ABILITY.owner
+    dmg.sourceAbility = ABILITY
 
     local attackData = {
         object = player,
@@ -50,92 +43,106 @@ function AddImpulseToPlayer(self, player)
 end
 
 function OnBeginOverlap(thisTrigger, other)
-    if (other:IsA('Player') or other.name == 'Collider') and other.team ~= SpecialAbility.owner.team then
-        AddImpulseToPlayer(self, other)
+    if (other:IsA('Player') or other.name == 'Collider') and other.team ~= ABILITY.owner.team then
+        AddImpulseToPlayer(other)
     end
 end
 
-local function DashOn(self)
-    if self and Object.IsValid(self:GetCurrentAbility()) and self:GetCurrentPhase() == AbilityPhase.READY then
+local function DashOn()
+    if Object.IsValid(ABILITY) and ABILITY:GetCurrentPhase() == AbilityPhase.READY then
         return
     end
-    self.data.originalPlayerSettings = {}
-    self.data.originalPlayerSettings.BrakingDecelerationWalking = self.owner.brakingDecelerationWalking
-    self.data.originalPlayerSettings.AnimationStance = self.owner.animationStance
+    local owner = ABILITY.owner
+    originalPlayerSettings = {}
+    originalPlayerSettings.BrakingDecelerationWalking = owner.brakingDecelerationWalking
+    originalPlayerSettings.AnimationStance = owner.animationStance
 
-    self.owner.movementControlMode = MovementMode.NONE
-    self.owner.animationStance = '1hand_melee_shield_block'
-    self.owner.groundFriction = 0
-    self.owner.brakingDecelerationWalking = 0
+    owner.movementControlMode = MovementMode.NONE
+    owner.animationStance = '1hand_melee_shield_block'
+    owner.groundFriction = 0
+    owner.brakingDecelerationWalking = 0
 
-    local directionVector = self.owner:GetWorldRotation() * Vector3.FORWARD
-    self.data.DashImpulseVector = directionVector * OwnerImpulseAmount
+    local directionVector = owner:GetWorldRotation() * Vector3.FORWARD
+    DashImpulseVector = directionVector * OwnerImpulseAmount
 
-    local attachmentTemplate = PlayerVFX.Attachment
-    AttachedFX = META_AP().SpawnAsset(attachmentTemplate, {position = SpecialAbility.owner:GetWorldPosition()})
-    AttachedFX:AttachToPlayer(SpecialAbility.owner, 'root')
+    local attachmentTemplate = ATTACHED_VFX
+    SpawnedAttachedVFX =
+        World.SpawnAsset(
+        attachmentTemplate,
+        {position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED}
+    )
+    SpawnedAttachedVFX:AttachToPlayer(ABILITY.owner, 'root')
 
     for _, other in ipairs(Trigger:GetOverlappingObjects()) do
-        if other:IsA('Player') then
-            AddImpulseToPlayer(self, other)
+        if (other:IsA('Player') or other.name == 'Collider') and other.team ~= ABILITY.owner.team then
+            AddImpulseToPlayer(other)
         end
     end
 
     TriggerEventConnection = Trigger.beginOverlapEvent:Connect(OnBeginOverlap)
 end
-local function DashOff(self)
+local function DashOff()
+    local owner = ABILITY.owner
     if TriggerEventConnection then
         TriggerEventConnection:Disconnect()
     end
 
-    if Object.IsValid(AttachedFX) then
-        AttachedFX:Destroy()
+    if Object.IsValid(SpawnedAttachedVFX) then
+        SpawnedAttachedVFX:Destroy()
     end
 
-    if self and Object.IsValid(self) and originalPlayerSettings ~= {} then
-        self.owner.brakingDecelerationWalking = originalPlayerSettings.BrakingDecelerationWalking
-        self.owner.animationStance = originalPlayerSettings.AnimationStance
-        self.owner.groundFriction = 8
-        self.owner.movementControlMode = MovementControlMode.LOOK_RELATIVE
+    if Object.IsValid(ABILITY) and originalPlayerSettings ~= {} then
+        owner.brakingDecelerationWalking = originalPlayerSettings.BrakingDecelerationWalking
+        owner.animationStance = originalPlayerSettings.AnimationStance
+        owner.groundFriction = 8
+        owner.movementControlMode = MovementControlMode.LOOK_RELATIVE
     end
 end
 
-function ToggleDash(self, mode)
+function ToggleDash(mode)
     if mode then
-        DashOn(self)
+        DashOn()
     else
-        DashOff(self)
+        DashOff()
     end
-    self.data.isDashing = mode
+    isDashing = mode
 end
 
-function Cast(self)
-    if not self.owner.isGrounded then
-        self:Interrupt()
-    end
-end
-
-function Execute(self)
-    ToggleDash(self, true)
-end
-
-function OnInterrupted(self)
-    if self.data.isDashing then
-        ToggleDash(self, false)
+function Cast()
+    if not ABILITY.owner.isGrounded then
+        ABILITY:Interrupt()
     end
 end
 
-function Cooldown(self)
-    ToggleDash(self, false)
+function Execute()
+    mod = ROOT.serverUserData.calculateModifier()
+    Trigger:SetWorldScale(Vector3.New(mod[MODIFIERS.BashRadius.name]))
+    ToggleDash(true)
+end
 
-    local bashTemplate = bashVFX
-    World.SpawnAsset(bashTemplate, {position = self.owner:GetWorldPosition(), rotation = self.owner:GetWorldRotation()})
+function OnInterrupted()
+    if isDashing then
+        ToggleDash(false)
+    end
+end
 
-    local sphereRadius = nil
-    local nearbyEnemies =
-        Game.FindPlayersInSphere(self.owner:GetWorldPosition(), sphereRadius, {ignoreTeams = self.owner.team})
-    for _, enemy in pairs(nearbyEnemies) do
-        AddImpulseToPlayer(self, enemy)
+function Cooldown()
+    ToggleDash(false)
+
+    local bashTemplate = BASH_VFX
+    World.SpawnAsset(
+        bashTemplate,
+        {
+            position = ABILITY.owner:GetWorldPosition(),
+            rotation = ABILITY.owner:GetWorldRotation(),
+            networkContext = NetworkContextType.NETWORKED
+        }
+    )
+
+    for _, other in ipairs(Trigger:GetOverlappingObjects()) do
+        if (other:IsA('Player') or other.name == 'Collider') and other.team ~= ABILITY.owner.team then
+            AddImpulseToPlayer(other)
+        end
     end
 end
 
@@ -143,8 +150,8 @@ function OnUnequip(equipment, player)
     if TriggerEventConnection then
         TriggerEventConnection:Disconnect()
     end
-    if Object.IsValid(AttachedFX) then
-        AttachedFX:Destroy()
+    if Object.IsValid(SpawnedAttachedVFX) then
+        SpawnedAttachedVFX:Destroy()
     end
 
     player.movementControlMode = MovementControlMode.LOOK_RELATIVE
@@ -152,8 +159,14 @@ function OnUnequip(equipment, player)
     player.brakingDecelerationWalking = 1000
 end
 
-function Update(self, deltaTime)
-    if Object.IsValid(self:GetCurrentAbility()) and Object.IsValid(self.owner) then
-        self.owner:AddImpulse(DashImpulseVector * (deltaTime * 10))
+function Tick(deltaTime)
+    if Object.IsValid(ABILITY) and Object.IsValid(ABILITY.owner) and isDashing then
+        ABILITY.owner:AddImpulse((DashImpulseVector or Vector3.ZERO) * (deltaTime * 10))
     end
 end
+
+ABILITY.executeEvent:Connect(Execute)
+ABILITY.castEvent:Connect(Cast)
+ABILITY.cooldownEvent:Connect(Cooldown)
+ABILITY.interruptedEvent:Connect(OnInterrupted)
+ROOT.unequippedEvent:Connect(OnUnequip)

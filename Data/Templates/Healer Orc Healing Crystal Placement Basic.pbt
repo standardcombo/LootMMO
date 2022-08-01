@@ -52,7 +52,6 @@ Assets {
         Name: "ServerContext"
         Transform {
           Location {
-            Y: 300
           }
           Rotation {
           }
@@ -185,7 +184,6 @@ Assets {
         Name: "ClientContext"
         Transform {
           Location {
-            Y: 300
           }
           Rotation {
           }

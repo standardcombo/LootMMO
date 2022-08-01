@@ -11,45 +11,32 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 3469815303062501792
-        }
-      }
-      Overrides {
-        Name: "cs:Description"
-        String: "Instant \342\200\223 Teleports you forward to a blade and damages enemies near the impact point. Placement Range = 2400."
-      }
-      Overrides {
         Name: "cs:Combat_Connector"
         AssetReference {
           Id: 12483969483192492711
         }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
+        Name: "cs:Root"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
+        Name: "cs:AssassinOrcBladeDashPlacementBasic"
+        AssetReference {
+          Id: 5847803406760630635
+        }
       }
       Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 3469815303062501792
-      Name: "Fantasy Ability Purple 004"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_004"
+        Name: "cs:AssassinOrcBladeDashEndingFXBasic"
+        AssetReference {
+          Id: 579776759173474023
+        }
       }
     }
   }
