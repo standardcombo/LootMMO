@@ -210,5 +210,10 @@ Assets {
       VirtualFolderPath: "Equipment"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Stats"
+      PlatformAssetType: 3
+    }
   }
 }
