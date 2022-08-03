@@ -17,6 +17,8 @@ local LIGHTS = script:GetCustomProperty("Lights"):WaitForObject()
 local LAUNCH_BOOSTER = script:GetCustomProperty("LaunchBooster"):WaitForObject()
 local CANT_AFFORD_SFX = script:GetCustomProperty("CantAffordSFX")
 
+local CASH_CONTAINER = script:GetCustomProperty("ResourceDisplayContainer"):WaitForObject()
+
 local thisMachine = script.parent.parent
 local MUSIC_WHILE_IDLE = thisMachine:GetCustomProperty("MusicWhileIdle")
 local HIGH_SCORE_LEADERBOARD = thisMachine:GetCustomProperty("HighScoreLeaderboard")
@@ -148,7 +150,7 @@ end
 
 function initGame(machineId, player)
   if machineId ~= thisMachine.id then return end
-
+  CASH_CONTAINER.visibility = Visibility.FORCE_OFF
   currentPlayer = player
   gameInstance = gameInstance + 1
   player.isVisibleToSelf = false
@@ -263,6 +265,7 @@ end
 
 function quitGame()
   if currentPlayer and Object.IsValid(currentPlayer) then
+    CASH_CONTAINER.visibility = Visibility.FORCE_ON
     currentPlayer.isVisibleToSelf = true
     currentPlayer:ClearOverrideCamera(0.5)
     UI.SetCanCursorInteractWithUI(false)
