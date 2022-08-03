@@ -150,7 +150,7 @@ end
 
 function initGame(machineId, player)
   if machineId ~= thisMachine.id then return end
-  CASH_CONTAINER.visibility = Visibility.FORCE_OFF
+  
   currentPlayer = player
   gameInstance = gameInstance + 1
   player.isVisibleToSelf = false
@@ -158,6 +158,10 @@ function initGame(machineId, player)
   UI_CONTAINER.visibility = Visibility.INHERIT
   LAUNCH_BOOSTER.collision = Collision.FORCE_OFF
 
+  if CASH_CONTAINER ~= nil then
+    CASH_CONTAINER.visibility = Visibility.FORCE_OFF
+  end
+  
   UI.SetCanCursorInteractWithUI(true)
   resetMachineState()
   showControls()
@@ -265,7 +269,6 @@ end
 
 function quitGame()
   if currentPlayer and Object.IsValid(currentPlayer) then
-    CASH_CONTAINER.visibility = Visibility.FORCE_ON
     currentPlayer.isVisibleToSelf = true
     currentPlayer:ClearOverrideCamera(0.5)
     UI.SetCanCursorInteractWithUI(false)
@@ -276,6 +279,10 @@ function quitGame()
     quitGameEvent:Disconnect()
     clearMessage()
 
+    if CASH_CONTAINER ~= nil then
+      CASH_CONTAINER.visibility = Visibility.INHERIT
+    end
+    
     for _, eq in ipairs(currentPlayer:GetAttachedObjects()) do
       if eq.isClientOnly then
         eq.visibility = Visibility.INHERIT
