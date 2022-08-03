@@ -80,6 +80,10 @@ Objects {
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
     }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
     MountedVolume {
     }
   }
@@ -392,6 +396,10 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
     }
   }
   NetworkRelevanceDistance {
@@ -8566,6 +8574,10 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
     }
   }
   NetworkRelevanceDistance {
