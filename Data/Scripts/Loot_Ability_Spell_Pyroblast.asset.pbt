@@ -11,39 +11,32 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Icon"
-        AssetReference {
-          Id: 4990637989068521051
+        Name: "cs:Root"
+        ObjectReference {
         }
       }
       Overrides {
-        Name: "cs:Description"
-        String: "Instant/Guided \342\200\223 Press R to launch an orb of chaotic flames that detonates on impact, dealing massive damage. Hold RMB to guide the flames towards your reticle.  If it has not collided within 10 seconds it will explode."
+        Name: "cs:Ability"
+        ObjectReference {
+        }
       }
       Overrides {
-        Name: "cs:Icon:isrep"
-        Bool: false
+        Name: "cs:Impact"
+        AssetReference {
+          Id: 7794121287511761576
+        }
       }
       Overrides {
-        Name: "cs:Icon:ml"
-        Bool: false
+        Name: "cs:Projectile"
+        AssetReference {
+          Id: 13667023393242254669
+        }
       }
       Overrides {
-        Name: "cs:Description:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Description:ml"
-        Bool: false
-      }
-    }
-    Assets {
-      Id: 4990637989068521051
-      Name: "Fantasy Ability Red 007"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_007"
+        Name: "cs:Combat_Connector"
+        AssetReference {
+          Id: 12483969483192492711
+        }
       }
     }
   }

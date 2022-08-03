@@ -16,7 +16,7 @@ modifiers[MODIFIERS.Cooldown.name].calculation = function()
     return 2
 end
 modifiers[MODIFIERS.Radius.name].calculation = function()
-    return 2
+    return 400
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

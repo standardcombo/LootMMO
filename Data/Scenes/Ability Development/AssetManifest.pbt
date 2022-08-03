@@ -278,15 +278,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10954008740118234483
-  Name: "Magic Circle Generator: Basic VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_magic_circle_generator_simple_basic"
-  }
-}
-Assets {
   Id: 10577491396371571795
   Name: "Depth of Field Post Process"
   PlatformAssetType: 6

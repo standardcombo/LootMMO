@@ -7,7 +7,6 @@ Assets {
       Overrides {
         Name: "cs:Trigger"
         ObjectReference {
-          SelfId: 9310663389044086089
         }
       }
       Overrides {
