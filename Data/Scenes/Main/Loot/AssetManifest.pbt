@@ -1,10 +1,10 @@
 Assets {
-  Id: 17752702521577453302
-  Name: "Fantasy Ability Yellow 027"
-  PlatformAssetType: 9
+  Id: 18283604462096221912
+  Name: "Roboto Slab Black"
+  PlatformAssetType: 28
   PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Yellow_027"
+    AssetType: "FontAssetRef"
+    AssetId: "RobotoSlabBlack_ref"
   }
 }
 Assets {
@@ -14,6 +14,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameTri_001Wedge"
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
   }
 }
 Assets {
@@ -35,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15822423868574331112
+  Name: "Fantasy Glove 013"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Glove_013"
+  }
+}
+Assets {
   Id: 15204381781527651531
   Name: "Line Full 003"
   PlatformAssetType: 9
@@ -44,21 +62,30 @@ Assets {
   }
 }
 Assets {
-  Id: 15165554833363844727
-  Name: "Amarante"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "AmaranteRegular_ref"
-  }
-}
-Assets {
   Id: 15111121232164291161
   Name: "Triangle Sign"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Racing_Icon_023"
+  }
+}
+Assets {
+  Id: 14950569642219201732
+  Name: "Humanoid 2 Peasant Shirt"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_upper_fantasy_000_ref_temp"
+  }
+}
+Assets {
+  Id: 14401535753645096251
+  Name: "Fantasy Jewelry 009"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_009"
   }
 }
 Assets {
@@ -107,6 +134,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12385328426085025461
+  Name: "Chest Piece"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_ChestPiece"
+  }
+}
+Assets {
   Id: 11726854071015571091
   Name: "Fantasy Craft Crystal 042"
   PlatformAssetType: 9
@@ -134,12 +170,66 @@ Assets {
   }
 }
 Assets {
+  Id: 9709214148658914443
+  Name: "Fantasy Dagger 021"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Weapon_Dagger_021"
+  }
+}
+Assets {
+  Id: 9622238984041529954
+  Name: "Fantasy Boot 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Boot_006"
+  }
+}
+Assets {
+  Id: 9141481781676223235
+  Name: "Fantasy Coins 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Coins_006"
+  }
+}
+Assets {
   Id: 9008238566657320754
   Name: "Sci-fi Frame 006"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_SciFi_Frame_006"
+  }
+}
+Assets {
+  Id: 8911037067941999165
+  Name: "Fantasy Jewelry 023"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_023"
+  }
+}
+Assets {
+  Id: 8634195622628323616
+  Name: "Fantasy Belt 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Belt_002"
+  }
+}
+Assets {
+  Id: 7845803738723290617
+  Name: "Humanoid 2 Kamil"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_basic_007_ref"
   }
 }
 Assets {
@@ -161,15 +251,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5335018611359149694
-  Name: "Fantasy Axe 007"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Weapon_Axe_007"
-  }
-}
-Assets {
   Id: 3483798833601977176
   Name: "Fantasy Shape 003"
   PlatformAssetType: 9
@@ -185,15 +266,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Crafting_Crystal_009"
-  }
-}
-Assets {
-  Id: 3390135657390988868
-  Name: "Fantasy Spell Potion 002"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Potion_002"
   }
 }
 Assets {
@@ -224,12 +296,30 @@ Assets {
   }
 }
 Assets {
+  Id: 2304171879981945904
+  Name: "Humanoid 2 Peasant Pants"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_lower_fantasy_000_ref"
+  }
+}
+Assets {
   Id: 2182215656788171490
   Name: "Fantasy Craft Crystal 015"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Crafting_Crystal_015"
+  }
+}
+Assets {
+  Id: 1281351767004184340
+  Name: "Helm"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Helm"
   }
 }
 Assets {

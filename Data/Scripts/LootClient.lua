@@ -2,8 +2,10 @@
 local LOOT_COLLECTION_DATA = require(script:GetCustomProperty("LootCollectionData"))
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local UI_ROOT = script:GetCustomProperty("UIRoot"):WaitForObject()
-local INSTRUCTION = script:GetCustomProperty("InstructionText"):WaitForObject()
-local LOOT_ID = script:GetCustomProperty("LootID"):WaitForObject()
+
+local HEADER_PANEL = script:GetCustomProperty("HeaderPanel"):WaitForObject()
+local HEADER_TEXT = script:GetCustomProperty("HeaderText"):WaitForObject()
+local COLLECTION_TEXT = script:GetCustomProperty("CollectionText"):WaitForObject()
 
 local WEAPON_IMAGE = script:GetCustomProperty("WeaponImage"):WaitForObject()
 local CHEST_IMAGE = script:GetCustomProperty("ChestImage"):WaitForObject()
@@ -13,15 +15,19 @@ local FOOT_IMAGE = script:GetCustomProperty("FootImage"):WaitForObject()
 local HAND_IMAGE = script:GetCustomProperty("HandImage"):WaitForObject()
 local NECKLACE_IMAGE = script:GetCustomProperty("NecklaceImage"):WaitForObject()
 local RING_IMAGE = script:GetCustomProperty("RingImage"):WaitForObject()
-local WEAPON_TEXT = script:GetCustomProperty("WeaponText"):WaitForObject()
-local CHEST_TEXT = script:GetCustomProperty("ChestText"):WaitForObject()
-local HEAD_TEXT = script:GetCustomProperty("HeadText"):WaitForObject()
-local WAIST_TEXT = script:GetCustomProperty("WaistText"):WaitForObject()
-local FOOT_TEXT = script:GetCustomProperty("FootText"):WaitForObject()
-local HAND_TEXT = script:GetCustomProperty("HandText"):WaitForObject()
-local NECKLACE_TEXT = script:GetCustomProperty("NecklaceText"):WaitForObject()
-local RING_TEXT = script:GetCustomProperty("RingText"):WaitForObject()
-local UIPANEL = script:GetCustomProperty("UIPanel"):WaitForObject()
+
+local WEAPON_BUTTON = script:GetCustomProperty("WeaponButton"):WaitForObject()
+local CHEST_BUTTON = script:GetCustomProperty("ChestButton"):WaitForObject()
+local HEAD_BUTTON = script:GetCustomProperty("HeadButton"):WaitForObject()
+local WAIST_BUTTON = script:GetCustomProperty("WaistButton"):WaitForObject()
+local FOOT_BUTTON = script:GetCustomProperty("FootButton"):WaitForObject()
+local HAND_BUTTON = script:GetCustomProperty("HandButton"):WaitForObject()
+local NECKLACE_BUTTON = script:GetCustomProperty("NecklaceButton"):WaitForObject()
+local RING_BUTTON = script:GetCustomProperty("RingButton"):WaitForObject()
+
+local ITEM_DETAILS_PANEL = script:GetCustomProperty("ItemDetailsFloatingPanel"):WaitForObject()
+local ITEM_DETAILS_SCRIPT = ITEM_DETAILS_PANEL:FindDescendantByType("Script")
+
 local PLAY_BUTTON_ROOT = script:GetCustomProperty("PlayButtonRoot"):WaitForObject()
 local PLAY_BUTTON = script:GetCustomProperty("PlayButton"):WaitForObject()
 local PLAY_BUTTON_SFX = script:GetCustomProperty("PlayButtonSFX"):WaitForObject()
@@ -37,15 +43,15 @@ local itemImages = {
 	NECKLACE_IMAGE,
 	RING_IMAGE
 }
-local itemTexts = {
-	WEAPON_TEXT,
-	CHEST_TEXT,
-	HEAD_TEXT,
-	WAIST_TEXT,
-	FOOT_TEXT,
-	HAND_TEXT,
-	NECKLACE_TEXT,
-	RING_TEXT
+local itemButtons = {
+	WEAPON_BUTTON,
+	CHEST_BUTTON,
+	HEAD_BUTTON,
+	WAIST_BUTTON,
+	FOOT_BUTTON,
+	HAND_BUTTON,
+	NECKLACE_BUTTON,
+	RING_BUTTON
 }
 
 local classes = {
@@ -60,15 +66,19 @@ local classes = {
 UI.SetCanCursorInteractWithUI(true)
 UI.SetCursorVisible(true)
 
+local HEADER_START_Y = HEADER_PANEL.y
+HEADER_PANEL.y = 0
+COLLECTION_TEXT.text = ""
+
 
 function EquipLoot(lootBag)
 	
 	local headerPrefix = LOOT_COLLECTION_DATA.GetHeaderPrefix(lootBag.collection)
 	
-	INSTRUCTION.text = ""
-	LOOT_ID.text = headerPrefix .. lootBag.tokenId
+	HEADER_TEXT.text = headerPrefix .. lootBag.tokenId
 	
-	UIPANEL.visibility = Visibility.INHERIT
+	COLLECTION_TEXT.text = LOOT_COLLECTION_DATA.GetDescription(lootBag.collection)
+	
 	PLAY_BUTTON_ROOT.visibility = Visibility.INHERIT
 	
 	Events.BroadcastToServer("ClearEquipment")
@@ -81,8 +91,11 @@ function EquipLoot(lootBag)
 		table.insert(definitions, def)
 		
 		itemImages[i]:SetImage(def.icon)
+		itemImages[i]:SetColor(Color.WHITE)
+		itemImages[i].isFlippedHorizontal = def.flipIconH
+		itemImages[i].isFlippedVertical = def.flipIconV
 		
-		itemTexts[i].text = item.fullName
+		itemButtons[i].clientUserData.item = item
 		
 		if def.equipment then
 			Events.BroadcastToServer("Equip", item.name)
@@ -144,6 +157,34 @@ function IsInSocialSpace()
 	local pos = player:GetWorldPosition()
 	return pos.z < 7000
 end
+
+
+function Tick(deltaTime)
+	if COLLECTION_TEXT.text ~= "" then
+		local t = deltaTime * 5
+		HEADER_PANEL.y = CoreMath.Lerp(HEADER_PANEL.y, HEADER_START_Y, t)
+	end
+	if ITEM_DETAILS_PANEL.visibility == Visibility.INHERIT then
+		local pos = Input.GetCursorPosition()
+		ITEM_DETAILS_PANEL.x = pos.x
+		ITEM_DETAILS_PANEL.y = pos.y
+	end
+end
+
+
+for _,button in ipairs(itemButtons) do
+	button.hoveredEvent:Connect(function(b)
+		local item = b.clientUserData.item
+		if item then
+			ITEM_DETAILS_SCRIPT.context.SetItem(item)
+			ITEM_DETAILS_PANEL.visibility = Visibility.INHERIT
+		end
+	end)
+	button.unhoveredEvent:Connect(function(b)
+		ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
+	end)
+end
+ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
 
 
 if Environment.IsPreview() then

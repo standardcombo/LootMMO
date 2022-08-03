@@ -17,6 +17,8 @@ local LIGHTS = script:GetCustomProperty("Lights"):WaitForObject()
 local LAUNCH_BOOSTER = script:GetCustomProperty("LaunchBooster"):WaitForObject()
 local CANT_AFFORD_SFX = script:GetCustomProperty("CantAffordSFX")
 
+local CASH_CONTAINER = script:GetCustomProperty("ResourceDisplayContainer"):WaitForObject()
+
 local thisMachine = script.parent.parent
 local MUSIC_WHILE_IDLE = thisMachine:GetCustomProperty("MusicWhileIdle")
 local HIGH_SCORE_LEADERBOARD = thisMachine:GetCustomProperty("HighScoreLeaderboard")
@@ -148,7 +150,7 @@ end
 
 function initGame(machineId, player)
   if machineId ~= thisMachine.id then return end
-
+  
   currentPlayer = player
   gameInstance = gameInstance + 1
   player.isVisibleToSelf = false
@@ -156,6 +158,10 @@ function initGame(machineId, player)
   UI_CONTAINER.visibility = Visibility.INHERIT
   LAUNCH_BOOSTER.collision = Collision.FORCE_OFF
 
+  if CASH_CONTAINER ~= nil then
+    CASH_CONTAINER.visibility = Visibility.FORCE_OFF
+  end
+  
   UI.SetCanCursorInteractWithUI(true)
   resetMachineState()
   showControls()
@@ -273,6 +279,10 @@ function quitGame()
     quitGameEvent:Disconnect()
     clearMessage()
 
+    if CASH_CONTAINER ~= nil then
+      CASH_CONTAINER.visibility = Visibility.INHERIT
+    end
+    
     for _, eq in ipairs(currentPlayer:GetAttachedObjects()) do
       if eq.isClientOnly then
         eq.visibility = Visibility.INHERIT

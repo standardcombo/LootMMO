@@ -1,13 +1,4 @@
 Assets {
-  Id: 18283604462096221912
-  Name: "Roboto Slab Black"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "RobotoSlabBlack_ref"
-  }
-}
-Assets {
   Id: 18183553501371477586
   Name: "Metal Vent Duct Square 01"
   PlatformAssetType: 2
@@ -206,33 +197,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10067297865473811114
-  Name: "Center Circle 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterCircle_001"
-  }
-}
-Assets {
-  Id: 9008238566657320754
-  Name: "Sci-fi Frame 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_SciFi_Frame_006"
-  }
-}
-Assets {
-  Id: 8578995028087510781
-  Name: "UI Gradient Circular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_001"
-  }
-}
-Assets {
   Id: 8491637729159278191
   Name: "Metal 9 Slice Lockers 01"
   PlatformAssetType: 2
@@ -257,15 +221,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_sphere_002"
-  }
-}
-Assets {
-  Id: 6724534832103276994
-  Name: "BG Flat 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_015"
   }
 }
 Assets {
@@ -410,14 +365,5 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_gem_trillion_polished_001"
-  }
-}
-Assets {
-  Id: 48307754774318265
-  Name: "UI Gradient Rectangular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_002"
   }
 }

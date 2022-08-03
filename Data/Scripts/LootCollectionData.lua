@@ -24,14 +24,19 @@ function API.GetData(contractAddress)
 	return indexedByAddress[contractAddress]
 end
 
--- Returns description for a specific collection
-function API.GetDescription(contractAddress)
-	return indexedByAddress[contractAddress].description
+-- Returns name for a specific collection
+function API.GetName(contractAddress)
+	return indexedByAddress[contractAddress].name
 end
 
 -- Returns the icon for a specific collection
 function API.GetIcon(contractAddress)
 	return indexedByAddress[contractAddress].icon
+end
+
+-- Returns description for a specific collection
+function API.GetDescription(contractAddress)
+	return indexedByAddress[contractAddress].description
 end
 
 -- Returns the UI prefix text for a Loot Bag row in character selection screen
