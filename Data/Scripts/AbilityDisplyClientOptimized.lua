@@ -6,10 +6,7 @@ local NAME_TEXT = script:GetCustomProperty('NameText'):WaitForObject()
 local PROGRESS_INDICATOR = script:GetCustomProperty('ProgressIndicator'):WaitForObject()
 local RIGHT_SHADOW = script:GetCustomProperty('RightShadow'):WaitForObject()
 local LEFT_SHADOW = script:GetCustomProperty('LeftShadow'):WaitForObject()
-local ACTIVE_FRAME = script:GetCustomProperty('ActiveFrame'):WaitForObject()
-local ACTIVE_FLASH = script:GetCustomProperty('ActiveFlash'):WaitForObject()
 local DURATION_BAR = script:GetCustomProperty('DurationIndicator'):WaitForObject()
-local LEVEL_TEXT = script:GetCustomProperty('LevelText'):WaitForObject()
 local ACTION_NAME = script:GetCustomProperty('ActionName'):WaitForObject()
 -- Constants
 local LOCAL_PLAYER = Game.GetLocalPlayer()
@@ -28,9 +25,10 @@ local networkedEventListener = nil
 -- Checks for changes to the players abiltiies, or icons on those abilities
 function Tick(deltaTime)
     if currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner) then
-        local ability = currentAbility:GetCurrentAbility()
+        local ability = currentAbility
         local currentPhase = ability:GetCurrentPhase()
         local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
+        local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
         PANEL.visibility = Visibility.INHERIT
 
         -- Update the level text for the ability
@@ -50,21 +48,13 @@ function Tick(deltaTime)
         else
             PROGRESS_INDICATOR.visibility = Visibility.INHERIT
 
-            local cd
-            if cooldownOverride and cooldownOverride > 0 then
-                cd = cooldownOverride
-            else
-                cd = 0
-            end
-            if cd > cooldownDuration then
-                cd = cooldownDuration
-            end
+            local cd = cooldownDuration
 
             -- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
             local cooldownRemaining
 
             if currentPhase == AbilityPhase.COOLDOWN then
-                local elapsedPhaseTime = cooldownDuration - phaseTimeRemaining
+                local elapsedPhaseTime = phaseTimeElapsed
                 cooldownRemaining = cd - elapsedPhaseTime
             elseif currentPhase == AbilityPhase.EXECUTE then
                 cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
@@ -112,20 +102,18 @@ function SetActionName(name)
     end
 end
 
-function SetAbility(ability)
-    if not ability:IsA('Ability') then
+function SetEquipment(equipment)
+    if not equipment:IsA('Equipment') then
         return
     end
-    currentAbility = ability
-    executeDuration = ability.executePhaseSettings.duration
-    recoveryDuration = ability.recoveryPhaseSettings.duration
-    cooldownDuration = ability.cooldownPhaseSettings.duration
-
+    currentAbility = equipment:FindChildByType('Ability')
+    executeDuration = currentAbility.executePhaseSettings.duration
+    recoveryDuration = currentAbility.recoveryPhaseSettings.duration
+    cooldownDuration =
+        equipment.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
     DURATION_BAR.progress = 0
 end
 
 PANEL.clientUserData.SetIcon = SetIcon
-PANEL.clientUserData.SetIcon = SetActionName
-PANEL.clientUserData.SetIcon = SetAbility
-
-Events.Connect('Set Ability Icon', OnAbilityIconSet)
+PANEL.clientUserData.SetActionName = SetActionName
+PANEL.clientUserData.SetEquipment = SetEquipment
