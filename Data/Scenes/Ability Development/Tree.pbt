@@ -20,6 +20,7 @@ Objects {
   ChildIds: 4949194550417892284
   ChildIds: 1474365945425169133
   ChildIds: 11314874651091749590
+  ChildIds: 11349548647539391705
   ChildIds: 2588040033051190795
   ChildIds: 7178566007490731001
   ChildIds: 329825385216571499
@@ -1021,6 +1022,42 @@ Objects {
       Id: 2087257134469971969
     }
   }
+}
+Objects {
+  Id: 11349548647539391705
+  Name: "AbilityDisabler"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "AbilityDisabler"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 11314874651091749590

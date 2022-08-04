@@ -146,6 +146,9 @@ function CalculatePlacement()
 end
 
 function Tick(deltaTime)
+    if currentAbility and not currentAbility.isEnabled then 
+        Cancel()
+    end 
     for id, halogram in pairs(AllHalograms) do
         if halogram ~= objectHalogram and Object.IsValid(halogram) then
             halogram:Destroy()

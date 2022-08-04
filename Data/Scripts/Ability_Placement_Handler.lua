@@ -12,6 +12,9 @@ local function OverrideValues()
 end
 
 function OnActionPressed(player, action, value)
+    if not ABILITY.isEnabled then
+        return
+    end
     if ROOT.owner ~= player then
         return
     end
@@ -44,12 +47,11 @@ ROOT.equippedEvent:Connect(
     end
 )
 
-if not inputEvent then 
+if not inputEvent then
     if ROOT.owner == Game.GetLocalPlayer() then
         inputEvent = Input.actionPressedEvent:Connect(OnActionPressed)
     end
-end 
-
+end
 
 ROOT.unequippedEvent:Connect(
     function()
