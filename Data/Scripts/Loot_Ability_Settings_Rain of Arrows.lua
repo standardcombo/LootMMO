@@ -9,13 +9,13 @@ local modifiers = {
     [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius})
 }
 
-modifiers[MODIFIERS.Damage.name].calculation = function(self, stats)
-    return 2
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return 80
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 20
 end
-modifiers[MODIFIERS.Radius.name].calculation = function(self, stats)
-    return 200
+modifiers[MODIFIERS.Radius.name].calculation = function(stats)
+    return 300
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

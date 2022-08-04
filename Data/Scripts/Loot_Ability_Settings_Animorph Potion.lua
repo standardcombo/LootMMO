@@ -1,13 +1,12 @@
-local MODIFIERS = require(script:GetCustomProperty("Modifiers"))
-local STATS_CONNECTOR = require(script:GetCustomProperty("Stats_Connector"))
-local ROOT_CALCULATION_API = require(script:GetCustomProperty("RootCalculation_Api"))
-local ROOT = script:GetCustomProperty("Root"):WaitForObject()
-
+local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
+local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
 local modifiers = {
     [MODIFIERS.Duration.name] = setmetatable(
         {
-            calculation = function(self, stats)
+            calculation = function(stats)
                 return 20
             end
         },
@@ -15,15 +14,15 @@ local modifiers = {
     ),
     [MODIFIERS.Cooldown.name] = setmetatable(
         {
-            calculation = function(self, stats)
-                return 2
+            calculation = function(stats)
+                return 20
             end
         },
         {__index = MODIFIERS.Cooldown}
     ),
     [MODIFIERS.Radius.name] = setmetatable(
         {
-            calculation = function(self, stats)
+            calculation = function(stats)
                 return 20
             end
         },

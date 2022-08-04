@@ -12,6 +12,9 @@ local DefautltSpeed = 10000
 local Knockback = 10000
 local function Impact(projectile)
     local player = projectile.owner
+    if not player then
+        return
+    end
     local impactPosition = projectile:GetWorldPosition()
 
     World.SpawnAsset(

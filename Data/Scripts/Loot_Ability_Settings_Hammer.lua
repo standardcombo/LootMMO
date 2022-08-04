@@ -9,13 +9,13 @@ local modifiers = {
     [MODIFIERS.ChargingDamage.name] = setmetatable({}, {__index = MODIFIERS.ChargingDamage})
 }
 
-modifiers[MODIFIERS.DamageRange.name].calculation = function()
+modifiers[MODIFIERS.DamageRange.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.ChargingDamage.name].calculation = function()
+modifiers[MODIFIERS.ChargingDamage.name].calculation = function(stats)
     return 2
 end
 

@@ -8,13 +8,13 @@ local modifiers = {
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
     [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Heal})
 }
-modifiers[MODIFIERS.DamageRange.name].calculation = function()
+modifiers[MODIFIERS.DamageRange.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.Heal.name].calculation = function()
+modifiers[MODIFIERS.Heal.name].calculation = function(stats)
     return 2
 end
 

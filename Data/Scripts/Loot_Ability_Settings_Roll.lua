@@ -6,7 +6,7 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local modifiers = {
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown})
 }
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 2
 end
 

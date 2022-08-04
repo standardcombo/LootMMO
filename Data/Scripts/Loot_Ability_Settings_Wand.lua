@@ -7,10 +7,10 @@ local modifiers = {
     [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range}),
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown})
 }
-modifiers[MODIFIERS.Range.name].calculation = function()
+modifiers[MODIFIERS.Range.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 2
 end
 

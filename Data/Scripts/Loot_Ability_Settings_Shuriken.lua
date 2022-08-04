@@ -9,16 +9,16 @@ local modifiers = {
     [MODIFIERS.Bleed.name] = setmetatable({}, {__index = MODIFIERS.Bleed}),
     [MODIFIERS.Lifesteal.name] = setmetatable({}, {__index = MODIFIERS.Lifesteal})
 }
-modifiers[MODIFIERS.Damage.name].calculation = function()
-    return  100
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return  29
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
-    return 3
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 36
 end
-modifiers[MODIFIERS.Bleed.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Bleed.name].calculation = function(stats)
+    return 4
 end
-modifiers[MODIFIERS.Lifesteal.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Lifesteal.name].calculation = function(stats)
+    return 29
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

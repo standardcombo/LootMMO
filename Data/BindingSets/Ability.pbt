@@ -25,7 +25,6 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
-      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -49,7 +48,6 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
-      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -59,7 +57,7 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:q"
+            Value: "mc:ebindingkeyboard:one"
           }
           KeyboardSecondary {
             Value: "mc:ebindingkeyboard:none"
@@ -69,11 +67,10 @@ Assets {
           }
         }
       }
-      Action: "Q"
+      Action: "1"
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
-      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -83,7 +80,7 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:r"
+            Value: "mc:ebindingkeyboard:two"
           }
           KeyboardSecondary {
             Value: "mc:ebindingkeyboard:none"
@@ -93,11 +90,102 @@ Assets {
           }
         }
       }
-      Action: "R"
+      Action: "2"
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
-      Networked: true
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:three"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "3"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:four"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "4"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:leftclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Confirm"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:rightclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Cancel"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
       IsEnabledOnStart: true
     }
     Bindings {
@@ -142,54 +230,6 @@ Assets {
         }
       }
       Action: "LevelDown"
-      CoreBehavior {
-        Value: "mc:ecorebehavior:none"
-      }
-      Networked: true
-      IsEnabledOnStart: true
-    }
-    Bindings {
-      BindingType {
-        Value: "mc:ebindingtype:basic"
-      }
-      BasicBindingData {
-        BasicInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:leftclick"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:none"
-          }
-        }
-      }
-      Action: "Confirm"
-      CoreBehavior {
-        Value: "mc:ecorebehavior:none"
-      }
-      Networked: true
-      IsEnabledOnStart: true
-    }
-    Bindings {
-      BindingType {
-        Value: "mc:ebindingtype:basic"
-      }
-      BasicBindingData {
-        BasicInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:rightclick"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:none"
-          }
-        }
-      }
-      Action: "Cancel"
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }

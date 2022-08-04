@@ -14,6 +14,7 @@ local DEFAULT_IMAGE = ICON:GetImage()
 
 -- Variables
 local currentAbility = nil
+local root = nil
 local executeDuration = 0.0
 local recoveryDuration = 0.0
 local cooldownDuration = 0.0
@@ -26,6 +27,8 @@ local networkedEventListener = nil
 function Tick(deltaTime)
     if currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner) then
         local ability = currentAbility
+        cooldownDuration =
+            root.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
         local currentPhase = ability:GetCurrentPhase()
         local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
         local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
@@ -106,6 +109,7 @@ function SetEquipment(equipment)
     if not equipment:IsA('Equipment') then
         return
     end
+    root = equipment
     currentAbility = equipment:FindChildByType('Ability')
     executeDuration = currentAbility.executePhaseSettings.duration
     recoveryDuration = currentAbility.recoveryPhaseSettings.duration

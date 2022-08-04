@@ -1,13 +1,13 @@
 Assets {
-  Id: 3767243507547521993
-  Name: "StatsTextUpdate"
+  Id: 17586864369691218257
+  Name: "Equpper_Server"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Stats_Connector"
+        Name: "cs:Loot_Ability_Equipment"
         AssetReference {
-          Id: 6750215763654185081
+          Id: 14219804645328186316
         }
       }
     }

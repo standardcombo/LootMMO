@@ -9,16 +9,16 @@ local modifiers = {
     [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius}),
     [MODIFIERS.Duration.name] = setmetatable({}, {__index = MODIFIERS.Duration})
 }
-modifiers[MODIFIERS.DOT.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.DOT.name].calculation = function(stats)
+    return 35
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 20
 end
-modifiers[MODIFIERS.Radius.name].calculation = function()
+modifiers[MODIFIERS.Radius.name].calculation = function(stats)
     return 200
 end
-modifiers[MODIFIERS.Duration.name].calculation = function()
-    return 5
+modifiers[MODIFIERS.Duration.name].calculation = function(stats)
+    return 10
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

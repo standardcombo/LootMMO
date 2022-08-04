@@ -11,19 +11,19 @@ local modifiers = {
     [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range})
 }
 
-modifiers[MODIFIERS.Damage.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return 25
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 26
 end
-modifiers[MODIFIERS.Duration.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Duration.name].calculation = function(stats)
+    return 7
 end
-modifiers[MODIFIERS.Heal.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Heal.name].calculation = function(stats)
+    return 25
 end
-modifiers[MODIFIERS.Range.name].calculation = function()
+modifiers[MODIFIERS.Range.name].calculation = function(stats)
     return 500
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

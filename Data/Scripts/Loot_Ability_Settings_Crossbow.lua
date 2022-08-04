@@ -9,16 +9,16 @@ local modifiers = {
     [MODIFIERS.FullChargeBonus.name] = setmetatable({}, {__index = MODIFIERS.FullChargeBonus}),
     [MODIFIERS.ChargeDamage.name] = setmetatable({}, {__index = MODIFIERS.ChargeDamage})
 }
-modifiers[MODIFIERS.DamageRange.name].calculation = function(self, stats)
+modifiers[MODIFIERS.DamageRange.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.FullChargeBonus.name].calculation = function(self, stats)
+modifiers[MODIFIERS.FullChargeBonus.name].calculation = function(stats)
     return 2
 end
-modifiers[MODIFIERS.ChargeDamage.name].calculation = function(self, stats)
+modifiers[MODIFIERS.ChargeDamage.name].calculation = function(stats)
     return 2
 end
 

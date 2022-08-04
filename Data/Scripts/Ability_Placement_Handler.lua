@@ -44,6 +44,13 @@ ROOT.equippedEvent:Connect(
     end
 )
 
+if not inputEvent then 
+    if ROOT.owner == Game.GetLocalPlayer() then
+        inputEvent = Input.actionPressedEvent:Connect(OnActionPressed)
+    end
+end 
+
+
 ROOT.unequippedEvent:Connect(
     function()
         if inputEvent then

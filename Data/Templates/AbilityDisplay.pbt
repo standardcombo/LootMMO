@@ -4,80 +4,18 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 7775599510331279062
-      Objects {
-        Id: 7775599510331279062
-        Name: "AbilityDisplay"
-        Transform {
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4781671109827199097
-        ChildIds: 4105394437550983763
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          Canvas {
-            ContentType {
-              Value: "mc:ecanvascontenttype:dynamic"
-            }
-            Opacity: 1
-            IsHUD: true
-            CanvasWorldSize {
-              X: 1024
-              Y: 1024
-            }
-            RedrawTime: 30
-            UseSafeZoneAdjustment: true
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:topleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:topleft"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
+      RootId: 4105394437550983763
       Objects {
         Id: 4105394437550983763
         Name: "Shift"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
             Z: 1
           }
         }
-        ParentId: 7775599510331279062
+        ParentId: 13149094159387974462
         ChildIds: 5301451474606042301
         ChildIds: 7644282853577937863
         ChildIds: 9889517496047675591
@@ -107,8 +45,8 @@ Assets {
         Control {
           Width: 80
           Height: 80
-          UIX: 10
-          UIY: -33.8233643
+          UIX: -127.336304
+          UIY: -88.0221558
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -120,12 +58,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomcenter"
+                Value: "mc:euianchor:bottomright"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomcenter"
+                Value: "mc:euianchor:bottomright"
               }
             }
           }

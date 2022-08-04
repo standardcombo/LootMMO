@@ -10,17 +10,17 @@ local modifiers = {
     [MODIFIERS.Slow.name] = setmetatable({}, {__index = MODIFIERS.Slow})
 }
 
-modifiers[MODIFIERS.Radius.name].calculation = function()
+modifiers[MODIFIERS.Radius.name].calculation = function(stats)
     return 200
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
     return 10
 end
-modifiers[MODIFIERS.Bleed.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Bleed.name].calculation = function(stats)
+    return 5
 end
-modifiers[MODIFIERS.Slow.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Slow.name].calculation = function(stats)
+    return 5
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

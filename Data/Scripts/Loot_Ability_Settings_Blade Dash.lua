@@ -8,13 +8,13 @@ local modifiers = {
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
     [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range})
 }
-modifiers[MODIFIERS.DamageRange.name].calculation = function(self, stats)
-    return {min = 2, max = 3}
+modifiers[MODIFIERS.DamageRange.name].calculation = function(stats)
+    return {min = 68, max = 100}
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 8
 end
-modifiers[MODIFIERS.Range.name].calculation = function(self, stats)
+modifiers[MODIFIERS.Range.name].calculation = function(stats)
     return 1000
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

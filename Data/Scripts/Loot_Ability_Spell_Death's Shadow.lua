@@ -69,15 +69,17 @@ function OnAbilityExecute(Ability)
 end
 
 function DisableInvisility()
-    if Object.IsValid(ABILITY) and ABILITY.owner and not ABILITY.owner.isVisible then
-        ABILITY.owner.animationStance = ABILITY.serverUserData.OriginalStance
-        World.SpawnAsset(
-            EndingVFX,
-            {position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED}
-        )
-        ABILITY.owner.isVisible = true
+    if Object.IsValid(ABILITY) and ABILITY.owner then
+        if not ABILITY.owner.isVisible then
+            ABILITY.owner.animationStance = ABILITY.serverUserData.OriginalStance
+            World.SpawnAsset(
+                EndingVFX,
+                {position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED}
+            )
+            ABILITY.owner.isVisible = true
+        end
+        ABILITY.owner.maxWalkSpeed = OriginalWalkSpeed
     end
-    ABILITY.owner.maxWalkSpeed = OriginalWalkSpeed
 end
 
 function OnPlayerDied(player, _)

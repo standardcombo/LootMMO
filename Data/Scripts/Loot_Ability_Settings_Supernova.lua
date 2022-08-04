@@ -10,19 +10,19 @@ local modifiers = {
     [MODIFIERS.Stun.name] = setmetatable({}, {__index = MODIFIERS.Stun}),
     [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius}),
 }
-modifiers[MODIFIERS.Heal.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Heal.name].calculation = function(stats)
+    return 200
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 50
 end
-modifiers[MODIFIERS.Damage.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return 200
 end
-modifiers[MODIFIERS.Stun.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Stun.name].calculation = function(stats)
+    return 20
 end
-modifiers[MODIFIERS.Radius.name].calculation = function()
+modifiers[MODIFIERS.Radius.name].calculation = function(stats)
     return 2000
 end
 

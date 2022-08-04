@@ -1,7 +1,7 @@
 Name: "NewFolder"
-RootId: 3714925822566788052
+RootId: 7178566007490731001
 Objects {
-  Id: 1961812881164257535
+  Id: 14510713111130638073
   Name: "ClientContext"
   Transform {
     Location {
@@ -14,8 +14,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3714925822566788052
-  ChildIds: 14663647678296948972
+  ParentId: 7178566007490731001
+  ChildIds: 12743549992712338222
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -42,7 +42,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14663647678296948972
+  Id: 12743549992712338222
   Name: "PlaceObject"
   Transform {
     Location {
@@ -55,7 +55,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1961812881164257535
+  ParentId: 14510713111130638073
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

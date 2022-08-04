@@ -9,14 +9,14 @@ local modifiers = {
     [MODIFIERS.Duration.name] = setmetatable({}, {__index = MODIFIERS.Duration})
 }
 
-modifiers[MODIFIERS.Damage.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return 40
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+    return 40
 end
-modifiers[MODIFIERS.Duration.name].calculation = function()
-    return 2
+modifiers[MODIFIERS.Duration.name].calculation = function(stats)
+    return 15
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
