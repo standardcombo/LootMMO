@@ -1083,7 +1083,7 @@ Objects {
   Control {
     Width: 377
     Height: 216
-    UIX: -874
+    UIX: 1072.4209
     UIY: 80
     RenderTransformPivot {
       Anchor {
@@ -1101,7 +1101,7 @@ Objects {
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topright"
+          Value: "mc:euianchor:topleft"
         }
       }
     }
