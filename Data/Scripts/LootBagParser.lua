@@ -203,6 +203,17 @@ local RING_NAMES = {
     "Titanium Ring"         -- 4
 }
 
+local NAMES_PER_TYPE = {
+	Weapon = WEAPON_NAMES,
+	Chest = CHEST_NAMES,
+	Head = HEAD_NAMES,
+	Waist = WAIST_NAMES,
+	Foot = FOOT_NAMES,
+	Hand = HAND_NAMES,
+	Neck = NECK_NAMES,
+	Ring = RING_NAMES
+}
+
 local ORDERS = {
     "Power",             -- 1
     "Giants",            -- 2
@@ -401,10 +412,14 @@ function ParseItemSVG(tokenMetadata)
 		--print(fullName)
 		--print(TYPES[i], prefix, suffix, itemName, order, bonus)
 		
+		-- Temp fix for the case of Lost items in Genesis collection
+		local type = TYPES[i]
+		itemName = FixLostName(itemName, NAMES_PER_TYPE[type])
+		
 		table.insert(items, {
 			name = itemName,
 			fullName = fullName,
-			type = TYPES[i],
+			type = type,
 			order = order,
 			prefix = prefix,
 			suffix = suffix,
@@ -515,6 +530,14 @@ function InferCharacterClass(bagItems)
 		end
 	end
 	return nil
+end
+
+
+function FixLostName(itemName, namesTable)
+	if string.sub(itemName,1,4)=="Lost" then
+		return namesTable[1]
+	end
+	return itemName
 end
 
 
