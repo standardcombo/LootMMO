@@ -9688,6 +9688,12 @@ Objects {
       Name: "bp:Z Scale"
       Float: 0.364017904
     }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -9833,6 +9839,12 @@ Objects {
     Overrides {
       Name: "bp:Z Scale"
       Float: 0.364017904
+    }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
     }
   }
   Collidable_v2 {
@@ -9980,6 +9992,12 @@ Objects {
       Name: "bp:Z Scale"
       Float: 0.364017904
     }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10125,6 +10143,12 @@ Objects {
     Overrides {
       Name: "bp:Z Scale"
       Float: 0.364017904
+    }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
     }
   }
   Collidable_v2 {
@@ -10272,6 +10296,12 @@ Objects {
       Name: "bp:Z Scale"
       Float: 0.364017904
     }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10417,6 +10447,12 @@ Objects {
     Overrides {
       Name: "bp:Z Scale"
       Float: 0.364017904
+    }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
     }
   }
   Collidable_v2 {
@@ -10564,6 +10600,12 @@ Objects {
       Name: "bp:Z Scale"
       Float: 0.364017904
     }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10709,6 +10751,12 @@ Objects {
     Overrides {
       Name: "bp:Z Scale"
       Float: 0.364017904
+    }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
     }
   }
   Collidable_v2 {
@@ -10856,6 +10904,12 @@ Objects {
       Name: "bp:Z Scale"
       Float: 0.364017904
     }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -11001,6 +11055,12 @@ Objects {
     Overrides {
       Name: "bp:Z Scale"
       Float: 0.364017904
+    }
+    Overrides {
+      Name: "bp:Shape Visibility"
+      Enum {
+        Value: "mc:evolumevisibility:newenumerator0"
+      }
     }
   }
   Collidable_v2 {
