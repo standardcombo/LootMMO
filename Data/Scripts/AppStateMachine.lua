@@ -13,8 +13,8 @@
 		SetLocalState(newState)
 		
 	Events
-		AppState.Exit<currentState, newState>
-		AppState.Enter<newState, prevState>
+		AppState.Exit<player, currentState, newState>
+		AppState.Enter<player, newState, prevState>
 ]]
 
 local API = {}
@@ -51,9 +51,11 @@ function API.SetStateForPlayer(player, newState)
 	
 	-- TODO: Verify transition is valid from `current` to `new`
 	
-	Events.Broadcast("AppState.Exit", currentState, newState)
+	Events.Broadcast("AppState.Exit", player, currentState, newState)
+	
 	player:SetResource("AppState", newState)
-	Events.Broadcast("AppState.Enter", newState, currentState)
+	
+	Events.Broadcast("AppState.Enter", player, newState, currentState)
 end
 
 if Environment.IsServer() then
@@ -73,10 +75,14 @@ function API.GetLocalState()
 end
 
 function DoLocalStateChange(newState)
-	Events.Broadcast("AppState.Exit", _localPlayerState, newState)
+	local player = Game.GetLocalPlayer()
+	
+	Events.Broadcast("AppState.Exit", player, _localPlayerState, newState)
+	
 	_prevLocalPlayerState = _localPlayerState
 	_localPlayerState = newState
-	Events.Broadcast("AppState.Enter", newState, _prevLocalPlayerState)
+	
+	Events.Broadcast("AppState.Enter", player, newState, _prevLocalPlayerState)
 end
 
 -- Client
