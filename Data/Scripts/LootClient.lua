@@ -133,6 +133,8 @@ Events.Connect("EquipLoot", EquipLoot)
 
 function OnPlay()
 	PLAY_BUTTON_SFX:Play()
+	
+	_G.AppState.SetLocalState(_G.AppState.SocialHub)
 	Events.Broadcast("JoinSocial")
 	Events.BroadcastToServer("JoinSocial")
 	
@@ -141,15 +143,16 @@ end
 PLAY_BUTTON.clickedEvent:Connect(OnPlay)
 
 
-function ReturnToCharacterSelect(player)
+function ReturnToBagSelect(player)
 	--if player ~= Game.GetLocalPlayer() then return end
 	
+	_G.AppState.SetLocalState(_G.AppState.BagSelection)
 	Events.Broadcast("BagSelection")
 	Events.BroadcastToServer("BagSelection")
 		
 	UI_ROOT.visibility = Visibility.INHERIT
 end
-RETURN_TO_BAG_SELECTION_TRIGGER.interactedEvent:Connect(ReturnToCharacterSelect)
+RETURN_TO_BAG_SELECTION_TRIGGER.interactedEvent:Connect(ReturnToBagSelect)
 
 
 function IsInSocialSpace()
@@ -191,7 +194,7 @@ if Environment.IsPreview() then
 	Input.actionPressedEvent:Connect(function(_, action)
 		if action == "SkipCheat" then
 			if IsInSocialSpace() then
-				ReturnToCharacterSelect()
+				ReturnToBagSelect()
 			else
 				OnPlay()
 			end
