@@ -35,33 +35,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9239134942705042863
-  Name: "Icon Map"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Map"
-  }
-}
-Assets {
-  Id: 7542904062235710665
-  Name: "Frame Outline Thin 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameOutline_020"
-  }
-}
-Assets {
-  Id: 5987555366665466674
-  Name: "Bank"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Urban_Icon_013"
-  }
-}
-Assets {
   Id: 2764905514123890102
   Name: "Frame Outlined 001"
   PlatformAssetType: 9
@@ -77,14 +50,5 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "CenterArrow_003Wedge"
-  }
-}
-Assets {
-  Id: 925967446720088194
-  Name: "BG Flat 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_22"
   }
 }
