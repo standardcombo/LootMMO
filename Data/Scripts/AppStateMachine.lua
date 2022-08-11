@@ -100,6 +100,7 @@ if Environment.IsClient() then
 			DoLocalStateChange(newState)
 		end
 	end)
+	DoLocalStateChange(Game.GetLocalPlayer():GetResource("AppState"))
 end
 
 
