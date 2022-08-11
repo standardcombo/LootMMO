@@ -65,7 +65,7 @@ end
 -- nil Tick(float)
 -- Check for changes to our resource and update UI
 function Tick(deltaTime)
-	if not IsInSocialSpace() then
+	if not IsValidAppState() then
 		lastResource = -1
 		PANEL.visibility = Visibility.FORCE_OFF
 		return
@@ -100,9 +100,8 @@ function Tick(deltaTime)
     end
 end
 
-function IsInSocialSpace()
-	local pos = LOCAL_PLAYER:GetWorldPosition()
-	return pos.z < 7000
+function IsValidAppState()
+	return _G.AppState.GetLocalState() == _G.AppState.SocialHub
 end
 
 -- Initialize

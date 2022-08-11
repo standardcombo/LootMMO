@@ -21,22 +21,23 @@ local API = {}
 _G.AppState = API
 
 -- State numbers
-API.Settings = 1
-API.CharacterSelection = 2
-API.BagSelection = 3
-API.SocialHub = 4
-API.Mailbox = 5
-API.Shop = 6
-API.Minigame = 7
-API.Study = 8
-API.Anvil = 9
-API.Cauldron = 10
-API.BountyBoard = 11
-API.Stash = 12
-API.Adventure = 13
-API.LevelUp = 14
-API.Inventory = 15
-API.ItemFound = 16
+API.None = 0
+API.Settings = 10
+API.CharacterSelection = 20
+API.BagSelection = 30
+API.SocialHub = 40
+API.Mailbox = 50
+API.Shop = 60
+API.Minigame = 70
+API.Study = 80
+API.Anvil = 90
+API.Cauldron = 100
+API.BountyBoard = 110
+API.Stash = 120
+API.Adventure = 130
+API.LevelUp = 140
+API.Inventory = 150
+API.ItemFound = 160
 
 
 -- Server/Client

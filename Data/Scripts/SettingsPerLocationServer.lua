@@ -15,13 +15,15 @@ local PLAYER_SETTINGS_SOCIAL_SPACE = script:GetCustomProperty("PlayerSettingsSoc
 Events.Connect("AppState.Enter", function(player, newState, prevState)
 	if not Object.IsValid(player) then return end
 	
-	if newState == _G.AppState.SocialHub then
+	if newState == _G.AppState.SocialHub 
+	and prevState == _G.AppState.BagSelection then
 		PLAYER_SETTINGS_SOCIAL_SPACE:ApplyToPlayer(player)
 		
 		SpawnPlayerAt(player, "Social")
 	end
 
-	if newState == _G.AppState.BagSelection then
+	if newState == _G.AppState.BagSelection
+	and prevState ~= _G.AppState.None then
 		PLAYER_SETTINGS_BAG_SELECTION:ApplyToPlayer(player)
 		
 		SpawnPlayerAt(player, "BagSelection")

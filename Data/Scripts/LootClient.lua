@@ -151,10 +151,8 @@ end
 RETURN_TO_BAG_SELECTION_TRIGGER.interactedEvent:Connect(ReturnToBagSelect)
 
 
-function IsInSocialSpace()
-	local player = Game.GetLocalPlayer()
-	local pos = player:GetWorldPosition()
-	return pos.z < 7000
+function IsInSocialHub()
+	return _G.AppState.GetLocalState() == _G.AppState.SocialHub
 end
 
 
@@ -189,7 +187,7 @@ ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
 if Environment.IsPreview() then
 	Input.actionPressedEvent:Connect(function(_, action)
 		if action == "SkipCheat" then
-			if IsInSocialSpace() then
+			if IsInSocialHub() then
 				ReturnToBagSelect()
 			else
 				OnPlay()

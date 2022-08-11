@@ -77,7 +77,7 @@ end
 
 function IsInActiveState()
 	local currentState = _G.AppState.GetLocalState()
-	return 
+	return
 	currentState == _G.AppState.SocialHub or
 	currentState == _G.AppState.Mailbox or
 	currentState == _G.AppState.Adventure

@@ -52,6 +52,7 @@ local function RecieveInfo(info)
         Properties.JoinGame:GetObject().pressedEvent:Connect(
         function()
             Events.BroadcastToServer('PokerTable_JoinGame', Root.id, math.floor(curVal))
+        	_G.AppState.SetLocalState(_G.AppState.Minigame)
             SpawnedPopUp:Destroy()
         end
     )

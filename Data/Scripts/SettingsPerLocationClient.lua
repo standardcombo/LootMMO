@@ -16,12 +16,13 @@ local player = Game.GetLocalPlayer()
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
 	if newState == _G.AppState.SocialHub then
+		if prevState == _G.AppState.BagSelection then
+			player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
+			Task.Wait(0.4)
+			SFX:Play()
+		end
 		UI.SetCanCursorInteractWithUI(false)
 		UI.SetCursorVisible(false)
-	
-		player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
-		Task.Wait(0.4)
-		SFX:Play()
 	end
 
 	if newState == _G.AppState.BagSelection then
