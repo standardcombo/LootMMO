@@ -4,6 +4,5 @@ Assets {
   PlatformAssetType: 31
   SerializationVersion: 118
   DataTableAsset {
-    HasKeyColumn: true
   }
 }

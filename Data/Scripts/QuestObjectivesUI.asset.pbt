@@ -5,6 +5,11 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:ContentScript"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:ExpandingPanel"
         ObjectReference {
         }
@@ -16,6 +21,11 @@ Assets {
       }
       Overrides {
         Name: "cs:KeyBindingPanel"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:ActiveGoalsTitle"
         ObjectReference {
         }
       }

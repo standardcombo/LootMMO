@@ -519,7 +519,8 @@ Objects {
     }
   }
   ParentId: 1742505065348884997
-  ChildIds: 4036779115441439484
+  ChildIds: 1759163408231116003
+  ChildIds: 18235828220799259707
   ChildIds: 12116470946032125912
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -632,6 +633,7 @@ Objects {
   }
   ParentId: 12116470946032125912
   ChildIds: 11895046332358536522
+  ChildIds: 4459355634050715892
   ChildIds: 2856492768510199134
   ChildIds: 11639419437463974286
   Collidable_v2 {
@@ -932,6 +934,12 @@ Objects {
     }
   }
   ParentId: 13215782773246389107
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 706559759143277157
@@ -1552,6 +1560,54 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 4459355634050715892
+  Name: "QuestObjectivesUI_Content"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11994721452709993511
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:RowPrototype"
+      ObjectReference {
+        SelfId: 12404876315177411007
+        SubObjectId: 706559759143277157
+        InstanceId: 7538027259234929939
+        TemplateId: 7919143731178705880
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 17651583084431668111
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 11895046332358536522
   Name: "QuestObjectivesUI"
   Transform {
@@ -1600,6 +1656,18 @@ Objects {
         TemplateId: 6740439231304338050
       }
     }
+    Overrides {
+      Name: "cs:ContentScript"
+      ObjectReference {
+        SelfId: 4459355634050715892
+      }
+    }
+    Overrides {
+      Name: "cs:ActiveGoalsTitle"
+      ObjectReference {
+        SelfId: 10935835872357857957
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1624,8 +1692,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4036779115441439484
-  Name: "Pickups"
+  Id: 18235828220799259707
+  Name: "ObjectivePickupClient"
   Transform {
     Location {
     }
@@ -1638,10 +1706,17 @@ Objects {
     }
   }
   ParentId: 12019894607400066362
-  ChildIds: 18235828220799259707
   ChildIds: 17634960000438631263
   ChildIds: 11337125220125787966
   ChildIds: 2461975959076620657
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Trigger"
+      ObjectReference {
+        SelfId: 17634960000438631263
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1654,8 +1729,10 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
+  Script {
+    ScriptAsset {
+      Id: 7454505496619734951
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1676,7 +1753,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4036779115441439484
+  ParentId: 18235828220799259707
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color"
@@ -1752,7 +1829,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4036779115441439484
+  ParentId: 18235828220799259707
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color A"
@@ -1823,7 +1900,7 @@ Objects {
       Z: 0.450600058
     }
   }
-  ParentId: 4036779115441439484
+  ParentId: 18235828220799259707
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
   }
@@ -1857,8 +1934,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18235828220799259707
-  Name: "ObjectivePickupClient"
+  Id: 1759163408231116003
+  Name: "QuestController"
   Transform {
     Location {
     }
@@ -1870,12 +1947,18 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4036779115441439484
+  ParentId: 12019894607400066362
   UnregisteredParameters {
     Overrides {
-      Name: "cs:Trigger"
-      ObjectReference {
-        SelfId: 17634960000438631263
+      Name: "cs:QuestMetadata"
+      AssetReference {
+        Id: 13135584035263187830
+      }
+    }
+    Overrides {
+      Name: "cs:QuestObjectives"
+      AssetReference {
+        Id: 17153357731039904992
       }
     }
   }
@@ -1893,7 +1976,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 7454505496619734951
+      Id: 9451562971861178238
     }
   }
   NetworkRelevanceDistance {
@@ -1916,6 +1999,7 @@ Objects {
     }
   }
   ParentId: 1742505065348884997
+  ChildIds: 491643674662684896
   ChildIds: 15537213486610408055
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1967,6 +2051,57 @@ Objects {
   Script {
     ScriptAsset {
       Id: 11601417027845101890
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 491643674662684896
+  Name: "QuestController"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13407318171199914177
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestMetadata"
+      AssetReference {
+        Id: 13135584035263187830
+      }
+    }
+    Overrides {
+      Name: "cs:QuestObjectives"
+      AssetReference {
+        Id: 17153357731039904992
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9451562971861178238
     }
   }
   NetworkRelevanceDistance {

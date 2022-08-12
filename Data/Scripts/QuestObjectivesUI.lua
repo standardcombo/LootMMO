@@ -1,8 +1,10 @@
 
 local ROOT = script.parent
+local CONTENT_SCRIPT = script:GetCustomProperty("ContentScript"):WaitForObject()
 local EXPANDING_PANEL = script:GetCustomProperty("ExpandingPanel"):WaitForObject()
 local CORNER_ARROW = script:GetCustomProperty("CornerArrow"):WaitForObject()
 local KEY_BINDING_PANEL = script:GetCustomProperty("KeyBindingPanel"):WaitForObject()
+local ACTIVE_GOALS_TITLE = script:GetCustomProperty("ActiveGoalsTitle"):WaitForObject()
 local CONTENT_PANEL = script:GetCustomProperty("ContentPanel"):WaitForObject()
 local BADGE = script:GetCustomProperty("Badge"):WaitForObject()
 local COLLAPSED_WIDTH = script:GetCustomProperty("CollapsedWidth")
@@ -31,12 +33,35 @@ local fHeight = COLLAPSED_HEIGHT
 local state = false
 
 
-PLAYER.bindingPressedEvent:Connect(function(player, action)
+function OnBindingPressed(player, action)
 	if action == "ability_1" 
 	and IsInActiveState() then
 		state = not state
+		
+		if state then
+			UpdateContents()
+		end
 	end
-end)
+end
+
+
+function UpdateContents()
+	local quest = _G.QuestController.GetQuest("Map")
+	local objectives = {
+		quest.objectives[1],
+		quest.objectives[2],
+		quest.objectives[3],
+		_G.QuestController.GetQuest("Raid1").objectives[4]
+	}
+	
+	CONTENT_SCRIPT.context.Clear()
+	
+	for _,obj in ipairs(objectives) do
+		CONTENT_SCRIPT.context.AddObjective(obj)
+	end
+	
+	ACTIVE_GOALS_TITLE.text = "Active Goals: " .. #objectives
+end
 
 
 function Tick(deltaTime)
@@ -83,5 +108,7 @@ function IsInActiveState()
 	currentState == _G.AppState.Adventure
 end
 
+
+PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
 
