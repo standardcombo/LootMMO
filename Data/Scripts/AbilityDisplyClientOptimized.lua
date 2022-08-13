@@ -17,10 +17,7 @@ local currentAbility = nil
 local root = nil
 local executeDuration = 0.0
 local recoveryDuration = 0.0
-local cooldownDuration = 0.0
-
-local cooldownOverride = nil
-local networkedEventListener = nil
+local cooldownDuration = 0.0 
 
 -- nil Tick(float)
 -- Checks for changes to the players abiltiies, or icons on those abilities
@@ -109,6 +106,9 @@ function SetEquipment(equipment)
     if not equipment:IsA('Equipment') then
         return
     end
+    while not  equipment.clientUserData.calculateModifier do 
+        Task.Wait()
+    end 
     root = equipment
     currentAbility = equipment:FindChildByType('Ability')
     executeDuration = currentAbility.executePhaseSettings.duration

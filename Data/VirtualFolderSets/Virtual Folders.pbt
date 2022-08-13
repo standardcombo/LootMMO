@@ -215,5 +215,23 @@ Assets {
       VirtualFolderPath: "Stats"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Stats"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Character"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Component"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Character"
+      PlatformAssetType: 31
+    }
   }
 }

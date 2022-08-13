@@ -1,16 +1,17 @@
 Assets {
-  Id: 4505221664850827935
-  Name: "Bootleg_Level"
+  Id: 16292680162234927918
+  Name: "ComponentRegistry"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Level_Api"
+        Name: "cs:Components"
         AssetReference {
-          Id: 5452415450039309828
+          Id: 15932461402859697356
         }
       }
     }
   }
   SerializationVersion: 118
+  VirtualFolderPath: "Component"
 }

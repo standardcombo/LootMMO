@@ -1,17 +1,20 @@
+while not _G['CharacterAPI'] do
+    Task.Wait()
+end
+local EAPI = _G['CharacterAPI']
 local API = {}
 _G['Loot.Stats'] = API
-function API.SetStats(player, stats)
-    if Environment.IsClient() then
-        error('Server Only Function')
-        return
-    end
-    if player and player.IsA and player:IsA('Player') then
-        player:SetPrivateNetworkedData('Loot.Stats', stats)
-    end
-end
+
 function API.GetStats(player)
     if player and player.IsA and player:IsA('Player') then
-        return player:GetPrivateNetworkedData('Loot.Stats') or {}
+        local character = EAPI.GetCurrentCharacter(player)
+        if not character then
+            return {}
+        end
+        local stats = character:GetComponent('Stats')
+        if stats then
+            return stats:GetStats()
+        end
     end
     return {}
 end

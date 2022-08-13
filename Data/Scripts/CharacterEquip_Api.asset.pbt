@@ -1,16 +1,17 @@
 Assets {
-  Id: 4505221664850827935
-  Name: "Bootleg_Level"
+  Id: 10365365173678563987
+  Name: "CharacterEquip_Api"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Level_Api"
+        Name: "cs:Character"
         AssetReference {
-          Id: 5452415450039309828
+          Id: 7282416924593627500
         }
       }
     }
   }
   SerializationVersion: 118
+  VirtualFolderPath: "Character"
 }

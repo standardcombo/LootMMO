@@ -106,6 +106,7 @@ Objects {
   ChildIds: 10965927364889680147
   ChildIds: 11247778876148741019
   ChildIds: 11861541797421559284
+  ChildIds: 17697575084936483429
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -151,6 +152,68 @@ Objects {
     }
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17697575084936483429
+  Name: "Shift"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8711270503988986415
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4105394437550983763
+      value {
+        Overrides {
+          Name: "Name"
+          String: "4"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -51.288208
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -335.107605
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4005089717090586234
+    }
+  }
 }
 Objects {
   Id: 11861541797421559284
@@ -201,11 +264,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -75.4588623
+          Float: -194.297241
         }
         Overrides {
           Name: "UIY"
-          Float: -290.787537
+          Float: -292.802063
         }
       }
     }
@@ -263,11 +326,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -256.244873
+          Float: -332.784912
         }
         Overrides {
           Name: "UIY"
-          Float: -240.489258
+          Float: -200.198181
         }
       }
     }
@@ -325,11 +388,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -345.851685
+          Float: -392.178345
         }
         Overrides {
           Name: "UIY"
-          Float: -56.5855713
+          Float: -40.4692383
         }
       }
     }
