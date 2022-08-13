@@ -14,27 +14,29 @@ local CAMERA_SOCIAL_SPACE = script:GetCustomProperty("CameraSocialSpace"):WaitFo
 
 local player = Game.GetLocalPlayer()
 
-Events.Connect("JoinSocial", function()
-	UI.SetCanCursorInteractWithUI(false)
-	UI.SetCursorVisible(false)
+Events.Connect("AppState.Enter", function(player, newState, prevState)
+	if newState == _G.AppState.SocialHub then
+		UI.SetCanCursorInteractWithUI(false)
+		UI.SetCursorVisible(false)
 	
-	player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
-	Task.Wait(0.4)
-	SFX:Play()
-end)
-
-Events.Connect("BagSelection", function()
-	UI.SetCanCursorInteractWithUI(true)
-	UI.SetCursorVisible(true)
-	
-	while player:GetWorldPosition().z < 7000 do
-		Task.Wait()
+		player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
+		Task.Wait(0.4)
+		SFX:Play()
 	end
+
+	if newState == _G.AppState.BagSelection then
+		UI.SetCanCursorInteractWithUI(true)
+		UI.SetCursorVisible(true)
 	
-	local bagSelectionCameraScripts = World.FindObjectsByName("BagSelectionCameraScript")
+		while player:GetWorldPosition().z < 7000 do
+			Task.Wait()
+		end
 	
-	for _,s in ipairs(bagSelectionCameraScripts) do
-		s.context.OnPlayerJoined(player)
+		local bagSelectionCameraScripts = World.FindObjectsByName("BagSelectionCameraScript")
+	
+		for _,s in ipairs(bagSelectionCameraScripts) do
+			s.context.OnPlayerJoined(player)
+		end
 	end
 end)
 
