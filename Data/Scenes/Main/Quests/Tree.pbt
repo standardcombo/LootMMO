@@ -1668,6 +1668,12 @@ Objects {
         SelfId: 10935835872357857957
       }
     }
+    Overrides {
+      Name: "cs:CloseButton"
+      ObjectReference {
+        SelfId: 14695732978040065685
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

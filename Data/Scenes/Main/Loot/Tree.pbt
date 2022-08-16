@@ -17639,12 +17639,6 @@ Objects {
         TemplateId: 14491466816943871751
       }
     }
-    Overrides {
-      Name: "cs:ReturnToBagSelectionTrigger"
-      ObjectReference {
-        SelfId: 2047090903980846284
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
