@@ -35,6 +35,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:CloseButton"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:Badge"
         ObjectReference {
         }

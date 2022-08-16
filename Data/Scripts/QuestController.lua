@@ -1,4 +1,12 @@
 
+--[[
+	Quest Controller
+	(Server + Client)
+	
+	TODO: Header
+	
+]]
+
 local API = {}
 _G.QuestController = API
 
@@ -112,6 +120,8 @@ function API.UnlockForPlayer(player, questId)
 	table.insert(questData.active, {id = questId})
 	
 	SetPlayerData(player, questData)
+	
+	--Events.BroadcastToPlayer(player, "Quest_Unlock", questId)
 end
 
 
@@ -151,8 +161,28 @@ local function LoadPlayerData(player)
 	end
 	SetPlayerData(player, data.quests)
 end
+
 if Environment.IsServer() then
 	Game.playerJoinedEvent:Connect(LoadPlayerData)
+end
+
+
+local function FireLocalQuestChangedEvent()
+	Events.Broadcast("Quest_Changed")
+end
+
+local function OnPrivateDataChanged(player, key)
+	if key == "quests" then
+		FireLocalQuestChangedEvent()
+	end
+end
+
+if Environment.IsClient() then
+	Game.GetLocalPlayer().privateNetworkedDataChangedEvent:Connect(OnPrivateDataChanged)
+	
+	Task.Spawn(
+		FireLocalQuestChangedEvent
+	)
 end
 
 --[[

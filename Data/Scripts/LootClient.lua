@@ -63,9 +63,6 @@ local classes = {
 }
 
 
-UI.SetCanCursorInteractWithUI(true)
-UI.SetCursorVisible(true)
-
 local HEADER_START_Y = HEADER_PANEL.y
 HEADER_PANEL.y = 0
 COLLECTION_TEXT.text = ""
@@ -141,8 +138,8 @@ end
 PLAY_BUTTON.clickedEvent:Connect(OnPlay)
 
 
-function ReturnToBagSelect(player)
-	--if player ~= Game.GetLocalPlayer() then return end
+function ReturnToBagSelect(trigger, player)
+	if player ~= Game.GetLocalPlayer() then return end
 	
 	_G.AppState.SetLocalState(_G.AppState.BagSelection)
 	

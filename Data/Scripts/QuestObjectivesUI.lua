@@ -6,6 +6,7 @@ local CORNER_ARROW = script:GetCustomProperty("CornerArrow"):WaitForObject()
 local KEY_BINDING_PANEL = script:GetCustomProperty("KeyBindingPanel"):WaitForObject()
 local ACTIVE_GOALS_TITLE = script:GetCustomProperty("ActiveGoalsTitle"):WaitForObject()
 local CONTENT_PANEL = script:GetCustomProperty("ContentPanel"):WaitForObject()
+local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 local BADGE = script:GetCustomProperty("Badge"):WaitForObject()
 local COLLAPSED_WIDTH = script:GetCustomProperty("CollapsedWidth")
 local COLLAPSED_HEIGHT = script:GetCustomProperty("CollapsedHeight")
@@ -33,29 +34,73 @@ local fHeight = COLLAPSED_HEIGHT
 local state = false
 
 
+function Show()
+	state = true
+	_G.CursorStack.Enable()
+	
+	UpdateContents()
+end
+
+function Hide()
+	state = false
+	_G.CursorStack.Disable()
+end
+
+
+CLOSE_BUTTON.clickedEvent:Connect(Hide)
+
+
 function OnBindingPressed(player, action)
 	if action == "ability_1" 
 	and IsInActiveState() then
-		state = not state
-		
 		if state then
-			UpdateContents()
+			Hide()
+		else
+			Show()
 		end
 	end
 end
 
 
+local activeObjectives = {}
+
 function UpdateContents()
-	local objectives = _G.QuestController.GetActiveObjectives(PLAYER)
-	
 	CONTENT_SCRIPT.context.Clear()
 	
-	for _,obj in ipairs(objectives) do
+	-- Header
+	ACTIVE_GOALS_TITLE.text = "Active Goals: " .. #activeObjectives
+	
+	-- Add rows
+	for _,obj in ipairs(activeObjectives) do
+		obj.hasSeen = true --Mark objective as seen
 		CONTENT_SCRIPT.context.AddObjective(obj)
 	end
 	
-	ACTIVE_GOALS_TITLE.text = "Active Goals: " .. #objectives
+	-- Disable Badge
+	BADGE.visibility = Visibility.FORCE_OFF
 end
+
+function UpdateData()
+	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
+	
+	-- Update Badge
+	local notSeenCount = 0
+	for _,obj in ipairs(activeObjectives) do
+		if not obj.hasSeen then
+			notSeenCount = notSeenCount + 1
+		end
+	end
+	if notSeenCount <= 0 then
+		BADGE.visibility = Visibility.FORCE_OFF
+	else
+		BADGE.visibility = Visibility.INHERIT
+		
+		local uiText = BADGE:FindDescendantByType("UIText")
+		uiText.text = tostring(notSeenCount)
+	end
+end
+
+Events.Connect("Quest_Changed", UpdateData)
 
 
 function Tick(deltaTime)
