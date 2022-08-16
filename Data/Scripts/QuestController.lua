@@ -14,8 +14,21 @@ end
 
 for k,obj in pairs(QUEST_OBJECTIVES) do
 	local quest = QUEST_METADATA[obj.questId]
-	table.insert(quest.objectives, obj)
-	obj.quest = quest
+	if quest then
+		table.insert(quest.objectives, obj)
+		obj.quest = quest
+	else
+		-- Case of error in the entry of data where an objective has the wrong quest ID.
+		warn("An objective points to quest ID ".. obj.questId ..", but no such quest exists.")
+	end
+end
+
+-- Case of error in the entry of data where a quest has zero objectives.
+for k,quest in pairs(QUEST_METADATA) do
+	if #quest.objectives == 0 then
+		warn("Quest ".. quest.id .." contains no objectives and will be removed.")
+		
+	end
 end
 
 
@@ -38,6 +51,18 @@ function API.GetCompletedQuestIDs(player)
 		return data.complete
 	end
 	return {}
+end
+
+
+-- Client/Server
+function API.HasCompleted(player, questId)
+	local completedIds = API.GetCompletedQuestIDs(player)
+	for _,id in ipairs(completedIds) do
+		if id == questId then
+			return true
+		end
+	end
+	return false
 end
 
 
@@ -67,6 +92,41 @@ function API.GetActiveObjectives(player)
 end
 
 
+-- Server only
+function API.UnlockForPlayer(player, questId)
+	if not QUEST_METADATA[questId] then
+		error("Cannot unlock quest ".. tostring(questId) .." because no such quest exists.")
+		return
+	end
+	if API.HasCompleted(player, questId) then
+		warn(player.name .." has already completed ".. questId)
+		return
+	end
+	local questData = player:GetPrivateNetworkedData("quests")
+	for _,entry in ipairs(questData.active) do
+		if entry.id == questId then
+			warn(player.name .." has already unlocked ".. questId)
+			return
+		end
+	end
+	table.insert(questData.active, {id = questId})
+	
+	SetPlayerData(player, questData)
+end
+
+
+function SetPlayerData(player, questData)
+	local resultCode = player:SetPrivateNetworkedData("quests", questData)
+	
+	if resultCode == PrivateNetworkedDataResultCode.FAILURE then
+		error("Setting quest data for player " ..player.name .. " failed.")
+	
+	elseif resultCode == PrivateNetworkedDataResultCode.EXCEEDED_SIZE_LIMIT then
+		error("Setting quest data for player " ..player.name .. " exceeded limit.")
+	end
+end
+
+
 local function SavePlayerData(player)
 --[[	local data = Storage.GetPlayerData(player)
 	
@@ -89,14 +149,7 @@ local function LoadPlayerData(player)
 			--active = {{id="Map",n=2},{id="Raid1"}}
 		}
 	end
-	local resultCode = player:SetPrivateNetworkedData("quests", data.quests)
-	
-	if resultCode == PrivateNetworkedDataResultCode.FAILURE then
-		error("Setting quest data for player " ..player.name .. " failed.")
-	
-	elseif resultCode == PrivateNetworkedDataResultCode.EXCEEDED_SIZE_LIMIT then
-		error("Setting quest data for player " ..player.name .. " exceeded limit.")
-	end
+	SetPlayerData(player, data.quests)
 end
 if Environment.IsServer() then
 	Game.playerJoinedEvent:Connect(LoadPlayerData)
