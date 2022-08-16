@@ -46,13 +46,7 @@ end
 
 
 function UpdateContents()
-	local quest = _G.QuestController.GetQuest("Map")
-	local objectives = {
-		quest.objectives[1],
-		quest.objectives[2],
-		quest.objectives[3],
-		_G.QuestController.GetQuest("Raid1").objectives[4]
-	}
+	local objectives = _G.QuestController.GetActiveObjectives(PLAYER)
 	
 	CONTENT_SCRIPT.context.Clear()
 	
