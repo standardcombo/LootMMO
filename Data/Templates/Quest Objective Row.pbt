@@ -23,6 +23,8 @@ Assets {
         ChildIds: 6235844577724187844
         ChildIds: 3295992311109737673
         ChildIds: 6439205181351743744
+        ChildIds: 10770027726623180215
+        ChildIds: 5747029504989574554
         UnregisteredParameters {
           Overrides {
             Name: "cs:Icon"
@@ -52,6 +54,18 @@ Assets {
             Name: "cs:UIButton"
             ObjectReference {
               SubObjectId: 6439205181351743744
+            }
+          }
+          Overrides {
+            Name: "cs:SelectedBorder"
+            ObjectReference {
+              SubObjectId: 10770027726623180215
+            }
+          }
+          Overrides {
+            Name: "cs:CompletedBorder"
+            ObjectReference {
+              SubObjectId: 5747029504989574554
             }
           }
         }
@@ -801,6 +815,156 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 10770027726623180215
+        Name: "Selected Border"
+        Transform {
+          Location {
+            X: -20.93
+            Y: -9.37658596
+            Z: -56.25
+          }
+          Rotation {
+            Yaw: -0.230140761
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 10
+          Height: 8
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 12826647398051142834
+            }
+            Color {
+              R: 1
+              G: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5747029504989574554
+        Name: "Completed Border"
+        Transform {
+          Location {
+            X: -20.93
+            Y: -9.37658596
+            Z: -56.25
+          }
+          Rotation {
+            Yaw: -0.230140761
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 6
+          Height: 6
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 2014258926635376275
+            }
+            Color {
+              R: 1
+              G: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 7542904062235710665
@@ -845,6 +1009,24 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Map"
+      }
+    }
+    Assets {
+      Id: 12826647398051142834
+      Name: "UI Basic Frame 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Frame_002"
+      }
+    }
+    Assets {
+      Id: 2014258926635376275
+      Name: "Frame Outlined Thick 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "FrameFlat_020"
       }
     }
     PrimaryAssetId {

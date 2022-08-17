@@ -49,7 +49,11 @@ function Expand()
 end
 
 function Collapse()
-	SetState(STATE_COLLAPSED)
+	if selectedRow then
+		SetState(STATE_SELECTED)
+	else
+		SetState(STATE_COLLAPSED)
+	end
 end
 
 
@@ -75,6 +79,10 @@ function SetState(newState)
 		
 	elseif newState == STATE_SELECTED then
 		_G.CursorStack.Disable()
+	
+		local pos = selectedRow:GetAbsolutePosition()
+		selectedRow.parent = ROOT
+		selectedRow:SetAbsolutePosition(pos)
 	end
 	currentState = newState
 end
@@ -144,10 +152,6 @@ function OnObjectiveSelected(obj, uiRow)
 	
 	selectedObjective = obj
 	selectedRow = uiRow
-	
-	local pos = selectedRow:GetAbsolutePosition()
-	selectedRow.parent = ROOT
-	selectedRow:SetAbsolutePosition(pos)
 	
 	SetState(STATE_SELECTED)
 	

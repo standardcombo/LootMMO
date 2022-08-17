@@ -50,6 +50,19 @@ function OnRowButtonPressed(button)
 	local row = button.parent
 	local obj = row.clientUserData.objective
 	
+	-- Unselect all other objectives
+	for _,r in ipairs(rows) do
+		if r ~= row then
+			r.clientUserData.objective.isSelected = false
+			GET(r, "SelectedBorder").visibility = Visibility.FORCE_OFF
+		end
+	end
+	
+	-- Select this objective
+	obj.isSelected = true
+	GET(row, "SelectedBorder").visibility = Visibility.INHERIT
+	
+	-- Inform the change to the parent UI
 	OnObjectiveSelected(obj, row)
 end
 
@@ -98,6 +111,13 @@ function SetupRow(row, obj)
 		
 		description.clientUserData.defaultHeight = description.height
 	end
+	
+	if obj.isSelected then
+		GET(row, "SelectedBorder").visibility = Visibility.INHERIT
+	else
+		GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
+	end
+	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	
 	return row
 end
