@@ -11,6 +11,10 @@ local rowPool = {}
 
 function GET(obj, key) return obj:GetCustomProperty(key):WaitForObject() end
 
+-- Callback to parent UI, informing an objective was selected
+-- <objective table, row UIPanel>
+OnObjectiveSelected = nil
+
 
 function Clear()
 	for _,row in ipairs(rows) do
@@ -43,11 +47,10 @@ end
 
 
 function OnRowButtonPressed(button)
-	-- TODO: Select objective
-	-- TODO: Auto-nav
+	local row = button.parent
+	local obj = row.clientUserData.objective
 	
-	print("Quest Objective row pressed")
-	
+	OnObjectiveSelected(obj, row)
 end
 
 

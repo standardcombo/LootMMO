@@ -33,6 +33,8 @@ local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
 
 local activeObjectives = {}
+local selectedObjective = nil
+local selectedRow = nil
 
 
 local STATE_HIDDEN = 0
@@ -63,6 +65,12 @@ function SetState(newState)
 	elseif newState == STATE_EXPANDED then
 		_G.CursorStack.Enable()
 		
+		if currentState == STATE_SELECTED then
+			EXPANDING_PANEL.opacity = 1
+			fHeight = selectedRow.height
+			EXPANDING_PANEL.height = fHeight
+		end
+		
 		UpdateContents()
 		
 	elseif newState == STATE_SELECTED then
@@ -79,6 +87,8 @@ function Tick(deltaTime)
 	ROOT.visibility = Visibility.INHERIT
 
 	local t = deltaTime * LERP_SPEED
+	t = CoreMath.Clamp(t)
+	
 	if currentState == STATE_EXPANDED then
 		fWidth = CoreMath.Lerp(fWidth, DEFAULT_WIDTH, t)
 		fHeight = CoreMath.Lerp(fHeight, DEFAULT_HEIGHT, t)
@@ -104,6 +114,11 @@ function Tick(deltaTime)
 		
 		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 1, t)
 		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 0, t)
+	
+	elseif currentState == STATE_SELECTED then
+		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
+		selectedRow.x = CoreMath.Lerp(selectedRow.x, 0, t / 3)
+		selectedRow.y = CoreMath.Lerp(selectedRow.y, 0, t / 3)
 	end
 end
 
@@ -121,6 +136,22 @@ function OnBindingPressed(player, action)
 			Expand()
 		end
 	end
+end
+
+
+function OnObjectiveSelected(obj, uiRow)
+	print("Quest " ..obj.questId .." selected")
+	
+	selectedObjective = obj
+	selectedRow = uiRow
+	
+	local pos = selectedRow:GetAbsolutePosition()
+	selectedRow.parent = ROOT
+	selectedRow:SetAbsolutePosition(pos)
+	
+	SetState(STATE_SELECTED)
+	
+	-- TODO: Auto-nav
 end
 
 
@@ -181,5 +212,9 @@ end
 
 
 PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
+
+
+Task.Wait()
+CONTENT_SCRIPT.context.OnObjectiveSelected = OnObjectiveSelected
 
 
