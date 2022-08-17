@@ -100,6 +100,22 @@ function API.GetActiveObjectives(player)
 end
 
 
+-- Client only
+function API.SelectObjective(player, obj)
+	local activeObjectives = API.GetActiveObjectives(player)
+	
+	for _,o in ipairs(activeObjectives) do
+		if o == obj then
+			-- Select the desired objective
+			o.isSelected = true
+		else
+			-- Deselect the others
+			o.isSelected = false
+		end
+	end
+end
+
+
 -- Server only
 function API.UnlockForPlayer(player, questId)
 	if not QUEST_METADATA[questId] then

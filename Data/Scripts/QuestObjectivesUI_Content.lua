@@ -50,17 +50,17 @@ function OnRowButtonPressed(button)
 	local row = button.parent
 	local obj = row.clientUserData.objective
 	
-	-- Unselect all other objectives
+	-- Tell the quest system to select this objective
+	_G.QuestController.SelectObjective(Game.GetLocalPlayer(), obj)
+	
+	-- Update the selection borders
 	for _,r in ipairs(rows) do
-		if r ~= row then
-			r.clientUserData.objective.isSelected = false
+		if r == row then
+			GET(r, "SelectedBorder").visibility = Visibility.INHERIT
+		else
 			GET(r, "SelectedBorder").visibility = Visibility.FORCE_OFF
 		end
 	end
-	
-	-- Select this objective
-	obj.isSelected = true
-	GET(row, "SelectedBorder").visibility = Visibility.INHERIT
 	
 	-- Inform the change to the parent UI
 	OnObjectiveSelected(obj, row)
