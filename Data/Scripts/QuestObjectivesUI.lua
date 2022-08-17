@@ -31,38 +31,98 @@ BADGE.visibility = Visibility.FORCE_OFF
 
 local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
-local state = false
+
+local activeObjectives = {}
 
 
-function Show()
-	state = true
-	_G.CursorStack.Enable()
-	
-	UpdateContents()
+local STATE_HIDDEN = 0
+local STATE_COLLAPSED = 1
+local STATE_EXPANDED = 2
+local STATE_SELECTED = 3
+local currentState = STATE_HIDDEN
+
+
+function Expand()
+	SetState(STATE_EXPANDED)
 end
 
-function Hide()
-	state = false
-	_G.CursorStack.Disable()
+function Collapse()
+	SetState(STATE_COLLAPSED)
 end
 
 
-CLOSE_BUTTON.clickedEvent:Connect(Hide)
-
-
-function OnBindingPressed(player, action)
-	if action == "ability_1" 
-	and IsInActiveState() then
-		if state then
-			Hide()
-		else
-			Show()
+function SetState(newState)
+	if newState == STATE_HIDDEN then
+		-- Nothing
+		
+	elseif newState == STATE_COLLAPSED then
+		if currentState ~= STATE_HIDDEN then
+			_G.CursorStack.Disable()
 		end
+		
+	elseif newState == STATE_EXPANDED then
+		_G.CursorStack.Enable()
+		
+		UpdateContents()
+		
+	elseif newState == STATE_SELECTED then
+		_G.CursorStack.Disable()
+	end
+	currentState = newState
+end
+
+function Tick(deltaTime)
+	if not IsInActiveState() then
+		ROOT.visibility = Visibility.FORCE_OFF
+		return
+	end
+	ROOT.visibility = Visibility.INHERIT
+
+	local t = deltaTime * LERP_SPEED
+	if currentState == STATE_EXPANDED then
+		fWidth = CoreMath.Lerp(fWidth, DEFAULT_WIDTH, t)
+		fHeight = CoreMath.Lerp(fHeight, DEFAULT_HEIGHT, t)
+		EXPANDING_PANEL.width = CoreMath.Round(fWidth)
+		EXPANDING_PANEL.height = CoreMath.Round(fHeight)
+		
+		CORNER_ARROW.x = CoreMath.Lerp(CORNER_ARROW.x, 0, t)
+		CORNER_ARROW.y = CoreMath.Lerp(CORNER_ARROW.y, 0, t)
+		CORNER_ARROW.rotationAngle = CoreMath.Lerp(CORNER_ARROW.rotationAngle, 0, t)
+		
+		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 0, t)
+		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 1, t)
+		
+	elseif currentState == STATE_COLLAPSED then
+		fWidth = CoreMath.Lerp(fWidth, COLLAPSED_WIDTH, t)
+		fHeight = CoreMath.Lerp(fHeight, COLLAPSED_HEIGHT, t)
+		EXPANDING_PANEL.width = CoreMath.Round(fWidth)
+		EXPANDING_PANEL.height = CoreMath.Round(fHeight)
+		
+		CORNER_ARROW.x = CoreMath.Lerp(CORNER_ARROW.x, COLLAPSED_WIDTH, t)
+		CORNER_ARROW.y = CoreMath.Lerp(CORNER_ARROW.y, COLLAPSED_HEIGHT, t)
+		CORNER_ARROW.rotationAngle = CoreMath.Lerp(CORNER_ARROW.rotationAngle, 180, t)
+		
+		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 1, t)
+		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 0, t)
 	end
 end
 
 
-local activeObjectives = {}
+CLOSE_BUTTON.clickedEvent:Connect(Collapse)
+
+function OnBindingPressed(player, action)
+	if action == "ability_1" 
+	and IsInActiveState() then
+		if currentState == STATE_EXPANDED then
+			Collapse()
+			
+		elseif currentState == STATE_COLLAPSED
+		or currentState == STATE_SELECTED then
+			Expand()
+		end
+	end
+end
+
 
 function UpdateContents()
 	CONTENT_SCRIPT.context.Clear()
@@ -98,53 +158,25 @@ function UpdateData()
 		local uiText = BADGE:FindDescendantByType("UIText")
 		uiText.text = tostring(notSeenCount)
 	end
+	
+	-- State change
+	if currentState == STATE_HIDDEN then
+		SetState(STATE_COLLAPSED)
+	end
 end
 
 Events.Connect("Quest_Changed", UpdateData)
 
 
-function Tick(deltaTime)
-	if not IsInActiveState() then
-		ROOT.visibility = Visibility.FORCE_OFF
-		return
-	end
-	ROOT.visibility = Visibility.INHERIT
-
-	local t = deltaTime * LERP_SPEED
-	if state then
-		fWidth = CoreMath.Lerp(fWidth, DEFAULT_WIDTH, t)
-		fHeight = CoreMath.Lerp(fHeight, DEFAULT_HEIGHT, t)
-		EXPANDING_PANEL.width = CoreMath.Round(fWidth)
-		EXPANDING_PANEL.height = CoreMath.Round(fHeight)
-		
-		CORNER_ARROW.x = CoreMath.Lerp(CORNER_ARROW.x, 0, t)
-		CORNER_ARROW.y = CoreMath.Lerp(CORNER_ARROW.y, 0, t)
-		CORNER_ARROW.rotationAngle = CoreMath.Lerp(CORNER_ARROW.rotationAngle, 0, t)
-		
-		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 0, t)
-		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 1, t)
-	else
-		fWidth = CoreMath.Lerp(fWidth, COLLAPSED_WIDTH, t)
-		fHeight = CoreMath.Lerp(fHeight, COLLAPSED_HEIGHT, t)
-		EXPANDING_PANEL.width = CoreMath.Round(fWidth)
-		EXPANDING_PANEL.height = CoreMath.Round(fHeight)
-		
-		CORNER_ARROW.x = CoreMath.Lerp(CORNER_ARROW.x, COLLAPSED_WIDTH, t)
-		CORNER_ARROW.y = CoreMath.Lerp(CORNER_ARROW.y, COLLAPSED_HEIGHT, t)
-		CORNER_ARROW.rotationAngle = CoreMath.Lerp(CORNER_ARROW.rotationAngle, 180, t)
-		
-		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 1, t)
-		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 0, t)
-	end
-end
-
-
 function IsInActiveState()
-	local currentState = _G.AppState.GetLocalState()
+	if currentState == STATE_HIDDEN then
+		return false
+	end
+	local appState = _G.AppState.GetLocalState()
 	return
-	currentState == _G.AppState.SocialHub or
-	currentState == _G.AppState.Mailbox or
-	currentState == _G.AppState.Adventure
+		appState == _G.AppState.SocialHub or
+		appState == _G.AppState.Mailbox or
+		appState == _G.AppState.Adventure
 end
 
 
