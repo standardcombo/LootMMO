@@ -148,7 +148,7 @@ end
 
 
 function OnObjectiveSelected(obj, uiRow)
-	print("Quest " ..obj.questId .." selected")
+	--print("QuestObjectivesUI: " ..obj.questId .." selected")
 	
 	selectedObjective = obj
 	selectedRow = uiRow

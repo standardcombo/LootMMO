@@ -1709,7 +1709,7 @@ Objects {
 }
 Objects {
   Id: 18235828220799259707
-  Name: "ObjectivePickupClient"
+  Name: "ObjectivePickupManagerClient"
   Transform {
     Location {
     }
@@ -1730,6 +1730,12 @@ Objects {
       Name: "cs:Trigger"
       ObjectReference {
         SelfId: 17634960000438631263
+      }
+    }
+    Overrides {
+      Name: "cs:Outline"
+      ObjectReference {
+        SelfId: 11337125220125787966
       }
     }
   }
@@ -1911,9 +1917,9 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 0.450600058
-      Y: 0.450600058
-      Z: 0.450600058
+      X: 0.549576521
+      Y: 0.549576521
+      Z: 0.549576521
     }
   }
   ParentId: 18235828220799259707
@@ -1931,13 +1937,13 @@ Objects {
   }
   Trigger {
     Interactable: true
-    InteractionLabel: "Take Map Piece"
+    InteractionLabel: "Take"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
     TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
+      Value: "mc:etriggershape:sphere"
     }
     InteractionTemplate {
     }
@@ -2077,7 +2083,7 @@ Objects {
 }
 Objects {
   Id: 15537213486610408055
-  Name: "ObjectivePickupServer"
+  Name: "ObjectivePickupManagerServer"
   Transform {
     Location {
     }

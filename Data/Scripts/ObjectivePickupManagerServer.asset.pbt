@@ -1,6 +1,6 @@
 Assets {
-  Id: 7454505496619734951
-  Name: "ObjectivePickupClient"
+  Id: 11601417027845101890
+  Name: "ObjectivePickupManagerServer"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
