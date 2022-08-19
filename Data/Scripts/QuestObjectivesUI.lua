@@ -35,13 +35,19 @@ local fHeight = COLLAPSED_HEIGHT
 local activeObjectives = {}
 local selectedObjective = nil
 local selectedRow = nil
+local nextSelectedObjective = nil
+local nextSelectedRow = nil
 
 
 local STATE_HIDDEN = 0
 local STATE_COLLAPSED = 1
 local STATE_EXPANDED = 2
 local STATE_SELECTED = 3
+local STATE_COMPLETED_1 = 4
+local STATE_COMPLETED_2 = 5
+local STATE_COMPLETED_3 = 6
 local currentState = STATE_HIDDEN
+local stateElapsedTime = 0
 
 
 function Expand()
@@ -83,8 +89,22 @@ function SetState(newState)
 		local pos = selectedRow:GetAbsolutePosition()
 		selectedRow.parent = ROOT
 		selectedRow:SetAbsolutePosition(pos)
+		
+	elseif newState == STATE_COMPLETED_1 then
+		-- nothing
+		
+	elseif newState == STATE_COMPLETED_2 then
+		nextSelectedRow.opacity = 0
+		nextSelectedRow.parent = selectedRow.parent
+		local pos = selectedRow:GetAbsolutePosition()
+		pos.y = pos.y + selectedRow.height + 10
+		nextSelectedRow:SetAbsolutePosition(pos)
+		
+	elseif newState == STATE_COMPLETED_3 then
+		-- nothing
 	end
 	currentState = newState
+	stateElapsedTime = 0
 end
 
 function Tick(deltaTime)
@@ -93,6 +113,8 @@ function Tick(deltaTime)
 		return
 	end
 	ROOT.visibility = Visibility.INHERIT
+
+	stateElapsedTime = stateElapsedTime + deltaTime
 
 	local t = deltaTime * LERP_SPEED
 	t = CoreMath.Clamp(t)
@@ -127,6 +149,31 @@ function Tick(deltaTime)
 		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
 		selectedRow.x = CoreMath.Lerp(selectedRow.x, 0, t / 3)
 		selectedRow.y = CoreMath.Lerp(selectedRow.y, 0, t / 3)
+		
+	elseif currentState == STATE_COMPLETED_1 then
+		if stateElapsedTime > 1 then
+			SetState(currentState + 1)
+		end
+		
+	elseif currentState == STATE_COMPLETED_2 then
+		if stateElapsedTime > 1 then
+			SetState(currentState + 1)
+		else
+			nextSelectedRow.opacity = CoreMath.Lerp(nextSelectedRow.opacity, 1, t)
+		end
+		
+	elseif currentState == STATE_COMPLETED_3 then
+		if stateElapsedTime > 1 then
+			selectedObjective = nextSelectedObjective
+			selectedRow = nextSelectedRow
+			nextSelectedObjective = nil
+			nextSelectedRow = nil
+			
+			SetState(STATE_SELECTED)
+		else
+			selectedRow.opacity = CoreMath.Lerp(selectedRow.opacity, 0, t)
+			nextSelectedRow.y = CoreMath.Lerp(nextSelectedRow.y, 0, t / 3)
+		end
 	end
 end
 
@@ -177,6 +224,22 @@ end
 
 function UpdateData()
 	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
+	
+	-- Check if the currently selected objective has been completed
+	if selectedObjective and selectedRow then
+		for _,obj in ipairs(activeObjectives) do
+			if obj.questId == selectedObjective.questId
+			and obj.index > selectedObjective.index then
+				nextSelectedObjective = obj
+				nextSelectedRow = CONTENT_SCRIPT.context.AddObjective(obj)
+				
+				CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
+				
+				SetState(STATE_COMPLETED_1)
+				break
+			end
+		end	
+	end
 	
 	-- Update Badge
 	local notSeenCount = 0

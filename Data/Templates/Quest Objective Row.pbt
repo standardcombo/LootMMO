@@ -25,6 +25,7 @@ Assets {
         ChildIds: 6439205181351743744
         ChildIds: 10770027726623180215
         ChildIds: 5747029504989574554
+        ChildIds: 14579659351582158648
         UnregisteredParameters {
           Overrides {
             Name: "cs:Icon"
@@ -57,6 +58,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:AutoNavIndicator"
+            ObjectReference {
+              SubObjectId: 3295992311109737673
+            }
+          }
+          Overrides {
             Name: "cs:SelectedBorder"
             ObjectReference {
               SubObjectId: 10770027726623180215
@@ -66,6 +73,12 @@ Assets {
             Name: "cs:CompletedBorder"
             ObjectReference {
               SubObjectId: 5747029504989574554
+            }
+          }
+          Overrides {
+            Name: "cs:CompletedIcon"
+            ObjectReference {
+              SubObjectId: 14579659351582158648
             }
           }
         }
@@ -909,6 +922,7 @@ Assets {
           }
         }
         ParentId: 706559759143277157
+        ChildIds: 14122281633150775543
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -959,6 +973,165 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14122281633150775543
+        Name: "Completed Text"
+        Transform {
+          Location {
+            X: 10.3067665
+            Y: -11.3499374
+            Z: -56.25
+          }
+          Rotation {
+            Yaw: -0.230165541
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5747029504989574554
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 300
+          Height: 40
+          UIX: 10
+          UIY: 8
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "Completed!"
+            Color {
+              R: 1
+              G: 1
+              A: 1
+            }
+            Size: 24
+            Justification {
+              Value: "mc:etextjustify:left"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:top"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            OutlineColor {
+              A: 1
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14579659351582158648
+        Name: "Completed Icon"
+        Transform {
+          Location {
+            X: -20.9301414
+            Y: -9.37649
+            Z: -56.25
+          }
+          Rotation {
+            Yaw: -0.230156973
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 60
+          Height: 60
+          UIX: -15
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          Image {
+            Brush {
+              Id: 5489541460318143251
+            }
+            Color {
+              G: 0.541
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              G: 1
+              A: 1
+            }
+            ShadowOffset {
+              X: -1
+              Y: -1
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleright"
               }
             }
           }
@@ -1027,6 +1200,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "FrameFlat_020"
+      }
+    }
+    Assets {
+      Id: 5489541460318143251
+      Name: "Icon Checkmark"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Checkmark"
       }
     }
     PrimaryAssetId {

@@ -27,12 +27,12 @@ end
 
 
 function AddObjective(obj)
-	InsertObjective(obj, #rows + 1)
+	return InsertObjective(obj, #rows + 1)
 end
 
 
 function InsertObjective(obj, index)
-	InsertRow(SetupRow(NewRow(), obj), index)
+	return InsertRow(SetupRow(NewRow(), obj), index)
 end
 
 
@@ -43,6 +43,28 @@ end
 
 function UpdateObjective(obj)
 
+end
+
+
+function SetRowStateDefault(row)
+	GET(row, "AutoNavIndicator").visibility = Visibility.INHERIT
+	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
+	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
+	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
+end
+
+function SetRowStateSelected(row)
+	GET(row, "AutoNavIndicator").visibility = Visibility.INHERIT
+	GET(row, "SelectedBorder").visibility = Visibility.INHERIT
+	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
+	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
+end
+
+function SetRowStateCompleted(row)
+	GET(row, "AutoNavIndicator").visibility = Visibility.FORCE_OFF
+	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
+	GET(row, "CompletedBorder").visibility = Visibility.INHERIT
+	GET(row, "CompletedIcon").visibility = Visibility.INHERIT
 end
 
 
@@ -70,6 +92,7 @@ end
 function NewRow()
 	if #rowPool > 0 then
 		local row = rowPool[1]
+		row.opacity = 1
 		row.visibility = Visibility.INHERIT
 		row.parent = container
 		
@@ -113,11 +136,10 @@ function SetupRow(row, obj)
 	end
 	
 	if obj.isSelected then
-		GET(row, "SelectedBorder").visibility = Visibility.INHERIT
+		SetRowStateSelected(row)
 	else
-		GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
+		SetRowStateDefault(row)
 	end
-	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	
 	return row
 end
@@ -128,6 +150,8 @@ function InsertRow(row, index)
 	row.x = ROW_PROTOTYPE.x
 	
 	ScheduleVerticalRecalculation()
+	
+	return row
 end
 
 

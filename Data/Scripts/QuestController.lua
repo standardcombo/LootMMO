@@ -5,6 +5,16 @@
 	
 	TODO: Header
 	
+	Player data structure in storage:
+	
+	complete = {list of quest IDs}
+	active = {
+		list of abbreviated objectives
+		(questID, objective's index in the quest, gameID)
+		{
+			id, n, game
+		},
+	}
 ]]
 
 local API = {}
@@ -197,6 +207,8 @@ end
 
 function CompleteQuest(questId)
 	print("QuestController::CompleteQuest")
+	
+	-- TODO
 end
 
 
@@ -260,15 +272,5 @@ if Environment.IsClient() then
 	)
 end
 
---[[
-complete = {list of quest IDs}
-active = {
-	list of abbreviated objectives
-	(questID, objective's index in the quest, gameID)
-	{
-		id, n, game
-	},
-}
-]]
 
 
