@@ -1,7 +1,7 @@
 local COMPONENTS = require(script:GetCustomProperty('Components'))
 local requiredComponents = {}
 for key, value in pairs(COMPONENTS) do
-    table.insert(requiredComponents, require(value['Component']))
+    table.insert(requiredComponents, require(value['Component'])) 
 end
 while not _G.CC_Util do
     Task.Wait()
@@ -9,7 +9,6 @@ end
 
 local CC_Util = _G.CC_Util
 local LUAEVENT = CC_Util:WaitForlibrary('Lua Event')
-
 local Api = {}
 
 function Api.FindComponetFromName(name)

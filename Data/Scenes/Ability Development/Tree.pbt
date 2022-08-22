@@ -25,11 +25,9 @@ Objects {
   ChildIds: 7178566007490731001
   ChildIds: 1516489895582316868
   ChildIds: 329825385216571499
-  ChildIds: 13684167116395384490
   ChildIds: 10559597017288978493
   ChildIds: 16013349539077020081
   ChildIds: 14519183817272936803
-  ChildIds: 15411097656554124339
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -42,43 +40,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 15411097656554124339
-  Name: "DefaultEquip"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 15570822571535799852
-    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -102,6 +63,7 @@ Objects {
   ParentId: 4781671109827199097
   ChildIds: 16280154027808193537
   ChildIds: 16550230921475540811
+  ChildIds: 6235987475051078722
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -116,6 +78,51 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6235987475051078722
+  Name: "CharacterTest"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14519183817272936803
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Class"
+      AssetReference {
+        Id: 10409285431752902445
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 5038874356007781134
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -140,6 +147,7 @@ Objects {
   ChildIds: 2327502453926461300
   ChildIds: 984085952470479296
   ChildIds: 9828671042572661568
+  ChildIds: 15682916510598778693
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -158,6 +166,43 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15682916510598778693
+  Name: "Character_StatsQuickNetwork_Client"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16550230921475540811
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1237248112539606659
     }
   }
   NetworkRelevanceDistance {
@@ -297,6 +342,7 @@ Objects {
   ChildIds: 14576860030477925715
   ChildIds: 6675974118920267239
   ChildIds: 1783149417715649776
+  ChildIds: 18422944964826256012
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -311,6 +357,43 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18422944964826256012
+  Name: "Character_StatsQuickNetwork_Server"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16280154027808193537
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15302640241377471898
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -406,6 +489,17 @@ Objects {
     }
   }
   ParentId: 16280154027808193537
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Character"
+      NetReference {
+        Key: "6f9084df388046e49b033c8e98257774"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -609,42 +703,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13684167116395384490
-  Name: "Level"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Level"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 329825385216571499
   Name: "Stats"
   Transform {
@@ -764,7 +822,7 @@ Objects {
 }
 Objects {
   Id: 11109588607976570366
-  Name: "Registy"
+  Name: "Umaths"
   Transform {
     Location {
     }
@@ -815,7 +873,7 @@ Objects {
 }
 Objects {
   Id: 664710294573490704
-  Name: "Registy"
+  Name: "UI_Utilities"
   Transform {
     Location {
     }
@@ -866,7 +924,7 @@ Objects {
 }
 Objects {
   Id: 15771754972388162269
-  Name: "Registy"
+  Name: "LuaEvents"
   Transform {
     Location {
     }
@@ -955,7 +1013,7 @@ Objects {
 }
 Objects {
   Id: 6810196782578253770
-  Name: "Registy"
+  Name: "Umaths"
   Transform {
     Location {
     }
@@ -1006,7 +1064,7 @@ Objects {
 }
 Objects {
   Id: 16430770932699646333
-  Name: "Registy"
+  Name: "UI_Utilities"
   Transform {
     Location {
     }
@@ -1057,7 +1115,7 @@ Objects {
 }
 Objects {
   Id: 6324334199334486367
-  Name: "Registy"
+  Name: "LuaEvents"
   Transform {
     Location {
     }
@@ -1337,8 +1395,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 1150
-      Y: -350
+      X: 1100
+      Y: -300
       Z: 350.000031
     }
     Rotation {
@@ -1395,8 +1453,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 1150
-      Y: -350
+      X: 1100
+      Y: -300
       Z: 250.000031
     }
     Rotation {
@@ -1569,8 +1627,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 250
-      Y: -950
+      X: 300
+      Y: -900
       Z: 50.0000305
     }
     Rotation {
@@ -1627,8 +1685,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 250
-      Y: -950
+      X: 300
+      Y: -900
       Z: 150.000031
     }
     Rotation {
@@ -1685,8 +1743,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 1150
-      Y: -350
+      X: 1100
+      Y: -300
       Z: 50.0000305
     }
     Rotation {
@@ -1743,8 +1801,8 @@ Objects {
   Name: "Default Floor"
   Transform {
     Location {
-      X: 1150
-      Y: -350
+      X: 1100
+      Y: -300
       Z: 150.000031
     }
     Rotation {

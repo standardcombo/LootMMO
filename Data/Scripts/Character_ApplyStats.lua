@@ -1,8 +1,8 @@
-while not _G['CharacterAPI'] do
+while not _G['CharacterEquipAPI'] do
     Task.Wait()
 end
 
-EApi = _G['CharacterAPI']
+EApi = _G['CharacterEquipAPI']
 
 local function playerEquipped(character, player)
     local stats = character:GetComponent('Stats')
@@ -11,10 +11,11 @@ local function playerEquipped(character, player)
         return
     end
     if stats then
-        player.maxHitPoints = stats:GetTempStat('H') 
+        player.maxHitPoints = stats:GetTempStat('H') + 100
+        player.hitPoints = player.maxHitPoints
         return
     end
-    player.maxHitPoints = 100 
+    player.maxHitPoints = 100
 end
 
-EApi.playerEquipped:Connect(playerEquipped)
+EApi.playerEquippedEvent:Connect(playerEquipped)

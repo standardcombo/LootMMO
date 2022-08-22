@@ -6,8 +6,8 @@ end
 local CC_Util = _G.CC_Util
 local LUAEVENT = CC_Util:WaitForlibrary('Lua Event')
 
-API.playerEquipped = LUAEVENT.NewSafeEvent()
-API.playerUnequipped = LUAEVENT.NewSafeEvent()
+API.playerEquippedEvent = LUAEVENT.NewSafeEvent()
+API.playerUnequippedEvent = LUAEVENT.NewSafeEvent()
 local function EnvironmentBypas()
     if Environment.IsClient() then
         return 'clientUserData'
@@ -27,7 +27,7 @@ function API.UnequipCharacter(player)
     player[bypas].CurrentCharacter = nil 
     if currentlyEquipped and currentlyEquipped:GetOwner() == player then
         currentlyEquipped:RemoveOwner()
-        API.playerUnequipped:Trigger(currentlyEquipped, player)
+        API.playerUnequippedEvent:Trigger(currentlyEquipped, player)
     end
 end
 function API.EquipCharacter(character, player)
@@ -37,7 +37,7 @@ function API.EquipCharacter(character, player)
     API.UnequipCharacter(player)
     local bypas = EnvironmentBypas()
     player[bypas].CurrentCharacter = character
-    API.playerEquipped:Trigger(character, player)
+    API.playerEquippedEvent:Trigger(character, player)
 end
 function _UnequipCharacter(character, player)
     API.UnequipCharacter(player)
@@ -52,5 +52,5 @@ end
 
 CHARACTER.newCharacterFinished:Connect(SetupCharacterConnection)
 
-_G['CharacterAPI'] = API
+_G['CharacterEquipAPI'] = API
 return API

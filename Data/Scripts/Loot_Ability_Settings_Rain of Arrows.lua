@@ -10,12 +10,12 @@ local modifiers = {
 }
 
 modifiers[MODIFIERS.Damage.name].calculation = function(stats)
-    return 80
+    return 80 + stats.A * 0.3
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 20
+    return 20 - stats.W * 0.006
 end
 modifiers[MODIFIERS.Radius.name].calculation = function(stats)
-    return 300
+    return 300 + stats.A * 0.5
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

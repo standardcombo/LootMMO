@@ -17,70 +17,75 @@ local currentAbility = nil
 local root = nil
 local executeDuration = 0.0
 local recoveryDuration = 0.0
-local cooldownDuration = 0.0 
+local cooldownDuration = 0.0
 
 -- nil Tick(float)
 -- Checks for changes to the players abiltiies, or icons on those abilities
 function Tick(deltaTime)
-    if currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner) then
-        local ability = currentAbility
-        cooldownDuration =
-            root.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
-        local currentPhase = ability:GetCurrentPhase()
-        local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
-        local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
-        PANEL.visibility = Visibility.INHERIT
+    if not Object.IsValid(currentAbility) then
+        currentAbility = nil
+    end
+    if not (currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner)) then
+        PANEL.visibility = Visibility.FORCE_OFF
+        return
+    end
+    local ability = currentAbility
+    cooldownDuration =
+        root.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
+    local currentPhase = ability:GetCurrentPhase()
+    local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
+    local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
+    PANEL.visibility = Visibility.INHERIT
 
-        -- Update the level text for the ability
-        NAME_TEXT.text = currentAbility.name
+    -- Update the level text for the ability
+    NAME_TEXT.text = currentAbility.name
 
-        -- Show/hide DURATION_BAR
-        if DURATION_BAR.progress == 0 then
-            DURATION_BAR.visibility = Visibility.FORCE_OFF
-            NAME_TEXT.visibility = Visibility.INHERIT
-        else
-            DURATION_BAR.visibility = Visibility.INHERIT
-            NAME_TEXT.visibility = Visibility.FORCE_OFF
+    -- Show/hide DURATION_BAR
+    if DURATION_BAR.progress == 0 then
+        DURATION_BAR.visibility = Visibility.FORCE_OFF
+        NAME_TEXT.visibility = Visibility.INHERIT
+    else
+        DURATION_BAR.visibility = Visibility.INHERIT
+        NAME_TEXT.visibility = Visibility.FORCE_OFF
+    end
+
+    if not (currentPhase == AbilityPhase.COOLDOWN) then
+        PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
+    else
+        PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+
+        local cd = cooldownDuration
+
+        -- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
+        local cooldownRemaining
+
+        if currentPhase == AbilityPhase.COOLDOWN then
+            local elapsedPhaseTime = phaseTimeElapsed
+            cooldownRemaining = cd - elapsedPhaseTime
+        elseif currentPhase == AbilityPhase.EXECUTE then
+            cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
+        else -- Recovery
+            cooldownRemaining = cd
         end
 
-        if currentPhase == AbilityPhase.READY or currentPhase == AbilityPhase.CAST then
-            PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
-        else
-            PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+        if cooldownRemaining < 0 then
+            cooldownRemaining = 0
+        end
 
-            local cd = cooldownDuration
+        local totalCooldown = executeDuration + cd
+        COUNTDOWN_TEXT.text = string.format('%.1f', cooldownRemaining)
 
-            -- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
-            local cooldownRemaining
+        -- Update the shadow
+        if totalCooldown > 0.3 then
+            local shadowAngle = CoreMath.Clamp(1.0 - cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
 
-            if currentPhase == AbilityPhase.COOLDOWN then
-                local elapsedPhaseTime = phaseTimeElapsed
-                cooldownRemaining = cd - elapsedPhaseTime
-            elseif currentPhase == AbilityPhase.EXECUTE then
-                cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
-            else -- Recovery
-                cooldownRemaining = cd + phaseTimeRemaining
-            end
-
-            if cooldownRemaining < 0 then
-                cooldownRemaining = 0
-            end
-
-            local totalCooldown = executeDuration + recoveryDuration + cd
-            COUNTDOWN_TEXT.text = string.format('%.1f', cooldownRemaining)
-
-            -- Update the shadow
-            if totalCooldown > 0.3 then
-                local shadowAngle = CoreMath.Clamp(1.0 - cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
-
-                if shadowAngle <= 180.0 then
-                    LEFT_SHADOW.rotationAngle = 0.0
-                    RIGHT_SHADOW.visibility = Visibility.INHERIT
-                    RIGHT_SHADOW.rotationAngle = shadowAngle
-                else
-                    LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
-                    RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
-                end
+            if shadowAngle <= 180.0 then
+                LEFT_SHADOW.rotationAngle = 0.0
+                RIGHT_SHADOW.visibility = Visibility.INHERIT
+                RIGHT_SHADOW.rotationAngle = shadowAngle
+            else
+                LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
+                RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
             end
         end
     end
@@ -106,11 +111,14 @@ function SetEquipment(equipment)
     if not equipment:IsA('Equipment') then
         return
     end
-    while not  equipment.clientUserData.calculateModifier do 
+    while not equipment.clientUserData.calculateModifier do
         Task.Wait()
-    end 
+    end
     root = equipment
     currentAbility = equipment:FindChildByType('Ability')
+    if not currentAbility then
+        return
+    end
     executeDuration = currentAbility.executePhaseSettings.duration
     recoveryDuration = currentAbility.recoveryPhaseSettings.duration
     cooldownDuration =

@@ -4,7 +4,7 @@ Assets {
   PlatformAssetType: 31
   SerializationVersion: 118
   VirtualFolderPath: "Loot"
-  VirtualFolderPath: "Ability"
+  VirtualFolderPath: "Equipment"
   DataTableAsset {
     HasKeyColumn: true
     Assets {

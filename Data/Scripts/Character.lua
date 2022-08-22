@@ -21,8 +21,7 @@ local eventElements = {
 local character = {
     owner = nil,
     name = 'Default',
-    id = 1,
-    class = 'nil'
+    id = 1
 }
 function character:AddComponent(componentName)
     if self:GetComponent(componentName) then
@@ -34,6 +33,7 @@ function character:AddComponent(componentName)
         warn('Component not found')
         return
     end
+    newComponent:New(self)
     table.insert(self:GetComponents(), newComponent)
     return newComponent
 end
@@ -71,7 +71,7 @@ function character:RemoveOwner()
     end
     local oldOwner = self.owner
     self.owner = nil
-    TriggerEvent(self.removeOwnerEvent, self,oldOwner)
+    TriggerEvent(self.removeOwnerEvent, self, oldOwner)
 end
 function character:IsA(testType)
     return testType == 'Character' or testType == 'character'
@@ -84,9 +84,8 @@ function character:Serialize()
     data.components = {}
     for index, component in ipairs(self:GetComponents()) do
         local componentData = component:Serialize()
-        componentData = componentData or {}
-        componentData.id = component.id
-        table.insert(data.components, componentData)
+        local ComponentWrapper = {data = componentData, id = component.id}
+        table.insert(data.components, ComponentWrapper)
     end
     return data
 end
@@ -97,11 +96,34 @@ function character:Deserialize(data)
     for index, value in ipairs(data.components) do
         local component = self:GetComponent(value.id)
         if component then
-            component:Deserialize(value)
+            component:Deserialize(value.data)
         end
     end
 end
-
+function character:Destroy()
+    for index, component in ipairs(self:GetComponents()) do
+        if component then
+            component:Destroy()
+        end
+    end
+end
+function InitCharacter(NewCharacter)
+    local stats = NewCharacter:GetComponent('Stats')
+    stats:SetStat("W", 0)
+    stats:SetStat("A", 0)
+    stats:SetStat("V", 0)
+    stats:SetStat("AP", 0)
+    stats:SetStat("SP", 0)
+    stats:SetStat("SR", 0)
+    stats:SetStat("B", 0)
+    stats:SetStat("H", 100)
+    local level = NewCharacter:GetComponent('Level')
+    level.levelUpEvent:Connect(
+        function(_, value)
+            stats:SetStat('Level', value)
+        end
+    )
+end
 local constructor = {}
 constructor.newCharacterCreated = LUAEVENT.New()
 constructor.newCharacterFinished = LUAEVENT.NewSafeEvent()
@@ -117,25 +139,20 @@ function constructor.NewCharacter()
     NewCharacter.id = math.random(2 ^ 31)
 
     constructor.newCharacterCreated:Trigger(NewCharacter)
+    NewCharacter:AddComponent('Stats')
     NewCharacter:AddComponent('Level')
-    local stats = NewCharacter:AddComponent('Stats')
-    stats:SetStats(
-        {
-            ['H'] = 200,
-            ['W'] = 1,
-            ['A'] = 1,
-            ['V'] = 1
-        }
-    ) 
+    NewCharacter:AddComponent('Progression')
+    NewCharacter:AddComponent('Class')
     constructor.newCharacterFinished:Trigger(NewCharacter)
+    InitCharacter(NewCharacter)
+
     return NewCharacter
 end
 function constructor.NewMicroCharacter()
     local NewCharacter = setmetatable({}, {__index = character})
-    NewCharacter.id = math.random(2 ^ 32)
+    NewCharacter.id = math.random(2 ^ 31)
     NewCharacter:AddComponent('Level')
     return NewCharacter
 end
-
 _G.CharacterContructor = constructor
 return constructor

@@ -26,7 +26,6 @@ Objects {
   ChildIds: 1648776158795208633
   ChildIds: 11492620354498796295
   ChildIds: 2801483955022543056
-  ChildIds: 1742505065348884997
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -39,42 +38,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1742505065348884997
-  Name: "Quests"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Quests"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

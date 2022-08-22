@@ -1,5 +1,7 @@
 local component = {
-    id = nil
+    id = nil,
+    owner = nil,
+    requiredComponents = {}
 }
 
 function component:IsA(type)
@@ -13,8 +15,32 @@ end
 function component:Deserialize()
     return {}
 end
+function component:GetOwner()
+    return self.owner
+end
+function component:New(owner)
+    self.owner = owner
+    for key, value in pairs(self.requiredComponents) do
+        if not self.owner:GetComponent(value) then
+            owner:AddComponent(value)
+        end
+    end
+end
+function component:Destroy()
+    if not self.eventElements then
+        return
+    end
+
+    for key, value in pairs(self.eventElements) do
+        local Event = self[value]
+        if Event then 
+            Event:Disconnect()
+        end 
+    end
+end
+
 function component:Init()
-    return 
+    return
 end
 
 return component

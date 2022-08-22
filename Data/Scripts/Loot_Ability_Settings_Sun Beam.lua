@@ -10,20 +10,20 @@ local modifiers = {
     [MODIFIERS.Range.name] = setmetatable({}, {__index = MODIFIERS.Range}),
     [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Speed})
 }
-modifiers[MODIFIERS.Damage.name].calculation = function(stats) 
-    return 75
+modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+    return 75 + stats.W * 0.01
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 8
+    return 8 -  stats.V * .002
 end
 modifiers[MODIFIERS.Speed.name].calculation = function(stats)
-    return 600
+    return 800 + stats.W
 end
 modifiers[MODIFIERS.Range.name].calculation = function(stats)
-    return 400
+    return 1000 + stats.W
 end
 modifiers[MODIFIERS.Heal.name].calculation = function(stats)
-    return 75
+    return 75 + stats.V * 0.01
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

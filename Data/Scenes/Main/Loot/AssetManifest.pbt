@@ -107,15 +107,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13591847256893365151
-  Name: "Target"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_icon_Target"
-  }
-}
-Assets {
   Id: 13462854128336502995
   Name: "Center Circle 001 Outline"
   PlatformAssetType: 9
@@ -260,15 +251,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4569484101736324280
-  Name: "BG Gradient 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundFlat_015"
-  }
-}
-Assets {
   Id: 3483798833601977176
   Name: "Fantasy Shape 003"
   PlatformAssetType: 9
@@ -338,15 +320,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Icon_Helm"
-  }
-}
-Assets {
-  Id: 1100030183663206451
-  Name: "Center Arrow 003 Wedge"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterArrow_003Wedge"
   }
 }
 Assets {

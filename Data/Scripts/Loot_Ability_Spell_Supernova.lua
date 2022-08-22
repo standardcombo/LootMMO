@@ -62,8 +62,9 @@ function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
     local playersInRange = Game.FindPlayersInCylinder(dmgPosition, EffectRadius, {ignoreDead = true})
     for _, otherPlayer in ipairs(playersInRange) do
         if otherPlayer.team == SpecialAbility.owner.team then
+            local heal = -mod[MODIFIERS.Heal.name]
             local dmg = Damage.New()
-            dmg.amount = mod[MODIFIERS.Heal.name]
+            dmg.amount = heal
             dmg.sourcePlayer = SpecialAbility.owner
             dmg.sourceAbility = SpecialAbility
             local attackData = {

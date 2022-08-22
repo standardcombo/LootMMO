@@ -149,6 +149,29 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:five"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "5"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
             Value: "mc:ebindingkeyboard:leftclick"
           }
           KeyboardSecondary {

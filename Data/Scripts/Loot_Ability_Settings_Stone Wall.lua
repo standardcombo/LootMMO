@@ -8,9 +8,9 @@ local modifiers = {
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown})
 }
 modifiers[MODIFIERS.Duration.name].calculation = function(stats)
-    return 8
+    return 8 
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 20
+    return 20  - stats.A * 0.005
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

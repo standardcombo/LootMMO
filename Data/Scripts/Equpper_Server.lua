@@ -1,6 +1,8 @@
 local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment'))
 
-function EquipEquipment(player, equipmentName, slot)
+local EquipApi = {}
+
+function EquipApi.EquipEquipment(player, equipmentName, slot)
     slot = slot or ''
     if not LOOT_ABILITY_EQUIPMENT[equipmentName] then
         return
@@ -13,6 +15,9 @@ function EquipEquipment(player, equipmentName, slot)
     newEquipment.name = equipmentName
     newEquipment:SetCustomProperty('AbilityBinding', slot)
     newEquipment:Equip(player)
+    return newEquipment
 end
 
-Events.Connect('Equipper_Equip', EquipEquipment)
+_G["Equipper"] = EquipApi
+
+Events.Connect('Equipper_Equip', EquipApi.EquipEquipment)

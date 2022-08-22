@@ -202,11 +202,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -51.288208
+          Float: -200
         }
         Overrides {
           Name: "UIY"
-          Float: -335.107605
+          Float: -200
         }
       }
     }
@@ -264,11 +264,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -194.297241
+          Float: -350
         }
         Overrides {
           Name: "UIY"
-          Float: -292.802063
+          Float: -200
         }
       }
     }
@@ -326,11 +326,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -332.784912
+          Float: -250
         }
         Overrides {
           Name: "UIY"
-          Float: -200.198181
+          Float: -50
         }
       }
     }
@@ -388,11 +388,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -392.178345
+          Float: -400
         }
         Overrides {
           Name: "UIY"
-          Float: -40.4692383
+          Float: -50
         }
       }
     }
@@ -424,7 +424,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "Shift"
+          String: "5"
         }
         Overrides {
           Name: "Position"
@@ -435,6 +435,14 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -250
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -350
         }
       }
     }

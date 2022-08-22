@@ -12,9 +12,9 @@ modifiers[MODIFIERS.DamageRange.name].calculation = function(stats)
     return {min = 68, max = 100}
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 8
+    return 8 - stats.W * 0.001
 end
 modifiers[MODIFIERS.Range.name].calculation = function(stats)
-    return 1000
+    return 1000 + stats.A * 0.001
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

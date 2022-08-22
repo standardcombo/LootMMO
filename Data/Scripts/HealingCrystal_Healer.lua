@@ -4,30 +4,28 @@ end
 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local HealTrigger = script:GetCustomProperty('Trigger'):WaitForObject()
-local Timer = 0
 local delayCount = .5
 local owner = nil
 local SpecialAbility = nil
 
 while not Object.IsValid(SpecialAbility) do
     SpecialAbility = ROOT:GetCustomProperty('Ability'):WaitForObject()
+    Task.Wait()
 end
 
 function Tick(dTime)
     if not Object.IsValid(SpecialAbility) then
         return
     end
-    Timer = Timer - dTime
 
     local OverlappingObjects = HealTrigger:GetOverlappingObjects()
     for _, thisObject in pairs(OverlappingObjects) do
         if not Object.IsValid(SpecialAbility) or not SpecialAbility.owner or not Object.IsValid(SpecialAbility.owner) then
             break
         end
-
         if Object.IsValid(thisObject) and thisObject:IsA('Player') and not thisObject.isDead then
             local dmg = Damage.New()
-            local HealAmount = Root:GetCustomProperty()
+            local HealAmount = ROOT:GetCustomProperty('Heal')
             if thisObject.team == SpecialAbility.owner.team then
                 dmg.amount = -HealAmount
             else
@@ -53,5 +51,5 @@ function Tick(dTime)
             end
         end
     end
-    Timer = delayCount
+    Task.Wait(delayCount)
 end

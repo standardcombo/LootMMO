@@ -1,2 +1,0 @@
-Name: "ThrowChair"
-RootId: 10225716748702456708

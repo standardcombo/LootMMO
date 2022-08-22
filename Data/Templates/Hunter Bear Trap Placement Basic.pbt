@@ -40,6 +40,18 @@ Assets {
             Name: "cs:OwnerID:isrep"
             Bool: true
           }
+          Overrides {
+            Name: "cs:Damage:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Stun:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Bleed:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

@@ -150,6 +150,12 @@ Assets {
         }
         ParentId: 6195909728739521076
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 486569560186734023
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

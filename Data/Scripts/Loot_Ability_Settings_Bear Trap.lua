@@ -3,7 +3,7 @@ local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
 local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
-local wmodifiers = {
+local modifiers = {
     [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
     [MODIFIERS.Bleed.name] = setmetatable({}, {__index = MODIFIERS.Bleed}),
@@ -11,15 +11,15 @@ local wmodifiers = {
 }
 
 modifiers[MODIFIERS.Damage.name].calculation = function(stats)
-    return 120
+    return 20 * (1 + stats['Bear Trap'])
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 15
+    return 15 + stats['A'] * 0.005
 end
 modifiers[MODIFIERS.Bleed.name].calculation = function(stats)
-    return 5
+    return 5 + stats['A'] * 0.002
 end
 modifiers[MODIFIERS.Stun.name].calculation = function(stats)
-    return 5
+    return 5 + stats['A'] * 0.002
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

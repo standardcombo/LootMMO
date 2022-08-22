@@ -27,13 +27,20 @@ local function FireEvent(event, ...)
         listener(...)
     end
 end
-
+local function DisconnectEvent(event)
+    for key, value in pairs(t) do
+        for _, listener in pairs(event._listeners) do
+            listener:Disconnect()
+        end
+    end
+end
 function New()
     ---@class LuaEvent
     local newEvent = {
         _listeners = {},
         Trigger = FireEvent,
         Connect = ConnectEvent,
+        Disconnect = DisconnectEvent,
         isUsed = false
     }
     return newEvent
@@ -43,6 +50,7 @@ end
 function SafeNew()
     local eventName
     local isUsed
+    local ConnectedEvents = {}
     local function Setup()
         if not isUsed then
             eventName = 'unique_' .. tostring(uniqueId)
@@ -54,11 +62,20 @@ function SafeNew()
     local luaEvent = {
         Connect = function(self, listener, ...)
             Setup()
-            return Events.Connect(eventName, listener, ...)
+            local newEvent = Events.Connect(eventName, listener, ...)
+            table.insert(ConnectedEvents, newEvent)
+            return newEvent
         end,
         Trigger = function(self, ...)
             if isUsed then
                 Events.Broadcast(eventName, ...)
+            end
+        end,
+        Disconnect = function(self, ...)
+            if isUsed then
+                for key, value in pairs(ConnectedEvents) do
+                    value:Disconnect()
+                end
             end
         end
     }
@@ -67,7 +84,7 @@ end
 
 return {
     name = 'Lua Event',
-    version = 1.2,
+    version = 1.3,
     desctription = 'Custom events system',
     New = New,
     NewSafeEvent = SafeNew

@@ -1346,6 +1346,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1410,6 +1412,8 @@ Objects {
     UseParentHeight: true
     Panel {
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1469,6 +1473,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1774,6 +1780,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2079,6 +2087,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2383,6 +2393,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2906,6 +2918,8 @@ Objects {
     }
     Panel {
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2963,6 +2977,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -3256,6 +3272,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -3549,6 +3567,8 @@ Objects {
     Panel {
       IsClipping: true
       Opacity: 1
+      OpacityMaskBrush {
+      }
     }
     AnchorLayout {
       SelfAnchor {

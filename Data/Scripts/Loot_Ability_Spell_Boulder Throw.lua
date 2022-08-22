@@ -80,7 +80,7 @@ function OnBoulderBeginOverlap(thisTrigger, other)
         return
     end
 
-    if other and other:isA('Player') then
+    if other and other.isA and other:isA('Player') then
         Events.BroadcastToPlayer(other, 'Camera Shake', 2, 90, 5)
     end
 
@@ -89,7 +89,6 @@ function OnBoulderBeginOverlap(thisTrigger, other)
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY
-
     local attackData = {
         object = other,
         damage = dmg,
@@ -114,8 +113,10 @@ function OnThrowExecute(thisAbility)
     local projectileScale = lastScale
     local projectileSpeed = DefaultSpeed
     local LifeSpan = DefaultLifespan
-
-    local directionVector = ABILITY.owner:GetWorldRotation() * Vector3.FORWARD
+    local AbilityTarget = ABILITY:GetTargetData()
+    local aimDirection = AbilityTarget:GetAimDirection()
+    aimDirection.z = 0
+    local directionVector = aimDirection:GetNormalized()
     ProjectileVelocity = directionVector * projectileSpeed
     ProjectileRadius = (projectileScale * 50) - 50
 
@@ -129,7 +130,7 @@ function OnThrowExecute(thisAbility)
         projectileTemplate,
         {
             position = spawnPosition,
-            rotation = ABILITY.owner:GetWorldRotation(),
+            rotation = Rotation.New(directionVector, Vector3.UP),
             scale = Vector3.New(projectileScale),
             networkContext = NetworkContextType.NETWORKED
         }
@@ -192,7 +193,7 @@ function Tick(dTime)
                 targetPosition.z = targetPosition.z + 20
             end
         else
-            targetPosition.z = targetPosition.z + (ProjectileRadius / 2)
+            targetPosition.z = targetPosition.z - (ProjectileRadius / 2 * 0.198)
         end
 
         CurrentProjectile:MoveTo(targetPosition, 0)

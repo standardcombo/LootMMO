@@ -146,6 +146,16 @@ function Cooldown()
     end
 end
 
+function Recovery()
+    Task.Wait(mod[MODIFIERS.Range.name])
+    if not Object.IsValid(ABILITY) then
+        return
+    end
+    if ABILITY:GetCurrentPhase() == AbilityPhase.RECOVERY then
+        ABILITY:AdvancePhase()
+    end
+end
+
 function OnUnequip(equipment, player)
     if TriggerEventConnection then
         TriggerEventConnection:Disconnect()
@@ -168,5 +178,6 @@ end
 ABILITY.executeEvent:Connect(Execute)
 ABILITY.castEvent:Connect(Cast)
 ABILITY.cooldownEvent:Connect(Cooldown)
+ABILITY.recoveryEvent:Connect(Recovery)
 ABILITY.interruptedEvent:Connect(OnInterrupted)
 ROOT.unequippedEvent:Connect(OnUnequip)

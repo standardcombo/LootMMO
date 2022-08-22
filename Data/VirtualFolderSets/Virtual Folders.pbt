@@ -196,11 +196,6 @@ Assets {
     Folders {
       VirtualFolderPath: "Loot"
       VirtualFolderPath: "Ability"
-      PlatformAssetType: 31
-    }
-    Folders {
-      VirtualFolderPath: "Loot"
-      VirtualFolderPath: "Ability"
       VirtualFolderPath: "Assets"
       PlatformAssetType: 5
     }
@@ -221,17 +216,29 @@ Assets {
       PlatformAssetType: 31
     }
     Folders {
+      VirtualFolderPath: "Loot"
       VirtualFolderPath: "Character"
-      PlatformAssetType: 3
+      PlatformAssetType: 31
     }
     Folders {
-      VirtualFolderPath: "Component"
-      PlatformAssetType: 3
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Classes"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Equipment"
+      PlatformAssetType: 31
     }
     Folders {
       VirtualFolderPath: "Loot"
       VirtualFolderPath: "Character"
-      PlatformAssetType: 31
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Component"
+      PlatformAssetType: 3
     }
   }
 }

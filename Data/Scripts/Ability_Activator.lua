@@ -15,4 +15,7 @@ function OnActionPressed(player, action, value)
     end
 end
 
-Input.actionPressedEvent:Connect(OnActionPressed)
+local Event = Input.actionPressedEvent:Connect(OnActionPressed)
+script.destroyEvent:Connect(function()
+    Event:Disconnect()
+end )

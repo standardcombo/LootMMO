@@ -93,6 +93,7 @@ Objects {
     }
   }
   ParentId: 1979997991350631906
+  ChildIds: 1884225887066273498
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -110,11 +111,13 @@ Objects {
   Camera {
     UseAsDefault: true
     AttachToLocalPlayer: true
-    InitialDistance: 400
-    MinDistance: 300
-    MaxDistance: 600
+    InitialDistance: 600
+    IsDistanceAdjustable: true
+    MinDistance: 100
+    MaxDistance: 1200
     PositionOffset {
-      Y: 60
+      Y: 30
+      Z: 40
     }
     RotationOffset {
     }
@@ -127,6 +130,46 @@ Objects {
     MaxPitch: 89
     DoesPositionOffsetSpring: true
     IsCameraCollisionEnabled: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1884225887066273498
+  Name: "CameraShake"
+  Transform {
+    Location {
+      X: -1414.28394
+      Y: -446.130707
+      Z: 500.000183
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18382878175162393609
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6142737434011546352
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -162,13 +205,13 @@ Objects {
   Settings {
     IsDefault: true
     PlayerMovementSettings {
-      WalkSpeed: 640
+      WalkSpeed: 1000
       MaxAcceleration: 1800
       WalkableFloorAngle: 44
       JumpMaxCount: 1
-      JumpVelocity: 900
+      JumpVelocity: 1000
       GroundFriction: 8
-      GravityScale: 1.9
+      GravityScale: 3.2
       MaxSwimSpeed: 420
       Buoyancy: 1
       TouchForceFactor: 1
@@ -327,6 +370,7 @@ Objects {
     IsDefault: true
     GameSettings {
       RagdollOnDeath: true
+      EnablePlayerStorage: true
       ChatMode {
         Value: "mc:echatmode:teamandall"
       }

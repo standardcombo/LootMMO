@@ -20,8 +20,9 @@ local function RemoveElement(value)
 end
 
 local function WriteData(value, panel)
-    local icon = (LOOT_ABILITY_EQUIPMENT[value.name] or {})["icon"]
-    if icon then 
+    Task.Wait()
+    local icon = (LOOT_ABILITY_EQUIPMENT[value.name] or {})['icon']
+    if icon then
         panel.clientUserData.SetIcon(icon)
     end
     panel.clientUserData.SetEquipment(value)
@@ -35,12 +36,20 @@ function Tick()
             value.unequippedEvent:Connect(RemoveElement)
             Equipment[value] = binding
             if bindings[binding] then
-                WriteData(value, bindings[binding])
+                Task.Spawn(
+                    function()
+                        WriteData(value, bindings[binding])
+                    end
+                )
             end
         end
         if Equipment[value] ~= binding then
             if bindings[binding] then
-                WriteData(value, bindings[binding])
+                Task.Spawn(
+                    function()
+                        WriteData(value, bindings[binding])
+                    end
+                )
             end
         end
     end

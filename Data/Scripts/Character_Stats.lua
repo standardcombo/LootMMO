@@ -14,12 +14,13 @@ local component =
     {__index = COMPONET_DATATYPE}
 )
 component.id = 'Stats'
+
 function TriggerEvent(event, ...)
     if event then
         event:Trigger(...)
     end
 end
-function component:SetStat(stat, statValue) 
+function component:SetStat(stat, statValue)
     local oldStats = self:GetStats()
     oldStats[stat] = statValue or 0
     self:SetStats(oldStats)
@@ -51,10 +52,10 @@ function component:SetTempStats(stats)
         for key, value in pairs(stats) do
             self.tempStats[key] = value
         end
-        TriggerEvent(self.tempStatsUpdatedEvent, self, self:GetTempStat())
+        TriggerEvent(self.tempStatsUpdatedEvent, self, self:GetTempStats())
     end
 end
-function component:ResetTempStats() 
+function component:ResetTempStats()
     self:SetTempStats(self:GetStats())
 end
 function component:GetTempStats()

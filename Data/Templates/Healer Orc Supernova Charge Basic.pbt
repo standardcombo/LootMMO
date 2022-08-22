@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14162296025304194376
+        ParentId: 4781671109827199097
         ChildIds: 13358860354884964505
         ChildIds: 8631073697972140426
         ChildIds: 12487359942019498722
@@ -66,7 +66,7 @@ Assets {
           Location {
           }
           Rotation {
-            Roll: 180
+            Roll: -179.999969
           }
           Scale {
           }
@@ -121,7 +121,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8631073697972140426
@@ -130,7 +129,7 @@ Assets {
           Location {
           }
           Rotation {
-            Roll: 180
+            Roll: -179.999969
           }
           Scale {
             X: 50
@@ -188,7 +187,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12487359942019498722
@@ -286,7 +284,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7611905090597350052
@@ -333,7 +330,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12098752292714346008

@@ -28,6 +28,14 @@ Assets {
             Name: "cs:Heal"
             Float: 0
           }
+          Overrides {
+            Name: "cs:Ability:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Heal:isrep"
+            Bool: true
+          }
         }
         Lifespan: 8
         WantsNetworking: true
@@ -83,7 +91,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1851754170466109322
@@ -201,10 +208,10 @@ Assets {
         ChildIds: 4623078475073087328
         ChildIds: 4968410340556492765
         ChildIds: 773399022178902167
+        ChildIds: 11953965958185343580
         ChildIds: 6241489801392114718
         ChildIds: 11725905657853797513
         ChildIds: 14162495420556661071
-        ChildIds: 11953965958185343580
         ChildIds: 13577278047538859658
         ChildIds: 16810031812674144901
         WantsNetworking: true
@@ -228,7 +235,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4623078475073087328
@@ -280,9 +286,9 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -345,9 +351,9 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -453,17 +459,17 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
           Overrides {
             Name: "bp:Edge Color"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -495,6 +501,102 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 11953965958185343580
+        Name: "RingVFX"
+        Transform {
+          Location {
+            Z: 400
+          }
+          Rotation {
+          }
+          Scale {
+          }
+        }
+        ParentId: 8064170587475568810
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Life Max"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Life Min"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Count"
+            Int: 2
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 50
+          }
+          Overrides {
+            Name: "bp:Size"
+            Vector {
+              X: 1
+              Y: 1
+              Z: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Appearance"
+            Enum {
+              Value: "mc:ecastringappearance:5"
+            }
+          }
+          Overrides {
+            Name: "bp:color"
+            Color {
+              G: 0.580392182
+              B: 0.360784322
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
+            }
+          }
+          Overrides {
+            Name: "bp:Edge Color"
+            Color {
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 12277875585078443716
+          }
+          TeamSettings {
+            TeamInt: 2
+          }
+          Vfx {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 6241489801392114718
         Name: "Sphere"
         Transform {
@@ -515,15 +617,15 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 925672138032122417
+              Id: 7535229294616165836
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              G: 0.580392182
-              B: 0.360784471
-              A: 0.3
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -641,102 +743,6 @@ Assets {
           FadeOutTime: 3
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 11953965958185343580
-        Name: "RingVFX"
-        Transform {
-          Location {
-            Z: 400
-          }
-          Rotation {
-          }
-          Scale {
-          }
-        }
-        ParentId: 8064170587475568810
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Life Max"
-            Float: 2
-          }
-          Overrides {
-            Name: "bp:Life Min"
-            Float: 2
-          }
-          Overrides {
-            Name: "bp:Count"
-            Int: 2
-          }
-          Overrides {
-            Name: "bp:Emissive Boost"
-            Float: 50
-          }
-          Overrides {
-            Name: "bp:Size"
-            Vector {
-              X: 1
-              Y: 1
-              Z: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Appearance"
-            Enum {
-              Value: "mc:ecastringappearance:5"
-            }
-          }
-          Overrides {
-            Name: "bp:color"
-            Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Color"
-            Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Edge Color"
-            Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 12277875585078443716
-          }
-          TeamSettings {
-            TeamInt: 2
-          }
-          Vfx {
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1177,9 +1183,9 @@ Assets {
           Overrides {
             Name: "bp:Color A"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
           Overrides {
@@ -1191,9 +1197,9 @@ Assets {
           Overrides {
             Name: "bp:Color B"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -1428,9 +1434,9 @@ Assets {
           Overrides {
             Name: "bp:Color A"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
           Overrides {
@@ -1442,9 +1448,9 @@ Assets {
           Overrides {
             Name: "bp:Color B"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }
@@ -1679,9 +1685,9 @@ Assets {
           Overrides {
             Name: "bp:Color A"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
           Overrides {
@@ -1693,9 +1699,9 @@ Assets {
           Overrides {
             Name: "bp:Color B"
             Color {
-              G: 0.580392182
-              B: 0.360784322
-              A: 1
+              R: 0.960000038
+              G: 0.381457061
+              A: 0.21100001
             }
           }
         }

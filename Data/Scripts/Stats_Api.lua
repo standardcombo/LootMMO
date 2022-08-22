@@ -1,7 +1,7 @@
-while not _G['CharacterAPI'] do
+while not _G['CharacterEquipAPI'] do
     Task.Wait()
 end
-local EAPI = _G['CharacterAPI']
+local EAPI = _G['CharacterEquipAPI']
 local API = {}
 _G['Loot.Stats'] = API
 
@@ -13,7 +13,7 @@ function API.GetStats(player)
         end
         local stats = character:GetComponent('Stats')
         if stats then
-            return stats:GetStats()
+            return stats:GetTempStats()
         end
     end
     return {}

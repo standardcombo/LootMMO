@@ -8,22 +8,22 @@ local modifiers = {
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
     [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
     [MODIFIERS.Stun.name] = setmetatable({}, {__index = MODIFIERS.Stun}),
-    [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius}),
+    [MODIFIERS.Radius.name] = setmetatable({}, {__index = MODIFIERS.Radius})
 }
 modifiers[MODIFIERS.Heal.name].calculation = function(stats)
-    return 200
+    return 1000
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
-    return 50
+    return 50 - stats.V * .01
 end
 modifiers[MODIFIERS.Damage.name].calculation = function(stats)
-    return 200
+    return 200 + (stats.W * 0.2 )
 end
 modifiers[MODIFIERS.Stun.name].calculation = function(stats)
-    return 20
+    return 10 + (stats.W + stats.V / 2) * .02
 end
 modifiers[MODIFIERS.Radius.name].calculation = function(stats)
-    return 2000
+    return 900 + stats.W
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

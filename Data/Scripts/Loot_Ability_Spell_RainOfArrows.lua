@@ -33,9 +33,9 @@ function Execute()
     end
 
     local nearbyEnemies =
-        Game.FindPlayersInCylinder(position, radius, {ignoreTeams = SpecialAbility.owner.team, ignoreDead = true})
+        COMBAT().FindInSphere(position, radius, {ignoreTeams = SpecialAbility.owner.team, ignoreDead = true})
 
-    for _, enemy in pairs(nearbyEnemies) do
+    for _, enemy in pairs(nearbyEnemies) do 
         local dmg = Damage.New()
         local player = ABILITY.owner
         dmg.amount = mod[MODIFIERS.Damage.name]

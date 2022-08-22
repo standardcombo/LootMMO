@@ -30,8 +30,8 @@ end
 local OverlapEvent
 
 function DoDamage(other)
-    if other:IsA('Player') and other.team ~= TrapOwner.team and not other.isDead then
-        other:ResetVelocity()
+    if COMBAT().IsValidObject(other) and not COMBAT().IsDead(other) and COMBAT().GetTeam(other) ~= TrapOwner.team then
+        --other:ResetVelocity()
         if OverlapEvent then
             OverlapEvent:Disconnect()
             OverlapEvent = nil
@@ -44,9 +44,8 @@ function DoDamage(other)
 
         warn('AddBleed')
         warn('AddStun')
-
         local dmg = Damage.New()
-        dmg.amount = damage
+        dmg.amount = Root:GetCustomProperty('Damage')
 
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = TrapOwner
@@ -62,7 +61,7 @@ function DoDamage(other)
         COMBAT().ApplyDamage(attackData)
         Root:Destroy()
         Task.Wait()
-        other:ResetVelocity()
+    --        other:ResetVelocity()
     end
 end
 

@@ -29,7 +29,7 @@ function Api.RegisterCalculation(Root, modifiers)
     local bypass = UserDataBypass()
     Root[bypass].calculateModifier = function()
         return CalculateStats(modifiers, STATS_CONNECTOR.GetStats(Root.owner))
-    end
+    end 
     Root[bypass].calculateModifierFromStats = function(stats)
         return CalculateStats(modifiers, stats)
     end

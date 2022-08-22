@@ -488,6 +488,14 @@ Assets {
                 Name: "CooldownDuration"
                 Float: 0
               }
+              Overrides {
+                Name: "ExecuteIsTargetDataUpdated"
+                Bool: false
+              }
+              Overrides {
+                Name: "CastIsTargetDataUpdated"
+                Bool: true
+              }
             }
           }
           ParameterOverrideMap {
@@ -505,6 +513,14 @@ Assets {
               Overrides {
                 Name: "ExecuteDuration"
                 Float: 0.2
+              }
+              Overrides {
+                Name: "CastIsTargetDataUpdated"
+                Bool: true
+              }
+              Overrides {
+                Name: "ExecuteIsTargetDataUpdated"
+                Bool: true
               }
             }
           }

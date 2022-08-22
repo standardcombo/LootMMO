@@ -44,6 +44,8 @@ Assets {
           Panel {
             IsClipping: true
             Opacity: 1
+            OpacityMaskBrush {
+            }
           }
           AnchorLayout {
             SelfAnchor {

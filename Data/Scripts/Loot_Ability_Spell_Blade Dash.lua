@@ -17,7 +17,10 @@ function Execute()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
-    World.SpawnAsset(placement, {position = position, rotation = rotation, networkContext = NetReferenceType.NETWORKED})
+    World.SpawnAsset(
+        placement,
+        {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
+    )
     Task.Wait(.4)
 
     if not Object.IsValid(ABILITY) or not ABILITY.owner or not Object.IsValid(ABILITY.owner) then
@@ -32,7 +35,7 @@ function Execute()
     World.SpawnAsset(ending, {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED})
     local radius = mods[MODIFIERS.Range.name]
     local enemiesInRange =
-        Game.FindPlayersInCylinder(
+        COMBAT().FindInSphere(
         ABILITY.owner:GetWorldPosition(),
         radius,
         {ignoreDead = true, ignoreTeams = ABILITY.owner.team}

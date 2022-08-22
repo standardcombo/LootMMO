@@ -316,7 +316,7 @@ Assets {
           }
           Overrides {
             Name: "cs:decay"
-            Float: 1.5
+            Float: 2
           }
         }
         Collidable_v2 {
@@ -550,6 +550,10 @@ Assets {
                 Name: "Scale"
                 Vector {
                 }
+              }
+              Overrides {
+                Name: "RecoveryDuration"
+                Float: 100
               }
             }
           }

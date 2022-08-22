@@ -423,7 +423,6 @@ Assets {
           Volume: 2
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -465,7 +464,6 @@ Assets {
           Volume: 2
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
           StartDelayMin: 1
           StartDelayMax: 1
         }
@@ -510,7 +508,6 @@ Assets {
           Volume: 10
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
           StartDelayMin: 2
           StartDelayMax: 2
         }

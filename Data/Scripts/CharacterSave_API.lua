@@ -18,7 +18,7 @@ function API.SavePlayerCharacter(player, character)
         end
         if not LastSaveExists then
             table.insert(characters, character:Serialize())
-        end
+        end 
         Storage.SetSharedPlayerData(CHARACTER, player, characters)
     end
 end
