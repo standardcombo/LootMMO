@@ -38,8 +38,8 @@ end
 function EnterFocus()
 	isFocused = true
 	
-	UI.SetCanCursorInteractWithUI(true)
-	UI.SetCursorVisible(true)
+	_G.CursorStack.Enable()
+
 	Game.GetLocalPlayer():SetOverrideCamera(OVERRIDE_CAMERA)
 	OVERRIDE_CAMERA.currentDistance = CAM_APPROACH_DISTANCE
 	
@@ -58,8 +58,8 @@ function ExitFocus()
 	
 	isFocused = false
 	
-	UI.SetCanCursorInteractWithUI(false)
-	UI.SetCursorVisible(false)
+	_G.CursorStack.Disable()
+
 	Game.GetLocalPlayer():ClearOverrideCamera(0)
 	
 	CALLOUT_SPARKLE.visibility = Visibility.INHERIT

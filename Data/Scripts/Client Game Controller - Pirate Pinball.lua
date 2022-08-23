@@ -17,8 +17,6 @@ local LIGHTS = script:GetCustomProperty("Lights"):WaitForObject()
 local LAUNCH_BOOSTER = script:GetCustomProperty("LaunchBooster"):WaitForObject()
 local CANT_AFFORD_SFX = script:GetCustomProperty("CantAffordSFX")
 
-local CASH_CONTAINER = script:GetCustomProperty("ResourceDisplayContainer"):WaitForObject()
-
 local thisMachine = script.parent.parent
 local MUSIC_WHILE_IDLE = thisMachine:GetCustomProperty("MusicWhileIdle")
 local HIGH_SCORE_LEADERBOARD = thisMachine:GetCustomProperty("HighScoreLeaderboard")
@@ -151,16 +149,14 @@ end
 function initGame(machineId, player)
   if machineId ~= thisMachine.id then return end
   
+  _G.AppState.SetLocalState(_G.AppState.Minigame)
+  
   currentPlayer = player
   gameInstance = gameInstance + 1
   player.isVisibleToSelf = false
   player:SetOverrideCamera(CAMERA, 0.5)
   UI_CONTAINER.visibility = Visibility.INHERIT
   LAUNCH_BOOSTER.collision = Collision.FORCE_OFF
-
-  if CASH_CONTAINER ~= nil then
-    CASH_CONTAINER.visibility = Visibility.FORCE_OFF
-  end
   
   UI.SetCanCursorInteractWithUI(true)
   resetMachineState()
@@ -269,6 +265,8 @@ end
 
 function quitGame()
   if currentPlayer and Object.IsValid(currentPlayer) then
+    _G.AppState.SetLocalState(_G.AppState.SocialHub)
+    
     currentPlayer.isVisibleToSelf = true
     currentPlayer:ClearOverrideCamera(0.5)
     UI.SetCanCursorInteractWithUI(false)
@@ -278,10 +276,6 @@ function quitGame()
     insertCoinEvent:Disconnect()
     quitGameEvent:Disconnect()
     clearMessage()
-
-    if CASH_CONTAINER ~= nil then
-      CASH_CONTAINER.visibility = Visibility.INHERIT
-    end
     
     for _, eq in ipairs(currentPlayer:GetAttachedObjects()) do
       if eq.isClientOnly then

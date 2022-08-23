@@ -21946,12 +21946,6 @@ Assets {
               Id: 11453784164944191137
             }
           }
-          Overrides {
-            Name: "cs:ResourceDisplayContainer"
-            ObjectReference {
-              SelfId: 17210382314076536245
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

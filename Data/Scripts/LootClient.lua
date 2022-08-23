@@ -63,9 +63,6 @@ local classes = {
 }
 
 
-UI.SetCanCursorInteractWithUI(true)
-UI.SetCursorVisible(true)
-
 local HEADER_START_Y = HEADER_PANEL.y
 HEADER_PANEL.y = 0
 COLLECTION_TEXT.text = ""
@@ -141,8 +138,8 @@ end
 PLAY_BUTTON.clickedEvent:Connect(OnPlay)
 
 
-function ReturnToBagSelect(player)
-	--if player ~= Game.GetLocalPlayer() then return end
+function ReturnToBagSelect(trigger, player)
+	if player ~= Game.GetLocalPlayer() then return end
 	
 	_G.AppState.SetLocalState(_G.AppState.BagSelection)
 	
@@ -151,10 +148,8 @@ end
 RETURN_TO_BAG_SELECTION_TRIGGER.interactedEvent:Connect(ReturnToBagSelect)
 
 
-function IsInSocialSpace()
-	local player = Game.GetLocalPlayer()
-	local pos = player:GetWorldPosition()
-	return pos.z < 7000
+function IsInSocialHub()
+	return _G.AppState.GetLocalState() == _G.AppState.SocialHub
 end
 
 
@@ -189,7 +184,7 @@ ITEM_DETAILS_PANEL.visibility = Visibility.FORCE_OFF
 if Environment.IsPreview() then
 	Input.actionPressedEvent:Connect(function(_, action)
 		if action == "SkipCheat" then
-			if IsInSocialSpace() then
+			if IsInSocialHub() then
 				ReturnToBagSelect()
 			else
 				OnPlay()

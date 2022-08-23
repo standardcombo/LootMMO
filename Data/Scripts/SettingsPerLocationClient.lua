@@ -15,18 +15,21 @@ local CAMERA_SOCIAL_SPACE = script:GetCustomProperty("CameraSocialSpace"):WaitFo
 local player = Game.GetLocalPlayer()
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
-	if newState == _G.AppState.SocialHub then
-		UI.SetCanCursorInteractWithUI(false)
-		UI.SetCursorVisible(false)
+	--print("SettingsPerLocation, new = "..newState..", prev = "..prevState)
 	
-		player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
-		Task.Wait(0.4)
-		SFX:Play()
+	if newState == _G.AppState.SocialHub then
+		if prevState == _G.AppState.BagSelection then
+			player:SetDefaultCamera(CAMERA_SOCIAL_SPACE)
+			Task.Wait(0.4)
+			SFX:Play()
+		end
+		
+		_G.CursorStack.Disable()
 	end
 
 	if newState == _G.AppState.BagSelection then
-		UI.SetCanCursorInteractWithUI(true)
-		UI.SetCursorVisible(true)
+		
+		_G.CursorStack.Enable()
 	
 		while player:GetWorldPosition().z < 7000 do
 			Task.Wait()

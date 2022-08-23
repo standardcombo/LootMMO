@@ -19,6 +19,7 @@ Objects {
     }
   }
   ParentId: 259574108905129681
+  ChildIds: 954363218359367591
   ChildIds: 7664051888427474681
   ChildIds: 11578776211302451490
   Collidable_v2 {
@@ -108,6 +109,47 @@ Objects {
   Script {
     ScriptAsset {
       Id: 7340036351095563195
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 954363218359367591
+  Name: "PlayerJoinSetupServer"
+  Transform {
+    Location {
+      X: -3775.41
+      Y: 126.061035
+      Z: -3577.78882
+    }
+    Rotation {
+      Yaw: 124.999992
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8293382677676012747
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1456247989168864579
     }
   }
   NetworkRelevanceDistance {

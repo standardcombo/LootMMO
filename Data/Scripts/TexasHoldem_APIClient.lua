@@ -16,6 +16,7 @@ end
 
 function API.Leave()
     Events.BroadcastToServer('TexasPoker_LeaveGame')
+	_G.AppState.SetLocalState(_G.AppState.SocialHub)
 end
 
 function API.Join(gameid, value)

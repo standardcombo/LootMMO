@@ -13,18 +13,20 @@ end ]]
 
 function Open() 
     toggleFunc = function()
-        if not UI.CanCursorInteractWithUI() or not UI.IsCursorVisible() then
-            UI.SetCanCursorInteractWithUI(true)
-            UI.SetCursorVisible(true)
-        end
+        --if not UI.CanCursorInteractWithUI() or not UI.IsCursorVisible() then
+            --UI.SetCanCursorInteractWithUI(true)
+            --UI.SetCursorVisible(true)
+			_G.CursorStack.Enable()
+        --end
     end
 end
 
 function Close() 
-    if UI.CanCursorInteractWithUI() or UI.IsCursorVisible() then
-        UI.SetCanCursorInteractWithUI(false)
-        UI.SetCursorVisible(false)
-    end
+    --if UI.CanCursorInteractWithUI() or UI.IsCursorVisible() then
+        --UI.SetCanCursorInteractWithUI(false)
+        --UI.SetCursorVisible(false)
+		_G.CursorStack.Disable()
+    --end
     toggleFunc = function()
     end
 end
