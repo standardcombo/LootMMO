@@ -1,7 +1,7 @@
 Name: "Map"
-RootId: 13617815184995971562
+RootId: 18092589690976659829
 Objects {
-  Id: 2905637462256858696
+  Id: 13025437532312089070
   Name: "Quest - Assemble Map"
   Transform {
     Location {
@@ -17,9 +17,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13617815184995971562
-  ChildIds: 6913090679893438309
-  ChildIds: 11310346046044186911
+  ParentId: 18092589690976659829
+  ChildIds: 2782647409322877456
+  ChildIds: 12468395264594993881
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -52,7 +52,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11310346046044186911
+  Id: 12468395264594993881
   Name: "VFX"
   Transform {
     Location {
@@ -65,9 +65,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2905637462256858696
-  ChildIds: 3337070583524919936
-  ChildIds: 16033541765249824311
+  ParentId: 13025437532312089070
+  ChildIds: 611350555929023602
+  ChildIds: 13273611759721726923
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -89,7 +89,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16033541765249824311
+  Id: 13273611759721726923
   Name: "Hand Cast VFX"
   Transform {
     Location {
@@ -103,7 +103,7 @@ Objects {
       Z: 1.72224796
     }
   }
-  ParentId: 11310346046044186911
+  ParentId: 12468395264594993881
   UnregisteredParameters {
     Overrides {
       Name: "bp:Enable Energy Swirl"
@@ -166,7 +166,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3337070583524919936
+  Id: 611350555929023602
   Name: "Basic Water Splash VFX"
   Transform {
     Location {
@@ -179,7 +179,7 @@ Objects {
       Z: 2.06990695
     }
   }
-  ParentId: 11310346046044186911
+  ParentId: 12468395264594993881
   UnregisteredParameters {
     Overrides {
       Name: "bp:Enable Mist"
@@ -238,7 +238,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6913090679893438309
+  Id: 2782647409322877456
   Name: "QuestObjectivePickup"
   Transform {
     Location {
@@ -251,7 +251,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2905637462256858696
+  ParentId: 13025437532312089070
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -268,7 +268,7 @@ Objects {
     Overrides {
       Name: "cs:GeoToHide"
       ObjectReference {
-        SelfId: 11310346046044186911
+        SelfId: 12468395264594993881
       }
     }
     Overrides {
@@ -299,7 +299,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12141031979809346158
+  Id: 17911926403546961296
   Name: "Quest - Map Piece"
   Transform {
     Location {
@@ -316,9 +316,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13617815184995971562
-  ChildIds: 14088113061763773427
-  ChildIds: 2847374393084835023
+  ParentId: 18092589690976659829
+  ChildIds: 14480805162203050210
+  ChildIds: 11871569158485178341
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -351,7 +351,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2847374393084835023
+  Id: 11871569158485178341
   Name: "Fantasy Scroll Rolled 01"
   Transform {
     Location {
@@ -366,7 +366,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12141031979809346158
+  ParentId: 17911926403546961296
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -404,7 +404,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14088113061763773427
+  Id: 14480805162203050210
   Name: "QuestObjectivePickup"
   Transform {
     Location {
@@ -417,7 +417,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12141031979809346158
+  ParentId: 17911926403546961296
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -430,7 +430,7 @@ Objects {
     Overrides {
       Name: "cs:GeoToHide"
       ObjectReference {
-        SelfId: 2847374393084835023
+        SelfId: 11871569158485178341
       }
     }
     Overrides {
@@ -461,7 +461,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14168441313505603719
+  Id: 7805460430010677168
   Name: "Quest - Map Piece"
   Transform {
     Location {
@@ -477,9 +477,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13617815184995971562
-  ChildIds: 2956531651003627989
-  ChildIds: 8178458883574207233
+  ParentId: 18092589690976659829
+  ChildIds: 6901292536056763741
+  ChildIds: 17169452336683448267
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -508,7 +508,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8178458883574207233
+  Id: 17169452336683448267
   Name: "Fantasy Scroll Rolled 01"
   Transform {
     Location {
@@ -523,7 +523,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14168441313505603719
+  ParentId: 7805460430010677168
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -561,7 +561,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2956531651003627989
+  Id: 6901292536056763741
   Name: "ObjectivePickupObject"
   Transform {
     Location {
@@ -574,7 +574,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14168441313505603719
+  ParentId: 7805460430010677168
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -583,7 +583,7 @@ Objects {
     Overrides {
       Name: "cs:GeoToHide"
       ObjectReference {
-        SelfId: 8178458883574207233
+        SelfId: 17169452336683448267
       }
     }
     Overrides {

@@ -1,7 +1,7 @@
 Name: "AudioFolderFireWC"
-RootId: 3310153342891958462
+RootId: 14166052869867933557
 Objects {
-  Id: 16525702340772090316
+  Id: 12085038470657746912
   Name: "Fire and Flame Burning Loop Set 01 SFX"
   Transform {
     Location {
@@ -15,7 +15,7 @@ Objects {
       Z: 0.897012532
     }
   }
-  ParentId: 3310153342891958462
+  ParentId: 14166052869867933557
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"

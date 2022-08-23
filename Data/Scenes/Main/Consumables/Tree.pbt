@@ -1,7 +1,7 @@
 Name: "Consumables"
-RootId: 13572434548390371870
+RootId: 4210661752148535593
 Objects {
-  Id: 6668776651144570113
+  Id: 14317324749522059552
   Name: "Pint"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
+  ParentId: 4210661752148535593
   UnregisteredParameters {
     Overrides {
       Name: "cs:id"
@@ -80,7 +80,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12718723158463434475
+  Id: 7339414535630882240
   Name: "Burger"
   Transform {
     Location {
@@ -93,7 +93,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
+  ParentId: 4210661752148535593
   UnregisteredParameters {
     Overrides {
       Name: "cs:id"
@@ -155,7 +155,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16161118310458606714
+  Id: 15161092176797300011
   Name: "Coffee"
   Transform {
     Location {
@@ -168,7 +168,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
+  ParentId: 4210661752148535593
   UnregisteredParameters {
     Overrides {
       Name: "cs:id"
@@ -234,7 +234,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1163809452604835172
+  Id: 4686886571394274826
   Name: "Snow Cone"
   Transform {
     Location {
@@ -247,7 +247,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
+  ParentId: 4210661752148535593
   UnregisteredParameters {
     Overrides {
       Name: "cs:displayName"
@@ -309,7 +309,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6528635454481308872
+  Id: 1715837591037044139
   Name: "ClientContext"
   Transform {
     Location {
@@ -322,8 +322,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
-  ChildIds: 12711324189171365051
+  ParentId: 4210661752148535593
+  ChildIds: 262431802910045274
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -350,7 +350,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12711324189171365051
+  Id: 262431802910045274
   Name: "ConsumableLoader"
   Transform {
     Location {
@@ -363,7 +363,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6528635454481308872
+  ParentId: 1715837591037044139
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -387,7 +387,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12025758335265541262
+  Id: 7358338695971489139
   Name: "ServerContext"
   Transform {
     Location {
@@ -400,8 +400,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13572434548390371870
-  ChildIds: 5231335661054705293
+  ParentId: 4210661752148535593
+  ChildIds: 14416268697738157297
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -423,7 +423,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5231335661054705293
+  Id: 14416268697738157297
   Name: "ConsumableLoader"
   Transform {
     Location {
@@ -436,7 +436,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12025758335265541262
+  ParentId: 7358338695971489139
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

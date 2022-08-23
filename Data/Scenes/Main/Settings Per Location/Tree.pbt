@@ -1,7 +1,7 @@
 Name: "Settings Per Location"
-RootId: 11492620354498796295
+RootId: 2561084474995652434
 Objects {
-  Id: 11582945254875358853
+  Id: 6706733858564631194
   Name: "Settings Per Location"
   Transform {
     Location {
@@ -17,10 +17,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11492620354498796295
-  ChildIds: 4755201903356898301
-  ChildIds: 443236278497011513
-  ChildIds: 6458419135324615505
+  ParentId: 2561084474995652434
+  ChildIds: 5311426855956534671
+  ChildIds: 10940132046622365068
+  ChildIds: 1491738711811410374
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -47,7 +47,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6458419135324615505
+  Id: 1491738711811410374
   Name: "Metal Door & Hatch Close Shut Set 01 SFX"
   Transform {
     Location {
@@ -63,7 +63,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11582945254875358853
+  ParentId: 6706733858564631194
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -105,7 +105,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 443236278497011513
+  Id: 10940132046622365068
   Name: "Third Person Camera"
   Transform {
     Location {
@@ -121,7 +121,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11582945254875358853
+  ParentId: 6706733858564631194
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -160,7 +160,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4755201903356898301
+  Id: 5311426855956534671
   Name: "SettingsPerLocationClient"
   Transform {
     Location {
@@ -175,18 +175,18 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11582945254875358853
+  ParentId: 6706733858564631194
   UnregisteredParameters {
     Overrides {
       Name: "cs:SFX"
       ObjectReference {
-        SelfId: 6458419135324615505
+        SelfId: 1491738711811410374
       }
     }
     Overrides {
       Name: "cs:CameraSocialSpace"
       ObjectReference {
-        SelfId: 443236278497011513
+        SelfId: 10940132046622365068
       }
     }
   }
@@ -213,7 +213,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1970931213482682023
+  Id: 3716719870135648632
   Name: "Player Settings - Social Space"
   Transform {
     Location {
@@ -229,7 +229,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11492620354498796295
+  ParentId: 2561084474995652434
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -300,7 +300,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18379826249412960416
+  Id: 12213619889959882616
   Name: "Player Settings - Bag Selection"
   Transform {
     Location {
@@ -315,7 +315,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11492620354498796295
+  ParentId: 2561084474995652434
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -379,7 +379,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7093997545395790402
+  Id: 12590653002649133676
   Name: "SettingsPerLocationServer"
   Transform {
     Location {
@@ -392,18 +392,18 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11492620354498796295
+  ParentId: 2561084474995652434
   UnregisteredParameters {
     Overrides {
       Name: "cs:PlayerSettingsBagSelection"
       ObjectReference {
-        SelfId: 18379826249412960416
+        SelfId: 12213619889959882616
       }
     }
     Overrides {
       Name: "cs:PlayerSettingsSocialSpace"
       ObjectReference {
-        SelfId: 1970931213482682023
+        SelfId: 3716719870135648632
       }
     }
   }

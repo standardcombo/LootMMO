@@ -1,7 +1,7 @@
 Name: "AudioFolderLift"
-RootId: 13017664279981194341
+RootId: 13098576735650418338
 Objects {
-  Id: 17695587806712915601
+  Id: 10257466717224366612
   Name: "Wood Wheel Turning Movement 01 SFX"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13017664279981194341
+  ParentId: 13098576735650418338
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

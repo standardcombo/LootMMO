@@ -1,7 +1,7 @@
 Name: "Definitions"
-RootId: 11963497277141766382
+RootId: 491571862204050189
 Objects {
-  Id: 13572434548390371870
+  Id: 4210661752148535593
   Name: "Consumables"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11963497277141766382
+  ParentId: 491571862204050189
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

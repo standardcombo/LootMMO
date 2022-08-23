@@ -1,7 +1,7 @@
 Name: "AudioFolderMPtent"
-RootId: 7010297739281378277
+RootId: 17841675194285937098
 Objects {
-  Id: 17777300689225841980
+  Id: 14307614170475638827
   Name: "Ambience Nature Insects Buzzing Set 01 SFX"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7010297739281378277
+  ParentId: 17841675194285937098
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

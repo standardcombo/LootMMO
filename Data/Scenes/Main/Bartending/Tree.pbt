@@ -1,7 +1,7 @@
 Name: "Bartending"
-RootId: 10017628465394839877
+RootId: 10258332152482593721
 Objects {
-  Id: 15847265732432609803
+  Id: 12742245416831364775
   Name: "Filling Station"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   TemplateInstance {
     ParameterOverrideMap {
       key: 7515798342100634309
@@ -58,7 +58,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10694853030099192182
+  Id: 12933984060187378210
   Name: "Filling Station"
   Transform {
     Location {
@@ -75,7 +75,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   TemplateInstance {
     ParameterOverrideMap {
       key: 7515798342100634309
@@ -115,7 +115,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4601396351961913746
+  Id: 13050579293132160291
   Name: "Filling Station"
   Transform {
     Location {
@@ -132,7 +132,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   TemplateInstance {
     ParameterOverrideMap {
       key: 7515798342100634309
@@ -172,7 +172,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13207263667178511172
+  Id: 18261205665746211321
   Name: "Cup Delivery"
   Transform {
     Location {
@@ -189,9 +189,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
-  ChildIds: 8118624227733147903
-  ChildIds: 11595828838958826695
+  ParentId: 10258332152482593721
+  ChildIds: 10659446950213455429
+  ChildIds: 5190714747466420770
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -213,7 +213,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11595828838958826695
+  Id: 5190714747466420770
   Name: "ClientContext"
   Transform {
     Location {
@@ -229,10 +229,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13207263667178511172
-  ChildIds: 15892978326844693226
-  ChildIds: 10285863888090927672
-  ChildIds: 1139522334084889430
+  ParentId: 18261205665746211321
+  ChildIds: 14459567214165395401
+  ChildIds: 15814708118047787207
+  ChildIds: 9687107534126887176
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -261,7 +261,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1139522334084889430
+  Id: 9687107534126887176
   Name: "IKPose"
   Transform {
     Location {
@@ -278,9 +278,9 @@ Objects {
       Z: 1.00000012
     }
   }
-  ParentId: 11595828838958826695
-  ChildIds: 2077327403202536501
-  ChildIds: 398328297338287583
+  ParentId: 5190714747466420770
+  ChildIds: 6176620679417148002
+  ChildIds: 14851886180486671772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -304,7 +304,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 398328297338287583
+  Id: 14851886180486671772
   Name: "Impact Projectile Wood Light 01 SFX"
   Transform {
     Location {
@@ -320,7 +320,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 1139522334084889430
+  ParentId: 9687107534126887176
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -349,7 +349,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2077327403202536501
+  Id: 6176620679417148002
   Name: "IK Anchor - Right"
   Transform {
     Location {
@@ -368,7 +368,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 1139522334084889430
+  ParentId: 9687107534126887176
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -399,7 +399,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10285863888090927672
+  Id: 15814708118047787207
   Name: "Trigger"
   Transform {
     Location {
@@ -413,7 +413,7 @@ Objects {
       Z: 0.374452293
     }
   }
-  ParentId: 11595828838958826695
+  ParentId: 5190714747466420770
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -447,7 +447,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15892978326844693226
+  Id: 14459567214165395401
   Name: "CupDeliveryClient"
   Transform {
     Location {
@@ -463,12 +463,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11595828838958826695
+  ParentId: 5190714747466420770
   UnregisteredParameters {
     Overrides {
       Name: "cs:Trigger"
       ObjectReference {
-        SelfId: 10285863888090927672
+        SelfId: 15814708118047787207
       }
     }
     Overrides {
@@ -478,13 +478,13 @@ Objects {
     Overrides {
       Name: "cs:IKPose"
       ObjectReference {
-        SelfId: 1139522334084889430
+        SelfId: 9687107534126887176
       }
     }
     Overrides {
       Name: "cs:SFX"
       ObjectReference {
-        SelfId: 398328297338287583
+        SelfId: 14851886180486671772
       }
     }
   }
@@ -511,7 +511,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8118624227733147903
+  Id: 10659446950213455429
   Name: "CupDeliveryServer"
   Transform {
     Location {
@@ -524,7 +524,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13207263667178511172
+  ParentId: 18261205665746211321
   UnregisteredParameters {
     Overrides {
       Name: "cs:PickupTemplate"
@@ -556,7 +556,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1133503526437162671
+  Id: 16632828545677229623
   Name: "Filling Station"
   Transform {
     Location {
@@ -573,7 +573,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   TemplateInstance {
     ParameterOverrideMap {
       key: 7515798342100634309
@@ -613,7 +613,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4300885240638348024
+  Id: 157685930920398376
   Name: "Filling Station"
   Transform {
     Scale {
@@ -622,7 +622,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -660,7 +660,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18063286899230749867
+  Id: 6119119480927548948
   Name: "Filling Station"
   Transform {
     Scale {
@@ -669,7 +669,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
+  ParentId: 10258332152482593721
   TemplateInstance {
     ParameterOverrideMap {
       key: 7515798342100634309
@@ -701,7 +701,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9125379658419558982
+  Id: 7886621308429714823
   Name: "Cup Dispenser"
   Transform {
     Location {
@@ -718,9 +718,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10017628465394839877
-  ChildIds: 9781955076386809745
-  ChildIds: 11053347534417072668
+  ParentId: 10258332152482593721
+  ChildIds: 17524240491168680059
+  ChildIds: 8190872570637627930
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -742,7 +742,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11053347534417072668
+  Id: 8190872570637627930
   Name: "ClientContext"
   Transform {
     Location {
@@ -755,21 +755,21 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9125379658419558982
-  ChildIds: 8410296191497023444
-  ChildIds: 13133410902342595673
-  ChildIds: 16497509288721285765
-  ChildIds: 6512844764983449320
-  ChildIds: 13959524552075194741
-  ChildIds: 13001437811523761224
-  ChildIds: 8869622974497335836
-  ChildIds: 13873945122422195131
-  ChildIds: 10921980460093339583
-  ChildIds: 12536961263008837674
-  ChildIds: 3980607398324373038
-  ChildIds: 5090842274122467174
-  ChildIds: 7289625151753063859
-  ChildIds: 2075009526444775650
+  ParentId: 7886621308429714823
+  ChildIds: 16840015285414281509
+  ChildIds: 11082518013504557762
+  ChildIds: 10933309829476084207
+  ChildIds: 11351528494539559321
+  ChildIds: 12980995538333857346
+  ChildIds: 16608801256228581567
+  ChildIds: 7562320696063767838
+  ChildIds: 4453841377249006908
+  ChildIds: 5513346623165898243
+  ChildIds: 1511677923199370480
+  ChildIds: 17976745441136931584
+  ChildIds: 4405046244513574622
+  ChildIds: 6484313673926966466
+  ChildIds: 3540721370345663773
   UnregisteredParameters {
     Overrides {
       Name: "cs:Cup1"
@@ -882,7 +882,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2075009526444775650
+  Id: 3540721370345663773
   Name: "Cup 10"
   Transform {
     Location {
@@ -899,9 +899,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 1187157030972152735
-  ChildIds: 4374257057562130215
+  ParentId: 8190872570637627930
+  ChildIds: 13586100540703505836
+  ChildIds: 15351885029336582849
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -920,7 +920,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4374257057562130215
+  Id: 15351885029336582849
   Name: "Collision"
   Transform {
     Location {
@@ -935,7 +935,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 2075009526444775650
+  ParentId: 3540721370345663773
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -985,7 +985,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1187157030972152735
+  Id: 13586100540703505836
   Name: "ClientContext"
   Transform {
     Location {
@@ -1001,12 +1001,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2075009526444775650
-  ChildIds: 7415506768476478670
-  ChildIds: 9535284051310288075
-  ChildIds: 14316284405965155349
-  ChildIds: 6454571188414768779
-  ChildIds: 2884540301147256234
+  ParentId: 3540721370345663773
+  ChildIds: 970120325867607134
+  ChildIds: 17094252090978281477
+  ChildIds: 11680663731332403931
+  ChildIds: 5751630853176329981
+  ChildIds: 7654708712329454797
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1030,7 +1030,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2884540301147256234
+  Id: 7654708712329454797
   Name: "Cylinder"
   Transform {
     Location {
@@ -1046,7 +1046,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 1187157030972152735
+  ParentId: 13586100540703505836
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1101,7 +1101,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6454571188414768779
+  Id: 5751630853176329981
   Name: "Cylinder"
   Transform {
     Location {
@@ -1120,7 +1120,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 1187157030972152735
+  ParentId: 13586100540703505836
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1200,7 +1200,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14316284405965155349
+  Id: 11680663731332403931
   Name: "Cylinder"
   Transform {
     Location {
@@ -1216,7 +1216,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 1187157030972152735
+  ParentId: 13586100540703505836
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1271,7 +1271,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9535284051310288075
+  Id: 17094252090978281477
   Name: "Cylinder"
   Transform {
     Location {
@@ -1287,7 +1287,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 1187157030972152735
+  ParentId: 13586100540703505836
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1342,7 +1342,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7415506768476478670
+  Id: 970120325867607134
   Name: "Cylinder"
   Transform {
     Location {
@@ -1357,7 +1357,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 1187157030972152735
+  ParentId: 13586100540703505836
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1411,7 +1411,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7289625151753063859
+  Id: 6484313673926966466
   Name: "Cup 9"
   Transform {
     Location {
@@ -1428,9 +1428,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 9551881053231542017
-  ChildIds: 17689286431587722458
+  ParentId: 8190872570637627930
+  ChildIds: 7966720341029391961
+  ChildIds: 18223792538172990095
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1449,7 +1449,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17689286431587722458
+  Id: 18223792538172990095
   Name: "Collision"
   Transform {
     Location {
@@ -1464,7 +1464,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 7289625151753063859
+  ParentId: 6484313673926966466
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1514,7 +1514,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9551881053231542017
+  Id: 7966720341029391961
   Name: "ClientContext"
   Transform {
     Location {
@@ -1530,12 +1530,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7289625151753063859
-  ChildIds: 14104778502888180435
-  ChildIds: 1267350306011661734
-  ChildIds: 2977291811645135001
-  ChildIds: 978033112351019493
-  ChildIds: 4756421467954313683
+  ParentId: 6484313673926966466
+  ChildIds: 12031180975800685291
+  ChildIds: 6814972715268332442
+  ChildIds: 10394623495108786228
+  ChildIds: 5449703710180090973
+  ChildIds: 11965137382687330820
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1559,7 +1559,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4756421467954313683
+  Id: 11965137382687330820
   Name: "Cylinder"
   Transform {
     Location {
@@ -1575,7 +1575,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 9551881053231542017
+  ParentId: 7966720341029391961
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1630,7 +1630,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 978033112351019493
+  Id: 5449703710180090973
   Name: "Cylinder"
   Transform {
     Location {
@@ -1649,7 +1649,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 9551881053231542017
+  ParentId: 7966720341029391961
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1729,7 +1729,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2977291811645135001
+  Id: 10394623495108786228
   Name: "Cylinder"
   Transform {
     Location {
@@ -1745,7 +1745,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 9551881053231542017
+  ParentId: 7966720341029391961
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1800,7 +1800,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1267350306011661734
+  Id: 6814972715268332442
   Name: "Cylinder"
   Transform {
     Location {
@@ -1816,7 +1816,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 9551881053231542017
+  ParentId: 7966720341029391961
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1871,7 +1871,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14104778502888180435
+  Id: 12031180975800685291
   Name: "Cylinder"
   Transform {
     Location {
@@ -1886,7 +1886,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 9551881053231542017
+  ParentId: 7966720341029391961
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -1940,7 +1940,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5090842274122467174
+  Id: 4405046244513574622
   Name: "Cup 8"
   Transform {
     Location {
@@ -1957,9 +1957,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 3941068095385106872
-  ChildIds: 3153443736062606693
+  ParentId: 8190872570637627930
+  ChildIds: 7424698055003423450
+  ChildIds: 12910027085323929770
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1978,7 +1978,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3153443736062606693
+  Id: 12910027085323929770
   Name: "Collision"
   Transform {
     Location {
@@ -1993,7 +1993,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 5090842274122467174
+  ParentId: 4405046244513574622
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2043,7 +2043,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3941068095385106872
+  Id: 7424698055003423450
   Name: "ClientContext"
   Transform {
     Location {
@@ -2059,12 +2059,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5090842274122467174
-  ChildIds: 17025722567387009981
-  ChildIds: 15771928716136421818
-  ChildIds: 6866683105557398806
-  ChildIds: 1778076332895118789
-  ChildIds: 11807097408910149021
+  ParentId: 4405046244513574622
+  ChildIds: 7416387776430331198
+  ChildIds: 10610065258136886337
+  ChildIds: 10211407082798182949
+  ChildIds: 9914815179206659906
+  ChildIds: 2968505885843739622
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2088,7 +2088,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11807097408910149021
+  Id: 2968505885843739622
   Name: "Cylinder"
   Transform {
     Location {
@@ -2104,7 +2104,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 3941068095385106872
+  ParentId: 7424698055003423450
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2159,7 +2159,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1778076332895118789
+  Id: 9914815179206659906
   Name: "Cylinder"
   Transform {
     Location {
@@ -2178,7 +2178,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 3941068095385106872
+  ParentId: 7424698055003423450
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2258,7 +2258,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6866683105557398806
+  Id: 10211407082798182949
   Name: "Cylinder"
   Transform {
     Location {
@@ -2274,7 +2274,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 3941068095385106872
+  ParentId: 7424698055003423450
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2329,7 +2329,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15771928716136421818
+  Id: 10610065258136886337
   Name: "Cylinder"
   Transform {
     Location {
@@ -2345,7 +2345,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 3941068095385106872
+  ParentId: 7424698055003423450
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2400,7 +2400,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17025722567387009981
+  Id: 7416387776430331198
   Name: "Cylinder"
   Transform {
     Location {
@@ -2415,7 +2415,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 3941068095385106872
+  ParentId: 7424698055003423450
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2469,7 +2469,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3980607398324373038
+  Id: 17976745441136931584
   Name: "Cup 7"
   Transform {
     Location {
@@ -2486,9 +2486,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 7591095885341554686
-  ChildIds: 16290514291036867914
+  ParentId: 8190872570637627930
+  ChildIds: 2622335752840480631
+  ChildIds: 9464944251314074646
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -2507,7 +2507,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16290514291036867914
+  Id: 9464944251314074646
   Name: "Collision"
   Transform {
     Location {
@@ -2522,7 +2522,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 3980607398324373038
+  ParentId: 17976745441136931584
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2572,7 +2572,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7591095885341554686
+  Id: 2622335752840480631
   Name: "ClientContext"
   Transform {
     Location {
@@ -2588,12 +2588,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3980607398324373038
-  ChildIds: 6076505233533450960
-  ChildIds: 17582787369021357048
-  ChildIds: 7169817777897370089
-  ChildIds: 8698361239881653528
-  ChildIds: 14149328592522152724
+  ParentId: 17976745441136931584
+  ChildIds: 8077638945785451409
+  ChildIds: 9135999790589046263
+  ChildIds: 9649487574278954165
+  ChildIds: 17043061751088995714
+  ChildIds: 3358523326987783581
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2617,7 +2617,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14149328592522152724
+  Id: 3358523326987783581
   Name: "Cylinder"
   Transform {
     Location {
@@ -2633,7 +2633,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 7591095885341554686
+  ParentId: 2622335752840480631
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2688,7 +2688,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8698361239881653528
+  Id: 17043061751088995714
   Name: "Cylinder"
   Transform {
     Location {
@@ -2707,7 +2707,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 7591095885341554686
+  ParentId: 2622335752840480631
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2787,7 +2787,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7169817777897370089
+  Id: 9649487574278954165
   Name: "Cylinder"
   Transform {
     Location {
@@ -2803,7 +2803,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 7591095885341554686
+  ParentId: 2622335752840480631
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2858,7 +2858,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17582787369021357048
+  Id: 9135999790589046263
   Name: "Cylinder"
   Transform {
     Location {
@@ -2874,7 +2874,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 7591095885341554686
+  ParentId: 2622335752840480631
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2929,7 +2929,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6076505233533450960
+  Id: 8077638945785451409
   Name: "Cylinder"
   Transform {
     Location {
@@ -2944,7 +2944,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 7591095885341554686
+  ParentId: 2622335752840480631
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -2998,7 +2998,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12536961263008837674
+  Id: 1511677923199370480
   Name: "Cup 6"
   Transform {
     Location {
@@ -3015,9 +3015,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 14721360104386429443
-  ChildIds: 15769351808002718190
+  ParentId: 8190872570637627930
+  ChildIds: 1784529966366134612
+  ChildIds: 6497035241832312472
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -3036,7 +3036,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15769351808002718190
+  Id: 6497035241832312472
   Name: "Collision"
   Transform {
     Location {
@@ -3051,7 +3051,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 12536961263008837674
+  ParentId: 1511677923199370480
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3101,7 +3101,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14721360104386429443
+  Id: 1784529966366134612
   Name: "ClientContext"
   Transform {
     Location {
@@ -3117,12 +3117,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12536961263008837674
-  ChildIds: 16514523414518581520
-  ChildIds: 8827145415062540281
-  ChildIds: 16107619103191886474
-  ChildIds: 4896305301955895747
-  ChildIds: 5227612606255272041
+  ParentId: 1511677923199370480
+  ChildIds: 2545135925739400672
+  ChildIds: 7737102741365821763
+  ChildIds: 17496825823646588709
+  ChildIds: 16239170388927366784
+  ChildIds: 5120082180235393065
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3146,7 +3146,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5227612606255272041
+  Id: 5120082180235393065
   Name: "Cylinder"
   Transform {
     Location {
@@ -3162,7 +3162,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 14721360104386429443
+  ParentId: 1784529966366134612
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3217,7 +3217,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4896305301955895747
+  Id: 16239170388927366784
   Name: "Cylinder"
   Transform {
     Location {
@@ -3236,7 +3236,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 14721360104386429443
+  ParentId: 1784529966366134612
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3316,7 +3316,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16107619103191886474
+  Id: 17496825823646588709
   Name: "Cylinder"
   Transform {
     Location {
@@ -3332,7 +3332,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 14721360104386429443
+  ParentId: 1784529966366134612
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3387,7 +3387,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8827145415062540281
+  Id: 7737102741365821763
   Name: "Cylinder"
   Transform {
     Location {
@@ -3403,7 +3403,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 14721360104386429443
+  ParentId: 1784529966366134612
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3458,7 +3458,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16514523414518581520
+  Id: 2545135925739400672
   Name: "Cylinder"
   Transform {
     Location {
@@ -3473,7 +3473,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 14721360104386429443
+  ParentId: 1784529966366134612
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3527,7 +3527,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10921980460093339583
+  Id: 5513346623165898243
   Name: "Cup 5"
   Transform {
     Location {
@@ -3544,9 +3544,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 2271489022630536417
-  ChildIds: 6611120773844742783
+  ParentId: 8190872570637627930
+  ChildIds: 18426695320143442628
+  ChildIds: 10063827797450441746
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -3565,7 +3565,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6611120773844742783
+  Id: 10063827797450441746
   Name: "Collision"
   Transform {
     Location {
@@ -3580,7 +3580,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 10921980460093339583
+  ParentId: 5513346623165898243
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3630,7 +3630,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2271489022630536417
+  Id: 18426695320143442628
   Name: "ClientContext"
   Transform {
     Location {
@@ -3646,12 +3646,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10921980460093339583
-  ChildIds: 4376907933523211137
-  ChildIds: 9988141727664408274
-  ChildIds: 15726884442281086349
-  ChildIds: 13179155217266334615
-  ChildIds: 2900135306366660838
+  ParentId: 5513346623165898243
+  ChildIds: 18358948971858181953
+  ChildIds: 4845187181645900571
+  ChildIds: 10239919177623320939
+  ChildIds: 14471178601884342311
+  ChildIds: 3872455656740219765
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3675,7 +3675,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2900135306366660838
+  Id: 3872455656740219765
   Name: "Cylinder"
   Transform {
     Location {
@@ -3691,7 +3691,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 2271489022630536417
+  ParentId: 18426695320143442628
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3746,7 +3746,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13179155217266334615
+  Id: 14471178601884342311
   Name: "Cylinder"
   Transform {
     Location {
@@ -3765,7 +3765,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 2271489022630536417
+  ParentId: 18426695320143442628
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3845,7 +3845,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15726884442281086349
+  Id: 10239919177623320939
   Name: "Cylinder"
   Transform {
     Location {
@@ -3861,7 +3861,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 2271489022630536417
+  ParentId: 18426695320143442628
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3916,7 +3916,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9988141727664408274
+  Id: 4845187181645900571
   Name: "Cylinder"
   Transform {
     Location {
@@ -3932,7 +3932,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 2271489022630536417
+  ParentId: 18426695320143442628
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -3987,7 +3987,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4376907933523211137
+  Id: 18358948971858181953
   Name: "Cylinder"
   Transform {
     Location {
@@ -4002,7 +4002,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 2271489022630536417
+  ParentId: 18426695320143442628
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4056,7 +4056,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13873945122422195131
+  Id: 4453841377249006908
   Name: "Cup 4"
   Transform {
     Location {
@@ -4073,9 +4073,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 2360143657197437226
-  ChildIds: 10831292375479190059
+  ParentId: 8190872570637627930
+  ChildIds: 6752421277734012537
+  ChildIds: 10724573097681533673
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -4094,7 +4094,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10831292375479190059
+  Id: 10724573097681533673
   Name: "Collision"
   Transform {
     Location {
@@ -4109,7 +4109,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 13873945122422195131
+  ParentId: 4453841377249006908
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4159,7 +4159,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2360143657197437226
+  Id: 6752421277734012537
   Name: "ClientContext"
   Transform {
     Location {
@@ -4175,12 +4175,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13873945122422195131
-  ChildIds: 6385217483585691967
-  ChildIds: 5821604186879318332
-  ChildIds: 15147396784772884594
-  ChildIds: 16144849997209328929
-  ChildIds: 14620097255063755267
+  ParentId: 4453841377249006908
+  ChildIds: 1578598642584896387
+  ChildIds: 17245068854104473519
+  ChildIds: 9556358742137207646
+  ChildIds: 7507065047153892137
+  ChildIds: 15255520368371475530
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4204,7 +4204,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14620097255063755267
+  Id: 15255520368371475530
   Name: "Cylinder"
   Transform {
     Location {
@@ -4220,7 +4220,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 2360143657197437226
+  ParentId: 6752421277734012537
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4275,7 +4275,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16144849997209328929
+  Id: 7507065047153892137
   Name: "Cylinder"
   Transform {
     Location {
@@ -4294,7 +4294,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 2360143657197437226
+  ParentId: 6752421277734012537
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4374,7 +4374,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15147396784772884594
+  Id: 9556358742137207646
   Name: "Cylinder"
   Transform {
     Location {
@@ -4390,7 +4390,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 2360143657197437226
+  ParentId: 6752421277734012537
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4445,7 +4445,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5821604186879318332
+  Id: 17245068854104473519
   Name: "Cylinder"
   Transform {
     Location {
@@ -4461,7 +4461,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 2360143657197437226
+  ParentId: 6752421277734012537
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4516,7 +4516,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6385217483585691967
+  Id: 1578598642584896387
   Name: "Cylinder"
   Transform {
     Location {
@@ -4531,7 +4531,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 2360143657197437226
+  ParentId: 6752421277734012537
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4585,7 +4585,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8869622974497335836
+  Id: 7562320696063767838
   Name: "Cup 3"
   Transform {
     Location {
@@ -4602,9 +4602,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 7045576961413964491
-  ChildIds: 11888437930848465361
+  ParentId: 8190872570637627930
+  ChildIds: 243001613347372283
+  ChildIds: 6331882288636931947
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -4623,7 +4623,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11888437930848465361
+  Id: 6331882288636931947
   Name: "Collision"
   Transform {
     Location {
@@ -4638,7 +4638,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 8869622974497335836
+  ParentId: 7562320696063767838
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4688,7 +4688,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7045576961413964491
+  Id: 243001613347372283
   Name: "ClientContext"
   Transform {
     Location {
@@ -4704,12 +4704,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8869622974497335836
-  ChildIds: 5774013283922524386
-  ChildIds: 4458952460843867582
-  ChildIds: 18125609619365652090
-  ChildIds: 16261502622445486999
-  ChildIds: 16936573536349665580
+  ParentId: 7562320696063767838
+  ChildIds: 4446138662756191230
+  ChildIds: 15775032662314472895
+  ChildIds: 8863740604455360521
+  ChildIds: 7137222962592795195
+  ChildIds: 11300123830277147466
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4733,7 +4733,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16936573536349665580
+  Id: 11300123830277147466
   Name: "Cylinder"
   Transform {
     Location {
@@ -4749,7 +4749,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 7045576961413964491
+  ParentId: 243001613347372283
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4804,7 +4804,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16261502622445486999
+  Id: 7137222962592795195
   Name: "Cylinder"
   Transform {
     Location {
@@ -4823,7 +4823,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 7045576961413964491
+  ParentId: 243001613347372283
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4903,7 +4903,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18125609619365652090
+  Id: 8863740604455360521
   Name: "Cylinder"
   Transform {
     Location {
@@ -4919,7 +4919,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 7045576961413964491
+  ParentId: 243001613347372283
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -4974,7 +4974,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4458952460843867582
+  Id: 15775032662314472895
   Name: "Cylinder"
   Transform {
     Location {
@@ -4990,7 +4990,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 7045576961413964491
+  ParentId: 243001613347372283
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5045,7 +5045,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5774013283922524386
+  Id: 4446138662756191230
   Name: "Cylinder"
   Transform {
     Location {
@@ -5060,7 +5060,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 7045576961413964491
+  ParentId: 243001613347372283
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5114,7 +5114,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13001437811523761224
+  Id: 16608801256228581567
   Name: "Cup 2"
   Transform {
     Location {
@@ -5131,9 +5131,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 15716765033761688906
-  ChildIds: 8442378509857942028
+  ParentId: 8190872570637627930
+  ChildIds: 16649280992226239107
+  ChildIds: 13141147020709714817
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -5152,7 +5152,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8442378509857942028
+  Id: 13141147020709714817
   Name: "Collision"
   Transform {
     Location {
@@ -5167,7 +5167,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 13001437811523761224
+  ParentId: 16608801256228581567
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5217,7 +5217,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15716765033761688906
+  Id: 16649280992226239107
   Name: "ClientContext"
   Transform {
     Location {
@@ -5233,12 +5233,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13001437811523761224
-  ChildIds: 15534022838115040242
-  ChildIds: 12097929894964118011
-  ChildIds: 4257026046875533155
-  ChildIds: 10157639165311725632
-  ChildIds: 12351979996170264117
+  ParentId: 16608801256228581567
+  ChildIds: 5720836915695685739
+  ChildIds: 2363167184397079951
+  ChildIds: 7916303198277959346
+  ChildIds: 5024095962411613483
+  ChildIds: 1399531597393378236
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5262,7 +5262,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12351979996170264117
+  Id: 1399531597393378236
   Name: "Cylinder"
   Transform {
     Location {
@@ -5278,7 +5278,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 15716765033761688906
+  ParentId: 16649280992226239107
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5333,7 +5333,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10157639165311725632
+  Id: 5024095962411613483
   Name: "Cylinder"
   Transform {
     Location {
@@ -5352,7 +5352,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 15716765033761688906
+  ParentId: 16649280992226239107
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5432,7 +5432,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4257026046875533155
+  Id: 7916303198277959346
   Name: "Cylinder"
   Transform {
     Location {
@@ -5448,7 +5448,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 15716765033761688906
+  ParentId: 16649280992226239107
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5503,7 +5503,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12097929894964118011
+  Id: 2363167184397079951
   Name: "Cylinder"
   Transform {
     Location {
@@ -5519,7 +5519,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 15716765033761688906
+  ParentId: 16649280992226239107
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5574,7 +5574,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15534022838115040242
+  Id: 5720836915695685739
   Name: "Cylinder"
   Transform {
     Location {
@@ -5589,7 +5589,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 15716765033761688906
+  ParentId: 16649280992226239107
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5643,7 +5643,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13959524552075194741
+  Id: 12980995538333857346
   Name: "Cup 1"
   Transform {
     Location {
@@ -5660,9 +5660,9 @@ Objects {
       Z: 0.920133293
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 14432262164811646798
-  ChildIds: 1926919881465531518
+  ParentId: 8190872570637627930
+  ChildIds: 9192289805103601366
+  ChildIds: 4415252320496469706
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -5681,7 +5681,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1926919881465531518
+  Id: 4415252320496469706
   Name: "Collision"
   Transform {
     Location {
@@ -5696,7 +5696,7 @@ Objects {
       Z: 0.649205565
     }
   }
-  ParentId: 13959524552075194741
+  ParentId: 12980995538333857346
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5746,7 +5746,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14432262164811646798
+  Id: 9192289805103601366
   Name: "ClientContext"
   Transform {
     Location {
@@ -5762,12 +5762,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13959524552075194741
-  ChildIds: 16867233685767187096
-  ChildIds: 12281555451363933683
-  ChildIds: 5938287618751634417
-  ChildIds: 5856048342169310843
-  ChildIds: 14218169527483919799
+  ParentId: 12980995538333857346
+  ChildIds: 3677912767486766845
+  ChildIds: 8878861311503882246
+  ChildIds: 6620136683316151258
+  ChildIds: 13886352744582789768
+  ChildIds: 7389154817120629546
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5791,7 +5791,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14218169527483919799
+  Id: 7389154817120629546
   Name: "Cylinder"
   Transform {
     Location {
@@ -5807,7 +5807,7 @@ Objects {
       Z: 0.109665424
     }
   }
-  ParentId: 14432262164811646798
+  ParentId: 9192289805103601366
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5862,7 +5862,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5856048342169310843
+  Id: 13886352744582789768
   Name: "Cylinder"
   Transform {
     Location {
@@ -5881,7 +5881,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 14432262164811646798
+  ParentId: 9192289805103601366
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -5961,7 +5961,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5938287618751634417
+  Id: 6620136683316151258
   Name: "Cylinder"
   Transform {
     Location {
@@ -5977,7 +5977,7 @@ Objects {
       Z: 0.179482222
     }
   }
-  ParentId: 14432262164811646798
+  ParentId: 9192289805103601366
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6032,7 +6032,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12281555451363933683
+  Id: 8878861311503882246
   Name: "Cylinder"
   Transform {
     Location {
@@ -6048,7 +6048,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 14432262164811646798
+  ParentId: 9192289805103601366
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6103,7 +6103,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16867233685767187096
+  Id: 3677912767486766845
   Name: "Cylinder"
   Transform {
     Location {
@@ -6118,7 +6118,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 14432262164811646798
+  ParentId: 9192289805103601366
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6172,7 +6172,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6512844764983449320
+  Id: 11351528494539559321
   Name: "Footsteps Wood Board 01 SFX"
   Transform {
     Location {
@@ -6189,7 +6189,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11053347534417072668
+  ParentId: 8190872570637627930
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6218,7 +6218,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16497509288721285765
+  Id: 10933309829476084207
   Name: "IKPose"
   Transform {
     Location {
@@ -6235,11 +6235,11 @@ Objects {
       Z: 1.00000012
     }
   }
-  ParentId: 11053347534417072668
-  ChildIds: 488870737614119729
-  ChildIds: 12423042501929988549
-  ChildIds: 13282214750960506957
-  ChildIds: 2419950535659785583
+  ParentId: 8190872570637627930
+  ChildIds: 10878590474089374097
+  ChildIds: 10152205638620615334
+  ChildIds: 17093826453060857245
+  ChildIds: 619935295431936344
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6263,7 +6263,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2419950535659785583
+  Id: 619935295431936344
   Name: "IK Anchor - Right Foot"
   Transform {
     Location {
@@ -6282,7 +6282,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 16497509288721285765
+  ParentId: 10933309829476084207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6313,7 +6313,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13282214750960506957
+  Id: 17093826453060857245
   Name: "IK Anchor - Left Foot"
   Transform {
     Location {
@@ -6332,7 +6332,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 16497509288721285765
+  ParentId: 10933309829476084207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6363,7 +6363,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12423042501929988549
+  Id: 10152205638620615334
   Name: "IK Anchor - Pelvis"
   Transform {
     Location {
@@ -6382,7 +6382,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 16497509288721285765
+  ParentId: 10933309829476084207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6411,7 +6411,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 488870737614119729
+  Id: 10878590474089374097
   Name: "IK Anchor - Right"
   Transform {
     Location {
@@ -6430,7 +6430,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 16497509288721285765
+  ParentId: 10933309829476084207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6461,7 +6461,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13133410902342595673
+  Id: 11082518013504557762
   Name: "Trigger"
   Transform {
     Location {
@@ -6476,7 +6476,7 @@ Objects {
       Z: 0.374452293
     }
   }
-  ParentId: 11053347534417072668
+  ParentId: 8190872570637627930
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6510,7 +6510,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8410296191497023444
+  Id: 16840015285414281509
   Name: "CupDispenserClient"
   Transform {
     Location {
@@ -6523,90 +6523,90 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11053347534417072668
+  ParentId: 8190872570637627930
   UnregisteredParameters {
     Overrides {
       Name: "cs:NetObject"
       ObjectReference {
-        SelfId: 11053347534417072668
+        SelfId: 8190872570637627930
       }
     }
     Overrides {
       Name: "cs:Trigger"
       ObjectReference {
-        SelfId: 13133410902342595673
+        SelfId: 11082518013504557762
       }
     }
     Overrides {
       Name: "cs:IKPose"
       ObjectReference {
-        SelfId: 16497509288721285765
+        SelfId: 10933309829476084207
       }
     }
     Overrides {
       Name: "cs:SFX"
       ObjectReference {
-        SelfId: 6512844764983449320
+        SelfId: 11351528494539559321
       }
     }
     Overrides {
       Name: "cs:Cup1"
       ObjectReference {
-        SelfId: 13959524552075194741
+        SelfId: 12980995538333857346
       }
     }
     Overrides {
       Name: "cs:Cup2"
       ObjectReference {
-        SelfId: 13001437811523761224
+        SelfId: 16608801256228581567
       }
     }
     Overrides {
       Name: "cs:Cup3"
       ObjectReference {
-        SelfId: 8869622974497335836
+        SelfId: 7562320696063767838
       }
     }
     Overrides {
       Name: "cs:Cup4"
       ObjectReference {
-        SelfId: 13873945122422195131
+        SelfId: 4453841377249006908
       }
     }
     Overrides {
       Name: "cs:Cup5"
       ObjectReference {
-        SelfId: 10921980460093339583
+        SelfId: 5513346623165898243
       }
     }
     Overrides {
       Name: "cs:Cup6"
       ObjectReference {
-        SelfId: 12536961263008837674
+        SelfId: 1511677923199370480
       }
     }
     Overrides {
       Name: "cs:Cup7"
       ObjectReference {
-        SelfId: 3980607398324373038
+        SelfId: 17976745441136931584
       }
     }
     Overrides {
       Name: "cs:Cup8"
       ObjectReference {
-        SelfId: 5090842274122467174
+        SelfId: 4405046244513574622
       }
     }
     Overrides {
       Name: "cs:Cup9"
       ObjectReference {
-        SelfId: 7289625151753063859
+        SelfId: 6484313673926966466
       }
     }
     Overrides {
       Name: "cs:Cup10"
       ObjectReference {
-        SelfId: 2075009526444775650
+        SelfId: 3540721370345663773
       }
     }
   }
@@ -6633,7 +6633,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9781955076386809745
+  Id: 17524240491168680059
   Name: "CupDispenserServer"
   Transform {
     Location {
@@ -6646,12 +6646,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9125379658419558982
+  ParentId: 7886621308429714823
   UnregisteredParameters {
     Overrides {
       Name: "cs:NetObject"
       ObjectReference {
-        SelfId: 11053347534417072668
+        SelfId: 8190872570637627930
       }
     }
     Overrides {
@@ -6684,7 +6684,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18042482404901149651
+  Id: 4414844987217072330
   Name: "Clay Pint"
   Transform {
     Location {
@@ -6701,9 +6701,9 @@ Objects {
       Z: 0.80678314
     }
   }
-  ParentId: 10017628465394839877
-  ChildIds: 2990795097204664691
-  ChildIds: 10232293443858117300
+  ParentId: 10258332152482593721
+  ChildIds: 2915353441660654996
+  ChildIds: 14349955803298681456
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6722,7 +6722,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10232293443858117300
+  Id: 14349955803298681456
   Name: "Collision"
   Transform {
     Location {
@@ -6737,7 +6737,7 @@ Objects {
       Z: 0.504526496
     }
   }
-  ParentId: 18042482404901149651
+  ParentId: 4414844987217072330
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6787,7 +6787,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2990795097204664691
+  Id: 2915353441660654996
   Name: "ClientContext"
   Transform {
     Location {
@@ -6803,11 +6803,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 18042482404901149651
-  ChildIds: 2552674902794860005
-  ChildIds: 4870365037745127905
-  ChildIds: 18132521023075652889
-  ChildIds: 12446377481464902834
+  ParentId: 4414844987217072330
+  ChildIds: 9982374399072853547
+  ChildIds: 10025197746933261728
+  ChildIds: 1014753408010798450
+  ChildIds: 8171774818025931968
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6831,7 +6831,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12446377481464902834
+  Id: 8171774818025931968
   Name: "Cylinder"
   Transform {
     Location {
@@ -6850,7 +6850,7 @@ Objects {
       Z: 0.157457873
     }
   }
-  ParentId: 2990795097204664691
+  ParentId: 2915353441660654996
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6930,7 +6930,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18132521023075652889
+  Id: 1014753408010798450
   Name: "Cylinder"
   Transform {
     Location {
@@ -6946,7 +6946,7 @@ Objects {
       Z: 0.105302915
     }
   }
-  ParentId: 2990795097204664691
+  ParentId: 2915353441660654996
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -6992,7 +6992,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4870365037745127905
+  Id: 10025197746933261728
   Name: "Cylinder"
   Transform {
     Location {
@@ -7008,7 +7008,7 @@ Objects {
       Z: 0.12596859
     }
   }
-  ParentId: 2990795097204664691
+  ParentId: 2915353441660654996
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -7054,7 +7054,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2552674902794860005
+  Id: 9982374399072853547
   Name: "Cylinder"
   Transform {
     Location {
@@ -7069,7 +7069,7 @@ Objects {
       Z: 0.0080563575
     }
   }
-  ParentId: 2990795097204664691
+  ParentId: 2915353441660654996
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"

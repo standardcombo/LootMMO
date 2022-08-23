@@ -1,7 +1,7 @@
 Name: "Throwable Chairs"
-RootId: 12145223122855632126
+RootId: 6926597036764592220
 Objects {
-  Id: 13257976070743368983
+  Id: 10290760648660223298
   Name: "Throwable Chair"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
@@ -187,7 +187,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6999320752386753874
+  Id: 16786591288940413622
   Name: "Throwable Chair"
   Transform {
     Location {
@@ -204,7 +204,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
@@ -373,7 +373,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14015955835606019631
+  Id: 4493792291719515624
   Name: "Throwable Chair"
   Transform {
     Location {
@@ -390,7 +390,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
@@ -559,7 +559,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17450050663769973513
+  Id: 7836806379397967327
   Name: "Throwable Chair"
   Transform {
     Location {
@@ -576,7 +576,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
@@ -745,7 +745,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7487587719231194846
+  Id: 3680475207663748924
   Name: "Throwable Chair"
   Transform {
     Location {
@@ -761,7 +761,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
@@ -794,7 +794,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14747219437132786803
+  Id: 1621190951212074982
   Name: "ThrowableSupportAbilities"
   Transform {
     Location {
@@ -807,7 +807,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12145223122855632126
+  ParentId: 6926597036764592220
   UnregisteredParameters {
   }
   Collidable_v2 {
