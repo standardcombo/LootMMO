@@ -157,6 +157,9 @@ function Tick(deltaTime)
 		selectedRow.y = CoreMath.Lerp(selectedRow.y, 0, t / 3)
 		
 	elseif currentState == STATE_COMPLETED_1 then
+		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
+		selectedRow.x = 0
+		selectedRow.y = 0
 		if stateElapsedTime > 1 then
 			SetState(currentState + 1)
 		end
@@ -213,6 +216,8 @@ end
 
 
 function UpdateContents()
+	--print("QuestObjectivesUI::UpdateContents()")
+
 	CONTENT_SCRIPT.context.Clear()
 	
 	-- Header
@@ -241,6 +246,9 @@ function UpdateData()
 				
 				CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
 				
+				if currentState ~= STATE_SELECTED then
+					SetState(STATE_SELECTED)
+				end
 				SetState(STATE_COMPLETED_1)
 				
 				return --Exit condition, no badge update, etc
