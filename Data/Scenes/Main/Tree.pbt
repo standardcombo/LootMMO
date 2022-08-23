@@ -14,19 +14,19 @@ Objects {
       Z: 1
     }
   }
-  ChildIds: 9282489289386915061
-  ChildIds: 5930800843827858173
-  ChildIds: 1430082256893166478
-  ChildIds: 3983303236142938092
-  ChildIds: 880106829888079510
+  ChildIds: 17635258934049397073
+  ChildIds: 291839474745250044
+  ChildIds: 1578154111882892155
+  ChildIds: 9186864475937043280
   ChildIds: 12626000991766525324
-  ChildIds: 1551213308783341965
-  ChildIds: 259574108905129681
-  ChildIds: 9160623879169468299
-  ChildIds: 1648776158795208633
-  ChildIds: 11492620354498796295
-  ChildIds: 2801483955022543056
-  ChildIds: 1742505065348884997
+  ChildIds: 880106829888079510
+  ChildIds: 8212739915466549664
+  ChildIds: 12785624939370825655
+  ChildIds: 2852741563843667238
+  ChildIds: 1888181817911919837
+  ChildIds: 2561084474995652434
+  ChildIds: 15408793396683655395
+  ChildIds: 17798732759644559527
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -46,7 +46,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1742505065348884997
+  Id: 17798732759644559527
   Name: "Quests"
   Transform {
     Location {
@@ -82,7 +82,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2801483955022543056
+  Id: 15408793396683655395
   Name: "Fade Layer"
   Transform {
     Location {
@@ -96,7 +96,7 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  ChildIds: 15418935109949492223
+  ChildIds: 11335659757365147267
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -123,7 +123,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15418935109949492223
+  Id: 11335659757365147267
   Name: "UI Container"
   Transform {
     Location {
@@ -140,8 +140,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2801483955022543056
-  ChildIds: 6847881815547438329
+  ParentId: 15408793396683655395
+  ChildIds: 17783730976917153379
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -189,7 +189,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6847881815547438329
+  Id: 17783730976917153379
   Name: "Full Screen Fade"
   Transform {
     Location {
@@ -206,8 +206,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15418935109949492223
-  ChildIds: 17688447876806729582
+  ParentId: 11335659757365147267
+  ChildIds: 8532101088513258337
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -261,7 +261,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17688447876806729582
+  Id: 8532101088513258337
   Name: "FadeLayer"
   Transform {
     Location {
@@ -274,7 +274,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6847881815547438329
+  ParentId: 17783730976917153379
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -298,7 +298,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11492620354498796295
+  Id: 2561084474995652434
   Name: "Settings Per Location"
   Transform {
     Location {
@@ -337,7 +337,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1648776158795208633
+  Id: 1888181817911919837
   Name: "SocialSpace"
   Transform {
     Location {
@@ -376,7 +376,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9160623879169468299
+  Id: 2852741563843667238
   Name: "Loot"
   Transform {
     Location {
@@ -415,7 +415,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 259574108905129681
+  Id: 12785624939370825655
   Name: "Other Components"
   Transform {
     Location {
@@ -451,7 +451,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1551213308783341965
+  Id: 8212739915466549664
   Name: "Level Design"
   Transform {
     Location {
@@ -477,45 +477,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Level Design"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12626000991766525324
-  Name: "BG Terrain"
-  Transform {
-    Location {
-      Z: -15091.9482
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Terrain {
-    Material {
-      Id: 13795170071507932677
-    }
-    VoxelSize: 1000
-    OctreeDepth: 5
-    GeneratorID: "DEPRECATED"
-    MaxLOD: 32
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1580,7 +1541,46 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3983303236142938092
+  Id: 12626000991766525324
+  Name: "BG Terrain"
+  Transform {
+    Location {
+      Z: -15091.9482
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Terrain {
+    Material {
+      Id: 13795170071507932677
+    }
+    VoxelSize: 1000
+    OctreeDepth: 5
+    GeneratorID: "DEPRECATED"
+    MaxLOD: 32
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9186864475937043280
   Name: "Environmental"
   Transform {
     Location {
@@ -1597,8 +1597,8 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  ChildIds: 12269847963351546288
-  ChildIds: 5332376166667374444
+  ChildIds: 13743686594411359841
+  ChildIds: 7490083330898921651
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1625,7 +1625,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5332376166667374444
+  Id: 7490083330898921651
   Name: "PostProcesses"
   Transform {
     Location {
@@ -1641,13 +1641,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3983303236142938092
-  ChildIds: 10910512845345841561
-  ChildIds: 11021923441409022249
-  ChildIds: 125678251605920259
-  ChildIds: 4005035721295373521
-  ChildIds: 5934262459598514183
-  ChildIds: 11541015141701906526
+  ParentId: 9186864475937043280
+  ChildIds: 17211331053235690457
+  ChildIds: 17862054296994801031
+  ChildIds: 5782105561255309277
+  ChildIds: 15420170624833856413
+  ChildIds: 11648666783363970768
+  ChildIds: 10238707556722705455
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1671,7 +1671,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11541015141701906526
+  Id: 10238707556722705455
   Name: "Vignette Grain Post Process"
   Transform {
     Location {
@@ -1686,7 +1686,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:Grain Intensity"
@@ -1723,7 +1723,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5934262459598514183
+  Id: 11648666783363970768
   Name: "Ambient Occlusion Recolor Post Process"
   Transform {
     Location {
@@ -1738,7 +1738,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:color"
@@ -1797,7 +1797,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4005035721295373521
+  Id: 15420170624833856413
   Name: "Motion Blur Post Process"
   Transform {
     Location {
@@ -1812,7 +1812,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:Intensity"
@@ -1841,7 +1841,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 125678251605920259
+  Id: 5782105561255309277
   Name: "Simple Depth Blur Post Process"
   Transform {
     Location {
@@ -1857,7 +1857,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:Visible In Preview"
@@ -1914,7 +1914,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11021923441409022249
+  Id: 17862054296994801031
   Name: "Tonemapping Post Process"
   Transform {
     Location {
@@ -1929,7 +1929,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:Toe"
@@ -1958,7 +1958,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10910512845345841561
+  Id: 17211331053235690457
   Name: "Screen Space Reflection Post Process"
   Transform {
     Location {
@@ -1973,7 +1973,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5332376166667374444
+  ParentId: 7490083330898921651
   UnregisteredParameters {
     Overrides {
       Name: "bp:Quality Level"
@@ -2010,7 +2010,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12269847963351546288
+  Id: 13743686594411359841
   Name: "Character Select"
   Transform {
     Location {
@@ -2026,8 +2026,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3983303236142938092
-  ChildIds: 10798765643176223556
+  ParentId: 9186864475937043280
+  ChildIds: 14621628340172696036
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -2048,7 +2048,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10798765643176223556
+  Id: 14621628340172696036
   Name: "ClientContext"
   Transform {
     Location {
@@ -2064,14 +2064,14 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12269847963351546288
-  ChildIds: 1922003254321480244
-  ChildIds: 5299476787188429398
-  ChildIds: 7076729991349503157
-  ChildIds: 2917581643103762126
-  ChildIds: 865468395526688470
-  ChildIds: 4885555267471377095
-  ChildIds: 1169360935085823461
+  ParentId: 13743686594411359841
+  ChildIds: 15248217842931598072
+  ChildIds: 9765665748318746768
+  ChildIds: 8078974897664837311
+  ChildIds: 6652416260837099249
+  ChildIds: 10204651723635706203
+  ChildIds: 11601971533059380798
+  ChildIds: 2716031646225940882
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -2095,7 +2095,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1169360935085823461
+  Id: 2716031646225940882
   Name: "Environment Fog Default VFX"
   Transform {
     Location {
@@ -2111,7 +2111,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color"
@@ -2197,7 +2197,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4885555267471377095
+  Id: 11601971533059380798
   Name: "Skylight"
   Transform {
     Location {
@@ -2213,7 +2213,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Index"
@@ -2264,7 +2264,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 865468395526688470
+  Id: 10204651723635706203
   Name: "Simple Exposure Post Process"
   Transform {
     Location {
@@ -2280,7 +2280,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Exposure"
@@ -2309,7 +2309,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2917581643103762126
+  Id: 6652416260837099249
   Name: "Advanced Color Grading Post Process"
   Transform {
     Location {
@@ -2325,7 +2325,7 @@ Objects {
       Z: 200
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color Contrast"
@@ -2393,7 +2393,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7076729991349503157
+  Id: 8078974897664837311
   Name: "Ambient Occlusion Post Process"
   Transform {
     Location {
@@ -2409,7 +2409,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Quality"
@@ -2466,7 +2466,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5299476787188429398
+  Id: 9765665748318746768
   Name: "Sun Light"
   Transform {
     Location {
@@ -2485,7 +2485,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Light Color"
@@ -2601,7 +2601,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1922003254321480244
+  Id: 15248217842931598072
   Name: "Sky Dome"
   Transform {
     Location {
@@ -2618,7 +2618,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10798765643176223556
+  ParentId: 14621628340172696036
   UnregisteredParameters {
     Overrides {
       Name: "bp:Cloud Shape"
@@ -2796,7 +2796,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1430082256893166478
+  Id: 1578154111882892155
   Name: "Settings"
   Transform {
     Location {
@@ -2831,7 +2831,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5930800843827858173
+  Id: 291839474745250044
   Name: "Main_README"
   Transform {
     Location {
@@ -2868,7 +2868,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9282489289386915061
+  Id: 17635258934049397073
   Name: "LootMMO_README"
   Transform {
     Location {

@@ -1,7 +1,7 @@
 Name: "AudioFolderWaterwheel"
-RootId: 12219226419110392707
+RootId: 2969112993054454820
 Objects {
-  Id: 6980197269022091737
+  Id: 7117179327121936302
   Name: "Water Wheel Water"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1.46867466
     }
   }
-  ParentId: 12219226419110392707
+  ParentId: 2969112993054454820
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -58,7 +58,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17303323786814718330
+  Id: 14053834319776252305
   Name: "Water Wheel"
   Transform {
     Location {
@@ -75,7 +75,7 @@ Objects {
       Z: 1.46867466
     }
   }
-  ParentId: 12219226419110392707
+  ParentId: 2969112993054454820
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

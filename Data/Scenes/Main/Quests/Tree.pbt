@@ -1,7 +1,7 @@
 Name: "Quests"
-RootId: 1742505065348884997
+RootId: 17798732759644559527
 Objects {
-  Id: 4536455551098244256
+  Id: 2480062710975198621
   Name: "Poker"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -37,7 +37,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10225716748702456708
+  Id: 2020934973811176208
   Name: "ThrowChair"
   Transform {
     Location {
@@ -50,7 +50,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -73,7 +73,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7030927870692090174
+  Id: 569733336708190801
   Name: "Pinball"
   Transform {
     Location {
@@ -86,7 +86,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -109,7 +109,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7430111487875317939
+  Id: 17788186485443267771
   Name: "Pint"
   Transform {
     Location {
@@ -122,7 +122,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -145,7 +145,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18124522976008583744
+  Id: 9207415651315116124
   Name: "Study"
   Transform {
     Location {
@@ -158,7 +158,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -181,7 +181,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5018826250847041037
+  Id: 196027059656576340
   Name: "Pig"
   Transform {
     Location {
@@ -194,7 +194,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -217,7 +217,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17170198470096283951
+  Id: 14317228147609138983
   Name: "Potions"
   Transform {
     Location {
@@ -230,7 +230,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -253,7 +253,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12531132318342404047
+  Id: 12352191436114464191
   Name: "Lv5"
   Transform {
     Location {
@@ -266,7 +266,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -289,7 +289,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12087411842439764169
+  Id: 9167845128613391492
   Name: "Craft1"
   Transform {
     Location {
@@ -302,7 +302,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -325,7 +325,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12815696284449371896
+  Id: 14500316624661081237
   Name: "Raid2"
   Transform {
     Location {
@@ -338,7 +338,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -361,7 +361,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15229170437966699592
+  Id: 17937730425357069273
   Name: "Equip"
   Transform {
     Location {
@@ -374,7 +374,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -397,7 +397,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17575591590085718227
+  Id: 4069036831703073384
   Name: "Raid1"
   Transform {
     Location {
@@ -410,7 +410,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -433,7 +433,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13617815184995971562
+  Id: 18092589690976659829
   Name: "Map"
   Transform {
     Location {
@@ -446,7 +446,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -469,7 +469,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14722822836920332963
+  Id: 4117393932983423063
   Name: "Welcome"
   Transform {
     Location {
@@ -482,7 +482,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
+  ParentId: 17798732759644559527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -505,7 +505,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12019894607400066362
+  Id: 424161637921846772
   Name: "ClientContext"
   Transform {
     Location {
@@ -518,10 +518,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
-  ChildIds: 1759163408231116003
-  ChildIds: 18235828220799259707
-  ChildIds: 12116470946032125912
+  ParentId: 17798732759644559527
+  ChildIds: 1331336599575181329
+  ChildIds: 8567693941736154314
+  ChildIds: 12509019111658310021
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -548,7 +548,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12116470946032125912
+  Id: 12509019111658310021
   Name: "UI Container"
   Transform {
     Location {
@@ -565,8 +565,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12019894607400066362
-  ChildIds: 11994721452709993511
+  ParentId: 424161637921846772
+  ChildIds: 3789761133958952025
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -614,7 +614,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11994721452709993511
+  Id: 3789761133958952025
   Name: "Quest Panel"
   Transform {
     Location {
@@ -631,11 +631,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12116470946032125912
-  ChildIds: 11895046332358536522
-  ChildIds: 4459355634050715892
-  ChildIds: 2856492768510199134
-  ChildIds: 11639419437463974286
+  ParentId: 12509019111658310021
+  ChildIds: 5560465332125477510
+  ChildIds: 775757029931951714
+  ChildIds: 9689722478242600648
+  ChildIds: 759905495438415609
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -679,7 +679,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11639419437463974286
+  Id: 759905495438415609
   Name: "UI Badge Indicator"
   Transform {
     Scale {
@@ -688,7 +688,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11994721452709993511
+  ParentId: 3789761133958952025
   TemplateInstance {
     ParameterOverrideMap {
       key: 3301710376354914765
@@ -743,7 +743,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2856492768510199134
+  Id: 9689722478242600648
   Name: "Expanding Panel"
   Transform {
     Location {
@@ -756,11 +756,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11994721452709993511
-  ChildIds: 17340571939564333456
-  ChildIds: 10748636723235151861
-  ChildIds: 342575424056053806
-  ChildIds: 16757638637551612596
+  ParentId: 3789761133958952025
+  ChildIds: 17422636117918768705
+  ChildIds: 2116845537821437507
+  ChildIds: 1249845985007012679
+  ChildIds: 12474563778109171242
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -803,7 +803,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16757638637551612596
+  Id: 12474563778109171242
   Name: "Content Panel"
   Transform {
     Location {
@@ -820,10 +820,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2856492768510199134
-  ChildIds: 14695732978040065685
-  ChildIds: 10935835872357857957
-  ChildIds: 13215782773246389107
+  ParentId: 9689722478242600648
+  ChildIds: 3108201781574843211
+  ChildIds: 17388429531222281244
+  ChildIds: 6292852409126697535
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -865,7 +865,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13215782773246389107
+  Id: 6292852409126697535
   Name: "UI Scroll Panel"
   Transform {
     Location {
@@ -882,8 +882,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16757638637551612596
-  ChildIds: 7538027259234929939
+  ParentId: 12474563778109171242
+  ChildIds: 7266663514345710539
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -930,7 +930,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7538027259234929939
+  Id: 7266663514345710539
   Name: "Quest Objective Row"
   Transform {
     Scale {
@@ -939,7 +939,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13215782773246389107
+  ParentId: 6292852409126697535
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -976,7 +976,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10935835872357857957
+  Id: 17388429531222281244
   Name: "Active Goals Title"
   Transform {
     Location {
@@ -993,7 +993,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16757638637551612596
+  ParentId: 12474563778109171242
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1057,7 +1057,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14695732978040065685
+  Id: 3108201781574843211
   Name: "Close Button"
   Transform {
     Location {
@@ -1074,7 +1074,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16757638637551612596
+  ParentId: 12474563778109171242
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1160,7 +1160,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 342575424056053806
+  Id: 1249845985007012679
   Name: "Key Binding"
   Transform {
     Location {
@@ -1174,9 +1174,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2856492768510199134
-  ChildIds: 9283935609054794033
-  ChildIds: 10142243480331195406
+  ParentId: 9689722478242600648
+  ChildIds: 744778669065195352
+  ChildIds: 11871129959812260913
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1220,7 +1220,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10142243480331195406
+  Id: 11871129959812260913
   Name: "UI Text Box"
   Transform {
     Location {
@@ -1233,7 +1233,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 342575424056053806
+  ParentId: 1249845985007012679
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1299,7 +1299,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9283935609054794033
+  Id: 744778669065195352
   Name: "UI Image"
   Transform {
     Location {
@@ -1312,7 +1312,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 342575424056053806
+  ParentId: 1249845985007012679
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1367,7 +1367,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10748636723235151861
+  Id: 2116845537821437507
   Name: "Corner Arrow"
   Transform {
     Location {
@@ -1384,8 +1384,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2856492768510199134
-  ChildIds: 10011150637249505075
+  ParentId: 9689722478242600648
+  ChildIds: 4834895180127318684
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1427,7 +1427,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10011150637249505075
+  Id: 4834895180127318684
   Name: "UI Image"
   Transform {
     Location {
@@ -1441,7 +1441,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10748636723235151861
+  ParentId: 2116845537821437507
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1499,7 +1499,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17340571939564333456
+  Id: 17422636117918768705
   Name: "BG"
   Transform {
     Location {
@@ -1513,7 +1513,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2856492768510199134
+  ParentId: 9689722478242600648
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1570,7 +1570,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4459355634050715892
+  Id: 775757029931951714
   Name: "QuestObjectivesUI_Content"
   Transform {
     Location {
@@ -1583,14 +1583,14 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11994721452709993511
+  ParentId: 3789761133958952025
   UnregisteredParameters {
     Overrides {
       Name: "cs:RowPrototype"
       ObjectReference {
-        SelfId: 12404876315177411007
+        SelfId: 5408849063548964242
         SubObjectId: 706559759143277157
-        InstanceId: 7538027259234929939
+        InstanceId: 7266663514345710539
         TemplateId: 7919143731178705880
       }
     }
@@ -1618,7 +1618,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11895046332358536522
+  Id: 5560465332125477510
   Name: "QuestObjectivesUI"
   Transform {
     Location {
@@ -1631,57 +1631,57 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11994721452709993511
+  ParentId: 3789761133958952025
   UnregisteredParameters {
     Overrides {
       Name: "cs:ExpandingPanel"
       ObjectReference {
-        SelfId: 2856492768510199134
+        SelfId: 9689722478242600648
       }
     }
     Overrides {
       Name: "cs:CornerArrow"
       ObjectReference {
-        SelfId: 10748636723235151861
+        SelfId: 2116845537821437507
       }
     }
     Overrides {
       Name: "cs:KeyBindingPanel"
       ObjectReference {
-        SelfId: 342575424056053806
+        SelfId: 1249845985007012679
       }
     }
     Overrides {
       Name: "cs:ContentPanel"
       ObjectReference {
-        SelfId: 16757638637551612596
+        SelfId: 12474563778109171242
       }
     }
     Overrides {
       Name: "cs:Badge"
       ObjectReference {
-        SelfId: 5477284891246503810
+        SelfId: 12946545874792651720
         SubObjectId: 3301710376354914765
-        InstanceId: 11639419437463974286
+        InstanceId: 759905495438415609
         TemplateId: 6740439231304338050
       }
     }
     Overrides {
       Name: "cs:ContentScript"
       ObjectReference {
-        SelfId: 4459355634050715892
+        SelfId: 775757029931951714
       }
     }
     Overrides {
       Name: "cs:ActiveGoalsTitle"
       ObjectReference {
-        SelfId: 10935835872357857957
+        SelfId: 17388429531222281244
       }
     }
     Overrides {
       Name: "cs:CloseButton"
       ObjectReference {
-        SelfId: 14695732978040065685
+        SelfId: 3108201781574843211
       }
     }
   }
@@ -1708,7 +1708,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18235828220799259707
+  Id: 8567693941736154314
   Name: "ObjectivePickupManagerClient"
   Transform {
     Location {
@@ -1721,21 +1721,21 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12019894607400066362
-  ChildIds: 17634960000438631263
-  ChildIds: 11337125220125787966
-  ChildIds: 2461975959076620657
+  ParentId: 424161637921846772
+  ChildIds: 12291762528542371674
+  ChildIds: 2014250827961712885
+  ChildIds: 3738603395147791800
   UnregisteredParameters {
     Overrides {
       Name: "cs:Trigger"
       ObjectReference {
-        SelfId: 17634960000438631263
+        SelfId: 12291762528542371674
       }
     }
     Overrides {
       Name: "cs:Outline"
       ObjectReference {
-        SelfId: 11337125220125787966
+        SelfId: 2014250827961712885
       }
     }
   }
@@ -1762,7 +1762,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2461975959076620657
+  Id: 3738603395147791800
   Name: "Fairy Dot Volume VFX"
   Transform {
     Location {
@@ -1775,7 +1775,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 18235828220799259707
+  ParentId: 8567693941736154314
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color"
@@ -1838,7 +1838,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11337125220125787966
+  Id: 2014250827961712885
   Name: "Outline Object"
   Transform {
     Location {
@@ -1851,7 +1851,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 18235828220799259707
+  ParentId: 8567693941736154314
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color A"
@@ -1909,7 +1909,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17634960000438631263
+  Id: 12291762528542371674
   Name: "Trigger"
   Transform {
     Location {
@@ -1922,7 +1922,7 @@ Objects {
       Z: 0.549576521
     }
   }
-  ParentId: 18235828220799259707
+  ParentId: 8567693941736154314
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
   }
@@ -1956,7 +1956,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1759163408231116003
+  Id: 1331336599575181329
   Name: "QuestController"
   Transform {
     Location {
@@ -1969,7 +1969,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12019894607400066362
+  ParentId: 424161637921846772
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestMetadata"
@@ -2007,7 +2007,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13407318171199914177
+  Id: 12571308321904035299
   Name: "ServerContext"
   Transform {
     Location {
@@ -2020,10 +2020,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1742505065348884997
-  ChildIds: 491643674662684896
-  ChildIds: 15537213486610408055
-  ChildIds: 847838322387281510
+  ParentId: 17798732759644559527
+  ChildIds: 4050288456529590419
+  ChildIds: 563961826906337747
+  ChildIds: 219552761137246676
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2045,7 +2045,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 847838322387281510
+  Id: 219552761137246676
   Name: "QuestSpecialUnlockRules"
   Transform {
     Location {
@@ -2058,7 +2058,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13407318171199914177
+  ParentId: 12571308321904035299
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2082,7 +2082,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15537213486610408055
+  Id: 563961826906337747
   Name: "ObjectivePickupManagerServer"
   Transform {
     Location {
@@ -2095,7 +2095,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13407318171199914177
+  ParentId: 12571308321904035299
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2119,7 +2119,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 491643674662684896
+  Id: 4050288456529590419
   Name: "QuestController"
   Transform {
     Location {
@@ -2132,7 +2132,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13407318171199914177
+  ParentId: 12571308321904035299
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestMetadata"

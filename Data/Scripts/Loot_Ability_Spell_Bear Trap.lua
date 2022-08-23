@@ -1,0 +1,40 @@
+local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+
+local ActiveTraps = {}
+local trapTemplate = script:GetCustomProperty('HunterBearTrapPlacementBasic')
+
+function Execute()
+    ActiveTraps = ActiveTraps or {}
+    if not Object.IsValid(ABILITY) or not Object.IsValid(ABILITY) then
+        return
+    end
+    local mod = ROOT.serverUserData.calculateModifier()
+    local targetData = ABILITY:GetTargetData()
+    local position = targetData:GetHitPosition()
+    local v = targetData:GetAimPosition()
+    local rotation = Rotation.New(v.x, v.y, v.z)
+    
+    local MaxTraps = 1
+    if ActiveTraps == MaxTraps then
+        local oldTrap = table.remove(ActiveTraps, 1)
+        if Object.IsValid(oldTrap) then
+            oldTrap:Destroy()
+        end
+    end
+
+    local newTrap =
+        World.SpawnAsset(
+        trapTemplate,
+        {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
+    )
+
+    table.insert(ActiveTraps, newTrap)
+    newTrap:SetCustomProperty('OwnerID', ABILITY.owner.id)
+    newTrap:SetCustomProperty('Damage', mod[MODIFIERS.Damage.name])
+    newTrap:SetCustomProperty('Stun', mod[MODIFIERS.Stun.name])
+    newTrap:SetCustomProperty('Bleed', mod[MODIFIERS.Bleed.name])
+end
+
+ABILITY.executeEvent:Connect(Execute)

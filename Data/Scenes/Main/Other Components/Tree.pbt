@@ -1,7 +1,7 @@
 Name: "Other Components"
-RootId: 259574108905129681
+RootId: 12785624939370825655
 Objects {
-  Id: 8293382677676012747
+  Id: 11139475088052789855
   Name: "ServerContext"
   Transform {
     Location {
@@ -18,10 +18,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 259574108905129681
-  ChildIds: 954363218359367591
-  ChildIds: 7664051888427474681
-  ChildIds: 11578776211302451490
+  ParentId: 12785624939370825655
+  ChildIds: 17740691586929688237
+  ChildIds: 14546811096002602236
+  ChildIds: 11728263122256425376
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -43,7 +43,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11578776211302451490
+  Id: 11728263122256425376
   Name: "ItemFactory"
   Transform {
     Location {
@@ -56,7 +56,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8293382677676012747
+  ParentId: 11139475088052789855
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -80,7 +80,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7664051888427474681
+  Id: 14546811096002602236
   Name: "PlayerJoinMessageChat"
   Transform {
     Location {
@@ -93,7 +93,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8293382677676012747
+  ParentId: 11139475088052789855
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -117,7 +117,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 954363218359367591
+  Id: 17740691586929688237
   Name: "PlayerJoinSetupServer"
   Transform {
     Location {
@@ -134,7 +134,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8293382677676012747
+  ParentId: 11139475088052789855
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -158,7 +158,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9896819446466807533
+  Id: 12609247043148105212
   Name: "PlayerControlStacks"
   Transform {
     Location {
@@ -175,10 +175,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 259574108905129681
-  ChildIds: 4199137397592263838
-  ChildIds: 16465565497995389720
-  ChildIds: 15573484516769938080
+  ParentId: 12785624939370825655
+  ChildIds: 7697484256058747973
+  ChildIds: 14389615750931187998
+  ChildIds: 758600222899831371
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -200,7 +200,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15573484516769938080
+  Id: 758600222899831371
   Name: "ClientContext"
   Transform {
     Location {
@@ -213,9 +213,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9896819446466807533
-  ChildIds: 7357775321142131824
-  ChildIds: 13835849322256171143
+  ParentId: 12609247043148105212
+  ChildIds: 2858165830134185219
+  ChildIds: 15317377220914686353
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -242,7 +242,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13835849322256171143
+  Id: 15317377220914686353
   Name: "CursorStack"
   Transform {
     Location {
@@ -255,7 +255,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15573484516769938080
+  ParentId: 758600222899831371
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -279,7 +279,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7357775321142131824
+  Id: 2858165830134185219
   Name: "IKStack"
   Transform {
     Location {
@@ -292,7 +292,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15573484516769938080
+  ParentId: 758600222899831371
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -316,7 +316,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16465565497995389720
+  Id: 14389615750931187998
   Name: "EquipmentStack"
   Transform {
     Location {
@@ -329,7 +329,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9896819446466807533
+  ParentId: 12609247043148105212
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -353,7 +353,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4199137397592263838
+  Id: 7697484256058747973
   Name: "AnimationStanceStack"
   Transform {
     Location {
@@ -366,7 +366,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9896819446466807533
+  ParentId: 12609247043148105212
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -390,7 +390,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3711869817996108562
+  Id: 3125753175296963885
   Name: "ClientContext"
   Transform {
     Location {
@@ -407,8 +407,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 259574108905129681
-  ChildIds: 2804817913512864096
+  ParentId: 12785624939370825655
+  ChildIds: 10689028068618937886
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -435,7 +435,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2804817913512864096
+  Id: 10689028068618937886
   Name: "SocialKitNameplateController"
   Transform {
     Location {
@@ -448,7 +448,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3711869817996108562
+  ParentId: 3125753175296963885
   UnregisteredParameters {
     Overrides {
       Name: "cs:ShowOnSelf"
@@ -541,7 +541,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16212095158200838307
+  Id: 13915845686757242077
   Name: "Combat Dependencies"
   Transform {
     Location {
@@ -554,7 +554,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 259574108905129681
+  ParentId: 12785624939370825655
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -596,7 +596,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5227112066641493426
+  Id: 11115164055562184790
   Name: "App State Machine"
   Transform {
     Location {
@@ -609,9 +609,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 259574108905129681
-  ChildIds: 15284447642728168591
-  ChildIds: 4665446680185997815
+  ParentId: 12785624939370825655
+  ChildIds: 12459664564706519594
+  ChildIds: 8829631212305127230
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -633,7 +633,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4665446680185997815
+  Id: 8829631212305127230
   Name: "ClientContext"
   Transform {
     Location {
@@ -646,8 +646,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5227112066641493426
-  ChildIds: 12508038440221399681
+  ParentId: 11115164055562184790
+  ChildIds: 57345152745836771
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -674,7 +674,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12508038440221399681
+  Id: 57345152745836771
   Name: "AppStateMachine"
   Transform {
     Location {
@@ -687,7 +687,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4665446680185997815
+  ParentId: 8829631212305127230
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -711,7 +711,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15284447642728168591
+  Id: 12459664564706519594
   Name: "ServerContext"
   Transform {
     Location {
@@ -724,8 +724,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5227112066641493426
-  ChildIds: 15202725924025134259
+  ParentId: 11115164055562184790
+  ChildIds: 14143628162370013543
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -747,7 +747,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15202725924025134259
+  Id: 14143628162370013543
   Name: "AppStateMachine"
   Transform {
     Location {
@@ -760,7 +760,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15284447642728168591
+  ParentId: 12459664564706519594
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

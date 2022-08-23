@@ -1,7 +1,7 @@
 Name: "AudioFolderFireWC_2"
-RootId: 8501837111167630165
+RootId: 8459486300753239745
 Objects {
-  Id: 3215410152448579848
+  Id: 8232971345487451545
   Name: "Fire and Flame Burning Loop Set 01 SFX"
   Transform {
     Location {
@@ -20,7 +20,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8501837111167630165
+  ParentId: 8459486300753239745
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -53,7 +53,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4859817366682487914
+  Id: 816019097417012900
   Name: "Fire and Flame Burning Loop Set 01 SFX"
   Transform {
     Location {
@@ -72,7 +72,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8501837111167630165
+  ParentId: 8459486300753239745
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -105,7 +105,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15630855271564211800
+  Id: 15045011089740633518
   Name: "Fire and Flame Burning Loop Set 01 SFX"
   Transform {
     Location {
@@ -122,7 +122,7 @@ Objects {
       Z: 0.897012532
     }
   }
-  ParentId: 8501837111167630165
+  ParentId: 8459486300753239745
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"

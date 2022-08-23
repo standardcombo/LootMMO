@@ -1,7 +1,7 @@
 Name: "AudioFolderWaterfall04"
-RootId: 2977855588360685691
+RootId: 5044110037534915518
 Objects {
-  Id: 5818377421772337798
+  Id: 7723199040623991599
   Name: "Side Fountains"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2977855588360685691
+  ParentId: 5044110037534915518
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -58,7 +58,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6143397496214886576
+  Id: 17672662144079187519
   Name: "Side Fountains"
   Transform {
     Location {
@@ -75,7 +75,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2977855588360685691
+  ParentId: 5044110037534915518
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
