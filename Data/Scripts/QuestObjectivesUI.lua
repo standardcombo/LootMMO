@@ -56,6 +56,7 @@ end
 
 function Collapse()
 	if selectedRow then
+		selectedRow = CONTENT_SCRIPT.context.GetSelectedRow()
 		SetState(STATE_SELECTED)
 	else
 		SetState(STATE_COLLAPSED)
@@ -101,7 +102,12 @@ function SetState(newState)
 		nextSelectedRow:SetAbsolutePosition(pos)
 		
 	elseif newState == STATE_COMPLETED_3 then
-		-- nothing
+		-- Tell the quest system to select this objective
+		_G.QuestController.SelectObjective(Game.GetLocalPlayer(), nextSelectedObjective)
+		
+		-- Change the state of the row
+		CONTENT_SCRIPT.context.SetRowStateSelected(nextSelectedRow)
+		
 	end
 	currentState = newState
 	stateElapsedTime = 0
@@ -236,7 +242,8 @@ function UpdateData()
 				CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
 				
 				SetState(STATE_COMPLETED_1)
-				break
+				
+				return --Exit condition, no badge update, etc
 			end
 		end	
 	end

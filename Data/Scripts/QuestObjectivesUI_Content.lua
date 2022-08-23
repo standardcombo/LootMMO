@@ -46,6 +46,16 @@ function UpdateObjective(obj)
 end
 
 
+function GetSelectedRow()
+	for _,r in ipairs(rows) do
+		if r.clientUserData.objective.isSelected then
+			return r
+		end
+	end
+	return nil
+end
+
+
 function SetRowStateDefault(row)
 	GET(row, "AutoNavIndicator").visibility = Visibility.INHERIT
 	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
