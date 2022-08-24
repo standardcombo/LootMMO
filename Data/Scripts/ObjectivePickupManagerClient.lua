@@ -24,6 +24,7 @@ local nearestPickup = nil
 
 function API.Add(pickupScript)
 	local questId = pickupScript:GetCustomProperty("QuestID")
+	--print("Adding pickup script for quest "..questId)
 	if not mapOfPickups[questId] then
 		mapOfPickups[questId] = {}
 	end
@@ -118,7 +119,7 @@ Events.Connect("Quest_ObjectiveSelected", OnObjectiveSelected)
 
 
 function OnInteracted(trigger, player)
-	print("ObjectivePickupManagerClient::OnInteracted")
+	--print("ObjectivePickupManagerClient::OnInteracted")
 	
 	HidePickup(nearestPickup)
 	
@@ -127,6 +128,8 @@ function OnInteracted(trigger, player)
 	Events.BroadcastToServer("ObjectivePickup", questId, index)
 end
 
-TRIGGER.interactedEvent:Connect(OnInteracted)
+if Environment.IsClient() then
+	TRIGGER.interactedEvent:Connect(OnInteracted)
+end
 
 

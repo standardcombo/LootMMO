@@ -57,18 +57,55 @@ end
 
 
 -- Client/Server
-function API.GetSavedData(player)
+function API.GetPlayerData(player)
 	return player:GetPrivateNetworkedData("quests")
+end
+
+function SetPlayerData(player, playerData)
+	local resultCode = player:SetPrivateNetworkedData("quests", playerData)
+	
+	if resultCode == PrivateNetworkedDataResultCode.FAILURE then
+		error("Setting quest data for player " ..player.name .. " failed.")
+	
+	elseif resultCode == PrivateNetworkedDataResultCode.EXCEEDED_SIZE_LIMIT then
+		error("Setting quest data for player " ..player.name .. " exceeded limit.")
+	end
 end
 
 
 -- Client/Server
 function API.GetCompletedQuestIDs(player)
-	local data = API.GetSavedData(player)
-	if data then
-		return data.complete
+	local playerData = API.GetPlayerData(player)
+	if playerData then
+		return playerData.complete
 	end
 	return {}
+end
+
+function AddCompletedQuestID(player, questId)
+	local playerData = API.GetPlayerData(player)
+	if not playerData then
+		playerData = {}
+		playerData.complete = {}
+	end
+	table.insert(playerData.complete, questId)
+	SetPlayerData(player, playerData)
+end
+
+function RemoveCompletedQuestID(player, questId)
+	local playerData = API.GetPlayerData(player)
+	if not playerData then
+		return
+	end
+	
+	for i,id in ipairs(playerData.complete) do
+		if id == questId then
+			table.remove(playerData.complete, i)
+			
+			SetPlayerData(player, playerData)
+			break
+		end
+	end
 end
 
 
@@ -87,9 +124,9 @@ end
 -- Client/Server
 function API.GetActiveObjectives(player)
 	local result = {}
-	local data = API.GetSavedData(player)
-	if data then
-		for k,entry in ipairs(data.active) do
+	local playerData = API.GetPlayerData(player)
+	if playerData then
+		for k,entry in ipairs(playerData.active) do
 			local quest = API.GetQuest(entry.id)
 			if quest then
 				if not entry.n then
@@ -112,9 +149,9 @@ end
 
 -- Client/Server
 function API.IsActive(player, obj)
-	local data = API.GetSavedData(player)
-	if data then
-		for k,entry in ipairs(data.active) do
+	local playerData = API.GetPlayerData(player)
+	if playerData then
+		for k,entry in ipairs(playerData.active) do
 			local quest = API.GetQuest(entry.id)
 			if quest then
 				if not entry.n then
@@ -150,6 +187,7 @@ end
 
 -- Server only
 function API.UnlockForPlayer(player, questId)
+	--print("QuestController::UnlockForPlayer() "..player.name..","..questId)
 	if not QUEST_METADATA[questId] then
 		error("Cannot unlock quest ".. tostring(questId) .." because no such quest exists.")
 		return
@@ -158,18 +196,16 @@ function API.UnlockForPlayer(player, questId)
 		warn(player.name .." has already completed ".. questId)
 		return
 	end
-	local questData = player:GetPrivateNetworkedData("quests")
-	for _,entry in ipairs(questData.active) do
+	local playerData = API.GetPlayerData(player)
+	for _,entry in ipairs(playerData.active) do
 		if entry.id == questId then
 			warn(player.name .." has already unlocked ".. questId)
 			return
 		end
 	end
-	table.insert(questData.active, {id = questId})
+	table.insert(playerData.active, {id = questId, n = 1})
 	
-	SetPlayerData(player, questData)
-	
-	--Events.BroadcastToPlayer(player, "Quest_Unlock", questId)
+	SetPlayerData(player, playerData)
 end
 
 
@@ -191,54 +227,60 @@ function API.AdvanceObjective(player, questId, objectiveIndex)
 		return
 	end
 	-- Advance the objective
-	local data = API.GetSavedData(player)
-	for k,entry in ipairs(data.active) do
+	local playerData = API.GetPlayerData(player)
+	for i,entry in ipairs(playerData.active) do
 		if entry.id == questId then
 			if entry.n == #quest.objectives then
-				CompleteQuest(questId)
+				CompleteQuest(player, questId)
 			else
 				entry.n = entry.n + 1
+				SetPlayerData(player, playerData)
 			end
 			break
 		end
 	end
-	SetPlayerData(player, data)
 end
 
-function CompleteQuest(questId)
-	print("QuestController::CompleteQuest")
-	
-	-- TODO
-end
-
-
-function SetPlayerData(player, questData)
-	local resultCode = player:SetPrivateNetworkedData("quests", questData)
-	
-	if resultCode == PrivateNetworkedDataResultCode.FAILURE then
-		error("Setting quest data for player " ..player.name .. " failed.")
-	
-	elseif resultCode == PrivateNetworkedDataResultCode.EXCEEDED_SIZE_LIMIT then
-		error("Setting quest data for player " ..player.name .. " exceeded limit.")
+function CompleteQuest(player, questId)
+	print("QuestController::CompleteQuest() "..player.name..","..questId)
+	local playerData = API.GetPlayerData(player)
+	for i,entry in ipairs(playerData.active) do
+		if entry.id == questId then
+			table.remove(playerData.active, i)
+			SetPlayerData(player, playerData)
+			break
+		end
+	end
+	AddCompletedQuestID(player, questId)
+	local questData = API.GetQuest(questId)
+	local ids = {
+	    CoreString.Split(questData.unlocks, {
+	        delimiters = {","}, 
+	        removeEmptyResults = true
+	    })
+	}
+	for _,unlockId in ipairs(ids) do
+		API.UnlockForPlayer(player, unlockId)
 	end
 end
 
 
 local function SavePlayerData(player)
---[[	local data = Storage.GetPlayerData(player)
+--[[	local storageData = Storage.GetPlayerData(player)
 	
-	if not data.quests then
-		data.quests = {}
+	if not storageData.quests then
+		storageData.quests = {}
 	end
 	...
 ]]
 end
 
 local function LoadPlayerData(player)
-	local data = Storage.GetPlayerData(player)
+	local storageData = Storage.GetPlayerData(player)
+	local playerData = storageData.quests
 	
-	if not data.quests then
-		data.quests = {
+	if not playerData then
+		playerData = {
 			complete = {},
 			active = {}
 			--Fake data:
@@ -246,7 +288,7 @@ local function LoadPlayerData(player)
 			--active = {{id="Map",n=2},{id="Raid1"}}
 		}
 	end
-	SetPlayerData(player, data.quests)
+	SetPlayerData(player, playerData)
 end
 
 if Environment.IsServer() then
