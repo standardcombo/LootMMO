@@ -28,6 +28,7 @@ KEY_BINDING_PANEL.opacity = 1
 CONTENT_PANEL.opacity = 0
 
 BADGE.visibility = Visibility.FORCE_OFF
+local badgeNotSeenCount = 0
 
 local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
@@ -95,19 +96,22 @@ function SetState(newState)
 		-- nothing
 		
 	elseif newState == STATE_COMPLETED_2 then
-		nextSelectedRow.opacity = 0
-		nextSelectedRow.parent = selectedRow.parent
-		local pos = selectedRow:GetAbsolutePosition()
-		pos.y = pos.y + selectedRow.height + 10
-		nextSelectedRow:SetAbsolutePosition(pos)
+		if nextSelectedRow then
+			nextSelectedRow.opacity = 0
+			nextSelectedRow.parent = selectedRow.parent
+			local pos = selectedRow:GetAbsolutePosition()
+			pos.y = pos.y + selectedRow.height + 10
+			nextSelectedRow:SetAbsolutePosition(pos)
+		end
 		
 	elseif newState == STATE_COMPLETED_3 then
-		-- Tell the quest system to select this objective
-		_G.QuestController.SelectObjective(Game.GetLocalPlayer(), nextSelectedObjective)
-		
-		-- Change the state of the row
-		CONTENT_SCRIPT.context.SetRowStateSelected(nextSelectedRow)
-		
+		if nextSelectedRow then
+			-- Tell the quest system to select this objective
+			_G.QuestController.SelectObjective(Game.GetLocalPlayer(), nextSelectedObjective)
+			
+			-- Change the state of the row
+			CONTENT_SCRIPT.context.SetRowStateSelected(nextSelectedRow)
+		end
 	end
 	currentState = newState
 	stateElapsedTime = 0
@@ -137,6 +141,7 @@ function Tick(deltaTime)
 		
 		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 0, t)
 		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 1, t)
+		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 1, t)
 		
 	elseif currentState == STATE_COLLAPSED then
 		fWidth = CoreMath.Lerp(fWidth, COLLAPSED_WIDTH, t)
@@ -150,6 +155,7 @@ function Tick(deltaTime)
 		
 		KEY_BINDING_PANEL.opacity = CoreMath.Lerp(KEY_BINDING_PANEL.opacity, 1, t)
 		CONTENT_PANEL.opacity = CoreMath.Lerp(CONTENT_PANEL.opacity, 0, t)
+		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 1, t)
 	
 	elseif currentState == STATE_SELECTED then
 		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
@@ -167,7 +173,8 @@ function Tick(deltaTime)
 	elseif currentState == STATE_COMPLETED_2 then
 		if stateElapsedTime > 1 then
 			SetState(currentState + 1)
-		else
+			
+		elseif nextSelectedRow then
 			nextSelectedRow.opacity = CoreMath.Lerp(nextSelectedRow.opacity, 1, t)
 		end
 		
@@ -178,10 +185,23 @@ function Tick(deltaTime)
 			nextSelectedObjective = nil
 			nextSelectedRow = nil
 			
-			SetState(STATE_SELECTED)
+			if selectedRow then
+				SetState(STATE_SELECTED)
+				
+			else
+				UpdateBadge(true)
+				
+				if badgeNotSeenCount > 0 then
+					SetState(STATE_COLLAPSED)
+				else
+					SetState(STATE_HIDDEN)
+				end
+			end
 		else
 			selectedRow.opacity = CoreMath.Lerp(selectedRow.opacity, 0, t)
-			nextSelectedRow.y = CoreMath.Lerp(nextSelectedRow.y, 0, t / 3)
+			if nextSelectedRow then
+				nextSelectedRow.y = CoreMath.Lerp(nextSelectedRow.y, 0, t / 3)
+			end
 		end
 	end
 end
@@ -251,34 +271,54 @@ function UpdateData()
 				end
 				SetState(STATE_COMPLETED_1)
 				
-				return --Exit condition, no badge update, etc
+				-- Exit condition where the selected objective is achieved
+				return -- no badge update, etc
 			end
-		end	
-	end
-	
-	-- Update Badge
-	local notSeenCount = 0
-	for _,obj in ipairs(activeObjectives) do
-		if not obj.hasSeen then
-			notSeenCount = notSeenCount + 1
+		end
+		
+		local completedIds = _G.QuestController.GetCompletedQuestIDs(PLAYER)
+		for _,id in ipairs(completedIds) do
+			if id == selectedObjective.questId then
+				CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
+				
+				if currentState ~= STATE_SELECTED then
+					SetState(STATE_SELECTED)
+				end
+				SetState(STATE_COMPLETED_1)
+				
+				-- Exit condition where the quest for selected objective is complete
+				return -- no badge update, etc
+			end
 		end
 	end
-	if notSeenCount <= 0 then
-		BADGE.visibility = Visibility.FORCE_OFF
-	else
-		BADGE.visibility = Visibility.INHERIT
-		
-		local uiText = BADGE:FindDescendantByType("UIText")
-		uiText.text = tostring(notSeenCount)
-	end
+	
+	UpdateBadge()
 	
 	-- State change
-	if currentState == STATE_HIDDEN then
+	if currentState == STATE_HIDDEN and badgeNotSeenCount > 0 then
 		SetState(STATE_COLLAPSED)
 	end
 end
 
 Events.Connect("Quest_Changed", UpdateData)
+
+
+function UpdateBadge(forceCountAll)
+	badgeNotSeenCount = 0
+	for _,obj in ipairs(activeObjectives) do
+		if not obj.hasSeen or forceCountAll then
+			badgeNotSeenCount = badgeNotSeenCount + 1
+		end
+	end
+	if badgeNotSeenCount <= 0 then
+		BADGE.visibility = Visibility.FORCE_OFF
+	else
+		BADGE.visibility = Visibility.INHERIT
+		
+		local uiText = BADGE:FindDescendantByType("UIText")
+		uiText.text = tostring(badgeNotSeenCount)
+	end
+end
 
 
 function IsInActiveState()

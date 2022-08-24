@@ -1,13 +1,4 @@
 Assets {
-  Id: 18251503461656660769
-  Name: "Gem - Baguette Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_gem_baguette_polished_001"
-  }
-}
-Assets {
   Id: 18217604652680594125
   Name: "Clay Form 10"
   PlatformAssetType: 1
@@ -170,30 +161,12 @@ Assets {
   }
 }
 Assets {
-  Id: 16844675866280788582
-  Name: "Fantasy Scroll Contained 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fan_scroll_002_ref"
-  }
-}
-Assets {
   Id: 16828300113100685912
   Name: "Bricks Mortar Thick 01"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_fan_bricks_mortar_001_uv"
-  }
-}
-Assets {
-  Id: 16825643228001246048
-  Name: "Gem - Pear Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_gem_pear_polished_001"
   }
 }
 Assets {
@@ -284,15 +257,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_coral_branch_small_01"
-  }
-}
-Assets {
-  Id: 16353917461806733124
-  Name: "Ring - Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torus_003"
   }
 }
 Assets {
@@ -791,15 +755,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13750460358025803897
-  Name: "Urban Vehicle Car - Windshield 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_veh_urb_car_kit_wndshield_001_ref"
-  }
-}
-Assets {
   Id: 13707562474042671468
   Name: "Roof Square Shingles 01"
   PlatformAssetType: 2
@@ -1115,15 +1070,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11695249546191317188
-  Name: "Basic Bean Thin Long"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prim_bean_thin_long_001_ref"
-  }
-}
-Assets {
   Id: 11594524757616528940
   Name: "Bone Human Skull 01"
   PlatformAssetType: 1
@@ -1376,15 +1322,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9925659474850124410
-  Name: "Ring - Quarter Beveled Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_quarter_ring_faceted_thin_001_ref"
-  }
-}
-Assets {
   Id: 9857956488554860756
   Name: "Edgeline Wavy Object Fade Advanced"
   PlatformAssetType: 2
@@ -1574,15 +1511,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9176145884981181688
-  Name: "Pipe - Half Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_half-pipe_002"
-  }
-}
-Assets {
   Id: 9081085500199892623
   Name: "Bricks Worn Stone 01"
   PlatformAssetType: 2
@@ -1679,15 +1607,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "F5_Text_000"
-  }
-}
-Assets {
-  Id: 8174910052356597265
-  Name: "Urban Vehicle Sedan - Door Rear 01 - Window 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_veh_urb_car_sdn_door_rear_001_window_001_ref"
   }
 }
 Assets {
@@ -1790,30 +1709,12 @@ Assets {
   }
 }
 Assets {
-  Id: 7374768410005309812
-  Name: "Fantasy Scroll Sealed 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fan_scroll_003_ref"
-  }
-}
-Assets {
   Id: 7363477334452929865
   Name: "Sphere"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_sphere_002"
-  }
-}
-Assets {
-  Id: 7311286345943959065
-  Name: "Fantasy Scroll - Open 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_scroll_open_001_ref"
   }
 }
 Assets {
@@ -1967,15 +1868,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_stairs_001"
-  }
-}
-Assets {
-  Id: 5836430349218932838
-  Name: "Pipe - Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pipe_003"
   }
 }
 Assets {
@@ -2546,15 +2438,6 @@ Assets {
   }
 }
 Assets {
-  Id: 1645174604280591918
-  Name: "Urban Vehicle Accessory - Sedan Fenderflare 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_veh_urb_car_acc_fenderflare_002_ref"
-  }
-}
-Assets {
   Id: 1565420669897413203
   Name: "Dust Motes Volume VFX"
   PlatformAssetType: 8
@@ -2642,15 +2525,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_fan_hay_002_uv"
-  }
-}
-Assets {
-  Id: 935712898012472846
-  Name: "Gem - Trillion Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_gem_trillion_polished_001"
   }
 }
 Assets {

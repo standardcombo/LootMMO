@@ -6,6 +6,8 @@ function Unlock(player, questId)
 end
 
 
+-- Development debug
+----[[
 Game.playerJoinedEvent:Connect(function(player)
 	player.bindingPressedEvent:Connect(function(player, action)
 		if action == "ability_extra_0" then
@@ -13,3 +15,4 @@ Game.playerJoinedEvent:Connect(function(player)
 		end
 	end)
 end)
+--]]
