@@ -28,7 +28,7 @@ function Execute()
         trapTemplate,
         {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
     )
-
+    newTrap.lifeSpan = 20
     table.insert(ActiveTraps, newTrap)
     newTrap:SetCustomProperty('OwnerID', ABILITY.owner.id)
     newTrap:SetCustomProperty('Damage', mod['Damage'])

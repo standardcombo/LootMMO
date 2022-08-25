@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 16156360374405115182
         ChildIds: 8480456800319379147
         UnregisteredParameters {
           Overrides {
@@ -52,6 +53,33 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 16156360374405115182
+        Name: "Hawk"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 486569560186734023
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 15982723968656510317
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Hawk"
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 6610429781627943709
+          }
         }
       }
       Objects {
@@ -108,6 +136,7 @@ Assets {
         ParentId: 8480456800319379147
         ChildIds: 778815806099393202
         ChildIds: 2813113855268551177
+        ChildIds: 1890061190745382447
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -153,6 +182,12 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 486569560186734023
+            }
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 14867270681238856004
             }
           }
         }
@@ -224,6 +259,59 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 1890061190745382447
+        Name: "Ability_Activator"
+        Transform {
+          Location {
+            X: 122.461304
+            Y: 78.9152527
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6195909728739521076
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 486569560186734023
+            }
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 14867270681238856004
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13356681744914853853
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 17582541084318362487
         Name: "ServerContext"
         Transform {
@@ -240,6 +328,7 @@ Assets {
         ParentId: 8480456800319379147
         ChildIds: 16165137065344390153
         ChildIds: 3891752455862176288
+        ChildIds: 13418282619058867364
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -321,10 +410,55 @@ Assets {
         }
         ParentId: 17582541084318362487
         UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2522797319109204083
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13418282619058867364
+        Name: "Loot_Ability_Spell_Hawk"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17582541084318362487
+        UnregisteredParameters {
           Overrides {
-            Name: "cs:Equipment"
+            Name: "cs:Root"
             ObjectReference {
               SubObjectId: 486569560186734023
+            }
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 14867270681238856004
             }
           }
         }
@@ -342,7 +476,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 2522797319109204083
+            Id: 9526837494737216981
           }
         }
         NetworkRelevanceDistance {

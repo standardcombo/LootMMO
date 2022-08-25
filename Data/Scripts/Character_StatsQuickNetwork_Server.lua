@@ -1,12 +1,12 @@
 local Pkey = 'CStats'
 
-while not _G.CharacterEquipAPI do
+while not _G['Character.EquipAPI'] do
     Task.Wait()
 end
 
-local EquipAPI = _G.CharacterEquipAPI
+local EquipAPI = _G['Character.EquipAPI']
 
-function UpdatedEvent(stats, player)
+function UpdatedEvent(stats, player) 
     if not Object.IsValid(player) then
         return
     end
@@ -22,7 +22,7 @@ function PlayerEquipped(character, player)
         function(_, stats)
             UpdatedEvent(stats, player)
         end
-    ) 
+    )
 end
 
 EquipAPI.playerEquippedEvent:Connect(PlayerEquipped)

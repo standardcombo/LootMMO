@@ -20,7 +20,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Tag_1"
-            String: "Undead"
+            String: "Avarian"
           }
           Overrides {
             Name: "cs:Tag_2"
@@ -28,11 +28,11 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceType"
-            String: "XP"
+            String: "0"
           }
           Overrides {
             Name: "cs:RewardResourceAmount"
-            Int: 1
+            Int: 0
           }
           Overrides {
             Name: "cs:LootId"
@@ -72,7 +72,7 @@ Assets {
           }
           Overrides {
             Name: "cs:ReturnToSpawn"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:IsPushable"
@@ -117,6 +117,10 @@ Assets {
           Overrides {
             Name: "cs:Armor"
             Float: 50
+          }
+          Overrides {
+            Name: "cs:Damage"
+            Float: 0
           }
           Overrides {
             Name: "cs:Team:tooltip"
@@ -474,6 +478,10 @@ Assets {
             Name: "cs:Armor:isrep"
             Bool: true
           }
+          Overrides {
+            Name: "cs:Damage:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -554,6 +562,7 @@ Assets {
         ChildIds: 9212741899637430156
         ChildIds: 4496221888261179657
         ChildIds: 12497658063206460068
+        ChildIds: 12217031484892374906
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -848,6 +857,235 @@ Assets {
         Script {
           ScriptAsset {
             Id: 2902220968407700742
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 12217031484892374906
+        Name: "HAWKAttackServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 581629701699634310
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ModuleManager:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ModuleManager:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:Root:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:Root:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileBody:tooltip"
+            String: "Visual template used for the body of the projectile that is shot when this NPC attacks. The projectile is spawned with rotation and direction matching those of the NPCAttackServer script object, which is why the orientation of this script within the template hierarchy is important."
+          }
+          Overrides {
+            Name: "cs:ProjectileBody:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileBody:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:MuzzleFlash:tooltip"
+            String: "Visual effect to spawn at the \"weapon muzzle\", this can also be a sword swipe effect or sometimes just a sound. It is positioned and rotated to where the NPCAttackServer is located, which is why the orientation of this script within the template hierarchy is important."
+          }
+          Overrides {
+            Name: "cs:MuzzleFlash:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:MuzzleFlash:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ImpactSurface:tooltip"
+            String: "Visual effect to spawn at the point of impact of the projectile, in case a non-character object is impacted (e.g. a wall)."
+          }
+          Overrides {
+            Name: "cs:ImpactSurface:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ImpactSurface:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter:tooltip"
+            String: "Visual effect to spawn at the point of impact of the projectile, in case a Player or NPC is impacted."
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan:tooltip"
+            String: "How many seconds the projectile will fly in the air and be destroyed in case it does not impact anything."
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed:tooltip"
+            String: "The initial speed of the projectile, in centimeters per second."
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileGravity:tooltip"
+            String: "The scale of gravity to be used for the projectile. A value of 1 represents Earth gravity. Can be greater than 1. If zero it goes in a straight line (assuming \'homing\' is disabled). If negative the projectile will move upwards over time."
+          }
+          Overrides {
+            Name: "cs:ProjectileGravity:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileGravity:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileHoming:tooltip"
+            String: "The homing property causes the projectile to accelerate towards its target. HomingDrag and HomingAcceleration are important companion properties for homing to work correctly, otherwise the projectile might orbit around the target."
+          }
+          Overrides {
+            Name: "cs:ProjectileHoming:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ProjectileHoming:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:HomingDrag:tooltip"
+            String: "\"Air drag\" to be used in case homing is enabled."
+          }
+          Overrides {
+            Name: "cs:HomingDrag:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:HomingDrag:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:HomingAcceleration:tooltip"
+            String: "Acceleration towards the target, to be used in case homing is enabled."
+          }
+          Overrides {
+            Name: "cs:HomingAcceleration:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:HomingAcceleration:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 10190610956955079352
+            }
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter"
+            AssetReference {
+              Id: 307406115803496087
+            }
+          }
+          Overrides {
+            Name: "cs:ProjectileBody"
+            AssetReference {
+              Id: 17434832614945470616
+            }
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan"
+            Float: 0.11
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed"
+            Float: 50
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7914762310391321834
           }
         }
         NetworkRelevanceDistance {

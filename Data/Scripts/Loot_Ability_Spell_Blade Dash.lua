@@ -40,7 +40,7 @@ function Execute()
         {ignoreDead = true, ignoreTeams = ABILITY.owner.team}
     )
 
-    local dmgMod = mods['Range']
+    local dmgMod = mods['DamageRange']
     local dmg = Damage.New()
     local dmgAmount = math.random(dmgMod.min, dmgMod.max)
     dmg.amount = dmgAmount

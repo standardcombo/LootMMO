@@ -13,10 +13,7 @@ local modifiers =
 modifiers['Cooldown'].calculation = function(stats)
     return 10 - stats.V * .005
 end
-modifiers['Range'].calculation = function(stats)
-    for key, value in pairs(stats) do
-        print(key, value)
-    end
+modifiers['Range'].calculation = function(stats) 
     return 1000 + stats.W
 end
 

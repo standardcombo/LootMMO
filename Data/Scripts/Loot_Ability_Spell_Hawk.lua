@@ -8,9 +8,10 @@ local function Summon()
     local Hawk =
         World.SpawnAsset(
         LOOT_ABILITY_HAWK_SUMMON,
-        {position = Owner:GetWorldPosition() + Vector3.UP*75, networkContext = NetworkContextType.NETWORKED}
+        {position = Owner:GetWorldPosition() + Vector3.UP * 75, networkContext = NetworkContextType.NETWORKED}
     )
     Hawk:SetCustomProperty('Team', Owner.team)
+    Hawk:SetCustomProperty('Damage', mod['Damage'])
     Hawk.lifeSpan = mod['Duration'] or 10
 end
 
