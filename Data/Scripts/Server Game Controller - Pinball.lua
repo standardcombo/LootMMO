@@ -39,6 +39,8 @@ function handleInteracted(_, player)
 
   Events.BroadcastToPlayer(player, "StartPinball", thisMachine.id, player)
   currentPlayer = player
+  
+  Events.Broadcast("Quest_Pinball", player, "GameStart")
 end
 
 function handleQuit(machineId, player)
@@ -62,6 +64,10 @@ function handleQuit(machineId, player)
 
   PLAY_TRIGGER.isInteractable = true
   PLAY_TRIGGER:ForceReplication()
+  
+  if player.serverUserData.hasSubmittedPinballHighscore then
+    Events.Broadcast("Quest_Pinball", player, "GameOver")
+  end
 end
 
 function handlePlayerLeft(player)
@@ -102,6 +108,8 @@ function updateHighScore()
 end
 
 function submitHighScore(machineId, player, score)
+  player.serverUserData.hasSubmittedPinballHighscore = true
+  
   if not hasLeaderboard or machineId ~= thisMachine.id then return end
 
   Leaderboards.SubmitPlayerScore(HIGH_SCORE_LEADERBOARD, player, score)
