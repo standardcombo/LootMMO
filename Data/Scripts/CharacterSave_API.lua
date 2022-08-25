@@ -1,4 +1,5 @@
-local CHARACTER = script:GetCustomProperty('Character')
+local CHARACTER = script:GetCustomProperty('SaveKey')
+
 local API = {}
 function API.GetSavedPlayerCharacterData(player)
     assert(Environment.IsServer(), 'Server Only Command')
@@ -18,7 +19,7 @@ function API.SavePlayerCharacter(player, character)
         end
         if not LastSaveExists then
             table.insert(characters, character:Serialize())
-        end 
+        end
         Storage.SetSharedPlayerData(CHARACTER, player, characters)
     end
 end

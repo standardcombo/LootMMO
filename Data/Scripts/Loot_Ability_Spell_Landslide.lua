@@ -1,7 +1,7 @@
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local Trigger = script:GetCustomProperty('Trigger'):WaitForObject()
@@ -25,7 +25,7 @@ function AddImpulseToPlayer(player)
     warn('Apply effect stun')
 
     -- Do damage
-    local dmgAmount = mod[MODIFIERS.Damage.name]
+    local dmgAmount = mod ["Damage"]
     local dmg = Damage.New(dmgAmount)
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
@@ -116,7 +116,7 @@ end
 
 function Execute()
     mod = ROOT.serverUserData.calculateModifier()
-    Trigger:SetWorldScale(Vector3.New(mod[MODIFIERS.BashRadius.name]))
+    Trigger:SetWorldScale(Vector3.New(mod["BashRadius"]))
     ToggleDash(true)
 end
 
@@ -147,7 +147,7 @@ function Cooldown()
 end
 
 function Recovery()
-    Task.Wait(mod[MODIFIERS.Range.name])
+    Task.Wait(mod[ "Range"])
     if not Object.IsValid(ABILITY) then
         return
     end

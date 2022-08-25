@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local function COMBAT()
@@ -24,11 +23,11 @@ function Attack()
     )
 
     local spherePosition = ABILITY.owner:GetWorldPosition()
-    local AttackRadius = mods[MODIFIERS.Range.name]
+    local AttackRadius = mods['Range']
     local nearbyEnemies =
         COMBAT().FindInSphere(spherePosition, AttackRadius, {ignoreTeams = ABILITY.owner.team, ignoreDead = true})
     local dmg = Damage.New()
-    dmg.amount = mods[MODIFIERS.Damage.name]
+    dmg.amount = mods['Damage']
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY
@@ -64,7 +63,7 @@ function OnAbilityExecute(Ability)
     ABILITY.serverUserData.OriginalStance = ABILITY.owner.animationStance
     ABILITY.owner.animationStance = 'unarmed_sit_chair_upright'
     warn('Remove all negative status effects')
-    Ability.owner.maxWalkSpeed = OriginalWalkSpeed + mods[MODIFIERS.Speed.name]
+    Ability.owner.maxWalkSpeed = OriginalWalkSpeed + mods['Speed']
     Task.Wait()
 end
 

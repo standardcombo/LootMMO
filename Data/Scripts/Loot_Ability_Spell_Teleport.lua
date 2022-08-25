@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local TELEPORT_FX = script:GetCustomProperty('TeleportFX')
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()

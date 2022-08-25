@@ -1,8 +1,8 @@
 local networkKey = 'Character_Equipped'
-while not _G['CharacterEquipAPI'] do
+while not  _G['Character.EquipAPI'] do
     Task.Wait()
 end
-EApi = _G['CharacterEquipAPI']
+EApi =  _G['Character.EquipAPI']
 function UpdateCharacter(player, character)
     player:SetPrivateNetworkedData(networkKey, character:Serialize())
 end

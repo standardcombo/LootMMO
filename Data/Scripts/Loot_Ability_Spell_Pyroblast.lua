@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local IMPACT = script:GetCustomProperty('Impact')
@@ -27,12 +27,12 @@ local function Impact(projectile)
     local nearbyEnemies =
         COMBAT().FindInSphere(
         impactPosition,
-        mods[MODIFIERS.Radius.name],
+        mods[ "Radius"],
         {ignoreTeams = player.team, ignoreDead = true}
     )
     for _, enemy in pairs(nearbyEnemies) do
         local dmg = Damage.New()
-        dmg.amount = mods[MODIFIERS.Damage.name] or 0
+        dmg.amount = mods ["Damage"] or 0
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = player
         dmg.sourceAbility = ABILITY

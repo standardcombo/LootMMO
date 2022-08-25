@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local function COMBAT()
@@ -23,7 +23,7 @@ function Execute()
 
     local CurrentChargeUp =
         World.SpawnAsset(chargeUpVFX, {position = position, networkContext = NetworkContextType.NETWORKED})
-    local EffectRadius = mods[MODIFIERS.Radius.name]
+    local EffectRadius = mods[ "Radius"]
     local InnerSphere = CurrentChargeUp:GetCustomProperty('InnerSphere'):WaitForObject()
     local OuterSphere = CurrentChargeUp:GetCustomProperty('OuterSphere'):WaitForObject()
     local Beam = CurrentChargeUp:GetCustomProperty('Beam'):WaitForObject()
@@ -62,7 +62,7 @@ function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
     local playersInRange = Game.FindPlayersInCylinder(dmgPosition, EffectRadius, {ignoreDead = true})
     for _, otherPlayer in ipairs(playersInRange) do
         if otherPlayer.team == SpecialAbility.owner.team then
-            local heal = -mod[MODIFIERS.Heal.name]
+            local heal = -mod['Heal']
             local dmg = Damage.New()
             dmg.amount = heal
             dmg.sourcePlayer = SpecialAbility.owner
@@ -79,7 +79,7 @@ function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
             COMBAT().ApplyDamage(attackData)
         else
             local dmg = Damage.New()
-            dmg.amount = mod[MODIFIERS.Damage.name]
+            dmg.amount = mod ["Damage"]
             dmg.sourcePlayer = SpecialAbility.owner
             dmg.sourceAbility = SpecialAbility
             local attackData = {

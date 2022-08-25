@@ -54,7 +54,6 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12444075886865937848
@@ -91,6 +90,10 @@ Assets {
                 Name: "Scale"
                 Vector {
                 }
+              }
+              Overrides {
+                Name: "CooldownDuration"
+                Float: 100
               }
             }
           }
@@ -355,6 +358,7 @@ Assets {
         ParentId: 3838131432349291648
         ChildIds: 14014254250687540069
         ChildIds: 816642046044813119
+        ChildIds: 15497626239294566932
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -464,6 +468,43 @@ Assets {
         Script {
           ScriptAsset {
             Id: 12552735593480416356
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15497626239294566932
+        Name: "NetworkEquipCheat"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5043145243056470424
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2522797319109204083
           }
         }
         NetworkRelevanceDistance {

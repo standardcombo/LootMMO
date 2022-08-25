@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ASSASSIN_ORC_BLADE_DASH_PLACEMENT_BASIC = script:GetCustomProperty('AssassinOrcBladeDashPlacementBasic')
@@ -33,7 +32,7 @@ function Execute()
     end
 
     World.SpawnAsset(ending, {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED})
-    local radius = mods[MODIFIERS.Range.name]
+    local radius = mods['Range']
     local enemiesInRange =
         COMBAT().FindInSphere(
         ABILITY.owner:GetWorldPosition(),
@@ -41,7 +40,7 @@ function Execute()
         {ignoreDead = true, ignoreTeams = ABILITY.owner.team}
     )
 
-    local dmgMod = mods[MODIFIERS.DamageRange.name]
+    local dmgMod = mods['Range']
     local dmg = Damage.New()
     local dmgAmount = math.random(dmgMod.min, dmgMod.max)
     dmg.amount = dmgAmount

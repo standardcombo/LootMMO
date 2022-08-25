@@ -1,9 +1,11 @@
-local LEVEL_API = require(script:GetCustomProperty('Level_Api'))
+while not _G['Loot.level'] do
+    Task.Wait()
+end
+local LEVEL_API = _G['Loot.level']
 
 function playerLeveledUp(player, resourceName)
-    
     if resourceName == LEVEL_API.GetLevelKey() then
-        Event.Broadcast("PlayerLevelChanged")
+        Event.Broadcast('PlayerLevelChanged')
     end
 end
 

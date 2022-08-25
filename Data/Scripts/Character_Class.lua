@@ -1,7 +1,4 @@
-local MAIN_CLASS = require(script:GetCustomProperty('Main_Class'))
-local SUB_CLASS = require(script:GetCustomProperty('SubClass'))
-local CLASS_STATS = require(script:GetCustomProperty('Class_Stats'))
-local LOOT_ABILITY_WEAPONS = require(script:GetCustomProperty('Loot_Ability_Weapons'))
+local CLASSAPI = _G['Character.Classes']
 
 local COMPONET_DATATYPE = require(script:GetCustomProperty('ComponetDatatype'))
 local component =
@@ -38,7 +35,7 @@ function component:SetClass(Class)
         Class = 'None'
     end
     self:UnequipOwner()
-    self.Class = SUB_CLASS[Class]
+    self.Class = CLASSAPI.GetClass(Class)
     assert(self.Class, 'No class Found')
 end
 function component:GetClassTable()

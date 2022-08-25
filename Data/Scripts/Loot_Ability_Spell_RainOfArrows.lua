@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
@@ -16,7 +16,7 @@ function Execute()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
 
-    local radius = mod[MODIFIERS.Radius.name]
+    local radius = mod[ "Radius"]
     local vfxScale = Vector3.New(CoreMath.Round(radius / 650, 3))
 
     World.SpawnAsset(
@@ -38,7 +38,7 @@ function Execute()
     for _, enemy in pairs(nearbyEnemies) do 
         local dmg = Damage.New()
         local player = ABILITY.owner
-        dmg.amount = mod[MODIFIERS.Damage.name]
+        dmg.amount = mod ["Damage"]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = player
         dmg.sourceAbility = SpecialAbility

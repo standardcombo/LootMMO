@@ -1,11 +1,13 @@
-local CHARACTER = require(script:GetCustomProperty('Character'))
+while not _G.CharacterContructor do
+    Task.Wait()
+end
+local CHARACTER = _G.CharacterContructor
 local API = {}
 while not _G.CC_Util do
     Task.Wait()
 end
 local CC_Util = _G.CC_Util
 local LUAEVENT = CC_Util:WaitForlibrary('Lua Event')
-
 API.playerEquippedEvent = LUAEVENT.NewSafeEvent()
 API.playerUnequippedEvent = LUAEVENT.NewSafeEvent()
 local function EnvironmentBypas()
@@ -15,7 +17,7 @@ local function EnvironmentBypas()
     return 'serverUserData'
 end
 function API.GetCurrentCharacter(player)
-    local bypas = EnvironmentBypas() 
+    local bypas = EnvironmentBypas()
     return player[bypas].CurrentCharacter
 end
 function API.UnequipCharacter(player)
@@ -24,7 +26,7 @@ function API.UnequipCharacter(player)
     end
     local currentlyEquipped = API.GetCurrentCharacter(player)
     local bypas = EnvironmentBypas()
-    player[bypas].CurrentCharacter = nil 
+    player[bypas].CurrentCharacter = nil
     if currentlyEquipped and currentlyEquipped:GetOwner() == player then
         currentlyEquipped:RemoveOwner()
         API.playerUnequippedEvent:Trigger(currentlyEquipped, player)
@@ -52,5 +54,5 @@ end
 
 CHARACTER.newCharacterFinished:Connect(SetupCharacterConnection)
 
-_G['CharacterEquipAPI'] = API
+_G['Character.EquipAPI'] = API
 return API

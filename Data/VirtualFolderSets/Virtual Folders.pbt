@@ -240,5 +240,20 @@ Assets {
       VirtualFolderPath: "Component"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Dependancies"
+      PlatformAssetType: 3
+    }
   }
 }

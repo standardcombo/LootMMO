@@ -1,7 +1,7 @@
 local COMPONENTS = require(script:GetCustomProperty('Components'))
 local requiredComponents = {}
 for key, value in pairs(COMPONENTS) do
-    table.insert(requiredComponents, require(value['Component'])) 
+    table.insert(requiredComponents, require(value['Component']))
 end
 while not _G.CC_Util do
     Task.Wait()
@@ -37,4 +37,5 @@ function Api.NewComponent(componentName)
     return newComponent
 end
 
+_G['Character.Components'] = Api
 return Api

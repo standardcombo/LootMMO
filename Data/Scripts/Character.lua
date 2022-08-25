@@ -1,4 +1,7 @@
-local COMPONENT_REGISTRY = require(script:GetCustomProperty('ComponentRegistry'))
+while not _G['Character.Components'] do
+    Task.Wait()
+end
+local COMPONENT_REGISTRY = _G['Character.Components']
 
 function TriggerEvent(event, ...)
     if event then
@@ -109,14 +112,14 @@ function character:Destroy()
 end
 function InitCharacter(NewCharacter)
     local stats = NewCharacter:GetComponent('Stats')
-    stats:SetStat("W", 0)
-    stats:SetStat("A", 0)
-    stats:SetStat("V", 0)
-    stats:SetStat("AP", 0)
-    stats:SetStat("SP", 0)
-    stats:SetStat("SR", 0)
-    stats:SetStat("B", 0)
-    stats:SetStat("H", 100)
+    stats:SetStat('W', 0)
+    stats:SetStat('A', 0)
+    stats:SetStat('V', 0)
+    stats:SetStat('AP', 0)
+    stats:SetStat('SP', 0)
+    stats:SetStat('SR', 0)
+    stats:SetStat('B', 0)
+    stats:SetStat('H', 100)
     local level = NewCharacter:GetComponent('Level')
     level.levelUpEvent:Connect(
         function(_, value)
@@ -154,5 +157,6 @@ function constructor.NewMicroCharacter()
     NewCharacter:AddComponent('Level')
     return NewCharacter
 end
+
 _G.CharacterContructor = constructor
 return constructor

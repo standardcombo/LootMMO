@@ -1,21 +1,23 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
-local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
 local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local MODIFIERAPI = _G['Ability.Modifiers']
 
-local modifiers = {
-    [MODIFIERS.Damage.name] = setmetatable({}, {__index = MODIFIERS.Damage}),
-    [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Duration.name] = setmetatable({}, {__index = MODIFIERS.Duration})
-}
+local modifiers =
+    MODIFIERAPI.SetupMultipleNewModifiers(
+    {
+        'Damage',
+        'Cooldown',
+        'Duration'
+    }
+)
 
-modifiers[MODIFIERS.Damage.name].calculation = function(stats)
+modifiers['Damage'].calculation = function(stats)
     return 40
 end
-modifiers[MODIFIERS.Cooldown.name].calculation = function(stats)
+modifiers['Cooldown'].calculation = function(stats)
     return 40
 end
-modifiers[MODIFIERS.Duration.name].calculation = function(stats)
+modifiers['Duration'].calculation = function(stats)
     return 15
 end
 

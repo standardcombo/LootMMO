@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ABILITY = script:GetCustomProperty("Ability"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 

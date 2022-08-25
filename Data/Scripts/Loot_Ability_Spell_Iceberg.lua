@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local MAGE_ABILITY_BREAK_BASIC = script:GetCustomProperty('MageIcebergBreakBasic')
 local MAGE_ORC_ABILITY_ATTACHMENT_BASIC = script:GetCustomProperty('MageOrcIcebergAttachmentBasic')
 local function COMBAT()
@@ -49,7 +48,8 @@ function Execute()
     local spawnPosition = owner:GetWorldPosition()
     spawnPosition.z = spawnPosition.z - 50
     local attachmentTemplate = spawnVFX
-    CurrentIceCube = World.SpawnAsset(attachmentTemplate, {position = spawnPosition})
+    CurrentIceCube =
+        World.SpawnAsset(attachmentTemplate, {position = spawnPosition, networkContext = NetworkContextType.NETWORKED})
 
     local DamageRadius = 500
     CurrentIceCube:SetWorldScale(Vector3.New(CoreMath.Round(DamageRadius / 300, 3)))
@@ -101,7 +101,7 @@ function Tick(deltaTime)
 
         for _, enemy in pairs(nearbyEnemies) do
             local dmg = Damage.New()
-            dmg.amount = mods[MODIFIERS.Damage.name]
+            dmg.amount = mods['Damage']
             dmg.reason = DamageReason.COMBAT
             dmg.sourcePlayer = ABILITY.owner
             dmg.sourceAbility = ABILITY
@@ -124,7 +124,7 @@ function Tick(deltaTime)
 
         -- heal every second as
         local dmg = Damage.New()
-        local heal = mods[MODIFIERS.Heal.name]
+        local heal = mods['Heal']
         dmg.amount = -heal
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = ABILITY.owner

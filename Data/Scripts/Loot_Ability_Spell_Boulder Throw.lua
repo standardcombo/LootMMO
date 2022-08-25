@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local THROW = script:GetCustomProperty('Throw'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
@@ -25,8 +24,8 @@ end
 
 function OnPickupExecute(thisAbility)
     local mods = ROOT.serverUserData.calculateModifier()
-    lastScale = mods[MODIFIERS.Radius.name]
-    lastDamage = mods[MODIFIERS.Damage.name]
+    lastScale = mods['Radius']
+    lastDamage = mods['Damage']
     if thisAbility:GetCurrentPhase() ~= AbilityPhase.EXECUTE then
         return
     end

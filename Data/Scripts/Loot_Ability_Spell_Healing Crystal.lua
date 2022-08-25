@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
@@ -25,10 +25,10 @@ function Execute()
         healingCrystal,
         {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
     )
-    local radius = mod[MODIFIERS.Range.name]
+    local radius = mod[ "Range"]
     newObject:SetWorldScale(Vector3.New(CoreMath.Round(radius / DEFAULT_Radius, 3)))
-    newObject:SetCustomProperty('Heal', mod[MODIFIERS.Heal.name])
+    newObject:SetCustomProperty('Heal', mod['Heal'])
     newObject:SetCustomProperty('Ability', ABILITY)
-    newObject.lifeSpan = mod[MODIFIERS.Duration.name]
+    newObject.lifeSpan = mod["Duration"]
 end
 ABILITY.executeEvent:Connect(Execute)

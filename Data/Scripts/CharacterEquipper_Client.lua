@@ -1,5 +1,7 @@
-local CHARACTER = require(script:GetCustomProperty('Character'))
-
+while not _G.CharacterContructor do
+    Task.Wait()
+end
+local CHARACTER = _G.CharacterContructor
 local networkKey = 'Character_Equipped'
 local LOCALPLAYER = Game.GetLocalPlayer()
 local lastCharacter = nil

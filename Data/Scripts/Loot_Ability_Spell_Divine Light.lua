@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
@@ -26,7 +26,7 @@ function Execute()
         {position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED}
     )
 
-    local StunRadius = mod[MODIFIERS.Radius.name]
+    local StunRadius = mod[ "Radius"]
     local nearbyEnemies =
         Game.FindPlayersInCylinder(ABILITY.owner:GetWorldPosition(), StunRadius, {ignoreTeams = ABILITY.owner.team})
 
@@ -36,7 +36,7 @@ function Execute()
     local statusEffects = {}
     local status = statusEffects.BLIND
     local speedStatus = statusEffects.SPEED
-    local healAmmount = mod[MODIFIERS.Heal.name]
+    local healAmmount = mod['Heal']
 
     ABILITY.owner.hitPoints = CoreMath.Clamp(ABILITY.owner.hitPoints + healAmmount, ABILITY.owner.maxHitPoints)
 

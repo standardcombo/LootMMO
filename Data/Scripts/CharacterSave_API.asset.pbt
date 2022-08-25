@@ -5,7 +5,7 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Character"
+        Name: "cs:SaveKey"
         NetReference {
           Key: "6f9084df388046e49b033c8e98257774"
           Type {

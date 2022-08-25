@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local COMBAT_CONNECTOR = require(script:GetCustomProperty("Combat_Connector"))
 
 properties = {
@@ -7,17 +7,17 @@ properties = {
 }
 
 modifiers = {
-    [MODIFIERS.DamageRange.name] = setmetatable({}, {__index = MODIFIERS.DamageRange}),
+    [ "Range"] = setmetatable({}, {__index = MODIFIERS.DamageRange}),
     [MODIFIERS.Cooldown.name] = setmetatable({}, {__index = MODIFIERS.Cooldown}),
-    [MODIFIERS.Heal.name] = setmetatable({}, {__index = MODIFIERS.Heal})
+    ['Heal'] = setmetatable({}, {__index = MODIFIERS.Heal})
 }
-modifiers[MODIFIERS.DamageRange.name].calculation = function(self, stats)
+modifiers[ "Range"].calculation = function(self, stats)
     return 2
 end
 modifiers[MODIFIERS.Cooldown.name].calculation = function(self, stats)
     return 2
 end
-modifiers[MODIFIERS.Heal.name].calculation = function(self, stats)
+modifiers['Heal'].calculation = function(self, stats)
     return 2
 end
 

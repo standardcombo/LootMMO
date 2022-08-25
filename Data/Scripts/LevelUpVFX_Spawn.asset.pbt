@@ -10,12 +10,6 @@ Assets {
           Id: 9397235616414911578
         }
       }
-      Overrides {
-        Name: "cs:Character"
-        AssetReference {
-          Id: 7282416924593627500
-        }
-      }
     }
   }
   SerializationVersion: 118

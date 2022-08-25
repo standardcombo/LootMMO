@@ -2,7 +2,7 @@ local WARRIOR_ORC_ROCK_STRIKE_PROJECTILE_BASIC = script:GetCustomProperty('Warri
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ProjectileVelocity = Vector3.ZERO
@@ -27,7 +27,7 @@ function HitObject(other)
         end
 
         local dmg = Damage.New()
-        dmg.amount = mods[MODIFIERS.Damage.name]
+        dmg.amount = mods ["Damage"]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = owner
         dmg.sourceAbility = currentAbility
@@ -106,7 +106,7 @@ function Execute()
         {position = spawnPosition, networkContext = NetworkContextType.NETWORKED}
     )
 
-    local ProjectileRange = mods[MODIFIERS.Radius.name]
+    local ProjectileRange = mods[ "Radius"]
     local MoveDuration = CoreMath.Round(ProjectileRange / ProjectileSpeed, 3)
     local LifeSpan = MoveDuration + 5
 

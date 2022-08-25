@@ -9,12 +9,6 @@ Assets {
         ObjectReference {
         }
       }
-      Overrides {
-        Name: "cs:Loot_Ability_Equipment"
-        AssetReference {
-          Id: 14219804645328186316
-        }
-      }
     }
   }
   SerializationVersion: 118

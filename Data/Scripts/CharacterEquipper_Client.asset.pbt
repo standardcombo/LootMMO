@@ -4,12 +4,6 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
-      Overrides {
-        Name: "cs:Character"
-        AssetReference {
-          Id: 7282416924593627500
-        }
-      }
     }
   }
   SerializationVersion: 118

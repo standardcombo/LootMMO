@@ -108,11 +108,17 @@ function SetActionName(name)
 end
 
 function SetEquipment(equipment)
+    if not Object.IsValid(equipment) then
+        return
+    end
     if not equipment:IsA('Equipment') then
         return
     end
     while not equipment.clientUserData.calculateModifier do
         Task.Wait()
+        if not Object.IsValid(equipment) then
+            return
+        end
     end
     root = equipment
     currentAbility = equipment:FindChildByType('Ability')

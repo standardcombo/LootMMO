@@ -1,5 +1,5 @@
 local RENDER_ROOT = script:GetCustomProperty('RenderRoot'):WaitForObject()
-local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment'))
+local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment'] 
 local Equipment = {}
 
 local LOCALPLAYER = Game.GetLocalPlayer()
@@ -21,7 +21,7 @@ end
 
 local function WriteData(value, panel)
     Task.Wait()
-    local icon = (LOOT_ABILITY_EQUIPMENT[value.name] or {})['icon']
+    local icon = LOOT_ABILITY_EQUIPMENT.GetIcon(value.name)
     if icon then
         panel.clientUserData.SetIcon(icon)
     end

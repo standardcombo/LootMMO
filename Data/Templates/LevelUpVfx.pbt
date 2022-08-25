@@ -133,7 +133,6 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
           StartDelayMin: 2
           StartDelayMax: 2
@@ -178,7 +177,6 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
         }
         NetworkRelevanceDistance {
@@ -335,7 +333,6 @@ Assets {
           Falloff: -1
           Radius: -1
           FadeOutTime: 0.6
-          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
           StopTime: 3
         }
@@ -378,7 +375,6 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
           StartDelayMin: 2.5
           StartDelayMax: 2.5
@@ -423,6 +419,7 @@ Assets {
           Volume: 2
           Falloff: -1
           Radius: -1
+          IsAttenuationEnabled: true
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -464,6 +461,7 @@ Assets {
           Volume: 2
           Falloff: -1
           Radius: -1
+          IsAttenuationEnabled: true
           StartDelayMin: 1
           StartDelayMax: 1
         }
@@ -508,6 +506,7 @@ Assets {
           Volume: 10
           Falloff: -1
           Radius: -1
+          IsAttenuationEnabled: true
           StartDelayMin: 2
           StartDelayMax: 2
         }

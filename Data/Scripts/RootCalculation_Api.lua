@@ -1,5 +1,4 @@
 local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
-
 local function UserDataBypass()
     if Environment.IsClient() then
         return 'clientUserData'

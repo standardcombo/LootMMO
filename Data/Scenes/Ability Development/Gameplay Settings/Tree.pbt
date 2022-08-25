@@ -211,7 +211,7 @@ Objects {
       JumpMaxCount: 1
       JumpVelocity: 1000
       GroundFriction: 8
-      GravityScale: 3.2
+      GravityScale: 2.8
       MaxSwimSpeed: 420
       Buoyancy: 1
       TouchForceFactor: 1

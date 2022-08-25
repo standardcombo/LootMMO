@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
@@ -30,7 +30,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY
 
-    local radius = mod[MODIFIERS.Radius.name]
+    local radius = mod["Radius"]
     local enemiesInRange =
         Game.FindPlayersInSphere(projectilePos, radius, {ignoreDead = true, ignoreTeams = ABILITY.owner.team})
 
@@ -57,7 +57,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
                 local costumeTemplate = PlayerVFX.Attachment
                 local newCostume = World.SpawnAsset(costumeTemplate)
                 newCostume:SetScale(newCostume:GetScale() * 1.5)
-                local Duration = mod[MODIFIERS.Duration.name]
+                local Duration = mod["Duration"]
                 newCostume:SetNetworkedCustomProperty('Duration', Duration)
                 newCostume:Equip(enemy)
             end

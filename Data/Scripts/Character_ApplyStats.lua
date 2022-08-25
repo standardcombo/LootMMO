@@ -1,8 +1,8 @@
-while not _G['CharacterEquipAPI'] do
+while not  _G['Character.EquipAPI'] do
     Task.Wait()
 end
 
-EApi = _G['CharacterEquipAPI']
+EApi =  _G['Character.EquipAPI']
 
 local function playerEquipped(character, player)
     local stats = character:GetComponent('Stats')

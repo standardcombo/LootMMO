@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
@@ -27,7 +27,7 @@ function OnProjectileImpacted(projectile, other, hitResult)
         )
 
         local dmg = Damage.New()
-        dmg.amount = mods[MODIFIERS.Damage.name]
+        dmg.amount = mods ["Damage"]
         dmg:SetHitResult(hitResult)
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = SpecialAbility.owner

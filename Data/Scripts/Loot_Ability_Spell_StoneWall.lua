@@ -1,4 +1,4 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
+ 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
@@ -22,7 +22,7 @@ function Execute()
         SpawnVfx,
         {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
     )
-    local newLifeSpan = mods[MODIFIERS.Duration.name]
+    local newLifeSpan = mods["Duration"]
     newObject.lifeSpan = newLifeSpan
     newObject:SetCustomProperty('lifeSpan', newLifeSpan)
 end

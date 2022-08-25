@@ -3,7 +3,7 @@ while not _G.CharacterContructor do
 end
 
 local character = _G.CharacterContructor
-local EquipAPI = _G.CharacterEquipAPI
+local EquipAPI = _G["Character.EquipAPI"]
 local SaveAPI = _G.CharacterSaveApi
 local CLASS = require(script:GetCustomProperty('Class'))
 

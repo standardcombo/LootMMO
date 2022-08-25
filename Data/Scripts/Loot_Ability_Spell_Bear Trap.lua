@@ -1,4 +1,3 @@
-local MODIFIERS = require(script:GetCustomProperty('Modifiers'))
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 
@@ -15,7 +14,7 @@ function Execute()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
-    
+
     local MaxTraps = 1
     if ActiveTraps == MaxTraps then
         local oldTrap = table.remove(ActiveTraps, 1)
@@ -32,9 +31,9 @@ function Execute()
 
     table.insert(ActiveTraps, newTrap)
     newTrap:SetCustomProperty('OwnerID', ABILITY.owner.id)
-    newTrap:SetCustomProperty('Damage', mod[MODIFIERS.Damage.name])
-    newTrap:SetCustomProperty('Stun', mod[MODIFIERS.Stun.name])
-    newTrap:SetCustomProperty('Bleed', mod[MODIFIERS.Bleed.name])
+    newTrap:SetCustomProperty('Damage', mod['Damage'])
+    newTrap:SetCustomProperty('Stun', mod['Stun'])
+    newTrap:SetCustomProperty('Bleed', mod['Bleed'])
 end
 
 ABILITY.executeEvent:Connect(Execute)

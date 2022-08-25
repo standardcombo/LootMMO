@@ -1,9 +1,8 @@
-while not _G['CharacterEquipAPI'] do
+while not _G['Character.EquipAPI'] do
     Task.Wait()
 end
-local EAPI = _G['CharacterEquipAPI']
+local EAPI = _G['Character.EquipAPI']
 local API = {}
-_G['Loot.Stats'] = API
 
 function API.GetStats(player)
     if player and player.IsA and player:IsA('Player') then
@@ -25,4 +24,4 @@ function API.GetStat(player, stat)
     end
     return 0
 end
-return API
+_G['Loot.Stats'] = API
