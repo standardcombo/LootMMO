@@ -21,7 +21,8 @@ local mapping = {
 local function EquipedLoot(lootBag)
     local TotalStats = {}
     for i, item in pairs(lootBag.items) do
-        local itemContruct = _G['Item.Constructor'].New({item = item.name, order = item.order})
+        local itemContruct =
+            _G['Item.Constructor'].New({item = item.name, order = item.order, greatness = item.greatness})
         local Values = itemContruct:CalculateStats()
         for key, value in pairs(Values) do
             if not TotalStats[key] then

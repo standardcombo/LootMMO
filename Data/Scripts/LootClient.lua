@@ -81,7 +81,7 @@ function EquipLoot(lootBag)
     -- Set item icons and names
     for i, item in pairs(lootBag.items) do
         local def = _G.Items.GetDefinition(item.name)
-        local itemContruct = _G['Item.Constructor'].New({item = item.name, order = item.order})
+        local itemContruct = _G['Item.Constructor'].New({item = item.name, order = item.order, greatness = item.greatness})
         table.insert(definitions, def)
 
         itemImages[i]:SetImage(def.icon)
