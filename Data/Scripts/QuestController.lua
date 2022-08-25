@@ -55,6 +55,12 @@ function API.GetQuest(id)
 	return QUEST_METADATA[id]
 end
 
+-- Client/Server
+function API.GetQuestObjective(questId, objectiveIndex)
+	local quest = QUEST_METADATA[questId]
+	return quest.objectives[objectiveIndex]
+end
+
 
 -- Client/Server
 function API.GetPlayerData(player)

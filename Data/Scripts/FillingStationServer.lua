@@ -10,6 +10,8 @@ function OnFillCup(player, obj)
 		if exists and itemId == ITEM_ID then
 			local def = _G.Consumables.GetDefinition(ITEM_ID)
 			equip:SetCustomProperty("usesRemaining", def.numberOfUses)
+			
+			Events.Broadcast("Quest_Pint", player, "FillPint")
 			return
 		end
 	end
