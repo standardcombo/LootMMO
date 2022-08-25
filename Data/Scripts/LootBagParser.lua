@@ -24,6 +24,7 @@
 		name (string) - Primary identifier for the item (e.g. Warhammer)
 		fullName (string) - Complete item name, as seen in the SVG image
 		type (string) - The equipment slot where the item goes (e.g. Head)
+		greatness (integer) - "Level" of the item.
 		order (string) - One of the 16 orders of Loot. NIL if no order.
 		prefix (string) - Prefix of the item's special name. NIL if no special name.
 		suffix (string) - Suffix of the item's special name. NIL if no special name.
@@ -409,6 +410,18 @@ function ParseItemSVG(tokenMetadata)
 		local order
 		itemName, order = CoreString.Split(itemName, {delimiters = {" of "}})
 		
+		-- Greatness
+		local greatness = 1
+		if bonus > 0 then
+			greatness = 20
+			
+		elseif prefix ~= nil then
+			greatness = 19
+			
+		elseif order then
+			greatness = 15
+		end
+		
 		--print(fullName)
 		--print(TYPES[i], prefix, suffix, itemName, order, bonus)
 		
@@ -420,6 +433,7 @@ function ParseItemSVG(tokenMetadata)
 			name = itemName,
 			fullName = fullName,
 			type = type,
+			greatness = greatness,
 			order = order,
 			prefix = prefix,
 			suffix = suffix,
