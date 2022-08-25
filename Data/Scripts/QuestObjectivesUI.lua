@@ -39,6 +39,7 @@ local selectedRow = nil
 local nextSelectedObjective = nil
 local nextSelectedRow = nil
 
+local pendingUpdateData = false
 
 local STATE_HIDDEN = 0
 local STATE_COLLAPSED = 1
@@ -123,7 +124,11 @@ function Tick(deltaTime)
 		return
 	end
 	ROOT.visibility = Visibility.INHERIT
-
+	
+	if pendingUpdateData then
+		deltaTime = deltaTime * 2
+	end
+	
 	stateElapsedTime = stateElapsedTime + deltaTime
 
 	local t = deltaTime * LERP_SPEED
@@ -197,6 +202,10 @@ function Tick(deltaTime)
 					SetState(STATE_HIDDEN)
 				end
 			end
+			
+			if pendingUpdateData then
+				UpdateData()
+			end
 		else
 			selectedRow.opacity = CoreMath.Lerp(selectedRow.opacity, 0, t)
 			if nextSelectedRow then
@@ -254,6 +263,14 @@ function UpdateContents()
 end
 
 function UpdateData()
+	if currentState == STATE_COMPLETED_1
+	or currentState == STATE_COMPLETED_2
+	or currentState == STATE_COMPLETED_3 then
+		pendingUpdateData = true
+		return
+	end
+	pendingUpdateData = false
+	
 	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
 	
 	-- Check if the currently selected objective has been completed
