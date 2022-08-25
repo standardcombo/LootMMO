@@ -81,6 +81,8 @@ end
 
 
 function SetEnabled(equipment, value)
+	if not Object.IsValid(equipment) then return end
+	
 	equipment.isEnabled = value
 	
 	for _,ability in ipairs(equipment:GetAbilities()) do
