@@ -67,13 +67,17 @@ end
 
 
 function SetState(newState)
+	-- Exit state changes
+	if currentState == STATE_EXPANDED then
+		_G.CursorStack.Disable()
+	end
+	
+	-- Enter state changes
 	if newState == STATE_HIDDEN then
 		-- Nothing
 		
 	elseif newState == STATE_COLLAPSED then
-		if currentState ~= STATE_HIDDEN then
-			_G.CursorStack.Disable()
-		end
+		-- Nothing
 		
 	elseif newState == STATE_EXPANDED then
 		_G.CursorStack.Enable()
@@ -87,8 +91,6 @@ function SetState(newState)
 		UpdateContents()
 		
 	elseif newState == STATE_SELECTED then
-		_G.CursorStack.Disable()
-	
 		local pos = selectedRow:GetAbsolutePosition()
 		selectedRow.parent = ROOT
 		selectedRow:SetAbsolutePosition(pos)
