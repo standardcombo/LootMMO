@@ -266,6 +266,8 @@ function CompleteQuest(player, questId)
 	    })
 	}
 	for _,unlockId in ipairs(ids) do
+		unlockId = CoreString.Trim(unlockId)
+		
 		API.UnlockForPlayer(player, unlockId)
 	end
 end
