@@ -19,7 +19,7 @@ Objects {
   }
   ParentId: 2020934973811176208
   ChildIds: 3038150369857671256
-  ChildIds: 4579299336230778609
+  ChildIds: 10831113843908275835
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -46,8 +46,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4579299336230778609
-  Name: "VFX"
+  Id: 10831113843908275835
+  Name: "Basic Water Splash VFX"
   Transform {
     Location {
       Z: -9.64746094
@@ -55,48 +55,12 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 1.89092767
-      Y: 1.89092767
-      Z: 1.89092767
+      X: 3.91404438
+      Y: 3.91404438
+      Z: 3.91404438
     }
   }
   ParentId: 9585919341651960233
-  ChildIds: 10831113843908275835
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10831113843908275835
-  Name: "Basic Water Splash VFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 2.06990695
-      Y: 2.06990695
-      Z: 2.06990695
-    }
-  }
-  ParentId: 4579299336230778609
   UnregisteredParameters {
     Overrides {
       Name: "bp:Enable Mist"
@@ -181,7 +145,7 @@ Objects {
     Overrides {
       Name: "cs:Object"
       ObjectReference {
-        SelfId: 4579299336230778609
+        SelfId: 10831113843908275835
       }
     }
   }

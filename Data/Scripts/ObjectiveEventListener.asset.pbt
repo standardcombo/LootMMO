@@ -20,6 +20,22 @@ Assets {
         Name: "cs:ObjectID"
         String: ""
       }
+      Overrides {
+        Name: "cs:QuestID:category"
+        String: "QuestSystemConnection"
+      }
+      Overrides {
+        Name: "cs:ObjectiveIndex:category"
+        String: "QuestSystemConnection"
+      }
+      Overrides {
+        Name: "cs:EventID:category"
+        String: "GameplayConnection"
+      }
+      Overrides {
+        Name: "cs:ObjectID:category"
+        String: "GameplayConnection"
+      }
     }
   }
   SerializationVersion: 118
