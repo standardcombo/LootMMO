@@ -35,6 +35,8 @@ script.parent.collidedEvent:Connect(function(_, hitResult)
 			dmg.reason = DamageReason.COMBAT
 			dmg.sourcePlayer = script.parent.serverUserData.throwingPlayer
 			target:ApplyDamage(dmg)
+			
+			Events.Broadcast("Quest_ThrowChair", dmg.sourcePlayer, "Kill")
 		end
 	end
 end)

@@ -7,6 +7,10 @@ local OBJECT_ID = script:GetCustomProperty("ObjectID")
 
 function OnEvent(player, objectId)
 	if objectId ~= OBJECT_ID then return end
+	if not Object.IsValid(player) then
+		warn("Invalid player in ObjectiveEventListener::OnEvent() "..QUEST_ID..","..OBJECTIVE_INDEX..","..OBJECT_ID)
+		return
+	end
 	
 	print("ObjectiveEventListener::OnEvent() "..player.name..","..QUEST_ID..","..OBJECTIVE_INDEX..","..OBJECT_ID)
 	

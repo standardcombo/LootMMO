@@ -50,6 +50,8 @@ function OnPickup(player, equipment)
 		resetTask = nil
 	end
 	
+	Events.Broadcast("Quest_ThrowChair", player, "Pickup")
+	
 	--EQUIPMENT:SetReplicationEnabled(true)
 	
 	if COLLIDER then
@@ -93,6 +95,8 @@ EQUIPMENT.equippedEvent:Connect(OnEquipped)
 
 
 function OnThrow(ability)
+	Events.Broadcast("Quest_ThrowChair", ability.owner, "Throw")
+	
 	-- Spawn the physics object that will contain the equipment
 	local obj = SpawnPhysicsObject()
 	
