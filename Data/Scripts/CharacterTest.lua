@@ -1,10 +1,10 @@
-while not _G.CharacterContructor do
+while not _G['Character.Contsructor'] do
     Task.Wait()
 end
 
-local character = _G.CharacterContructor
+local character = _G['Character.Contsructor']
 local EquipAPI = _G["Character.EquipAPI"]
-local SaveAPI = _G.CharacterSaveApi
+local SaveAPI = _G['Character.SaveApi']
 local CLASS = require(script:GetCustomProperty('Class'))
 
 function PLAYERJOINED(player)
@@ -71,3 +71,4 @@ function OnReceiveMessage(player, params)
 end
 
 Chat.receiveMessageHook:Connect(OnReceiveMessage)
+ 

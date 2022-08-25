@@ -34,5 +34,5 @@ function API.DeleteSavedPlayerCharacter(player, characterid)
         end
     end
 end
-_G['CharacterSaveApi'] = API
+_G['Character.SaveApi'] = API
 return API

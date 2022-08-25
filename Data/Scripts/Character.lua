@@ -158,5 +158,5 @@ function constructor.NewMicroCharacter()
     return NewCharacter
 end
 
-_G.CharacterContructor = constructor
+_G['Character.Contsructor'] = constructor
 return constructor

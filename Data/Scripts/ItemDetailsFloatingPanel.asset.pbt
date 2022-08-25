@@ -14,6 +14,11 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:Stats"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 118
