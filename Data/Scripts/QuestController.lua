@@ -155,6 +155,9 @@ end
 
 -- Client/Server
 function API.IsActive(player, obj)
+	if not player or not obj then
+		error("Invalid parameters to QuestController::IsActive(Player, objective data)")
+	end
 	local playerData = API.GetPlayerData(player)
 	if playerData then
 		for k,entry in ipairs(playerData.active) do

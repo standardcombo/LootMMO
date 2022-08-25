@@ -185,13 +185,13 @@ function Tick(deltaTime)
 		
 	elseif currentState == STATE_COMPLETED_3 then
 		if stateElapsedTime > 1 then
-			selectedObjective = nextSelectedObjective
-			selectedRow = nextSelectedRow
-			nextSelectedObjective = nil
-			nextSelectedRow = nil
+			selectedObjective = nil
+			selectedRow = nil
 			
-			if selectedRow then
-				SetState(STATE_SELECTED)
+			if nextSelectedObjective then
+				OnObjectiveSelected(nextSelectedObjective, nextSelectedRow)
+				nextSelectedObjective = nil
+				nextSelectedRow = nil
 				
 			else
 				UpdateBadge(true)
@@ -235,6 +235,10 @@ end
 function OnObjectiveSelected(obj, uiRow)
 	--print("QuestObjectivesUI: " ..obj.questId .." selected")
 	
+	-- Tell the quest system to select this objective
+	_G.QuestController.SelectObjective(PLAYER, obj)
+	
+	-- Go into selected UI state
 	selectedObjective = obj
 	selectedRow = uiRow
 	

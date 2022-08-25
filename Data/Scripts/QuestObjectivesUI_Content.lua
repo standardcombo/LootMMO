@@ -82,9 +82,6 @@ function OnRowButtonPressed(button)
 	local row = button.parent
 	local obj = row.clientUserData.objective
 	
-	-- Tell the quest system to select this objective
-	_G.QuestController.SelectObjective(Game.GetLocalPlayer(), obj)
-	
 	-- Update the selection borders
 	for _,r in ipairs(rows) do
 		if r == row then
