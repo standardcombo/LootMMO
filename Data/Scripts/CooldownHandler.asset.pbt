@@ -18,12 +18,6 @@ Assets {
         ObjectReference {
         }
       }
-      Overrides {
-        Name: "cs:Modifiables"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
     }
   }
   SerializationVersion: 118

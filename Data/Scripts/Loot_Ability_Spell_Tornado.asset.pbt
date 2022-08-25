@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:MageOrcTornadoPlacementBasic"
         AssetReference {
           Id: 7827469757850190083

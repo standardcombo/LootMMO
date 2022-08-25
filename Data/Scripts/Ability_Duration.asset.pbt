@@ -14,12 +14,6 @@ Assets {
         ObjectReference {
         }
       }
-      Overrides {
-        Name: "cs:Loot_Ability_Modifiables"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
     }
   }
   SerializationVersion: 118

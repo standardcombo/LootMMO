@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:Combat_Connector"
         AssetReference {
           Id: 12483969483192492711

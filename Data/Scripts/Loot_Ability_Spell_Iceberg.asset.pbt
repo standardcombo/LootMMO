@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:MageIcebergBreakBasic"
         AssetReference {
           Id: 12874348109318974616

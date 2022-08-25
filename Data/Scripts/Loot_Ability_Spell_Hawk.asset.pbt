@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:Icon"
         AssetReference {
           Id: 17916227224964659027

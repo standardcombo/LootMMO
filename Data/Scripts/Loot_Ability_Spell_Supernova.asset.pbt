@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:HealerOrcSupernovaChargeBasic"
         AssetReference {
           Id: 18127499291287709125

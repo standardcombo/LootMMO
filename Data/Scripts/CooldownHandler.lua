@@ -4,8 +4,7 @@ if not ABILITY then
     return
 end
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local DEFAULT_COOLDOWN = script:GetCustomProperty('DefaultCooldown')
-local MODIFIABLES = require(script:GetCustomProperty('Modifiables'))
+local DEFAULT_COOLDOWN = script:GetCustomProperty('DefaultCooldown') 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local startTime = 0
@@ -16,7 +15,7 @@ function CoolDown()
         return
     end
     startTime = time()
-    endTime = startTime + (ROOT.clientUserData.calculateModifier()[MODIFIABLES.Cooldown.name] or DEFAULT_COOLDOWN)
+    endTime = startTime + (ROOT.clientUserData.calculateModifier()['Cooldown'] or DEFAULT_COOLDOWN)
     while ABILITY:GetCurrentPhase() == AbilityPhase.COOLDOWN do
         Task.Wait()
         if not Object.IsValid(ABILITY) then

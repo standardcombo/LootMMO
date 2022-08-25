@@ -11,12 +11,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Modifiers"
-        AssetReference {
-          Id: 10388495764372049008
-        }
-      }
-      Overrides {
         Name: "cs:WarriorOrcRockStrikeProjectileBasic"
         AssetReference {
           Id: 17988687176319291930
