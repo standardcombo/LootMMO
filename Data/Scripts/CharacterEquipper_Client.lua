@@ -1,7 +1,7 @@
-while not _G.CharacterContructor do
+while not _G['Character.Contsructor'] do
     Task.Wait()
 end
-local CHARACTER = _G.CharacterContructor
+local CHARACTER = _G['Character.Contsructor']
 local networkKey = 'Character_Equipped'
 local LOCALPLAYER = Game.GetLocalPlayer()
 local lastCharacter = nil

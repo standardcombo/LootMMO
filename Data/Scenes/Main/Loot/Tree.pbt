@@ -5127,6 +5127,12 @@ Objects {
         SelfId: 16849917493827432432
       }
     }
+    Overrides {
+      Name: "cs:Stats"
+      ObjectReference {
+        SelfId: 9581930954157516698
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -6354,6 +6360,7 @@ Objects {
   ChildIds: 13793012934002156771
   ChildIds: 250188923737532613
   ChildIds: 6139084331364420974
+  ChildIds: 16439543795810671448
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -6393,6 +6400,93 @@ Objects {
         }
       }
     }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16439543795810671448
+  Name: "ItemDetailsCenterPanel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18267215380271135453
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Health"
+      ObjectReference {
+        SelfId: 290925879972868764
+      }
+    }
+    Overrides {
+      Name: "cs:Block"
+      ObjectReference {
+        SelfId: 1677213945948876035
+      }
+    }
+    Overrides {
+      Name: "cs:AttackPower"
+      ObjectReference {
+        SelfId: 13483501607670396691
+      }
+    }
+    Overrides {
+      Name: "cs:SkillPower"
+      ObjectReference {
+        SelfId: 17217960869403390988
+      }
+    }
+    Overrides {
+      Name: "cs:SkillResist"
+      ObjectReference {
+        SelfId: 5714400373216906490
+      }
+    }
+    Overrides {
+      Name: "cs:Wisdom"
+      ObjectReference {
+        SelfId: 5948352461368795930
+      }
+    }
+    Overrides {
+      Name: "cs:Agility"
+      ObjectReference {
+        SelfId: 8597912439706722749
+      }
+    }
+    Overrides {
+      Name: "cs:Vitality"
+      ObjectReference {
+        SelfId: 6136487660860385159
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 17810008574900847327
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -18177,6 +18271,46 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Item Data Loader"
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 12921599339423611859
+  Name: "Dependencies"
+  Transform {
+    Location {
+      X: -31311.1699
+      Y: -2048.46
+      Z: -14448.2715
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2852741563843667238
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Dependencies"
+  }
+  IsAdvanced: true
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
