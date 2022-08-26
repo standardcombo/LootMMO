@@ -31,7 +31,7 @@ local function EquipedLoot(lootBag)
             TotalStats[key] = TotalStats[key] + value
         end
     end
-
+    TotalStats['H'] = TotalStats['H'] + 100
     for key, value in pairs(TotalStats) do
         for Textbox, identifier in pairs(mapping) do
             if identifier == key then
