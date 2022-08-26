@@ -4,28 +4,37 @@ local API = {
 API.version = 0.1
 API.name = 'UI_CursorHandler'
 API.desc = 'handler for UI cursor so mouse will be visible with UI open'
-local toggleFunc = function() 
+local toggleFunc = function()
 end
+
+local isOpen = false
 
 --[[if not Environment.IsPreview() then 
     UI.SetCursorLockedToViewport(true)
 end ]]
-
-function Open() 
+function Open()
+    if isOpen then
+        return
+    end
+    isOpen = true
+    --if not UI.CanCursorInteractWithUI() or not UI.IsCursorVisible() then
+    --UI.SetCanCursorInteractWithUI(true)
+    --UI.SetCursorVisible(true)
+    _G.CursorStack.Enable()
+    --end
     toggleFunc = function()
-        --if not UI.CanCursorInteractWithUI() or not UI.IsCursorVisible() then
-            --UI.SetCanCursorInteractWithUI(true)
-            --UI.SetCursorVisible(true)
-			_G.CursorStack.Enable()
-        --end
     end
 end
 
-function Close() 
+function Close()
+    if not isOpen then
+        return
+    end
+    isOpen = false
     --if UI.CanCursorInteractWithUI() or UI.IsCursorVisible() then
-        --UI.SetCanCursorInteractWithUI(false)
-        --UI.SetCursorVisible(false)
-		_G.CursorStack.Disable()
+    --UI.SetCanCursorInteractWithUI(false)
+    --UI.SetCursorVisible(false)
+    _G.CursorStack.Disable()
     --end
     toggleFunc = function()
     end
@@ -54,9 +63,14 @@ function API:UnRegisterOpen(id)
     self:Check()
 end
 
-Task.Spawn(function ()
-    toggleFunc()
-    Task.Wait()
-end).repeatCount = -1
-
+--[[
+    
+    Task.Spawn(
+        function()
+            toggleFunc()
+            Task.Wait()
+        end
+    ).repeatCount = -1
+    
+]]
 return API
