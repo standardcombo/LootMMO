@@ -1,10 +1,10 @@
 Assets {
-  Id: 16532880832873788683
-  Name: "BG Flat 002"
+  Id: 17866554501249590175
+  Name: "Abstract Frame 09"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_019"
+    AssetId: "Core_UI_AbstractPackFrame_003"
   }
 }
 Assets {
@@ -35,12 +35,12 @@ Assets {
   }
 }
 Assets {
-  Id: 14898720881166352317
-  Name: "Frame Outlined 002"
-  PlatformAssetType: 9
+  Id: 15165554833363844727
+  Name: "Amarante"
+  PlatformAssetType: 28
   PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid4px_019"
+    AssetType: "FontAssetRef"
+    AssetId: "AmaranteRegular_ref"
   }
 }
 Assets {
@@ -77,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_urb_office_carpet_004_uv_ref"
+  }
+}
+Assets {
+  Id: 12798912140996043624
+  Name: "Abstract Background 02"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_003"
   }
 }
 Assets {
@@ -233,15 +242,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7542904062235710665
-  Name: "Frame Outline Thin 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameOutline_020"
-  }
-}
-Assets {
   Id: 4437160827424791669
   Name: "Large Wood Beam 8m"
   PlatformAssetType: 1
@@ -260,30 +260,12 @@ Assets {
   }
 }
 Assets {
-  Id: 3221783385069923703
-  Name: "Fantasy Coins 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Coins_004"
-  }
-}
-Assets {
   Id: 1909548803215530403
   Name: "Fantasy Bookshelf Middle"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_bookshelf_middle_001_ref"
-  }
-}
-Assets {
-  Id: 817798964168098861
-  Name: "Reward Point Icon"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Reward_Point"
   }
 }
 Assets {
