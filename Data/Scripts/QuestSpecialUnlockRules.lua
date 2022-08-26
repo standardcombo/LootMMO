@@ -6,8 +6,20 @@ function Unlock(player, questId)
 end
 
 
+function OnAppStateEnter(player, newState, prevState)
+	if newState == _G.AppState.SocialHub then
+		--print("QuestSpecialUnlockRules::OnAppStateEnter()", player.name, newState, prevState)
+		local playerLevel = player:GetResource("Level")
+		if playerLevel < 2 then
+			Unlock(player, "Welcome")
+		end
+	end
+end
+Events.Connect("AppState.Enter", OnAppStateEnter)
+
+
 -- Development debug
-----[[
+--[[
 Game.playerJoinedEvent:Connect(function(player)
 	player.bindingPressedEvent:Connect(function(player, action)
 		if action == "ability_extra_0" then
@@ -16,3 +28,4 @@ Game.playerJoinedEvent:Connect(function(player)
 	end)
 end)
 --]]
+

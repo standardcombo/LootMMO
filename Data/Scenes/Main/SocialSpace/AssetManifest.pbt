@@ -224,15 +224,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16400015035755492128
-  Name: "Military Crate Hinge 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_mil_crate_hinge_001_ref"
-  }
-}
-Assets {
   Id: 16388825162191980240
   Name: "Rock Pile 002"
   PlatformAssetType: 1
@@ -266,15 +257,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bucket_001"
-  }
-}
-Assets {
-  Id: 16209745308327449207
-  Name: "Curtain Rod 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_curtain_rod_01"
   }
 }
 Assets {
@@ -383,15 +365,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_heart_polished_001"
-  }
-}
-Assets {
-  Id: 15314709369195466797
-  Name: "Parallelepiped - Horizontal "
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_parallelepiped_003"
   }
 }
 Assets {
@@ -755,15 +728,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13707562474042671468
-  Name: "Roof Square Shingles 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_roof_square_shingles_001_uv"
-  }
-}
-Assets {
   Id: 13642204757580273705
   Name: "Cube - Chamfered Small Polished"
   PlatformAssetType: 1
@@ -836,15 +800,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13072369037111211217
-  Name: "Whitebox Wall 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_gen_whitebox_wall_001"
-  }
-}
-Assets {
   Id: 12997470107562757952
   Name: "Bush Leafy Tall 01"
   PlatformAssetType: 1
@@ -878,15 +833,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Core_UI_AbstractPack_Background_003"
-  }
-}
-Assets {
-  Id: 12734953040941445440
-  Name: "Whitebox Roof 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_gen_whitebox_roof_001"
   }
 }
 Assets {
@@ -1421,15 +1367,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9448016139925936771
-  Name: "Whitebox Wall 01 Triangle"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_gen_whitebox_wall_001_tri"
-  }
-}
-Assets {
   Id: 9403907716608607511
   Name: "Ovoid - Hollow 01"
   PlatformAssetType: 1
@@ -1481,15 +1418,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_mil_metal_corrugated_metal_002_uv_ref"
-  }
-}
-Assets {
-  Id: 9229199904602472614
-  Name: "Craftsman Roof 01 Cap"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_sub_craftsman_roof_001_cap"
   }
 }
 Assets {
@@ -1547,24 +1475,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8902269340854807133
-  Name: "Prism - 8-Sided Half"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_half_octagon_001"
-  }
-}
-Assets {
-  Id: 8782085183385730141
-  Name: "Container - Rectangle Thick 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_container_rectangle_thick_ref"
-  }
-}
-Assets {
   Id: 8778472540254762742
   Name: "Ring - Quarter Beveled Thick"
   PlatformAssetType: 1
@@ -1589,15 +1499,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_table_right_001"
-  }
-}
-Assets {
-  Id: 8357575891221259834
-  Name: "Pyramid - 4-Sided Truncated"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pyramid_truncated_001"
   }
 }
 Assets {
@@ -1652,15 +1553,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cylinder_rounded_002"
-  }
-}
-Assets {
-  Id: 7648717670233836541
-  Name: "Craftsman Roof 01 Eaves"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_sub_craftsman_roof_eaves_001"
   }
 }
 Assets {
@@ -2393,15 +2285,6 @@ Assets {
   }
 }
 Assets {
-  Id: 1909548803215530403
-  Name: "Fantasy Bookshelf Middle"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_bookshelf_middle_001_ref"
-  }
-}
-Assets {
   Id: 1870310099439066584
   Name: "Volumetric Fog Injector Volume VFX"
   PlatformAssetType: 8
@@ -2570,15 +2453,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cylinder_rounded_003"
-  }
-}
-Assets {
-  Id: 453487308539368474
-  Name: "Craftsman Wall 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_sub_craftsman_wall_002"
   }
 }
 Assets {
