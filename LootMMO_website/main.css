@@ -1,0 +1,98 @@
+
+body {
+	background-color:#151515;
+	font-family: Verdana,sans-serif;
+    color: #dddddd;
+	font-size: 1.3rem;
+	line-height: 2.5rem;
+	padding-top: 0px;
+	margin-top: 0px;
+	font-weight: lighter;
+}
+
+div {
+	white-space: pre-wrap;
+	width: 100%;
+}
+
+#content {
+	background-color:#000000;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	padding-left: 3em;
+	padding-right: 3em;
+	width:800px;
+}
+
+#logo a img { 
+	display: block;
+	margin: auto;
+}
+
+h1 {
+	font-family: "EB Garamond", Times, serif;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 2.5em;
+	line-height: 1;
+	margin-top: 1rem;
+	margin-bottom: -15px;
+	padding-left: 1.1em;
+	background-image: url("triskelion_40px.png");
+	background-position: left calc(50% + 1px);
+	background-repeat: no-repeat;
+}
+
+.h1i {
+	float: left;
+	vertical-align: baseline;
+}
+
+a {
+	color: #b0b0b0;
+}
+a:hover {
+	color: white;
+}
+a:visited {
+	color: #707070;
+}
+
+.yt {
+	position: relative;
+	padding-bottom: 53.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+.yt,
+	.yt iframe {
+	max-width: 1633px;
+	max-height: 1080px;
+}
+.yt iframe {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.caption {
+	color: #888888;
+	font-style: italic;
+	font-size: 1rem;
+	line-height: 2rem;
+}
+
+#discord {
+	background-image: url("discord_icon_40px.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px 40px;
+	position: fixed;
+	top: 15px;
+	left: calc(50% + 475px);
+	width: 60px;
+	height: 60px;
+}
