@@ -1,6 +1,6 @@
 Assets {
   Id: 3171946166877174873
-  Name: "HawkPoof"
+  Name: "EaglePoof"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

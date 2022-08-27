@@ -1,6 +1,6 @@
 Assets {
   Id: 6610429781627943709
-  Name: "Hawk"
+  Name: "Eagle"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

@@ -1,6 +1,6 @@
 Assets {
   Id: 2260888853798543825
-  Name: "HawkMobController"
+  Name: "EagleMobController"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

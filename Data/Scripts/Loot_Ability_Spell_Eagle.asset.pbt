@@ -1,6 +1,6 @@
 Assets {
   Id: 9526837494737216981
-  Name: "Loot_Ability_Spell_Hawk"
+  Name: "Loot_Ability_Spell_Eagle"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

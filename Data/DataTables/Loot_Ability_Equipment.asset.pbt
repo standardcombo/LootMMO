@@ -196,14 +196,5 @@ Assets {
         AssetId: "UI_Fantasy_Ability_Blue_023"
       }
     }
-    Assets {
-      Id: 405738147373459326
-      Name: "Fantasy Ability Teal 004"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Teal_004"
-      }
-    }
   }
 }
