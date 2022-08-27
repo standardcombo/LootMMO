@@ -1,13 +1,13 @@
 Assets {
   Id: 2859877296592112489
-  Name: "Loot_Ability_Equipment_Hawk"
+  Name: "Loot_Ability_Equipment_Eagle"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 486569560186734023
       Objects {
         Id: 486569560186734023
-        Name: "Loot_Ability_Equipment_Hawk"
+        Name: "Loot_Ability_Equipment_Eagle"
         Transform {
           Scale {
             X: 1
@@ -73,7 +73,7 @@ Assets {
             value {
               Overrides {
                 Name: "Name"
-                String: "Hawk"
+                String: "Eagle"
               }
             }
           }

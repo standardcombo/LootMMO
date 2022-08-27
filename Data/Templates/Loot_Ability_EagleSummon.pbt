@@ -1,6 +1,6 @@
 Assets {
   Id: 6400205909178909512
-  Name: "Loot_Ability_HawkSummon"
+  Name: "Loot_Ability_EagleSummon"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

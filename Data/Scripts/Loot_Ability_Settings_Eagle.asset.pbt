@@ -1,6 +1,6 @@
 Assets {
   Id: 9751108853316472259
-  Name: "Loot_Ability_Settings_Hawk"
+  Name: "Loot_Ability_Settings_Eagle"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

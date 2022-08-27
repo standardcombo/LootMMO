@@ -1,6 +1,6 @@
 Assets {
   Id: 7914762310391321834
-  Name: "HAWKAttackServer"
+  Name: "EagleAttackServer"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
