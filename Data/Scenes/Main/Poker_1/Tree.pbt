@@ -1,4 +1,4 @@
-Name: "Texas Holdem"
+Name: "Poker_1"
 RootId: 3210522152049352639
 Objects {
   Id: 16698996039252637075

@@ -4628,7 +4628,7 @@ Assets {
             }
           }
           Text {
-            Label: "TEXAS HOLD\'EM"
+            Label: "REALMS HOLD\'EM"
             Color {
               R: 1
               G: 0.456411064
