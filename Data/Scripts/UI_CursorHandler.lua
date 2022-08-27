@@ -49,6 +49,11 @@ function API:Check()
 end
 
 function API:RegisterOpen(id)
+    for key, value in pairs(self.registered) do
+        if value == id then
+            return
+        end
+    end
     table.insert(self.registered, id)
     self:Check()
 end

@@ -1,7 +1,7 @@
 "ClassIdentifier[String]","Stat[String]","MainClass[String]","Weapon[String]","Ability1[String]","Ability2[String]","Ability3[String]","Ability4[String]","Ability5[String]","CharacterArt[Asset Reference]"
 "Druid","W","Hunter","","Blade Dash","","","","","0BADBADBADBADBAD"
 "Rogue","A","Hunter","","Blade Dash","Death's Shadow","Entangle","Bear Trap","Rain Of Arrows","0BADBADBADBADBAD"
-"Ranger","V","Hunter","","Blade Dash","Rain Of Arrows","Entangle","Bear Trap","Hawk","0BADBADBADBADBAD"
+"Ranger","V","Hunter","","Blade Dash","Rain Of Arrows","Entangle","Bear Trap","Eagle","0BADBADBADBADBAD"
 "Warlock","W","Mage","","Teleport","Raise Dead","Shadow","Living Alchemy","Protection","0BADBADBADBADBAD"
 "Sorcerer","A","Mage","","Teleport","Tornado","Animorph Potion","Iceberg","Pyroblast","0BADBADBADBADBAD"
 "Healer","V","Mage","","Teleport","Sun Beam","Healing Crystal","Divine Light","Supernova","0BADBADBADBADBAD"
