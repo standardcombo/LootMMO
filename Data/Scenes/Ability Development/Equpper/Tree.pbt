@@ -275,11 +275,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -200
+          Float: -186.567871
         }
         Overrides {
           Name: "UIY"
-          Float: -200
+          Float: -247.022217
         }
       }
     }
@@ -337,11 +337,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -350
+          Float: -247.580933
         }
         Overrides {
           Name: "UIY"
-          Float: -200
+          Float: -100.917358
         }
       }
     }
@@ -399,11 +399,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -250
+          Float: -345.703369
         }
         Overrides {
           Name: "UIY"
-          Float: -50
+          Float: -249.844543
         }
       }
     }
@@ -461,11 +461,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -400
+          Float: -413.432129
         }
         Overrides {
           Name: "UIY"
-          Float: -50
+          Float: -90.3047485
         }
       }
     }
@@ -476,7 +476,7 @@ Objects {
 }
 Objects {
   Id: 10184423931246654999
-  Name: "Shift"
+  Name: "5"
   Transform {
     Scale {
       X: 1
@@ -511,11 +511,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -250
+          Float: -256.716064
         }
         Overrides {
           Name: "UIY"
-          Float: -350
+          Float: -390.30481
         }
       }
     }

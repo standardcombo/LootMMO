@@ -1,6 +1,6 @@
 Assets {
-  Id: 5038874356007781134
-  Name: "CharacterTest"
+  Id: 8660061653595364871
+  Name: "Character_XpQuickNetwork_Server"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

@@ -25,7 +25,7 @@ local LEVELCURVE = SimpleCurve.New(levelKeys)
 local ResourceKey = 'Loot.XP'
 local LevelResourceKey = 'Loot.Level'
 
-function TriggerEvent(event, ...) 
+function TriggerEvent(event, ...)
     if event then
         event:Trigger(...)
     end
@@ -44,11 +44,21 @@ function component:GetLevel()
     local level = math.floor(XPCURVE:GetValue(xp))
     return level or 1
 end
+function component:GetXPForNextLevel()
+    local level = self:GetLevel()
+    return LEVELCURVE:GetValue(level + 1)
+end
 function component:GetXPUntilNextLevel()
     local xp = self:GetXP()
     local level = self:GetLevel()
     local nextXp = LEVELCURVE:GetValue(level + 1)
     return math.floor(nextXp - xp)
+end
+function component:GetXPInLevel()
+    local xp = self:GetXP()
+    local level = self:GetLevel()
+    local nextXp = LEVELCURVE:GetValue(level)
+    return math.floor(xp - nextXp)
 end
 function component:GetXP()
     return self.xp
@@ -56,7 +66,7 @@ end
 function component:SetXP(XP)
     self.xp = XP
     TriggerEvent(self.xpChangedEvent, self, self.xp)
-    self.level = self:GetLevel() 
+    self.level = self:GetLevel()
     if self.level > self.lastLevel then
         TriggerEvent(self.levelUpEvent, self, self.level)
     end
