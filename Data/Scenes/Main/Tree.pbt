@@ -26,6 +26,7 @@ Objects {
   ChildIds: 1888181817911919837
   ChildIds: 2561084474995652434
   ChildIds: 15408793396683655395
+  ChildIds: 5446161884331668149
   ChildIds: 17798732759644559527
   UnregisteredParameters {
   }
@@ -75,6 +76,42 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Quests"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5446161884331668149
+  Name: "Blaking work folder"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Blaking work folder"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

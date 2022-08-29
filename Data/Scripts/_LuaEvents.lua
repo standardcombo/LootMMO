@@ -82,10 +82,13 @@ function SafeNew()
     return luaEvent
 end
 
-return {
+local returntable = {
     name = 'Lua Event',
     version = 1.3,
     desctription = 'Custom events system',
     New = New,
     NewSafeEvent = SafeNew
 }
+
+_G['utils.LuaEvents'] = returntable
+return returntable
