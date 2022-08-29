@@ -25,8 +25,7 @@ function Api.NewComponent(componentName)
     if not index then
         return
     end
-    local newComponent = setmetatable({}, {__index = index})
-
+    local newComponent = setmetatable({}, {__index = index}) 
     for key, value in pairs(newComponent.eventElements or {}) do
         newComponent[value] = LUAEVENT.NewSafeEvent()
     end

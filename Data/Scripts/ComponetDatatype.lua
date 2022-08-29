@@ -18,7 +18,7 @@ end
 function component:GetOwner()
     return self.owner
 end
-function component:New(owner)
+function component:AddParent(owner)
     self.owner = owner
     for key, value in pairs(self.requiredComponents) do
         if not self.owner:GetComponent(value) then

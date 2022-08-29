@@ -36,7 +36,7 @@ function character:AddComponent(componentName)
         warn('Component not found')
         return
     end
-    newComponent:New(self)
+    newComponent:AddParent(self)
     table.insert(self:GetComponents(), newComponent)
     return newComponent
 end

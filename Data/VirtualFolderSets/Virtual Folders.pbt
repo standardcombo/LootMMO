@@ -255,5 +255,10 @@ Assets {
       VirtualFolderPath: "Dependancies"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "UI"
+      PlatformAssetType: 5
+    }
   }
 }
