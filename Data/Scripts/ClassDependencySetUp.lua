@@ -14,5 +14,8 @@ local Api = {}
 function Api.GetClass(name)
     return CompletedClasses[name]
 end
+function Api.GetClasses()
+    return CompletedClasses
+end
 
 _G['Character.Classes'] = Api

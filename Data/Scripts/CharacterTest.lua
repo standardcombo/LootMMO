@@ -5,7 +5,7 @@ end
 local character = _G['Character.Contsructor']
 local EquipAPI = _G["Character.EquipAPI"]
 local SaveAPI = _G['Character.SaveApi']
-local CLASS = require(script:GetCustomProperty('Class'))
+local CLASS = _G['Character.Classes']
 
 function PLAYERJOINED(player)
     local newCharacter = character.NewCharacter()
@@ -49,7 +49,7 @@ function OnReceiveMessage(player, params)
     end
     if splitString[1] == '/classes' then
         local message = ''
-        for key, value in pairs(CLASS) do
+        for key, value in pairs(CLASS.GetClasses()) do
             message = message .. key .. ' | '
         end
         Chat.BroadcastMessage(message)
