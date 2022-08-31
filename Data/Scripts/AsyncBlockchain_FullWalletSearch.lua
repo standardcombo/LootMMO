@@ -114,6 +114,9 @@ function Runner()
 		
 		::continue::
 		
+		if not collectionsPerPlayer[player] then
+			collectionsPerPlayer[player] = {}
+		end
 		if not collectionsPerPlayer[player][contractAddress] then
 			collectionsPerPlayer[player][contractAddress] = {}
 		end
