@@ -480,8 +480,9 @@ end
 
 -- Convert compacted string representation of an item into Item object
 function ParseItem(fromString)
-	local n, t, o, p, s, b = CoreString.Split(fromString, {delimiters = {","}})
+	local n, t, g, o, p, s, b = CoreString.Split(fromString, {delimiters = {","}})
 	local fullName = n
+	local greatness = tonumber(g)
 	if o ~= "" then
 		fullName = fullName .. " of " .. ValueAt(ORDERS, o)
 	end
@@ -496,6 +497,7 @@ function ParseItem(fromString)
 		name = n,
 		fullName = fullName,
 		type = ValueAt(TYPES, t),
+		greatness = greatness,
 		order = ValueAt(ORDERS, o),
 		prefix = ValueAt(PREFIXES, p),
 		suffix = ValueAt(SUFFIXES, s),
@@ -511,6 +513,7 @@ function SerializeItem(item)
 	
 	table.insert(values, item.name)
 	table.insert(values, IndexOf(TYPES, item.type))
+	table.insert(values, item.greatness)
 	
 	if item.order then
 		table.insert(values, IndexOf(ORDERS, item.order))
