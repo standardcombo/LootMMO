@@ -51,6 +51,7 @@ Objects {
   Name: "Quests"
   Transform {
     Location {
+      Z: -4595.45
     }
     Rotation {
     }
