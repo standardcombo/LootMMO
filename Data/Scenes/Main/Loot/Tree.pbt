@@ -17792,12 +17792,6 @@ Objects {
   ParentId: 8035243216657414624
   UnregisteredParameters {
     Overrides {
-      Name: "cs:LootBagParser"
-      AssetReference {
-        Id: 18201773013207943147
-      }
-    }
-    Overrides {
       Name: "cs:RowPrototype"
       ObjectReference {
         SelfId: 3473753395656186061

@@ -7,7 +7,7 @@ Assets {
       Overrides {
         Name: "cs:AsyncBlockchain"
         AssetReference {
-          Id: 2979189229387007512
+          Id: 13871701490137551148
         }
       }
       Overrides {
