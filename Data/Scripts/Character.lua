@@ -146,6 +146,7 @@ function constructor.NewCharacter()
     NewCharacter:AddComponent('Level')
     NewCharacter:AddComponent('Progression')
     NewCharacter:AddComponent('Class')
+    NewCharacter:AddComponent('Points')
     constructor.newCharacterFinished:Trigger(NewCharacter)
     InitCharacter(NewCharacter)
 

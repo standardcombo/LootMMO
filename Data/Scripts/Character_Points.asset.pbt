@@ -1,6 +1,6 @@
 Assets {
-  Id: 14921200221124164104
-  Name: "Character_Level"
+  Id: 16106674919092737720
+  Name: "Character_Points"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

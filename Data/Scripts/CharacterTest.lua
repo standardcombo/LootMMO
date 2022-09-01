@@ -3,7 +3,7 @@ while not _G['Character.Contsructor'] do
 end
 
 local character = _G['Character.Contsructor']
-local EquipAPI = _G["Character.EquipAPI"]
+local EquipAPI = _G['Character.EquipAPI']
 local SaveAPI = _G['Character.SaveApi']
 local CLASS = _G['Character.Classes']
 
@@ -71,4 +71,3 @@ function OnReceiveMessage(player, params)
 end
 
 Chat.receiveMessageHook:Connect(OnReceiveMessage)
- 

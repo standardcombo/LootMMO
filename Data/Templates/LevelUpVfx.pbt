@@ -503,7 +503,7 @@ Assets {
           }
           AutoPlay: true
           Pitch: 400
-          Volume: 10
+          Volume: 6
           Falloff: -1
           Radius: -1
           IsAttenuationEnabled: true

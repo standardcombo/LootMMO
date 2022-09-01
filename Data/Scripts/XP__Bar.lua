@@ -18,6 +18,11 @@ end
 
 function Tick()
     if level then
+        if level:GetMaxLevel() == level:GetLevel() then
+            PROGRESS_BAR.progress = 1
+            PROGRESS_TEXT.text = string.format('Max Level')
+            return
+        end
         local inLevel = level:GetXPInLevel()
         local nextLevel = level:GetXPForNextLevel()
         local progress = inLevel / nextLevel

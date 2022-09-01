@@ -13,15 +13,10 @@ component.id = 'Level'
 component.xp = 0
 component.level = 1
 component.lastLevel = 1
-local LEVEL = require(script:GetCustomProperty('Level'))
-local newKeys = {}
-local levelKeys = {}
-for index, value in ipairs(LEVEL) do
-    table.insert(newKeys, CurveKey.New(value['XP'], index))
-    table.insert(levelKeys, CurveKey.New(index, value['XP']))
-end
-local XPCURVE = SimpleCurve.New(newKeys)
-local LEVELCURVE = SimpleCurve.New(levelKeys)
+local LevelCurve = _G['Loot.level']
+local LEVEL = LevelCurve.GetTable()
+local XPCURVE = LevelCurve.GetXpCurve()
+local LEVELCURVE = LevelCurve.GetLevelCurve()
 local ResourceKey = 'Loot.XP'
 local LevelResourceKey = 'Loot.Level'
 
@@ -38,7 +33,9 @@ end
 function component:GetXPKey()
     return ResourceKey
 end
-
+function component:GetMaxLevel()
+    return #LEVEL
+end
 function component:GetLevel()
     local xp = self:GetXP()
     local level = math.floor(XPCURVE:GetValue(xp))
@@ -64,6 +61,9 @@ function component:GetXP()
     return self.xp
 end
 function component:SetXP(XP)
+    if self.xp == XP then
+        return
+    end
     self.xp = XP
     TriggerEvent(self.xpChangedEvent, self, self.xp)
     self.level = self:GetLevel()
@@ -74,7 +74,7 @@ function component:SetXP(XP)
 end
 function component:AddXP(amountXP)
     local newXP = self:GetXP()
-    newXP = newXP + amountXP
+    newXP = math.min(newXP + amountXP, LEVELCURVE:GetValue(self:GetMaxLevel()))
     self:SetXP(newXP)
 end
 function component:Serialize()

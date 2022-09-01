@@ -1,13 +1,13 @@
 local networkKey = 'Character_Equipped'
-while not  _G['Character.EquipAPI'] do
+while not _G['Character.EquipAPI'] do
     Task.Wait()
 end
-EApi =  _G['Character.EquipAPI']
+EApi = _G['Character.EquipAPI']
 function UpdateCharacter(player, character)
-    player:SetPrivateNetworkedData(networkKey, character:Serialize())
+    player:SetPrivateNetworkedData(networkKey, character:Serialize()) 
 end
 
-function UnequipCharacter(character, player) 
+function UnequipCharacter(character, player)
     if not Object.IsValid(player) then
         return
     end

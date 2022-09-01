@@ -7,7 +7,7 @@ Assets {
       RootId: 15982723968656510317
       Objects {
         Id: 15982723968656510317
-        Name: "Blade Dash"
+        Name: "Eagle"
         Transform {
           Scale {
             X: 1
@@ -64,6 +64,7 @@ Assets {
             CanJump: true
             CanRotate: true
           }
+          Animation: "1hand_melee_slash_right"
           CanBePrevented: true
           KeyBinding_v2 {
             Value: "mc:egameaction:invalid"
