@@ -28,6 +28,7 @@ Objects {
   ChildIds: 15408793396683655395
   ChildIds: 5446161884331668149
   ChildIds: 17798732759644559527
+  ChildIds: 3160701857187969297
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -40,6 +41,42 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3160701857187969297
+  Name: "Core World Add-ons"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Core World Add-ons"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

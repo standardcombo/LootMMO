@@ -260,5 +260,9 @@ Assets {
       VirtualFolderPath: "UI"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Database"
+      PlatformAssetType: 3
+    }
   }
 }

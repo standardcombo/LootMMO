@@ -726,6 +726,19 @@ Assets {
   }
 }
 Assets {
+  Id: 2108679872936201127
+  Name: "LMMO_CoreWorld"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "f1a6088964b44011b5116c5fb2469f41"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 1082298521074732115
   Name: "SERVERGOLDBOOST"
   PlatformAssetType: 24
