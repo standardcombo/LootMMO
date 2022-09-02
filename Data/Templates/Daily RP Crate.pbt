@@ -8934,21 +8934,21 @@ Assets {
       }
     }
     Assets {
-      Id: 4800578942529435686
-      Name: "Icon mouse Right"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_MouseRMB"
-      }
-    }
-    Assets {
       Id: 1746471401845658219
       Name: "Icon Book"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Book"
+      }
+    }
+    Assets {
+      Id: 4800578942529435686
+      Name: "Icon mouse Right"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_MouseRMB"
       }
     }
     Assets {
