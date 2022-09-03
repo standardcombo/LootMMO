@@ -368,7 +368,7 @@ function OnActionPressed(player, action)
     if action == "Aim" and isTriggerInteractable then
         if tutorialComplete  then
             Events.Broadcast("PopupImage", "9d289f/home-world-banner-01", 3, "DAILY BONUS CRATE", 
-            "Open the crate to receive Daily Rewards. Earning Rare, Epic, or Legendary Rewards also grants a Celebration Bonus to other players in Core World! You can receive up to three Celebration Bonuses per day.", nil,
+            "Open the crate to receive Daily Reward Points. Earning Rare, Epic, or Legendary RP also grants a Celebration Bonus to other players nearby! You can receive up to three Celebration Bonuses per day.", nil,
             "2X Bonus Thursdays do not apply to the Daily Bonus Crate or Celebration Bonuses.")
         else
             Events.Broadcast("DailyRPCrateOpenFail")
