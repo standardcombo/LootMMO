@@ -221,10 +221,10 @@ Objects {
       }
       VoiceChatSettings {
         VoiceChatMode {
-          Value: "mc:evoicechatmode:none"
+          Value: "mc:evoicechatmode:all"
         }
         VoiceChannelType {
-          Value: "mc:evoicechanneltype:normal"
+          Value: "mc:evoicechanneltype:positional"
         }
         AudibleDistance: 6000
         ConversationalDistance: 1500
