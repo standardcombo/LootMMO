@@ -245,7 +245,7 @@ Objects {
     PlayerMovementSettings {
       WalkSpeed: 640
       MaxAcceleration: 1800
-      WalkableFloorAngle: 44
+      WalkableFloorAngle: 55
       JumpMaxCount: 1
       JumpVelocity: 900
       GroundFriction: 8
@@ -332,7 +332,7 @@ Objects {
     PlayerMovementSettings {
       WalkSpeed: 640
       MaxAcceleration: 1800
-      WalkableFloorAngle: 44
+      WalkableFloorAngle: 55
       JumpMaxCount: 1
       JumpVelocity: 900
       GroundFriction: 8
