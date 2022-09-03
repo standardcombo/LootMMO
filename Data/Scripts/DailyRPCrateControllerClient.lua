@@ -50,7 +50,8 @@ local INTERACTIVITY_COOLDOWN = 1.2
 -- Internal variables
 local isOpened = false
 local inTrigger = false
-local tutorialComplete = false
+-- TUTORIAL DISABLED 2022/09/02, standardcombo
+local tutorialComplete = true--false
 local inCorrectTutorial = false
 
 --[[ local rewardInfo = {}
@@ -108,7 +109,8 @@ function Tick()
     if inTrigger then
         -- Press f to portal
         if API.IsReadyToClaim() then
-            tutorialComplete = LOCAL_PLAYER:GetResource("TutorialComplete") == 1
+-- TUTORIAL DISABLED 2022/09/02, standardcombo
+--            tutorialComplete = LOCAL_PLAYER:GetResource("TutorialComplete") == 1
             inCorrectTutorial = LOCAL_PLAYER:GetResource("TutorialProgress") == 4
 
             if tutorialComplete or inCorrectTutorial then
@@ -359,7 +361,8 @@ function OnActionPressed(player, action)
         return
     end
 
-    tutorialComplete = LOCAL_PLAYER:GetResource("TutorialComplete") == 1
+-- TUTORIAL DISABLED 2022/09/02, standardcombo
+--    tutorialComplete = LOCAL_PLAYER:GetResource("TutorialComplete") == 1
 
     -- Press RMB to open or close
     if action == "Aim" and isTriggerInteractable then

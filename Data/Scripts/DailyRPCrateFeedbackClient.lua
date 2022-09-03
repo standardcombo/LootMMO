@@ -29,7 +29,8 @@ end
 function OnFailCrateOpen()
     local message = "Crate Unlocks In\n"..UTIL.ConvertTimeToTimeText(API.GetRemainingTime())
     if LOCAL_PLAYER:GetResource("TutorialComplete") == 0 then
-        message = "Complete Tutorial to Access"
+-- TUTORIAL DISABLED 2022/09/02, standardcombo
+--        message = "Complete Tutorial to Access"
     end
     UI.ShowFlyUpText(message, LOCAL_PLAYER:GetWorldPosition(), 
         {color = FAIL_OPEN_COLOR, duration = FLY_UP_TEXT_DURATION, isBig = true})
