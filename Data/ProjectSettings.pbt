@@ -12,3 +12,17 @@ LeaderboardConfigs {
   }
 }
 MainScene: "Main"
+StreamSources {
+  Entries {
+    StreamIdentifier: "loot-mmo"
+    SourceType {
+      Value: "mc:estreamsourcetype:none"
+    }
+  }
+  Entries {
+    StreamIdentifier: "loot-mmo-backup"
+    SourceType {
+      Value: "mc:estreamsourcetype:none"
+    }
+  }
+}

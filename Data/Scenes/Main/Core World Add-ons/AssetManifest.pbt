@@ -368,6 +368,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8933537604162373856
+  Name: "Plane 1m - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_1m_001"
+  }
+}
+Assets {
   Id: 8828521707055617985
   Name: "Hill 05"
   PlatformAssetType: 1
@@ -410,6 +419,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeInset_01_Text_021_ref"
+  }
+}
+Assets {
+  Id: 6307150817253300746
+  Name: "Video Stream Material (Slot 1) Unlit"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_stream_material_slot1"
   }
 }
 Assets {
