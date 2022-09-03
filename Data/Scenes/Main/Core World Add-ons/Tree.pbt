@@ -1,7 +1,353 @@
 Name: "Core World Add-ons"
 RootId: 3160701857187969297
 Objects {
-  Id: 7090491745767794909
+  Id: 13310976306564133034
+  Name: "Portals - Best Hits"
+  Transform {
+    Location {
+      X: -3682.76514
+      Y: -5987.21582
+      Z: -907.660095
+    }
+    Rotation {
+      Yaw: 68.9876251
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3160701857187969297
+  ChildIds: 14127960975480537157
+  ChildIds: 1939119409755916696
+  ChildIds: 4076370902461757164
+  ChildIds: 9694268639517637722
+  ChildIds: 15036709640701094177
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15036709640701094177
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Location {
+      X: -9406.77539
+      Y: -4789.09375
+      Z: -678.587524
+    }
+    Rotation {
+      Yaw: -148.689682
+    }
+    Scale {
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
+    }
+  }
+  ParentId: 13310976306564133034
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10798869863028073727
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -244.15918
+            Y: 6099.23926
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 84.0684204
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
+          }
+        }
+        Overrides {
+          Name: "cs:CollectionID"
+          String: "active"
+        }
+        Overrides {
+          Name: "cs:GameOrder"
+          Int: 5
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 9694268639517637722
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Location {
+      X: -8156.03223
+      Y: -4896.55859
+      Z: -678.587524
+    }
+    Rotation {
+      Yaw: -37.2789154
+    }
+    Scale {
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
+    }
+  }
+  ParentId: 13310976306564133034
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10798869863028073727
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 120.369629
+            Y: 5963.04443
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 55.0022316
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
+          }
+        }
+        Overrides {
+          Name: "cs:CollectionID"
+          String: "active"
+        }
+        Overrides {
+          Name: "cs:GameOrder"
+          Int: 4
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 4076370902461757164
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Location {
+      X: -8518.53809
+      Y: -5155.77881
+      Z: -678.587524
+    }
+    Rotation {
+      Yaw: -71.8660812
+    }
+    Scale {
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
+    }
+  }
+  ParentId: 13310976306564133034
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10798869863028073727
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 368.79541
+            Y: 5660.79639
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 24.0303268
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
+          }
+        }
+        Overrides {
+          Name: "cs:CollectionID"
+          String: "active"
+        }
+        Overrides {
+          Name: "cs:GameOrder"
+          Int: 3
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 1939119409755916696
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Location {
+      X: -8852.60645
+      Y: -5179.33154
+      Z: -678.587524
+    }
+    Rotation {
+      Yaw: -99.6464233
+    }
+    Scale {
+      X: 0.35
+      Y: 0.35
+      Z: 0.35
+    }
+  }
+  ParentId: 13310976306564133034
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 1161077565924534732
+      value {
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 5.49999952
+            Y: 2
+            Z: 1.6
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10798869863028073727
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 442.248047
+            Y: 5270.02344
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -2.50879598
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
+          }
+        }
+        Overrides {
+          Name: "cs:CollectionID"
+          String: "active"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 14127960975480537157
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310976306564133034
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10798869863028073727
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 327.328613
+            Y: 4887.16699
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -30.6377
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 9281413644552771975
   Name: "Portals - Active"
   Transform {
     Location {
@@ -19,15 +365,11 @@ Objects {
     }
   }
   ParentId: 3160701857187969297
-  ChildIds: 14113744441833467728
-  ChildIds: 14888691513484460630
-  ChildIds: 12147296606330543910
-  ChildIds: 6285438520866514604
-  ChildIds: 16311019033031712121
-  ChildIds: 12794914581947555182
-  ChildIds: 11946073346277250621
-  ChildIds: 484398509870913903
-  ChildIds: 10345303009923655757
+  ChildIds: 387259044641422111
+  ChildIds: 10953680545985125257
+  ChildIds: 9230690498193836260
+  ChildIds: 82720823440129440
+  ChildIds: 7829942565042189226
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -46,1948 +388,311 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10345303009923655757
-  Name: "Portal Active 09"
+  Id: 7829942565042189226
+  Name: "PortalSimple - Fantasy"
   Transform {
     Location {
-      Y: 3800
-      Z: 250
+      X: -9406.77539
+      Y: -4789.09375
+      Z: -678.587524
     }
     Rotation {
-      Yaw: 120
+      Yaw: -148.689682
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
     }
   }
-  ParentId: 7090491745767794909
-  ChildIds: 17560904740435210698
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 17560904740435210698
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10345303009923655757
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
+  ParentId: 9281413644552771975
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 10798869863028073727
       value {
         Overrides {
           Name: "Name"
-          String: "PortalSimple"
+          String: "PortalSimple - Fantasy"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 293.782471
-            Y: 1908.8457
+            X: -244.15918
+            Y: 6099.23926
+            Z: 221.586731
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 80
+            Yaw: 84.0684204
           }
         }
         Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
           }
         }
         Overrides {
           Name: "cs:CollectionID"
           String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
-        }
-        Overrides {
-          Name: "cs:GameOrder"
-          Int: 9
-        }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9747872526599012819
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 484398509870913903
-  Name: "Portal Active 08"
-  Transform {
-    Location {
-      Y: 3800
-      Z: 250
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7090491745767794909
-  ChildIds: 10209147542885473006
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10209147542885473006
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 484398509870913903
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10798869863028073727
-      value {
-        Overrides {
-          Name: "Name"
-          String: "PortalSimple"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 199.999878
-            Y: 1899.99878
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 85
-          }
-        }
-        Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:CollectionID"
-          String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
-        }
-        Overrides {
-          Name: "cs:GameOrder"
-          Int: 8
-        }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9747872526599012819
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 11946073346277250621
-  Name: "Portal Active 07"
-  Transform {
-    Location {
-      Y: 3800
-      Z: 250
-    }
-    Rotation {
-      Yaw: 60
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7090491745767794909
-  ChildIds: 6723146638063133119
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 6723146638063133119
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11946073346277250621
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10798869863028073727
-      value {
-        Overrides {
-          Name: "Name"
-          String: "PortalSimple"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 100.176025
-            Y: 1876.49
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 85
-          }
-        }
-        Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:CollectionID"
-          String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
-        }
-        Overrides {
-          Name: "cs:GameOrder"
-          Int: 7
-        }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9747872526599012819
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12794914581947555182
-  Name: "Portal Active 06"
-  Transform {
-    Location {
-      Y: 3850
-      Z: 250
-    }
-    Rotation {
-      Yaw: 30
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7090491745767794909
-  ChildIds: 4587794507647419739
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 4587794507647419739
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12794914581947555182
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 15932463911632658073
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10798869863028073727
-      value {
-        Overrides {
-          Name: "Name"
-          String: "PortalSimple"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 45.5771332
-            Y: 1878.94189
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 95
-          }
-        }
-        Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:CollectionID"
-          String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
-        }
-        Overrides {
-          Name: "cs:GameOrder"
-          Int: 6
-        }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9747872526599012819
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16311019033031712121
-  Name: "Portal Active 05"
-  Transform {
-    Location {
-      Y: 3850
-      Z: 250
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7090491745767794909
-  ChildIds: 5792171195295670342
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 5792171195295670342
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16311019033031712121
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10798869863028073727
-      value {
-        Overrides {
-          Name: "Name"
-          String: "PortalSimple"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Y: 1900
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 89.9999924
-          }
-        }
-        Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:CollectionID"
-          String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
         }
         Overrides {
           Name: "cs:GameOrder"
           Int: 5
         }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 9747872526599012819
+      Id: 16449487789258605280
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6285438520866514604
-  Name: "Portal Active 04"
+  Id: 82720823440129440
+  Name: "PortalSimple - Fantasy"
   Transform {
     Location {
-      Y: 3850
-      Z: 250
+      X: -8156.03223
+      Y: -4896.55859
+      Z: -678.587524
     }
     Rotation {
-      Yaw: -30
+      Yaw: -37.2789154
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
     }
   }
-  ParentId: 7090491745767794909
-  ChildIds: 13034667798444393444
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13034667798444393444
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6285438520866514604
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
+  ParentId: 9281413644552771975
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 10798869863028073727
       value {
         Overrides {
           Name: "Name"
-          String: "PortalSimple"
+          String: "PortalSimple - Fantasy"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -45.5771332
-            Y: 1878.94189
+            X: 120.369629
+            Y: 5963.04443
+            Z: 221.586731
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 85
+            Yaw: 55.0022316
           }
         }
         Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
           }
         }
         Overrides {
           Name: "cs:CollectionID"
           String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
         }
         Overrides {
           Name: "cs:GameOrder"
           Int: 4
         }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 9747872526599012819
+      Id: 16449487789258605280
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12147296606330543910
-  Name: "Portal Active 03"
+  Id: 9230690498193836260
+  Name: "PortalSimple - Fantasy"
   Transform {
     Location {
-      Y: 3800
-      Z: 250
+      X: -8518.53809
+      Y: -5155.77881
+      Z: -678.587524
     }
     Rotation {
-      Yaw: -60
+      Yaw: -71.8660812
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.399657458
+      Y: 0.399657458
+      Z: 0.399657458
     }
   }
-  ParentId: 7090491745767794909
-  ChildIds: 12983702183715325198
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12983702183715325198
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12147296606330543910
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
+  ParentId: 9281413644552771975
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 10798869863028073727
       value {
         Overrides {
           Name: "Name"
-          String: "PortalSimple"
+          String: "PortalSimple - Fantasy"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -143.477295
-            Y: 1901.49
+            X: 368.79541
+            Y: 5660.79639
+            Z: 221.586731
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 95
+            Yaw: 24.0303268
           }
         }
         Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
           }
         }
         Overrides {
           Name: "cs:CollectionID"
           String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
         }
         Overrides {
           Name: "cs:GameOrder"
           Int: 3
         }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 9747872526599012819
+      Id: 16449487789258605280
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14888691513484460630
-  Name: "Portal Active 02"
+  Id: 10953680545985125257
+  Name: "PortalSimple - Fantasy"
   Transform {
     Location {
-      Y: 3800
-      Z: 250
+      X: -8852.60645
+      Y: -5179.33154
+      Z: -678.587524
     }
     Rotation {
-      Yaw: -90
+      Yaw: -99.6464233
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.35
+      Y: 0.35
+      Z: 0.35
     }
   }
-  ParentId: 7090491745767794909
-  ChildIds: 1310069233420307524
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1310069233420307524
-  Name: "PortalSimple"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14888691513484460630
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
+  ParentId: 9281413644552771975
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 720511534169157056
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 10798869863028073727
       value {
         Overrides {
           Name: "Name"
-          String: "PortalSimple"
+          String: "PortalSimple - Fantasy"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -199.999878
-            Y: 1899.99878
+            X: 442.248047
+            Y: 5270.02344
+            Z: 221.586731
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 95
+            Yaw: -2.50879598
           }
         }
         Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
+          Name: "Scale"
+          Vector {
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
           }
         }
         Overrides {
           Name: "cs:CollectionID"
           String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
         }
         Overrides {
           Name: "cs:GameOrder"
           Int: 2
         }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
       }
     }
+    TemplateAsset {
+      Id: 16449487789258605280
+    }
+  }
+}
+Objects {
+  Id: 387259044641422111
+  Name: "PortalSimple - Fantasy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9281413644552771975
+  TemplateInstance {
     ParameterOverrideMap {
-      key: 12026615933917886985
+      key: 10798869863028073727
       value {
         Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
+          Name: "Name"
+          String: "PortalSimple - Fantasy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 327.328613
+            Y: 4887.16699
+            Z: 221.586731
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -30.6377
           }
         }
       }
     }
     TemplateAsset {
-      Id: 9747872526599012819
+      Id: 16449487789258605280
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14113744441833467728
-  Name: "Portal Active 01"
+  Id: 15784066429794929965
+  Name: "Portal Room Invisible Ramps"
   Transform {
     Location {
-      Y: 3800
-      Z: 250
+      X: -8773.97852
+      Y: -4396.86768
+      Z: -779.168152
     }
     Rotation {
-      Yaw: -120
     }
     Scale {
       X: 1
@@ -1995,16 +700,22 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7090491745767794909
-  ChildIds: 7316836649082660594
+  ParentId: 3160701857187969297
+  ChildIds: 6822137418259756419
+  ChildIds: 14297357871274123274
+  ChildIds: 5635608660211740577
+  ChildIds: 16310056287347883886
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Folder {
     IsGroup: true
@@ -2015,209 +726,211 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7316836649082660594
-  Name: "PortalSimple"
+  Id: 16310056287347883886
+  Name: "Circular Ramp Collision"
   Transform {
+    Location {
+      Z: 10.5654297
+    }
+    Rotation {
+      Yaw: -106.371857
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 1.51665306
+      Y: 1.51665306
+      Z: 2.04698324
     }
   }
-  ParentId: 14113744441833467728
+  ParentId: 15784066429794929965
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 449365400615041070
-      value {
-        Overrides {
-          Name: "bp:Use World Capture"
-          Bool: false
-        }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12312933647099639795
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
       }
+      BoundsScale: 1
     }
-    ParameterOverrideMap {
-      key: 820597352490702851
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 6062131541297140599
-          }
-        }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5635608660211740577
+  Name: "Circular Ramp Collision"
+  Transform {
+    Location {
+      Z: 10.5654297
+    }
+    Rotation {
+      Yaw: -154.365112
+    }
+    Scale {
+      X: 1.51665306
+      Y: 1.51665306
+      Z: 2.04698324
+    }
+  }
+  ParentId: 15784066429794929965
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12312933647099639795
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
       }
+      BoundsScale: 1
     }
-    ParameterOverrideMap {
-      key: 3657711754556274245
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14297357871274123274
+  Name: "Circular Ramp Collision"
+  Transform {
+    Location {
+      Z: 10.565403
+    }
+    Rotation {
+      Yaw: 63.2583961
+    }
+    Scale {
+      X: 1.51665306
+      Y: 1.51665306
+      Z: 2.04698324
+    }
+  }
+  ParentId: 15784066429794929965
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12312933647099639795
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
       }
+      BoundsScale: 1
     }
-    ParameterOverrideMap {
-      key: 4424336081907175352
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 6062131541297140599
-          }
-        }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6822137418259756419
+  Name: "Circular Ramp Collision"
+  Transform {
+    Location {
+      Z: 10.565403
+    }
+    Rotation {
+      Yaw: 15.2650127
+    }
+    Scale {
+      X: 1.51665306
+      Y: 1.51665306
+      Z: 2.04698324
+    }
+  }
+  ParentId: 15784066429794929965
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12312933647099639795
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
       }
+      BoundsScale: 1
     }
-    ParameterOverrideMap {
-      key: 6645527860087202727
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 6062131541297140599
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7082205542147870529
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 14531971382525797804
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 41.1209564
-            Z: -0.052574303
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 0.975
-            G: 0.370467514
-            B: 0.0204749685
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:smart"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10798869863028073727
-      value {
-        Overrides {
-          Name: "Name"
-          String: "PortalSimple"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -293.782471
-            Y: 1908.8457
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 100
-          }
-        }
-        Overrides {
-          Name: "cs:BaseColor"
-          Color {
-            R: 0.0307134502
-            G: 0.346704155
-            B: 0.0761853755
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:HeaderBGColor"
-          Color {
-            R: 0.00518151606
-            G: 0.0423114114
-            B: 0.0137020834
-            A: 0.800000072
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorB"
-          Color {
-            R: 0.904661477
-            G: 1
-            B: 0.93011117
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:PortalColorC"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:CollectionID"
-          String: "active"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
-          }
-        }
-        Overrides {
-          Name: "cs:GameOrder"
-          Int: 1
-        }
-        Overrides {
-          Name: "cs:PortalColorA"
-          Color {
-            R: 0.045186203
-            G: 0.366252691
-            B: 0.0578054339
-            A: 1
-          }
-        }
-        Overrides {
-          Name: "cs:NameColor"
-          Color {
-            R: 1
-            G: 0.356400251
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12026615933917886985
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:id"
-          AssetReference {
-            Id: 11822269636081492630
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9747872526599012819
-    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

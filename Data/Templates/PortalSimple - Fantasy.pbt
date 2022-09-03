@@ -10,9 +10,9 @@ Assets {
         Name: "PortalSimple - Fantasy"
         Transform {
           Scale {
-            X: 0.75
-            Y: 0.75
-            Z: 0.75
+            X: 0.35
+            Y: 0.35
+            Z: 0.35
           }
         }
         ParentId: 4781671109827199097
@@ -23,11 +23,11 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:CollectionID"
-            String: "featured"
+            String: "active"
           }
           Overrides {
             Name: "cs:GameOrder"
-            Int: 2
+            Int: 1
           }
           Overrides {
             Name: "cs:IsEventCollection"
@@ -151,9 +151,9 @@ Assets {
         Name: "Screenshot"
         Transform {
           Location {
-            X: 69.8869934
-            Y: 1.05623376
-            Z: 934.450439
+            X: 69.8856583
+            Y: 1.05626607
+            Z: 1120.20947
           }
           Rotation {
           }
@@ -1828,15 +1828,16 @@ Assets {
         Name: "PotalHeader"
         Transform {
           Location {
-            X: 35.3612289
-            Z: 1108.61011
+            X: 35.3597412
+            Y: 0.000193048327
+            Z: 1294.37048
           }
           Rotation {
           }
           Scale {
-            X: 0.792675734
-            Y: 0.792675734
-            Z: 0.792675734
+            X: 0.792675793
+            Y: 0.792675793
+            Z: 0.792675793
           }
         }
         ParentId: 10798869863028073727
@@ -3755,7 +3756,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Portal Shape"
-            Int: 5
+            Int: 3
           }
           Overrides {
             Name: "bp:Portal Spread"
@@ -3899,7 +3900,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Portal Shape"
-            Int: 5
+            Int: 3
           }
           Overrides {
             Name: "bp:Portal Spread"
@@ -4043,7 +4044,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Portal Shape"
-            Int: 5
+            Int: 3
           }
           Overrides {
             Name: "bp:Portal Spread"
@@ -4187,7 +4188,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Portal Shape"
-            Int: 5
+            Int: 3
           }
           Overrides {
             Name: "bp:Portal Spread"
@@ -6949,8 +6950,8 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 5.5
-            Y: 3
+            X: 5.49999952
+            Y: 2
             Z: 1.6
           }
         }

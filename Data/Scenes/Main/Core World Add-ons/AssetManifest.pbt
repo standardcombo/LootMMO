@@ -179,6 +179,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12312933647099639795
+  Name: "Ring - Quarter Beveled Thin - Large "
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter_ring_faceted_thin_lg_001_ref"
+  }
+}
+Assets {
   Id: 12273367428402804606
   Name: "Sci-fi Antenna Ledge"
   PlatformAssetType: 1
