@@ -2,7 +2,7 @@ Name: "Core World Add-ons"
 RootId: 3160701857187969297
 Objects {
   Id: 13310976306564133034
-  Name: "Portals - Best Hits"
+  Name: "Portals - Greatest Hits"
   Transform {
     Location {
       X: -3682.76514
@@ -98,6 +98,14 @@ Objects {
           Name: "cs:GameOrder"
           Int: 5
         }
+        Overrides {
+          Name: "cs:OverrideGame"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:OverrideGameID"
+          String: "49730e/bucks-obby"
+        }
       }
     }
     TemplateAsset {
@@ -162,6 +170,14 @@ Objects {
           Name: "cs:GameOrder"
           Int: 4
         }
+        Overrides {
+          Name: "cs:OverrideGame"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:OverrideGameID"
+          String: "19c61b/puppet-masters-closed-alpha"
+        }
       }
     }
     TemplateAsset {
@@ -225,6 +241,14 @@ Objects {
         Overrides {
           Name: "cs:GameOrder"
           Int: 3
+        }
+        Overrides {
+          Name: "cs:OverrideGame"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:OverrideGameID"
+          String: "2f9ede/minigolf"
         }
       }
     }
@@ -299,6 +323,14 @@ Objects {
           Name: "cs:CollectionID"
           String: "active"
         }
+        Overrides {
+          Name: "cs:OverrideGame"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:OverrideGameID"
+          String: "89d2c4/dead-rush"
+        }
       }
     }
     TemplateAsset {
@@ -317,6 +349,12 @@ Objects {
     }
   }
   ParentId: 13310976306564133034
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 10798869863028073727
@@ -338,6 +376,14 @@ Objects {
           Rotator {
             Yaw: -30.6377
           }
+        }
+        Overrides {
+          Name: "cs:OverrideGame"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:OverrideGameID"
+          String: "ba482c/primal-world"
         }
       }
     }
