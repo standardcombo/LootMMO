@@ -18,8 +18,16 @@ local isOpen = false
 function SetInteractableUI(isInteractable)
     isOpen = isInteractable
 
-    UI.SetCursorVisible(isInteractable)
-    UI.SetCanCursorInteractWithUI(isInteractable)
+	if _G.CursorStack then
+		if isInteractable then
+			_G.CursorStack.Enable()
+		else
+			_G.CursorStack.Disable()
+		end
+	else
+		UI.SetCursorVisible(isInteractable)
+		UI.SetCanCursorInteractWithUI(isInteractable)
+	end
 
     LOCAL_PLAYER:GetDefaultCamera().isDistanceAdjustable = not isInteractable
     Events.Broadcast("ToggleVisibility", "HUD", not isInteractable)

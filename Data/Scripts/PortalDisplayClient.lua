@@ -100,8 +100,16 @@ function ClosePanel()
 end
 
 function SetInteractableUI(isInteractable)
-    UI.SetCursorVisible(isInteractable)
-    UI.SetCanCursorInteractWithUI(isInteractable)
+    if _G.CursorStack then
+		if isInteractable then
+			_G.CursorStack.Enable()
+		else
+			_G.CursorStack.Disable()
+		end
+	else
+		UI.SetCursorVisible(isInteractable)
+		UI.SetCanCursorInteractWithUI(isInteractable)
+	end
 
 --    Task.Wait()
     LOCAL_PLAYER:GetDefaultCamera().isDistanceAdjustable = not isInteractable
@@ -239,8 +247,10 @@ function OnClicked(button)
     if button == PLAY_BUTTON then
         PlayPortalSequence(LOCAL_PLAYER)
     end
-    Events.Broadcast("ToggleUI", UI_ID, false)
-    ClosePanel()
+    if isPanelOpen then
+	    Events.Broadcast("ToggleUI", UI_ID, false)
+	    --ClosePanel()
+	end
 end
 
 function OnBeginOverlap(trigger, player)

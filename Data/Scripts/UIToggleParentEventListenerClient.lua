@@ -7,8 +7,16 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 local isOn = false
 
 function SetUIInteraction(value)
-    UI.SetCanCursorInteractWithUI(value)
-    UI.SetCursorVisible(value)
+    if _G.CursorStack then
+		if value then
+			_G.CursorStack.Enable()
+		else
+			_G.CursorStack.Disable()
+		end
+	else
+		UI.SetCursorVisible(value)
+		UI.SetCanCursorInteractWithUI(value)
+	end
 
     LOCAL_PLAYER:GetDefaultCamera().isDistanceAdjustable = not value
 
