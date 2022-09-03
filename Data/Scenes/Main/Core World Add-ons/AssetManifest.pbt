@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17366783084807303734
+  Name: "Sign Font 1: M"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_012_ref"
+  }
+}
+Assets {
   Id: 16825643228001246048
   Name: "Gem - Pear Polished"
   PlatformAssetType: 1
@@ -134,6 +143,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14296360102038228109
+  Name: "Sign Font 1: O"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_014_ref"
+  }
+}
+Assets {
   Id: 14231394991004806063
   Name: "Callout Sparkle"
   PlatformAssetType: 8
@@ -161,6 +179,24 @@ Assets {
   }
 }
 Assets {
+  Id: 13409743314456329935
+  Name: "Sign Font 1: E"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_004_ref"
+  }
+}
+Assets {
+  Id: 13257590913737718269
+  Name: "Sign Font 1: T"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_019_ref"
+  }
+}
+Assets {
   Id: 12889861000896994476
   Name: "Invisible"
   PlatformAssetType: 2
@@ -170,12 +206,30 @@ Assets {
   }
 }
 Assets {
+  Id: 12767968904482184739
+  Name: "Sign Font 1: H"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_007_ref"
+  }
+}
+Assets {
   Id: 12610144472463057903
   Name: "Reward Points Medal (RP)"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rp_medal_001_ref"
+  }
+}
+Assets {
+  Id: 12362239595071308668
+  Name: "Sign Font 1: I"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_008_ref"
   }
 }
 Assets {
@@ -269,6 +323,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10457831584740722402
+  Name: "Sign Font 1: S"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_018_ref"
+  }
+}
+Assets {
   Id: 9927175959700879828
   Name: "Fantasy Chest Lid 03"
   PlatformAssetType: 1
@@ -323,12 +386,30 @@ Assets {
   }
 }
 Assets {
+  Id: 8165196651829647423
+  Name: "Sign Font 1: A"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_000_ref"
+  }
+}
+Assets {
   Id: 7177062183354186388
   Name: "Beam Down Teleport VFX"
   PlatformAssetType: 8
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_Teleporter_BeamDown"
+  }
+}
+Assets {
+  Id: 6390344774782950280
+  Name: "Sign Font 1: V"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_021_ref"
   }
 }
 Assets {
@@ -356,6 +437,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "fxma_opaque_emissive"
+  }
+}
+Assets {
+  Id: 4809529976550021000
+  Name: "Metal Old Beaten Gold 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_gold_002"
   }
 }
 Assets {
@@ -410,6 +500,24 @@ Assets {
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfxui_click_core_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 3151071867514965894
+  Name: "Sign Font 1: G"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_006_ref"
+  }
+}
+Assets {
+  Id: 3150195448079078750
+  Name: "Sign Font 1: C"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_002_ref"
   }
 }
 Assets {
@@ -482,6 +590,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_basic_emissive_001"
+  }
+}
+Assets {
+  Id: 551391357852023629
+  Name: "Sign Font 1: R"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_017_ref"
   }
 }
 Assets {
