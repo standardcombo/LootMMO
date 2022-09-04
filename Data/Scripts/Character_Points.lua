@@ -33,7 +33,7 @@ function component:_SilentSetPending(value)
 end
 
 function component:SetPoints(value)
-    if value.unspentPoints == value then
+    if self.unspentPoints == value then
         return
     end
     self:_SilentSetPoints(value)
@@ -41,7 +41,7 @@ function component:SetPoints(value)
 end
 
 function component:SetPending(value)
-    if value.pendingPoints == value then
+    if self.pendingPoints == value then
         return
     end
     self:_SilentSetPending(value)
@@ -110,7 +110,7 @@ end
 function component:Serialize(information)
     information = information or {}
     self:SetPoints(information.unspentPoints or 0)
-    self:SetSpent(information.spentPoints)
+    self:_SilentSetPoints(information.spentPoints)
 end
 
 function component:Deserialize()

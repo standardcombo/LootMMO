@@ -244,6 +244,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12465662665234122161
+  Name: "UI Bright Notification 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_ui_bright_notification_01_Cue_ref"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1

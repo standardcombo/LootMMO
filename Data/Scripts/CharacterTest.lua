@@ -47,6 +47,14 @@ function OnReceiveMessage(player, params)
         end
         return
     end
+    if splitString[1] == '/addpoint' then
+        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local points = newCharacter:GetComponent('Points')
+        if points then
+            points:AddPoint()
+        end
+        return
+    end
     if splitString[1] == '/classes' then
         local message = ''
         for key, value in pairs(CLASS.GetClasses()) do

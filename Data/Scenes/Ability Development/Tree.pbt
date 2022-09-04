@@ -229,6 +229,7 @@ Objects {
     }
   }
   ParentId: 5170997138267534629
+  ChildIds: 16112882772249576041
   UnregisteredParameters {
     Overrides {
       Name: "cs:Notifier"
@@ -243,6 +244,12 @@ Objects {
       Name: "cs:LevelUpIcon"
       ObjectReference {
         SelfId: 5628057948214823047
+      }
+    }
+    Overrides {
+      Name: "cs:Sound"
+      ObjectReference {
+        SelfId: 16112882772249576041
       }
     }
   }
@@ -262,6 +269,49 @@ Objects {
     ScriptAsset {
       Id: 1063198469329170956
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16112882772249576041
+  Name: "UI Bright Notification 01 SFX"
+  Transform {
+    Location {
+      X: -414.68103
+      Y: -1199.75049
+      Z: 0.000122070312
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3932317164329332716
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 12465662665234122161
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
