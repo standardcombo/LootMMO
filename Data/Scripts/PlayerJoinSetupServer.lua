@@ -4,6 +4,11 @@ Game.playerJoinedEvent:Connect(function(player)
 	--if they have a character level 2 or higher
 	--_G.AppState.SetStateForPlayer(player, _G.AppState.CharacterSelection)
 	--else
+	
+	-- Give scripts an opportunity to connect to events
+	Task.Wait()
+	Task.Wait()
+	
 	_G.AppState.SetStateForPlayer(player, _G.AppState.BagSelection)
 	--end
 end)

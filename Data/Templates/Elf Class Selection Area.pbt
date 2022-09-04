@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3281734247870618909
+        ParentId: 16937607096047638534
         ChildIds: 7178602346230973161
         ChildIds: 14180922740616031370
         ChildIds: 5145801805166039320
@@ -44,8 +44,8 @@ Assets {
         Name: "Spawn Point"
         Transform {
           Location {
-            X: 454.06546
-            Y: -54.997303
+            X: 459.26355
+            Y: -24.8502331
             Z: 142.000977
           }
           Rotation {
@@ -165,7 +165,6 @@ Assets {
           }
         }
         ParentId: 12295150610950578052
-        ChildIds: 11657668635829919422
         ChildIds: 14049161596096041219
         ChildIds: 1648371588411962591
         ChildIds: 17754174449654312371
@@ -195,99 +194,6 @@ Assets {
           }
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 11657668635829919422
-        Name: "Third Person Camera"
-        Transform {
-          Location {
-            X: 737.371643
-            Y: -120.782364
-            Z: 191.693359
-          }
-          Rotation {
-            Yaw: 177.053574
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 5145801805166039320
-        ChildIds: 9433742131407804268
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:alwaysvisible"
-        }
-        Camera {
-          PositionOffset {
-          }
-          RotationOffset {
-            Pitch: -9
-            Yaw: 162
-          }
-          FieldOfView: 90
-          ViewWidth: 1200
-          RotationMode {
-            Value: "mc:erotationmode:lookangle"
-          }
-          MinPitch: -89
-          MaxPitch: 89
-          DoesPositionOffsetSpring: true
-          IsCameraCollisionEnabled: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9433742131407804268
-        Name: "BagSelectionCameraScript"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11657668635829919422
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15962582939467492451
           }
         }
         NetworkRelevanceDistance {

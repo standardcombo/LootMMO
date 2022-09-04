@@ -13,6 +13,8 @@ local PLAYER_SETTINGS_BAG_SELECTION = script:GetCustomProperty("PlayerSettingsBa
 local PLAYER_SETTINGS_SOCIAL_SPACE = script:GetCustomProperty("PlayerSettingsSocialSpace"):WaitForObject()
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
+--	print("Settings per location AppState.Enter")
+	
 	if not Object.IsValid(player) then return end
 	
 	if newState == _G.AppState.SocialHub 
@@ -43,17 +45,47 @@ function GetSpawnPointsWithKey(key)
 end
 
 
+function GetPointFurthestFromPlayers(spawnPoints)
+	local maxDistance = 0
+	bestPoint = nil
+	for _,point in ipairs(spawnPoints) do
+		local pointPos = point:GetWorldPosition()
+		local nearestDistance = 999999
+		for _,player in ipairs(Game.GetPlayers()) do
+			local distSqr = (player:GetWorldPosition() - pointPos).sizeSquared
+			if nearestDistance > distSqr then
+				nearestDistance = distSqr
+			end
+		end
+		if maxDistance < nearestDistance then
+			maxDistance = nearestDistance
+			bestPoint = point
+		end
+	end
+	return bestPoint
+end
+
+
 function SpawnPlayerAt(player, point)
 	if type(point) == "string" then
 		point = GetSpawnPointsWithKey(point)
 	end
 	if type(point) == "table" then
-		local randomIndex = math.random(1, #point)
-		point = point[randomIndex]
+		--local randomIndex = math.random(1, #point)
+		--point = point[randomIndex]
+		point  = GetPointFurthestFromPlayers(point)
 	end
 	player:Spawn({
 		position = point:GetWorldPosition(), 
 		rotation = point:GetWorldRotation()
 	})
+	point.serverUserData.isTaken = true
 end
+
+
+function OnPlayerJoined(player)
+	
+end
+
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
 

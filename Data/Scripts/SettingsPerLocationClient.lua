@@ -35,11 +35,8 @@ Events.Connect("AppState.Enter", function(player, newState, prevState)
 			Task.Wait()
 		end
 	
-		local bagSelectionCameraScripts = World.FindObjectsByName("BagSelectionCameraScript")
-	
-		for _,s in ipairs(bagSelectionCameraScripts) do
-			s.context.OnPlayerJoined(player)
-		end
+		local bagSelectionCameraScript = World.FindObjectByName("BagSelectionCameraScript")
+		bagSelectionCameraScript.context.SetAsDefault()
 	end
 end)
 
