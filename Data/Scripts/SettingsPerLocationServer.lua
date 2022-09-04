@@ -84,7 +84,7 @@ end
 
 
 function OnPlayerJoined(player)
-	
+	SpawnPlayerAt(player, "BagSelection")
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
