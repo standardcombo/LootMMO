@@ -116,6 +116,9 @@ Objects {
         Value: "mc:erespawnmode:inplace"
       }
       StartSpawned: true
+      SpawnMode {
+        Value: "mc:none:none"
+      }
       SpawnKey: "BagSelection"
     }
   }
