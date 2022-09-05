@@ -1,4 +1,13 @@
 Assets {
+  Id: 18264047880984790466
+  Name: "Pipe - Quarter - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter-pipe_lg_001_ref"
+  }
+}
+Assets {
   Id: 18217604652680594125
   Name: "Clay Form 10"
   PlatformAssetType: 1
@@ -800,6 +809,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13734388303926040827
+  Name: "Fantasy Castle Bannister 01 - Post"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_bannister_001_post"
+  }
+}
+Assets {
   Id: 13707562474042671468
   Name: "Roof Square Shingles 01"
   PlatformAssetType: 2
@@ -950,6 +968,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_pommel_004"
+  }
+}
+Assets {
+  Id: 12476179346149769426
+  Name: "Trim - Curve 90\302\260 - 08m Radius"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve90_8m_ref"
   }
 }
 Assets {
@@ -1178,6 +1205,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11278476667469290009
+  Name: "Wedge - Corner-Aligned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wedge_002"
+  }
+}
+Assets {
   Id: 11179741881024821258
   Name: "Sci-fi Gear Small 02"
   PlatformAssetType: 1
@@ -1247,6 +1283,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "fxma_additive_axis_aligned_fresnel"
+  }
+}
+Assets {
+  Id: 10588666802371347748
+  Name: "Ring Half Z Trim- Beveled - Thin - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ring_faceted_extnd_half_z_thin_lg_001_ref"
   }
 }
 Assets {
@@ -1472,6 +1517,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_hq_002"
+  }
+}
+Assets {
+  Id: 9518237575366421995
+  Name: "Ring Half Y Half Z - Beveled - Thin - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ring_half_faceted_half_z_thin_lg_001_ref"
   }
 }
 Assets {
@@ -1868,6 +1922,15 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_ember_volume_vfx"
+  }
+}
+Assets {
+  Id: 6212183737436317633
+  Name: "Trim - Curve 30\302\260 - 08m Radius "
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve30_8m_ref"
   }
 }
 Assets {
@@ -2474,6 +2537,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2009331887192172980
+  Name: "Trim - Curve 90\302\260 - 12m Radius"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve90_12m_ref"
+  }
+}
+Assets {
   Id: 1998385798531643211
   Name: "Wedge - Polished"
   PlatformAssetType: 1
@@ -2609,12 +2681,30 @@ Assets {
   }
 }
 Assets {
+  Id: 1213324101088113781
+  Name: "Stone Basic"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "stone_001"
+  }
+}
+Assets {
   Id: 1137112816547272582
   Name: "Cylinder"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cylinder_002"
+  }
+}
+Assets {
+  Id: 1115804850415638434
+  Name: "Cone - Truncated Hollow Wide"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cone_truncated_hollow_004"
   }
 }
 Assets {
@@ -2687,6 +2777,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "F5_Text_003"
+  }
+}
+Assets {
+  Id: 390428044279099392
+  Name: "Pipe - Quarter Thin - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter-pipe_lg_thin_001_ref"
   }
 }
 Assets {
