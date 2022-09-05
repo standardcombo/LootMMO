@@ -152,6 +152,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17008151791760840521
+  Name: "Cauldron"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fantasy_cauldron_001"
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
+  }
+}
+Assets {
   Id: 16907316889031113276
   Name: "Fantasy Dish Set - Chalice 01"
   PlatformAssetType: 1
@@ -989,6 +1007,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12227992232924581597
+  Name: "Fantasy Anvil 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_anvil_001_ref"
+  }
+}
+Assets {
   Id: 12186358290746139637
   Name: "Craftsman Stairs 01 150cm"
   PlatformAssetType: 1
@@ -1625,6 +1652,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_shield_003"
+  }
+}
+Assets {
+  Id: 7845803738723290617
+  Name: "Humanoid 2 Kamil"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_basic_007_ref"
   }
 }
 Assets {
