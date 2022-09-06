@@ -2501,7 +2501,7 @@ Objects {
     PositionOffset {
     }
     RotationOffset {
-      Pitch: -9
+      Pitch: -7.8
       Yaw: 162
     }
     FieldOfView: 90
