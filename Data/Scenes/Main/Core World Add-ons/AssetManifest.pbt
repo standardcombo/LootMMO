@@ -260,6 +260,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12095835209017042614
+  Name: "Cube"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_002"
+  }
+}
+Assets {
   Id: 11972672084376847955
   Name: "Hill 03"
   PlatformAssetType: 1
@@ -410,6 +419,15 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_Teleporter_BeamDown"
+  }
+}
+Assets {
+  Id: 7039431908744986952
+  Name: "Wood 9 Slice Frame Panel 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_frame_9slice_001_ref"
   }
 }
 Assets {
