@@ -28,6 +28,10 @@ div {
 #logo a img { 
 	display: block;
 	margin: auto;
+	margin-top: -0.5em;
+	margin-bottom: -0.5em;
+	height: 180px;
+	width:auto;
 }
 
 h1 {
@@ -87,6 +91,18 @@ a:visited {
 	background-size: 40px 40px;
 	position: fixed;
 	bottom: 15px;
+	right: 15px;
+	width: 60px;
+	height: 60px;
+}
+
+#twitter {
+	background-image: url("twitter_icon_40px.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px 40px;
+	position: fixed;
+	bottom: 75px;
 	right: 15px;
 	width: 60px;
 	height: 60px;
