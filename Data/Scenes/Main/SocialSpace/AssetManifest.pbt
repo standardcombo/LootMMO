@@ -107,6 +107,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17636714166328452232
+  Name: "Pipe - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_pipe_lg_001_ref"
+  }
+}
+Assets {
   Id: 17615065733973239937
   Name: "Ring - Beveled"
   PlatformAssetType: 1
@@ -122,6 +131,15 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_thruster_flame"
+  }
+}
+Assets {
+  Id: 17600867572421026341
+  Name: "Trim - Curve 45\302\260 - 06m Radius"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve45_6m_ref"
   }
 }
 Assets {
@@ -176,15 +194,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_cauldron_001"
-  }
-}
-Assets {
-  Id: 16912192915158960834
-  Name: "Humanoid 2 Rig"
-  PlatformAssetType: 25
-  PrimaryAsset {
-    AssetType: "SkeletonAssetRef"
-    AssetId: "npc_guy_wireframe_001_ref"
   }
 }
 Assets {
@@ -998,6 +1007,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12544655572136775520
+  Name: "Trim - Curve 45\302\260 - 16m Radius"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve45_16m_ref"
+  }
+}
+Assets {
   Id: 12531876463208577149
   Name: "Ring 01"
   PlatformAssetType: 1
@@ -1295,21 +1313,21 @@ Assets {
   }
 }
 Assets {
-  Id: 11062621259052197475
-  Name: "Urban - Iron Shovel 01 - Head 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_shovel_iron_001_head_001_ref"
-  }
-}
-Assets {
   Id: 10914354925542967262
   Name: "Fantasy Castle Pillar 02 - Mid"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_pillar_002_mid"
+  }
+}
+Assets {
+  Id: 10784387645319107096
+  Name: "Tree Oak 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_oak_001"
   }
 }
 Assets {
@@ -1547,15 +1565,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9610691917151038938
-  Name: "Urban - Iron Axe 01 - Head 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_axe_iron_001_head_001_ref"
-  }
-}
-Assets {
   Id: 9571902954734362392
   Name: "Moss 01"
   PlatformAssetType: 2
@@ -1589,15 +1598,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_hq_002"
-  }
-}
-Assets {
-  Id: 9525850609780302765
-  Name: "Urban Interior - Oil Lantern 02 - Handle 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_lantern_oil_handle_002_ref"
   }
 }
 Assets {
@@ -1799,12 +1799,12 @@ Assets {
   }
 }
 Assets {
-  Id: 7845803738723290617
-  Name: "Humanoid 2 Kamil"
-  PlatformAssetType: 26
+  Id: 7932557449385208407
+  Name: "Trim - Curve 45\302\260 - 12m Radius "
+  PlatformAssetType: 1
   PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_head_basic_007_ref"
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve45_12m_ref"
   }
 }
 Assets {
@@ -1934,6 +1934,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6997751774838429298
+  Name: "Grass Basic"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_grass_001_uv"
+  }
+}
+Assets {
   Id: 6888255164699252233
   Name: "Candle Group 01"
   PlatformAssetType: 1
@@ -2039,15 +2048,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_quarter-pipe_001"
-  }
-}
-Assets {
-  Id: 6021480692367198195
-  Name: "Urban - Wooden Water Bucket 01 - Handle 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_bucket_water_wood_001_handle_001_ref"
   }
 }
 Assets {
@@ -2246,15 +2246,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_part_window_002_ref"
-  }
-}
-Assets {
-  Id: 4858272778559485251
-  Name: "Urban - Modern Pickaxe 01 - Head 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_pickaxe_mod_001_head_001_ref"
   }
 }
 Assets {
@@ -2528,6 +2519,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3374193802675370255
+  Name: "Spiderweb VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_web"
+  }
+}
+Assets {
   Id: 3337256621200851928
   Name: "Fantasy Crossbow Bolt 01"
   PlatformAssetType: 1
@@ -2582,6 +2582,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2856694496318127941
+  Name: "Trim - Curve 30\302\260 - 06m Radius "
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve30_6m_ref"
+  }
+}
+Assets {
   Id: 2777530842543105839
   Name: "Whitebox Wall 01 - Foundation"
   PlatformAssetType: 1
@@ -2606,15 +2615,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_diamond_6_sided_001"
-  }
-}
-Assets {
-  Id: 2609794594435033014
-  Name: "Urban - Iron Hammer 01 - Head 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_hammer_iron_001_head_001_ref"
   }
 }
 Assets {
