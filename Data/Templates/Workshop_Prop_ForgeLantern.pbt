@@ -7,12 +7,12 @@ Assets {
       RootId: 3188344087217131266
       Objects {
         Id: 3188344087217131266
-        Name: "ForgeLantern"
+        Name: "Workshop_Prop_ForgeLantern"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.928017378
+            Y: 0.928017378
+            Z: 0.928017378
           }
         }
         ParentId: 9905026628173583229
@@ -58,8 +58,6 @@ Assets {
         ChildIds: 13839536865509644818
         ChildIds: 5435402765024140465
         ChildIds: 2965086488792218378
-        ChildIds: 2017812231037800964
-        ChildIds: 2427823556712998669
         ChildIds: 2353191332980016380
         ChildIds: 17294082100869870461
         Collidable_v2 {
@@ -2751,8 +2749,8 @@ Assets {
         Name: "Point Light"
         Transform {
           Location {
-            Y: 98.9355469
-            Z: -124.250183
+            Y: 98.9350815
+            Z: -97.8045731
           }
           Rotation {
           }
@@ -2776,7 +2774,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Light {
-          Intensity: 7.35839891
+          Intensity: 39.1929359
           Color {
             R: 0.700000048
             G: 0.0556291565
@@ -2789,7 +2787,7 @@ Assets {
           Light {
             Temperature: 6500
             LocalLight {
-              AttenuationRadius: 224.545029
+              AttenuationRadius: 412.05542
               PointLight {
                 SourceRadius: 20
                 SoftSourceRadius: 20
@@ -2883,8 +2881,8 @@ Assets {
         Name: "Cone - Truncated Wide"
         Transform {
           Location {
-            Y: 50.4326172
-            Z: -6.25085449
+            Y: 50.4330368
+            Z: -3.33740306
           }
           Rotation {
             Pitch: -90
@@ -2955,16 +2953,15 @@ Assets {
         Name: "Cone - Truncated Wide"
         Transform {
           Location {
-            Y: 98.9355469
-            Z: -1.27124023
+            Y: 101.320671
+            Z: 4.46870279
           }
           Rotation {
-            Pitch: -90
           }
           Scale {
-            X: 0.086177
-            Y: 0.0861772522
-            Z: 0.993926823
+            X: 5.7245307
+            Y: 3.51794696
+            Z: 3.75175309
           }
         }
         ParentId: 3188344087217131266
@@ -2999,151 +2996,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 13950225922132296555
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2017812231037800964
-        Name: "Cone - Truncated Wide"
-        Transform {
-          Location {
-            X: -47.6999512
-            Y: 98.9355469
-            Z: -3.26586914
-          }
-          Rotation {
-            Pitch: -14.6607275
-          }
-          Scale {
-            X: 0.497225851
-            Y: 0.497225851
-            Z: 0.497225851
-          }
-        }
-        ParentId: 3188344087217131266
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 10378479423839914021
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.745000064
-              G: 0.745000064
-              B: 0.745000064
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 13512674754793005214
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2427823556712998669
-        Name: "Cone - Truncated Wide"
-        Transform {
-          Location {
-            X: 47.6999512
-            Y: 98.9355469
-            Z: -3.26586914
-          }
-          Rotation {
-            Pitch: 14.6607199
-          }
-          Scale {
-            X: -0.497225851
-            Y: 0.497225851
-            Z: 0.497225851
-          }
-        }
-        ParentId: 3188344087217131266
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 10378479423839914021
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.745000064
-              G: 0.745000064
-              B: 0.745000064
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 13512674754793005214
+            Id: 9525850609780302765
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3330,12 +3183,12 @@ Assets {
       }
     }
     Assets {
-      Id: 13512674754793005214
-      Name: "Fantasy Chain - Straight 2m 01"
+      Id: 9525850609780302765
+      Name: "Urban Interior - Oil Lantern 02 - Handle 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_fan_chain_strt_2m_001_ref"
+        AssetId: "sm_prop_urb_lantern_oil_handle_002_ref"
       }
     }
     Assets {

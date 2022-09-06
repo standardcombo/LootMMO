@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 18020891506076657236
+  Name: "Urban - Damaged Iron Fence - Post 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_post_damaged_002_ref"
+  }
+}
+Assets {
   Id: 17952268790008141582
   Name: "Fantasy Castle Wall 01 Half"
   PlatformAssetType: 1
@@ -185,6 +194,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fan_dish_set_chalice_001_ref"
+  }
+}
+Assets {
+  Id: 16872229416000764163
+  Name: "Fantasy Castle Wall 03 Half - Window 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_half_003_win_03"
   }
 }
 Assets {
@@ -584,6 +602,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14612600816710104610
+  Name: "Japanese Tea Set - Cup 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_jpn_tea_set_tea_cup_001_ref"
+  }
+}
+Assets {
   Id: 14577953825021911847
   Name: "Fantasy Pommel 01"
   PlatformAssetType: 1
@@ -737,6 +764,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14077945805147147789
+  Name: "Container - Square Thin 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_container_square_thin_ref"
+  }
+}
+Assets {
   Id: 14017539756736382852
   Name: "Cylinder - Bottom-Aligned"
   PlatformAssetType: 1
@@ -752,6 +788,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_sconce_001"
+  }
+}
+Assets {
+  Id: 13956281381362240997
+  Name: "Fantasy Castle Stairs 01 - 150cm Corner 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_stairs_001_150cm_corner03"
   }
 }
 Assets {
@@ -1070,6 +1115,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12051078155763889126
+  Name: "Urban - Wooden Water Bucket 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_bucket_water_wood_001_ref"
+  }
+}
+Assets {
   Id: 12046203229753918105
   Name: "Small Open Crate"
   PlatformAssetType: 1
@@ -1241,6 +1295,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11062621259052197475
+  Name: "Urban - Iron Shovel 01 - Head 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_shovel_iron_001_head_001_ref"
+  }
+}
+Assets {
   Id: 10914354925542967262
   Name: "Fantasy Castle Pillar 02 - Mid"
   PlatformAssetType: 1
@@ -1283,15 +1346,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "fxma_additive_axis_aligned_fresnel"
-  }
-}
-Assets {
-  Id: 10588666802371347748
-  Name: "Ring Half Z Trim- Beveled - Thin - Large"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ring_faceted_extnd_half_z_thin_lg_001_ref"
   }
 }
 Assets {
@@ -1421,6 +1475,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9906491685923217027
+  Name: "Whitebox Stairs 01 Straight 150cm"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_gen_whitebox_stairs_001_150cm"
+  }
+}
+Assets {
   Id: 9857956488554860756
   Name: "Edgeline Wavy Object Fade Advanced"
   PlatformAssetType: 2
@@ -1484,6 +1547,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9610691917151038938
+  Name: "Urban - Iron Axe 01 - Head 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_axe_iron_001_head_001_ref"
+  }
+}
+Assets {
   Id: 9571902954734362392
   Name: "Moss 01"
   PlatformAssetType: 2
@@ -1517,6 +1589,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_hq_002"
+  }
+}
+Assets {
+  Id: 9525850609780302765
+  Name: "Urban Interior - Oil Lantern 02 - Handle 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_lantern_oil_handle_002_ref"
   }
 }
 Assets {
@@ -1598,6 +1679,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "fxsm_candleflame"
+  }
+}
+Assets {
+  Id: 9168964345019580429
+  Name: "Container - Rectangle Thin 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_container_rectangle_thin_ref"
   }
 }
 Assets {
@@ -1772,6 +1862,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7579407092892633572
+  Name: "Stone Arch 3m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_stone-arch_6m_002"
+  }
+}
+Assets {
   Id: 7569864089304809235
   Name: "Parchment 01"
   PlatformAssetType: 2
@@ -1940,6 +2039,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_quarter-pipe_001"
+  }
+}
+Assets {
+  Id: 6021480692367198195
+  Name: "Urban - Wooden Water Bucket 01 - Handle 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_bucket_water_wood_001_handle_001_ref"
   }
 }
 Assets {
@@ -2141,6 +2249,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4858272778559485251
+  Name: "Urban - Modern Pickaxe 01 - Head 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_pickaxe_mod_001_head_001_ref"
+  }
+}
+Assets {
   Id: 4857880132214070829
   Name: "Cube - Arched"
   PlatformAssetType: 1
@@ -2159,6 +2276,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4842806961858489681
+  Name: "Rock Flat 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_rock_generic_004"
+  }
+}
+Assets {
   Id: 4809529976550021000
   Name: "Metal Old Beaten Gold 02"
   PlatformAssetType: 2
@@ -2174,6 +2300,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_blade_sword_003"
+  }
+}
+Assets {
+  Id: 4670029623152493838
+  Name: "Urban - Damaged Iron Fence - Post Top 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_post_damaged_001_ref"
   }
 }
 Assets {
@@ -2471,6 +2606,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_diamond_6_sided_001"
+  }
+}
+Assets {
+  Id: 2609794594435033014
+  Name: "Urban - Iron Hammer 01 - Head 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_hammer_iron_001_head_001_ref"
   }
 }
 Assets {
