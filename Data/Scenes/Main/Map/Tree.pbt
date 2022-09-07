@@ -8033,6 +8033,10 @@ Objects {
         SelfId: 5393114179212734407
       }
     }
+    Overrides {
+      Name: "cs:SetVisibility"
+      Bool: false
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
