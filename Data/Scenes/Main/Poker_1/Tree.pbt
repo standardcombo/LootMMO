@@ -517,7 +517,6 @@ Objects {
     }
   }
   ParentId: 10195046795898279797
-  ChildIds: 12956827047864083295
   ChildIds: 16572755873043391957
   UnregisteredParameters {
     Overrides {
@@ -842,46 +841,6 @@ Objects {
       IsAttenuationEnabled: true
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12956827047864083295
-  Name: "Shuffle Script"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15917732859319690653
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14684520227860206137
-    }
-  }
-  IsAdvanced: true
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
