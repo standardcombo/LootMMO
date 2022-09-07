@@ -197,6 +197,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12905817465373445073
+  Name: "Television"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Urban_Icon_053"
+  }
+}
+Assets {
   Id: 12889861000896994476
   Name: "Invisible"
   PlatformAssetType: 2
