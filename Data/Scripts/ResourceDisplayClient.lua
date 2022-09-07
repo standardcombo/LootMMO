@@ -102,6 +102,7 @@ end
 
 function IsValidAppState()
 	return _G.AppState.GetLocalState() == _G.AppState.SocialHub
+	and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
 end
 
 -- Initialize
