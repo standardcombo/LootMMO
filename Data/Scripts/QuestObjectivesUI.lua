@@ -11,6 +11,7 @@ local BADGE = script:GetCustomProperty("Badge"):WaitForObject()
 local COLLAPSED_WIDTH = script:GetCustomProperty("CollapsedWidth")
 local COLLAPSED_HEIGHT = script:GetCustomProperty("CollapsedHeight")
 local NOTIFICATION_RING = script:GetCustomProperty("NotificationRing"):WaitForObject()
+local FTUE_ARROW = script:GetCustomProperty("FTUEArrow"):WaitForObject()
 
 local LERP_SPEED = 12
 local PLAYER = Game.GetLocalPlayer()
@@ -73,6 +74,7 @@ function SetState(newState)
 	-- Exit state changes
 	if currentState == STATE_EXPANDED then
 		_G.CursorStack.Disable()
+		FTUE_ARROW.visibility = Visibility.FORCE_OFF
 	end
 	
 	-- Enter state changes
@@ -92,6 +94,10 @@ function SetState(newState)
 		end
 		
 		UpdateContents()
+		
+		if not _G.QuestController.HasCompleted(PLAYER, "Welcome") then
+			FTUE_ARROW.visibility = Visibility.INHERIT
+		end
 		
 	elseif newState == STATE_SELECTED then
 		local pos = selectedRow:GetAbsolutePosition()
@@ -220,6 +226,7 @@ function Tick(deltaTime)
 	end
 	
 	UpdateNotificationRing()
+	UpdateFTUEArrow()
 end
 
 function UpdateNotificationRing()
@@ -236,6 +243,13 @@ function UpdateNotificationRing()
 		local c = NOTIFICATION_RING:GetColor()
 		c.a = 1 - wave*wave
 		NOTIFICATION_RING:SetColor(c)
+	end
+end
+
+function UpdateFTUEArrow()
+	if FTUE_ARROW.visibility == Visibility.INHERIT then
+		local t = math.sin(time() * 3)
+		FTUE_ARROW.x = t * 15 - 10
 	end
 end
 

@@ -57,6 +57,11 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:FTUEArrow"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 118
