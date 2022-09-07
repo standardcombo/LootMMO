@@ -260,6 +260,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12130795827330542934
+  Name: "Video Stream Material (Slot 2)"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_stream_material_slot2"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
@@ -437,15 +446,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeInset_01_Text_021_ref"
-  }
-}
-Assets {
-  Id: 6307150817253300746
-  Name: "Video Stream Material (Slot 1) Unlit"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_stream_material_slot1"
   }
 }
 Assets {

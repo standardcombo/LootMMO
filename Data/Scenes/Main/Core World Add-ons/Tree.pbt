@@ -20,7 +20,6 @@ Objects {
   }
   ParentId: 3160701857187969297
   ChildIds: 97962423654291890
-  ChildIds: 13671276862351254285
   ChildIds: 13976216396826625771
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -207,56 +206,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13671276862351254285
-  Name: "StreamAudioProxy"
-  Transform {
-    Location {
-      X: 25
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17345090259924020060
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  AudioInstance {
-    AudioAsset {
-    }
-    Volume: 1
-    Falloff: 800
-    Radius: 800
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-    StreamAudio {
-      StreamSourceReference {
-        Key: "0"
-        Type {
-          Value: "mc:enetreferencetype:streamsource"
-        }
-      }
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 97962423654291890
   Name: "ClientContext"
   Transform {
@@ -272,6 +221,8 @@ Objects {
   }
   ParentId: 17345090259924020060
   ChildIds: 17471664403313137262
+  ChildIds: 13671276862351254285
+  ChildIds: 6604241626167642457
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -298,19 +249,122 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 6604241626167642457
+  Name: "StreamAudioProxy"
+  Transform {
+    Location {
+      X: 25.0001221
+      Y: -3.43322754e-05
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 97962423654291890
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+    }
+    Volume: 1
+    Falloff: 4000
+    Radius: 1400
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+    StreamAudio {
+      StreamSourceReference {
+        Key: "1"
+        Type {
+          Value: "mc:enetreferencetype:streamsource"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13671276862351254285
+  Name: "StreamAudioProxy"
+  Transform {
+    Location {
+      X: 25.0001221
+      Y: -3.43322754e-05
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 97962423654291890
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+    }
+    Volume: 1
+    Falloff: 4000
+    Radius: 1400
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+    StreamAudio {
+      StreamSourceReference {
+        Key: "0"
+        Type {
+          Value: "mc:enetreferencetype:streamsource"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 17471664403313137262
   Name: "Plane 1m - One Sided"
   Transform {
     Location {
     }
     Rotation {
-      Yaw: 89.9999771
-      Roll: -89.9999771
+      Pitch: -6.83018879e-06
+      Yaw: -89.9999466
+      Roll: 89.9999466
     }
     Scale {
-      X: 8
-      Y: 4.5
-      Z: 3.84157848
+      X: 7.85007
+      Y: 4.4156642
+      Z: 3.76958251
     }
   }
   ParentId: 97962423654291890
@@ -318,8 +372,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 6307150817253300746
+        Id: 12130795827330542934
       }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
     }
   }
   Collidable_v2 {
