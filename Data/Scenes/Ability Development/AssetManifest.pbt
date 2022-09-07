@@ -278,19 +278,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10742631008145115590
-  Name: "Character"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "6f9084df388046e49b033c8e98257774"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
   Id: 10577491396371571795
   Name: "Depth of Field Post Process"
   PlatformAssetType: 6

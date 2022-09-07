@@ -1,7 +1,7 @@
 GameId: "5cb37e207ed34d6794d33e642a3ac595"
 ClientVersion: "1.0.249-prod-s"
 Name: "Loot MMO"
-Description: "It begins with a social hub..."
+Description: "It begins with a social hub... \r\nLearn more at: LootMMO.com"
 Tags: "RPG"
 Tags: "SocialHub"
 Tags: "Cooperative"
@@ -12,7 +12,6 @@ ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\2_hub.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\4_map.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\5_adventure.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootGame\\Core Loot\\Screenshots\\6_monsters.png"
-ReleaseNotes: "Version 0.2\r\n- Final art for all weapon types.\r\n- Updated all UI (bag selection, poker, pinball, etc).\r\n- New HUD element indicates your total coins.\r\n- Optimized networked objects, meshes and refresh rate of paintings.\r\n\r\nKnown issue: Wallet integration is currently bugged. You don\'t see your Loot bags in the bag selection screen. Tokens under your nameplate are also wrong."
 OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
 PublishedState: Public
