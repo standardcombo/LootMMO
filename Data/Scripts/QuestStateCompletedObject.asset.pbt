@@ -14,6 +14,14 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:SetVisibility"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:SetCollision"
+        Bool: false
+      }
+      Overrides {
         Name: "cs:Object:isrep"
         Bool: false
       }
