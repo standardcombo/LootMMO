@@ -15,8 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13215782773246389107
+        ParentId: 6292852409126697535
         ChildIds: 8548860050360989112
+        ChildIds: 1655237166187542796
+        ChildIds: 13700897387113552852
         ChildIds: 10491101007112664429
         ChildIds: 8176442398161673332
         ChildIds: 4433939091146539235
@@ -166,7 +168,75 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 7542904062235710665
+              Id: 14060330023043759337
+            }
+            Color {
+              A: 0.6
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1655237166187542796
+        Name: "BG-Left"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 4
+          Height: 200
+          UIX: 1
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 14060330023043759337
             }
             Color {
               R: 0.97
@@ -191,6 +261,76 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13700897387113552852
+        Name: "BG-Right"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 4
+          Height: 200
+          UIX: -1
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 14060330023043759337
+            }
+            Color {
+              R: 0.97
+              G: 0.489000022
+              A: 0.514
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
               }
             }
           }
@@ -1140,12 +1280,12 @@ Assets {
       }
     }
     Assets {
-      Id: 7542904062235710665
-      Name: "Frame Outline Thin 001"
+      Id: 14060330023043759337
+      Name: "BG Flat 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "FrameOutline_020"
+        AssetId: "BackgroundNoOutline_020"
       }
     }
     Assets {
