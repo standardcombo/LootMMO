@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17629610649556415108
+  Name: "Frame Ring 1x 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameRing1x_003"
+  }
+}
+Assets {
   Id: 16577896491837673141
   Name: "Outline Object"
   PlatformAssetType: 20

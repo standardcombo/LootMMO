@@ -636,6 +636,7 @@ Objects {
   ChildIds: 775757029931951714
   ChildIds: 9689722478242600648
   ChildIds: 759905495438415609
+  ChildIds: 1680015571074773948
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -667,6 +668,76 @@ Objects {
       SelfAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1680015571074773948
+  Name: "Notification Ring"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3789761133958952025
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 180
+    Height: 180
+    UIX: 50
+    UIY: 50
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 17629610649556415108
+      }
+      Color {
+        R: 0.97
+        G: 0.489000291
+        A: 1
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
         }
       }
       TargetAnchor {
@@ -1682,6 +1753,12 @@ Objects {
       Name: "cs:CloseButton"
       ObjectReference {
         SelfId: 3108201781574843211
+      }
+    }
+    Overrides {
+      Name: "cs:NotificationRing"
+      ObjectReference {
+        SelfId: 1680015571074773948
       }
     }
   }

@@ -52,6 +52,11 @@ Assets {
         Name: "cs:CollapsedHeight"
         Int: 100
       }
+      Overrides {
+        Name: "cs:NotificationRing"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 118
