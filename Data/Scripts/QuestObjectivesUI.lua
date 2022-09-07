@@ -10,6 +10,7 @@ local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 local BADGE = script:GetCustomProperty("Badge"):WaitForObject()
 local COLLAPSED_WIDTH = script:GetCustomProperty("CollapsedWidth")
 local COLLAPSED_HEIGHT = script:GetCustomProperty("CollapsedHeight")
+local NOTIFICATION_RING = script:GetCustomProperty("NotificationRing"):WaitForObject()
 
 local LERP_SPEED = 12
 local PLAYER = Game.GetLocalPlayer()
@@ -29,6 +30,8 @@ CONTENT_PANEL.opacity = 0
 
 BADGE.visibility = Visibility.FORCE_OFF
 local badgeNotSeenCount = 0
+
+local notifRingMaxSize = NOTIFICATION_RING.width
 
 local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
@@ -214,6 +217,25 @@ function Tick(deltaTime)
 				nextSelectedRow.y = CoreMath.Lerp(nextSelectedRow.y, 0, t / 3)
 			end
 		end
+	end
+	
+	UpdateNotificationRing()
+end
+
+function UpdateNotificationRing()
+	if BADGE.visibility == Visibility.FORCE_OFF then
+		NOTIFICATION_RING.visibility = Visibility.FORCE_OFF
+	else
+		NOTIFICATION_RING.visibility = Visibility.INHERIT
+		
+		local t = math.fmod(time(), math.pi / 2)
+		local wave = math.sin(t)
+		local radius = wave * notifRingMaxSize
+		NOTIFICATION_RING.width = CoreMath.Round(radius)
+		NOTIFICATION_RING.height = CoreMath.Round(radius)
+		local c = NOTIFICATION_RING:GetColor()
+		c.a = 1 - wave*wave
+		NOTIFICATION_RING:SetColor(c)
 	end
 end
 
