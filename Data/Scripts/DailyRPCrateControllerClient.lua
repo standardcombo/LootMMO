@@ -382,6 +382,8 @@ function OnActionPressed(player, action)
 
     -- Press f to portal
     if action == "Interact" and isTriggerInteractable then
+    	Events.BroadcastToServer("ObjectivePickup", "RPCrate", 1)
+    	
         if API.IsReadyToClaim() and (tutorialComplete or inCorrectTutorial) then
             SetInteractableTrigger(false)
             TryToOpenCrate()

@@ -6397,6 +6397,8 @@ Objects {
     }
   }
   ParentId: 7107530989095588825
+  ChildIds: 6106641467758297353
+  ChildIds: 10755491364729204513
   ChildIds: 7457176649035423054
   ChildIds: 121860191560994528
   ChildIds: 17548685525418555134
@@ -15014,6 +15016,7 @@ Objects {
     }
   }
   ParentId: 6215604537242873826
+  ChildIds: 4264166916141485892
   UnregisteredParameters {
     Overrides {
       Name: "cs:API"
@@ -15158,6 +15161,164 @@ Objects {
     SubobjectId: 9503647255240540077
     InstanceId: 8512474976616352372
     TemplateId: 16602824603992807363
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4264166916141485892
+  Name: "Spawn Point"
+  Transform {
+    Location {
+      X: -70490.6094
+      Y: 63306.4805
+      Z: 195.892761
+    }
+    Rotation {
+      Yaw: 138.499069
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7457176649035423054
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 10755491364729204513
+  Name: "QuestStateCompletedObject"
+  Transform {
+    Location {
+      X: 666.337952
+      Y: -76.3433914
+      Z: 116.443787
+    }
+    Rotation {
+      Yaw: 3.05175763e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6215604537242873826
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Welcome"
+    }
+    Overrides {
+      Name: "cs:Object"
+      ObjectReference {
+        SelfId: 13663632138732357634
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 13588614092371762332
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6106641467758297353
+  Name: "QuestStateCompletedObject"
+  Transform {
+    Location {
+      X: 666.337952
+      Y: -76.3433914
+      Z: 116.443787
+    }
+    Rotation {
+      Yaw: 3.05175727e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6215604537242873826
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Welcome"
+    }
+    Overrides {
+      Name: "cs:Object"
+      ObjectReference {
+        SelfId: 17548685525418555134
+      }
+    }
+    Overrides {
+      Name: "cs:SetCollision"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:SetVisibility"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 13588614092371762332
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -15725,13 +15886,13 @@ Objects {
   }
   ParentId: 7107530989095588825
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -15783,13 +15944,13 @@ Objects {
   }
   ParentId: 7107530989095588825
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"

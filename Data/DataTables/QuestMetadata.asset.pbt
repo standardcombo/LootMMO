@@ -140,5 +140,14 @@ Assets {
         AssetId: "UI_Fantasy_Icon_CrystalBall"
       }
     }
+    Assets {
+      Id: 9274166210433720666
+      Name: "Chest"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Chest"
+      }
+    }
   }
 }

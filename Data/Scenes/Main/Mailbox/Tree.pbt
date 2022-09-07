@@ -6922,7 +6922,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "The lodge is magically protected, so the beasts can\'t get in. To easily enter and exit the lodge you\'ll need to craft a Map of Adventurers.\r\n\r\nAttached to this letter you\'ll find a piece of map, to get started. You\'ll need three pieces, but I\'m sure there are more laying around. Good luck!"
+      Label: "The lodge is magically protected, so the beasts can\'t get in. However, there\'s been an accident with the spell and the Map of Adventurers has stopped working.\r\n\r\nNot to worry! You\'re not stuck in here.\r\nWe\'ve opened 10 other-worldly portals at the entrance, while we sort through the mishaps. Safe travels!\r\n"
       Color {
         R: 0.070596
         G: 0.0860842
@@ -7350,7 +7350,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "Dear <player name>,\r\n\r\nYou\'re one of the first adventurers to visit our lodge. Welcome! Builders are still redecorating, but we hope you feel at home.\r\n\r\nWhen you\'re done looking around you might want to explore the outdoors. Watch out! There are wild beasts around. To protect yourself we\'ve left a few Loot Bags at the entrance, in case you didn\'t bring your own."
+      Label: "Dear <player name>,\r\n\r\nYou\'re one of the first adventurers to visit our lodge. Welcome! Builders are still redecorating, but we hope you feel at home.\r\n\r\nWe\'ve found a giant treasure chest which seems to have a never-ending supply of Reward Points, so we placed it here, for everyone to enjoy. It\'s big and golden, you can\'t miss it!"
       Color {
         R: 0.070596
         G: 0.0860842
