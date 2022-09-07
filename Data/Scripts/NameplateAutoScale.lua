@@ -7,12 +7,17 @@ local SCALE_LERP_SPEED = 14
 
 local defaultScale = UICONTAINER:GetScale()
 local localPlayer = Game.GetLocalPlayer()
---[[
+
 function Tick(deltaTime)
 	if not ROOT.clientUserData then return end
 	
 	local player = ROOT.clientUserData.player
 	if not Object.IsValid(player) then return end
+	
+	if player ~= localPlayer then
+		Task.Wait(30)
+		return
+	end
 	
 	local playerForward = Quaternion.New(player:GetWorldRotation()):GetForwardVector()
 	local viewForward = Quaternion.New(localPlayer:GetViewWorldRotation()):GetForwardVector()
@@ -28,4 +33,4 @@ function Tick(deltaTime)
 	scale = Vector3.Lerp(scale, targetScale, t)
 	UICONTAINER:SetScale(scale)
 end
-]]
+
