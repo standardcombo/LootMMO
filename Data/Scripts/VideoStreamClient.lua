@@ -14,6 +14,7 @@ local PLAYER = Game.GetLocalPlayer()
 local AUDIO_POS = AUDIO_1:GetWorldPosition()
 
 local allAudio = {}
+local isInTrigger = true
 local isFocused = false
 local escHook = nil
 
@@ -117,20 +118,41 @@ function FindAllAudio()
 end
 
 
+function UpdateHudVisibility()
+	if isInTrigger and not isFocused
+	and _G.AppState.GetLocalState() == _G.AppState.SocialHub then
+		HUD.visibility = Visibility.INHERIT
+	else
+		HUD.visibility = Visibility.FORCE_OFF
+	end
+end
+
+
+Events.Connect("AppState.Enter", function(player, newState, prevState)
+	if player == PLAYER then
+		UpdateHudVisibility()
+	end
+end)
+
+
 function OnBeginOverlap(trigger, player)
 	if player == PLAYER then
-		HUD.visibility = Visibility.INHERIT
+		isInTrigger = true
+		
+		UpdateHudVisibility()
 	end
 end
 
 
 function OnEndOverlap(trigger, player)
 	if player == PLAYER then
-		HUD.visibility = Visibility.FORCE_OFF
+		isInTrigger = false
 		
 		if isFocused then
 			SetFocus(false)
 		end
+		
+		UpdateHudVisibility()
 	end
 end
 
@@ -138,13 +160,14 @@ end
 function OnBindingPressed(player, action)
 	if action == KEY_BINDING then
 		if HUD.visibility == Visibility.INHERIT then
-			HUD.visibility = Visibility.FORCE_OFF
-			SetFocus(true)
-			
+			if _G.AppState.GetLocalState() == _G.AppState.SocialHub then
+				SetFocus(true)
+			end
 		elseif isFocused then
-			HUD.visibility = Visibility.INHERIT
 			SetFocus(false)
 		end
+		
+		UpdateHudVisibility()
 	end
 end
 
