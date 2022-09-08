@@ -27,10 +27,12 @@ local function GoingToTakeDamage(attackData)
     end
     local stats = character:GetComponent('Stats')
     if stats then
-        local Block = stats:GetTempStat('B')
-        attackData.damage = math.max(0, attackData.damage - Block)
+        if attackData.damage.amount > 0 then
+            local Block = stats:GetTempStat('B')
+            attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
 
-        stats:SetTempStat('B', math.max(Block - 1, 0))
+            stats:SetTempStat('B', math.max(Block - 1, 0))
+        end
     end
 end
 

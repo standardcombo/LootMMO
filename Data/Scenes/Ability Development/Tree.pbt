@@ -1484,6 +1484,7 @@ Objects {
     }
   }
   ParentId: 6958344243461392201
+  ChildIds: 17119235847195842534
   ChildIds: 10263210180423435809
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2225,6 +2226,64 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 17119235847195842534
+  Name: "UI Scroll Panel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11632620763342960388
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 1275
+    Height: 500
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentHeight: true
+    IsHittable: true
+    ScrollPanel {
+      Orientation {
+        Value: "mc:eorientation:orient_vertical"
+      }
+      IsInteractable: true
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 13598904271275663441
   Name: "CharacterSelect_Client"
   Transform {
@@ -2250,6 +2309,12 @@ Objects {
       Name: "cs:ConfirmDeletion"
       ObjectReference {
         SelfId: 10263210180423435809
+      }
+    }
+    Overrides {
+      Name: "cs:UIScrollPanel"
+      ObjectReference {
+        SelfId: 17119235847195842534
       }
     }
   }

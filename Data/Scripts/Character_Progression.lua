@@ -35,7 +35,7 @@ function component:SetProgression(key, value)
 end
 
 function component:GetProgressionKey(key)
-    return self.progression[key]
+    return self.progression[key] or false
 end
 function component:GetProgression()
     return self.progression

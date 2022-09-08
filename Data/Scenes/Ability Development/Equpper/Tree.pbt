@@ -477,7 +477,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "5"
+          String: "4"
         }
         Overrides {
           Name: "Position"
@@ -544,7 +544,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "4"
+          String: "3"
         }
         Overrides {
           Name: "Position"
@@ -619,7 +619,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "3"
+          String: "2"
         }
         Overrides {
           Name: "Position"
@@ -694,7 +694,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "2"
+          String: "1"
         }
         Overrides {
           Name: "Position"
@@ -757,7 +757,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "1"
+          String: "Shift"
         }
         Overrides {
           Name: "Position"

@@ -48,7 +48,7 @@ local EquipEvent =
             return
         end
         local stat = character:GetComponent('Stats')
-        statUpdateEvent = stat.statUpdateEvent:Connect(UpdateStars)
+        statUpdateEvent = stat.statsUpdatedEvent:Connect(UpdateStars)
     end
 )
 
