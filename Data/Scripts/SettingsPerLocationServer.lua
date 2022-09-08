@@ -82,6 +82,8 @@ function SpawnPlayerAt(player, point)
 	point.serverUserData.isTaken = true
 end
 
+Events.Connect("SpawnPlayerAt", SpawnPlayerAt)
+
 
 function OnPlayerJoined(player)
 	SpawnPlayerAt(player, "BagSelection")
