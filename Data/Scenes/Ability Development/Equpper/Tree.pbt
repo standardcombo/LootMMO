@@ -707,20 +707,25 @@ Objects {
           }
         }
         Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
           Name: "UIX"
-          Float: -200.80542
+          Float: -175
         }
         Overrides {
           Name: "UIY"
-          Float: -209.926453
+          Float: -200
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
         }
       }
     }

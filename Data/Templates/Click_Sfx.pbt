@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6814108939987665873
+      RootId: 17117083384172599677
       Objects {
-        Id: 6814108939987665873
+        Id: 17117083384172599677
         Name: "Click_Sfx"
         Transform {
           Scale {
@@ -15,7 +15,23 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 1258191214239267258
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Note"
+            Enum {
+              Value: "mc:esfx_ins_music_box:72"
+            }
+          }
+          Overrides {
+            Name: "bp:Sustain"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Velocity"
+            Int: 43
+          }
+        }
         Lifespan: 1
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -29,14 +45,19 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        AudioInstance {
-          AudioAsset {
-            Id: 15266642801182007620
+        Blueprint {
+          BlueprintAsset {
+            Id: 991937497145103339
           }
-          AutoPlay: true
-          Volume: 1
-          Falloff: -1
-          Radius: -1
+          TeamSettings {
+          }
+          AudioBP {
+            AutoPlay: true
+            Transient: true
+            Volume: 0.4
+            Falloff: 3600
+            Radius: 400
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -45,12 +66,12 @@ Assets {
       }
     }
     Assets {
-      Id: 15266642801182007620
-      Name: "UI Click Accept 01"
-      PlatformAssetType: 7
+      Id: 991937497145103339
+      Name: "Music Box Sampled Instrument 01"
+      PlatformAssetType: 10
       PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_ui_click_accept_01_Cue_ref"
+        AssetType: "AudioBlueprintAssetRef"
+        AssetId: "sfxabp_sampled_music_box_ref"
       }
     }
     PrimaryAssetId {

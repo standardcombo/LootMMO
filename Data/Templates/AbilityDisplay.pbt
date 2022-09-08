@@ -22,6 +22,9 @@ Assets {
         ChildIds: 3823693050672787786
         ChildIds: 8384477650364148823
         ChildIds: 8134214131070523244
+        ChildIds: 2622678239030900609
+        ChildIds: 6071147121489439056
+        ChildIds: 10651971959710276465
         ChildIds: 17929510888674865166
         ChildIds: 17293412896128553977
         UnregisteredParameters {
@@ -38,8 +41,8 @@ Assets {
         Control {
           Width: 100
           Height: 100
-          UIX: -254.658447
-          UIY: -73.2629395
+          UIX: -225
+          UIY: -75
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1868,6 +1871,273 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2622678239030900609
+        Name: "StarRatingDisplay"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4105394437550983763
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 1582364714300165545
+            value {
+              Overrides {
+                Name: "Name"
+                String: "StarRatingDisplay"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+              Overrides {
+                Name: "UIX"
+                Float: -28.407
+              }
+              Overrides {
+                Name: "UIY"
+                Float: 19.9837646
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+              Overrides {
+                Name: "Width"
+                Int: 24
+              }
+              Overrides {
+                Name: "Height"
+                Int: 24
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 2784576212819582176
+            value {
+              Overrides {
+                Name: "cs:Root"
+                ObjectReference {
+                  SubObjectId: 4105394437550983763
+                }
+              }
+              Overrides {
+                Name: "cs:Offset"
+                Int: 1
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 9183470350948336639
+            value {
+              Overrides {
+                Name: "Color"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 7516794967106253148
+          }
+        }
+      }
+      Objects {
+        Id: 6071147121489439056
+        Name: "StarRatingDisplay"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4105394437550983763
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 1582364714300165545
+            value {
+              Overrides {
+                Name: "Name"
+                String: "StarRatingDisplay"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+              Overrides {
+                Name: "UIX"
+                Float: 0
+              }
+              Overrides {
+                Name: "UIY"
+                Float: 29.9239502
+              }
+              Overrides {
+                Name: "Width"
+                Int: 24
+              }
+              Overrides {
+                Name: "Height"
+                Int: 24
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 2784576212819582176
+            value {
+              Overrides {
+                Name: "cs:Root"
+                ObjectReference {
+                  SubObjectId: 4105394437550983763
+                }
+              }
+              Overrides {
+                Name: "cs:Offset"
+                Int: 2
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 9183470350948336639
+            value {
+              Overrides {
+                Name: "Color"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 7516794967106253148
+          }
+        }
+      }
+      Objects {
+        Id: 10651971959710276465
+        Name: "StarRatingDisplay"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4105394437550983763
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 1582364714300165545
+            value {
+              Overrides {
+                Name: "Name"
+                String: "StarRatingDisplay"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+              Overrides {
+                Name: "UIX"
+                Float: 28.407
+              }
+              Overrides {
+                Name: "UIY"
+                Float: 18.265564
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+              Overrides {
+                Name: "Width"
+                Int: 24
+              }
+              Overrides {
+                Name: "Height"
+                Int: 24
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 2784576212819582176
+            value {
+              Overrides {
+                Name: "cs:Root"
+                ObjectReference {
+                  SubObjectId: 4105394437550983763
+                }
+              }
+              Overrides {
+                Name: "cs:Offset"
+                Int: 3
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 9183470350948336639
+            value {
+              Overrides {
+                Name: "Color"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 7516794967106253148
+          }
+        }
       }
       Objects {
         Id: 17929510888674865166

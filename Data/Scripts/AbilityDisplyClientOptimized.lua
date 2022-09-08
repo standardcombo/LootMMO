@@ -12,7 +12,10 @@ local ACTION_NAME = script:GetCustomProperty('ActionName'):WaitForObject()
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local DEFAULT_IMAGE = ICON:GetImage()
 
+local connections = {}
+
 -- Variables
+local currentEquipment = nil
 local currentAbility = nil
 local root = nil
 local executeDuration = 0.0
@@ -107,6 +110,14 @@ function SetActionName(name)
     end
 end
 
+function ConnectEquipment(func)
+    table.insert(connections, func)
+end
+
+function GetEquipment()
+    return currentEquipment
+end
+
 function SetEquipment(equipment)
     if not Object.IsValid(equipment) then
         return
@@ -120,6 +131,11 @@ function SetEquipment(equipment)
             return
         end
     end
+
+    for key, value in pairs(connections) do
+        value(equipment)
+    end
+
     root = equipment
     currentAbility = equipment:FindChildByType('Ability')
     if not currentAbility then
@@ -135,3 +151,5 @@ end
 PANEL.clientUserData.SetIcon = SetIcon
 PANEL.clientUserData.SetActionName = SetActionName
 PANEL.clientUserData.SetEquipment = SetEquipment
+PANEL.clientUserData.GetEquipment = GetEquipment
+PANEL.clientUserData.Connect = ConnectEquipment

@@ -16,6 +16,12 @@ Assets {
           Id: 10409285431752902445
         }
       }
+      Overrides {
+        Name: "cs:Class_Description"
+        AssetReference {
+          Id: 11018281194961834673
+        }
+      }
     }
   }
   SerializationVersion: 118

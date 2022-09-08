@@ -1,4 +1,5 @@
 local Class = {}
+Class.isBag = false
 while not _G.Items do
     Task.Wait()
 end
@@ -24,7 +25,7 @@ function Class:CalculateStats()
             end
         }
     )
-    local greatness = self:GetGreatness() 
+    local greatness = self:GetGreatness()
     local scale = 1 + (greatness - 1) * 0.25
     local item = self:GetItem()
     if not item then
@@ -43,6 +44,15 @@ end
 function Class:SetOrder(order)
     self.order = order
 end
+
+function Class:SetBag(bool)
+    self.isBag = bool or false
+end
+
+function Class:GetBag()
+    return self.isBag or false
+end
+
 function Class:GetOrder()
     return self.order or {}
 end
@@ -61,12 +71,16 @@ end
 function Class:GetCatagory()
     return self:GetItem()['category']
 end
+function Class:IsA(type)
+    return type == 'LootItem'
+end
 
 function Class:Serialize()
     local returnData = {}
     returnData.greatness = self:GetGreatness()
     returnData.item = self:GetItem()['id']
     returnData.order = self:GetOrder()['id']
+    returnData.isBag = self.isBag
     return returnData
 end
 

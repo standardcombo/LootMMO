@@ -19,12 +19,14 @@ local tableElements = {
 }
 local eventElements = {
     'setOwnerEvent',
-    'removeOwnerEvent'
+    'removeOwnerEvent',
+    'destroyedEvent'
 }
 local character = {
     owner = nil,
     name = 'Default',
-    id = 1
+    id = 1,
+    lastPlayed = DateTime.FromSecondsSinceEpoch(1)
 }
 function character:AddComponent(componentName)
     if self:GetComponent(componentName) then
@@ -84,6 +86,7 @@ function character:Serialize()
     data.id = self.id
     data.name = self.name
     data.class = self.class
+    data.lastPlayed = self.lastPlayed:ToIsoString()
     data.components = {}
     for index, component in ipairs(self:GetComponents()) do
         local componentData = component:Serialize()
@@ -96,6 +99,7 @@ function character:Deserialize(data)
     self.id = data.id
     self.name = data.name
     self.class = data.class
+    self.lastPlayed = DateTime.FromIsoString(data.lastPlayed)
     for index, value in ipairs(data.components) do
         local component = self:GetComponent(value.id)
         if component then
@@ -109,6 +113,7 @@ function character:Destroy()
             component:Destroy()
         end
     end
+    TriggerEvent(self.destroyEvent, self)
 end
 function InitCharacter(NewCharacter)
     local stats = NewCharacter:GetComponent('Stats')
@@ -140,13 +145,14 @@ function constructor.NewCharacter()
         NewCharacter[value] = {}
     end
     NewCharacter.id = math.random(2 ^ 31)
-
     constructor.newCharacterCreated:Trigger(NewCharacter)
+
     NewCharacter:AddComponent('Stats')
     NewCharacter:AddComponent('Level')
     NewCharacter:AddComponent('Progression')
     NewCharacter:AddComponent('Class')
     NewCharacter:AddComponent('Points')
+    NewCharacter:AddComponent('Inventory')
     constructor.newCharacterFinished:Trigger(NewCharacter)
     InitCharacter(NewCharacter)
 
@@ -155,6 +161,9 @@ end
 function constructor.NewMicroCharacter()
     local NewCharacter = setmetatable({}, {__index = character})
     NewCharacter.id = math.random(2 ^ 31)
+    for key, value in pairs(tableElements or {}) do
+        NewCharacter[value] = {}
+    end
     NewCharacter:AddComponent('Level')
     return NewCharacter
 end

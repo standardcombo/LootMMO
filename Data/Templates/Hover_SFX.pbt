@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 2428985885261831848
+      RootId: 7888446067057122242
       Objects {
-        Id: 2428985885261831848
+        Id: 7888446067057122242
         Name: "Hover_SFX"
         Transform {
           Scale {
@@ -15,7 +15,27 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 13528845596765037915
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Note"
+            Enum {
+              Value: "mc:esfx_ins_music_box:57"
+            }
+          }
+          Overrides {
+            Name: "bp:Sustain"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Velocity"
+            Int: 3
+          }
+          Overrides {
+            Name: "bp:Release"
+            Float: 0.8
+          }
+        }
         Lifespan: 1
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -29,14 +49,22 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        AudioInstance {
-          AudioAsset {
-            Id: 12136487048442216101
+        Blueprint {
+          BlueprintAsset {
+            Id: 991937497145103339
           }
-          AutoPlay: true
-          Volume: 1
-          Falloff: -1
-          Radius: -1
+          TeamSettings {
+          }
+          AudioBP {
+            AutoPlay: true
+            Transient: true
+            Pitch: -400
+            Volume: 0.4
+            Falloff: 3600
+            Radius: 400
+            FadeOutTime: 0.5
+            StopTime: 0.5
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -45,12 +73,12 @@ Assets {
       }
     }
     Assets {
-      Id: 12136487048442216101
-      Name: "Button Click Press Core 01 SFX"
-      PlatformAssetType: 7
+      Id: 991937497145103339
+      Name: "Music Box Sampled Instrument 01"
+      PlatformAssetType: 10
       PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfxui_click_press_core_01_Cue_ref"
+        AssetType: "AudioBlueprintAssetRef"
+        AssetId: "sfxabp_sampled_music_box_ref"
       }
     }
     PrimaryAssetId {
