@@ -14,7 +14,7 @@ local PLAYER = Game.GetLocalPlayer()
 local AUDIO_POS = AUDIO_1:GetWorldPosition()
 
 local allAudio = {}
-local isInTrigger = true
+local isInTrigger = false
 local isFocused = false
 local escHook = nil
 

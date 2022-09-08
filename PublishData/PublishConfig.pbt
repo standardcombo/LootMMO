@@ -31,5 +31,5 @@ SceneNameToSceneIdMap {
   key: "Main"
   value: "d39f6bdf46fc7b191c9e4e9cd00a0e18"
 }
-MaxPlayersForMainScene: 32
+MaxPlayersForMainScene: 20
 EnableForPC: true
