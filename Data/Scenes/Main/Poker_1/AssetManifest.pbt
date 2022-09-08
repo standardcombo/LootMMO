@@ -35,6 +35,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16532880832873788683
+  Name: "BG Flat 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_019"
+  }
+}
+Assets {
   Id: 16353917461806733124
   Name: "Ring - Thin"
   PlatformAssetType: 1
@@ -104,6 +113,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_020"
+  }
+}
+Assets {
+  Id: 14005289317451984879
+  Name: "Icon Spade"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Spade"
   }
 }
 Assets {
@@ -206,6 +224,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7654127839654482081
+  Name: "Roboto Slab"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "RobotoSlabRegular_ref"
+  }
+}
+Assets {
   Id: 7546402303720015184
   Name: "Lounge and Jazz Music Score Set 01"
   PlatformAssetType: 10
@@ -260,6 +287,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5263345044092346839
+  Name: "Icon Health"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Health"
+  }
+}
+Assets {
   Id: 4912418401130903136
   Name: "Cube - Inverted"
   PlatformAssetType: 1
@@ -275,6 +311,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ring_faceted_extnd_half_z_thick_lg_001_ref"
+  }
+}
+Assets {
+  Id: 4284216059418045260
+  Name: "BG Gradient 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_019"
   }
 }
 Assets {
