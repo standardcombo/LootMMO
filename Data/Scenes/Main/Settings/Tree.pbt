@@ -226,10 +226,10 @@ Objects {
         VoiceChannelType {
           Value: "mc:evoicechanneltype:positional"
         }
-        AudibleDistance: 6000
-        ConversationalDistance: 1500
+        AudibleDistance: 1200
+        ConversationalDistance: 500
         AudioFadeModel {
-          Value: "mc:evoiceaudiofademodel:inverse"
+          Value: "mc:evoiceaudiofademodel:linear"
         }
         AudioFadeIntensityByDistance: 1
         VoiceChatPosition {
