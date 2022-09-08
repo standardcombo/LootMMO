@@ -17,6 +17,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:StorageKeyUtil"
+        AssetReference {
+          Id: 7957473816772575606
+        }
+      }
+      Overrides {
         Name: "cs:QuestMetadata:isrep"
         Bool: false
       }
