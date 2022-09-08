@@ -92,6 +92,10 @@ Game.playerJoinedEvent:Connect(function (player)
     elseif occupyingPlayer:IsA("Player") then
         player:SetPrivateNetworkedData(SIT_ME_ID,occupyingPlayer.id)
     end
+    
+    player.diedEvent:Connect(function (p)
+    	PlayerLeftSitMe(p)
+    end)
 end)
 Game.playerLeftEvent:Connect(function (player)
     PlayerLeftSitMe(player)
