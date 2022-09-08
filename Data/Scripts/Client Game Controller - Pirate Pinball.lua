@@ -235,7 +235,8 @@ function resetMachineState()
     if aBall and Object.IsValid(aBall) then aBall:Destroy() end
   end
 
-  if hasLeaderboard and score > 0 then
+  --if hasLeaderboard and score > 0 then
+  if score > 0 then
     Events.BroadcastToServer("SubmitHighScore", thisMachine.id, currentPlayer, score)
   end
 
