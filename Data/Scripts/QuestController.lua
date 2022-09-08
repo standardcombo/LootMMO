@@ -23,6 +23,9 @@ _G.QuestController = API
 
 local QUEST_METADATA = require(script:GetCustomProperty("QuestMetadata"))
 local QUEST_OBJECTIVES = require(script:GetCustomProperty("QuestObjectives"))
+local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
+
+local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
 
 -- Create direct connection between quests and their objectives
 -- so we only have to do this search one time
@@ -273,21 +276,29 @@ function CompleteQuest(player, questId)
 		
 		API.UnlockForPlayer(player, unlockId)
 	end
+	
+	SavePlayerData(player)
 end
 
 
-local function SavePlayerData(player)
---[[	local storageData = Storage.GetPlayerData(player)
+function SavePlayerData(player)
+	if not Object.IsValid(player) then return end
+	if player.serverUserData.isLoadingQuestData then return end
 	
-	if not storageData.quests then
-		storageData.quests = {}
-	end
-	...
-]]
+	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
+	
+	storageData.quests = API.GetPlayerData(player)
+	
+	local resultCode,errorMessage = Storage.SetSharedPlayerData(PROGRESS_KEY, player, storageData)
+	
+	--storageData = Storage.GetPlayerData(player)
+	--print("")
 end
 
 local function LoadPlayerData(player)
-	local storageData = Storage.GetPlayerData(player)
+	player.serverUserData.isLoadingQuestData = true
+	
+	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
 	local playerData = storageData.quests
 	
 	if not playerData then
@@ -300,7 +311,10 @@ local function LoadPlayerData(player)
 		}
 	end
 	SetPlayerData(player, playerData)
+	
+	player.serverUserData.isLoadingQuestData = nil
 end
+
 
 if Environment.IsServer() then
 	Game.playerJoinedEvent:Connect(LoadPlayerData)
@@ -323,6 +337,46 @@ if Environment.IsClient() then
 	Task.Spawn(
 		FireLocalQuestChangedEvent
 	)
+end
+
+
+function ResetQuestsForPlayer(player)
+	print("ResetQuestsForPlayer() " .. player.name)
+	
+	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
+	storageData.quests = nil
+	local resultCode,errorMessage = Storage.SetSharedPlayerData(PROGRESS_KEY, player, storageData)
+	
+	LoadPlayerData(player)
+	
+	API.UnlockForPlayer(player, "Welcome")
+end
+
+
+-- Cheat to reset quests. E.g.: "/reset quests MyName"
+function OnChatMessage(player, params)
+	if not Environment.IsPreview()
+	and string.lower(player.name) ~= "lootmmo" 
+	and player.name ~= "standardcombo" then
+		return -- Admins only
+	end
+	local command, param1, param2 = CoreString.Split(params.message)
+	if command == "/reset" 
+	and param1 == "quests" 
+	and param2 ~= nil then
+		params.message = ""
+		
+		for _,p in ipairs(Game.GetPlayers()) do
+			if string.lower(p.name) == string.lower(param2) then
+				ResetQuestsForPlayer(p)
+				break
+			end
+		end
+	end
+end
+
+if Environment.IsServer() then
+	Chat.receiveMessageHook:Connect(OnChatMessage)
 end
 
 
