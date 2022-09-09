@@ -272,5 +272,15 @@ Assets {
       VirtualFolderPath: "Components"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Database"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Character"
+      VirtualFolderPath: "Components"
+      PlatformAssetType: 3
+    }
   }
 }
