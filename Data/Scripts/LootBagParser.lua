@@ -387,62 +387,67 @@ function ParseItemSVG(tokenMetadata)
 			break
 		end
 		
-		-- Bonus
-		local itemName, bonus = CoreString.Split(fullName, {delimiters = {" +"}})
-		if bonus then
-			bonus = tonumber(bonus)
-		end
-		if bonus == nil then
-			bonus = 0
-		end
-		
-		-- Prefix/Suffix named item
-		local prefix = nil
-		local suffix = nil
-		if string.sub(itemName, 1, 1) == '"' then
-			local quoteEndIndex = string.find(itemName, '"', 2)
-			local specialName = string.sub(itemName, 2, quoteEndIndex - 1)
-			prefix, suffix = CoreString.Split(specialName, {delimiters = {" "}})
-			itemName = string.sub(itemName, quoteEndIndex + 2, -1)
-		end
-		
-		-- Order
-		local order
-		itemName, order = CoreString.Split(itemName, {delimiters = {" of "}})
-		
-		-- Greatness
-		local greatness = 1
-		if bonus > 0 then
-			greatness = 20
-			
-		elseif prefix ~= nil then
-			greatness = 19
-			
-		elseif order then
-			greatness = 15
-		end
-		
-		--print(fullName)
-		--print(TYPES[i], prefix, suffix, itemName, order, bonus)
-		
-		-- Temp fix for the case of Lost items in Genesis collection
-		local type = TYPES[i]
-		itemName = FixLostName(itemName, NAMES_PER_TYPE[type])
-		
-		table.insert(items, {
-			name = itemName,
-			fullName = fullName,
-			type = type,
-			greatness = greatness,
-			order = order,
-			prefix = prefix,
-			suffix = suffix,
-			bonus = bonus,
-			Parse = ParseItem,
-			Serialize = SerializeItem
-		})
+		table.insert(items, API.ParseItemByFullName(fullName, i))
 	end
 	return items
+end
+
+
+function API.ParseItemByFullName(fullName, indexInBag)
+	-- Bonus
+	local itemName, bonus = CoreString.Split(fullName, {delimiters = {" +"}})
+	if bonus then
+		bonus = tonumber(bonus)
+	end
+	if bonus == nil then
+		bonus = 0
+	end
+	
+	-- Prefix/Suffix named item
+	local prefix = nil
+	local suffix = nil
+	if string.sub(itemName, 1, 1) == '"' then
+		local quoteEndIndex = string.find(itemName, '"', 2)
+		local specialName = string.sub(itemName, 2, quoteEndIndex - 1)
+		prefix, suffix = CoreString.Split(specialName, {delimiters = {" "}})
+		itemName = string.sub(itemName, quoteEndIndex + 2, -1)
+	end
+	
+	-- Order
+	local order
+	itemName, order = CoreString.Split(itemName, {delimiters = {" of "}})
+	
+	-- Greatness
+	local greatness = 1
+	if bonus > 0 then
+		greatness = 20
+		
+	elseif prefix ~= nil then
+		greatness = 19
+		
+	elseif order then
+		greatness = 15
+	end
+	
+	--print(fullName)
+	--print(TYPES[i], prefix, suffix, itemName, order, bonus)
+	
+	-- Temp fix for the case of Lost items in Genesis collection
+	local type = TYPES[indexInBag]
+	itemName = FixLostName(itemName, NAMES_PER_TYPE[type])
+	
+	return {
+		name = itemName,
+		fullName = fullName,
+		type = type,
+		greatness = greatness,
+		order = order,
+		prefix = prefix,
+		suffix = suffix,
+		bonus = bonus,
+		Parse = ParseItem,
+		Serialize = SerializeItem
+	}
 end
 
 
@@ -483,10 +488,10 @@ function ParseItem(fromString)
 	local n, t, g, o, p, s, b = CoreString.Split(fromString, {delimiters = {","}})
 	local fullName = n
 	local greatness = tonumber(g)
-	if o ~= "" then
+	if o ~= nil and o ~= "" then
 		fullName = fullName .. " of " .. ValueAt(ORDERS, o)
 	end
-	if p ~= "" then
+	if p ~= nil and p ~= "" then
 		fullName = "\"" .. ValueAt(PREFIXES, p) .." ".. ValueAt(SUFFIXES, s) .."\" ".. fullName
 	end
 	local bonus = tonumber(b)

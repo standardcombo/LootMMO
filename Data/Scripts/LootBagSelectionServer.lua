@@ -1,6 +1,7 @@
 
 local ASYNC_BLOCKCHAIN = require(script:GetCustomProperty("AsyncBlockchain"))
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
+local HARDCODED_FREE_BAGS = script:GetCustomProperty("HardcodedFreeBags")
 
 local COLLECTION = LOOT_BAG_PARSER.Collection.Loot
 local COLLECTION_SIZE = 7777
@@ -30,13 +31,26 @@ function InitDailyFreeBags()
 		end
 	end
 	local params = {
-		tokenIds = randomTokenIds
+		tokenIds = randomTokenIds,
+		retries = 2
 	}
 	ASYNC_BLOCKCHAIN.GetTokens(COLLECTION, params, OnTokensLoaded)
 end
 
 function OnTokensLoaded(freeChoiceTokens)
 	print("\nFree choices for today:")
+	
+	if #freeChoiceTokens == 0 then
+		local hardcodedBags = require(HARDCODED_FREE_BAGS)
+		for i,bagStr in ipairs(hardcodedBags) do
+			local propertyKey = "DailyBag"..i
+			script:SetCustomProperty(propertyKey, bagStr)
+		end
+		script:ForceReplication()
+
+		return --Exit
+	end
+	
 	local warriorCount = 0
 	local hunterCount = 0
 	local mageCount = 0
