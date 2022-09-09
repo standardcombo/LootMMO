@@ -1,5 +1,40 @@
 
 
+**Version 0.3**
+General Improvements
+- New quest system.
+- Implemented player FTUE quests.
+- New layout for the Bag Selection screen.
+- Ownership of The Eye NFT now appears in your badges.
+- Added website files to the repository.
+- Added a bunch of marketing assets to the repository (logo, etc).
+- Improved player spawning in Bag Selection screen, especially when there are many players spawning at the same time.
+- The player's nameplate now hides when they are looking at themselves from behind.
+- Added a fallback of hardcoded data to daily free bags, in case the blockchain API is down.
+- Reworked the randomizer of free daily bags so it increases the odds of having class variety.
+
+Social Hub
+- Added the Workshop room.
+- Added leaderboard to Pinball.
+- Improved Pinball UI.
+- Removed the background jazz music from poker.
+- Added cosmetic play cards to the top of the poker table.
+- Renamed "Texas Hold'em" -> "Tavern Hold'em".
+- Added a welcome letter to the mailbox.
+- Added bookshelves next to the main fireplace.
+- Removed a SFX of insects buzzing at the entrance.
+- Reworked the exterior view of the building.
+- Moved the interior of the hub to below the world, as an optimization.
+- Improved the position of one of the chairs in the upper deck.
+
+Bugs
+- Fixed a bug where players could get stuck if they were hit by a chair while sitting.
+- Fixed an error when parsing Genesis Adventurer bags that contain a Lost item.
+- Fixed various issues with the blockchain integration.
+- Added a respawn trigger below the world, in case players fall through.
+- Fixed a spot where players could get stuck between a bench and wall.
+
+
 **Version 0.2**
 - Final art for all weapon types.
 - Updated all UI (bag selection, poker, pinball, etc).
