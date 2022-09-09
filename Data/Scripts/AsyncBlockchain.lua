@@ -91,7 +91,9 @@ function API.GetTokens(contractAddress, params, callbackFunction)
 	local resultingTokens = nil
 	local collection
 	
-	for i = 1, RETRIES do
+	local retries = params.retries or RETRIES
+	
+	for i = 1, retries do
 		collection, resultCode, err = Blockchain.GetTokens(contractAddress, params)
 		
 		if collection and resultCode == BlockchainTokenResultCode.SUCCESS then
