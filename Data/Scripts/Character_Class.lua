@@ -17,11 +17,11 @@ component.requiredComponents = {
 }
 
 local EquipmentKeys = {
+    'Shift',
     '1',
     '2',
     '3',
-    '4',
-    '5'
+    '4'
 }
 
 function TriggerEvent(event, ...)
@@ -85,7 +85,7 @@ function component:UnequipOwner()
     self.spawnedEquipment = {}
 end
 function component:AddParent(newParent)
-    COMPONET_DATATYPE.AddParent(self,newParent)
+    COMPONET_DATATYPE.AddParent(self, newParent)
     if Environment.IsServer() then
         if self.owner then
             self.owner.removeOwnerEvent:Connect(

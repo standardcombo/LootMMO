@@ -7,7 +7,7 @@ Assets {
       RootId: 10190610956955079352
       Objects {
         Id: 10190610956955079352
-        Name: "Loot_Ability_HawkSummon"
+        Name: "Loot_Ability_EagleSummon"
         Transform {
           Scale {
             X: 1
@@ -795,7 +795,8 @@ Assets {
         Name: "NPCHeadshot"
         Transform {
           Location {
-            Z: 90
+            X: 37.317627
+            Z: 123.069008
           }
           Rotation {
           }
@@ -806,6 +807,12 @@ Assets {
           }
         }
         ParentId: 581629701699634310
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Radius"
+            Float: 21
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1139,6 +1146,7 @@ Assets {
         Name: "NPCAIClient"
         Transform {
           Location {
+            Z: 200
           }
           Rotation {
           }
@@ -1248,7 +1256,7 @@ Assets {
         Transform {
           Location {
             X: 5
-            Z: 100
+            Z: 270.135834
           }
           Rotation {
           }

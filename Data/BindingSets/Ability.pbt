@@ -211,53 +211,5 @@ Assets {
       }
       IsEnabledOnStart: true
     }
-    Bindings {
-      BindingType {
-        Value: "mc:ebindingtype:basic"
-      }
-      BasicBindingData {
-        BasicInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:up"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:none"
-          }
-        }
-      }
-      Action: "LevelUp"
-      CoreBehavior {
-        Value: "mc:ecorebehavior:none"
-      }
-      Networked: true
-      IsEnabledOnStart: true
-    }
-    Bindings {
-      BindingType {
-        Value: "mc:ebindingtype:basic"
-      }
-      BasicBindingData {
-        BasicInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:down"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:none"
-          }
-        }
-      }
-      Action: "LevelDown"
-      CoreBehavior {
-        Value: "mc:ecorebehavior:none"
-      }
-      Networked: true
-      IsEnabledOnStart: true
-    }
   }
 }

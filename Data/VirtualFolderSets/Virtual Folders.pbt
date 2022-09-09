@@ -256,12 +256,20 @@ Assets {
       PlatformAssetType: 3
     }
     Folders {
+      VirtualFolderPath: "UI Templates"
+      VirtualFolderPath: "SFX"
+      PlatformAssetType: 5
+    }
+    Folders {
       VirtualFolderPath: "Loot"
-      VirtualFolderPath: "UI"
+      VirtualFolderPath: "Inventory"
       PlatformAssetType: 5
     }
     Folders {
       VirtualFolderPath: "Database"
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Character"
+      VirtualFolderPath: "Components"
       PlatformAssetType: 3
     }
   }

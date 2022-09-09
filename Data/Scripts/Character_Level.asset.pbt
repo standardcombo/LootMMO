@@ -10,15 +10,10 @@ Assets {
           Id: 2141296030032175542
         }
       }
-      Overrides {
-        Name: "cs:Level"
-        AssetReference {
-          Id: 16979731221139693802
-        }
-      }
     }
   }
   SerializationVersion: 118
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Character"
+  VirtualFolderPath: "Components"
 }

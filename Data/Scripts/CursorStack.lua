@@ -35,6 +35,7 @@ function API.Disable()
 end
 
 function Tick()
+	Task.Wait(1)
     runTime()
 end
 

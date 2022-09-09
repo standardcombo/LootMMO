@@ -175,11 +175,14 @@ Objects {
     }
   }
   ParentId: 4120892839009310457
-  ChildIds: 10184423931246654999
   ChildIds: 10965927364889680147
   ChildIds: 11247778876148741019
   ChildIds: 11861541797421559284
   ChildIds: 17697575084936483429
+  ChildIds: 10184423931246654999
+  ChildIds: 10367364633668827066
+  ChildIds: 4145031688460644408
+  ChildIds: 1572396834449671856
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -227,13 +230,234 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17697575084936483429
+  Id: 1572396834449671856
   Name: "Shift"
   Transform {
     Location {
     }
     Rotation {
     }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8711270503988986415
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4105394437550983763
+      value {
+        Overrides {
+          Name: "Name"
+          String: "c"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -158.400146
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -495.226135
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4005089717090586234
+    }
+  }
+}
+Objects {
+  Id: 4145031688460644408
+  Name: "Shift"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8711270503988986415
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4105394437550983763
+      value {
+        Overrides {
+          Name: "Name"
+          String: "x"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -53.4855957
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -406.701599
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4005089717090586234
+    }
+  }
+}
+Objects {
+  Id: 10367364633668827066
+  Name: "Shift"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8711270503988986415
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4105394437550983763
+      value {
+        Overrides {
+          Name: "Name"
+          String: "z"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -51.4284668
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -266.708923
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4005089717090586234
+    }
+  }
+}
+Objects {
+  Id: 10184423931246654999
+  Name: "5"
+  Transform {
     Scale {
       X: 1
       Y: 1
@@ -266,20 +490,25 @@ Objects {
           }
         }
         Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
           Name: "UIX"
-          Float: -186.567871
+          Float: -195.969604
         }
         Overrides {
           Name: "UIY"
-          Float: -247.022217
+          Float: -356.420044
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
         }
       }
     }
@@ -289,7 +518,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11861541797421559284
+  Id: 17697575084936483429
   Name: "Shift"
   Transform {
     Location {
@@ -337,11 +566,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -247.580933
+          Float: -326.196045
         }
         Overrides {
           Name: "UIY"
-          Float: -100.917358
+          Float: -263.86792
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
         }
       }
     }
@@ -351,7 +593,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11247778876148741019
+  Id: 11861541797421559284
   Name: "Shift"
   Transform {
     Location {
@@ -399,11 +641,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -345.703369
+          Float: -383.841431
         }
         Overrides {
           Name: "UIY"
-          Float: -249.844543
+          Float: -109.111816
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
         }
       }
     }
@@ -413,7 +668,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10965927364889680147
+  Id: 11247778876148741019
   Name: "Shift"
   Transform {
     Location {
@@ -452,20 +707,25 @@ Objects {
           }
         }
         Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
           Name: "UIX"
-          Float: -413.432129
+          Float: -175
         }
         Overrides {
           Name: "UIY"
-          Float: -90.3047485
+          Float: -200
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8384477650364148823
+      value {
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 0
         }
       }
     }
@@ -475,8 +735,8 @@ Objects {
   }
 }
 Objects {
-  Id: 10184423931246654999
-  Name: "5"
+  Id: 10965927364889680147
+  Name: "1"
   Transform {
     Scale {
       X: 1
@@ -497,7 +757,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "5"
+          String: "Shift"
         }
         Overrides {
           Name: "Position"
@@ -508,14 +768,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "UIX"
-          Float: -256.716064
-        }
-        Overrides {
-          Name: "UIY"
-          Float: -390.30481
         }
       }
     }

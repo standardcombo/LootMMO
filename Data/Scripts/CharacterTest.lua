@@ -3,26 +3,9 @@ while not _G['Character.Contsructor'] do
 end
 
 local character = _G['Character.Contsructor']
-local EquipAPI = _G["Character.EquipAPI"]
+local EquipAPI = _G['Character.EquipAPI']
 local SaveAPI = _G['Character.SaveApi']
 local CLASS = _G['Character.Classes']
-
-function PLAYERJOINED(player)
-    local newCharacter = character.NewCharacter()
-    newCharacter:SetOwner(player)
-end
-
-function PLAYERLEFT(player)
-    local character = EquipAPI.GetCurrentCharacter(player)
-    assert(character)
-    --SaveAPI.SavePlayerCharacter(player, character)
-    character:Destroy()
-end
-for key, value in pairs(Game.GetPlayers()) do
-    PLAYERJOINED(value)
-end
-Game.playerJoinedEvent:Connect(PLAYERJOINED)
-Game.playerLeftEvent:Connect(PLAYERLEFT)
 
 function OnReceiveMessage(player, params)
     local splitString = {CoreString.Split(params.message, ' ')}
@@ -39,11 +22,23 @@ function OnReceiveMessage(player, params)
         end
         return
     end
+    if splitString[1] == '/newchar' then
+        local newCharacter = character.NewCharacter()
+        newCharacter:SetOwner(player)
+    end
     if splitString[1] == '/stat' then
         local newCharacter = EquipAPI.GetCurrentCharacter(player)
         local stats = newCharacter:GetComponent('Stats')
         if stats then
             stats:SetTempStat(splitString[2], tonumber(splitString[3]))
+        end
+        return
+    end
+    if splitString[1] == '/addpoint' then
+        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local points = newCharacter:GetComponent('Points')
+        if points then
+            points:AddPoint()
         end
         return
     end
@@ -71,4 +66,3 @@ function OnReceiveMessage(player, params)
 end
 
 Chat.receiveMessageHook:Connect(OnReceiveMessage)
- 
