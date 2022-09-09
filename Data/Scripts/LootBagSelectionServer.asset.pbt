@@ -17,6 +17,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:HardcodedFreeBags"
+        AssetReference {
+          Id: 15419958545693440988
+        }
+      }
+      Overrides {
         Name: "cs:DailyBag1"
         String: ""
       }
