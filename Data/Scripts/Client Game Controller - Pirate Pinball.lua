@@ -168,6 +168,7 @@ function initGame(machineId, player)
     end
   end
 
+  _G.Audio.MuteAllAudio()
   playMusic(thisMachine.id, {track = DEFAULT_MUSIC, volume = 0.4})
 
   bindingPressedEvent = player.bindingPressedEvent:Connect(handleBindingPressed)
@@ -287,6 +288,7 @@ function quitGame()
 
   resetMachineState()
 
+  _G.Audio.UnmuteAllAudio()
   if MUSIC_WHILE_IDLE then
     playMusic(thisMachine.id, {track = DEFAULT_MUSIC, volume = 0.2})
   else

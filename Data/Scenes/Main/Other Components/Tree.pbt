@@ -543,6 +543,7 @@ Objects {
   }
   ParentId: 12785624939370825655
   ChildIds: 10689028068618937886
+  ChildIds: 18265205142595023679
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -561,6 +562,47 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18265205142595023679
+  Name: "GlobalAudioController"
+  Transform {
+    Location {
+      X: 2419.76221
+      Y: -1055.86011
+      Z: -4132.96045
+    }
+    Rotation {
+      Yaw: 124.999992
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3125753175296963885
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4171342585748687683
     }
   }
   NetworkRelevanceDistance {
