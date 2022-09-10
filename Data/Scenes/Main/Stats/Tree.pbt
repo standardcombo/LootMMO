@@ -1,7 +1,7 @@
 Name: "Stats"
-RootId: 5643331167833819293
+RootId: 11276981776307920352
 Objects {
-  Id: 10614363910613712786
+  Id: 4051757509249346269
   Name: "ServerContext"
   Transform {
     Location {
@@ -14,8 +14,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5643331167833819293
-  ChildIds: 5161135721171795140
+  ParentId: 11276981776307920352
+  ChildIds: 12535806074597783077
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -37,7 +37,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5161135721171795140
+  Id: 12535806074597783077
   Name: "Stats_Api"
   Transform {
     Location {
@@ -50,7 +50,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10614363910613712786
+  ParentId: 4051757509249346269
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -74,7 +74,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10971945068760231337
+  Id: 6798502362854467065
   Name: "ClientContext"
   Transform {
     Location {
@@ -87,8 +87,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5643331167833819293
-  ChildIds: 9166636177583469035
+  ParentId: 11276981776307920352
+  ChildIds: 7894193601158674892
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -115,7 +115,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9166636177583469035
+  Id: 7894193601158674892
   Name: "Stats_Api"
   Transform {
     Location {
@@ -128,7 +128,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10971945068760231337
+  ParentId: 6798502362854467065
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

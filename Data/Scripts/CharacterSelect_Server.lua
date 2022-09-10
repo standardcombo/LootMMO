@@ -4,6 +4,7 @@ while not EAPI do
 end
 local CSave = _G['Character.SaveApi']
 local EAPI = _G['Character.EquipAPI']
+
 local CHARACTERCONSTUCT = _G['Character.Contsructor']
 local ReturnCall = 'RCcall'
 local SelectCharacterEvent = 'SelectCharacter'

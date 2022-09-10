@@ -174,15 +174,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13835327457650939377
-  Name: "UI Gradient Rectangular 002"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_003"
-  }
-}
-Assets {
   Id: 13420476618392182070
   Name: "Gem Pack 1"
   PlatformAssetType: 24
@@ -692,15 +683,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundHighlighted_020"
-  }
-}
-Assets {
-  Id: 2528552290845951669
-  Name: "Japanese Frame 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Japan_Frame_004"
   }
 }
 Assets {

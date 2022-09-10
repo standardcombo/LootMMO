@@ -8,6 +8,8 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 local DataKey = 'Cselect'
 local ReturnCall = 'RCcall'
 
+local OpenEvent = 'StartSelect'
+
 local SelectCharacterEvent = 'SelectCharacter'
 local NewCharacterEvent = 'NewCharacter'
 local DeleteCharacterEvent = 'DeleteCharacter'
@@ -37,6 +39,7 @@ function IsState(state)
 end
 
 local CursorStack = _G.CursorStack
+local appstate = _G.AppState
 
 local SlotCount = 5
 local SpawnedPanels = {}
@@ -82,6 +85,7 @@ function ClosePanel()
     Task.Wait(.2)
     UICONTAINER.visibility = Visibility.FORCE_OFF
     CursorStack.Disable()
+    appstate.SetLocalState(appstate.SocialHub)
 end
 
 function OpenPanel()
@@ -136,11 +140,21 @@ function Refresh()
     end
 end
 
-Events.Connect('StartSelect', OpenPanel)
+Events.Connect(OpenEvent, OpenPanel)
 Events.Connect(ClientSelectCharacterEvent, SelectCharacter)
 Events.Connect(ClientNewCharacterEvent, NewCharacter)
 Events.Connect(ClientDeleteCharacterEvent, DestroyCharacter)
 Events.Connect(ReturnCall, ReturnCallFunc)
 Events.Connect(AskDeletion, ConfirmSelection)
 Events.Connect(DenyDeletion, CancelSelection)
+
+Events.Connect(
+    'AppState.Enter',
+    function(player, newState, prevPlayerState)
+        if newState == appstate.CharacterSelection then
+            OpenPanel()
+        end
+    end
+)
+
 LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(Refresh)

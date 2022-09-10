@@ -1,7 +1,7 @@
 Name: "Item Data Loader_1"
-RootId: 1627030666358838517
+RootId: 17574902056164028310
 Objects {
-  Id: 12122709311270927839
+  Id: 426666865417280147
   Name: "ClientContext"
   Transform {
     Location {
@@ -14,8 +14,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1627030666358838517
-  ChildIds: 4799294655661206388
+  ParentId: 17574902056164028310
+  ChildIds: 13283889775131393911
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -42,7 +42,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4799294655661206388
+  Id: 13283889775131393911
   Name: "ItemLoader"
   Transform {
     Location {
@@ -55,7 +55,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12122709311270927839
+  ParentId: 426666865417280147
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -81,7 +81,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17363124519973339399
+  Id: 10408974646413742954
   Name: "ServerContext"
   Transform {
     Location {
@@ -94,8 +94,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1627030666358838517
-  ChildIds: 4349950951354974460
+  ParentId: 17574902056164028310
+  ChildIds: 9832546923341279530
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -117,7 +117,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4349950951354974460
+  Id: 9832546923341279530
   Name: "ItemLoader"
   Transform {
     Location {
@@ -130,7 +130,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17363124519973339399
+  ParentId: 10408974646413742954
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

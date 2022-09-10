@@ -12,13 +12,11 @@ Assets {
       Overrides {
         Name: "cs:UIContainer"
         ObjectReference {
-          SelfId: 11632620763342960388
         }
       }
       Overrides {
         Name: "cs:ConfirmDeletion"
         ObjectReference {
-          SelfId: 10263210180423435809
         }
       }
       Overrides {
