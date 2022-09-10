@@ -46,15 +46,15 @@ Objects {
   Name: "Mounted Volume"
   Transform {
     Location {
-      X: 320.765869
+      X: -2789.23462
       Y: -724.498535
       Z: 110.563477
     }
     Rotation {
     }
     Scale {
-      X: 53.8266029
-      Y: 53.8266029
+      X: 96.1004944
+      Y: 100.007309
       Z: 21.5875664
     }
   }
