@@ -4628,7 +4628,7 @@ Assets {
             }
           }
           Text {
-            Label: "REALMS HOLD\'EM"
+            Label: "TAVERN HOLD\'EM"
             Color {
               R: 1
               G: 0.456411064
