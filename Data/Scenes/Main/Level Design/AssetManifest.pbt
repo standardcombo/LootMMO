@@ -35,12 +35,39 @@ Assets {
   }
 }
 Assets {
+  Id: 17683806647698883602
+  Name: "Trim - Straight - 08m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_straight_8m_ref"
+  }
+}
+Assets {
   Id: 17262393803512971106
   Name: "Plane Pentagon - One Sided"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_plane_pentagon_001"
+  }
+}
+Assets {
+  Id: 17042918944552201643
+  Name: "Frosted Glass No Distortion"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_frosted_glass_nodistortion"
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
   }
 }
 Assets {
@@ -59,6 +86,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_fan_bricks_mortar_001_uv"
+  }
+}
+Assets {
+  Id: 16516719627038597854
+  Name: "Wood Floor Herringbone Light"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_floor_herringbone_light_001_uv"
   }
 }
 Assets {
@@ -89,6 +125,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15785876743814996770
+  Name: "Wedge - Convex"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wedge_curved_convex_001"
+  }
+}
+Assets {
   Id: 15172180549504871240
   Name: "Ambience Nature Forest Birds Set 01 SFX"
   PlatformAssetType: 10
@@ -113,6 +158,15 @@ Assets {
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_stain_bottom_001"
+  }
+}
+Assets {
+  Id: 14834300160033285312
+  Name: "Long Banner Manticore"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_banner_001"
   }
 }
 Assets {
@@ -179,6 +233,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13958471721611673378
+  Name: "Roof Square Shingles 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_roof_square_shingles_002_uv"
+  }
+}
+Assets {
   Id: 13956281381362240997
   Name: "Fantasy Castle Stairs 01 - 150cm Corner 03"
   PlatformAssetType: 1
@@ -212,6 +275,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bush_generic_002"
+  }
+}
+Assets {
+  Id: 13722218647841092016
+  Name: "Pyramid - 8-Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_pyramid_eighsided_001"
+  }
+}
+Assets {
+  Id: 13583040906138958744
+  Name: "Humanoid 2 Roscoe"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_military_001_ref"
   }
 }
 Assets {
@@ -449,6 +530,51 @@ Assets {
   }
 }
 Assets {
+  Id: 10230959292029196430
+  Name: "Prism - 3-Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prism_001"
+  }
+}
+Assets {
+  Id: 10184847056121543272
+  Name: "Basic Material"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_pbr_material_001"
+  }
+}
+Assets {
+  Id: 10065967439438444071
+  Name: "Fantasy Castle Wall 03 - Arch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_003_arch_01"
+  }
+}
+Assets {
+  Id: 9767630022980029572
+  Name: "Fantasy Castle Wall Foundation 01 - Curved"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_found_001_curve_001"
+  }
+}
+Assets {
+  Id: 9765503721933112512
+  Name: "Prism - 6-Sided Half"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_half_hexagon_001"
+  }
+}
+Assets {
   Id: 9368501975616237166
   Name: "Simple Crate 150cm"
   PlatformAssetType: 1
@@ -491,6 +617,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_hill_005"
+  }
+}
+Assets {
+  Id: 8604378522005654344
+  Name: "Wedge - Concave 1:2"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wedge_curved_concave_002_ref"
   }
 }
 Assets {
@@ -545,6 +680,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_torus_005"
+  }
+}
+Assets {
+  Id: 7548760847779041520
+  Name: "Fantasy Castle Wall 02 - Curved"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_curve_002"
   }
 }
 Assets {
@@ -773,6 +917,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4286823887220239396
+  Name: "Fantasy Castle Stairs Spiral Trim 01 - 4m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_stairs_spiral_trim_001_4m"
+  }
+}
+Assets {
   Id: 4247430867898109902
   Name: "Stucco Tintable"
   PlatformAssetType: 2
@@ -827,6 +980,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3099866601786596554
+  Name: "Fantasy Castle Wall Foundation 01 - Pillar 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_found_001_pillar_01"
+  }
+}
+Assets {
   Id: 2754963224534021958
   Name: "Invisible"
   PlatformAssetType: 2
@@ -836,12 +998,30 @@ Assets {
   }
 }
 Assets {
+  Id: 2695823095190129815
+  Name: "Fantasy Castle Wall Foundation 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_found_001"
+  }
+}
+Assets {
   Id: 2009331887192172980
   Name: "Trim - Curve 90\302\260 - 12m Radius"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_trimitives_001_curve90_12m_ref"
+  }
+}
+Assets {
+  Id: 2004217072459759660
+  Name: "Fantasy Castle Wall 03 - Doorway 01 Half"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_half_003_door_01"
   }
 }
 Assets {
@@ -917,12 +1097,12 @@ Assets {
   }
 }
 Assets {
-  Id: 390428044279099392
-  Name: "Pipe - Quarter Thin - Large"
+  Id: 440854825336388817
+  Name: "Urban - Iron Fence - Pillar Mid 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_quarter-pipe_lg_thin_001_ref"
+    AssetId: "ts_urb_fences_iron_pillar_mid_001_ref"
   }
 }
 Assets {
