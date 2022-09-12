@@ -22,11 +22,28 @@ Objects {
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
+      key: 166517530376366676
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 1248471217928576916
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -37,6 +54,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -45,6 +68,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -66,6 +95,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -74,6 +109,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -84,6 +125,12 @@ Objects {
           Name: "Name"
           String: "Nice Chair"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -93,6 +140,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -101,6 +154,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7631419933500328271
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -136,11 +206,28 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8802880189710791063
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 9262466535145810396
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -151,6 +238,23 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12252058728053055885
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -159,6 +263,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14794868260405778090
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -169,6 +290,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -177,6 +304,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17160861274134788217
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -208,11 +352,28 @@ Objects {
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
+      key: 166517530376366676
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 1248471217928576916
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -223,6 +384,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -231,6 +398,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -252,6 +425,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -260,6 +439,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -270,6 +455,12 @@ Objects {
           Name: "Name"
           String: "Nice Chair"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -279,6 +470,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -287,6 +484,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7631419933500328271
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -322,11 +536,28 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8802880189710791063
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 9262466535145810396
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -337,6 +568,23 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12252058728053055885
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -345,6 +593,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14794868260405778090
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -355,6 +620,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -363,6 +634,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17160861274134788217
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -394,11 +682,28 @@ Objects {
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
+      key: 166517530376366676
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 1248471217928576916
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -409,6 +714,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -417,6 +728,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -438,6 +755,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -446,6 +769,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -456,6 +785,12 @@ Objects {
           Name: "Name"
           String: "Nice Chair"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -465,6 +800,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -473,6 +814,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7631419933500328271
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -508,11 +866,28 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8802880189710791063
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 9262466535145810396
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -523,6 +898,23 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12252058728053055885
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -531,6 +923,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14794868260405778090
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -541,6 +950,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -549,6 +964,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17160861274134788217
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -580,11 +1012,28 @@ Objects {
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
+      key: 166517530376366676
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 1248471217928576916
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -595,6 +1044,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -603,6 +1058,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -624,6 +1085,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -632,6 +1099,12 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -642,6 +1115,12 @@ Objects {
           Name: "Name"
           String: "Nice Chair"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -651,6 +1130,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -659,6 +1144,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7631419933500328271
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -694,11 +1196,28 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8802880189710791063
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 9262466535145810396
       value {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -709,6 +1228,23 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12252058728053055885
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -717,6 +1253,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14794868260405778090
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -727,6 +1280,12 @@ Objects {
           Name: "Name"
           String: "Cube - Polished"
         }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -735,6 +1294,23 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Cube - Polished"
+        }
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17160861274134788217
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
         }
       }
     }
@@ -765,6 +1341,116 @@ Objects {
   WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
+      key: 166517530376366676
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 1248471217928576916
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 1584669047853889749
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2269336064028148048
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3714363256414450273
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4864339995986738605
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 5275609709526473333
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 6464390912612067748
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7289751249763628638
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7631419933500328271
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 8777845465298794853
       value {
         Overrides {
@@ -783,6 +1469,105 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: 138.852417
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8802880189710791063
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 9262466535145810396
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10408478730130231492
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12252058728053055885
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14531018030508252062
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14794868260405778090
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14913808340327276711
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16501784270591483269
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17160861274134788217
+      value {
+        Overrides {
+          Name: "CoreProxy.Relevance"
+          Enum {
+            Value: "mc:eproxyrelevance:high"
           }
         }
       }

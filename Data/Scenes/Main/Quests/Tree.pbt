@@ -5,6 +5,7 @@ Objects {
   Name: "Poker"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -41,6 +42,7 @@ Objects {
   Name: "ThrowChair"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -77,6 +79,7 @@ Objects {
   Name: "Pinball"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -113,6 +116,7 @@ Objects {
   Name: "Pint"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -149,6 +153,7 @@ Objects {
   Name: "Study"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -185,6 +190,7 @@ Objects {
   Name: "Pig"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -221,6 +227,7 @@ Objects {
   Name: "Potions"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -257,6 +264,7 @@ Objects {
   Name: "Lv5"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -293,6 +301,7 @@ Objects {
   Name: "Craft1"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -329,6 +338,7 @@ Objects {
   Name: "Raid2"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -365,6 +375,7 @@ Objects {
   Name: "Equip"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -401,6 +412,7 @@ Objects {
   Name: "Raid1"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -437,6 +449,7 @@ Objects {
   Name: "Map"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -473,6 +486,7 @@ Objects {
   Name: "Welcome"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -509,6 +523,7 @@ Objects {
   Name: "ClientContext"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
@@ -2384,6 +2399,7 @@ Objects {
   Name: "ServerContext"
   Transform {
     Location {
+      Z: -14645.0869
     }
     Rotation {
     }
