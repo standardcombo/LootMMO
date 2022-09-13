@@ -17725,12 +17725,12 @@ Objects {
   Name: "Return to Bag Selection Trigger"
   Transform {
     Location {
-      X: 37818.3594
-      Y: 17428.3164
-      Z: -14825.583
+      X: 37842.668
+      Y: 17433.7656
+      Z: -29464.127
     }
     Rotation {
-      Yaw: -163.949966
+      Yaw: -163.949936
     }
     Scale {
       X: 1
