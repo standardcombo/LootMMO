@@ -1000,7 +1000,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 10
+          Width: 14
           Height: 8
           RenderTransformPivot {
             Anchor {
