@@ -45,8 +45,8 @@ Assets {
         Transform {
           Location {
             X: 485.346558
-            Y: 151.530075
-            Z: 142.000977
+            Y: 151.530106
+            Z: 128
           }
           Rotation {
             Yaw: -37.6405716
@@ -91,9 +91,9 @@ Assets {
         Name: "Spawn Point"
         Transform {
           Location {
-            X: 440.334106
-            Y: -197.553024
-            Z: 142.000977
+            X: 440.33432
+            Y: -197.553009
+            Z: 128
           }
           Rotation {
             Yaw: -37.6405716
@@ -138,9 +138,9 @@ Assets {
         Name: "Spawn Point"
         Transform {
           Location {
-            X: 422.099762
-            Y: -374.795258
-            Z: 142.000977
+            X: 422.1
+            Y: -374.795166
+            Z: 128
           }
           Rotation {
             Yaw: -37.6405678
