@@ -12,15 +12,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17591585661421947434
-  Name: "UI Basic Shape Circle"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_Circle"
-  }
-}
-Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
@@ -104,15 +95,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15317474369758024099
-  Name: "Button Page Slide Core 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfxui_pageslide_core_02_Cue_ref"
-  }
-}
-Assets {
   Id: 15306349002621259878
   Name: "VIPMEMBR"
   PlatformAssetType: 24
@@ -165,15 +147,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14060330023043759337
-  Name: "BG Flat 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_020"
-  }
-}
-Assets {
   Id: 13420476618392182070
   Name: "Gem Pack 1"
   PlatformAssetType: 24
@@ -187,15 +160,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13258872716253253779
-  Name: "Japanese Frame 002"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Japan_Frame_002"
-  }
-}
-Assets {
   Id: 12913628546500597405
   Name: "Premium 1"
   PlatformAssetType: 24
@@ -206,15 +170,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 12746116963631936972
-  Name: "UI Basic Shape Square"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_Square"
   }
 }
 Assets {
@@ -241,15 +196,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 12465662665234122161
-  Name: "UI Bright Notification 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_ui_bright_notification_01_Cue_ref"
   }
 }
 Assets {
@@ -307,15 +253,6 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Skylight"
-  }
-}
-Assets {
-  Id: 11336346532215892341
-  Name: "Germania One"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "GermaniaOneRegular_ref"
   }
 }
 Assets {
@@ -428,15 +365,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9043465979534313612
-  Name: "Japanese Frame 003"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Japan_Frame_003"
-  }
-}
-Assets {
   Id: 8892646755837011518
   Name: "Starter Pack"
   PlatformAssetType: 24
@@ -463,15 +391,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8578995028087510781
-  Name: "UI Gradient Circular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_001"
-  }
-}
-Assets {
   Id: 8209956498192832287
   Name: "VIP Member"
   PlatformAssetType: 24
@@ -495,15 +414,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 7542904062235710665
-  Name: "Frame Outline Thin 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameOutline_020"
   }
 }
 Assets {
@@ -668,24 +578,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2764905514123890102
-  Name: "Frame Outlined 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid4px_020"
-  }
-}
-Assets {
-  Id: 2604353830693238371
-  Name: "BG Highlighted 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundHighlighted_020"
-  }
-}
-Assets {
   Id: 2175052947894896062
   Name: "Gold Pack 4"
   PlatformAssetType: 24
@@ -696,15 +588,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 1758724014936516146
-  Name: "Fantasy Ability Purple 015"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Purple_015"
   }
 }
 Assets {
@@ -766,14 +649,5 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_001"
-  }
-}
-Assets {
-  Id: 48307754774318265
-  Name: "UI Gradient Rectangular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_002"
   }
 }

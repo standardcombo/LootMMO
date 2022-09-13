@@ -3,7 +3,6 @@ while not _G['Character.Contsructor'] do
 end
 
 local character = _G['Character.Contsructor']
-local EquipAPI = _G['Character.EquipAPI']
 local SaveAPI = _G['Character.SaveApi']
 local CLASS = _G['Character.Classes']
 
@@ -14,7 +13,7 @@ function OnReceiveMessage(player, params)
         return
     end
     if splitString[1] == '/class' then
-        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local class = newCharacter:GetComponent('Class')
         if class then
             class:SetClass(splitString[2])
@@ -27,7 +26,7 @@ function OnReceiveMessage(player, params)
         newCharacter:SetOwner(player)
     end
     if splitString[1] == '/stat' then
-        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local stats = newCharacter:GetComponent('Stats')
         if stats then
             stats:SetTempStat(splitString[2], tonumber(splitString[3]))
@@ -35,7 +34,7 @@ function OnReceiveMessage(player, params)
         return
     end
     if splitString[1] == '/addpoint' then
-        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local points = newCharacter:GetComponent('Points')
         if points then
             points:AddPoint()
@@ -50,7 +49,7 @@ function OnReceiveMessage(player, params)
         Chat.BroadcastMessage(message)
     end
     if splitString[1] == '/mystats' then
-        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local stats = newCharacter:GetComponent('Stats')
         local message = ''
         for key, value in pairs(stats:GetTempStats()) do
@@ -59,7 +58,7 @@ function OnReceiveMessage(player, params)
         Chat.BroadcastMessage(message)
     end
     if splitString[1] == '/addxp' then
-        local newCharacter = EquipAPI.GetCurrentCharacter(player)
+        local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local level = newCharacter:GetComponent('Level')
         level:AddXP(tonumber(splitString[2]))
     end

@@ -467,7 +467,7 @@ function ParseBag(fromString)
 	end
 	
 	lootBag.class = InferCharacterClass(lootBag.items)
-	
+	lootBag.Serialize = SerializeBag
 	return lootBag
 end
 

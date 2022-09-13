@@ -18,6 +18,7 @@ function API.Enable()
             UI.SetCursorVisible(true)
         end
     end
+    runTime()
 --	print("Curstor Stack Enable: " .. counter)
 end
 
@@ -31,6 +32,7 @@ function API.Disable()
             end
         end
     end
+    runTime()
 --	print("Curstor Stack Disable: " .. counter)
 end
 

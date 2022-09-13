@@ -256,7 +256,7 @@ function OnFreeDailyBagPropertyChanged(_, key)
     local serializedBag, exists = SERVER_SCRIPT:GetCustomProperty(key)
     if exists and serializedBag ~= '' and freeDailySerialized[serializedBag] == nil then
         local lootBag = LOOT_BAG_PARSER.Parse(serializedBag)
-        lootBag.isFreeDaily = true
+        lootBag.isFreeDaily = true 
         AddRow(SetupRow(NewRow(ROW_PROTOTYPE_FREE), lootBag))
         UpdatePositionOfConnectingText()
         UpdateScrollProperties()

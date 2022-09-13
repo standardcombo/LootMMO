@@ -1,9 +1,5 @@
 local API = {}
-while not _G['Character.Contsructor'] do
-    Task.Wait()
-end
 local CHARACTER = _G['Character.Contsructor']
-
 while not _G.CC_Util do
     Task.Wait()
 end

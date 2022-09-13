@@ -81,7 +81,14 @@ function EquipLoot(lootBag)
     -- Set item icons and names
     for i, item in pairs(lootBag.items) do
         local def = _G.Items.GetDefinition(item.name)
-        local itemContruct = _G['Item.Constructor'].New({item = item.name, order = item.order, greatness = item.greatness})
+        local itemContruct =
+            _G['Item.Constructor'].New(
+            {
+                item = item.name,
+                order = item.order,
+                greatness = item.greatness
+            }
+        )
         table.insert(definitions, def)
 
         itemImages[i]:SetImage(def.icon)
@@ -91,11 +98,8 @@ function EquipLoot(lootBag)
 
         itemButtons[i].clientUserData.item = item
         itemButtons[i].clientUserData.itemClass = itemContruct
-        if def.equipment then
-            Events.BroadcastToServer('Equip', item.name)
-        end
     end
-
+    Events.BroadcastToServer('EquipBag', lootBag:Serialize())
     -- Calculate class
     --[[
 	local classScores = {}

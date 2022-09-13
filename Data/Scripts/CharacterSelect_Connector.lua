@@ -3,12 +3,15 @@ while not _G.AppState do
 end
 local appstate = _G.AppState
 local DataKey = 'Cselect'
- 
+
 function HasCharacters(player)
     local data = player:GetPrivateNetworkedData(DataKey)
     return #data > 0
 end
 
+while not _G['Character.Contsructor'] do
+    Task.Wait()
+end
 local CHARACTERCONSTUCT = _G['Character.Contsructor']
 
 Events.Connect(

@@ -3,16 +3,23 @@ local ItemConstruct = _G['Item.Constructor']
 local Slot = {
     contents = nil
 }
+Task.Wait()
+local slotTypes = _G['Equipment.Slots']
+print( _G['Equipment.Slots'])
+local Equipment = slotTypes.GetSlots()
+function Slot:isAcceptingType(type)
+    if self.type == ('any' or nil) then
+        return true
+    end
 
-local Equipment = {
-    'Weapon',
-    'Head',
-    'Chest',
-    'Waist',
-    'Hand',
-    'Necklace',
-    'Ring'
-}
+    local acceptingTypes = slotTypes.GetAcceptingSlots(self.type)
+    for index, value in ipairs(acceptingTypes) do
+        if value == type then
+            return true
+        end
+    end
+    return
+end
 
 function Slot:IsFree()
     return self.contents == nil
@@ -71,13 +78,19 @@ function component:CalculateInventory()
     end
     return TotalStats
 end
-function component:FindFreeSlot()
+function component:FindFreeSlot(slotfilter)
     local slots = self:GetSlots()
     for i = 1, #slots, 1 do
         local currentslot = slots[i]
         if currentslot then
             if currentslot:IsFree() then
-                return currentslot
+                if slotfilter then
+                    if currentslot:isAcceptingType(slotfilter) then
+                        return currentslot
+                    end
+                else
+                    return currentslot
+                end
             end
         end
     end
@@ -96,9 +109,11 @@ function component:SwapSlot(fromSlot, toSlot)
     local slotB = self:GetSlot(toSlot)
     if not (slotA and slotB) then
         return
-    end
+    end 
     local itemA = slotA.contents
     local itemB = slotB.contents
+    slotA:RemoveItem()
+    slotB:RemoveItem()
     slotA:AddItem(itemB)
     slotA:AddItem(itemA)
     TriggerEvent(self.changedEvent, self)
@@ -124,6 +139,7 @@ function component:Deserialize(data)
 end
 function component:Init()
     COMPONET_DATATYPE.Init(self)
+    
     for i = 1, self.inventorySize, 1 do
         self.slots[i] = setmetatable({}, {__index = Slot})
     end

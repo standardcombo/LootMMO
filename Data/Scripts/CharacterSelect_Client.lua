@@ -85,7 +85,9 @@ function ClosePanel()
     Task.Wait(.2)
     UICONTAINER.visibility = Visibility.FORCE_OFF
     CursorStack.Disable()
-    appstate.SetLocalState(appstate.SocialHub)
+    if appstate.GetLocalState() == appstate.SocialHub then
+        appstate.SetLocalState(appstate.SocialHub)
+    end
 end
 
 function OpenPanel()
@@ -156,5 +158,12 @@ Events.Connect(
         end
     end
 )
-
+Events.Connect(
+    'AppState.Exit',
+    function(player, newState, prevPlayerState)
+        if newState == appstate.CharacterSelection then
+            ClosePanel()
+        end
+    end
+)
 LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(Refresh)

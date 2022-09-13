@@ -10,6 +10,12 @@ Assets {
           Id: 7957473816772575606
         }
       }
+      Overrides {
+        Name: "cs:LootBagParser"
+        AssetReference {
+          Id: 18201773013207943147
+        }
+      }
     }
   }
   SerializationVersion: 118

@@ -1,5 +1,4 @@
-while not EAPI do
-    EAPI = _G['Character.EquipAPI']
+while not _G['Character.EquipAPI'] do
     Task.Wait()
 end
 local CSave = _G['Character.SaveApi']
@@ -68,6 +67,10 @@ function SelectCharacter(player, characterId)
             local newCharacter = CHARACTERCONSTUCT.NewCharacter()
             newCharacter:Deserialize(value)
             newCharacter:SetOwner(player)
+            local class = newCharacter:GetComponent('Class')
+            if class then
+                class:EquipOwner()
+            end
             Acknowledge(player)
             return
         end

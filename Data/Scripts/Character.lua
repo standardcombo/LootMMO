@@ -1,18 +1,11 @@
-while not _G['Character.Components'] do
-    Task.Wait()
-end
+local CC_Util = _G.CC_Util
+local LUAEVENT = CC_Util:WaitForlibrary('Lua Event')
 local COMPONENT_REGISTRY = _G['Character.Components']
-
 function TriggerEvent(event, ...)
     if event then
         event:Trigger(...)
     end
 end
-while not _G.CC_Util do
-    Task.Wait()
-end
-local CC_Util = _G.CC_Util
-local LUAEVENT = CC_Util:WaitForlibrary('Lua Event')
 
 local tableElements = {
     'components'
