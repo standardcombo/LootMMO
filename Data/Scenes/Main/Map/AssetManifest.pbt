@@ -251,12 +251,39 @@ Assets {
   }
 }
 Assets {
+  Id: 5338351160029262659
+  Name: "Pirata One"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "PirataOneRegular_ref"
+  }
+}
+Assets {
   Id: 3336018558241619144
   Name: "Basic Water Splash VFX"
   PlatformAssetType: 8
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_watersplash"
+  }
+}
+Assets {
+  Id: 2653837865451130928
+  Name: "Abstract Background 03"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_004"
+  }
+}
+Assets {
+  Id: 2565198747368244920
+  Name: "Sci-fi Frame 009"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Frame_009"
   }
 }
 Assets {
@@ -269,11 +296,29 @@ Assets {
   }
 }
 Assets {
+  Id: 1379478831197199340
+  Name: "Abstract Frame 06"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Cframe_006"
+  }
+}
+Assets {
   Id: 935712898012472846
   Name: "Gem - Trillion Polished"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_gem_trillion_polished_001"
+  }
+}
+Assets {
+  Id: 625503136292508700
+  Name: "Warp"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_018"
   }
 }
