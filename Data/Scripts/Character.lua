@@ -101,11 +101,13 @@ function character:Deserialize(data)
     end
 end
 function character:Destroy()
+    self:RemoveOwner()
     for index, component in ipairs(self:GetComponents()) do
         if component then
             component:Destroy()
         end
     end
+
     TriggerEvent(self.destroyEvent, self)
 end
 function InitCharacter(NewCharacter)
