@@ -9,15 +9,15 @@ Assets {
       Overrides {
         Name: "cmp:Material2"
         AssetReference {
-          Id: 1074325996530918974
+          Id: 13707562474042671468
         }
       }
       Overrides {
         Name: "cmpc:Material2"
         Color {
-          R: 0.494791657
-          G: 0.493744284
-          B: 0.166828528
+          R: 0.28
+          G: 0.106780246
+          B: 0.0944074169
           A: 1
         }
       }
@@ -62,7 +62,7 @@ Assets {
       }
       Overrides {
         Name: "blend_amount"
-        Float: 0.273883283
+        Float: 0.332017869
       }
       Overrides {
         Name: "invert_height"
@@ -74,7 +74,23 @@ Assets {
       }
       Overrides {
         Name: "rotate_material"
-        Float: 90
+        Float: 0
+      }
+      Overrides {
+        Name: "desaturation_albedo_m2"
+        Float: 0
+      }
+      Overrides {
+        Name: "b_invert_metallic_m2"
+        Bool: false
+      }
+      Overrides {
+        Name: "roughness_multiplier_m2"
+        Float: 1
+      }
+      Overrides {
+        Name: "u_tiles"
+        Float: 1
       }
     }
     Assets {
@@ -87,12 +103,12 @@ Assets {
       }
     }
     Assets {
-      Id: 1074325996530918974
-      Name: "Hay 02"
+      Id: 13707562474042671468
+      Name: "Roof Square Shingles 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_fan_hay_002_uv"
+        AssetId: "mi_roof_square_shingles_001_uv"
       }
     }
     Assets {
