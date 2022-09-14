@@ -1,6 +1,6 @@
 --[[
 	NPCAI - Client
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	The client counterpart for NPCAIServer. Detaches and smooths the

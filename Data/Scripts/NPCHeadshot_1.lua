@@ -1,6 +1,6 @@
 --[[
 	NPC Headshot - server component
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	Optional component that allows an NPC to specify a head point, for increased

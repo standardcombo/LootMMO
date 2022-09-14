@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - Player
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	Provides an interface of combat functions that operate on a Player object.

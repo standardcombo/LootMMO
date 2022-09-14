@@ -271,5 +271,9 @@ Assets {
       VirtualFolderPath: "Components"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "NPC Kit"
+      PlatformAssetType: 3
+    }
   }
 }
