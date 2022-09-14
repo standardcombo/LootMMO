@@ -17,15 +17,6 @@ Assets {
   }
 }
 Assets {
-  Id: 18205316927619177531
-  Name: "Decal Military Posters 01"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_mil_posters_002_ref"
-  }
-}
-Assets {
   Id: 18136668741987840973
   Name: "Fantasy Clay Pot 02 Damaged 01"
   PlatformAssetType: 1
@@ -77,15 +68,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_wall_half_001"
-  }
-}
-Assets {
-  Id: 17866554501249590175
-  Name: "Abstract Frame 09"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Core_UI_AbstractPackFrame_003"
   }
 }
 Assets {
@@ -449,15 +431,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15165259096139593860
-  Name: "Cabin Condensed"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "CabinCondensed_ref"
-  }
-}
-Assets {
   Id: 15128280182623405640
   Name: "Fern 04"
   PlatformAssetType: 1
@@ -665,15 +638,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14465316728247841933
-  Name: "Plane 1m - Two Sided"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_plane_1m_002"
-  }
-}
-Assets {
   Id: 14463303659751748326
   Name: "Decal Wood Ends Variations"
   PlatformAssetType: 14
@@ -725,15 +689,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_modern_knife_001"
-  }
-}
-Assets {
-  Id: 14231394991004806063
-  Name: "Callout Sparkle"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_sparkles_volume_vfx"
   }
 }
 Assets {
@@ -980,15 +935,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12798912140996043624
-  Name: "Abstract Background 02"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Core_UI_AbstractPack_Background_003"
-  }
-}
-Assets {
   Id: 12644669002067753423
   Name: "Japanese Tea Set - Kettle Lid 01"
   PlatformAssetType: 1
@@ -1049,15 +995,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_wall_001_win_02"
-  }
-}
-Assets {
-  Id: 12385794193739794509
-  Name: "Decal Stains Round 01"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_stain_round_001"
   }
 }
 Assets {
@@ -1265,15 +1202,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_metal_gold_001"
-  }
-}
-Assets {
-  Id: 11336346532215892341
-  Name: "Germania One"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "GermaniaOneRegular_ref"
   }
 }
 Assets {
@@ -2204,15 +2132,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5338351160029262659
-  Name: "Pirata One"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "PirataOneRegular_ref"
-  }
-}
-Assets {
   Id: 5290493942492485524
   Name: "Japanese Futon - Pillow 01"
   PlatformAssetType: 1
@@ -2318,15 +2237,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_lense_001"
-  }
-}
-Assets {
-  Id: 4521339182838057470
-  Name: "Cinematic Metallic Slam Impact 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_designer_metallic_slam_impact_01_Cue_ref"
   }
 }
 Assets {
@@ -2624,15 +2534,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_candles_melted_001"
-  }
-}
-Assets {
-  Id: 2565198747368244920
-  Name: "Sci-fi Frame 009"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Frame_009"
   }
 }
 Assets {

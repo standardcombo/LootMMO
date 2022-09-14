@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17866554501249590175
+  Name: "Abstract Frame 09"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPackFrame_003"
+  }
+}
+Assets {
   Id: 16844675866280788582
   Name: "Fantasy Scroll Contained 01"
   PlatformAssetType: 1
@@ -53,12 +62,30 @@ Assets {
   }
 }
 Assets {
+  Id: 15165259096139593860
+  Name: "Cabin Condensed"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "CabinCondensed_ref"
+  }
+}
+Assets {
   Id: 14465316728247841933
   Name: "Plane 1m - Two Sided"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_plane_1m_002"
+  }
+}
+Assets {
+  Id: 14231394991004806063
+  Name: "Callout Sparkle"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_sparkles_volume_vfx"
   }
 }
 Assets {
@@ -95,6 +122,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_invisible_001"
+  }
+}
+Assets {
+  Id: 12798912140996043624
+  Name: "Abstract Background 02"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_003"
   }
 }
 Assets {
@@ -257,6 +293,15 @@ Assets {
   PrimaryAsset {
     AssetType: "FontAssetRef"
     AssetId: "PirataOneRegular_ref"
+  }
+}
+Assets {
+  Id: 4521339182838057470
+  Name: "Cinematic Metallic Slam Impact 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_designer_metallic_slam_impact_01_Cue_ref"
   }
 }
 Assets {
