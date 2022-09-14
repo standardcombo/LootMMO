@@ -35,15 +35,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17952268790008141582
-  Name: "Fantasy Castle Wall 01 Half"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_fan_cas_wall_half_001"
-  }
-}
-Assets {
   Id: 17786706417721973926
   Name: "Decal Bullet Damage Wood"
   PlatformAssetType: 14
@@ -599,15 +590,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_wall_half_002_win_03"
-  }
-}
-Assets {
-  Id: 12440414106477759869
-  Name: "Fantasy Castle Wall 01 - Window 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_fan_cas_wall_001_win_02"
   }
 }
 Assets {
@@ -1178,6 +1160,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7746675281084900771
+  Name: "Fantasy Castle Trim - Parapet 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_parapet_001"
+  }
+}
+Assets {
   Id: 7724989921381923917
   Name: "Ambience Nature Wind and Trees Set 01 SFX"
   PlatformAssetType: 10
@@ -1274,6 +1265,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_wedge_curved_convex_hq_001"
+  }
+}
+Assets {
+  Id: 7024000384100491977
+  Name: "Smoke Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_smoke_volume_vfx"
   }
 }
 Assets {
@@ -1709,15 +1709,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2966332780938866121
-  Name: "Craftsman Desk Drawer 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_desk_drawer_003_ref"
-  }
-}
-Assets {
   Id: 2754963224534021958
   Name: "Invisible"
   PlatformAssetType: 2
@@ -1877,6 +1868,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_pommel_005"
+  }
+}
+Assets {
+  Id: 648897023620279086
+  Name: "Wood Painted 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_painted_white_001_uv"
   }
 }
 Assets {
