@@ -77,6 +77,9 @@ function NewCharacter()
     end
 end
 function ClosePanel()
+    if IsState(States.Closed) then
+        return
+    end
     SetState(States.Closed)
     for i = 1, #SpawnedPanels, 1 do
         EASE_UI.EaseY(SpawnedPanels[i], -400, .2, EASE_UI.EasingEquation.CUBIC)
@@ -85,7 +88,7 @@ function ClosePanel()
     Task.Wait(.2)
     UICONTAINER.visibility = Visibility.FORCE_OFF
     CursorStack.Disable()
-    if appstate.GetLocalState() == appstate.SocialHub then
+    if appstate.GetLocalState() == appstate.CharacterSelection then
         appstate.SetLocalState(appstate.SocialHub)
     end
 end

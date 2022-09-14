@@ -3,7 +3,7 @@ while not _G.AppState do
 end
 local appstate = _G.AppState
 local DataKey = 'Cselect'
-
+local EAPI = _G['Character.EquipAPI']
 function HasCharacters(player)
     local data = player:GetPrivateNetworkedData(DataKey)
     return #data > 0
@@ -24,6 +24,14 @@ Events.Connect(
                 local NewCharacter = CHARACTERCONSTUCT.NewCharacter()
                 NewCharacter:SetOwner(player)
             end
+            return
+        end
+        if newState == appstate.BagSelection then
+            local character = EAPI.GetCurrentCharacter(player)
+            if character then
+                character:Destroy()
+            end
+            return
         end
     end
 )

@@ -13,7 +13,7 @@ end
 
 function CheckPlayerHasBag(player, SerizedBag)
     --To do make verification
-    return false
+    return true
 end
 
 function CheckIsDailyBag(SerizedBag)
@@ -39,11 +39,11 @@ function EquipBag(player, SerizedBag)
     player.serverUserData.currentBag = bag
     for key, item in pairs(bag.items) do
         local def = _G.Items.GetDefinition(item.name)
-        if def.equipment then
-            local newEquipment = World.SpawnAsset(def.equipment)
-            _G.EquipmentStack.Equip(player, newEquipment)
-        elseif def.equipmentHollow then
+        if def.equipmentHollow then
             local newEquipment = World.SpawnAsset(def.equipmentHollow)
+            _G.EquipmentStack.Equip(player, newEquipment)
+        elseif def.equipment then
+            local newEquipment = World.SpawnAsset(def.equipment)
             _G.EquipmentStack.Equip(player, newEquipment)
         end
     end
