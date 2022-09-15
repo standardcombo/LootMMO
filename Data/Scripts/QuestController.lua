@@ -83,6 +83,21 @@ end
 
 
 -- Client/Server
+function API.GetUnlockedQuests(player)
+	local playerData = API.GetPlayerData(player)
+	local results = {}
+	if playerData and playerData.unlocked then
+		for _,id in ipairs(playerData.unlocked) do
+			local questData = QUEST_METADATA[id]
+			if questData then
+				table.insert(results, questData)
+			end
+		end
+	end
+	return results
+end
+
+-- Client/Server
 function API.GetCompletedQuestIDs(player)
 	local playerData = API.GetPlayerData(player)
 	if playerData then
@@ -200,18 +215,47 @@ end
 -- Server only
 function API.UnlockForPlayer(player, questId)
 	--print("QuestController::UnlockForPlayer() "..player.name..","..questId)
-	if not QUEST_METADATA[questId] then
+	local quest = QUEST_METADATA[questId]
+	if not quest then
 		error("Cannot unlock quest ".. tostring(questId) .." because no such quest exists.")
 		return
 	end
-	if API.HasCompleted(player, questId) then
+	if not quest.isReplayable and API.HasCompleted(player, questId) then
+		warn(player.name .." has already completed ".. questId)
+		return
+	end
+	local playerData = API.GetPlayerData(player)
+	if not playerData.unlocked then
+		playerData.unlocked = {}
+	end
+	for _,entry in ipairs(playerData.unlocked) do
+		if entry == questId then
+			warn(player.name .." has already unlocked ".. questId)
+			return
+		end
+	end
+	table.insert(playerData.unlocked, questId)
+	
+	SetPlayerData(player, playerData)
+end
+
+
+-- Server only
+function API.ActivateForPlayer(player, questId)
+	--print("QuestController::ActivateForPlayer() "..player.name..","..questId)
+	local quest = QUEST_METADATA[questId]
+	if not quest then
+		error("Cannot activate quest ".. tostring(questId) .." because no such quest exists.")
+		return
+	end
+	if not quest.isReplayable and API.HasCompleted(player, questId) then
 		warn(player.name .." has already completed ".. questId)
 		return
 	end
 	local playerData = API.GetPlayerData(player)
 	for _,entry in ipairs(playerData.active) do
 		if entry.id == questId then
-			warn(player.name .." has already unlocked ".. questId)
+			warn(player.name .." already has activated ".. questId)
 			return
 		end
 	end
@@ -254,7 +298,7 @@ function API.AdvanceObjective(player, questId, objectiveIndex)
 end
 
 function CompleteQuest(player, questId)
-	print("QuestController::CompleteQuest() "..player.name..","..questId)
+	--print("QuestController::CompleteQuest() "..player.name..","..questId)
 	local playerData = API.GetPlayerData(player)
 	for i,entry in ipairs(playerData.active) do
 		if entry.id == questId then
@@ -274,7 +318,12 @@ function CompleteQuest(player, questId)
 	for _,unlockId in ipairs(ids) do
 		unlockId = CoreString.Trim(unlockId)
 		
-		API.UnlockForPlayer(player, unlockId)
+		local quest = QUEST_METADATA[unlockId]
+		if quest and quest.mapContent then
+			API.UnlockForPlayer(player, unlockId)
+		else
+			API.ActivateForPlayer(player, unlockId)
+		end
 	end
 	
 	SavePlayerData(player)
@@ -307,7 +356,8 @@ local function LoadPlayerData(player)
 			active = {}
 			--Fake data:
 			--complete = {"Welcome"},
-			--active = {{id="Map",n=2},{id="Raid1"}}
+			--unlocked = {"Raid1"},
+			--active = {{id="Map",n=2}}
 		}
 	end
 	SetPlayerData(player, playerData)
@@ -349,7 +399,7 @@ function ResetQuestsForPlayer(player)
 	
 	LoadPlayerData(player)
 	
-	API.UnlockForPlayer(player, "Welcome")
+	API.ActivateForPlayer(player, "Welcome")
 end
 
 

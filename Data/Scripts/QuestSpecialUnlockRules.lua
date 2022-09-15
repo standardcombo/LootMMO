@@ -2,7 +2,7 @@
 
 
 function Unlock(player, questId)
-	_G.QuestController.UnlockForPlayer(player, questId)
+	_G.QuestController.ActivateForPlayer(player, questId)
 end
 
 

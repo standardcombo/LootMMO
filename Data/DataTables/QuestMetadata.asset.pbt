@@ -33,6 +33,15 @@ Assets {
       }
     }
     Assets {
+      Id: 5541180419929889488
+      Name: "Dragon"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Dragon"
+      }
+    }
+    Assets {
       Id: 15361521404808479615
       Name: "Boot"
       PlatformAssetType: 9

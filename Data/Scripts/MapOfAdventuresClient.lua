@@ -3,13 +3,18 @@ local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local OVERRIDE_CAMERA = script:GetCustomProperty("OverrideCamera"):WaitForObject()
 local PLAY_SFX = script:GetCustomProperty("PlaySFX"):WaitForObject()
 local CALLOUT_SPARKLE = script:GetCustomProperty("CalloutSparkle"):WaitForObject()
+local CONTENT_PANEL = script:GetCustomProperty("ContentPanel"):WaitForObject()
+local LEFT_ARROW = script:GetCustomProperty("LeftArrow"):WaitForObject()
+local RIGHT_ARROW = script:GetCustomProperty("RightArrow"):WaitForObject()
 
 local CAM_APPROACH_DISTANCE = 20
 local CAM_APPROACH_SPEED = 1.8
 
-local MAPS = {"Raid1"} --TODO
+local PLAYER = Game.GetLocalPlayer()
 
+local maps = {}
 local selectedIndex = 1
+
 local isFocused = false
 local isAwaitingTransfer = false
 
@@ -37,7 +42,7 @@ function EnterFocus()
 	
 	_G.CursorStack.Enable()
 
-	Game.GetLocalPlayer():SetOverrideCamera(OVERRIDE_CAMERA)
+	PLAYER:SetOverrideCamera(OVERRIDE_CAMERA)
 	OVERRIDE_CAMERA.currentDistance = CAM_APPROACH_DISTANCE
 	
 	CALLOUT_SPARKLE.visibility = Visibility.FORCE_OFF
@@ -55,7 +60,7 @@ function ExitFocus()
 	
 	_G.CursorStack.Disable()
 
-	Game.GetLocalPlayer():ClearOverrideCamera(0)
+	PLAYER:ClearOverrideCamera(0)
 	
 	CALLOUT_SPARKLE.visibility = Visibility.INHERIT
 	CALLOUT_SPARKLE:SetSmartProperty("Density", 1)
@@ -67,18 +72,69 @@ function ExitFocus()
 end
 
 
-function SetupMap()
-	--
+function UpdateContents()
+	local quests = _G.QuestController.GetUnlockedQuests(PLAYER)
+	--print("MapOfAdventurersClient::UpdateContents() quests: ".. #quests)
+	
+	-- Check if it's still the same as before
+	if #quests == #maps then
+		for i,quest in ipairs(quests) do
+			if quest.id ~= maps[i].clientUserData.quest.id then
+				goto contentHasChanged
+			end
+		end
+		return --Exit early, no changes
+	end
+	:: contentHasChanged ::
+
+	-- Clear existing content
+	for _,child in ipairs(CONTENT_PANEL:GetChildren()) do
+		child:Destroy()
+	end
+	maps = {}
+
+	-- Add map pages
+	for _,questData in ipairs(quests) do
+		if questData.mapContent then
+			local map = World.SpawnAsset(questData.mapContent, {parent = CONTENT_PANEL})
+			table.insert(maps, map)
+
+			map.clientUserData.quest = questData
+		end
+	end
+	if selectedIndex > #maps then
+		selectedIndex = #maps
+	end
+	UpdateMapVisibility()
 end
+
+
+function UpdateMapVisibility()
+	for i, map in ipairs(maps) do
+		if i == selectedIndex then
+			map.visibility = Visibility.INHERIT
+		else
+			map.visibility = Visibility.FORCE_OFF
+		end
+	end
+	if #maps > 1 then
+		LEFT_ARROW.visibility = Visibility.INHERIT
+		RIGHT_ARROW.visibility = Visibility.INHERIT
+	else
+		LEFT_ARROW.visibility = Visibility.FORCE_OFF
+		RIGHT_ARROW.visibility = Visibility.FORCE_OFF
+	end
+end
+
 
 function Next()
 	if isAwaitingTransfer then return end
 	
 	selectedIndex = selectedIndex + 1
-	if selectedIndex > #MAPS then
+	if selectedIndex > #maps then
 		selectedIndex = 1
 	end
-	SetupMap()
+	UpdateMapVisibility()
 end
 
 function Previous()
@@ -86,14 +142,18 @@ function Previous()
 	
 	selectedIndex = selectedIndex - 1
 	if selectedIndex <= 0 then
-		selectedIndex = #MAPS
+		selectedIndex = #maps
 	end
-	SetupMap()
+	UpdateMapVisibility()
 end
 
 
 Next()
 
+
+-- Events fired from quest system
+Events.Connect("Quest_Changed", UpdateContents)
+UpdateContents()
 
 -- Events fired from MapButtons script
 Events.Connect("NextMap", Next)

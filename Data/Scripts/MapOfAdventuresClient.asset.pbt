@@ -25,6 +25,21 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:ContentPanel"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:LeftArrow"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:RightArrow"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:Trigger:isrep"
         Bool: false
       }
