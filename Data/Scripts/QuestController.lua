@@ -27,6 +27,9 @@ local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
 
 local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
 
+local SERIALIZATION_VERSION = 1
+
+
 -- Create direct connection between quests and their objectives
 -- so we only have to do this search one time
 for k,quest in pairs(QUEST_METADATA) do
@@ -330,6 +333,19 @@ function CompleteQuest(player, questId)
 end
 
 
+local function PatchData(playerData)
+	local prevVersion = playerData.version
+	if not prevVersion then
+		-- Reset data
+		return nil
+	end
+	if prevVersion == SERIALIZATION_VERSION then
+		return playerData -- No change
+	end
+	-- TODO: Apply different transformations, per version change
+	return playerData
+end
+
 function SavePlayerData(player)
 	if not Object.IsValid(player) then return end
 	if player.serverUserData.isLoadingQuestData then return end
@@ -337,6 +353,7 @@ function SavePlayerData(player)
 	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
 	
 	storageData.quests = API.GetPlayerData(player)
+	storageData.quests.version = SERIALIZATION_VERSION
 	
 	local resultCode,errorMessage = Storage.SetSharedPlayerData(PROGRESS_KEY, player, storageData)
 	
@@ -349,6 +366,8 @@ local function LoadPlayerData(player)
 	
 	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
 	local playerData = storageData.quests
+	
+	playerData = PatchData(playerData)
 	
 	if not playerData then
 		playerData = {
