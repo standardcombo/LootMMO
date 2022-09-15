@@ -19,6 +19,7 @@ Assets {
         ChildIds: 10713421142343350637
         ChildIds: 6215278144905567365
         ChildIds: 1940451665172465442
+        ChildIds: 16639696680448889205
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -127,11 +128,10 @@ Assets {
             Z: -416.054688
           }
           Rotation {
-            Yaw: -3.41509417e-06
           }
           Scale {
-            X: 1.63406599
-            Y: 2.78696012
+            X: 1.63406479
+            Y: 3.57200718
             Z: 1.51512384
           }
         }
@@ -281,6 +281,68 @@ Assets {
           }
         }
         Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16639696680448889205
+        Name: "Area Light"
+        Transform {
+          Location {
+            X: -9.0608387
+            Y: -15.4192982
+          }
+          Rotation {
+            Yaw: -90
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 2121438019703418596
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 11.6366987
+          Color {
+            R: 1
+            G: 1
+            B: 1
+            A: 1
+          }
+          CastShadows: true
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            UseTemperature: true
+            Temperature: 1800
+            LocalLight {
+              AttenuationRadius: 475.548492
+              AreaLight {
+                BarnDoorAngle: 90
+                BarnDoorLength: 42.9332275
+                SourceWidth: 82.4738
+                SourceHeight: 157.081009
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
+          ShadowBias: 0.4
+          ShadowSlopeBias: 0.6
+        }
+        NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true

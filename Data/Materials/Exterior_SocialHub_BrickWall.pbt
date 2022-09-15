@@ -18,6 +18,23 @@ Assets {
         Name: "rotate_material"
         Float: 0
       }
+      Overrides {
+        Name: "gradient_color"
+        Color {
+          R: 0.514
+          G: 0.514
+          B: 0.514
+          A: 1
+        }
+      }
+      Overrides {
+        Name: "gradient_shift"
+        Float: 0.111300513
+      }
+      Overrides {
+        Name: "gradient_worldspace"
+        Bool: true
+      }
     }
     Assets {
       Id: 976160146953564458

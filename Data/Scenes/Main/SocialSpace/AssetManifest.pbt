@@ -26,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 18044128746290206539
-  Name: "Whitebox Window Insert - Arch Top"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_gen_whitebox_winInsert_001_archTop"
-  }
-}
-Assets {
   Id: 18035903972679073489
   Name: "Small Pot"
   PlatformAssetType: 1
@@ -503,15 +494,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15022686768039723999
-  Name: "Large Round Wood Beam 8m"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_large_beam_round_6m"
-  }
-}
-Assets {
   Id: 15020893570606002283
   Name: "Rock Block 01"
   PlatformAssetType: 1
@@ -638,30 +620,12 @@ Assets {
   }
 }
 Assets {
-  Id: 14463303659751748326
-  Name: "Decal Wood Ends Variations"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_wood_rings_001"
-  }
-}
-Assets {
   Id: 14360998166931460595
   Name: "Decal Spray Manticore 01"
   PlatformAssetType: 14
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_spray_manticore_001"
-  }
-}
-Assets {
-  Id: 14303381290242219284
-  Name: "Prism - 4-Sided Trapezoid Right"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prism_trapezoid_001"
   }
 }
 Assets {
@@ -707,15 +671,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_4_sided_thin_001"
-  }
-}
-Assets {
-  Id: 14124621189176447501
-  Name: "Bricks Layered Stone Floor 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_brick_stone_floor_layered_001"
   }
 }
 Assets {
@@ -800,15 +755,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13800436588944964225
-  Name: "Bush 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bush_generic_002"
-  }
-}
-Assets {
   Id: 13791225619385764102
   Name: "Wicker Basket 02"
   PlatformAssetType: 2
@@ -824,15 +770,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_bannister_001_post"
-  }
-}
-Assets {
-  Id: 13707562474042671468
-  Name: "Roof Square Shingles 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_roof_square_shingles_001_uv"
   }
 }
 Assets {
@@ -1268,15 +1205,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10673617805799941235
-  Name: "Bricks Cobblestone Floor 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_brick_cobblestone_floor_001"
-  }
-}
-Assets {
   Id: 10634098119816284342
   Name: "Wood Planks"
   PlatformAssetType: 2
@@ -1337,15 +1265,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_bone_raw_001_uv_ref"
-  }
-}
-Assets {
-  Id: 10354510378571488340
-  Name: "Wedge - Corner Complex"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_corelogo_shape_001"
   }
 }
 Assets {
@@ -1655,15 +1574,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8782085183385730141
-  Name: "Container - Rectangle Thick 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_container_rectangle_thick_ref"
-  }
-}
-Assets {
   Id: 8778472540254762742
   Name: "Ring - Quarter Beveled Thick"
   PlatformAssetType: 1
@@ -1673,30 +1583,12 @@ Assets {
   }
 }
 Assets {
-  Id: 8577311143671657918
-  Name: "Wood Planks White"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_wood_planks_white_001_uv"
-  }
-}
-Assets {
   Id: 8577209406893781129
   Name: "Composite Wood 9 Slice Frame Panel 03"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_composite_frame_9slice_003_ref"
-  }
-}
-Assets {
-  Id: 8553298544017934648
-  Name: "Grass Tall"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_grass_generic_001"
   }
 }
 Assets {
@@ -1979,15 +1871,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6000681835192046231
-  Name: "Pipe - Thick"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pipe_004"
-  }
-}
-Assets {
   Id: 5949268049384519735
   Name: "Pipe - Quarter Wedge Thin"
   PlatformAssetType: 1
@@ -2012,15 +1895,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_stairs_001"
-  }
-}
-Assets {
-  Id: 5712850423243093373
-  Name: "Diamond"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_diamond_001"
   }
 }
 Assets {
@@ -2177,15 +2051,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4848432830553094634
-  Name: "Asphalt 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_gen_asphault_001"
-  }
-}
-Assets {
   Id: 4842806961858489681
   Name: "Rock Flat 01"
   PlatformAssetType: 1
@@ -2339,15 +2204,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4044214825842439722
-  Name: "Grass Short"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_grass_generic_002"
-  }
-}
-Assets {
   Id: 4019005240395597937
   Name: "Clear Coat 01"
   PlatformAssetType: 2
@@ -2474,15 +2330,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2928617361847387870
-  Name: "Urban Pipe Wrap 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_pipes_acc_coupling_005_ref"
-  }
-}
-Assets {
   Id: 2920556432021751741
   Name: "Vignette Grain Post Process"
   PlatformAssetType: 6
@@ -2498,24 +2345,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_trimitives_001_curve30_6m_ref"
-  }
-}
-Assets {
-  Id: 2777530842543105839
-  Name: "Whitebox Wall 01 - Foundation"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_tx_gen_whitebox_foundation_001"
-  }
-}
-Assets {
-  Id: 2723232960546970913
-  Name: "Wood Floor Dark"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_wood_floor_dark_001_uv"
   }
 }
 Assets {
@@ -2543,15 +2372,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_shield_003"
-  }
-}
-Assets {
-  Id: 2437857163573821662
-  Name: "Large Wood Board 8m"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_large_board_6m"
   }
 }
 Assets {
@@ -2762,15 +2582,6 @@ Assets {
   }
 }
 Assets {
-  Id: 1050562759207971480
-  Name: "Prism - 3-Sided Convex"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prism_triangle_convex_001"
-  }
-}
-Assets {
   Id: 901541979513849367
   Name: "Bush 01"
   PlatformAssetType: 1
@@ -2888,29 +2699,11 @@ Assets {
   }
 }
 Assets {
-  Id: 84254442598276906
-  Name: "Bush Leafy Low 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_bush_002"
-  }
-}
-Assets {
   Id: 51633199919536629
   Name: "Square Column Segment"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_column_square_segment_001"
-  }
-}
-Assets {
-  Id: 46061843978868412
-  Name: "Ring"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torus_004"
   }
 }
