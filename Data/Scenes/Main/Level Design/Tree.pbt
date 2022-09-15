@@ -163481,8 +163481,6 @@ Objects {
   ChildIds: 17773567594023996930
   ChildIds: 10747715958629509959
   ChildIds: 3459923705071416674
-  ChildIds: 3192896063644563490
-  ChildIds: 2131632555251852423
   ChildIds: 17237724586390622187
   ChildIds: 8927212110917905672
   ChildIds: 9883151209166709177
@@ -163892,143 +163890,6 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 5343700068785129820
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2131632555251852423
-  Name: "Cube"
-  Transform {
-    Location {
-      X: 706.646
-      Y: -551.071716
-      Z: -206.223145
-    }
-    Rotation {
-      Pitch: 6.83018879e-06
-      Yaw: -129.34848
-      Roll: -89.9999695
-    }
-    Scale {
-      X: -0.733945489
-      Y: 0.733944058
-      Z: 2.04394341
-    }
-  }
-  ParentId: 2020653341226544368
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 8507615848309727127
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 3614916975638685144
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3192896063644563490
-  Name: "Cube"
-  Transform {
-    Location {
-      X: 706.646484
-      Y: -551.071899
-      Z: -206.223312
-    }
-    Rotation {
-      Yaw: -129.34848
-      Roll: -90
-    }
-    Scale {
-      X: 0.733945489
-      Y: 0.733944058
-      Z: 2.04394341
-    }
-  }
-  ParentId: 2020653341226544368
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 8507615848309727127
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 3614916975638685144
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -215365,6 +215226,7 @@ Objects {
   ParentId: 14204058225698546336
   ChildIds: 13707565530098982438
   ChildIds: 4493501427901533000
+  ChildIds: 4759478289985207338
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -215379,6 +215241,93 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4759478289985207338
+  Name: "Smoke Volume VFX"
+  Transform {
+    Location {
+      X: 2007.13916
+      Y: -1729.38745
+      Z: 765.946655
+    }
+    Rotation {
+      Yaw: 2.73207552e-05
+    }
+    Scale {
+      X: 1.33333337
+      Y: 1.33333337
+      Z: 1.33333337
+    }
+  }
+  ParentId: 14362594955762730089
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.0580000021
+        G: 0.0439756028
+        B: 0.0256359987
+        A: 0.797000051
+      }
+    }
+    Overrides {
+      Name: "bp:Particle Scale Multiplier"
+      Float: 4.59647369
+    }
+    Overrides {
+      Name: "bp:Life"
+      Float: 5
+    }
+    Overrides {
+      Name: "bp:Wind Speed"
+      Vector {
+        X: 1
+        Z: 10
+      }
+    }
+    Overrides {
+      Name: "bp:Initial Velocity High"
+      Vector {
+        Z: 800
+      }
+    }
+    Overrides {
+      Name: "bp:Initial Velocity Low"
+      Vector {
+        Z: 25
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 7024000384100491977
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

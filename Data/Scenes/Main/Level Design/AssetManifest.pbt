@@ -1349,15 +1349,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3614916975638685144
-  Name: "Trim - Curve 90\302\260 - 04m Radius"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_trimitives_001_curve90_4m_ref"
-  }
-}
-Assets {
   Id: 3522297156491387882
   Name: "Craftsman Porch Fence Railing 01"
   PlatformAssetType: 1
