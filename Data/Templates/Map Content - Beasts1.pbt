@@ -10,9 +10,9 @@ Assets {
         Name: "Map Content - Beasts1"
         Transform {
           Scale {
-            X: 2.44941664
-            Y: 2.44941664
-            Z: 2.44941664
+            X: 5.9996419
+            Y: 5.9996419
+            Z: 5.9996419
           }
         }
         ParentId: 3926631431061671274
@@ -280,7 +280,7 @@ Assets {
           Width: 160
           Height: 240
           UIX: -100.655205
-          UIY: 80.2762527
+          UIY: 90.2689209
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1151,7 +1151,7 @@ Assets {
           Width: 190
           Height: 200
           UIX: 80.5523224
-          UIY: 79.9445953
+          UIY: 88.7482
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
