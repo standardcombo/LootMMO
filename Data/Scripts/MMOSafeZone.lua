@@ -18,7 +18,7 @@ function OnBeginOverlap(trigger, player)
 	if player.serverUserData.safeZoneCount == 1 then
 		Events.Broadcast("SafeZone_Enter", player, zoneData)
 		
-		print(player.name .." entered safe zone ".. zoneData.name ..",".. zoneData.id)
+		--print(player.name .." entered safe zone ".. zoneData.name ..",".. zoneData.id)
 	end
 end
 
@@ -36,7 +36,7 @@ function OnEndOverlap(trigger, player)
 	if player.serverUserData.safeZoneCount == 0 then
 		Events.Broadcast("SafeZone_Exit", player, zoneData)
 		
-		print(player.name .." exited safe zone ".. zoneData.name ..",".. zoneData.id)
+		--print(player.name .." exited safe zone ".. zoneData.name ..",".. zoneData.id)
 	end
 end
 

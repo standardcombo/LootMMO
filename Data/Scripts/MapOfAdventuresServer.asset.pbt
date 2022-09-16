@@ -4,6 +4,12 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:SpawnUtils"
+        AssetReference {
+          Id: 11996838552400708578
+        }
+      }
     }
   }
   SerializationVersion: 118

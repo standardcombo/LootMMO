@@ -26,7 +26,11 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_MapPlay"
+      String: "Quest_Map"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "Play"
     }
   }
   Collidable_v2 {
@@ -77,7 +81,11 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_MapFocus"
+      String: "Quest_Map"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "Focus"
     }
   }
   Collidable_v2 {

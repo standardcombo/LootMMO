@@ -55,6 +55,18 @@ for k,quest in pairs(QUEST_METADATA) do
 	end
 end
 
+-- Find the full game IDs (not the slug URL) for each quest
+local fullGameIdMapping = {}
+Task.Spawn(function()
+	for k,quest in pairs(QUEST_METADATA) do
+		if not fullGameIdMapping[quest.gameId] then
+			local coreGameInfo = CorePlatform.GetGameInfo(quest.gameId)
+			local fullGameID = coreGameInfo.id
+			fullGameIdMapping[quest.gameId] = fullGameID
+		end
+	end
+end)
+
 
 -- Client/Server
 function API.GetQuest(id)
@@ -330,6 +342,29 @@ function CompleteQuest(player, questId)
 	end
 	
 	SavePlayerData(player)
+end
+
+
+-- Server/Client
+function API.IsLocalGame(questData)
+	local thisGameID = Game.GetCurrentGameId()
+	if thisGameID == questData.gameId then
+		return true
+	end
+	if fullGameIdMapping[questData.gameId]
+	and fullGameIdMapping[questData.gameId] == thisGameID then
+		return true
+	end
+	return false
+end
+
+-- Server/Client
+function API.IsLocalScene(questData)
+	if not questData.sceneName or questData.sceneName == "" then
+		return true
+	end
+	local thisSceneName = Game.GetCurrentSceneName()
+	return thisSceneName == questData.sceneName
 end
 
 
