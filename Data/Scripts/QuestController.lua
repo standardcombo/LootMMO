@@ -369,6 +369,9 @@ end
 
 
 local function PatchData(playerData)
+	if not playerData then
+		return nil
+	end
 	local prevVersion = playerData.version
 	if not prevVersion then
 		-- Reset data
