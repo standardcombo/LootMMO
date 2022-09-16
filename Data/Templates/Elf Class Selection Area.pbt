@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 16937607096047638534
+        ChildIds: 5651898751047574163
         ChildIds: 7178602346230973161
         ChildIds: 14180922740616031370
         ChildIds: 5145801805166039320
@@ -33,6 +34,105 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5651898751047574163
+        Name: "MMOSafeZone"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: -1.36603794e-05
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12295150610950578052
+        ChildIds: 11752528963731076593
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Trigger"
+            ObjectReference {
+              SubObjectId: 11752528963731076593
+            }
+          }
+          Overrides {
+            Name: "cs:ZoneName"
+            String: "Bag Selection Screen"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7595779808583929273
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11752528963731076593
+        Name: "SafeZone Trigger"
+        Transform {
+          Location {
+            X: 450.272125
+            Y: -114.145737
+            Z: 100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 3
+            Y: 8
+            Z: 3
+          }
+        }
+        ParentId: 5651898751047574163
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:box"
+          }
+          InteractionTemplate {
+          }
+          BreadcrumbTemplate {
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

@@ -75,6 +75,8 @@ function SpawnPlayerAt(player, point)
 		--point = point[randomIndex]
 		point  = GetPointFurthestFromPlayers(point)
 	end
+	--print("SettingsPerLocationServer::SpawnPlayerAt() "..tostring(point))
+	
 	player:Spawn({
 		position = point:GetWorldPosition(), 
 		rotation = point:GetWorldRotation()
