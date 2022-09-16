@@ -5,6 +5,12 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:SpawnUtils"
+        AssetReference {
+          Id: 11996838552400708578
+        }
+      }
+      Overrides {
         Name: "cs:PlayerSettingsBagSelection"
         ObjectReference {
         }
