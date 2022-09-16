@@ -27,13 +27,13 @@ function Play()
 	
 	PLAY_SFX:Play()
 	Events.BroadcastToServer("Map.Play", selectedIndex)
-	Events.Broadcast("FadeOut", 4)
+	Events.Broadcast("FadeOut", 5)
 	
-	Task.Wait(2)
+	Task.Wait(1.25)
 	
 	isAwaitingTransfer = false
 	ExitFocus()
-	Events.Broadcast("FadeIn", 4)
+	Events.Broadcast("FadeIn", 5)
 end
 
 
