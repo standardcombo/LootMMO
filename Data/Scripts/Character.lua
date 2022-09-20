@@ -92,8 +92,10 @@ function character:Deserialize(data)
     self.id = data.id
     self.name = data.name
     self.class = data.class
-    self.lastPlayed = DateTime.FromIsoString(data.lastPlayed)
-    for index, value in ipairs(data.components) do
+    if data.lastPlayed then
+        self.lastPlayed = DateTime.FromIsoString(data.lastPlayed)
+    end
+    for index, value in ipairs(data.components or {}) do
         local component = self:GetComponent(value.id)
         if component then
             component:Deserialize(value.data)

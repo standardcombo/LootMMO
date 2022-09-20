@@ -38,6 +38,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:Cameras"
+        ObjectReference {
+          SelfId: 14572159778161844695
+        }
+      }
+      Overrides {
         Name: "cs:UIScrollPanel:isrep"
         Bool: false
       }

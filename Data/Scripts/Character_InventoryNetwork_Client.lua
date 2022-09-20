@@ -1,19 +1,30 @@
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 EApi = _G['Character.EquipAPI']
 local ClassConstructor = _G['Item.Constructor']
+local Keyidentity = 'I/.'
+local currentInventory = nil
 
-
- 
-function InventoryUpdated(inventory, networkedInventory, slot)
-    for i = 1, 10, 1 do
-        
+function ResourceUpdated(player, key, value)
+    local function isInventoryKey(testkey)
+        return string.sub(testkey, 1, string.len(Keyidentity)) == Keyidentity
     end
+
+    if isInventoryKey(key) then
+        local newKey = string.sub(key, string.len(Keyidentity) + 1, string.len(key))
+        if currentInventory then
+            currentInventory:SetResource(newKey, value)
+        end
+    end
+end
+
+function InventoryUpdated(inventory, networkedInventory, slot)
 end
 function SetUpPlayer(character, inventory)
     --- @type table<number, Inventory>
     local NetworkInventories = World.FindObjectsByType('Inventory')
     for index, curinventory in ipairs(NetworkInventories) do
         if curinventory.name == character.id then
+            print( inventory.backpack)
             inventory.backpack = curinventory
             curinventory.changedEvent:Connect(
                 function(networkedInventory, slot)
@@ -35,3 +46,4 @@ function PlayerEquipped(character, player)
 end
 
 EApi.playerEquippedEvent:Connect(PlayerEquipped)
+LOCAL_PLAYER.resourceChangedEvent:Connect(ResourceUpdated)

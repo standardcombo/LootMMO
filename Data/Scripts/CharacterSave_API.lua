@@ -1,4 +1,6 @@
-local CHARACTER = script:GetCustomProperty('SaveKey')
+local savekeys = _G['Storagekeys']
+local CHARACTER = savekeys.GetKeyFromName('character')
+assert(CHARACTER)
 
 local API = {}
 function API.GetSavedPlayerCharacterData(player)

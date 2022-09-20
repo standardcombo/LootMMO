@@ -1,6 +1,7 @@
 local component = {
     id = nil,
     owner = nil,
+    autoNetorked = false,
     requiredComponents = {}
 }
 
@@ -33,9 +34,9 @@ function component:Destroy()
 
     for key, value in pairs(self.eventElements) do
         local Event = self[value]
-        if Event then 
+        if Event then
             Event:Disconnect()
-        end 
+        end
     end
 end
 

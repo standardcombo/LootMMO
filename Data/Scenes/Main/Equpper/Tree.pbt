@@ -205,11 +205,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -158.400146
+          Float: -175
         }
         Overrides {
           Name: "UIY"
-          Float: -495.226135
+          Float: -400
         }
       }
     }
@@ -280,11 +280,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -53.4855957
+          Float: -50
         }
         Overrides {
           Name: "UIY"
-          Float: -406.701599
+          Float: -400
         }
       }
     }
@@ -355,11 +355,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -51.4284668
+          Float: -50
         }
         Overrides {
           Name: "UIY"
-          Float: -266.708923
+          Float: -275
         }
       }
     }
@@ -418,11 +418,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -195.969604
+          Float: -300
         }
         Overrides {
           Name: "UIY"
-          Float: -356.420044
+          Float: -300
         }
       }
     }
@@ -493,11 +493,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -326.196045
+          Float: -375
         }
         Overrides {
           Name: "UIY"
-          Float: -263.86792
+          Float: -100
         }
       }
     }
@@ -568,11 +568,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -383.841431
+          Float: -175
         }
         Overrides {
           Name: "UIY"
-          Float: -109.111816
+          Float: -275
         }
       }
     }
@@ -635,11 +635,11 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: -175
+          Float: -275
         }
         Overrides {
           Name: "UIY"
-          Float: -200
+          Float: -175
         }
       }
     }
@@ -695,6 +695,14 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: -250
+        }
+        Overrides {
+          Name: "UIY"
+          Float: -50
         }
       }
     }

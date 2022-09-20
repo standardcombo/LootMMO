@@ -7,14 +7,21 @@ end
 
 local EquipAPI = _G['Character.EquipAPI']
 
+function UpdateData(character, xp) 
+    local Level = character:GetComponent('Level')
+    Level:SetXP(xp)
+end 
+
 function UpdatedEvent(_, key)
     if key == Pkey then
         local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
         if character then
-            local Level = character:GetComponent('Level')
-            Level:SetXP(LOCAL_PLAYER:GetResource(Pkey))
+            UpdateData(character, LOCAL_PLAYER:GetResource(Pkey))
         end
     end
-end
+end 
 
+if EquipAPI.GetCurrentCharacter(LOCAL_PLAYER) then  
+    UpdateData(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER),  LOCAL_PLAYER:GetResource(Pkey))
+end
 LOCAL_PLAYER.resourceChangedEvent:Connect(UpdatedEvent)

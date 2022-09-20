@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 5446161884331668149
         ChildIds: 10227983253634991154
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -137,8 +137,8 @@ Assets {
         Control {
           Width: 64
           Height: 64
-          UIX: -50
-          UIY: 50
+          UIX: -25
+          UIY: 25
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -343,6 +343,8 @@ Assets {
         ChildIds: 6725463530158026759
         ChildIds: 9060536298171679460
         ChildIds: 9264911369456278358
+        ChildIds: 4672302736206165045
+        ChildIds: 766903780721464020
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2475,6 +2477,120 @@ Assets {
               }
             }
           }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 4672302736206165045
+        Name: "appstateHook"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11074465474267265046
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 10227983253634991154
+            }
+          }
+          Overrides {
+            Name: "cs:None"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:Adventure"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:SocialHub"
+            Bool: true
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14793085226451615550
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 766903780721464020
+        Name: "appstateHook"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11074465474267265046
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6066561527034339597
+            }
+          }
+          Overrides {
+            Name: "cs:None"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:Adventure"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:SocialHub"
+            Bool: true
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14793085226451615550
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

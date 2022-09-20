@@ -5,7 +5,7 @@ while not _G['Character.EquipAPI'] do
 end
 
 local EquipAPI = _G['Character.EquipAPI']
-function UpdatedEvent(xp, player)
+function UpdatedEvent(xp, player) 
     if not Object.IsValid(player) then
         return
     end
@@ -17,6 +17,7 @@ function PlayerEquipped(character, player)
         return
     end
     local level = character:GetComponent('Level')
+    UpdatedEvent(level:GetXP(), player)
     level.xpChangedEvent:Connect(
         function(_,xp)
             UpdatedEvent(xp, player)

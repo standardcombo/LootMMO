@@ -4,8 +4,8 @@ _G['Equipment.Slots'] = api
 
 function api.GetSlots()
     local types = {}
-    for key, value in pairs(LOOT_EQUIPMENT_SLOTS) do
-        table.insert(types, key)
+    for key, value in ipairs(LOOT_EQUIPMENT_SLOTS) do
+        table.insert(types, value['Name'])
     end
     return types
 end

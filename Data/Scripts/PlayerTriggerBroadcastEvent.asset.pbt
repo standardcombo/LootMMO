@@ -17,6 +17,15 @@ Assets {
         Name: "cs:AdditionalParam"
         String: ""
       }
+      Overrides {
+        Name: "cs:Root"
+        ObjectReference {
+          SelfId: 6928795761466199218
+          SubObjectId: 4459232483349721732
+          InstanceId: 12654479668692019033
+          TemplateId: 16992860760299648202
+        }
+      }
     }
   }
   SerializationVersion: 118

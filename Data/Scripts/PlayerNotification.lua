@@ -1,10 +1,18 @@
 local NOTIFIER = script:GetCustomProperty('Notifier'):WaitForObject()
 local LEVEL_UP_ICON = script:GetCustomProperty('LevelUpIcon'):WaitForObject()
 local SOUND = script:GetCustomProperty('Sound'):WaitForObject()
-
 local EquipAPI = _G['Character.EquipAPI']
 local pointsUpdatedEvent = nil
 local hasSeen = true
+local appstate = _G.AppState
+
+function Show()
+    ROOT.visibility = Visibility.INHERIT
+end
+
+function Hide()
+    ROOT.visibility = Visibility.FORCE_OFF
+end
 
 function Seen()
     if LEVEL_UP_ICON.visibility == Visibility.FORCE_OFF then
@@ -49,6 +57,5 @@ function UnEquipPlayer()
         pointsUpdatedEvent = nil
     end
 end
-
 EquipAPI.playerEquippedEvent:Connect(EquipPlayer)
 EquipAPI.playerUnequippedEvent:Connect(UnEquipPlayer)

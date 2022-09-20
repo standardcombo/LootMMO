@@ -4,6 +4,7 @@ local NEW_CHARACTER = script:GetCustomProperty('NewCharacter')
 local SELECT_CHARACTER = script:GetCustomProperty('SelectCharacter')
 local EASE_UI = require(script:GetCustomProperty('EaseUI'))
 local LOCAL_PLAYER = Game.GetLocalPlayer()
+local CAMERAS = script:GetCustomProperty('Cameras'):WaitForObject():GetChildren()
 
 local DataKey = 'Cselect'
 local ReturnCall = 'RCcall'
@@ -81,6 +82,7 @@ function ClosePanel()
         return
     end
     SetState(States.Closed)
+    LOCAL_PLAYER:ClearOverrideCamera()
     for i = 1, #SpawnedPanels, 1 do
         EASE_UI.EaseY(SpawnedPanels[i], -400, .2, EASE_UI.EasingEquation.CUBIC)
     end
@@ -97,6 +99,7 @@ function OpenPanel()
     local CurrentData = LOCAL_PLAYER:GetPrivateNetworkedData(DataKey)
     UICONTAINER.visibility = Visibility.INHERIT
     CursorStack.Enable()
+    LOCAL_PLAYER:SetOverrideCamera(CAMERAS[1],0)
     for i = 1, SlotCount, 1 do
         local NewPanel = nil
         if CurrentData[i] then

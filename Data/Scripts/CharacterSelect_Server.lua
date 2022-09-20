@@ -60,6 +60,21 @@ function Acknowledge(player)
     Events.BroadcastToPlayer(player, ReturnCall)
 end
 
+local function Save(character, player)
+    if not (character and player) then
+        return
+    end
+    if not character.autoSave == true then
+        return
+    end
+    local level = character:GetComponent('Level')
+    if level:GetLevel() < 2 then
+        return
+    end
+    character.lastPlayed = DateTime.CurrentTime()
+    CSave.SavePlayerCharacter(player, character)
+    UpdatePlayerData(player)
+end
 function SelectCharacter(player, characterId)
     local playercharacters = CSave.GetSavedPlayerCharacterData(player)
     for index, value in ipairs(playercharacters) do
@@ -67,6 +82,8 @@ function SelectCharacter(player, characterId)
             local newCharacter = CHARACTERCONSTUCT.NewCharacter()
             newCharacter:Deserialize(value)
             newCharacter:SetOwner(player)
+            newCharacter.autoSave = true
+            newCharacter.removeOwnerEvent:Connect(Save)
             local class = newCharacter:GetComponent('Class')
             if class then
                 class:EquipOwner()
@@ -80,6 +97,8 @@ end
 function NewCharacter(player)
     local newCharacter = CHARACTERCONSTUCT.NewCharacter()
     newCharacter:SetOwner(player)
+    newCharacter.autoSave = true
+    newCharacter.removeOwnerEvent:Connect(Save)
     Acknowledge(player)
     UpdatePlayerData(player)
 end
@@ -91,22 +110,17 @@ end
 
 function AutoSave(player)
     local character = EAPI.GetCurrentCharacter(player)
-    if character then
-        local level = character:GetComponent('Level')
-        if level:GetLevel() < 2 then
-            return
-        end
-        character.lastPlayed = DateTime.CurrentTime()
-        CSave.SavePlayerCharacter(player, character)
-    end
+    Save(character, player)
 end
 
 for key, player in pairs(Game.GetPlayers()) do
     PlayerJoined(player)
 end
+
 Game.playerJoinedEvent:Connect(PlayerJoined)
 Game.playerLeftEvent:Connect(AutoSave)
 
 Events.ConnectForPlayer(SelectCharacterEvent, SelectCharacter)
 Events.ConnectForPlayer(NewCharacterEvent, NewCharacter)
+Events.Connect(NewCharacterEvent, NewCharacter)
 Events.ConnectForPlayer(DeleteCharacterEvent, DeleteCharacter)

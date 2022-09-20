@@ -20,7 +20,7 @@ function GetStar(stat)
 end
 
 function UpdateStars()
-    if not currentEquipment then
+    if not currentEquipment or not Object.IsValid(currentEquipment) then
         return
     end
     local equipmentname = currentEquipment.name

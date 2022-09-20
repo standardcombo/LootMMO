@@ -4,7 +4,7 @@ while not _G['Character.EquipAPI'] do
 end
 EApi = _G['Character.EquipAPI']
 function UpdateCharacter(player, character)
-    player:SetPrivateNetworkedData(networkKey, character:Serialize()) 
+    player:SetPrivateNetworkedData(networkKey, {id = character.id})
 end
 
 function UnequipCharacter(character, player)
