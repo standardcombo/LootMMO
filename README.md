@@ -41,4 +41,9 @@ A starting point for Loot MMO, the social hub has been designed as a cozy space 
 - Pinball - Fully playable pinball game.
 
 
+Distance Relevance 
+==========
+
+Distance Relevance is set in the 'Game Settings' object in the hierarchy. Mesh and Decal Relevance on 'High' is currently set to a distance of 45,000. The purpose for this is so the exterior of the social space will still be rendered at the farthest parts of the map, but won't be rendered if you are inside the interior social space. Use Medium or Low relevance for distance culling of objects near the player. (Far underground)
+
 (work in progress)
