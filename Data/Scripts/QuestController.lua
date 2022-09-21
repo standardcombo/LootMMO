@@ -187,6 +187,22 @@ end
 
 
 -- Client/Server
+function API.GetObjectiveProgress(player, obj)
+	local playerData = API.GetPlayerData(player)
+	if playerData then
+		for k,entry in ipairs(playerData.active) do
+			if entry.id == obj.questId then
+				if entry.c ~= nil then
+					return entry.c
+				end
+				return 0
+			end
+		end
+	end
+end
+
+
+-- Client/Server
 function API.IsActive(player, obj)
 	if not player or not obj then
 		error("Invalid parameters to QuestController::IsActive(Player, objective data)")
@@ -301,11 +317,23 @@ function API.AdvanceObjective(player, questId, objectiveIndex)
 	local playerData = API.GetPlayerData(player)
 	for i,entry in ipairs(playerData.active) do
 		if entry.id == questId then
-			if entry.n == #quest.objectives then
-				CompleteQuest(player, questId)
-			else
-				entry.n = entry.n + 1
-				SetPlayerData(player, playerData)
+			if obj.count > 0 then
+				if entry.c then
+					entry.c = entry.c + 1
+				else
+					entry.c = 1
+				end
+				if entry.c < obj.count then
+					SetPlayerData(player, playerData)
+				end
+			end
+			if entry.c == nil or entry.c >= obj.count then
+				if entry.n == #quest.objectives then
+					CompleteQuest(player, questId)
+				else
+					entry.n = entry.n + 1
+					SetPlayerData(player, playerData)
+				end
 			end
 			break
 		end
@@ -428,22 +456,23 @@ if Environment.IsServer() then
 end
 
 
-local function FireLocalQuestChangedEvent()
-	Events.Broadcast("Quest_Changed")
+local function FireLocalQuestChangedEvent(player)
+	Events.Broadcast("Quest_Changed", player)
 end
 
 local function OnPrivateDataChanged(player, key)
 	if key == "quests" then
-		FireLocalQuestChangedEvent()
+		FireLocalQuestChangedEvent(player)
 	end
 end
 
 if Environment.IsClient() then
-	Game.GetLocalPlayer().privateNetworkedDataChangedEvent:Connect(OnPrivateDataChanged)
+	local player = Game.GetLocalPlayer()
+	player.privateNetworkedDataChangedEvent:Connect(OnPrivateDataChanged)
 	
-	Task.Spawn(
-		FireLocalQuestChangedEvent
-	)
+	Task.Spawn(function()
+		FireLocalQuestChangedEvent(player)
+	end)
 end
 
 

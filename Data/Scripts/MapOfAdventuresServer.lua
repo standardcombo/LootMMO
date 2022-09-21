@@ -25,13 +25,19 @@ Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 		local unlockedQuests = _G.QuestController.GetUnlockedQuests(player)
 		local quest = unlockedQuests[selectedIndex]
 		
-		if _G.QuestController.IsLocalGame(quest) then
-			-- Spawn at the right place
-			SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
-		else
-			--player:TransferToScene(sceneName)
-		--else
-			player:TransferToGame(quest.gameId)
+		if quest then
+			-- Activate the map quest
+			_G.QuestController.ActivateForPlayer(player, quest.id)
+			
+			-- See if the player should be teleported or transferred
+			if _G.QuestController.IsLocalGame(quest) then
+				-- Spawn player at the right place
+				SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
+			else
+				--player:TransferToScene(sceneName)
+			--else
+				player:TransferToGame(quest.gameId)
+			end
 		end
 	end
 end)

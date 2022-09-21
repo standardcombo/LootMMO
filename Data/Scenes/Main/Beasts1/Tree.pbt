@@ -5,12 +5,12 @@ Objects {
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -1126.72131
-      Y: 6906.29102
-      Z: 21671.7461
+      X: -1126.72021
+      Y: 6906.29248
+      Z: 2626.19678
     }
     Rotation {
-      Yaw: -169.67009
+      Yaw: -169.670074
     }
     Scale {
       X: 1
@@ -76,12 +76,12 @@ Objects {
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -1604.4635
-      Y: 7385.32324
-      Z: 21719.1641
+      X: -1604.46387
+      Y: 7385.32471
+      Z: 2673.61475
     }
     Rotation {
-      Yaw: -152.744583
+      Yaw: -152.744629
     }
     Scale {
       X: 1
@@ -148,8 +148,8 @@ Objects {
   Transform {
     Location {
       X: -4224.72949
-      Y: 7155.35156
-      Z: 21797.1367
+      Y: 7155.35254
+      Z: 2751.5874
     }
     Rotation {
       Yaw: -94.603363
@@ -218,9 +218,9 @@ Objects {
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -4708.59424
-      Y: 4309.21387
-      Z: 21797.1367
+      X: -4708.59375
+      Y: 4309.21436
+      Z: 2751.5874
     }
     Rotation {
     }
@@ -290,7 +290,7 @@ Objects {
     Location {
       X: -3254.677
       Y: 5991.09766
-      Z: 21797.1367
+      Z: 2751.5874
     }
     Rotation {
     }
@@ -338,6 +338,10 @@ Objects {
         A: 1
       }
     }
+    Overrides {
+      Name: "bp:Visible In Preview"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -367,7 +371,7 @@ Objects {
     Location {
       X: -4568.62061
       Y: 967.691101
-      Z: 22394.9141
+      Z: 3349.36475
     }
     Rotation {
       Yaw: 94.0753479
@@ -399,6 +403,114 @@ Objects {
       Id: 841534158063459245
     }
     ShouldDecrowdPlayers: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3504960791711328446
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Beasts1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Quest_NPCDied"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "Beast"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1523768206662357258
+  Name: "ObjectiveEnemySpawn"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:RPGRaptor"
+      AssetReference {
+        Id: 13441300675391799547
+      }
+    }
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Beasts1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15156443327978326566
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

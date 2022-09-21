@@ -131,7 +131,7 @@ function SetupRow(row, obj)
 		counter.text = ""
 	else
 		counter.visibility = Visibility.INHERIT
-		counter.text = 0 .." of ".. obj.count
+		UpdateRowProgress(row)
 	end
 	
 	if row.clientUserData.button == nil then
@@ -149,6 +149,12 @@ function SetupRow(row, obj)
 	end
 	
 	return row
+end
+
+function UpdateRowProgress(row)
+	local obj = row.clientUserData.objective
+	local progress = _G.QuestController.GetObjectiveProgress(Game.GetLocalPlayer(), obj)
+	row.clientUserData.counter.text = progress .." of ".. obj.count
 end
 
 function InsertRow(row, index)

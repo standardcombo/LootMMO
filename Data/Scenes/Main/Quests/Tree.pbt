@@ -412,7 +412,7 @@ Objects {
   Name: "Beasts1"
   Transform {
     Location {
-      Z: -14645.0869
+      Z: 40000
     }
     Rotation {
     }
@@ -2450,6 +2450,7 @@ Objects {
   ChildIds: 4050288456529590419
   ChildIds: 563961826906337747
   ChildIds: 219552761137246676
+  ChildIds: 16645574359454057174
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2464,6 +2465,43 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16645574359454057174
+  Name: "EnemyDiedEventAdapter"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12571308321904035299
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8974505905081753579
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

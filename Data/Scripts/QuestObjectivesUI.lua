@@ -315,21 +315,26 @@ function UpdateData()
 	
 	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
 	
-	-- Check if the currently selected objective has been completed
+	-- Check for updates in the currently selected objective
 	if selectedObjective and selectedRow then
 		for _,obj in ipairs(activeObjectives) do
-			if obj.questId == selectedObjective.questId
-			and obj.index > selectedObjective.index then
-				nextSelectedObjective = obj
-				nextSelectedRow = CONTENT_SCRIPT.context.AddObjective(obj)
+			if obj.questId == selectedObjective.questId then
+				-- Check if count progress was made on the currently selected objective
+				if obj.count > 0 and _G.QuestController.GetObjectiveProgress(PLAYER, obj) < obj.count then
+					CONTENT_SCRIPT.context.UpdateRowProgress(selectedRow)
 				
-				CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
-				
-				if currentState ~= STATE_SELECTED then
-					SetState(STATE_SELECTED)
+				-- Check if the currently selected objective has been completed
+				elseif obj.index > selectedObjective.index then
+					nextSelectedObjective = obj
+					nextSelectedRow = CONTENT_SCRIPT.context.AddObjective(obj)
+					
+					CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
+					
+					if currentState ~= STATE_SELECTED then
+						SetState(STATE_SELECTED)
+					end
+					SetState(STATE_COMPLETED_1)
 				end
-				SetState(STATE_COMPLETED_1)
-				
 				-- Exit condition where the selected objective is achieved
 				return -- no badge update, etc
 			end
