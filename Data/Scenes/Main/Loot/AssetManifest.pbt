@@ -17,15 +17,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16912192915158960834
-  Name: "Humanoid 2 Rig"
-  PlatformAssetType: 25
-  PrimaryAsset {
-    AssetType: "SkeletonAssetRef"
-    AssetId: "npc_guy_wireframe_001_ref"
-  }
-}
-Assets {
   Id: 16532880832873788683
   Name: "BG Flat 002"
   PlatformAssetType: 9
@@ -68,15 +59,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Racing_Icon_023"
-  }
-}
-Assets {
-  Id: 14950569642219201732
-  Name: "Humanoid 2 Peasant Shirt"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_upper_fantasy_000_ref_temp"
   }
 }
 Assets {
@@ -233,15 +215,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7845803738723290617
-  Name: "Humanoid 2 Kamil"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_head_basic_007_ref"
-  }
-}
-Assets {
   Id: 7615847344375253670
   Name: "UI Basic Frame 001"
   PlatformAssetType: 9
@@ -311,15 +284,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundHighlighted_020"
-  }
-}
-Assets {
-  Id: 2304171879981945904
-  Name: "Humanoid 2 Peasant Pants"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_lower_fantasy_000_ref"
   }
 }
 Assets {

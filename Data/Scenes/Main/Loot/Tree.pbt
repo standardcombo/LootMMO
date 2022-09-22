@@ -960,7 +960,6 @@ Objects {
   ChildIds: 8454872812280022510
   ChildIds: 9983772495768820438
   ChildIds: 15380859521786829649
-  ChildIds: 10390964119347349169
   ChildIds: 5252543141198047000
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -17635,85 +17634,6 @@ Objects {
         }
       }
     }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10390964119347349169
-  Name: "Humanoid 2 Rig"
-  Transform {
-    Location {
-      X: -18.2997627
-      Y: -3.1982789
-      Z: 110.317383
-    }
-    Rotation {
-      Yaw: 143.419266
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8035243216657414624
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:2:Shared_BaseMaterial:color"
-      Color {
-        R: 0.13
-        G: 0.0568211898
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 16912192915158960834
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-      SkinnedMeshes {
-        Id: 7845803738723290617
-      }
-      SkinnedMeshes {
-        Id: 2304171879981945904
-      }
-      SkinnedMeshes {
-        Id: 14950569642219201732
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
