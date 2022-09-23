@@ -17,11 +17,14 @@ function CheckPlayerHasBag(player, SerizedBag)
 end
 
 function CheckIsDailyBag(SerizedBag)
-    for i = 1, #_G.SelectedLootbags do
-        if _G.SelectedLootbags[i] == SerizedBag then
-            return true
-        end
-    end
+	if _G.SelectedLootbags then
+		for i = 1, #_G.SelectedLootbags do
+			if _G.SelectedLootbags[i] == SerizedBag then
+				return true
+			end
+		end
+	end
+	return false
 end
 
 function IsVerified(player, SerizedBag)
