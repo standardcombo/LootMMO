@@ -156,6 +156,7 @@ Objects {
   ChildIds: 17740691586929688237
   ChildIds: 14546811096002602236
   ChildIds: 11728263122256425376
+  ChildIds: 12385777916756707091
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -170,6 +171,47 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 12385777916756707091
+  Name: "MMOPortalController"
+  Transform {
+    Location {
+      X: -3775.41
+      Y: 126.061035
+      Z: -3577.78882
+    }
+    Rotation {
+      Yaw: 124.999992
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11139475088052789855
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 3780102564341975107
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

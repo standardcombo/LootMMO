@@ -159,6 +159,8 @@ Next()
 
 -- Events fired from quest system
 Events.Connect("Quest_Changed", UpdateContents)
+
+Task.Wait()
 UpdateContents()
 
 -- Events fired from MapButtons script
