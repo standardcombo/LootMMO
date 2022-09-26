@@ -14,7 +14,7 @@ local component =
     {__index = COMPONET_DATATYPE}
 )
 component.id = 'Stats'
-
+component.autoNetorked = true
 function TriggerEvent(event, ...)
     if event then
         event:Trigger(...)

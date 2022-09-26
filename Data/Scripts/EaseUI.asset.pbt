@@ -7,13 +7,10 @@ Assets {
       Overrides {
         Name: "cs:EasingEquations"
         AssetReference {
-          Id: 5644258109537905084
+          Id: 14759413974431026962
         }
       }
     }
-  }
-  Marketplace {
-    Description: "EaseUI is a utility that allows for both simple and advanced UI animations! Full customizability to you, the creator!\r\n\r\nRead the script for more information."
   }
   SerializationVersion: 118
   DirectlyPublished: true

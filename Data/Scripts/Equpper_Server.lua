@@ -11,7 +11,7 @@ function EquipApi.EquipEquipment(player, equipmentName, slot)
     if not newEquipment then
         warn(equipmentName .. ' not found.')
         return
-    end
+    end 
     newEquipment.name = equipmentName
     newEquipment:SetCustomProperty('AbilityBinding', slot)
     newEquipment:Equip(player)

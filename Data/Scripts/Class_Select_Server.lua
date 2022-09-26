@@ -1,6 +1,5 @@
 local classConfirmSelection = 'CCselection'
 local replyCall = 'ClassRply'
-Task.Wait()
 local EAPI = _G['Character.EquipAPI']
 local Classes = _G['Character.Classes']
 local ReturnCodes = {

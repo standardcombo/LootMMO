@@ -13,6 +13,7 @@ local component =
     {__index = COMPONET_DATATYPE}
 )
 component.id = 'Progression'
+component.autoNetorked = true
 component.requiredComponents = {
     'Level'
 }

@@ -18,7 +18,7 @@ Events.Connect(
             if HasCharacters(player) then
                 appstate.SetStateForPlayer(player, appstate.CharacterSelection)
             else
-                Events.Broadcast(NewCharacterEvent, player)
+                Events.Broadcast(NewCharacterEvent .. 'S', player)
             end
             return
         end

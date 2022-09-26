@@ -1,6 +1,5 @@
 local CharacterConstruction = _G['Character.Contsructor']
 local LOOT_INVENTORY_SPAWN = script:GetCustomProperty('Loot_Inventory_Spawn')
-local LOOT_INVENTORY_ITEM = script:GetCustomProperty('Loot_Inventory_Item')
 local Keyidentity = 'I/.'
 
 function InventoryUpdated(inventory)

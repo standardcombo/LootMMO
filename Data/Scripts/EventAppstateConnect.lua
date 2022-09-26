@@ -1,8 +1,10 @@
 local appstate = _G.AppState
 local NEWAPPSTATE = script:GetCustomProperty('appstate')
-local EVENT = script:GetCustomProperty('Event')
-
+local EVENT = script:GetCustomProperty('Event') 
 local acceptingVisibilities = {}
+if not appstate[NEWAPPSTATE] then
+    return
+end
 for key, value in pairs(script:GetCustomProperties()) do
     if appstate[key] then
         acceptingVisibilities[appstate[key]] = value

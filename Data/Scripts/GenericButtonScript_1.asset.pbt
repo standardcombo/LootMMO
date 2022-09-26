@@ -1,6 +1,6 @@
 Assets {
   Id: 7641244062269779132
-  Name: "GenericButtonScript"
+  Name: "GenericButtonScript_1"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

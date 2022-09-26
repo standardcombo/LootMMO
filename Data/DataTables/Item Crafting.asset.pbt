@@ -3,6 +3,8 @@ Assets {
   Name: "Item Crafting"
   PlatformAssetType: 31
   SerializationVersion: 118
+  VirtualFolderPath: "Loot"
+  VirtualFolderPath: "Items"
   DataTableAsset {
     HasKeyColumn: true
   }

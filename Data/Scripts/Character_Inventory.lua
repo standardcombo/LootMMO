@@ -1,6 +1,7 @@
 local COMPONET_DATATYPE = require(script:GetCustomProperty('ComponetDatatype'))
 local Slot = {
-    contents = nil
+    contents = nil,
+    maxCount = 10
 }
 local slotTypes = _G['Equipment.Slots']
 local itemConstructor = _G['Item.Constructor']
@@ -20,20 +21,28 @@ function Slot:isAcceptingType(type)
     return
 end
 
+function Slot:WillAcceptItem(Item)
+
+end
+
 function Slot:IsFree()
-    return self.contents == nil
+    return #self.contents == 0
 end
 
 function Slot:AssignItem(Item)
-    if Item then
-        self.contents = Item
+    if Item and self:WillAcceptItem(Item) then
+        table.insert(self.contents, Item) 
     end
 end
 function Slot:SetType(type)
     self.type = type or 'any'
 end
-function Slot:RemoveItem()
-    self.contents = nil
+function Slot:RemoveItem(item)
+    for i = #self.contents, 1, -1 do
+        if self.contents[i] == item then
+            table.remove(self.contents, i)
+        end
+    end
 end
 function Slot:GetContent()
     return self.contents
@@ -75,6 +84,12 @@ function component:SetResource(key, value)
         TriggerEvent(self.resourceChangedEvent, self, key, value)
     end
 end
+
+function component:DoesInventoryContain(item)
+    for key, value in pairs(t) do
+    end
+end
+
 function component:GetResourceKeys()
     local keys = {}
     for key, value in pairs(self.resources) do
@@ -137,7 +152,7 @@ function component:FindFreeSlot(slotfilter)
     end
 end
 function component:AddItem(itemData)
-    local newItem = ItemConstruct.New(itemData)
+    local newItem = itemConstructor.New(itemData)
     local FreeSlot = self:FindFreeSlot()
     if not (FreeSlot and newItem) then
         return

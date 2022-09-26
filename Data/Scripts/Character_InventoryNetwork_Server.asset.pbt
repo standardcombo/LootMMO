@@ -10,12 +10,6 @@ Assets {
           Id: 15191737144433544822
         }
       }
-      Overrides {
-        Name: "cs:Loot_Inventory_Item"
-        AssetReference {
-          Id: 10998866699120381452
-        }
-      }
     }
   }
   SerializationVersion: 118

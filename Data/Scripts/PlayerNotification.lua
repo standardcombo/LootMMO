@@ -4,7 +4,11 @@ local SOUND = script:GetCustomProperty('Sound'):WaitForObject()
 local EquipAPI = _G['Character.EquipAPI']
 local pointsUpdatedEvent = nil
 local hasSeen = true
-local appstate = _G.AppState
+
+function CalculateNotifiers()
+
+
+end 
 
 function Show()
     ROOT.visibility = Visibility.INHERIT
@@ -48,6 +52,10 @@ function EquipPlayer(Character, Player)
     local points = Character:GetComponent('Points')
     if points then
         points.pointChangedEvent:Connect(UpdatedSeen)
+        if points.unspentPoints > 0 then 
+
+            UpdatedSeen()
+        end 
     end
 end
 
@@ -57,5 +65,7 @@ function UnEquipPlayer()
         pointsUpdatedEvent = nil
     end
 end
+
+ 
 EquipAPI.playerEquippedEvent:Connect(EquipPlayer)
 EquipAPI.playerUnequippedEvent:Connect(UnEquipPlayer)

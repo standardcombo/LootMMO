@@ -27,7 +27,7 @@ script.parent.collidedEvent:Connect(function(_, hitResult)
 	
 	if Environment.IsServer() then
 		local target = hitResult.other
-		if not target:IsA("Damageable") then
+		if target.FindAncestorByType and not target:IsA("Damageable") then
 			target = target:FindAncestorByType("Damageable")
 		end
 		if target and target:IsA("Damageable") and not IsInvulnerable(target) then

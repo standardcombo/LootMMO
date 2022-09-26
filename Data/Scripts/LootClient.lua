@@ -81,7 +81,7 @@ function EquipLoot(lootBag)
     -- Set item icons and names
     for i, item in pairs(lootBag.items) do
         local def = _G.Items.GetDefinition(item.name)
-        local itemContruct =
+        local itemconstruct =
             _G['Item.Constructor'].New(
             {
                 item = item.name,
@@ -97,7 +97,7 @@ function EquipLoot(lootBag)
         itemImages[i].isFlippedVertical = def.flipIconV
 
         itemButtons[i].clientUserData.item = item
-        itemButtons[i].clientUserData.itemClass = itemContruct
+        itemButtons[i].clientUserData.itemClass = itemconstruct
     end
     Events.BroadcastToServer('EquipBag', lootBag:Serialize())
     -- Calculate class

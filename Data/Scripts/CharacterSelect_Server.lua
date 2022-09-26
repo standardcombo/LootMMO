@@ -67,10 +67,7 @@ local function Save(character, player)
     if not character.autoSave == true then
         return
     end
-    local level = character:GetComponent('Level')
-    if level:GetLevel() < 2 then
-        return
-    end
+    local level = character:GetComponent('Level') 
     character.lastPlayed = DateTime.CurrentTime()
     CSave.SavePlayerCharacter(player, character)
     UpdatePlayerData(player)
@@ -95,10 +92,11 @@ function SelectCharacter(player, characterId)
 end
 
 function NewCharacter(player)
-    local newCharacter = CHARACTERCONSTUCT.NewCharacter()
-    newCharacter:SetOwner(player)
-    newCharacter.autoSave = true
-    newCharacter.removeOwnerEvent:Connect(Save)
+    assert(player)
+    local currentCharacter = CHARACTERCONSTUCT.NewCharacter()
+    currentCharacter:SetOwner(player)
+    currentCharacter.autoSave = true
+    currentCharacter.removeOwnerEvent:Connect(Save)
     Acknowledge(player)
     UpdatePlayerData(player)
 end
@@ -110,7 +108,10 @@ end
 
 function AutoSave(player)
     local character = EAPI.GetCurrentCharacter(player)
-    Save(character, player)
+    if character and character.autoSave then 
+        Save(character, player)
+        character:Destroy()
+    end 
 end
 
 for key, player in pairs(Game.GetPlayers()) do
@@ -122,5 +123,5 @@ Game.playerLeftEvent:Connect(AutoSave)
 
 Events.ConnectForPlayer(SelectCharacterEvent, SelectCharacter)
 Events.ConnectForPlayer(NewCharacterEvent, NewCharacter)
-Events.Connect(NewCharacterEvent, NewCharacter)
 Events.ConnectForPlayer(DeleteCharacterEvent, DeleteCharacter)
+Events.Connect(NewCharacterEvent.."S", NewCharacter)

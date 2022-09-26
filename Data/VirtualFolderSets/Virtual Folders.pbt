@@ -275,5 +275,43 @@ Assets {
       VirtualFolderPath: "NPC Kit"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      VirtualFolderPath: "ItemObjects"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      PlatformAssetType: 33
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      PlatformAssetType: 33
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      VirtualFolderPath: "Equipment"
+      PlatformAssetType: 33
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      VirtualFolderPath: "Materials"
+      PlatformAssetType: 33
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Items"
+      VirtualFolderPath: "Specialty"
+      PlatformAssetType: 33
+    }
   }
 }

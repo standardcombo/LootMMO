@@ -95,6 +95,32 @@ Assets {
                 Name: "CooldownDuration"
                 Float: 100
               }
+              Overrides {
+                Name: "CastFacingMode"
+                Enum {
+                  Value: "mc:eabilitysetfacing:movement"
+                }
+              }
+              Overrides {
+                Name: "ExecuteFacingMode"
+                Enum {
+                  Value: "mc:eabilitysetfacing:movement"
+                }
+              }
+              Overrides {
+                Name: "RecoveryFacingMode"
+                Enum {
+                  Value: "mc:eabilitysetfacing:movement"
+                }
+              }
+              Overrides {
+                Name: "ExecuteIsTargetDataUpdated"
+                Bool: false
+              }
+              Overrides {
+                Name: "CastIsTargetDataUpdated"
+                Bool: true
+              }
             }
           }
           TemplateAsset {
@@ -155,8 +181,8 @@ Assets {
         }
         ParentId: 3838131432349291648
         ChildIds: 11093414456045711042
-        ChildIds: 4204979011440888731
         ChildIds: 9414312140351477024
+        ChildIds: 4308541197356274508
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -234,69 +260,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4204979011440888731
-        Name: "Ability_Placement_Handler"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11916221314652615693
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 16557327355103968416
-            }
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 17964188802752842599
-            }
-          }
-          Overrides {
-            Name: "cs:AlignToNormal"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:AlignToRotation"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:DefaultRadius"
-            Float: 50
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 13332602089683172171
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 9414312140351477024
         Name: "Loot_Ability_Settings_Teleport"
         Transform {
@@ -334,6 +297,57 @@ Assets {
         Script {
           ScriptAsset {
             Id: 12552735593480416356
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 4308541197356274508
+        Name: "Ability_Activator"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11916221314652615693
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 16557327355103968416
+            }
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 17964188802752842599
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13356681744914853853
           }
         }
         NetworkRelevanceDistance {

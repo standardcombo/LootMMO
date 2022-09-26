@@ -18,7 +18,7 @@ local component =
 component.id = 'Points'
 component.unspentPoints = 0
 component.potentialPoints = 0
-
+component.autoNetorked = true
 function TriggerEvent(event, ...)
     if event then
         event:Trigger(...)
@@ -45,7 +45,6 @@ function component:SetPending(value)
         return
     end
     self:_SilentSetPending(value)
-
     TriggerEvent(self.spentChangedEvent, self, self.unspentPoints)
 end
 

@@ -1,5 +1,5 @@
 local LOCAL_PLAYER = Game.GetLocalPlayer()
-EApi = _G['Character.EquipAPI']
+local EApi = _G['Character.EquipAPI']
 local ClassConstructor = _G['Item.Constructor']
 local Keyidentity = 'I/.'
 local currentInventory = nil

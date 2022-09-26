@@ -37,6 +37,7 @@ function OnReceiveMessage(player, params)
         local newCharacter = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         local points = newCharacter:GetComponent('Points')
         if points then
+            print("Added")
             points:AddPoint()
         end
         return

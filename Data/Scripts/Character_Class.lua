@@ -15,6 +15,7 @@ component.requiredComponents = {
     'Stats',
     'Progression'
 }
+component.autoNetorked = true
 
 local EquipmentKeys = {
     'Shift',

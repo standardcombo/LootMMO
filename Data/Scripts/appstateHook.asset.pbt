@@ -5,6 +5,10 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:ShowMouse"
+        Bool: false
+      }
+      Overrides {
         Name: "cs:Root"
         ObjectReference {
         }
@@ -80,6 +84,10 @@ Assets {
       Overrides {
         Name: "cs:Ability"
         Bool: false
+      }
+      Overrides {
+        Name: "cs:ShowMouse:category"
+        String: "Options"
       }
     }
   }

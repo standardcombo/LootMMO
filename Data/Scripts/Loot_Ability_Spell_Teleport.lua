@@ -8,11 +8,17 @@ function Execute()
         return
     end
 
-    local targetData = ABILITY:GetTargetData()
-    local position = targetData:GetHitPosition()
+    local Direction = player:GetWorldRotation() * Vector3.FORWARD
+    Direction.z = 0
+    local playerpos = player:GetWorldPosition() + Vector3.UP * 50
+    local EndPosition = playerpos + Direction * 1000
+    local hit = World.Spherecast(playerpos, EndPosition, 100, {ignorePlayers = true})
+    if hit then
+        EndPosition = hit:GetImpactPosition()
+    end
 
-    player:SetWorldPosition(position + Vector3.New(0, 0, 180))
-    World.SpawnAsset(TELEPORT_FX, {position = position, networkContext = NetworkContextType.NETWORKED})
+    player:SetWorldPosition(EndPosition)
+    World.SpawnAsset(TELEPORT_FX, {position = EndPosition, networkContext = NetworkContextType.NETWORKED})
 end
 
 ABILITY.executeEvent:Connect(Execute)
