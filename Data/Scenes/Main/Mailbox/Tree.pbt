@@ -6922,7 +6922,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "The lodge is magically protected, so the beasts can\'t get in. To easily enter and exit the lodge you\'ll need to craft a Map of Adventurers.\r\n\r\nAttached to this letter you\'ll find a piece of map, to get started. You\'ll need three pieces, but I\'m sure there are more laying around. Good luck!"
+      Label: "The lodge is magically protected, so the beasts can\'t get in. To easily enter and exit the lodge you\'ll need to craft a Map of Adventures.\r\n\r\nAttached to this letter you\'ll find a piece of map, to get started. You\'ll need three pieces, but I\'m sure there are more laying around. Good luck!"
       Color {
         R: 0.070596
         G: 0.0860842
