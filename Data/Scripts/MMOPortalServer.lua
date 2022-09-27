@@ -60,19 +60,23 @@ local maxDurationTask = nil
 
 function BeginDespawn()
 	if isActive then
+		--print("MMOPortalServer::BeginDespawn()")
 		despawnTask = Task.Spawn(DoDespawn, DESPAWN_DELAY)
 	end
 end
 
 function CancelDespawn()
 	if despawnTask then
+		--print("MMOPortalServer::CancelDespawn()")
 		despawnTask:Cancel()
 		despawnTask = nil
 	end
 end
 
 function DoDespawn()
+	--print("MMOPortalServer::DoDespawn()")
 	isActive = false
+	despawnTask = nil
 
 	SetEnabled(false)
 
@@ -96,6 +100,7 @@ function OnBeginOverlap(trigger, player)
 end
 
 function OnEndOverlap(trigger, player)
+	--print("MMOPortalServer::OnEndOverlap()")
 	if not isActive then return end
 	if not player:IsA("Player") then return end
 	
@@ -106,9 +111,12 @@ function OnEndOverlap(trigger, player)
 	end
 end
 
+DESPAWN_PORTAL_TRIGGER.collision = Collision.FORCE_OFF
+
 DESPAWN_PORTAL_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)
 DESPAWN_PORTAL_TRIGGER.endOverlapEvent:Connect(OnEndOverlap)
 
+Task.Wait()
 DESPAWN_PORTAL_TRIGGER.collision = Collision.INHERIT
 
 
