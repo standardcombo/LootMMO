@@ -33,21 +33,21 @@ Assets {
       }
     }
     Assets {
-      Id: 462889104500132555
-      Name: "Survival Craft Animal Hide 001"
+      Id: 8690668184388483512
+      Name: "Fantasy Spell Ingredient 020"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Survival_Crafting_AnimalHide_001"
+        AssetId: "UI_Fantasy_Ingredient_020"
       }
     }
     Assets {
-      Id: 17656355897201237875
-      Name: "Survival Craft Charcoal 001"
+      Id: 1655136442498469286
+      Name: "Fantasy Spell Ingredient 019"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Survival_Crafting_Charcoal_001"
+        AssetId: "UI_Fantasy_Ingredient_019"
       }
     }
     Assets {
@@ -69,21 +69,21 @@ Assets {
       }
     }
     Assets {
-      Id: 9835077147919884986
-      Name: "Fantasy Cloth 006"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Equip_Cloth_006"
-      }
-    }
-    Assets {
       Id: 10624409509036383721
       Name: "Survival Craft Rag 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Survival_Crafting_Printer_001"
+      }
+    }
+    Assets {
+      Id: 9835077147919884986
+      Name: "Fantasy Cloth 006"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Cloth_006"
       }
     }
     Assets {
@@ -96,21 +96,21 @@ Assets {
       }
     }
     Assets {
-      Id: 9629069311453819704
-      Name: "Fantasy Rune 002"
+      Id: 13197343736452556466
+      Name: "Fantasy Rune 003"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Equip_Rune_002"
+        AssetId: "UI_Fantasy_Equip_Rune_003"
       }
     }
     Assets {
-      Id: 12978135121763375046
-      Name: "Fantasy Craft Stone 028"
+      Id: 12382512821972705322
+      Name: "Fantasy Craft Crystal 022"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Crafting_Stone_028"
+        AssetId: "UI_Fantasy_Crafting_Crystal_022"
       }
     }
   }
