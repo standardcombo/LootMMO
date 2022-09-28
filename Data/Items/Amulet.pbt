@@ -22,6 +22,10 @@ Assets {
         String: ""
       }
       Overrides {
+        Name: "cs:Type"
+        String: ""
+      }
+      Overrides {
         Name: "cs:IsBag:isrep"
         Bool: true
       }

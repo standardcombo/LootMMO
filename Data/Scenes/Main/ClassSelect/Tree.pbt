@@ -1,7 +1,7 @@
 Name: "ClassSelect"
-RootId: 16230968383775426935
+RootId: 10889656769189801723
 Objects {
-  Id: 8179054158227984129
+  Id: 17732797197477866073
   Name: "ServerContext"
   Transform {
     Location {
@@ -14,8 +14,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16230968383775426935
-  ChildIds: 4790027664166035439
+  ParentId: 10889656769189801723
+  ChildIds: 14258563675719013355
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -37,7 +37,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4790027664166035439
+  Id: 14258563675719013355
   Name: "Class_Select_Server"
   Transform {
     Location {
@@ -50,7 +50,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8179054158227984129
+  ParentId: 17732797197477866073
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

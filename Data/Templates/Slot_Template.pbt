@@ -35,6 +35,8 @@ Assets {
         Control {
           Width: 64
           Height: 64
+          UIX: -325
+          UIY: -225
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -96,7 +98,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -123,6 +125,7 @@ Assets {
               R: 1
               G: 1
               B: 1
+              A: 0.666
             }
             TeamSettings {
             }

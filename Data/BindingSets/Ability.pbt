@@ -218,7 +218,7 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:middleclick"
+            Value: "mc:ebindingkeyboard:rightalt"
           }
           KeyboardSecondary {
             Value: "mc:ebindingkeyboard:none"

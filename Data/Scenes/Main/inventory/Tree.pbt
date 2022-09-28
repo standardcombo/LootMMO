@@ -53,6 +53,7 @@ Objects {
   }
   ParentId: 7676943887576870133
   ChildIds: 14917015155710560868
+  ChildIds: 170719609642026058
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -67,6 +68,43 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 170719609642026058
+  Name: "LootMMO_InventoryClass"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1412040635803964555
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1891841657522749379
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -126,6 +164,7 @@ Objects {
   }
   ParentId: 7676943887576870133
   ChildIds: 18020471038297552257
+  ChildIds: 11941858343935188575
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -144,6 +183,43 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11941858343935188575
+  Name: "LootMMO_InventoryClass"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1011470039933043719
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1891841657522749379
     }
   }
   NetworkRelevanceDistance {
@@ -240,7 +316,7 @@ Objects {
     }
   }
   ParentId: 475648902908340293
-  ChildIds: 4959305229176784152
+  ChildIds: 4697290219817198634
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -262,8 +338,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4959305229176784152
-  Name: "Inventory_client_Api"
+  Id: 4697290219817198634
+  Name: "Inventory_server_Api"
   Transform {
     Location {
     }
@@ -290,7 +366,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 2389679456909424628
+      Id: 3859698148828962870
     }
   }
   NetworkRelevanceDistance {
@@ -313,7 +389,6 @@ Objects {
     }
   }
   ParentId: 475648902908340293
-  ChildIds: 4697290219817198634
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -332,43 +407,6 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 4697290219817198634
-  Name: "Inventory_server_Api"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8160510952579734017
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 3859698148828962870
     }
   }
   NetworkRelevanceDistance {

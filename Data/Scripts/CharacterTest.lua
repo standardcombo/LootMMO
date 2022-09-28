@@ -1,8 +1,8 @@
-while not _G['Character.Contsructor'] do
+while not _G['Character.Constructor'] do
     Task.Wait()
 end
 
-local character = _G['Character.Contsructor']
+local character = _G['Character.Constructor']
 local SaveAPI = _G['Character.SaveApi']
 local CLASS = _G['Character.Classes']
 

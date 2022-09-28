@@ -1,7 +1,7 @@
 Name: "targetingSystem"
-RootId: 12792565478567913588
+RootId: 6154689810189097491
 Objects {
-  Id: 10281825966660973657
+  Id: 7867332860788779234
   Name: "targetingSystem"
   Transform {
     Location {
@@ -14,9 +14,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12792565478567913588
-  ChildIds: 4111649311485161247
-  ChildIds: 5597447845291423419
+  ParentId: 6154689810189097491
+  ChildIds: 6710200269420138766
+  ChildIds: 15835927251802127375
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -43,7 +43,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5597447845291423419
+  Id: 15835927251802127375
   Name: "TargetRegister"
   Transform {
     Location {
@@ -59,7 +59,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10281825966660973657
+  ParentId: 7867332860788779234
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -83,7 +83,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4111649311485161247
+  Id: 6710200269420138766
   Name: "UI Container"
   Transform {
     Location {
@@ -97,11 +97,11 @@ Objects {
       Z: 0.398706406
     }
   }
-  ParentId: 10281825966660973657
-  ChildIds: 584624981379860133
-  ChildIds: 17472732797917581687
-  ChildIds: 14168159642247653305
-  ChildIds: 2811150249317478729
+  ParentId: 7867332860788779234
+  ChildIds: 6322649890495512705
+  ChildIds: 13160651748288246755
+  ChildIds: 290131934703037418
+  ChildIds: 4650746913243541477
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -149,7 +149,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2811150249317478729
+  Id: 4650746913243541477
   Name: "Targeting"
   Transform {
     Location {
@@ -163,7 +163,7 @@ Objects {
       Z: 2.50811124
     }
   }
-  ParentId: 4111649311485161247
+  ParentId: 6710200269420138766
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -187,7 +187,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14168159642247653305
+  Id: 290131934703037418
   Name: "Ratate2d"
   Transform {
     Location {
@@ -200,12 +200,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4111649311485161247
+  ParentId: 6710200269420138766
   UnregisteredParameters {
     Overrides {
       Name: "cs:Object"
       ObjectReference {
-        SelfId: 584624981379860133
+        SelfId: 6322649890495512705
       }
     }
     Overrides {
@@ -236,7 +236,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17472732797917581687
+  Id: 13160651748288246755
   Name: "Bilboard"
   Transform {
     Location {
@@ -249,12 +249,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4111649311485161247
+  ParentId: 6710200269420138766
   UnregisteredParameters {
     Overrides {
       Name: "cs:RotateObject"
       ObjectReference {
-        SelfId: 4111649311485161247
+        SelfId: 6710200269420138766
       }
     }
   }
@@ -281,7 +281,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 584624981379860133
+  Id: 6322649890495512705
   Name: "UI Image"
   Transform {
     Location {
@@ -294,7 +294,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4111649311485161247
+  ParentId: 6710200269420138766
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

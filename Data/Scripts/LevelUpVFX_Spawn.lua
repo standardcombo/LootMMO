@@ -1,8 +1,8 @@
 local LEVEL_UP_VFX = script:GetCustomProperty('LevelUpVfx')
-while not _G['Character.Contsructor'] do
+while not _G['Character.Constructor'] do
     Task.Wait()
 end
-local CHARACTER = _G['Character.Contsructor']
+local CHARACTER = _G['Character.Constructor']
 local function LevelUp(character)
     local owner = character:GetOwner()
     if owner then

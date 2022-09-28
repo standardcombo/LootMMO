@@ -1,22 +1,25 @@
 local API = {}
-
+Task.Wait()
+local EquipApi = _G["Character.EquipAPI"]
 _G['Inventory.API'] = API
 
 function API.MoveInventory(oldInventory, newInventory, slotA, slotB)
-    warn("Not Yet Implimented")
-end 
+	warn("Not Yet Implimented")
+end
 
-function API.MoveSlot(player, inventory, slotA, SlotB)
-
+function API.MoveSlot(player, slotA, SlotB)
+	local char = EquipApi.GetCurrentCharacter(player)
+	if char then
+		local inv = char:GetComponent("Inventory")
+		inv:GetInventory():MoveFromSlot(slotA, SlotB)
+	end
 end
 
 function API.Remove(player, inventory, slotA)
 
 
-end 
+end
 
-
-
-Events.Connect('inventory.move', API.MoveSlot)
-Events.Connect('inventory.remove', API.Remove) 
+Events.ConnectForPlayer('inventory.move', API.MoveSlot)
+Events.ConnectForPlayer('inventory.remove', API.Remove)
 return API

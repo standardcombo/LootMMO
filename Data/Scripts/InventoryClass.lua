@@ -1,191 +1,194 @@
-local Slot = {
-    contents = nil,
-    maxCount = 10,
-    type = nil
+local LOOT_INVENTORY_SPAWN = script:GetCustomProperty("Loot_Inventory_Spawn")
+
+local SpawnedInventories = {}
+
+local function AddInventory(curInventory)
+	table.insert(SpawnedInventories, curInventory)
+end
+
+local function RemoveInventory(curInventory)
+	for i = #SpawnedInventories, 1, -1 do
+		if SpawnedInventories[i] == curInventory then
+			table.remove(SpawnedInventories, i)
+			return
+		end
+	end
+end
+
+local inventory = {
+	owner = nil,
+	slotCount = nil,
+	emptySlotCount = nil,
+	occupiedSlotCount = nil,
+	isValid = true,
+	ownerChangedEvent = nil,
+	resizedEvent = nil,
+	changedEvent = nil,
+	itemPropertyChangedEvent = nil,
 }
-local slotTypes = _G['Equipment.Slots']
-local itemConstructor = _G['Item.Constructor']
-local Equipment = slotTypes.GetSlots()
 
-function Slot:isAcceptingType(type)
-    if self.type == ('any' or nil) then
-        return true
-    end
-
-    local acceptingTypes = slotTypes.GetAcceptingSlots(self.type)
-    for index, value in ipairs(acceptingTypes) do
-        if value == type then
-            return true
-        end
-    end
-    return
+function inventory:Destroy()
+	if Environment.IsServer() then
+		if Object.IsValid(self._inventory) then
+			self._inventory:Destroy()
+		end
+	end
+	RemoveInventory(self)
+	self.isValid = false
 end
 
-function Slot:Contains(Item, count)
-    local itemcount = 0
-    for i = 1, 10, 1 do
-    end
+function inventory:GetId()
+	return self._inventory.id
 end
 
-function Slot:WillAcceptItem(Item)
+function inventory:Assign(player)
+	self._inventory:Assign(player)
+	self.owner = player
 end
 
-function Slot:IsFree()
-    return #self.contents == 0
+function inventory:Unassign()
+	self._inventory:Unassign()
+	self.owner = nil
 end
 
-function Slot:AssignItem(Item)
-    if Item and self:WillAcceptItem(Item) then
-        table.insert(self.contents, Item)
-    end
-end
-function Slot:SetType(type)
-    self.type = type or 'any'
-end
-function Slot:RemoveItem(item)
-    for i = #self.contents, 1, -1 do
-        if self.contents[i] == item then
-            table.remove(self.contents, i)
-        end
-    end
-end
-function Slot:GetContent()
-    return self.contents
+function inventory:GetItem(slot)
+	return self._inventory:GetItem(slot)
 end
 
-local inventory = {}
-
-function inventory:AddResource(key, value)
-    local prevValue = self:GetResource(key)
-    prevValue = prevValue + (value or 0)
-    self:SetResource(key, prevValue)
+function inventory:GetItems(parameters)
+	return self._inventory:GetItems(parameters)
 end
 
-function inventory:GetResource(key)
-    return (self.resources[key]) or 0
+function inventory:ClearItems()
+	return self._inventory:ClearItems()
+end
+
+function inventory:SortItems()
+	return self._inventory:SortItems()
 end
 
 function inventory:ConsolidateItems()
+	return self._inventory:ConsolidateItems()
 end
 
-function inventory:SetResource(key, value)
-    local oldValue = self:GetResource(key)
-    self.resources[key] = value
-    if oldValue ~= value then
-        TriggerEvent(self.resourceChangedEvent, self, key, value)
-    end
+function inventory:CanResize(newSize)
+	return self._inventory:CanResize(newSize)
 end
 
-function inventory:DoesInventoryContain(item, count)
-    for key, value in pairs(self.slots) do
-    end
+function inventory:Resize(newSize)
+	self._inventory:Resize(newSize)
+	self.slotCount = self._inventory.slotCount
 end
 
-function inventory:GetResourceKeys()
-    local keys = {}
-    for key, value in pairs(self.resources) do
-        table.insert(keys, key)
-    end
-    return keys
+function inventory:AddItem(itemAssetId, parameters)
+	local mightReturn = self._inventory:AddItem(itemAssetId, parameters)
+	self.emptySlotCount = self._inventory.emptySlotCount
+	return mightReturn
 end
 
-function inventory:GetInventorySize()
-    return self.inventorySize
-end
-function TriggerEvent(event, ...)
-    if event then
-        event:Trigger(...)
-    end
+function inventory:CanPickUpItem(item, parameters)
+	return self._inventory:CanPickUpItem(item, parameters)
 end
 
-function inventory:IsEquipment(slot)
-    for index, value in ipairs(self.Equipment) do
-        if value == slot then
-            return true
-        end
-    end
-    return false
+function inventory:PickUpItem(item, parameters)
+	return self._inventory:PickUpItem(item, parameters)
 end
 
-function inventory:FindFreeSlot(slotfilter)
-    local slots = self:GetSlots()
-    for i = 1, #slots, 1 do
-        local currentslot = slots[i]
-        if currentslot then
-            if currentslot:IsFree() then
-                if slotfilter then
-                    if currentslot:isAcceptingType(slotfilter) then
-                        return currentslot
-                    end
-                else
-                    return currentslot
-                end
-            end
-        end
-    end
+function inventory:CanMoveFromSlot(fromSlot, toSlot, parameters)
+	return self._inventory:CanMoveFromSlot(fromSlot, toSlot, parameters)
 end
-function inventory:AddItem(itemData)
-    local newItem = itemConstructor.New(itemData)
-    local FreeSlot = self:FindFreeSlot()
-    if not (FreeSlot and newItem) then
-        return
-    end
-    FreeSlot:AddItem(newItem)
-    TriggerEvent(self.changedEvent, self)
-    if self:IsEquipment(FreeSlot) then
-        TriggerEvent(self.equipmentChangedEvent, self)
-    end
+
+function inventory:MoveFromSlot(fromSlot, toSlot, parameters)
+	return self._inventory:MoveFromSlot(fromSlot, toSlot, parameters)
 end
-function inventory:SwapSlot(fromSlot, toSlot)
-    local slotA = self:GetSlot(fromSlot)
-    local slotB = self:GetSlot(toSlot)
-    if not (slotA and slotB) then
-        return
-    end
 
-    local itemA = slotA:GetContent()
-    local itemB = slotB:GetContent()
-
-    if slotA:isAcceptingType(itemB.category) and slotB:isAcceptingType(itemA.category) then
-        return
-    end
-
-    slotA:RemoveItem()
-    slotB:RemoveItem()
-    slotA:AddItem(itemB)
-    slotA:AddItem(itemA)
-
-    TriggerEvent(self.changedEvent, self)
-
-    if self:IsEquipment(slotA) or self:IsEquipment(slotB) then
-        TriggerEvent(self.equipmentChangedEvent, self)
-    end
+function inventory:CanRemoveItem(itemAssetId, parameters)
+	return self._inventory:CanRemoveItem(itemAssetId, parameters)
 end
-function inventory:RemoveItem(slotIndex)
-    local slot = self.slots[slotIndex]
-    if slot then
-        slot:RemoveItem()
-        TriggerEvent(self.changedEvent, self)
-        if self:IsEquipment(slot) then
-            TriggerEvent(self.equipmentChangedEvent, self)
-        end
-    end
+
+function inventory:RemoveItem(itemAssetId, parameters)
+	return self._inventory:RemoveItem(itemAssetId, parameters)
 end
-function inventory:GetSlots()
-    return self.slots
+
+function inventory:CanRemoveFromSlot(slot, parameters)
+	return self._inventory:CanRemoveFromSlot(slot, parameters)
 end
-function inventory:GetSlot(index)
-    local slots = self:GetSlots()
-    assert(index <= self.inventorySize and index > 0)
-    return slots[index]
+
+function inventory:RemoveFromSlot(slot, parameters)
+	return self._inventory:RemoveFromSlot(slot, parameters)
+end
+
+function inventory:CanDropItem(itemAssetId, parameters)
+	return self._inventory:CanDropItem(itemAssetId, parameters)
+end
+
+function inventory:DropItem(itemAssetId, parameters)
+	return self._inventory:DropItem(itemAssetId, parameters)
+end
+
+function inventory:CanDropFromSlot(slot, parameters)
+	return self._inventory:CanDropFromSlot(slot, parameters)
+end
+
+function inventory:DropFromSlot(slot, parameters)
+	return self._inventory:DropFromSlot(slot, parameters)
+end
+
+function inventory:CanGiveItem(itemAssetId, recipient, parameters)
+	return self._inventory:CanGiveItem(itemAssetId, recipient, parameters)
+end
+
+function inventory:GiveItem(itemAssetId, recipient, parameters)
+	return self._inventory:GiveItem(itemAssetId, recipient, parameters)
+end
+
+function inventory:CanGiveFromSlot(slot, recipient, parameters)
+	return self._inventory:CanGiveFromSlot(slot, recipient, parameters)
+end
+
+function inventory:GiveFromSlot(slot, recipient, parameters)
+	return self._inventory:GiveFromSlot(slot, recipient, parameters)
 end
 
 local inventoryConstuctor = {}
 
-function inventoryConstuctor.NewInventory(inventorySize)
-    local newInventory = setmetatable({}, {__index = inventory})
-
-    return newInventory
+function inventoryConstuctor.NewInventory(Inventory)
+	local newInventory = setmetatable({}, { __index = inventory })
+	if not Inventory then
+		if Environment.IsServer() then
+			Inventory = World.SpawnAsset(LOOT_INVENTORY_SPAWN, { networkContext = NetworkContextType.NETWORKED })
+		end
+		if Environment.IsClient() then
+			assert("Inventory needed")
+			return
+		end
+	end
+	newInventory._inventory = Inventory
+	newInventory.slotCount = newInventory._inventory.slotCount
+	newInventory._inventory.destroyEvent:Connect(
+		function()
+			newInventory:Destroy()
+		end
+	)
+	newInventory.ownerChangedEvent = newInventory._inventory.ownerChangedEvent
+	newInventory.resizedEvent = newInventory._inventory.resizedEvent
+	newInventory.changedEvent = newInventory._inventory.changedEvent
+	newInventory.itemPropertyChangedEvent = newInventory._inventory.itemPropertyChangedEvent
+	AddInventory(newInventory)
+	return newInventory
 end
 
-_G['Inventory.Constructor'] = inventoryConstuctor
+function inventoryConstuctor.GetInventoryFromInventory(inv)
+	for index, value in ipairs(SpawnedInventories) do
+		if value == inv then
+			return value
+		end
+	end
+end
+
+local Inventories = World.FindObjectsByType("Inventory")
+for key, newInventory in pairs(Inventories) do
+	inventoryConstuctor.NewInventory(newInventory)
+end
+
+_G["Inventory.Constructor"] = inventoryConstuctor

@@ -161,12 +161,30 @@ Assets {
   }
 }
 Assets {
+  Id: 9709214148658914443
+  Name: "Fantasy Dagger 021"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Weapon_Dagger_021"
+  }
+}
+Assets {
   Id: 9043465979534313612
   Name: "Japanese Frame 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Japan_Frame_003"
+  }
+}
+Assets {
+  Id: 9008238566657320754
+  Name: "Sci-fi Frame 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_SciFi_Frame_006"
   }
 }
 Assets {
@@ -203,6 +221,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_020"
+  }
+}
+Assets {
+  Id: 6488609383494304708
+  Name: "Fantasy Frame 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Frame_003"
   }
 }
 Assets {
@@ -284,6 +311,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_015"
+  }
+}
+Assets {
+  Id: 1100030183663206451
+  Name: "Center Arrow 003 Wedge"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterArrow_003Wedge"
   }
 }
 Assets {

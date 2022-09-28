@@ -7,7 +7,7 @@ Assets {
       Overrides {
         Name: "cs:ItemCrafting"
         AssetReference {
-          Id: 15593076632027231058
+          Id: 10320494879611545765
         }
       }
     }

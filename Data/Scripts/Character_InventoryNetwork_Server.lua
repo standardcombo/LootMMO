@@ -1,4 +1,4 @@
-local CharacterConstruction = _G['Character.Contsructor']
+local CharacterConstruction = _G['Character.Constructor']
 local LOOT_INVENTORY_SPAWN = script:GetCustomProperty('Loot_Inventory_Spawn')
 local Keyidentity = 'I/.'
 
