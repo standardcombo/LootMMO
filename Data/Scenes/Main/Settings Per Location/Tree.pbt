@@ -262,7 +262,7 @@ Objects {
         Value: "mc:elookcontrolmode:relative"
       }
       FacingMode {
-        Value: "mc:efacingmode:faceaimwhenactive"
+        Value: "mc:efacingmode:facemovement"
       }
       DefaultRotationRate: 540
       SlideRotationRate: 20
