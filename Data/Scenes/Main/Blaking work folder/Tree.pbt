@@ -39525,6 +39525,17 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 16880048014117415600
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 7928961812369481920
     }
@@ -42772,7 +42783,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
