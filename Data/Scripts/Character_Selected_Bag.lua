@@ -10,7 +10,7 @@ function BootUpPlayerBag(Character, player)
 			local name = Item.name
 			local entry = items.GetDefinition(name)
 			if entry then
-				local item = entry['ItemAsset']
+				local item = entry['itemAsset']
 				warn(item, "no item found " .. Item.name)
 				if item then
 					local newitem = World.SpawnAsset(item)

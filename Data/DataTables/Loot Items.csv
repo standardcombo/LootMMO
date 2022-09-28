@@ -1,4 +1,4 @@
-"id[String]","category[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","equipment[Asset Reference]","equipmentHollow[Asset Reference]","ItemAsset[Asset Reference]","tag[String]","W[Int]","A[Int]","V[Int]","AP[Int]","SP[Int]","SR[Int]","B[Int]","H[Int]"
+"id[String]","category[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","equipment[Asset Reference]","equipmentHollow[Asset Reference]","itemAsset[Asset Reference]","tag[String]","W[Int]","A[Int]","V[Int]","AP[Int]","SP[Int]","SR[Int]","B[Int]","H[Int]"
 "Warhammer","weapon","0E51B0EE7503C5D7","True","False","A2AAEC24226AC47F","94D546223C5943F2","6F46D8C1A43CA6E7","","0","0","5","50","0","0","0","0"
 "Quarterstaff","weapon","1F6F889F3CB9B3B0","True","False","F950AE3B36871D61","E9EE62EB02F7C7FE","C340E9016B2952B2","","0","0","5","25","0","0","0","0"
 "Maul","weapon","14E15C6C9F19F975","True","False","64488C32A1BBEE3B","54F12F4D2D59413D","B73D16C92288AC57","","0","0","5","40","0","0","0","0"
