@@ -11,6 +11,9 @@ local TRANSFER_EVENT_ID = "TransferPortal"
 local FLASH_VFX_EVENT_ID = "FlashPortalVfx"
 
 
+ROOT.serverUserData.script = script
+
+
 function SetEnabled(value)
 	NET_OBJECT:SetCustomProperty("IsEnabled", value)
 	NET_OBJECT:ForceReplication()

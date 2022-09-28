@@ -97,6 +97,7 @@ end
 
 INTERACTION_TRIGGER.interactedEvent:Connect(OnInteracted)
 
+
 -- Another player went through the portal. Flash the VFX
 local flashVfxEventListener = Events.Connect(FLASH_VFX_EVENT_ID, function(objectId, exceptPlayer)
 	if Game.GetLocalPlayer() ~= exceptPlayer and objectId == ROOT.id then
@@ -109,3 +110,10 @@ script.destroyEvent:Connect(function()
 	flashVfxEventListener:Disconnect()
 	flashVfxEventListener = nil
 end)
+
+
+Task.Spawn(function()
+	INTERACTION_TRIGGER.collision = Collision.INHERIT
+end, 
+0.6) -- Delay
+

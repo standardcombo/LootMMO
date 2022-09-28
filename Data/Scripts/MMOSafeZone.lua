@@ -9,11 +9,10 @@ local zoneData = {
 
 function OnBeginOverlap(trigger, player)
 	if not player:IsA("Player") then return end
+	if not player.serverUserData.safeZoneCount then return end
 	
-	if not player.serverUserData.safeZoneCount then
-		player.serverUserData.safeZoneCount = 0
-	end
 	player.serverUserData.safeZoneCount = player.serverUserData.safeZoneCount + 1
+	--print("A) player.serverUserData.safeZoneCount = ".. player.serverUserData.safeZoneCount)
 	
 	if player.serverUserData.safeZoneCount == 1 then
 		Events.Broadcast("SafeZone_Enter", player, zoneData)
@@ -24,6 +23,7 @@ end
 
 function OnEndOverlap(trigger, player)
 	if not player:IsA("Player") then return end
+	if not player.serverUserData.safeZoneCount then return end
 	
 	-- One frame delay, in case the player is teleporting between safe zones we count:
 	-- 1,2,1 (no events fired) as opposed to 1,0,1 with quick Exit/Enter events.
@@ -32,6 +32,7 @@ function OnEndOverlap(trigger, player)
 	if not Object.IsValid(player) then return end
 	
 	player.serverUserData.safeZoneCount = player.serverUserData.safeZoneCount - 1
+	--print("B) player.serverUserData.safeZoneCount = ".. player.serverUserData.safeZoneCount)
 	
 	if player.serverUserData.safeZoneCount == 0 then
 		Events.Broadcast("SafeZone_Exit", player, zoneData)
@@ -44,9 +45,18 @@ TRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)
 TRIGGER.endOverlapEvent:Connect(OnEndOverlap)
 
 
-for _,player in ipairs(Game.GetPlayers()) do
+function OnPlayerJoined(player)
+	Task.Wait(1)
+	if not Object.IsValid(player) then return end
+	
+	if not player.serverUserData.safeZoneCount then
+		player.serverUserData.safeZoneCount = 0
+	end
+	
 	if TRIGGER:IsOverlapping(player) then
 		OnBeginOverlap(TRIGGER, player)
 	end
 end
+
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
 

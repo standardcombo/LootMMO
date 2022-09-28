@@ -139,12 +139,8 @@ Objects {
   Name: "ServerContext"
   Transform {
     Location {
-      X: -2268.74902
-      Y: -3020.33
-      Z: 3577.78882
     }
     Rotation {
-      Yaw: -124.999992
     }
     Scale {
       X: 1
@@ -156,6 +152,8 @@ Objects {
   ChildIds: 17740691586929688237
   ChildIds: 14546811096002602236
   ChildIds: 11728263122256425376
+  ChildIds: 3136636263324976600
+  ChildIds: 4316979858254432093
   ChildIds: 12385777916756707091
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -182,12 +180,8 @@ Objects {
   Name: "MMOPortalController"
   Transform {
     Location {
-      X: -3775.41
-      Y: 126.061035
-      Z: -3577.78882
     }
     Rotation {
-      Yaw: 124.999992
     }
     Scale {
       X: 1
@@ -211,6 +205,90 @@ Objects {
   Script {
     ScriptAsset {
       Id: 3780102564341975107
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4316979858254432093
+  Name: "SafeZoneAppStates"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -1.36603758e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11139475088052789855
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 11333987766339350641
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3136636263324976600
+  Name: "SupportAbilities"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -1.02452814e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11139475088052789855
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:channelAbility"
+      AssetReference {
+        Id: 5095812687312647724
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8716198136127297204
     }
   }
   NetworkRelevanceDistance {
@@ -297,12 +375,8 @@ Objects {
   Name: "PlayerJoinSetupServer"
   Transform {
     Location {
-      X: -3775.41
-      Y: 126.061035
-      Z: -3577.78882
     }
     Rotation {
-      Yaw: 124.999992
     }
     Scale {
       X: 1
@@ -338,12 +412,8 @@ Objects {
   Name: "PlayerControlStacks"
   Transform {
     Location {
-      X: -2268.74902
-      Y: -3020.33
-      Z: 3577.78882
     }
     Rotation {
-      Yaw: -124.999992
     }
     Scale {
       X: 1
@@ -570,12 +640,8 @@ Objects {
   Name: "ClientContext"
   Transform {
     Location {
-      X: -2268.74902
-      Y: -3020.33
-      Z: 3577.78882
     }
     Rotation {
-      Yaw: -124.999992
     }
     Scale {
       X: 1
