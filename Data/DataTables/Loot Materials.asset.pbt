@@ -113,5 +113,14 @@ Assets {
         AssetId: "UI_Fantasy_Crafting_Crystal_022"
       }
     }
+    Assets {
+      Id: 14844297992112835757
+      Name: "Fantasy Spell Ingredient 046"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Ingredient_046"
+      }
+    }
   }
 }
