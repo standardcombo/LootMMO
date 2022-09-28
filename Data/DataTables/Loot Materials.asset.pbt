@@ -1,6 +1,6 @@
 Assets {
   Id: 10320494879611545765
-  Name: "Loot_Materials"
+  Name: "Loot Materials"
   PlatformAssetType: 31
   SerializationVersion: 118
   DataTableAsset {
