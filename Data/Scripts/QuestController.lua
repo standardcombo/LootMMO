@@ -478,6 +478,8 @@ end
 
 function ResetQuestsForPlayer(player)
 	print("ResetQuestsForPlayer() " .. player.name)
+
+	Events.BroadcastToPlayer(player, "Quest.ResetForPlayer")
 	
 	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
 	storageData.quests = nil
@@ -486,6 +488,13 @@ function ResetQuestsForPlayer(player)
 	LoadPlayerData(player)
 	
 	API.ActivateForPlayer(player, "Welcome")
+end
+if Environment.IsClient() then
+	Events.Connect("Quest.ResetForPlayer", function()
+		for k,obj in pairs(QUEST_OBJECTIVES) do
+			obj.hasSeen = nil
+		end
+	end)
 end
 
 
