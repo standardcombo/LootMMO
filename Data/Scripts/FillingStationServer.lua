@@ -11,7 +11,7 @@ function OnFillCup(player, obj)
 			local def = _G.Consumables.GetDefinition(ITEM_ID)
 			equip:SetCustomProperty("usesRemaining", def.numberOfUses)
 			
-			Events.Broadcast("Quest_Pint", player, "FillPint")
+			Events.Broadcast("Quest.Pint", player, "FillPint")
 			return
 		end
 	end

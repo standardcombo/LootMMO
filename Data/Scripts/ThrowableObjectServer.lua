@@ -50,7 +50,7 @@ function OnPickup(player, equipment)
 		resetTask = nil
 	end
 	
-	Events.Broadcast("Quest_ThrowChair", player, "Pickup")
+	Events.Broadcast("Quest.ThrowChair", player, "Pickup")
 	
 	--EQUIPMENT:SetReplicationEnabled(true)
 	
@@ -95,7 +95,7 @@ EQUIPMENT.equippedEvent:Connect(OnEquipped)
 
 
 function OnThrow(ability)
-	Events.Broadcast("Quest_ThrowChair", ability.owner, "Throw")
+	Events.Broadcast("Quest.ThrowChair", ability.owner, "Throw")
 	
 	-- Spawn the physics object that will contain the equipment
 	local obj = SpawnPhysicsObject()

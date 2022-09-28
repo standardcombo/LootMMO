@@ -4,7 +4,7 @@ local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
 
 Events.ConnectForPlayer("Map.Focus", function(player, isFocused)
 	if not Object.IsValid(player) then return end
-	Events.Broadcast("Quest_Map", player, "Focus")
+	Events.Broadcast("Quest.Map", player, "Focus")
 	
 	for _,ability in ipairs(player:GetAbilities()) do
 		if isFocused then
@@ -20,7 +20,7 @@ end)
 
 Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 	if Object.IsValid(player) then
-		Events.Broadcast("Quest_Map", player, "Play")
+		Events.Broadcast("Quest.Map", player, "Play")
 		
 		local unlockedQuests = _G.QuestController.GetUnlockedQuests(player)
 		local quest = unlockedQuests[selectedIndex]

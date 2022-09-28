@@ -98,7 +98,7 @@ local function AttempToJoin(player, id)
         
         player.serverUserData.isInvulnerable = true
         
-        Events.Broadcast("Quest_Poker", player, "Sit")
+        Events.Broadcast("Quest.Poker", player, "Sit")
     end
 end
 

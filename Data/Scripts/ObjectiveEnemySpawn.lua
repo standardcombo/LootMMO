@@ -106,7 +106,7 @@ for _,area in ipairs(QUEST_AREAS) do
 end
 
 
-Events.Connect("Quest_Changed", function(player)
+Events.Connect("Quest.Changed", function(player)
 	print("ObjectiveEnemySpawn")
 	if not isSpawned then
 		local obj = _G.QuestController.GetQuestObjective(QUEST_ID, OBJECTIVE_INDEX)

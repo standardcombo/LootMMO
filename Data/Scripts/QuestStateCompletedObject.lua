@@ -25,5 +25,5 @@ function UpdateState()
 	end
 end
 
-Events.Connect("Quest_Changed", UpdateState)
+Events.Connect("Quest.Changed", UpdateState)
 

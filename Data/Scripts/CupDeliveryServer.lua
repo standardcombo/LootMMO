@@ -10,7 +10,7 @@ function OnDeliver(player, pos, rot)
 		World.SpawnAsset(PICKUP_TEMPLATE, {position = pos, rotation = rot})
 		fullCup:Destroy()
 		
-		Events.Broadcast("Quest_Pint", player, "ServePint")
+		Events.Broadcast("Quest.Pint", player, "ServePint")
 	end
 end
 

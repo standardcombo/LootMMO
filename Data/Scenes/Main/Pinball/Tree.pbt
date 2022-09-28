@@ -237,7 +237,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Pinball"
+      String: "Quest.Pinball"
     }
   }
   Collidable_v2 {
@@ -292,7 +292,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Pinball"
+      String: "Quest.Pinball"
     }
   }
   Collidable_v2 {

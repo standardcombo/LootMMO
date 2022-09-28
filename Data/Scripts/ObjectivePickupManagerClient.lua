@@ -115,7 +115,7 @@ function OnObjectiveSelected(obj)
 	end
 end
 
-Events.Connect("Quest_ObjectiveSelected", OnObjectiveSelected)
+Events.Connect("Quest.ObjectiveSelected", OnObjectiveSelected)
 
 
 function OnInteracted(trigger, player)

@@ -2,13 +2,13 @@
 
 function OnMailboxOpened(player)
 	if Object.IsValid(player) then
-		Events.Broadcast("Quest_Welcome", player, "OpenMail")
+		Events.Broadcast("Quest.Welcome", player, "OpenMail")
 	end
 end
 
 function OnMailboxClosed(player)
 	if Object.IsValid(player) then
-		Events.Broadcast("Quest_Welcome", player, "CloseMail")
+		Events.Broadcast("Quest.Welcome", player, "CloseMail")
 	end
 end
 

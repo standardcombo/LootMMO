@@ -994,7 +994,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Pint"
+      String: "Quest.Pint"
     }
   }
   Collidable_v2 {
@@ -1049,7 +1049,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Pint"
+      String: "Quest.Pint"
     }
   }
   Collidable_v2 {
@@ -1104,7 +1104,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Pint"
+      String: "Quest.Pint"
     }
   }
   Collidable_v2 {

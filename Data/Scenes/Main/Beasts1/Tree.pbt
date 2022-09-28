@@ -435,7 +435,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_NPCDied"
+      String: "Quest.NPCDied"
     }
     Overrides {
       Name: "cs:ObjectID"

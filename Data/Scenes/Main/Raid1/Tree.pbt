@@ -27,7 +27,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_NPCDied"
+      String: "Quest.NPCDied"
     }
     Overrides {
       Name: "cs:ObjectID"
@@ -82,7 +82,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Map"
+      String: "Quest.Map"
     }
     Overrides {
       Name: "cs:ObjectID"
@@ -137,7 +137,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Map"
+      String: "Quest.Map"
     }
     Overrides {
       Name: "cs:ObjectID"

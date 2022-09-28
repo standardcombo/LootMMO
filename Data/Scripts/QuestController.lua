@@ -239,7 +239,7 @@ function API.SelectObjective(player, obj)
 		end
 	end
 	
-	Events.Broadcast("Quest_ObjectiveSelected", obj)
+	Events.Broadcast("Quest.ObjectiveSelected", obj)
 end
 
 
@@ -457,7 +457,7 @@ end
 
 
 local function FireLocalQuestChangedEvent(player)
-	Events.Broadcast("Quest_Changed", player)
+	Events.Broadcast("Quest.Changed", player)
 end
 
 local function OnPrivateDataChanged(player, key)

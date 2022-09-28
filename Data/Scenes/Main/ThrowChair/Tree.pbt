@@ -201,7 +201,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_ThrowChair"
+      String: "Quest.ThrowChair"
     }
   }
   Collidable_v2 {
@@ -256,7 +256,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_ThrowChair"
+      String: "Quest.ThrowChair"
     }
   }
   Collidable_v2 {
@@ -311,7 +311,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_ThrowChair"
+      String: "Quest.ThrowChair"
     }
   }
   Collidable_v2 {

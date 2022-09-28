@@ -18,7 +18,7 @@ function OnObjectiveSelected(obj)
 	end
 end
 
-Events.Connect("Quest_ObjectiveSelected", OnObjectiveSelected)
+Events.Connect("Quest.ObjectiveSelected", OnObjectiveSelected)
 
 
 function UpdateState()
@@ -30,5 +30,5 @@ function UpdateState()
 	end
 end
 
-Events.Connect("Quest_Changed", UpdateState)
+Events.Connect("Quest.Changed", UpdateState)
 

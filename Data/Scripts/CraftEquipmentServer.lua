@@ -2,13 +2,13 @@
 
 function OnMailboxOpened(player)
 	if Object.IsValid(player) then
-		Events.Broadcast("Quest_Craft1", player, "Open")
+		Events.Broadcast("Quest.Craft1", player, "Open")
 	end
 end
 
 function OnMailboxClosed(player)
 	if Object.IsValid(player) then
-		Events.Broadcast("Quest_Craft1", player, "Close")
+		Events.Broadcast("Quest.Craft1", player, "Close")
 	end
 end
 

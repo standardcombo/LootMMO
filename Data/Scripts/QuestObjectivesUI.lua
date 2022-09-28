@@ -364,7 +364,7 @@ function UpdateData()
 	end
 end
 
-Events.Connect("Quest_Changed", UpdateData)
+Events.Connect("Quest.Changed", UpdateData)
 
 
 function UpdateBadge(forceCountAll)

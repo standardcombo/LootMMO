@@ -20,7 +20,7 @@ Events.ConnectForPlayer("TakeCup", function(player, cupNumber)
 		_G.EquipmentStack.Unequip(player, item)
 	end)
 	
-	Events.Broadcast("Quest_Pint", player, "EmptyPint")
+	Events.Broadcast("Quest.Pint", player, "EmptyPint")
 	
 	Task.Wait(REFILL_DELAY)
 	NET_OBJECT:SetCustomProperty("Cup" .. cupNumber, true)

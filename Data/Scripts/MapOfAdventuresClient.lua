@@ -158,7 +158,7 @@ Next()
 
 
 -- Events fired from quest system
-Events.Connect("Quest_Changed", UpdateContents)
+Events.Connect("Quest.Changed", UpdateContents)
 
 Task.Wait()
 UpdateContents()

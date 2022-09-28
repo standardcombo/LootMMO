@@ -324,7 +324,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Welcome"
+      String: "Quest.Welcome"
     }
   }
   Collidable_v2 {
@@ -379,7 +379,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Welcome"
+      String: "Quest.Welcome"
     }
   }
   Collidable_v2 {

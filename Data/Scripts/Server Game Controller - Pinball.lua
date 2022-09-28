@@ -40,7 +40,7 @@ function handleInteracted(_, player)
   Events.BroadcastToPlayer(player, "StartPinball", thisMachine.id, player)
   currentPlayer = player
   
-  Events.Broadcast("Quest_Pinball", player, "GameStart")
+  Events.Broadcast("Quest.Pinball", player, "GameStart")
 end
 
 function handleQuit(machineId, player)
@@ -66,7 +66,7 @@ function handleQuit(machineId, player)
   PLAY_TRIGGER:ForceReplication()
   
   if player.serverUserData.hasSubmittedPinballHighscore then
-    Events.Broadcast("Quest_Pinball", player, "GameOver")
+    Events.Broadcast("Quest.Pinball", player, "GameOver")
   end
 end
 

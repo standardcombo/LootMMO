@@ -200,7 +200,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Poker"
+      String: "Quest.Poker"
     }
   }
   Collidable_v2 {
@@ -255,7 +255,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Poker"
+      String: "Quest.Poker"
     }
   }
   Collidable_v2 {
@@ -310,7 +310,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest_Poker"
+      String: "Quest.Poker"
     }
   }
   Collidable_v2 {

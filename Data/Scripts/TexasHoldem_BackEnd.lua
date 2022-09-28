@@ -461,7 +461,7 @@ function poker:StartGame()
     for p, value in pairs(self.players) do
         playerCount = playerCount + 1
         
-        Events.Broadcast("Quest_Poker", p, "Play")
+        Events.Broadcast("Quest.Poker", p, "Play")
     end
     if playerCount == 2 then
         self.hup = true
@@ -757,7 +757,7 @@ function poker:HandCash(player, potIndex, divisible)
         self.showingCards[player] = true
     end
             
-    Events.Broadcast("Quest_Poker", player.player, "Win")
+    Events.Broadcast("Quest.Poker", player.player, "Win")
 end
 
 function poker:ShowHands()

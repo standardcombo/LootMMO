@@ -5,7 +5,7 @@ function OnObjectDied(attackData)
 	local tags = TAGS().GetTags(attackData.object)
 	for tag,_ in pairs(tags) do
 		--print("NPC died with tag: ".. tag)
-		Events.Broadcast("Quest_NPCDied", tag)
+		Events.Broadcast("Quest.NPCDied", tag)
 	end
 end
 
