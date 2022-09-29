@@ -129,6 +129,8 @@ function AddCompletedQuestID(player, questId)
 	end
 	table.insert(playerData.complete, questId)
 	SetPlayerData(player, playerData)
+	
+	return playerData
 end
 
 function RemoveCompletedQuestID(player, questId)
@@ -145,6 +147,7 @@ function RemoveCompletedQuestID(player, questId)
 			break
 		end
 	end
+	return playerData
 end
 
 
@@ -165,6 +168,21 @@ function API.GetActiveObjectives(player)
 	local result = {}
 	local playerData = API.GetPlayerData(player)
 	if playerData then
+		-- Reward entries
+		if playerData.rewards then
+			for k,questId in ipairs(playerData.rewards) do
+				local quest = API.GetQuest(questId)
+				if quest then
+					local obj = quest.objectives[1]
+					obj.hasSeen = nil
+					obj.hasReward = true
+					table.insert(result, obj)
+				else
+					error("Failed to locate data for reward ".. tostring(questId))
+				end
+			end
+		end
+		-- Active objectives
 		for k,entry in ipairs(playerData.active) do
 			local quest = API.GetQuest(entry.id)
 			if quest then
@@ -342,6 +360,7 @@ end
 
 function CompleteQuest(player, questId)
 	--print("QuestController::CompleteQuest() "..player.name..","..questId)
+	-- Remove the quest from active section
 	local playerData = API.GetPlayerData(player)
 	for i,entry in ipairs(playerData.active) do
 		if entry.id == questId then
@@ -350,14 +369,28 @@ function CompleteQuest(player, questId)
 			break
 		end
 	end
-	AddCompletedQuestID(player, questId)
+	-- Mark the quest as complete
+	playerData = AddCompletedQuestID(player, questId)
+
 	local questData = API.GetQuest(questId)
-	local ids = {
-	    CoreString.Split(questData.unlocks, {
-	        delimiters = {","}, 
-	        removeEmptyResults = true
-	    })
-	}
+	if questData.rewards ~= "" then
+		-- Setup reward data
+		if not playerData.rewards then
+			playerData.rewards = {}
+		end
+		table.insert(playerData.rewards, questId)
+		SetPlayerData(player, playerData)
+	else
+		-- Move directly to unlocking the next quests
+		ProcessQuestUnlocks(player, questId)
+	end
+	
+	SavePlayerData(player)
+end
+
+function ProcessQuestUnlocks(player, questId)
+	local ids = SplitCommaSeparatedData(questData.unlocks)
+
 	for _,unlockId in ipairs(ids) do
 		unlockId = CoreString.Trim(unlockId)
 		
@@ -368,8 +401,15 @@ function CompleteQuest(player, questId)
 			API.ActivateForPlayer(player, unlockId)
 		end
 	end
-	
-	SavePlayerData(player)
+end
+
+function SplitCommaSeparatedData(data)
+	return {
+	    CoreString.Split(data, {
+	        delimiters = {","}, 
+	        removeEmptyResults = true
+	    })
+	}
 end
 
 
@@ -493,6 +533,7 @@ if Environment.IsClient() then
 	Events.Connect("Quest.ResetForPlayer", function()
 		for k,obj in pairs(QUEST_OBJECTIVES) do
 			obj.hasSeen = nil
+			obj.hasReward = nil
 		end
 	end)
 end

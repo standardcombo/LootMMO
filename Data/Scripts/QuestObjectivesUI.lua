@@ -271,6 +271,8 @@ end
 
 
 function OnObjectiveSelected(obj, uiRow)
+	if obj.hasReward then return end
+	
 	--print("QuestObjectivesUI: " ..obj.questId .." selected")
 	
 	-- Tell the quest system to select this objective
@@ -285,6 +287,10 @@ function OnObjectiveSelected(obj, uiRow)
 	-- TODO: Auto-nav
 end
 
+function OnClaimReward(obj, uiRow)
+	print("Claim reward for quest ".. obj.questId)
+end
+
 
 function UpdateContents()
 	--print("QuestObjectivesUI::UpdateContents()")
@@ -296,7 +302,9 @@ function UpdateContents()
 	
 	-- Add rows
 	for _,obj in ipairs(activeObjectives) do
-		obj.hasSeen = true --Mark objective as seen
+		if not obj.hasReward then
+			obj.hasSeen = true --Mark objective as seen
+		end
 		CONTENT_SCRIPT.context.AddObjective(obj)
 	end
 	
@@ -319,8 +327,14 @@ function UpdateData()
 	if selectedObjective and selectedRow then
 		for _,obj in ipairs(activeObjectives) do
 			if obj.questId == selectedObjective.questId then
+				-- Check if the selected quest has a reward to be claimed
+				if obj.hasReward then
+					if currentState == STATE_SELECTED then
+						CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
+						SetState(STATE_COMPLETED_1)
+					end
 				-- Check if count progress was made on the currently selected objective
-				if obj.count > 0 and _G.QuestController.GetObjectiveProgress(PLAYER, obj) < obj.count then
+				elseif obj.count > 0 and _G.QuestController.GetObjectiveProgress(PLAYER, obj) < obj.count then
 					CONTENT_SCRIPT.context.UpdateRowProgress(selectedRow)
 				
 				-- Check if the currently selected objective has been completed
@@ -402,5 +416,6 @@ PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
 Task.Wait()
 CONTENT_SCRIPT.context.OnObjectiveSelected = OnObjectiveSelected
+CONTENT_SCRIPT.context.OnClaimReward = OnClaimReward
 
 

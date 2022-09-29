@@ -9,11 +9,23 @@ local rowDefaultHeight = ROW_PROTOTYPE.height
 local rows = {}
 local rowPool = {}
 
-function GET(obj, key) return obj:GetCustomProperty(key):WaitForObject() end
+function GET(obj, key)
+	local property = obj.clientUserData[key]
+	if property then
+		return property
+	end
+	property = obj:GetCustomProperty(key):WaitForObject()
+	obj.clientUserData[key] = property
+	return property
+end
 
 -- Callback to parent UI, informing an objective was selected
 -- <objective table, row UIPanel>
 OnObjectiveSelected = nil
+
+-- Callback to parent UI, informing a reward was claimed
+-- <objective table, row UIPanel>
+OnClaimReward = nil
 
 
 function Clear()
@@ -61,6 +73,8 @@ function SetRowStateDefault(row)
 	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
+	GET(row, "UIButton").visibility = Visibility.INHERIT
+	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
 end
 
 function SetRowStateSelected(row)
@@ -68,6 +82,8 @@ function SetRowStateSelected(row)
 	GET(row, "SelectedBorder").visibility = Visibility.INHERIT
 	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
+	GET(row, "UIButton").visibility = Visibility.INHERIT
+	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
 end
 
 function SetRowStateCompleted(row)
@@ -75,6 +91,17 @@ function SetRowStateCompleted(row)
 	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedBorder").visibility = Visibility.INHERIT
 	GET(row, "CompletedIcon").visibility = Visibility.INHERIT
+	GET(row, "UIButton").visibility = Visibility.INHERIT
+	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
+end
+
+function SetRowStateReward(row)
+	GET(row, "AutoNavIndicator").visibility = Visibility.FORCE_OFF
+	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
+	GET(row, "CompletedBorder").visibility = Visibility.INHERIT
+	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
+	GET(row, "UIButton").visibility = Visibility.FORCE_OFF
+	GET(row, "RewardButton").visibility = Visibility.INHERIT
 end
 
 
@@ -93,6 +120,13 @@ function OnRowButtonPressed(button)
 	
 	-- Inform the change to the parent UI
 	OnObjectiveSelected(obj, row)
+end
+
+function OnRewardButtonClicked(button)
+	local row = button.parent
+	local obj = row.clientUserData.objective
+	
+	OnClaimReward(obj, row)
 end
 
 
@@ -121,12 +155,9 @@ function SetupRow(row, obj)
 	local description = GET(row, "Description")
 	local counter = GET(row, "Counter")
 	
-	row.clientUserData.description = description
-	row.clientUserData.counter = counter
-	
 	description.text = obj.description
 	
-	if obj.count <= 0 then
+	if obj.count <= 0 or obj.hasReward then
 		counter.visibility = Visibility.FORCE_OFF
 		counter.text = ""
 	else
@@ -134,15 +165,22 @@ function SetupRow(row, obj)
 		UpdateRowProgress(row)
 	end
 	
-	if row.clientUserData.button == nil then
+	if row.clientUserData.UIButton == nil then
 		local button = GET(row, "UIButton")
-		row.clientUserData.button = button
 		button.pressedEvent:Connect(OnRowButtonPressed)
 		
 		description.clientUserData.defaultHeight = description.height
 	end
 	
-	if obj.isSelected then
+	if row.clientUserData.RewardButton == nil then
+		local button = GET(row, "RewardButton")
+		button.clickedEvent:Connect(OnRewardButtonClicked)
+	end
+	
+	if obj.hasReward then
+		SetRowStateReward(row)
+
+	elseif obj.isSelected then
 		SetRowStateSelected(row)
 	else
 		SetRowStateDefault(row)
@@ -154,7 +192,7 @@ end
 function UpdateRowProgress(row)
 	local obj = row.clientUserData.objective
 	local progress = _G.QuestController.GetObjectiveProgress(Game.GetLocalPlayer(), obj)
-	row.clientUserData.counter.text = progress .." of ".. obj.count
+	row.clientUserData.Counter.text = progress .." of ".. obj.count
 end
 
 function InsertRow(row, index)
@@ -188,8 +226,8 @@ function DoVerticalRecalculation()
 	container.height = y
 end
 function UpdateRowVerticalProperties(row)
-	local description = row.clientUserData.description
-	local counter = row.clientUserData.counter
+	local description = GET(row, "Description")
+	local counter = GET(row, "Counter")
 	
 	local descriptionDefaultHeight = description.clientUserData.defaultHeight
 	local size = description:ComputeApproximateSize()
@@ -198,6 +236,12 @@ function UpdateRowVerticalProperties(row)
 	
 	if counter.text == "" then
 		row.height = row.height - counter.height
+	end
+
+	local rewardButton = GET(row, "RewardButton")
+	if rewardButton.visibility == Visibility.INHERIT then
+		local margin = GET(row, "Name").y
+		row.height = row.height + rewardButton.height + margin
 	end
 end
 

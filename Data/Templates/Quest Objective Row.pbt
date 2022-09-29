@@ -28,6 +28,7 @@ Assets {
         ChildIds: 10770027726623180215
         ChildIds: 5747029504989574554
         ChildIds: 14579659351582158648
+        ChildIds: 13083952530737089267
         UnregisteredParameters {
           Overrides {
             Name: "cs:Icon"
@@ -81,6 +82,12 @@ Assets {
             Name: "cs:CompletedIcon"
             ObjectReference {
               SubObjectId: 14579659351582158648
+            }
+          }
+          Overrides {
+            Name: "cs:RewardButton"
+            ObjectReference {
+              SubObjectId: 13083952530737089267
             }
           }
         }
@@ -1272,6 +1279,200 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:middleright"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13083952530737089267
+        Name: "Claim Reward button"
+        Transform {
+          Location {
+            X: 298.519775
+            Y: 2070.43408
+            Z: -1232.24219
+          }
+          Rotation {
+            Yaw: 69.6278839
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        ChildIds: 14125049775007890963
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 230
+          Height: 60
+          UIY: -16
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          IsHittable: true
+          Button {
+            FontColor {
+              A: 1
+            }
+            FontSize: 20
+            ButtonColor {
+              R: 0.77
+              G: 0.336556286
+              A: 1
+            }
+            HoveredColor {
+              R: 0.843000054
+              G: 0.413069934
+              B: 0.079241991
+              A: 1
+            }
+            PressedColor {
+              R: 0.592
+              G: 0.258754909
+              A: 1
+            }
+            DisabledColor {
+              R: 0.264
+              G: 0.264
+              B: 0.264
+              A: 1
+            }
+            Brush {
+              Id: 841534158063459245
+            }
+            IsButtonEnabled: true
+            ClickMode {
+              Value: "mc:ebuttonclickmode:default"
+            }
+            Font {
+              Id: 11336346532215892341
+            }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+            ShadowColor {
+              R: 0.26
+              G: 0.108476825
+              A: 1
+            }
+            ShadowOffset {
+              Y: 3
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14125049775007890963
+        Name: "UI Text Box"
+        Transform {
+          Location {
+            X: 0.000546445954
+            Y: 0.000422177749
+          }
+          Rotation {
+            Yaw: 3.4150944e-06
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13083952530737089267
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 200
+          Height: 60
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          UseParentHeight: true
+          Text {
+            Label: "Claim Reward"
+            Color {
+              R: 0.0800000429
+              A: 1
+            }
+            Size: 20
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+            ShadowColor {
+              R: 1
+              G: 0.722781539
+              B: 0.0899999738
+              A: 1
+            }
+            ShadowOffset {
+              Y: 1
+            }
+            OutlineColor {
+              A: 1
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }
