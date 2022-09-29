@@ -1,3 +1,62 @@
+--[[
+	Reward Toast - Client
+	v1.0
+	by: standardcombo
+	
+	Pop animated UI cards showing rewards or other icon + text information.
+	
+	
+	Setup
+	=====
+	Drop a copy of the Reward Toast UI template into the hierarchy.
+	
+	
+	Usage
+	=====
+	From server-to-client:
+		Events.BroadcastToPlayer(player, "RewardToast", data)
+	
+	From client-to-client:
+		Events.Broadcast("RewardToast", data)
+		
+	where `data` has the schema:
+		{
+			type = "<Rarity>", ("Common", "Rare", "Epic" or "Legendary")
+			icon = <UI image asset ID>,
+			message = "<name of the reward or other text>"
+		}
+		
+	
+	Example
+	=======
+	local COIN_ICON = script:GetCustomProperty("CoinIcon")
+	
+	function ShowCoinReward(player, amount)
+		local data = {
+			type = "Common",
+			icon = COIN_ICON,
+			message = amount .. " Coins"
+		}
+		Events.BroadcastToPlayer(player, "RewardToast", data)
+	end
+	
+	
+	Testing
+	=======
+	There is a code block at the bottom for testing the UI animations.
+	Uncomment the block and press number keys 1-4 to add rows and test.
+	When done, comment the code again, so players can't use this.
+	
+	
+	To Modify the Style
+	===================
+	1. Enable visibility of the main UI Panel.
+	2. Edit each of the prototype rows to set a new style.
+	3. Apply changes to the prototype rows by right-clicking them and 
+	   choosing "Update template from this".
+	4. Disable visibility of the main UI Panel.
+	
+]]
 
 local UIPANEL = script:GetCustomProperty("UIPanel"):WaitForObject()
 local PROTOTYPE_ROW_LEGENDARY = script:GetCustomProperty("PrototypeRowLegendary"):WaitForObject()
@@ -129,7 +188,7 @@ Events.Connect(EVENT_NAME, function(data)
 end)
 
 
-----[[ Debug Test
+--[[ Debug Test
 Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
 	if action == "ability_extra_1" then
 		Events.Broadcast(EVENT_NAME, {type = "Common", message = "13 Coins"})
