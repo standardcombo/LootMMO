@@ -29,6 +29,7 @@ Assets {
         ChildIds: 5747029504989574554
         ChildIds: 14579659351582158648
         ChildIds: 13083952530737089267
+        ChildIds: 16613641316627272525
         UnregisteredParameters {
           Overrides {
             Name: "cs:Icon"
@@ -85,9 +86,15 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:RewardPanel"
+            ObjectReference {
+              SubObjectId: 16613641316627272525
+            }
+          }
+          Overrides {
             Name: "cs:RewardButton"
             ObjectReference {
-              SubObjectId: 13083952530737089267
+              SubObjectId: 7824123011061266929
             }
           }
         }
@@ -178,7 +185,7 @@ Assets {
               Id: 14060330023043759337
             }
             Color {
-              A: 0.6
+              A: 0.7
             }
             TeamSettings {
             }
@@ -1309,7 +1316,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1479,6 +1486,694 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 16613641316627272525
+        Name: "Reward Panel"
+        Transform {
+          Location {
+            X: -6237.82178
+            Y: -1290.90479
+            Z: 49528.4883
+          }
+          Rotation {
+            Yaw: 152.317139
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 706559759143277157
+        ChildIds: 7824123011061266929
+        ChildIds: 6777455749580293300
+        ChildIds: 2571470433466829616
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Spinner"
+            ObjectReference {
+              SelfId: 841534158063459245
+            }
+          }
+          Overrides {
+            Name: "cs:ConfirmButton"
+            ObjectReference {
+              SubObjectId: 7824123011061266929
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 307
+          Height: 65
+          UIY: -7
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 7824123011061266929
+        Name: "Claim Reward button"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16613641316627272525
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 8
+          Height: 54
+          UIY: -5.42772388
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          IsHittable: true
+          Button {
+            FontColor {
+              A: 1
+            }
+            FontSize: 20
+            ButtonColor {
+              R: 0.439657241
+              G: 0.201556295
+              A: 1
+            }
+            HoveredColor {
+              R: 0.723055363
+              G: 0.428690553
+              A: 1
+            }
+            PressedColor {
+              R: 1
+              G: 1
+              B: 1
+            }
+            DisabledColor {
+              A: 1
+            }
+            Brush {
+              Id: 841534158063459245
+            }
+            IsButtonEnabled: true
+            ClickMode {
+              Value: "mc:ebuttonclickmode:default"
+            }
+            Font {
+            }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6777455749580293300
+        Name: "CONFIRM_BUTTON"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16613641316627272525
+        ChildIds: 6281341687330555973
+        ChildIds: 1677266492740746880
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 520
+          Height: 70
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6281341687330555973
+        Name: "FADE"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6777455749580293300
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 162
+          Height: 55
+          UIY: 2.42358398
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              R: 0.252
+              G: 0.0851125568
+              A: 0.509
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1677266492740746880
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6777455749580293300
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -90
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 7615847344375253670
+            }
+            Color {
+              R: 1
+              G: 0.911920369
+              B: 0.3
+              A: 0.520000041
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2571470433466829616
+        Name: "CONFIRM_BUTTON_HOVER"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16613641316627272525
+        ChildIds: 13690764917009305871
+        ChildIds: 8825375063267874263
+        ChildIds: 11539609540216247440
+        ChildIds: 15436953305284478397
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 300
+          Height: 70
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13690764917009305871
+        Name: "FADE"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2571470433466829616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 162
+          Height: 55
+          UIY: 2.42358398
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              R: 0.252
+              G: 0.0851125568
+              A: 1
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8825375063267874263
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2571470433466829616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -140
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              A: 0.232000008
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11539609540216247440
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2571470433466829616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -90
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 7615847344375253670
+            }
+            Color {
+              R: 1
+              G: 0.911920369
+              B: 0.3
+              A: 0.520000041
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15436953305284478397
+        Name: "CONFIRM"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2571470433466829616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 342
+          Height: 37
+          UIX: 3.0748291
+          UIY: -0.465148926
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "Claim Reward"
+            Color {
+              R: 1
+              G: 0.456411064
+              A: 1
+            }
+            Size: 27
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            ShadowColor {
+              A: 0.577
+            }
+            ShadowOffset {
+              X: -2
+              Y: 2
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 14060330023043759337
@@ -1550,6 +2245,24 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Checkmark"
+      }
+    }
+    Assets {
+      Id: 48307754774318265
+      Name: "UI Gradient Rectangular 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Shape_002"
+      }
+    }
+    Assets {
+      Id: 7615847344375253670
+      Name: "UI Basic Frame 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Frame_001"
       }
     }
     PrimaryAssetId {

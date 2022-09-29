@@ -110,7 +110,7 @@ function OnModalHidden(modal)
 		local player = Game.GetLocalPlayer()
 		Events.BroadcastToServer("MailboxClosed", player)
 		
-		Task.Wait(0.5)
+		Task.Wait(1.5)
 		TRIGGER.isInteractable = true
 		
 		SetState(STATE_DISABLED)

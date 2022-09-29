@@ -74,7 +74,7 @@ function SetRowStateDefault(row)
 	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
 	GET(row, "UIButton").visibility = Visibility.INHERIT
-	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
+	GET(row, "RewardPanel").visibility = Visibility.FORCE_OFF
 end
 
 function SetRowStateSelected(row)
@@ -83,7 +83,7 @@ function SetRowStateSelected(row)
 	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
 	GET(row, "UIButton").visibility = Visibility.INHERIT
-	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
+	GET(row, "RewardPanel").visibility = Visibility.FORCE_OFF
 end
 
 function SetRowStateCompleted(row)
@@ -92,16 +92,16 @@ function SetRowStateCompleted(row)
 	GET(row, "CompletedBorder").visibility = Visibility.INHERIT
 	GET(row, "CompletedIcon").visibility = Visibility.INHERIT
 	GET(row, "UIButton").visibility = Visibility.INHERIT
-	GET(row, "RewardButton").visibility = Visibility.FORCE_OFF
+	GET(row, "RewardPanel").visibility = Visibility.FORCE_OFF
 end
 
 function SetRowStateReward(row)
 	GET(row, "AutoNavIndicator").visibility = Visibility.FORCE_OFF
 	GET(row, "SelectedBorder").visibility = Visibility.FORCE_OFF
-	GET(row, "CompletedBorder").visibility = Visibility.INHERIT
+	GET(row, "CompletedBorder").visibility = Visibility.FORCE_OFF
 	GET(row, "CompletedIcon").visibility = Visibility.FORCE_OFF
 	GET(row, "UIButton").visibility = Visibility.FORCE_OFF
-	GET(row, "RewardButton").visibility = Visibility.INHERIT
+	GET(row, "RewardPanel").visibility = Visibility.INHERIT
 end
 
 
@@ -123,7 +123,7 @@ function OnRowButtonPressed(button)
 end
 
 function OnRewardButtonClicked(button)
-	local row = button.parent
+	local row = button.parent.parent
 	local obj = row.clientUserData.objective
 	
 	OnClaimReward(obj, row)
@@ -155,7 +155,11 @@ function SetupRow(row, obj)
 	local description = GET(row, "Description")
 	local counter = GET(row, "Counter")
 	
-	description.text = obj.description
+	if obj.hasReward then
+		description.text = "Completed!"
+	else
+		description.text = obj.description
+	end
 	
 	if obj.count <= 0 or obj.hasReward then
 		counter.visibility = Visibility.FORCE_OFF
@@ -238,10 +242,10 @@ function UpdateRowVerticalProperties(row)
 		row.height = row.height - counter.height
 	end
 
-	local rewardButton = GET(row, "RewardButton")
-	if rewardButton.visibility == Visibility.INHERIT then
-		local margin = GET(row, "Name").y
-		row.height = row.height + rewardButton.height + margin
+	local rewardPanel = GET(row, "RewardPanel")
+	if rewardPanel.visibility == Visibility.INHERIT then
+		--local margin = GET(row, "Name").y
+		row.height = row.height + rewardPanel.height-- + margin
 	end
 end
 
