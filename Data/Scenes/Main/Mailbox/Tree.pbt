@@ -6922,7 +6922,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "The lodge is magically protected, so the beasts can\'t get in. To easily enter and exit the lodge you\'ll need to craft a Map of Adventures.\r\n\r\nAttached to this letter you\'ll find a piece of map, to get started. You\'ll need three pieces, but I\'m sure there are more laying around. Good luck!"
+      Label: "The tavern is magically protected, so the beasts can\'t get in. To easily enter and exit the tavern you\'ll need to craft a Map of Adventures.\r\n\r\nAttached to this letter you\'ll find a piece of map, to get started. You\'ll need three pieces, but I\'m sure there are more laying around. Good luck!"
       Color {
         R: 0.070596
         G: 0.0860842
@@ -7350,7 +7350,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "Dear <player name>,\r\n\r\nYou\'re one of the first adventurers to visit our lodge. Welcome! Builders are still redecorating, but we hope you feel at home.\r\n\r\nWhen you\'re done looking around you might want to explore the outdoors. Watch out! There are wild beasts around. To protect yourself we\'ve left a few Loot Bags at the entrance, in case you didn\'t bring your own."
+      Label: "Dear <player name>,\r\n\r\nYou\'re one of the first adventurers to visit our tavern. Welcome! Builders are still redecorating, but we hope you feel at home.\r\n\r\nWhen you\'re done looking around you might want to explore the outdoors. Watch out! There are wild beasts around. To protect yourself we\'ve left a few Loot Bags at the entrance, in case you didn\'t bring your own."
       Color {
         R: 0.070596
         G: 0.0860842
