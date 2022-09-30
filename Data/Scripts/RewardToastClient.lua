@@ -61,6 +61,8 @@
 	
 ]]
 
+_G.RewardToast = script.context
+
 local UIPANEL = script:GetCustomProperty("UIPanel"):WaitForObject()
 local PROTOTYPE_ROW_LEGENDARY = script:GetCustomProperty("PrototypeRowLegendary"):WaitForObject()
 local PROTOTYPE_ROW_EPIC = script:GetCustomProperty("PrototypeRowEpic"):WaitForObject()
@@ -89,6 +91,16 @@ local defaultRowHeight = PROTOTYPE_ROW_LEGENDARY.height
 
 local activeRows = {}
 
+
+function ShowRewardToast(data)
+	AddRow(SetupRow(data))
+end
+Events.Connect(EVENT_NAME, ShowRewardToast)
+
+
+function IsBusy()
+	return #activeRows > 0
+end
 
 function Tick(deltaTime)
 	local y = 0
@@ -186,11 +198,6 @@ function RecycleRow(row)
 	local pool = allPools[prototypeRow]
 	table.insert(pool, row)
 end
-
-
-Events.Connect(EVENT_NAME, function(data)
-	AddRow(SetupRow(data))
-end)
 
 
 --[[ Debug Test

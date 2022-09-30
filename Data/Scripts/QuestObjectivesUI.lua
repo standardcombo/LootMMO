@@ -52,6 +52,8 @@ local STATE_SELECTED = 3
 local STATE_COMPLETED_1 = 4
 local STATE_COMPLETED_2 = 5
 local STATE_COMPLETED_3 = 6
+local STATE_CLAIMING_REWARD_1 = 7
+local STATE_CLAIMING_REWARD_2 = 8
 local currentState = STATE_HIDDEN
 local stateElapsedTime = 0
 
@@ -72,9 +74,14 @@ end
 
 function SetState(newState)
 	-- Exit state changes
-	if currentState == STATE_EXPANDED then
+	if currentState == STATE_EXPANDED 
+	and newState ~= STATE_CLAIMING_REWARD_1
+	then
 		_G.CursorStack.Disable()
 		FTUE_ARROW.visibility = Visibility.FORCE_OFF
+
+	elseif currentState == STATE_CLAIMING_REWARD_2 then
+		_G.CursorStack.Disable()
 	end
 	
 	-- Enter state changes
@@ -223,6 +230,32 @@ function Tick(deltaTime)
 				nextSelectedRow.y = CoreMath.Lerp(nextSelectedRow.y, 0, t / 3)
 			end
 		end
+
+	elseif currentState == STATE_CLAIMING_REWARD_1 then
+		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
+
+		if stateElapsedTime >= 2 then
+			fWidth = COLLAPSED_WIDTH
+			fHeight = COLLAPSED_HEIGHT
+			EXPANDING_PANEL.width = CoreMath.Round(fWidth)
+			EXPANDING_PANEL.height = CoreMath.Round(fHeight)
+			
+			CORNER_ARROW.x = COLLAPSED_WIDTH
+			CORNER_ARROW.y = COLLAPSED_HEIGHT
+			CORNER_ARROW.rotationAngle = 180
+			
+			KEY_BINDING_PANEL.opacity = 1
+			CONTENT_PANEL.opacity = 0
+
+			SetState(STATE_CLAIMING_REWARD_2)
+		end
+
+	elseif currentState == STATE_CLAIMING_REWARD_2 then
+		if _G.RewardToast == nil or not _G.RewardToast.IsBusy() then
+			SetState(STATE_COLLAPSED)
+			UpdateData()
+			SetState(STATE_EXPANDED)
+		end
 	end
 	
 	UpdateNotificationRing()
@@ -289,8 +322,10 @@ end
 
 function OnClaimReward(obj, uiRow)
 	--print("Claim reward for quest ".. obj.questId)
-	
-	_G.QuestController.ClaimReward(obj.questId) 
+
+	_G.QuestController.ClaimReward(obj.questId)
+
+	SetState(STATE_CLAIMING_REWARD_1)
 end
 
 
@@ -315,9 +350,9 @@ function UpdateContents()
 end
 
 function UpdateData()
-	if currentState == STATE_COMPLETED_1
-	or currentState == STATE_COMPLETED_2
-	or currentState == STATE_COMPLETED_3 then
+	if currentState >= STATE_COMPLETED_1
+	and currentState <= STATE_CLAIMING_REWARD_2
+	then
 		pendingUpdateData = true
 		return
 	end
