@@ -33,6 +33,7 @@ BADGE.visibility = Visibility.FORCE_OFF
 local badgeNotSeenCount = 0
 
 local notifRingMaxSize = NOTIFICATION_RING.width
+local hasClaimRewardRow = false
 
 local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
@@ -74,10 +75,10 @@ end
 
 function SetState(newState)
 	-- Exit state changes
-	if currentState == STATE_EXPANDED 
-	and newState ~= STATE_CLAIMING_REWARD_1
-	then
-		_G.CursorStack.Disable()
+	if currentState == STATE_EXPANDED then
+		if newState ~= STATE_CLAIMING_REWARD_1 then
+			_G.CursorStack.Disable()
+		end
 		FTUE_ARROW.visibility = Visibility.FORCE_OFF
 
 	elseif currentState == STATE_CLAIMING_REWARD_2 then
@@ -102,7 +103,7 @@ function SetState(newState)
 		
 		UpdateContents()
 		
-		if not _G.QuestController.HasCompleted(PLAYER, "Welcome") then
+		if not hasClaimRewardRow and not _G.QuestController.HasCompleted(PLAYER, "Map") then
 			FTUE_ARROW.visibility = Visibility.INHERIT
 		end
 		
@@ -338,8 +339,11 @@ function UpdateContents()
 	ACTIVE_GOALS_TITLE.text = "Active Goals: " .. #activeObjectives
 	
 	-- Add rows
+	hasClaimRewardRow = false
 	for _,obj in ipairs(activeObjectives) do
-		if not obj.hasReward then
+		if obj.hasReward then
+			hasClaimRewardRow = true
+		else
 			obj.hasSeen = true --Mark objective as seen
 		end
 		CONTENT_SCRIPT.context.AddObjective(obj)

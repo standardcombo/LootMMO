@@ -131,5 +131,104 @@ Assets {
         AssetId: "UI_Fantasy_Ingredient_046"
       }
     }
+    Assets {
+      Id: 16929179271829491253
+      Name: "Collect Coin Star Small 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_collect_small_star_coin_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 13399505430961501777
+      Name: "Object Wood Creak 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_object_wood_creak_02a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 3639146968089525924
+      Name: "Impact Metal Small SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_gun_impact_metal_sm"
+      }
+    }
+    Assets {
+      Id: 3376479110829751483
+      Name: "Bones Wood Pile Search Movement 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_bones_wood_pile_movement_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17772832387309513132
+      Name: "Leather Gear Clothing Whoosh 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_leather_clothing_whoosh_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 18391419457437296243
+      Name: "Magic Wind Blast Short 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_wind_blast_short_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 14541711280209132293
+      Name: "Cloth Fabric Flap Rustle 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_cloth_fabric_flap_rustle_02a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 8206260755773222118
+      Name: "Gear Equipment Cloth Military Grab Movement 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_gear_equipment_cloth_military_grab_movement_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 14011507185349241622
+      Name: "Game Coin Win 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_game_coin_win_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 2946094376087869745
+      Name: "Chest Gems Opening 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_chest_gems_opening_02_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 15919283088358522188
+      Name: "Footstep Metal Heavy Hollow 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_footstep_metal_heavy_hollow_01a_Cue_ref"
+      }
+    }
   }
 }

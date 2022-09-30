@@ -488,10 +488,11 @@ function _GrantReward(player, rewardInstruction)
 			print("Granting material: ".. key .." x".. amount)
 			Events.BroadcastToPlayer(player, "RewardToast", {
 				type = materialDef.rarity,
+				message = amount .." ".. materialDef.name,
 				icon = materialDef.icon,
 				flipH = materialDef.flipIconH,
 				flipV = materialDef.flipIconV,
-				message = amount .." ".. materialDef.name
+				sfx = materialDef.sfx,
 			})
 
 			-- TODO: Actually grant material
@@ -511,11 +512,16 @@ function _GrantReward(player, rewardInstruction)
 			print("Granting specific item: ".. instruction)
 			Events.BroadcastToPlayer(player, "RewardToast", {
 				type = itemDef.rarity,
+				message = itemDef.name,
 				icon = itemDef.icon,
 				flipH = itemDef.flipIconH,
 				flipV = itemDef.flipIconV,
-				message = itemDef.name
+				sfx = itemDef.sfx,
 			})
+
+			if _G.FoundItemCinematic and itemDef.itemAsset then
+				_G.FoundItemCinematic.Show(player, itemDef.itemAsset)
+			end
 
 			-- TODO: Actually grant item
 

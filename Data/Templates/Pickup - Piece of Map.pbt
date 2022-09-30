@@ -42,11 +42,8 @@ Assets {
         Name: "Fantasy Scroll Rolled 01"
         Transform {
           Location {
-            Z: 6.31640625
           }
           Rotation {
-            Pitch: -0.941009521
-            Roll: 0.49164328
           }
           Scale {
             X: 0.9

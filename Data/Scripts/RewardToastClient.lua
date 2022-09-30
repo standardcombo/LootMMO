@@ -22,10 +22,11 @@
 	where `data` has the schema:
 		{
 			type = "<Rarity>", ("Common", "Rare", "Epic" or "Legendary")
+			message = "<name of the reward or other text>",
 			icon = <UI image asset ID>,
 			flipH = <optional bool>, (flips the icon horizontally)
 			flipV = <optional bool>, (flips the icon vertically)
-			message = "<name of the reward or other text>"
+			sfx = <Audio asset ID>, (optional, played when the card appears)
 		}
 		
 	
@@ -36,9 +37,9 @@
 	function ShowCoinReward(player, amount)
 		local data = {
 			type = "Common",
+			message = amount .. " Coins",
 			icon = COIN_ICON,
 			flipH = true,
-			message = amount .. " Coins"
 		}
 		Events.BroadcastToPlayer(player, "RewardToast", data)
 	end
@@ -159,6 +160,16 @@ function SetupRow(data)
 	if data.message then
 		local rowText = row:GetCustomProperty("Message"):WaitForObject()
 		rowText.text = data.message
+	end
+
+	-- SFX
+	if data.sfx then
+		local sfx = World.SpawnAsset(data.sfx)
+		sfx.isSpatializationEnabled = false
+		sfx.isAttenuationEnabled = false
+		sfx.isOcclusionEnabled = false
+		sfx:Play()
+		sfx.lifeSpan = 2
 	end
 	
 	return row

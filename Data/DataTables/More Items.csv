@@ -1,2 +1,2 @@
-"id[String]","name[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","rarity[String]"
-"MapPiece","Piece of Map","BFB24174E47B826E","True","False","Rare"
+"id[String]","name[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","itemAsset[Asset Reference]","sfx[Asset Reference]","rarity[String]"
+"MapPiece","Piece of Map","BFB24174E47B826E","True","False","98DEAAE49D6C139A","9B11BE45A6398E3E","Rare"

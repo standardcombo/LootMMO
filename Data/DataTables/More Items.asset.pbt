@@ -14,5 +14,14 @@ Assets {
         AssetId: "UI_Fantasy_Equip_Scroll_001"
       }
     }
+    Assets {
+      Id: 11173921356833721918
+      Name: "Paper Page Turn Light 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_paper_page_turn_light_01a_Cue_ref"
+      }
+    }
   }
 }

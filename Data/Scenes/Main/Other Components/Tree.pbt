@@ -1,6 +1,50 @@
 Name: "Other Components"
 RootId: 12785624939370825655
 Objects {
+  Id: 7761162871175552815
+  Name: "Found Item Cinematic"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12785624939370825655
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9673760375168532882
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Found Item Cinematic"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16293405889891577506
+    }
+  }
+}
+Objects {
   Id: 4377753471889601812
   Name: "MMO Portal"
   Transform {
