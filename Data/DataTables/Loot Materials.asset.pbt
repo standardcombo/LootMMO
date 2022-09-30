@@ -6,6 +6,15 @@ Assets {
   DataTableAsset {
     HasKeyColumn: true
     Assets {
+      Id: 15463597562545228630
+      Name: "Fantasy Coins 009"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Coins_009"
+      }
+    }
+    Assets {
       Id: 9863944456523339614
       Name: "Fantasy Wood 003"
       PlatformAssetType: 9

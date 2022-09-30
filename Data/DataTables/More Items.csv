@@ -1,0 +1,2 @@
+"id[String]","name[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","rarity[String]"
+"MapPiece","Piece of Map","BFB24174E47B826E","False","False","Rare"

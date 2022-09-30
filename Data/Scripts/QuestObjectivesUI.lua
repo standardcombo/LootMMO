@@ -288,7 +288,9 @@ function OnObjectiveSelected(obj, uiRow)
 end
 
 function OnClaimReward(obj, uiRow)
-	print("Claim reward for quest ".. obj.questId)
+	--print("Claim reward for quest ".. obj.questId)
+	
+	_G.QuestController.ClaimReward(obj.questId) 
 end
 
 

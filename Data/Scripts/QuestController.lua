@@ -389,6 +389,7 @@ function CompleteQuest(player, questId)
 end
 
 function ProcessQuestUnlocks(player, questId)
+	local questData = API.GetQuest(questId)
 	local ids = SplitCommaSeparatedData(questData.unlocks)
 
 	for _,unlockId in ipairs(ids) do
@@ -403,13 +404,128 @@ function ProcessQuestUnlocks(player, questId)
 	end
 end
 
-function SplitCommaSeparatedData(data)
-	return {
-	    CoreString.Split(data, {
-	        delimiters = {","}, 
-	        removeEmptyResults = true
-	    })
-	}
+-- Client only
+function API.ClaimReward(questId)
+	--print("QuestController::ClaimReward()")
+	local player = Game.GetLocalPlayer()
+	local obj = API.GetQuestObjective(questId, 1)
+	if obj.hasReward then
+		Events.BroadcastToServer("Quest.ClaimReward", questId)
+	else
+		error("QuestController::ClaimReward() ".. questId .." is not available to claim.")
+	end
+end
+function _ClaimReward(player, questId)
+	--print("QuestController::_ClaimReward()")
+	if not Object.IsValid(player) then return end
+
+	if player.serverUserData.lockClaimReward then
+		warn("Already busy claiming rewards for ".. player.name)
+		return
+	end
+
+	local playerData = API.GetPlayerData(player)
+	if not playerData.rewards then
+		error("QuestController::_ClaimReward() ".. player.name .." has no rewards to claim.")
+	end
+
+	-- Make sure this reward is available for this player
+	local foundIt = false
+	for i,qId in ipairs(playerData.rewards) do
+		if qId == questId then
+			foundIt = true
+		end
+	end
+	if not foundIt then
+		error("QuestController::_ClaimReward() ".. player.name .." cannot claim ".. questId)
+	end
+
+	-- Lock the reward process for this player
+	player.serverUserData.lockClaimReward = true
+
+	-- Complete the claim
+	local questData = API.GetQuest(questId)
+	local rewards = SplitCommaSeparatedData(questData.rewards)
+	for _,rewardInstruction in ipairs(rewards) do
+		_GrantReward(player, rewardInstruction)
+		-- It's possible the player has left in the middle of reward sequence
+		if not Object.IsValid(player) then return end
+	end
+
+	-- Grab the player data again, in case it was changed by some other process
+	local playerData = API.GetPlayerData(player)
+
+	-- Clear this reward set
+	table.remove(playerData.rewards, i)
+	SetPlayerData(player, playerData)
+
+	-- Now that the quest is complete and claimed, unlock the next ones
+	ProcessQuestUnlocks(player, questId)
+
+	-- Save progress
+	SavePlayerData(player)
+
+	-- Release the lock on reward process for this player
+	player.serverUserData.lockClaimReward = nil
+end
+function _GrantReward(player, rewardInstruction)
+	local instruction, key, amount = CoreString.Split(rewardInstruction, {
+		delimiters = {"(","=",")"}, 
+		removeEmptyResults = true
+	})
+	if instruction == "Wait" then
+		local delay = tonumber(key)
+		if delay then
+			Task.Wait(delay)
+		else
+			warn("Failed to delay rewards with instruction: ".. rewardInstruction)
+		end
+
+	elseif instruction == "Material" then
+		local materialDef = _G["Items.Materials"].GetDefinition(key)
+		amount = tonumber(amount)
+		if materialDef and amount then
+			print("Granting material: ".. key .." x".. amount)
+			Events.BroadcastToPlayer(player, "RewardToast", {
+				type = materialDef.rarity,
+				icon = materialDef.icon,
+				flipH = materialDef.flipIconH,
+				flipV = materialDef.flipIconV,
+				message = amount .." ".. materialDef.name
+			})
+
+			-- TODO: Actually grant material
+
+		else
+			warn("Failed to grant material with instruction:".. rewardInstruction)
+		end
+	
+	elseif instruction == "RandomItem" then
+		print("TODO: Granting random item with ".. key .." ".. amount)
+		
+		-- TODO
+
+	else
+		local itemDef = _G["Items.More"].GetDefinition(instruction)
+		if itemDef then
+			print("Granting specific item: ".. instruction)
+			Events.BroadcastToPlayer(player, "RewardToast", {
+				type = itemDef.rarity,
+				icon = itemDef.icon,
+				flipH = itemDef.flipIconH,
+				flipV = itemDef.flipIconV,
+				message = itemDef.name
+			})
+
+			-- TODO: Actually grant item
+
+		else
+			warn("Failed to grant specific item with instruction:".. rewardInstruction)
+		end
+	end
+end
+if Environment.IsServer() then
+	Events.ConnectForPlayer("Quest.ClaimReward", _ClaimReward)
 end
 
 
@@ -538,6 +654,21 @@ if Environment.IsClient() then
 	end)
 end
 
+
+function SplitCommaSeparatedData(data)
+	-- Split with comma
+	local results = {
+	    CoreString.Split(data, {
+	        delimiters = {","}, 
+	        removeEmptyResults = true
+	    })
+	}
+	-- Trim whitespace
+	for i,entry in ipairs(results) do
+		results[i] = CoreString.Trim(entry)
+	end
+	return results
+end
 
 -- Cheat to reset quests. E.g.: "/reset quests MyName"
 function OnChatMessage(player, params)

@@ -23,6 +23,8 @@
 		{
 			type = "<Rarity>", ("Common", "Rare", "Epic" or "Legendary")
 			icon = <UI image asset ID>,
+			flipH = <optional bool>, (flips the icon horizontally)
+			flipV = <optional bool>, (flips the icon vertically)
 			message = "<name of the reward or other text>"
 		}
 		
@@ -35,6 +37,7 @@
 		local data = {
 			type = "Common",
 			icon = COIN_ICON,
+			flipH = true,
 			message = amount .. " Coins"
 		}
 		Events.BroadcastToPlayer(player, "RewardToast", data)
@@ -136,6 +139,8 @@ function SetupRow(data)
 	if data.icon then
 		local rowIcon = row:GetCustomProperty("Icon"):WaitForObject()
 		rowIcon:SetImage(data.icon)
+		rowIcon.isFlippedHorizontal = data.flipH or false
+		rowIcon.isFlippedVertical = data.flipV or false
 	end
 	
 	-- Message
