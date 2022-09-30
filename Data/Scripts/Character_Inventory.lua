@@ -1,5 +1,6 @@
 local COMPONET_DATATYPE = require(script:GetCustomProperty("ComponetDatatype"))
 local LOOTMMOINV = _G["Inventory.LootMMO"]
+local InventoryConstructor = _G["Inventory.Constructor"]
 local Equipment = _G["Equipment.Slots"].GetSlots()
 
 local itemconstruct = _G["Item.Constructor"]
@@ -140,6 +141,10 @@ function component:Deserialize(data)
 	if Environment.IsClient() then
 		local inventoryid = data.invId
 		if inventoryid then
+			while not World.FindObjectById(inventoryid) do
+				Task.Wait()
+
+			end
 			local inv = World.FindObjectById(inventoryid)
 			if inv then
 				setupInv(self, inv)

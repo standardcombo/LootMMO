@@ -3,16 +3,11 @@ local LOOT_INVENTORY_SPAWN = script:GetCustomProperty("Loot_Inventory_Spawn")
 local SpawnedInventories = {}
 
 local function AddInventory(curInventory)
-	table.insert(SpawnedInventories, curInventory)
+	SpawnedInventories[curInventory.id] = curInventory
 end
 
 local function RemoveInventory(curInventory)
-	for i = #SpawnedInventories, 1, -1 do
-		if SpawnedInventories[i] == curInventory then
-			table.remove(SpawnedInventories, i)
-			return
-		end
-	end
+	SpawnedInventories[curInventory.id] = nil
 end
 
 local inventory = {
@@ -164,6 +159,7 @@ function inventoryConstuctor.NewInventory(Inventory)
 		end
 	end
 	newInventory._inventory = Inventory
+	newInventory.id = newInventory._inventory.id
 	newInventory.slotCount = newInventory._inventory.slotCount
 	newInventory._inventory.destroyEvent:Connect(
 		function()
@@ -178,17 +174,31 @@ function inventoryConstuctor.NewInventory(Inventory)
 	return newInventory
 end
 
-function inventoryConstuctor.GetInventoryFromInventory(inv)
-	for index, value in ipairs(SpawnedInventories) do
-		if value == inv then
+function inventoryConstuctor.FindInventoryFromInventory(inv)
+	for index, value in pairs(SpawnedInventories) do
+		if value._inventory == inv then
 			return value
 		end
 	end
 end
 
-local Inventories = World.FindObjectsByType("Inventory")
-for key, newInventory in pairs(Inventories) do
-	inventoryConstuctor.NewInventory(newInventory)
+function inventoryConstuctor.WaitForInventory(id)
+	while not SpawnedInventories[id] do
+		Task.Wait()
+	end
+	return SpawnedInventories[id]
 end
 
 _G["Inventory.Constructor"] = inventoryConstuctor
+
+
+function Tick()
+	local Inventories = World.FindObjectsByType("Inventory")
+	for key, newInventory in pairs(Inventories) do
+		if not inventoryConstuctor.FindInventoryFromInventory(newInventory) then
+			inventoryConstuctor.NewInventory(newInventory)
+		end
+	end
+
+	Task.Wait(.5)
+end
