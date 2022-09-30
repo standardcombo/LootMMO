@@ -12,6 +12,9 @@ function API.GetDefinition(id)
 	end
 	return definitions[id]
 end
- 
+function API.GetDefinitions()
+	return definitions
+end
+
 
 _G["Items.Materials"] = API

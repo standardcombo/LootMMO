@@ -1,6 +1,6 @@
 Assets {
   Id: 9744249410050366803
-  Name: "incense"
+  Name: "Incense"
   PlatformAssetType: 33
   SerializationVersion: 118
   VirtualFolderPath: "Loot"

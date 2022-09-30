@@ -1854,46 +1854,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17574902056164028310
-  Name: "Item Data Loader"
-  Transform {
-    Location {
-      X: 31311.1699
-      Y: 2048.46
-      Z: 14333.2715
-    }
-    Rotation {
-      Yaw: 163.949905
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12921599339423611859
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Item Data Loader_1"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 18019850451161943482
   Name: "Items"
   Transform {
@@ -2678,6 +2638,46 @@ Objects {
     ScriptAsset {
       Id: 3246225468712893077
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17574902056164028310
+  Name: "Item Data Loader"
+  Transform {
+    Location {
+      X: 31311.1699
+      Y: 2048.46
+      Z: 14333.2715
+    }
+    Rotation {
+      Yaw: 163.949905
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12921599339423611859
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Item Data Loader_1"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

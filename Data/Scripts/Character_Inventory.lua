@@ -1,6 +1,8 @@
 local COMPONET_DATATYPE = require(script:GetCustomProperty("ComponetDatatype"))
 local LOOTMMOINV = _G["Inventory.LootMMO"]
 local Equipment = _G["Equipment.Slots"].GetSlots()
+
+local itemconstruct = _G["Item.Constructor"]
 local component =
 setmetatable(
 	{
@@ -19,7 +21,7 @@ setmetatable(
 	{ __index = COMPONET_DATATYPE }
 )
 component.id = "Inventory"
-component.inventorySize = 45+8
+component.inventorySize = 45 + 8
 
 local function setupInv(self, inventory)
 	self._inventory = LOOTMMOINV.NewInventory(inventory)
@@ -74,7 +76,7 @@ function component:Destroy()
 	COMPONET_DATATYPE.Destroy(self)
 
 	if Environment.IsServer() then
-		if self:GetInventory() then 
+		if self:GetInventory() then
 			self:GetInventory():Destroy()
 		end
 	end
@@ -82,20 +84,28 @@ end
 
 function component:CalculateInventory()
 	local TotalStats = {}
-	for key, slot in ipairs(self.equipment) do
-		if slot and slot.contents then
-			local item = slot.contents
-			if item then
-				local calculation = item:CalculateStats()
-				for key, value in pairs(calculation) do
-					if not TotalStats[key] then
-						TotalStats[key] = 0
-					end
-					TotalStats[key] = TotalStats[key] + value
+	local inv = self:GetInventory()
+
+	for i = 1, #Equipment do
+		local invitem = inv:GetItem(i)
+		if invitem then
+
+			local item = itemconstruct.New({
+				item = invitem.name,
+				order = invitem:GetCustomProperty("Order"),
+				greatness = invitem:GetCustomProperty("Greatness")
+			})
+
+			local calculation = item:CalculateStats()
+			for key, value in pairs(calculation) do
+				if not TotalStats[key] then
+					TotalStats[key] = 0
 				end
+				TotalStats[key] = TotalStats[key] + value
 			end
 		end
 	end
+	TotalStats["H"] = (TotalStats["H"] or 0) + 100
 	return TotalStats
 end
 
@@ -106,10 +116,20 @@ function component:Serialize()
 	for key, value in pairs(self.resources) do
 		data.resources[key] = value
 	end
-	for key, value in ipairs(self.slots) do
-		local item = value:GetContent()
-		if item and not item.isBag then
-			data.inventory[key] = value:Serialize()
+	local inv = self:GetInventory()
+	for i = 1, inv.slotCount do
+		local item = inv:GetItem(i)
+		if item then
+			local save = true
+			--Need To check if player owns a NFT
+			if item:GetCustomProperty("IsBag") then
+				save = false
+			end
+			if save then
+				local slotdata = { index = i, count = item.count, asset = item.itemAssetId,
+					customProperties = item:GetCustomProperties() }
+				table.insert(data.inventory, slotdata)
+			end
 		end
 	end
 	return data
@@ -126,7 +146,9 @@ function component:Deserialize(data)
 			end
 		end
 	end
+	local inv = self:GetInventory()
 	for index, value in ipairs(data.inventory or {}) do
+		inv:AddItem(value.asset, { count = value.count, customProperties = value.customProperties, slot = value.index })
 	end
 	for key, value in pairs(data.resources or {}) do
 		self.resources[key] = value

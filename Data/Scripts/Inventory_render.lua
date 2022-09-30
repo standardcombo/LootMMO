@@ -1,18 +1,20 @@
 local EquipAPI = _G["Character.EquipAPI"]
-local LOCAL_PLAYER = Game.GetLocalPlayer()
-local SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
-local ITEMS = _G.Items
 local MATERIALS = _G["Items.Materials"]
+local ITEMS = _G.Items
+
+local SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
+
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 HOVERDATA = {
 	icon = HOVER_PANEL:FindDescendantByName("Icon"),
 	name = HOVER_PANEL:FindChildByName("Name"),
-	stats = HOVER_PANEL:FindChildByName("Stats"),
+	stats = HOVER_PANEL:FindChildByName("Stats")
 }
 DragData = {
-	icon = DRAG_PANEL:FindChildByName("Icon"),
+	icon = DRAG_PANEL:FindChildByName("Icon")
 }
 
 HOVER_PANEL.visibility = Visibility.FORCE_OFF
@@ -22,8 +24,6 @@ local events = nil
 local currentInventory = nil
 local slots = {}
 local isDraging = nil
-
-
 
 local function SetImage(panel, icon, itemdata)
 	panel.isFlippedHorizontal = itemdata["flipIconH"] or false
@@ -35,17 +35,18 @@ local function RealeaseEvent(slot)
 	if not currentInventory then
 		return
 	end
-	if not isDraging then return end
+	if not isDraging then
+		return
+	end
 	DRAG_PANEL.visibility = Visibility.FORCE_OFF
-
 
 	local dropPos = Input:GetCursorPosition()
 
 	--Check if hovering over a slot
 	for index, panel in ipairs(SLOTS) do
-		local minwidth  = panel.width / 2
+		local minwidth = panel.width / 2
 		local minheight = panel.width / 2
-		local abspo     = panel:GetAbsolutePosition()
+		local abspo = panel:GetAbsolutePosition()
 		--check width
 		if dropPos.x <= abspo.x + minwidth and dropPos.x >= abspo.x - minwidth then
 			--check height
@@ -56,7 +57,6 @@ local function RealeaseEvent(slot)
 				return
 			end
 		end
-
 	end
 	isDraging = nil
 end
@@ -84,7 +84,9 @@ local function UnhoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDraging then return end
+	if isDraging then
+		return
+	end
 	HOVER_PANEL.visibility = Visibility.FORCE_OFF
 end
 
@@ -92,7 +94,9 @@ local function HoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDraging then return end
+	if isDraging then
+		return
+	end
 	local item = currentInventory:GetItem(slot.index)
 	if item then
 		local itemdata = ITEMS.GetDefinition(item.name) or MATERIALS.GetDefinition(item.name)
@@ -103,61 +107,88 @@ local function HoverSlot(slot)
 		local childstats = HOVERDATA.stats
 		local childIcon = HOVERDATA.icon
 		SetImage(childIcon, icon, itemdata)
-		HOVERDATA.name.text = string.format("%s %s | Greatness %d",
-			item.name,
-			item:GetCustomProperty("Order"),
-			item:GetCustomProperty("Greatness"))
-		HOVER_PANEL.visibility = Visibility.FORCE_ON
 
-		local itemClass = _G["Item.Constructor"].New(
-			{
-				item = item.name,
-				order = item.order,
-				greatness = item.greatness
-			})
+		if item:GetCustomProperty("Greatness") then
+			HOVERDATA.name.text =
+			string.format(
+				"%s %s | Greatness %d",
+				item.name,
+				item:GetCustomProperty("Order"),
+				item:GetCustomProperty("Greatness")
+			)
 
-		if itemClass then
-			local calculationStats = itemClass:CalculateStats()
+			local itemClass =
+			_G["Item.Constructor"].New(
+				{
+					item = item.name,
+					order = item.order,
+					greatness = item.greatness
+				}
+			)
 
-			local Stats = {
-				['Wisdom'] = calculationStats['W'],
-				['Agility'] = calculationStats['A'],
-				['Vitality'] = calculationStats['V'],
-				['Attack Power'] = calculationStats['AP'],
-				['Skill Power'] = calculationStats['SP'],
-				['Skill Resist'] = calculationStats['SR'],
-				['Block'] = calculationStats['B'],
-				['Health'] = calculationStats['H']
-			}
-			local ChatString = ''
-			local count = 0
-			for key, value in pairs(Stats) do
-				if value > 0 then
-					count = count + 1
-				end
-			end
-			for key, value in pairs(Stats) do
-				if value > 0 then
-					ChatString = ChatString .. string.format('+%d %s', value, key)
-					count = count - 1
-					if count > 0 then
-						ChatString = ChatString .. '\n'
+			if itemClass then
+				local calculationStats = itemClass:CalculateStats()
+
+				local Stats = {
+					["Wisdom"] = calculationStats["W"],
+					["Agility"] = calculationStats["A"],
+					["Vitality"] = calculationStats["V"],
+					["Attack Power"] = calculationStats["AP"],
+					["Skill Power"] = calculationStats["SP"],
+					["Skill Resist"] = calculationStats["SR"],
+					["Block"] = calculationStats["B"],
+					["Health"] = calculationStats["H"]
+				}
+				local ChatString = ""
+				local count = 0
+				for key, value in pairs(Stats) do
+					if value > 0 then
+						count = count + 1
 					end
 				end
-			end
+				for key, value in pairs(Stats) do
+					if value > 0 then
+						ChatString = ChatString .. string.format("+%d %s", value, key)
+						count = count - 1
+						if count > 0 then
+							ChatString = ChatString .. "\n"
+						end
+					end
+				end
 
-			childstats.text = ChatString
+				childstats.text = ChatString
+			else
+				childstats.text = ""
+			end
 		else
-			childstats.text = ""
+			HOVERDATA.name.text = item.name
+			childstats.text = itemdata.description
 		end
+		HOVER_PANEL.visibility = Visibility.FORCE_ON
 	end
 end
 
 local function HookUpButton(slot)
-	slot.Button.hoveredEvent:Connect(function() HoverSlot(slot) end)
-	slot.Button.unhoveredEvent:Connect(function() UnhoverSlot(slot) end)
-	slot.Button.pressedEvent:Connect(function() DragSlot(slot) end)
-	slot.Button.releasedEvent:Connect(function() RealeaseEvent(slot) end)
+	slot.Button.hoveredEvent:Connect(
+		function()
+			HoverSlot(slot)
+		end
+	)
+	slot.Button.unhoveredEvent:Connect(
+		function()
+			UnhoverSlot(slot)
+		end
+	)
+	slot.Button.pressedEvent:Connect(
+		function()
+			DragSlot(slot)
+		end
+	)
+	slot.Button.releasedEvent:Connect(
+		function()
+			RealeaseEvent(slot)
+		end
+	)
 end
 
 for index, value in ipairs(SLOTS) do
@@ -169,7 +200,6 @@ for index, value in ipairs(SLOTS) do
 	slots[index].Button = value:FindChildByName("Button")
 	HookUpButton(slots[index])
 end
-
 
 local function InventoryChanged(inv, slot)
 	local item = inv:GetItem(slot)
@@ -203,11 +233,15 @@ end
 
 local function dataUpdated(character)
 	if character then
-		if events then events:Disconnect() end
+		if events then
+			events:Disconnect()
+		end
 		events = nil
 		local inventory = character:GetComponent("Inventory")
 		local newInventory = inventory:GetInventory()
-		if not newInventory then return end
+		if not newInventory then
+			return
+		end
 		for i, item in ipairs(slots) do
 			item.count.text = ""
 		end
@@ -217,7 +251,6 @@ local function dataUpdated(character)
 		currentInventory = newInventory
 		events = newInventory.changedEvent:Connect(InventoryChanged)
 	end
-
 end
 
 local function CharacterEquipped(character, player)
@@ -227,7 +260,6 @@ local function CharacterEquipped(character, player)
 			dataUpdated(character)
 		end
 	end
-
 end
 
 local function CharacterUnequip(character, player)

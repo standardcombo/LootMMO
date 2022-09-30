@@ -18,7 +18,23 @@ local function GetCategoryFromItemData(itemdata)
 	return (itemdata or {})["category"]
 end
 
+local function FindItemFromAssetId(assetid)
+	for key, entry in pairs(Items.GetDefinitions()) do
+		local templateSplit = CoreString.Split(entry["itemAsset"] or '', ':')
+		if templateSplit == assetid then
+			return entry
+		end
+	end
+	for key, entry in pairs(Materials.GetDefinitions()) do
+		local templateSplit = CoreString.Split(entry["itemAsset"] or '', ':')
+		if templateSplit == assetid then
+			return entry
+		end
+	end
+end
+
 function Slot:isAcceptingType(type)
+	type = type or ""
 	if not self then
 		return true
 	end
@@ -32,18 +48,14 @@ function Slot:isAcceptingType(type)
 			return true
 		end
 	end
-	return
-end
-
-function Slot:IsFree()
-	return #self.contents == 0
+	return false
 end
 
 function Slot:CanAddItem(item)
 	if not item then return true end
-	local itemdata = GetItemDataFromItem(item)
+	local itemdata = FindItemFromAssetId(item)
+	if not itemdata then return Slot.isAcceptingType(self, nil) end
 	local category = GetCategoryFromItemData(itemdata)
-	if not category then return true end
 	return Slot.isAcceptingType(self, category)
 end
 
@@ -51,7 +63,7 @@ local function FindFreeSlot(inventory, item)
 	for i = 1, inventory.slotCount, 1 do
 		local data = inventory.slotData[i] or {}
 		data.index = i
-		if Slot.CanAddItem(data, item) then
+		if Slot.CanAddItem(data, item) and inventory._inventory:CanAddItem(item, { slot = i }) then
 			return i
 		end
 	end
@@ -59,8 +71,8 @@ end
 
 function lootmmoInv:MoveFromSlot(fromSlot, toSlot, parameters)
 	if not (fromSlot or toSlot) then return end
-	local toSlotAccept = Slot.CanAddItem(self.slotData[toSlot] or {}, self:GetItem(fromSlot))
-	local fromSlotAccept = Slot.CanAddItem(self.slotData[fromSlot] or {}, self:GetItem(toSlot))
+	local toSlotAccept = Slot.CanAddItem(self.slotData[toSlot] or {}, (self:GetItem(fromSlot) or {}).itemAssetId)
+	local fromSlotAccept = Slot.CanAddItem(self.slotData[fromSlot] or {}, (self:GetItem(toSlot) or {}).itemAssetId)
 	if fromSlotAccept and toSlotAccept then
 		if Environment.IsClient() then
 			Events.BroadcastToServer('inventory.move', fromSlot, toSlot)
@@ -70,12 +82,27 @@ function lootmmoInv:MoveFromSlot(fromSlot, toSlot, parameters)
 	end
 end
 
+function lootmmoInv:AddItem(item, properties)
+	if not item then return false end
+	properties = properties or {}
+	properties.slot = properties.slot or FindFreeSlot(self, item)
+	local canAdd = Slot.CanAddItem(self.slotData[properties.slot] or {}, item) and
+		self._inventory:CanAddItem(item, properties)
+	if canAdd then
+		return self._inventory:AddItem(item, properties)
+	else
+		return false
+	end
+end
+
 function lootmmoInv:PickUpItem(item, properties)
-	local slot = FindFreeSlot(self, item)
-	if slot then
-		local customProperties = item:GetCustomProperties()
-		self:AddItem(item.itemAssetId, { customProperties = customProperties, slot = slot })
-		item:Destroy()
+	properties = properties or {}
+	properties.slot = properties.slot or FindFreeSlot(self, item.itemAssetId)
+	if properties.slot then
+		properties.customProperties = item:GetCustomProperties()
+		if self:AddItem(item.itemAssetId, properties) then
+			item:Destroy()
+		end
 	end
 end
 

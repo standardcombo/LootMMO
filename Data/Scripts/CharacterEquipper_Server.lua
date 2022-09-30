@@ -7,7 +7,7 @@ function UpdateCharacter(player, character)
 	local newData = { id = character.id, components = {} }
 
 	for index, component in ipairs(character:GetComponents()) do
-		if component.autoNetorked then 
+		if component.autoNetorked then
 			local componentData = component:Serialize()
 			local ComponentWrapper = { data = componentData, id = component.id }
 			table.insert(newData.components, ComponentWrapper)
@@ -15,7 +15,7 @@ function UpdateCharacter(player, character)
 	end
 
 	local Inventory = character:GetComponent("Inventory")
-	table.insert(newData.components, { data = { invId = Inventory.invId },id =  "Inventory" })
+	table.insert(newData.components, { data = { invId = Inventory.invId }, id = "Inventory" })
 
 	player:SetPrivateNetworkedData(networkKey, newData)
 end
@@ -45,7 +45,7 @@ function EquipCharacter(character, player)
 			end
 
 			stats.statsUpdatedEvent:Connect(Update)
-			progression.progressionUpdated:Connect(Update)
+			progression.progressionUpdatedEvent:Connect(Update)
 			points.pointChangedEvent:Connect(Update)
 		end
 	)

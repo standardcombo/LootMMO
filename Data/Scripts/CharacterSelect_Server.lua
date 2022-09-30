@@ -82,10 +82,6 @@ function SelectCharacter(player, characterId)
 			newCharacter:SetOwner(player)
 			newCharacter.autoSave = true
 			newCharacter.removeOwnerEvent:Connect(Save)
-			local class = newCharacter:GetComponent('Class')
-			if class then
-				class:EquipOwner()
-			end
 			Acknowledge(player)
 			return
 		end
