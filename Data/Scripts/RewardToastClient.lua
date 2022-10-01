@@ -211,7 +211,7 @@ function RecycleRow(row)
 end
 
 
-----[[ Debug Test
+--[[ Debug Test
 Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
 	if action == "ability_extra_1" then
 		Events.Broadcast(EVENT_NAME, {type = "Common", message = "13 Coins"})
