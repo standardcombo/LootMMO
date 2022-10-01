@@ -19,14 +19,16 @@ function Tick(deltaTime)
 		return
 	end
 	
-	local playerForward = Quaternion.New(player:GetWorldRotation()):GetForwardVector()
-	local viewForward = Quaternion.New(localPlayer:GetViewWorldRotation()):GetForwardVector()
-	local dot = playerForward .. viewForward
+	local targetScale = Vector3.ONE * 0.001
 	
-	if dot < -0.5 then
-		targetScale = defaultScale
-	else
-		targetScale = Vector3.ONE * 0.001
+	if not _G.RewardToast or not _G.RewardToast.IsBusy() then
+		local playerForward = Quaternion.New(player:GetWorldRotation()):GetForwardVector()
+		local viewForward = Quaternion.New(localPlayer:GetViewWorldRotation()):GetForwardVector()
+		local dot = playerForward .. viewForward
+		
+		if dot < -0.5 then
+			targetScale = defaultScale
+		end
 	end
 	local t = CoreMath.Clamp(deltaTime * SCALE_LERP_SPEED)
 	local scale = UICONTAINER:GetScale()
