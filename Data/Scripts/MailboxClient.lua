@@ -10,6 +10,7 @@ local PAGE_2 = script:GetCustomProperty("Page2"):WaitForObject()
 local BODY_PAGE_1 = script:GetCustomProperty("BodyPage1"):WaitForObject()
 local NEXT_BUTTON = script:GetCustomProperty("NextButton"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+local OPEN_CLOSE_SFX = script:GetCustomProperty("OpenCloseSfx"):WaitForObject()
 
 local DEFAULT_HEIGHT = MAIN_PANEL.height
 local CLOSED_HEIGHT = 210
@@ -41,6 +42,9 @@ function SetState(newState)
 	elseif newState == STATE_ENTERING then
 		pageIndex = 1
 		CLOSE_BUTTON.visibility = Visibility.FORCE_OFF
+		
+	elseif newState == STATE_OPENING or newState == STATE_CLOSING then
+		OPEN_CLOSE_SFX:Play()
 		
 	elseif newState == STATE_IDLE then
 		CLOSE_BUTTON.visibility = Visibility.INHERIT

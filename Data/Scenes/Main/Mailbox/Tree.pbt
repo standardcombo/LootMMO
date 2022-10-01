@@ -5825,6 +5825,7 @@ Objects {
   ParentId: 4473118265913920115
   ChildIds: 5394929468944980122
   ChildIds: 5245677135291053936
+  ChildIds: 17867615546499109197
   ChildIds: 10263082590651957135
   ChildIds: 7271997927761344076
   Collidable_v2 {
@@ -8378,9 +8379,6 @@ Objects {
   Name: "ModalPopup"
   Transform {
     Location {
-      X: 5176.57764
-      Y: 4816.86768
-      Z: -3614.47144
     }
     Rotation {
     }
@@ -8391,8 +8389,8 @@ Objects {
     }
   }
   ParentId: 8427355225445480562
-  ChildIds: 13757937652970991120
-  ChildIds: 17418064052824353731
+  ChildIds: 2915468332278123563
+  ChildIds: 12871727446909838753
   UnregisteredParameters {
     Overrides {
       Name: "cs:MainPanel"
@@ -8415,18 +8413,23 @@ Objects {
     Overrides {
       Name: "cs:OpenSFX"
       ObjectReference {
-        SelfId: 13757937652970991120
+        SelfId: 2915468332278123563
       }
     }
     Overrides {
       Name: "cs:CloseSFX"
       ObjectReference {
-        SelfId: 17418064052824353731
       }
     }
     Overrides {
       Name: "cs:OffScreenY"
       Int: 1150
+    }
+    Overrides {
+      Name: "cs:HideSFX"
+      ObjectReference {
+        SelfId: 12871727446909838753
+      }
     }
   }
   Collidable_v2 {
@@ -8452,11 +8455,10 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17418064052824353731
-  Name: "Clunky Click 01 SFX"
+  Id: 12871727446909838753
+  Name: "Shuriken Ninja Star Throw Single Whoosh Quick 01 SFX"
   Transform {
     Location {
-      Z: 200
     }
     Rotation {
     }
@@ -8481,9 +8483,10 @@ Objects {
   }
   AudioInstance {
     AudioAsset {
-      Id: 11237709767285311165
+      Id: 15321249241325591677
     }
-    Volume: 0.499315917
+    Pitch: -2400
+    Volume: 0.505941868
     Falloff: -1
     Radius: -1
   }
@@ -8493,8 +8496,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13757937652970991120
-  Name: "Paper Book Open Close Page 01 SFX"
+  Id: 2915468332278123563
+  Name: "Vehicle Car Metal Hatch Trunk Hood Open 01 SFX"
   Transform {
     Location {
     }
@@ -8521,9 +8524,50 @@ Objects {
   }
   AudioInstance {
     AudioAsset {
-      Id: 9052120726638191387
+      Id: 18265360347966998957
     }
     Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17867615546499109197
+  Name: "Paper Book Open Close Page Heavy 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8427355225445480562
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 11662873085306562279
+    }
+    Pitch: 156.066895
+    Volume: 0.589229763
     Falloff: -1
     Radius: -1
   }
@@ -8643,6 +8687,12 @@ Objects {
       Name: "cs:CloseButton"
       ObjectReference {
         SelfId: 17620708729067122005
+      }
+    }
+    Overrides {
+      Name: "cs:OpenCloseSfx"
+      ObjectReference {
+        SelfId: 17867615546499109197
       }
     }
   }
