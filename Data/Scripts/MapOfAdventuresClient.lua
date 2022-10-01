@@ -111,6 +111,9 @@ function UpdateContents()
 	if selectedIndex > #maps then
 		selectedIndex = #maps
 	end
+	if selectedIndex < 1 then
+		selectedIndex = 1
+	end
 	UpdateMapVisibility()
 end
 
