@@ -73,7 +73,7 @@ local PROTOTYPE_ROW_COMMON = script:GetCustomProperty("PrototypeRowCommon"):Wait
 local EVENT_NAME = "RewardToast" --Pass data table {type, icon, message}
 
 local DURATION = 3
-local FADE_TIME = 1
+local FADE_TIME = 0.5
 local LERP_SPEED = 10
 
 local allPools = {}
@@ -100,7 +100,7 @@ Events.Connect(EVENT_NAME, ShowRewardToast)
 
 
 function IsBusy()
-	return #activeRows > 0
+	return #activeRows > 0 and activeRows[1].clientUserData.time <= DURATION
 end
 
 function Tick(deltaTime)
@@ -211,7 +211,7 @@ function RecycleRow(row)
 end
 
 
---[[ Debug Test
+----[[ Debug Test
 Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
 	if action == "ability_extra_1" then
 		Events.Broadcast(EVENT_NAME, {type = "Common", message = "13 Coins"})
