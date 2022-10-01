@@ -2045,6 +2045,11 @@ Objects {
     }
   }
   ParentId: 3789761133958952025
+  ChildIds: 2291709633148053230
+  ChildIds: 17157434636111921179
+  ChildIds: 9113065484069056153
+  ChildIds: 8045652443392822233
+  ChildIds: 8588786384466101774
   UnregisteredParameters {
     Overrides {
       Name: "cs:ExpandingPanel"
@@ -2109,6 +2114,36 @@ Objects {
         SelfId: 11110449205593308975
       }
     }
+    Overrides {
+      Name: "cs:CloseSfx"
+      ObjectReference {
+        SelfId: 17157434636111921179
+      }
+    }
+    Overrides {
+      Name: "cs:OpenSfx"
+      ObjectReference {
+        SelfId: 2291709633148053230
+      }
+    }
+    Overrides {
+      Name: "cs:SelectSfx"
+      ObjectReference {
+        SelfId: 9113065484069056153
+      }
+    }
+    Overrides {
+      Name: "cs:CompletedSfx"
+      ObjectReference {
+        SelfId: 8045652443392822233
+      }
+    }
+    Overrides {
+      Name: "cs:ClaimRewardSfx"
+      ObjectReference {
+        SelfId: 8588786384466101774
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2126,6 +2161,214 @@ Objects {
     ScriptAsset {
       Id: 14376857709793608507
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8588786384466101774
+  Name: "Meta Fantasy Treasure 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5560465332125477510
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 9756110827734052030
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8045652443392822233
+  Name: "Get Coin Positive and Musical 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5560465332125477510
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 15756196271582531748
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9113065484069056153
+  Name: "Button Click Select Core 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5560465332125477510
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 4086413340843985472
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17157434636111921179
+  Name: "Chest Normal Close 01 SFX"
+  Transform {
+    Location {
+      X: -6918.44482
+      Y: -1450.24023
+      Z: 49635.1562
+    }
+    Rotation {
+      Yaw: 154.105545
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5560465332125477510
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 11525833470848627655
+    }
+    Volume: 0.401832
+    Falloff: -1
+    Radius: -1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2291709633148053230
+  Name: "Sail Flag Parachute Cloth Open 01 SFX"
+  Transform {
+    Location {
+      X: -6918.44482
+      Y: -1450.24023
+      Z: 49635.1562
+    }
+    Rotation {
+      Yaw: 154.105545
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5560465332125477510
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 16932470960206363953
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

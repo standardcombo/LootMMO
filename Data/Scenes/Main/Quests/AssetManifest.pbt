@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16932470960206363953
+  Name: "Sail Flag Parachute Cloth Open 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_sail_flag_parachute_cloth_open_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 16577896491837673141
   Name: "Outline Object"
   PlatformAssetType: 20
@@ -32,6 +41,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_019"
+  }
+}
+Assets {
+  Id: 15756196271582531748
+  Name: "Get Coin Positive and Musical 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_get_coin_musical_Cue_ref"
   }
 }
 Assets {
@@ -53,12 +71,39 @@ Assets {
   }
 }
 Assets {
+  Id: 11525833470848627655
+  Name: "Chest Normal Close 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_chest_normal_close_01_Cue_ref"
+  }
+}
+Assets {
   Id: 11336346532215892341
   Name: "Germania One"
   PlatformAssetType: 28
   PrimaryAsset {
     AssetType: "FontAssetRef"
     AssetId: "GermaniaOneRegular_ref"
+  }
+}
+Assets {
+  Id: 9756110827734052030
+  Name: "Meta Fantasy Treasure 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_meta_fantasy_treasure_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 4086413340843985472
+  Name: "Button Click Select Core 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfxui_click_core_01_Cue_ref"
   }
 }
 Assets {

@@ -13,6 +13,12 @@ local COLLAPSED_HEIGHT = script:GetCustomProperty("CollapsedHeight")
 local NOTIFICATION_RING = script:GetCustomProperty("NotificationRing"):WaitForObject()
 local FTUE_ARROW = script:GetCustomProperty("FTUEArrow"):WaitForObject()
 
+local OPEN_SFX = script:GetCustomProperty("OpenSfx"):WaitForObject()
+local CLOSE_SFX = script:GetCustomProperty("CloseSfx"):WaitForObject()
+local SELECT_SFX = script:GetCustomProperty("SelectSfx"):WaitForObject()
+local COMPLETED_SFX = script:GetCustomProperty("CompletedSfx"):WaitForObject()
+local CLAIM_REWARD_SFX = script:GetCustomProperty("ClaimRewardSfx"):WaitForObject()
+
 local LERP_SPEED = 12
 local PLAYER = Game.GetLocalPlayer()
 
@@ -60,10 +66,14 @@ local stateElapsedTime = 0
 
 
 function Expand()
+	OPEN_SFX:Play()
+	
 	SetState(STATE_EXPANDED)
 end
 
 function Collapse()
+	CLOSE_SFX:Play()
+	
 	if selectedRow then
 		selectedRow = CONTENT_SCRIPT.context.GetSelectedRow()
 		SetState(STATE_SELECTED)
@@ -113,7 +123,7 @@ function SetState(newState)
 		selectedRow:SetAbsolutePosition(pos)
 		
 	elseif newState == STATE_COMPLETED_1 then
-		-- nothing
+		COMPLETED_SFX:Play()
 		
 	elseif newState == STATE_COMPLETED_2 then
 		if nextSelectedRow then
@@ -325,7 +335,9 @@ function OnClaimReward(obj, uiRow)
 	--print("Claim reward for quest ".. obj.questId)
 
 	_G.QuestController.ClaimReward(obj.questId)
-
+	
+	CLAIM_REWARD_SFX:Play()
+	
 	SetState(STATE_CLAIMING_REWARD_1)
 end
 
@@ -456,7 +468,10 @@ PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
 
 Task.Wait()
-CONTENT_SCRIPT.context.OnObjectiveSelected = OnObjectiveSelected
+CONTENT_SCRIPT.context.OnObjectiveSelected = function(obj, uiRow)
+	SELECT_SFX:Play()
+	OnObjectiveSelected(obj, uiRow)
+end
 CONTENT_SCRIPT.context.OnClaimReward = OnClaimReward
 
 

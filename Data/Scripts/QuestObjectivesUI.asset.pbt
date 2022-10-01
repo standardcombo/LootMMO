@@ -62,6 +62,31 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:OpenSfx"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:CloseSfx"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:SelectSfx"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:CompletedSfx"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:ClaimRewardSfx"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 118
