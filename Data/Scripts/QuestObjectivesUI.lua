@@ -142,6 +142,9 @@ function SetState(newState)
 			-- Change the state of the row
 			CONTENT_SCRIPT.context.SetRowStateSelected(nextSelectedRow)
 		end
+		
+	elseif newState == STATE_CLAIMING_REWARD_1 then
+		BADGE.visibility = Visibility.FORCE_OFF
 	end
 	currentState = newState
 	stateElapsedTime = 0
@@ -423,7 +426,11 @@ function UpdateData()
 		end
 	end
 	
-	UpdateBadge()
+	if currentState ~= STATE_CLAIMING_REWARD_1
+	and currentState ~= STATE_CLAIMING_REWARD_2
+	then
+		UpdateBadge()
+	end
 	
 	-- State change
 	if currentState == STATE_HIDDEN and badgeNotSeenCount > 0 then

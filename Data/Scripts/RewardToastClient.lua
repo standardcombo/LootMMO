@@ -72,7 +72,7 @@ local PROTOTYPE_ROW_COMMON = script:GetCustomProperty("PrototypeRowCommon"):Wait
 
 local EVENT_NAME = "RewardToast" --Pass data table {type, icon, message}
 
-local DURATION = 3
+local DURATION = 2.5
 local FADE_TIME = 0.5
 local LERP_SPEED = 10
 
