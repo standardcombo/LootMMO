@@ -44,15 +44,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15756196271582531748
-  Name: "Get Coin Positive and Musical 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_get_coin_musical_Cue_ref"
-  }
-}
-Assets {
   Id: 14060330023043759337
   Name: "BG Flat 001"
   PlatformAssetType: 9
@@ -95,6 +86,15 @@ Assets {
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_meta_fantasy_treasure_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 6853712688803748720
+  Name: "Combo Achievement Bright Bell Stingers Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_stinger_combo_achievement_bright_bell_01_ref"
   }
 }
 Assets {

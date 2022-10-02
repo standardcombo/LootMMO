@@ -74,8 +74,12 @@ end
 function Collapse()
 	CLOSE_SFX:Play()
 	
+	-- Update the row to make sure we have the latest data
 	if selectedRow then
 		selectedRow = CONTENT_SCRIPT.context.GetSelectedRow()
+	end
+	if selectedRow then
+		selectedObjective = selectedRow.clientUserData.objective
 		SetState(STATE_SELECTED)
 	else
 		SetState(STATE_COLLAPSED)

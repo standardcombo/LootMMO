@@ -2048,7 +2048,7 @@ Objects {
   ChildIds: 2291709633148053230
   ChildIds: 17157434636111921179
   ChildIds: 9113065484069056153
-  ChildIds: 8045652443392822233
+  ChildIds: 1326845343122254425
   ChildIds: 8588786384466101774
   UnregisteredParameters {
     Overrides {
@@ -2133,15 +2133,15 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:CompletedSfx"
-      ObjectReference {
-        SelfId: 8045652443392822233
-      }
-    }
-    Overrides {
       Name: "cs:ClaimRewardSfx"
       ObjectReference {
         SelfId: 8588786384466101774
+      }
+    }
+    Overrides {
+      Name: "cs:CompletedSfx"
+      ObjectReference {
+        SelfId: 1326845343122254425
       }
     }
   }
@@ -2208,8 +2208,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8045652443392822233
-  Name: "Get Coin Positive and Musical 01 SFX"
+  Id: 1326845343122254425
+  Name: "Combo Achievement Bright Bell Stingers Set 01 SFX"
   Transform {
     Location {
     }
@@ -2234,13 +2234,17 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  AudioInstance {
-    AudioAsset {
-      Id: 15756196271582531748
+  Blueprint {
+    BlueprintAsset {
+      Id: 6853712688803748720
     }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
+    TeamSettings {
+    }
+    AudioBP {
+      Volume: 1
+      Falloff: 3600
+      Radius: 400
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
