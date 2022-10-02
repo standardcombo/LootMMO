@@ -3476,7 +3476,7 @@ Objects {
 }
 Objects {
   Id: 9128374752185856310
-  Name: "1"
+  Name: "Shift"
   Transform {
     Scale {
       X: 1
@@ -3508,14 +3508,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "UIX"
-          Float: -250
-        }
-        Overrides {
-          Name: "UIY"
-          Float: -50
         }
       }
     }

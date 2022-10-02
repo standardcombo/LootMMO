@@ -12,6 +12,7 @@ end
 local function StatsUpdated(character, inventory, stats)
 	local newStats = inventory:CalculateInventory()
 	stats:SetStats(newStats)
+	stats:SetTempStats(newStats)
 end
 
 local function InventoryUpdated(inv, i)

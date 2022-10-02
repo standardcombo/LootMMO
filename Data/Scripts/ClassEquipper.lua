@@ -10,74 +10,65 @@ local EquipmentKeys = {
 	'3',
 	'4'
 }
-function EquipOwner()
-	if Environment.IsClient() then
-		return 'Cannot Equip From Client!'
-	end
-	local owner = self.owner:GetOwner()
-	local progression = self.owner:GetComponent('Progression')
-	if not owner then
-		self:UnequipOwner()
-		return
-	end
-	hasSpawned = true
 
-end
-
-function UnequipOwner()
-	if Environment.IsClient() then
-		return 'Cannot Unequip From Client!'
-	end
-	hasSpawned = false
-	for key, value in pairs(self.spawnedEquipment) do
-		if Object.IsValid(value) then
-			value:Destroy()
-		end
-	end
-	spawnedEquipment = {}
-end
-
-function GetSpawned()
-	return spawnedEquipment
-end
-
-local function ProgressionChanged(character, player)
-
-end
 
 local function UnEquipClass(character, player)
-	for key, value in pairs(spawnedEquipment[character] or {}) do
+	for key, value in ipairs(spawnedEquipment[character.id] or {}) do
 		if Object.IsValid(value) then
 			value:Destroy()
 		end
 	end
-	spawnedEquipment[character] = nil
+	spawnedEquipment[character.id] = nil
 end
 
 local function EquipClass(character, player)
 	local class = character:GetComponent("Class")
 	local progression = character:GetComponent("Progression")
 	local classtable = class:GetClassTable()
-	spawnedEquipment[character] = {}
+	spawnedEquipment[character.id] = {}
 	for i = 1, 5 do
-		if not Object.IsValid(spawnedEquipment[character][i])
+		if not Object.IsValid(spawnedEquipment[character.id][i])
 			and progression:GetProgressionKey('AbilitySlot' .. i)
 			and progression:GetProgressionKey('AcceptSlot' .. i) then
 			local equip = Equipper.EquipEquipment(player, classtable['Ability' .. tostring(i)], EquipmentKeys[i])
-			spawnedEquipment[character][i] = equip
+			spawnedEquipment[character.id][i] = equip
 		end
 	end
 
 end
 
-local function playerEquipped(character, player)
+local function ProgressionChanged(progression, key, character, player)
+	local AcceptedProgression = {
+		["AcceptSlot1"] = true,
+		["AcceptSlot2"] = true,
+		["AcceptSlot3"] = true,
+		["AcceptSlot4"] = true,
+		["AcceptSlot5"] = true,
+	}
+	if AcceptedProgression[key] then
+		EquipClass(character, player)
+	end
+end
+
+local function classChanged(character, player)
+
+	UnEquipClass(character, player)
 	EquipClass(character, player)
 end
 
-local function playerUnequipped(character, player)
+local function playerEquipped(character, player)
+	UnEquipClass(character, player)
 	local class = character:GetComponent("Class")
-	UnEquipClass(class, player)
+	local progression = character:GetComponent("Progression")
+	class.classChangedEvent:Connect(function()
+		classChanged(character, player)
+	end)
+	progression.progressionUpdatedEvent:Connect(function(progression, key)
+		ProgressionChanged(progression, key, character, player)
+	end)
+	EquipClass(character, player)
+
 end
 
 EquipApi.playerEquippedEvent:Connect(playerEquipped)
-EquipApi.playerUnequippedEvent:Connect(playerUnequipped)
+EquipApi.playerUnequippedEvent:Connect(UnEquipClass)

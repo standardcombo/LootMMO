@@ -84,18 +84,29 @@ function component:Destroy()
 end
 
 function component:CalculateInventory()
-	local TotalStats = {}
+	local TotalStats = {
+		["B"] = 0,
+		["A"] = 0,
+		["W"] = 0,
+		["V"] = 0,
+		["H"] = 0,
+		["AP"] = 0,
+		["SR"] = 0,
+		["SP"] = 0
+	}
 	local inv = self:GetInventory()
 
 	for i = 1, #Equipment do
 		local invitem = inv:GetItem(i)
 		if invitem then
-
-			local item = itemconstruct.New({
-				item = invitem.name,
-				order = invitem:GetCustomProperty("Order"),
-				greatness = invitem:GetCustomProperty("Greatness")
-			})
+			local item =
+			itemconstruct.New(
+				{
+					item = invitem.name,
+					order = invitem:GetCustomProperty("Order"),
+					greatness = invitem:GetCustomProperty("Greatness")
+				}
+			)
 
 			local calculation = item:CalculateStats()
 			for key, value in pairs(calculation) do
@@ -127,8 +138,12 @@ function component:Serialize()
 				save = false
 			end
 			if save then
-				local slotdata = { index = i, count = item.count, asset = item.itemAssetId,
-					customProperties = item:GetCustomProperties() }
+				local slotdata = {
+					index = i,
+					count = item.count,
+					asset = item.itemAssetId,
+					customProperties = item:GetCustomProperties()
+				}
 				table.insert(data.inventory, slotdata)
 			end
 		end
@@ -143,7 +158,6 @@ function component:Deserialize(data)
 		if inventoryid then
 			while not World.FindObjectById(inventoryid) do
 				Task.Wait()
-
 			end
 			local inv = World.FindObjectById(inventoryid)
 			if inv then

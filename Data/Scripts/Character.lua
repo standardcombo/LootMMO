@@ -20,6 +20,7 @@ local character = {
 	owner = nil,
 	name = 'Default',
 	id = 1,
+	autoSave = false,
 	lastPlayed = DateTime.FromSecondsSinceEpoch(1)
 }
 function character:AddComponent(componentName)
@@ -127,13 +128,6 @@ end
 
 function InitCharacter(NewCharacter)
 	local stats = NewCharacter:GetComponent('Stats')
-	stats:SetStat('W', 0)
-	stats:SetStat('A', 0)
-	stats:SetStat('V', 0)
-	stats:SetStat('AP', 0)
-	stats:SetStat('SP', 0)
-	stats:SetStat('SR', 0)
-	stats:SetStat('B', 0)
 	stats:SetStat('H', 100)
 	local level = NewCharacter:GetComponent('Level')
 	level.levelUpEvent:Connect(

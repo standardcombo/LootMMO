@@ -23,13 +23,10 @@ function API.GetCurrentCharacter(player)
 end
 
 function API.UnequipCharacter(player)
-	if not player:IsA('Player') then
-		return
-	end
 	local currentlyEquipped = API.GetCurrentCharacter(player)
 	local bypas = EnvironmentBypas()
 	player[bypas].CurrentCharacter = nil
-	if currentlyEquipped and currentlyEquipped:GetOwner() == player then
+	if currentlyEquipped then
 		currentlyEquipped:RemoveOwner()
 		API.playerUnequippedEvent:Trigger(currentlyEquipped, player)
 	end

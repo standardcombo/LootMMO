@@ -34,5 +34,15 @@ local function ResourceChanged(player, resourceId, newValue)
 	end
 end
 
+function UpdateOnEquip(char, player)
+	if player == LOCAL_PLAYER then
+		for key, value in ipairs(LOCAL_PLAYER:GetResourceNamesStartingWith('ST')) do
+			ResourceChanged(LOCAL_PLAYER, value, LOCAL_PLAYER:GetResource(value))
+		end
+	end
+end
+
+EquipAPI.playerEquippedEvent:Connect(UpdateOnEquip)
+
 LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(UpdatedEvent)
 LOCAL_PLAYER.resourceChangedEvent:Connect(ResourceChanged)

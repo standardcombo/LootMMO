@@ -15,6 +15,7 @@ function UpdatedEvent(stats, player)
 end
 
 local function UpdateResource(stats, player)
+
 	if not Object.IsValid(player) then
 		return
 	end
@@ -37,6 +38,10 @@ function PlayerEquipped(character, player)
 		return
 	end
 	local stat = character:GetComponent('Stats')
+	local stats = stat:GetStats()
+	UpdateResourceTemp(stats, player)
+	UpdateResource(stats, player)
+
 	stat.tempStatsUpdatedEvent:Connect(
 		function(_, stats)
 			UpdateResourceTemp(stats, player)

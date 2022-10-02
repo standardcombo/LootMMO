@@ -3,7 +3,9 @@ local COMPONET_DATATYPE = require(script:GetCustomProperty('ComponetDatatype'))
 local component =
 setmetatable(
 	{
-
+		eventElements = {
+			'classChangedEvent',
+		}
 	},
 	{ __index = COMPONET_DATATYPE }
 )
@@ -13,11 +15,16 @@ component.requiredComponents = {
 	'Progression'
 }
 component.autoNetorked = true
+
 function component:SetClass(Class)
 	if not Class then
 		Class = 'None'
 	end
+	local oldClass = (self.class or {})['ClassIdentifier']
 	self.Class = CLASSAPI.GetClass(Class)
+	if oldClass ~= Class then
+		self.TriggerEvent(self.classChangedEvent, Class)
+	end
 	assert(self.Class, 'No class Found')
 end
 
@@ -29,18 +36,19 @@ function component:GetClassTable()
 end
 
 function component:IsMainClass()
-	return self.Class['MainClass'] == self.Class['ClassIdentifier']
+	return self:GetClassTable()['MainClass'] == self:GetClassTable()['ClassIdentifier']
+end
+
+function component:HasClass()
+	return self:GetClassTable()['ClassIdentifier'] ~= "None"
 end
 
 function component:GetMainClass()
-	return self.Class['MainClass']
+	return self:GetClassTable()['MainClass']
 end
 
 function component:GetClass()
-	if not self.Class then
-		self:SetClass('None')
-	end
-	return self.Class['ClassIdentifier']
+	return self:GetClassTable()['ClassIdentifier']
 end
 
 function component:Serialize()

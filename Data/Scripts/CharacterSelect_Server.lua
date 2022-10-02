@@ -2,7 +2,6 @@ while not _G['Character.EquipAPI'] do
 	Task.Wait()
 end
 local CSave = _G['Character.SaveApi']
-local EAPI = _G['Character.EquipAPI']
 
 local CHARACTERCONSTUCT = _G['Character.Constructor']
 local ReturnCall = 'RCcall'
@@ -60,17 +59,11 @@ function Acknowledge(player)
 	Events.BroadcastToPlayer(player, ReturnCall)
 end
 
-local function Save(character, player)
-	if not (character and player) then
-		return
+function UpdatePlayersDataOnRemove(character, player)
+	Task.Wait()
+	if Object.IsValid(player) then
+		UpdatePlayerData(player)
 	end
-	if not character.autoSave == true then
-		return
-	end
-	local level = character:GetComponent('Level')
-	character.lastPlayed = DateTime.CurrentTime()
-	CSave.SavePlayerCharacter(player, character)
-	UpdatePlayerData(player)
 end
 
 function SelectCharacter(player, characterId)
@@ -81,7 +74,7 @@ function SelectCharacter(player, characterId)
 			newCharacter:Deserialize(value)
 			newCharacter:SetOwner(player)
 			newCharacter.autoSave = true
-			newCharacter.removeOwnerEvent:Connect(Save)
+			newCharacter.removeOwnerEvent:Connect(UpdatePlayersDataOnRemove)
 			Acknowledge(player)
 			return
 		end
@@ -93,7 +86,7 @@ function NewCharacter(player)
 	local currentCharacter = CHARACTERCONSTUCT.NewCharacter()
 	currentCharacter:SetOwner(player)
 	currentCharacter.autoSave = true
-	currentCharacter.removeOwnerEvent:Connect(Save)
+	currentCharacter.removeOwnerEvent:Connect(UpdatePlayersDataOnRemove)
 	Acknowledge(player)
 	UpdatePlayerData(player)
 end
@@ -103,22 +96,11 @@ function DeleteCharacter(player, characterId)
 	UpdatePlayerData(player)
 end
 
-function AutoSave(player)
-	local character = EAPI.GetCurrentCharacter(player)
-	if character then
-		if character.autoSave then
-			Save(character, player)
-		end
-		character:Destroy()
-	end
-end
-
 for key, player in pairs(Game.GetPlayers()) do
 	PlayerJoined(player)
 end
 
 Game.playerJoinedEvent:Connect(PlayerJoined)
-Game.playerLeftEvent:Connect(AutoSave)
 
 Events.ConnectForPlayer(SelectCharacterEvent, SelectCharacter)
 Events.ConnectForPlayer(NewCharacterEvent, NewCharacter)

@@ -9,6 +9,8 @@ local lootmmoInv = {}
 local Slot = {}
 
 
+
+
 local function GetItemDataFromItem(item)
 	if not item then return end
 	return Materials.GetDefinition(item.name) or Items.GetDefinition(item.name)

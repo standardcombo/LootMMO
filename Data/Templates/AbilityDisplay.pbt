@@ -7,7 +7,7 @@ Assets {
       RootId: 4105394437550983763
       Objects {
         Id: 4105394437550983763
-        Name: "1"
+        Name: "Shift"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8711270503988986415
+        ParentId: 2501417716296683687
         ChildIds: 5301451474606042301
         ChildIds: 7644282853577937863
         ChildIds: 2431106150639058608
@@ -41,8 +41,8 @@ Assets {
         Control {
           Width: 100
           Height: 100
-          UIX: -225
-          UIY: -75
+          UIX: -250
+          UIY: -50
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -845,19 +845,22 @@ Assets {
             }
           }
           Text {
-            Label: "5"
+            Label: "999"
             Color {
               R: 1
               G: 1
               B: 1
               A: 1
             }
-            Size: 30
+            Size: 20
             Justification {
               Value: "mc:etextjustify:center"
             }
             ClipTextToSize: true
             Font {
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
             }
           }
           AnchorLayout {
@@ -1876,10 +1879,6 @@ Assets {
         Id: 2622678239030900609
         Name: "StarRatingDisplay"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -1887,6 +1886,12 @@ Assets {
           }
         }
         ParentId: 4105394437550983763
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
         TemplateInstance {
           ParameterOverrideMap {
             key: 1582364714300165545
@@ -1905,30 +1910,6 @@ Assets {
                 Rotator {
                 }
               }
-              Overrides {
-                Name: "UIX"
-                Float: -28.407
-              }
-              Overrides {
-                Name: "UIY"
-                Float: 19.9837646
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
-                }
-              }
-              Overrides {
-                Name: "Width"
-                Int: 24
-              }
-              Overrides {
-                Name: "Height"
-                Int: 24
-              }
             }
           }
           ParameterOverrideMap {
@@ -1938,24 +1919,6 @@ Assets {
                 Name: "cs:Root"
                 ObjectReference {
                   SubObjectId: 4105394437550983763
-                }
-              }
-              Overrides {
-                Name: "cs:Offset"
-                Int: 1
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 9183470350948336639
-            value {
-              Overrides {
-                Name: "Color"
-                Color {
-                  R: 1
-                  G: 1
-                  B: 1
-                  A: 1
                 }
               }
             }
@@ -2000,15 +1963,15 @@ Assets {
               }
               Overrides {
                 Name: "UIY"
-                Float: 29.9239502
+                Float: 31.7388306
               }
               Overrides {
                 Name: "Width"
-                Int: 24
+                Int: 16
               }
               Overrides {
                 Name: "Height"
-                Int: 24
+                Int: 16
               }
             }
           }
@@ -2085,7 +2048,7 @@ Assets {
               }
               Overrides {
                 Name: "UIY"
-                Float: 18.265564
+                Float: 20.0804443
               }
               Overrides {
                 Name: "Scale"
@@ -2097,11 +2060,11 @@ Assets {
               }
               Overrides {
                 Name: "Width"
-                Int: 24
+                Int: 16
               }
               Overrides {
                 Name: "Height"
-                Int: 24
+                Int: 16
               }
             }
           }

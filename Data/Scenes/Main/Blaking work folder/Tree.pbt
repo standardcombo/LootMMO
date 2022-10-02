@@ -16,7 +16,6 @@ Objects {
   }
   ParentId: 15515718211942672915
   ChildIds: 13804872117946282211
-  ChildIds: 3762385627674705658
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -35,43 +34,6 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3762385627674705658
-  Name: "Input_UI_Connection"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3993525529671177181
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 13419876937528545067
     }
   }
   NetworkRelevanceDistance {
@@ -103,6 +65,7 @@ Objects {
   ChildIds: 4073222782475126796
   ChildIds: 5069843302656993193
   ChildIds: 4204878463086576470
+  ChildIds: 3762385627674705658
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -146,6 +109,47 @@ Objects {
         }
       }
     }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3762385627674705658
+  Name: "Input_UI_Connection"
+  Transform {
+    Location {
+      X: 14735.1484
+      Y: -10351.8828
+      Z: -13100
+    }
+    Rotation {
+      Yaw: 157.500031
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13804872117946282211
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 13419876937528545067
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -4487,7 +4491,6 @@ Objects {
         R: 0.00346875028
         G: 0.00312500028
         B: 0.00500000035
-        A: 1
       }
       TeamSettings {
       }
@@ -5064,8 +5067,6 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: 7.5
-    UIY: 7.5
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -7548,8 +7549,6 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: 7.5
-    UIY: 7.5
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -41274,6 +41273,79 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 5806465597144932493
+  Name: "Character AutoSave"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15515718211942672915
+  ChildIds: 17247138500301710676
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17247138500301710676
+  Name: "Character_AutoSave"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5806465597144932493
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4869393409251262569
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 15576014623177363701
   Name: "EquipmentEquipper"
   Transform {
@@ -41288,6 +41360,7 @@ Objects {
     }
   }
   ParentId: 15515718211942672915
+  ChildIds: 8138784858589748172
   ChildIds: 5207984145688523303
   ChildIds: 2873036559636250852
   Collidable_v2 {
@@ -41377,6 +41450,43 @@ Objects {
   Script {
     ScriptAsset {
       Id: 17285934925408891118
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8138784858589748172
+  Name: "PointsSpentHook"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15576014623177363701
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 5292521385556981970
     }
   }
   NetworkRelevanceDistance {

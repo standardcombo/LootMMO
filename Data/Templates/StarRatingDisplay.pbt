@@ -15,7 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8711270503988986415
+        ParentId: 2907068384698550826
+        ChildIds: 6447098519888050571
         ChildIds: 9183470350948336639
         ChildIds: 2784576212819582176
         Collidable_v2 {
@@ -31,8 +32,10 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 32
-          Height: 32
+          Width: 16
+          Height: 16
+          UIX: -28.407
+          UIY: 21.798645
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -43,6 +46,75 @@ Assets {
             OpacityMaskBrush {
               Id: 841534158063459245
             }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6447098519888050571
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1582364714300165545
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 4
+          Height: 4
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 7608871351729600570
+            }
+            Color {
+              A: 0.433000028
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -118,12 +190,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:topleft"
+                Value: "mc:euianchor:middlecenter"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:topleft"
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }
@@ -151,6 +223,16 @@ Assets {
             ObjectReference {
               SubObjectId: 9183470350948336639
             }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SelfId: 2907068384698550826
+            }
+          }
+          Overrides {
+            Name: "cs:Offset"
+            Int: 1
           }
         }
         Collidable_v2 {

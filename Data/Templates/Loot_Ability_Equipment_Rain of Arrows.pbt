@@ -83,6 +83,10 @@ Assets {
                   Z: 1
                 }
               }
+              Overrides {
+                Name: "CastDuration"
+                Float: 0.3
+              }
             }
           }
           TemplateAsset {
@@ -293,6 +297,14 @@ Assets {
             ObjectReference {
               SubObjectId: 16648077234985388346
             }
+          }
+          Overrides {
+            Name: "cs:AlignToNormal"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:AlignToRotation"
+            Bool: false
           }
         }
         Collidable_v2 {

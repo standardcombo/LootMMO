@@ -25,10 +25,11 @@ function Tick()
 		local NewValue = Value
 		if Value > TrueValue then
 			NewValue = math.max(TrueValue, Value - COOL_DOWN_RATE)
+			component:SetTempStat(STAT, NewValue)
 		elseif Value < TrueValue then
 			NewValue = math.min(TrueValue, Value + RECOVERY_RATE)
+			component:SetTempStat(STAT, NewValue)
 		end
-		component:SetTempStat(STAT, NewValue)
 	end
 	Task.Wait(1)
 end
