@@ -19,9 +19,10 @@ modifiers['Damage'].calculation = function(stats)
 	return 76 + stats.A * 0.1
 end
 
-modifiers['Cooldown'].calString = "11 - stats.W * 0.002"
+-- Star Rating is used by using stats[ability name]
+modifiers['Cooldown'].calString = "11 - stats.W * 0.002- (stats['Landslide'] /2)"
 modifiers['Cooldown'].calculation = function(stats)
-	return 11 - stats.W * 0.002
+	return 11 - stats.W * 0.002 - (stats['Landslide'] / 2)
 end
 
 modifiers['BashRadius'].calString = "1.2 + stats.A * 0.001"
