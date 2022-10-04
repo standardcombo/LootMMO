@@ -98,11 +98,11 @@ end
 
 
 -- Client/Server
-function API.GetUnlockedQuests(player)
+function API.GetUnlockedMapQuests(player)
 	local playerData = API.GetPlayerData(player)
 	local results = {}
-	if playerData and playerData.unlocked then
-		for _,id in ipairs(playerData.unlocked) do
+	if playerData and playerData.map then
+		for _,id in ipairs(playerData.map) do
 			local questData = QUEST_METADATA[id]
 			if questData then
 				table.insert(results, questData)
@@ -262,8 +262,8 @@ end
 
 
 -- Server only
-function API.UnlockForPlayer(player, questId)
-	--print("QuestController::UnlockForPlayer() "..player.name..","..questId)
+function API.UnlockMapForPlayer(player, questId)
+	--print("QuestController::UnlockMapForPlayer() "..player.name..","..questId)
 	local quest = QUEST_METADATA[questId]
 	if not quest then
 		error("Cannot unlock quest ".. tostring(questId) .." because no such quest exists.")
@@ -274,16 +274,16 @@ function API.UnlockForPlayer(player, questId)
 		return
 	end
 	local playerData = API.GetPlayerData(player)
-	if not playerData.unlocked then
-		playerData.unlocked = {}
+	if not playerData.map then
+		playerData.map = {}
 	end
-	for _,entry in ipairs(playerData.unlocked) do
+	for _,entry in ipairs(playerData.map) do
 		if entry == questId then
-			warn(player.name .." has already unlocked ".. questId)
+			warn(player.name .." has already unlocked map ".. questId)
 			return
 		end
 	end
-	table.insert(playerData.unlocked, questId)
+	table.insert(playerData.map, questId)
 	
 	SetPlayerData(player, playerData)
 end
@@ -397,7 +397,7 @@ function ProcessQuestUnlocks(player, questId)
 		
 		local quest = QUEST_METADATA[unlockId]
 		if quest and quest.mapContent then
-			API.UnlockForPlayer(player, unlockId)
+			API.UnlockMapForPlayer(player, unlockId)
 		else
 			API.ActivateForPlayer(player, unlockId)
 		end
@@ -611,7 +611,7 @@ local function LoadPlayerData(player)
 			active = {}
 			--Fake data:
 			--complete = {"Welcome"},
-			--unlocked = {"Raid1"},
+			--map = {"Beast1"},
 			--active = {{id="Map",n=2}}
 		}
 	end

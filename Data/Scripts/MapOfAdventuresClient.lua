@@ -79,7 +79,7 @@ end
 
 
 function UpdateContents()
-	local quests = _G.QuestController.GetUnlockedQuests(PLAYER)
+	local quests = _G.QuestController.GetUnlockedMapQuests(PLAYER)
 	--print("MapOfAdventurersClient::UpdateContents() quests: ".. #quests)
 	
 	-- Check if it's still the same as before
