@@ -41,7 +41,7 @@ function Execute()
         targetPosition.z = targetPosition.z - 100
     end
 
-    local ImpulseRadius = 200
+    local ImpulseRadius = mod["Radius"]
     local vfxScale = Vector3.New(CoreMath.Round(ImpulseRadius / 50, 3))
 
     local trapTemplate = SPAWN_VFX
