@@ -30,6 +30,7 @@ Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 		if quest then
 			-- Activate the map quest
 			_G.QuestController.ActivateForPlayer(player, quest.id)
+			_G.QuestController.SavePlayerData(player)
 			
 			-- See if the player should be teleported or transferred
 			if _G.QuestController.IsLocalGame(quest) then

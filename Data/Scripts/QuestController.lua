@@ -386,7 +386,7 @@ function CompleteQuest(player, questId)
 		ProcessQuestUnlocks(player, questId)
 	end
 	
-	SavePlayerData(player)
+	API.SavePlayerData(player)
 end
 
 function ProcessQuestUnlocks(player, questId)
@@ -464,7 +464,7 @@ function _ClaimReward(player, questId)
 	ProcessQuestUnlocks(player, questId)
 
 	-- Save progress
-	SavePlayerData(player)
+	API.SavePlayerData(player)
 
 	-- Release the lock on reward process for this player
 	player.serverUserData.lockClaimReward = nil
@@ -583,7 +583,7 @@ local function PatchData(playerData)
 	return playerData
 end
 
-function SavePlayerData(player)
+function API.SavePlayerData(player)
 	if not Object.IsValid(player) then return end
 	if player.serverUserData.isLoadingQuestData then return end
 	
