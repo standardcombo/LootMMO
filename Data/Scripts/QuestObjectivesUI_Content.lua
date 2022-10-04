@@ -19,9 +19,6 @@ function GET(obj, key)
 	return property
 end
 
--- Callback to parent UI, informing an objective was selected
--- <objective table, row UIPanel>
-OnObjectiveSelected = nil
 
 -- Callback to parent UI, informing a reward was claimed
 -- <objective table, row UIPanel>
@@ -118,8 +115,8 @@ function OnRowButtonPressed(button)
 		end
 	end
 	
-	-- Inform the change to the parent UI
-	OnObjectiveSelected(obj, row)
+	-- Tell the quest system to select this objective
+	_G.QuestController.SelectObjective(Game.GetLocalPlayer(), obj)
 end
 
 function OnRewardButtonClicked(button)
@@ -257,4 +254,14 @@ function RecycleRow(row)
 end
 RecycleRow(ROW_PROTOTYPE)
 
+
+function FindRowForObjective(obj)
+	for _,row in ipairs(rows) do
+		local rowObj = row.clientUserData.objective
+		if rowObj == obj then
+			return row
+		end
+	end
+	return nil
+end
 

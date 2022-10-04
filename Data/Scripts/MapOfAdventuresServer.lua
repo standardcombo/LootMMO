@@ -24,8 +24,8 @@ Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 
 		Events.Broadcast("Quest.Map", player, "Play")
 		
-		local unlockedQuests = _G.QuestController.GetUnlockedMapQuests(player)
-		local quest = unlockedQuests[selectedIndex]
+		local mapQuests = _G.QuestController.GetUnlockedMapQuests(player)
+		local quest = mapQuests[selectedIndex]
 		
 		if quest then
 			-- Activate the map quest

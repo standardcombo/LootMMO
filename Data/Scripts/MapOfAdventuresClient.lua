@@ -28,9 +28,14 @@ function Play()
 	PLAY_SFX:Play()
 	Events.BroadcastToServer("Map.Play", selectedIndex)
 	Events.Broadcast("FadeOut", 5)
+
+	local questData = maps[selectedIndex].clientUserData.quest
+	local obj = questData.objectives[1]
 	
 	Task.Wait(1.25)
 	
+	_G.QuestController.SelectObjective(PLAYER, obj)
+
 	isAwaitingTransfer = false
 	ExitFocus()
 	Events.Broadcast("FadeIn", 5)

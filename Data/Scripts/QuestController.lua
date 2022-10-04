@@ -316,6 +316,7 @@ end
 
 -- Server only
 function API.AdvanceObjective(player, questId, objectiveIndex)
+	--print("QuestController::AdvanceObjective() "..player.name..","..questId..","..objectiveIndex)
 	local quest = QUEST_METADATA[questId]
 	if not quest then
 		error("Cannot advance quest ".. tostring(questId) .." because no such quest exists.")
@@ -631,6 +632,7 @@ local function FireLocalQuestChangedEvent(player)
 end
 
 local function OnPrivateDataChanged(player, key)
+	--print("### Private Data Changed")
 	if key == "quests" then
 		FireLocalQuestChangedEvent(player)
 	end
@@ -694,17 +696,21 @@ function OnChatMessage(player, params)
 	local command, param1, param2 = CoreString.Split(params.message)
 	if command == "/reset" 
 	and param1 == "quests" 
-	and param2 ~= nil then
+	then
 		params.message = ""
 		
-		for _,p in ipairs(Game.GetPlayers()) do
-			if string.lower(p.name) == string.lower(param2) then
-				Task.Spawn(function() -- This allows debugging with breakpoints
-					ResetQuestsForPlayer(p)
-				end)
-				break
+		local targetPlayer = player
+		if param2 ~= nil then --Search by name
+			for _,p in ipairs(Game.GetPlayers()) do
+				if string.lower(p.name) == string.lower(param2) then
+					targetPlayer = p
+					break
+				end
 			end
 		end
+		Task.Spawn(function() -- This allows debugging with breakpoints
+			ResetQuestsForPlayer(targetPlayer)
+		end)
 	end
 end
 

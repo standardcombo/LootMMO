@@ -1,4 +1,6 @@
 
+_G.QuestObjectivesUI = script
+
 local ROOT = script.parent
 local CONTENT_SCRIPT = script:GetCustomProperty("ContentScript"):WaitForObject()
 local EXPANDING_PANEL = script:GetCustomProperty("ExpandingPanel"):WaitForObject()
@@ -88,6 +90,8 @@ end
 
 
 function SetState(newState)
+	--print("QuestObjectivesUI::SetState() newState = ".. newState ..", currentState = ".. currentState)
+
 	-- Exit state changes
 	if currentState == STATE_EXPANDED then
 		if newState ~= STATE_CLAIMING_REWARD_1 then
@@ -125,6 +129,8 @@ function SetState(newState)
 		local pos = selectedRow:GetAbsolutePosition()
 		selectedRow.parent = ROOT
 		selectedRow:SetAbsolutePosition(pos)
+		selectedRow.visibility = Visibility.INHERIT
+		BADGE.visibility = Visibility.FORCE_OFF
 		
 	elseif newState == STATE_COMPLETED_1 then
 		COMPLETED_SFX:Play()
@@ -140,9 +146,6 @@ function SetState(newState)
 		
 	elseif newState == STATE_COMPLETED_3 then
 		if nextSelectedRow then
-			-- Tell the quest system to select this objective
-			_G.QuestController.SelectObjective(Game.GetLocalPlayer(), nextSelectedObjective)
-			
 			-- Change the state of the row
 			CONTENT_SCRIPT.context.SetRowStateSelected(nextSelectedRow)
 		end
@@ -202,6 +205,10 @@ function Tick(deltaTime)
 		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
 		selectedRow.x = CoreMath.Lerp(selectedRow.x, 0, t / 3)
 		selectedRow.y = CoreMath.Lerp(selectedRow.y, 0, t / 3)
+			
+		if pendingUpdateData then
+			UpdateData()
+		end
 		
 	elseif currentState == STATE_COMPLETED_1 then
 		EXPANDING_PANEL.opacity = CoreMath.Lerp(EXPANDING_PANEL.opacity, 0, t)
@@ -225,7 +232,9 @@ function Tick(deltaTime)
 			selectedRow = nil
 			
 			if nextSelectedObjective then
-				OnObjectiveSelected(nextSelectedObjective, nextSelectedRow)
+				-- Tell the quest system to select the next objective
+				_G.QuestController.SelectObjective(Game.GetLocalPlayer(), nextSelectedObjective)
+			
 				nextSelectedObjective = nil
 				nextSelectedRow = nil
 				
@@ -321,22 +330,39 @@ function OnBindingPressed(player, action)
 end
 
 
-function OnObjectiveSelected(obj, uiRow)
+function SelectObjective(obj, uiRow)
 	if obj.hasReward then return end
 	
-	--print("QuestObjectivesUI: " ..obj.questId .." selected")
+	--print("QuestObjectivesUI::SelectObjective() " ..obj.questId..","..obj.index)
 	
-	-- Tell the quest system to select this objective
-	_G.QuestController.SelectObjective(PLAYER, obj)
+	SELECT_SFX:Play()
 	
-	-- Go into selected UI state
-	selectedObjective = obj
-	selectedRow = uiRow
+	if not uiRow then
+		uiRow = CONTENT_SCRIPT.context.FindRowForObjective(obj)
+		if not uiRow then
+			uiRow = CONTENT_SCRIPT.context.InsertObjective(obj, 1)
+		end
+	end
 	
-	SetState(STATE_SELECTED)
-	
+	if uiRow then
+		-- Cleanup possible previous state
+		if selectedRow then
+			selectedRow.visibility = Visibility.FORCE_OFF
+		end
+		if nextSelectedRow then
+			nextSelectedRow.visibility = Visibility.FORCE_OFF
+		end
+		-- Go into selected UI state
+		selectedObjective = obj
+		selectedRow = uiRow
+		
+		SetState(STATE_SELECTED)
+	else
+		warn("No row found when selecting objective ".. obj.index .." for quest ".. obj.questId)
+	end
 	-- TODO: Auto-nav
 end
+
 
 function OnClaimReward(obj, uiRow)
 	--print("Claim reward for quest ".. obj.questId)
@@ -373,15 +399,20 @@ function UpdateContents()
 end
 
 function UpdateData()
+	--print("QuestObjectivesUI::UpdateData() 1")
 	if currentState >= STATE_COMPLETED_1
 	and currentState <= STATE_CLAIMING_REWARD_2
 	then
 		pendingUpdateData = true
+		--print("QuestObjectivesUI::UpdateData() 2, currentState = "..currentState)
 		return
 	end
 	pendingUpdateData = false
+	--print("QuestObjectivesUI::UpdateData() 3")
 	
 	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
+	
+	--print("#activeObjectives = " .. #activeObjectives)
 	
 	-- Check for updates in the currently selected objective
 	if selectedObjective and selectedRow then
@@ -393,10 +424,7 @@ function UpdateData()
 						CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
 						SetState(STATE_COMPLETED_1)
 					end
-				-- Check if count progress was made on the currently selected objective
-				elseif obj.count > 0 and _G.QuestController.GetObjectiveProgress(PLAYER, obj) < obj.count then
-					CONTENT_SCRIPT.context.UpdateRowProgress(selectedRow)
-				
+
 				-- Check if the currently selected objective has been completed
 				elseif obj.index > selectedObjective.index then
 					nextSelectedObjective = obj
@@ -408,6 +436,10 @@ function UpdateData()
 						SetState(STATE_SELECTED)
 					end
 					SetState(STATE_COMPLETED_1)
+
+				-- Check if count progress was made on the currently selected objective
+				elseif obj.count > 0 and _G.QuestController.GetObjectiveProgress(PLAYER, obj) < obj.count then
+					CONTENT_SCRIPT.context.UpdateRowProgress(selectedRow)
 				end
 				-- Exit condition where the selected objective is achieved
 				return -- no badge update, etc
@@ -479,10 +511,9 @@ PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
 
 Task.Wait()
-CONTENT_SCRIPT.context.OnObjectiveSelected = function(obj, uiRow)
-	SELECT_SFX:Play()
-	OnObjectiveSelected(obj, uiRow)
-end
+
+Events.Connect("Quest.ObjectiveSelected", SelectObjective)
+
 CONTENT_SCRIPT.context.OnClaimReward = OnClaimReward
 
 
