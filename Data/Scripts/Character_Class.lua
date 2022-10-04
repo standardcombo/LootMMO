@@ -36,7 +36,7 @@ function component:GetClassTable()
 end
 
 function component:IsMainClass()
-	return self:GetClassTable()['MainClass'] == self:GetClassTable()['ClassIdentifier']
+	return (CLASSAPI.GetMainClass(self:GetClass()) and self:GetClassTable()['ClassIdentifier']) ~= nil
 end
 
 function component:HasClass()

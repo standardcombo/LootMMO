@@ -1,129 +1,188 @@
-local COMPONET_DATATYPE = require(script:GetCustomProperty('ComponetDatatype'))
+local COMPONET_DATATYPE = require(script:GetCustomProperty("ComponetDatatype"))
 local component =
 setmetatable(
 	{
 		tableElements = {
-			'spentPoints',
-			'pendingPoints'
+			"spentPoints",
+			"pendingPoints"
 		},
 		eventElements = {
-			'pointChangedEvent',
-			'spentChangedEvent',
-			'confirmPointEvent',
-			'resetPointEvent'
+			"pointChangedEvent",
+			"spentChangedEvent",
+			"confirmPointEvent",
+			"resetPointEvent"
 		}
 	},
 	{ __index = COMPONET_DATATYPE }
 )
-component.id = 'Points'
+component.id = "Points"
 component.unspentPoints = 0
-component.potentialPoints = 0
+component.totalPoints = 0
+
 component.autoNetorked = true
-function TriggerEvent(event, ...)
-	if event then
-		event:Trigger(...)
-	end
+
+function component:SetPending(catagory, value)
+	self.pendingPoints[catagory] = value
 end
 
-function component:_SilentSetPoints(value)
-	self.unspentPoints = value
-end
-
-function component:_SilentSetPending(value)
-	self.pendingPoints = value
-end
-
-function component:SetPending(value)
-	if self.pendingPoints == value then
+function component:SetSpent(catagory, value)
+	if not catagory then
 		return
 	end
-	self:_SilentSetPending(value)
-	TriggerEvent(self.spentChangedEvent, self, self.unspentPoints)
-end
-
-function component:SetSpent(element)
-	if not element then
+	if value == 0 then
+		self.spentPoints[catagory] = nil
+		COMPONET_DATATYPE.TriggerEvent(self.spentChangedEvent, self)
 		return
 	end
-	for key, value in pairs(element) do
-		self.spentPoints[key] = value
-	end
+	self.spentPoints[catagory] = value
+	COMPONET_DATATYPE.TriggerEvent(self.spentChangedEvent, self)
+end
+
+function component:SetTotal(value)
+	self.totalPoints = value
 end
 
 function component:SetPoints(value)
-	if self.unspentPoints == value then
-		return
-	end
-	self:_SilentSetPoints(value)
-	TriggerEvent(self.pointChangedEvent, self, self.unspentPoints)
+	self.unspentPoints = value
+	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
 end
 
-function component:AddPoint(amount)
-	amount = amount or 1
-	self.unspentPoints = self.unspentPoints + amount
-	self.potentialPoints = self.potentialPoints + amount
-	TriggerEvent(self.pointChangedEvent, self, self.unspentPoints)
+function component:GetPendingPoints(catagory)
+	return self.pendingPoints[catagory]
+end
+
+function component:GetSpentPoints(catagory)
+	if not catagory then
+		return self.spentPoints
+	end
+	return self.spentPoints[catagory]
+end
+
+function component:GetTotalPoints()
+	return self.totalPoints
 end
 
 function component:GetUnspentPoints()
 	return self.unspentPoints
 end
 
-function component:SpendPoint(catagory)
-	if self.potentialPoints > 0 then
-		self.potentialPoints = self.potentialPoints - 1
-		self.pendingPoints[catagory] = self.pendingPoints[catagory] or 0
-		self.pendingPoints[catagory] = self.pendingPoints[catagory] + 1
-	end
-	TriggerEvent(self.spentChangedEvent, self, self.potentialPoints)
+function component:AddPoint(amount)
+	amount = amount or 1
+	self.totalPoints = self.totalPoints + amount
+	self.unspentPoints = self.unspentPoints + amount
+	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
 end
 
-function component:RemovePoint(catagory)
-	if self.pendingPoints[catagory] and self.pendingPoints[catagory] > 0 then
-		self.potentialPoints = self.potentialPoints + 1
-		self.pendingPoints[catagory] = self.pendingPoints[catagory] - 1
+function component:ValidatePoints()
+	local total = self:GetTotalPoints()
+	local trueSpent = self:GetUnspentPoints() or 0
+	for key, value in pairs(self.pendingPoints) do
+		trueSpent = trueSpent + value
 	end
-	TriggerEvent(self.spentChangedEvent, self, self.potentialPoints)
+	for key, value in pairs(self.spentPoints) do
+		trueSpent = trueSpent + value
+	end
+	local difference = total - trueSpent
+	if difference > 0 then
+		self.unspentPoints = self.unspentPoints + difference
+	elseif difference < 0 then
+		warn("Somehow spent more points then earned")
+	end
+end
+
+function component:SpendPoint(catagory)
+	if not catagory then
+		return
+	end
+	if self.unspentPoints > 0 then
+		self.unspentPoints = self.unspentPoints - 1
+		self.spentPoints[catagory] = self.spentPoints[catagory] + 1
+	end
+end
+
+function component:RemovePendingPoint(catagory)
+	if not catagory then
+		return
+	end
+	if self.pendingPoint[catagory] > 0 then
+		self.pendingPoint[catagory] = self.pendingPoint[catagory] - 1
+		if self.pendingPoint[catagory] == 0 then
+			self.pendingPoint[catagory] = nil
+		end
+	end
 end
 
 function component:ConfirmSpending()
-	for key, value in pairs(self.pendingPoints) do
-		self.spentPoints[key] = self.spentPoints[key]
+	for catagory, value in pairs(self.pendingPoints) do
+		self.spentPoints[catagory] = self.spentPoints[catagory] + self.pendingPoints[catagory]
+		self.pendingPoints[catagory] = nil
 	end
-	self.unspentPoints = self.potentialPoints
-	TriggerEvent(self.confirmPointEvent, self)
+	COMPONET_DATATYPE.TriggerEvent(self.confirmPointEvent, self)
 end
 
 function component:CancelSpending()
-	self.pendingPoints = {}
-	self.potentialPoints = self.unspentPoints
+	for catagory, value in pairs(self.pendingPoints) do
+		self.unspentPoints = self.unspentPoints + self.pendingPoint[catagory]
+		self.pendingPoint[catagory] = nil
+	end
+	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
 end
 
 function component:Refund()
 	self:CancelSpending()
-	for key, value in pairs(self.pendingPoints) do
-		self.unspentPoints = self.unspentPoints + value
+	for key, value in pairs(self.spentPoints) do
+		self.spentPoints[key] = nil
 	end
-	self.pendingPoints = self.unspentPoints
-	TriggerEvent(self.resetPointEvent, self)
+	self.unspentPoints = self.totalPoints
+	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
+	COMPONET_DATATYPE.TriggerEvent(self.resetPointEvent, self)
 end
 
 function component:Serialize()
 	local data = {}
 	data.unspentPoints = self.unspentPoints
-	data.potentialPoints = self.potentialPoints
-	data.spentPoints = {}
-	for key, value in pairs(self.spentPoints or {}) do
-		data.spentPoints[key] = value
-	end
+	data.totalPoints = self.totalPoints
+	data.pendingPoints = self.pendingPoints
+	data.spentPoints = self.spentPoints
 	return data
 end
 
-function component:Deserialize(information)
-	information = information or {}
-	self.spentPoints = information.spentPoints or {}
-	self.potentialPoints = information.potentialPoints
-	self:SetPoints(information.unspentPoints or 0)
+function component:Deserialize(data)
+	data = data or {}
+	self:SetTotal(data.totalPoints or 0)
+	self:SetPoints(data.unspentPoints or 0)
+	if type(data.spentPoints) == "number" then
+		data.spentPoints = {}
+	end
+	for catagory, value in pairs(data.spentPoints or {}) do
+		self:SetSpent(catagory, value or 0)
+	end
+	for catagory, value in pairs(data.pendingPoints or {}) do
+		self:SetPending(catagory, value or 0)
+	end
+end
+
+function component:Init()
+	self.pendingPoints =
+	setmetatable(
+		{},
+		{
+			__index = function()
+				return 0
+			end
+		}
+	)
+	self.spentPoints =
+	setmetatable(
+		{},
+		{
+			__index = function()
+				return 0
+			end
+		}
+	)
+
+	return
 end
 
 return component

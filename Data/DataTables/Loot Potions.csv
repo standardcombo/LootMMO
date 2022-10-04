@@ -1,0 +1,4 @@
+"id[String]","name[String]","equipment[Asset Reference]","icon[Asset Reference]"
+"Health","Health Potion","0BADBADBADBADBAD","EA249DDAD486BB3F"
+"Attack","Attack Potion","0BADBADBADBADBAD","0D7EF824C749246E"
+"Block","Block Potion","0BADBADBADBADBAD","B058ECB978B07E76"

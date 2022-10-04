@@ -33,22 +33,16 @@ function EquipCharacter(character, player)
 	end
 	UnequipCharacter(player)
 	UpdateCharacter(player, character)
+	local class = character:GetComponent("Class")
+	local points = character:GetComponent("Points")
+	local progression = character:GetComponent("Progression")
 
-	--Temp force syncing
-	pcall(
-		function()
-			local progression = character:GetComponent('Progression')
-			local points = character:GetComponent('Points')
-			local stats = character:GetComponents('Stats')
-			local function Update()
-				UpdateCharacter(player, character)
-			end
+	local function Update()
+		UpdateCharacter(player, character)
+	end
 
-			stats.statsUpdatedEvent:Connect(Update)
-			progression.progressionUpdatedEvent:Connect(Update)
-			points.pointChangedEvent:Connect(Update)
-		end
-	)
+	class.classChangedEvent:Connect(Update)
+	progression.progressionUpdatedEvent:Connect(Update)
 end
 
 EApi.playerEquippedEvent:Connect(EquipCharacter)

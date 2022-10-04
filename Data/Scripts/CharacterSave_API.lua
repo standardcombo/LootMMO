@@ -1,11 +1,20 @@
 local savekeys = _G['Storagekeys']
 local CHARACTER = savekeys.GetKeyFromName('character')
+local CHARACTER2 = savekeys.GetKeyFromName('character2')
 assert(CHARACTER)
+assert(CHARACTER2)
 
 local API = {}
 function API.GetSavedPlayerCharacterData(player)
 	assert(Environment.IsServer(), 'Server Only Command')
-	return Storage.GetSharedPlayerData(CHARACTER, player)
+	local characters = {}
+	for key, value in pairs(Storage.GetSharedPlayerData(CHARACTER, player)) do
+		table.insert(characters, value)
+	end
+	for key, value in pairs(Storage.GetSharedPlayerData(CHARACTER2, player)) do
+		table.insert(characters, value)
+	end
+	return characters
 end
 
 function API.SavePlayerCharacter(player, character)
@@ -22,8 +31,10 @@ function API.SavePlayerCharacter(player, character)
 		end
 		if not LastSaveExists then
 			table.insert(characters, character:Serialize())
-		end 
-		Storage.SetSharedPlayerData(CHARACTER, player, characters)
+		end
+
+		Storage.SetSharedPlayerData(CHARACTER, player, { characters[1], characters[2], characters[3] })
+		Storage.SetSharedPlayerData(CHARACTER2, player, { characters[4], characters[5], characters[6] })
 	end
 end
 
@@ -33,7 +44,8 @@ function API.DeleteSavedPlayerCharacter(player, characterid)
 	for index, value in ipairs(characters) do
 		if value.id == characterid then
 			table.remove(characters, index)
-			Storage.SetSharedPlayerData(CHARACTER, player, characters)
+			Storage.SetSharedPlayerData(CHARACTER, player, { characters[1], characters[2], characters[3] })
+			Storage.SetSharedPlayerData(CHARACTER2, player, { characters[4], characters[5], characters[6] })
 			break
 		end
 	end

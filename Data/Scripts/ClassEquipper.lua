@@ -25,7 +25,7 @@ local function EquipClass(character, player)
 	local class = character:GetComponent("Class")
 	local progression = character:GetComponent("Progression")
 	local classtable = class:GetClassTable()
-	spawnedEquipment[character.id] = {}
+	spawnedEquipment[character.id] = spawnedEquipment[character.id] or {}
 	for i = 1, 5 do
 		if not Object.IsValid(spawnedEquipment[character.id][i])
 			and progression:GetProgressionKey('AbilitySlot' .. i)
@@ -51,7 +51,6 @@ local function ProgressionChanged(progression, key, character, player)
 end
 
 local function classChanged(character, player)
-
 	UnEquipClass(character, player)
 	EquipClass(character, player)
 end
@@ -67,7 +66,6 @@ local function playerEquipped(character, player)
 		ProgressionChanged(progression, key, character, player)
 	end)
 	EquipClass(character, player)
-
 end
 
 EquipApi.playerEquippedEvent:Connect(playerEquipped)

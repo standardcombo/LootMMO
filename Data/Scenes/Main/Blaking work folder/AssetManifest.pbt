@@ -71,15 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14486316361036609649
-  Name: "Abstract Background 01"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Core_UI_AbstractPack_Background_001"
-  }
-}
-Assets {
   Id: 14060330023043759337
   Name: "BG Flat 001"
   PlatformAssetType: 9
@@ -89,21 +80,21 @@ Assets {
   }
 }
 Assets {
+  Id: 14002637459053075183
+  Name: "4 Point Star"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_SciFI_Icon_020"
+  }
+}
+Assets {
   Id: 13835327457650939377
   Name: "UI Gradient Rectangular 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Basic_Shape_003"
-  }
-}
-Assets {
-  Id: 13818224066012429614
-  Name: "Alien"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Icon_021"
   }
 }
 Assets {
@@ -149,6 +140,15 @@ Assets {
   PrimaryAsset {
     AssetType: "FontAssetRef"
     AssetId: "GermaniaOneRegular_ref"
+  }
+}
+Assets {
+  Id: 10269062453722857721
+  Name: "Japanese Ability Dash"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "IllustratedIcons_Japan_Abilities_Dash"
   }
 }
 Assets {

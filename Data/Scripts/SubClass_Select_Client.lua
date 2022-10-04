@@ -3,12 +3,16 @@ local SubPanel = script:GetCustomProperty('MainClassAcceptPanel'):WaitForObject(
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local CLASS_IMAGES = require(script:GetCustomProperty("ClassImages"))
 
-local classMainSelect = 'classMainSelect'
+local classMainSelect = 'classSubSelect'
 local classOpen = 'classSelectOpen'
 local Classes = _G['Character.Classes']
 local Abilities = _G['Ability.Equipment']
 
+local EquipApi = _G["Character.EquipAPI"]
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 local selectedClass = nil
+local subClasses = {}
 
 local function Get(panel, child)
 	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
@@ -32,6 +36,24 @@ function IsState(state)
 end
 
 local function ShowMainPanel()
+	local char = EquipApi.GetCurrentCharacter(LOCAL_PLAYER)
+	local class = char:GetComponent("Class")
+	local currentClass = class:GetClassTable()
+	local className = class:GetClass()
+
+	local convStat = {
+		["W"] = Get(MAIN_CLASSES, "Wisdom"),
+		["V"] = Get(MAIN_CLASSES, "Vitality"),
+		["A"] = Get(MAIN_CLASSES, "Agility"),
+	}
+	subClasses = {}
+	for _, tempclass in pairs(Classes.GetClasses()) do
+		if tempclass['MainClass']['Identifier'] == className then
+			subClasses[tempclass["Stat"]] = tempclass
+			convStat[tempclass["Stat"]].text = tempclass["ClassIdentifier"]
+		end
+	end
+
 	MAIN_CLASSES.visibility = Visibility.INHERIT
 end
 
@@ -49,6 +71,7 @@ end
 
 local function Close()
 	selectedClass = nil
+	subClasses    = {}
 	SetState(states.Closed)
 	HideMainPanel()
 	CloseSubPanel()
@@ -84,26 +107,22 @@ local function SetUpSubPanel(class)
 
 	local function RightPanel()
 		local rightPanel = Get(SubPanel, "RightPanel")
-		local SubClassesPanels = Get(rightPanel, "SubClasses"):GetChildren()
-		local Bability = Get(rightPanel, "BaseAbility")
-		local Bname = Get(rightPanel, "Name")
-		local icon = Get(Bability, "Icon")
+		local abilitiesDisplay = Get(rightPanel, "Abilities"):GetChildren()
 
-		local subclasses = {}
-		for _, tempclass in pairs(Classes.GetClasses()) do
-			if tempclass['MainClass']['Identifier'] == classname then
-				table.insert(subclasses, tempclass['ClassIdentifier'])
+		for index, display in ipairs(abilitiesDisplay) do
+			local Bname = Get(display, "Name")
+			local icon = Get(display, "Icon")
+			local abilIcon = Abilities.GetIcon(class["Ability" .. index])
+			if abilIcon then
+				display.visibility = Visibility.INHERIT
+			else
+				display.visibility = Visibility.FORCE_OFF
+
 			end
+			icon:SetImage(abilIcon)
+			Bname.text = class["Ability" .. index]
 		end
 
-		for index, panel in ipairs(SubClassesPanels) do
-			local textbox = Get(panel, 'Name')
-			textbox.text = subclasses[index] or ""
-		end
-
-		local abilIcon = Abilities.GetIcon(class["Ability1"])
-		icon:SetImage(abilIcon)
-		Bname.text = class["Ability1"]
 	end
 
 	RightPanel()
@@ -111,12 +130,11 @@ local function SetUpSubPanel(class)
 	ShowSubPanel()
 end
 
-local function SelectMainClass(Class)
+local function SelectMainClass(stat)
 	if not IsState(states.Open) then
 		return
 	end
-	lastClass = Class
-	local class = Classes.GetClass(Class)
+	local class = subClasses[stat]
 	if class then
 		HideMainPanel()
 		selectedClass = class
@@ -129,6 +147,7 @@ local function Back()
 	if not IsState(states.SelectingClass) then
 		return
 	end
+	subClasses    = {}
 	selectedClass = nil
 	SetState(states.Open)
 	CloseSubPanel()
@@ -154,8 +173,8 @@ local function RecieveClosed()
 	Close()
 end
 
-Events.Connect('classAccept', Confirm)
-Events.Connect('classBack', Back)
+Events.Connect('subclassAccept', Confirm)
+Events.Connect('subclassBack', Back)
 Events.Connect('Ability_OpenPanel', RecieviedOpen)
 Events.Connect("Ability_Close", RecieveClosed)
 Events.Connect(classOpen, Open)
