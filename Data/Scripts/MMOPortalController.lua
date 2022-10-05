@@ -28,6 +28,8 @@ function OnChannelingComplete(player)
 		}
 		local portal = World.SpawnAsset(PORTAL_TEMPLATE, params)
 		player.serverUserData.portal = portal
+		
+		Events.Broadcast("Portal.Summoned", player)
 	end
 end
 

@@ -27,9 +27,6 @@ local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
 
 local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
 
-local XP_ICON = script:GetCustomProperty("XPIcon")
-local XP_SFX = script:GetCustomProperty("XPSfx")
-
 local SERIALIZATION_VERSION = 1
 
 
@@ -486,16 +483,13 @@ function _GrantReward(player, rewardInstruction)
 		end
 
 	elseif instruction == "XP" then
+		-- Add XP
 		local resourceId = "Cxp"
-		local resourceAmount = key
+		local resourceAmount = tonumber(key)
 		player:AddResource(resourceId, resourceAmount)
-		local toastParams = {
-			type = "Common",
-			message = "+"..resourceAmount.." Experience",
-			icon = XP_ICON,
-			sfx = XP_SFX
-		}
-		Events.BroadcastToPlayer(player, "RewardToast", toastParams)
+		-- Show toast UI
+		local itemDef = _G["Items.More"].GetDefinition("XP")
+		_GrantItem(player, itemDef, resourceAmount)
 
 	elseif instruction == "Material" then
 		local materialDef = _G["Items.Materials"].GetDefinition(key)
@@ -509,7 +503,8 @@ function _GrantReward(player, rewardInstruction)
 	elseif instruction == "RandomItem" then
 		print("TODO: Granting random item with ".. key .." ".. amount)
 		
-		-- TODO
+		local itemDef = _G["Items.More"].GetDefinition("RandomItem")
+		_GrantItem(player, itemDef)
 
 	else
 		local itemDef = _G["Items.More"].GetDefinition(instruction)
@@ -531,7 +526,7 @@ function _GrantItem(player, definition, amount)
 		flipV = definition.flipIconV,
 		sfx = definition.pickupSfx,
 	}
-	if amount > 1 then
+	if amount and amount > 1 then
 		toastParams.message = amount .."x ".. definition.name
 	end
 	Events.BroadcastToPlayer(player, "RewardToast", toastParams)
