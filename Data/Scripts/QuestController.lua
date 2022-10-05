@@ -27,6 +27,9 @@ local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
 
 local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
 
+local XP_ICON = script:GetCustomProperty("XPIcon")
+local XP_SFX = script:GetCustomProperty("XPSfx")
+
 local SERIALIZATION_VERSION = 1
 
 
@@ -481,6 +484,18 @@ function _GrantReward(player, rewardInstruction)
 		else
 			warn("Failed to delay rewards with instruction: ".. rewardInstruction)
 		end
+
+	elseif instruction == "XP" then
+		local resourceId = "Cxp"
+		local resourceAmount = key
+		player:AddResource(resourceId, resourceAmount)
+		local toastParams = {
+			type = "Common",
+			message = "+"..resourceAmount.." Experience",
+			icon = XP_ICON,
+			sfx = XP_SFX
+		}
+		Events.BroadcastToPlayer(player, "RewardToast", toastParams)
 
 	elseif instruction == "Material" then
 		local materialDef = _G["Items.Materials"].GetDefinition(key)

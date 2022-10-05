@@ -23,6 +23,18 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:XPIcon"
+        AssetReference {
+          Id: 3196161825669148136
+        }
+      }
+      Overrides {
+        Name: "cs:XPSfx"
+        AssetReference {
+          Id: 18108420544862680383
+        }
+      }
+      Overrides {
         Name: "cs:QuestMetadata:isrep"
         Bool: false
       }
@@ -37,6 +49,24 @@ Assets {
       Overrides {
         Name: "cs:QuestObjectives:ml"
         Bool: false
+      }
+    }
+    Assets {
+      Id: 3196161825669148136
+      Name: "Fantasy Medal 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Medal_001"
+      }
+    }
+    Assets {
+      Id: 18108420544862680383
+      Name: "Magic Dark Powerup 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_dark_buff_powerup_02_Cue_ref"
       }
     }
   }
