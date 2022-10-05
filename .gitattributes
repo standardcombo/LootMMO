@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Core saves .pbt files as LF by default
+*.pbt text eol=lf linguist-language=Protobuf-Text-Format
