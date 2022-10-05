@@ -80,7 +80,7 @@ Assets {
           }
           Overrides {
             Name: "cs:VisionHalfAngle"
-            Float: 85
+            Float: 0
           }
           Overrides {
             Name: "cs:VisionRadius"
@@ -644,7 +644,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 877607263390645540
+            Id: 7645994610634595213
           }
         }
         NetworkRelevanceDistance {
