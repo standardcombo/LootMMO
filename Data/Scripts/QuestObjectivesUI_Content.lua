@@ -90,6 +90,11 @@ function SetRowStateCompleted(row)
 	GET(row, "CompletedIcon").visibility = Visibility.INHERIT
 	GET(row, "UIButton").visibility = Visibility.INHERIT
 	GET(row, "RewardPanel").visibility = Visibility.FORCE_OFF
+
+	local obj = row.clientUserData.objective
+	if obj.count > 0 then
+		row.clientUserData.Counter.text = obj.count .." of ".. obj.count
+	end
 end
 
 function SetRowStateReward(row)
