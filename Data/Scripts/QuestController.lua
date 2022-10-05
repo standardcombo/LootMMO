@@ -482,6 +482,15 @@ function _GrantReward(player, rewardInstruction)
 			warn("Failed to delay rewards with instruction: ".. rewardInstruction)
 		end
 
+	elseif instruction == "XP" then
+		-- Add XP
+		local resourceId = "Cxp"
+		local resourceAmount = tonumber(key)
+		player:AddResource(resourceId, resourceAmount)
+		-- Show toast UI
+		local itemDef = _G["Items.More"].GetDefinition("XP")
+		_GrantItem(player, itemDef, resourceAmount)
+
 	elseif instruction == "Material" then
 		local materialDef = _G["Items.Materials"].GetDefinition(key)
 		amount = tonumber(amount)
@@ -494,7 +503,8 @@ function _GrantReward(player, rewardInstruction)
 	elseif instruction == "RandomItem" then
 		print("TODO: Granting random item with ".. key .." ".. amount)
 		
-		-- TODO
+		local itemDef = _G["Items.More"].GetDefinition("RandomItem")
+		_GrantItem(player, itemDef)
 
 	else
 		local itemDef = _G["Items.More"].GetDefinition(instruction)
@@ -516,7 +526,7 @@ function _GrantItem(player, definition, amount)
 		flipV = definition.flipIconV,
 		sfx = definition.pickupSfx,
 	}
-	if amount > 1 then
+	if amount and amount > 1 then
 		toastParams.message = amount .."x ".. definition.name
 	end
 	Events.BroadcastToPlayer(player, "RewardToast", toastParams)

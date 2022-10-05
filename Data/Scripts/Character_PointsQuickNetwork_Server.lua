@@ -10,9 +10,7 @@ function UpdatedEvent(points, player)
 	if not Object.IsValid(player) then
 		return
 	end
-	local serialized = points:Serialize()
-	serialized.potentialPoints = points.potentialPoints
-	serialized.pendingPoints = points.pendingPoints
+	local serialized = points:Serialize() 
 	player:SetPrivateNetworkedData(Pkey, serialized)
 end
 

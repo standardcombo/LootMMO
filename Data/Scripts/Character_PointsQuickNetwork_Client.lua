@@ -8,18 +8,7 @@ end
 local EquipAPI = _G['Character.EquipAPI']
 
 function SetData(points, data)
-	if data.unspentPoints then
-		points:SetPoints(data.unspentPoints)
-	end
-	if data.potentialPoints then
-		points:SetPending(data.potentialPoints)
-	end
-	if data.pendingPoints then
-		points.pendingPoints = data.pendingPoints
-	end
-	if data.spentPoints then
-		points.spentPoints = data.spentPoints
-	end
+	points:Deserialize(data)
 end
 
 function UpdatedEvent(_, key)

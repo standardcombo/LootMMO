@@ -7,7 +7,7 @@ local DESPAWN_PORTAL_TRIGGER = script:GetCustomProperty("DespawnPortalTrigger"):
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 local MAX_DURATION = script:GetCustomProperty("MaxDuration")
 
-local TRANSFER_EVENT_ID = "TransferPortal"
+local TRANSFER_EVENT_ID = "Portal.Transfer"
 local FLASH_VFX_EVENT_ID = "FlashPortalVfx"
 
 

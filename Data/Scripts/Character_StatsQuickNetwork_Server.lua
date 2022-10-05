@@ -7,12 +7,8 @@ end
 
 local EquipAPI = _G['Character.EquipAPI']
 
-function UpdatedEvent(stats, player)
-	if not Object.IsValid(player) then
-		return
-	end
-	player:SetPrivateNetworkedData(Pkey, stats)
-end
+local statTempEvent = {}
+local statEvent = {}
 
 local function UpdateResource(stats, player)
 
@@ -34,24 +30,34 @@ local function UpdateResourceTemp(stats, player)
 end
 
 function PlayerEquipped(character, player)
-	if not Object.IsValid(player) then
-		return
-	end
 	local stat = character:GetComponent('Stats')
 	local stats = stat:GetStats()
+
 	UpdateResourceTemp(stats, player)
 	UpdateResource(stats, player)
 
-	stat.tempStatsUpdatedEvent:Connect(
-		function(_, stats)
-			UpdateResourceTemp(stats, player)
+	statTempEvent[character.id] = stat.tempStatsUpdatedEvent:Connect(
+		function(_, values)
+			UpdateResourceTemp(values, player)
 		end
 	)
-	stat.statsUpdatedEvent:Connect(
-		function(_, stats)
-			UpdateResource(stats, player)
+	statEvent[character.id]     = stat.statsUpdatedEvent:Connect(
+		function(_, values)
+			UpdateResource(values, player)
 		end
 	)
 end
 
+function PlayerUnequipped(character)
+	if statEvent[character.id] then
+		statEvent[character.id]:Disconnect()
+		statEvent[character.id] = nil
+	end
+	if statTempEvent[character.id] then
+		statTempEvent[character.id]:Disconnect()
+		statTempEvent[character.id] = nil
+	end
+end
+
 EquipAPI.playerEquippedEvent:Connect(PlayerEquipped)
+EquipAPI.playerUnequippedEvent:Connect(PlayerUnequipped)

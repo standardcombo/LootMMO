@@ -30,24 +30,35 @@ local map = {
 	["4"] = "Ability5"
 }
 
-function BroadcastUpgrade()
-	if not SelectedAbility then
-		return
-	end
-	Events.BroadcastToServer("Ability.Sreciever", SelectedAbility)
-end
-
+local slotMap = {
+	["Shift"] = 1,
+	["1"] = 2,
+	["2"] = 3,
+	["3"] = 4,
+	["4"] = 5,
+}
 function GetStar(stat, index)
-	return Star_Ratings[math.floor(stat - index / 3) + 2]
+	return Star_Ratings[math.floor((stat - index) / 3) + 2]
 end
 
 function UpdateStars(character)
-	local stats = character:GetComponent("Stats")
-
-	for index, value in ipairs(STARS:GetChildren()) do
-		local starimg = GetStar(stats:GetStat(SelectedAbility), index)
-		if starimg and starimg["Art"] then
-			value:SetImage(starimg["Art"])
+	local stats      = character:GetComponent("Stats")
+	local class      = character:GetComponent("Class")
+	local classTable = class:GetClassTable()
+	local ability    = classTable[map[SelectedAbility]]
+	if not ability then
+		for index, value in ipairs(STARS:GetChildren()) do
+			local starimg = Star_Ratings[1]
+			if starimg and starimg["Art"] then
+				value:SetImage(starimg["Art"])
+			end
+		end
+	else
+		for index, value in ipairs(STARS:GetChildren()) do
+			local starimg = GetStar(stats:GetStat(ability), index)
+			if starimg and starimg["Art"] then
+				value:SetImage(starimg["Art"])
+			end
 		end
 	end
 end
@@ -59,16 +70,7 @@ function UpdatePoints(character)
 end
 
 function UpdateIcons(classtable, progression)
-	for index, panel in ipairs(ABILITY_SLOTS) do
-		if progression:GetProgressionKey("AbilitySlot" .. index)
-			and progression:GetProgressionKey("AcceptSlot" .. index)
-			and classtable["Identifier"] ~= "None" then
-			panel.visibility = Visibility.INHERIT
-		else
-			panel.visibility = Visibility.FORCE_OFF
-		end
-	end
-	for index, panel in ipairs(ABILITIESPANEL:GetChildren()) do
+	local function Map(panel)
 		local mapped = map[panel.name]
 		if mapped then
 			if classtable[mapped] then
@@ -79,6 +81,23 @@ function UpdateIcons(classtable, progression)
 				end
 			end
 		end
+
+	end
+
+	for index, panel in ipairs(ABILITY_SLOTS) do
+		if progression:GetProgressionKey("AbilitySlot" .. index)
+			and progression:GetProgressionKey("AcceptSlot" .. index)
+			and classtable["Identifier"] ~= "None" then
+			panel.visibility = Visibility.INHERIT
+		else
+			panel.visibility = Visibility.FORCE_OFF
+		end
+	end
+	for index, panel in ipairs(ABILITY_SLOTS) do
+		Map(panel)
+	end
+	for index, panel in ipairs(ABILITIESPANEL:GetChildren()) do
+		Map(panel)
 	end
 end
 
@@ -99,6 +118,16 @@ function Update()
 
 	local altname = map[SelectedAbility]
 	local selection = classtable[altname]
+
+	if not class:HasClass() then
+		ABILITY_RENDER:SetImage(LOOT_ICON)
+		ABILITY_NAME.text = "No class found!"
+		ABILITY_DESCRIPTION.text = "Level up and pick a class to upgrade abilities."
+		ABILITY_PROPERTIES.text = ""
+		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+		return
+	end
+
 	if not selection or selection == "" or not SelectedAbility or not map[SelectedAbility] then
 		ABILITY_RENDER:SetImage(LOOT_ICON)
 		ABILITY_NAME.text = "No ability selected!"
@@ -144,18 +173,25 @@ function Tick()
 	end
 end
 
-local function ReturnCall()
-	if ABILITY_POINTS.visibility ~= Visibility.FORCE_OFF then
-		local Character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-		if not Character then
-			return
-		end
-		UpdateStars(Character)
-		UpdatePoints(Character)
+function BroadcastUpgrade()
+	if not SelectedAbility then
+		return
 	end
+	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, slotMap[SelectedAbility])
+	Events.Broadcast("Ability_Upgrade", LOCAL_PLAYER, slotMap[SelectedAbility])
+	Task.Wait()
+	Update()
 end
 
 UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
 
 Events.Connect("Ability.SelectSlot", SelectAbility)
-Events.Connect("Ability.Ssent", ReturnCall)
+
+
+
+EquipAPI.playerEquippedEvent:Connect(function(character, player)
+	if player == LOCAL_PLAYER then
+		local stats = character:GetComponent("Stats")
+		stats.statsUpdatedEvent:Connect(Update)
+	end
+end)

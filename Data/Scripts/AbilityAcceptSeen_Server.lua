@@ -15,8 +15,8 @@ local function Accept(player, i)
 	local Character = EquipApi.GetCurrentCharacter(player)
 	if Character then
 		local progression = Character:GetComponent("Progression")
-		progression:SetProgression("AcceptSlot" .. i)
+		progression:SetProgression("AcceptSlot" .. i , true) 
 	end
 end
 
-Events.Connect("AcceptSlot", Accept)
+Events.ConnectForPlayer("AcceptSlot", Accept)

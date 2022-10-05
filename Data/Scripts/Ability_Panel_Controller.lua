@@ -1,58 +1,135 @@
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local UNLOCK_BACK_GROUND = script:GetCustomProperty('UnlockBackGround'):WaitForObject()
+local UNLOCK_BACKGROUND = script:GetCustomProperty('UnlockBackGround'):WaitForObject()
 local ABILITY_POINTS = script:GetCustomProperty('AbilityPoints'):WaitForObject()
 local MAIN_CLASS_SELECT = script:GetCustomProperty('MainClassSelect'):WaitForObject()
 local SUB_CLASS_SELECT = script:GetCustomProperty('SubClassSelect'):WaitForObject()
 
+local AppState = _G["AppState"]
 local EquipAPI = _G['Character.EquipAPI']
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local lastState = nil
 
 local Priority = {
-    MAIN_CLASS_SELECT,
-    SUB_CLASS_SELECT,
-    UNLOCK_BACK_GROUND,
-    ABILITY_POINTS
+	MAIN_CLASS_SELECT,
+	SUB_CLASS_SELECT,
+	UNLOCK_BACKGROUND,
+	ABILITY_POINTS
 }
 local wantsToUpdate = {
-    ABILITY_POINTS
+	ABILITY_POINTS
+}
+
+local AcceptTable = {
+	"AcceptSlot1",
+	"AcceptSlot2",
+	"AcceptSlot3",
+	"AcceptSlot4",
+	"AcceptSlot5",
+}
+
+local SlotTable = {
+	"AbilitySlot1",
+	"AbilitySlot2",
+	"AbilitySlot3",
+	"AbilitySlot4",
+	"AbilitySlot5",
 }
 
 local function CompleteUnlock(type)
-    Events.BroadcastToServer('CompletedUnlock', type)
+	Events.BroadcastToServer('CompletedUnlock', type)
 end
 
 local function Check()
-    local CurrentCharacter = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-    if not CurrentCharacter then
-        return
-    end
-    local progression = CurrentCharacter:GetComponent('Progression')
+	local CurrentCharacter = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
+	if not CurrentCharacter then
+		return
+	end
+	wantsToUpdate = {}
+	local progression = CurrentCharacter:GetComponent('Progression')
+	local class = CurrentCharacter:GetComponent("Class")
 
-    --Check for MainClass --
+	--Check for MainClass --
+	if progression:GetProgressionKey("ClassSelect") and not class:HasClass() then
+		table.insert(wantsToUpdate, MAIN_CLASS_SELECT)
+	end
 
-    -------------------------
+
+	-------------------------
+	--Check for SubClass --
+	if progression:GetProgressionKey("SubClassSelect") and class:IsMainClass() then
+		table.insert(wantsToUpdate, SUB_CLASS_SELECT)
+	end
+
+	-------------------------
+	--Check for UnlockAbility --
+
+	local function CheckTrue()
+		for i = 1, #SlotTable, 1 do
+			if progression:GetProgressionKey(SlotTable[i]) and not progression:GetProgressionKey(AcceptTable[i]) then
+				return true
+			end
+		end
+	end
+
+	if CheckTrue() then
+		table.insert(wantsToUpdate, UNLOCK_BACKGROUND)
+	end
+
+	-------------------------
+	table.insert(wantsToUpdate, ABILITY_POINTS)
+	table.sort(wantsToUpdate, function(a, b)
+		local aPriority = #Priority
+		local bPriority = #Priority
+
+		for index, value in ipairs(Priority) do
+			if value == a then
+				aPriority = index
+			end
+
+			if value == b then
+				bPriority = index
+			end
+		end
+		return aPriority < bPriority
+	end)
 end
-function Toggle(newState)
-    local States = {
-        [Visibility.FORCE_OFF] = function()
-            for index, value in ipairs(Priority) do
-                value.visibility = Visibility.FORCE_OFF
-            end
-        end,
-        [Visibility.INHERIT] = function()
-            wantsToUpdate[1].visibility = Visibility.INHERIT
-        end
-    }
 
-    if States[newState] then
-        States[newState]()
-    end
+function Toggle(newState)
+	Check()
+	local States = {
+		[Visibility.FORCE_OFF] = function()
+			for index, value in ipairs(Priority) do
+				Events.Broadcast("Ability_Close")
+				value.visibility = Visibility.FORCE_OFF
+			end
+		end,
+		[Visibility.INHERIT] = function()
+			Events.Broadcast("Ability_OpenPanel", wantsToUpdate[1])
+			wantsToUpdate[1].visibility = Visibility.INHERIT
+		end
+	}
+
+	if States[newState] then
+		States[newState]()
+	end
 end
 
 function Tick()
-    if lastState ~= ROOT.visibility then
-        lastState = ROOT.visibility
-        Toggle(ROOT.visibility)
-    end
+	if lastState ~= ROOT.visibility then
+		lastState = ROOT.visibility
+		Toggle(ROOT.visibility)
+	end
 end
+
+function Refresh()
+	Check()
+end
+
+function PanelComplete()
+	if AppState.GetLocalState() == AppState.Ability then
+		Events.Broadcast("OpenAbilities")
+	end
+end
+
+Events.Connect("RefreshAbilityTab", Refresh)
+Events.Connect("Ability_PanelComplete", PanelComplete)

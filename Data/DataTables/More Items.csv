@@ -1,2 +1,4 @@
 "id[String]","name[String]","icon[Asset Reference]","flipIconH[Bool]","flipIconV[Bool]","itemAsset[Asset Reference]","pickupAsset[Asset Reference]","pickupSfx[Asset Reference]","rarity[String]"
+"XP","Experience Points","2C5B0C3F17AC6DE8","False","False","0BADBADBADBADBAD","0BADBADBADBADBAD","FB4E088B03ECF53F","Common"
 "MapPiece","Piece of Map","BFB24174E47B826E","True","False","0BADBADBADBADBAD","98DEAAE49D6C139A","9B11BE45A6398E3E","Rare"
+"RandomItem","Random Item","2A9D2B1D17726E1B","False","False","0BADBADBADBADBAD","0BADBADBADBADBAD","C5E23644ADA3A622","Epic"

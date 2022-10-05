@@ -4,7 +4,7 @@ local NET_OBJECT = script:GetCustomProperty("NetObject"):WaitForObject()
 local INTERACTION_TRIGGER = script:GetCustomProperty("InteractionTrigger"):WaitForObject()
 local PORTAL_VFX = script:GetCustomProperty("PortalVFX"):WaitForObject()
 
-local TRANSFER_EVENT_ID = "TransferPortal"
+local TRANSFER_EVENT_ID = "Portal.Transfer"
 local FLASH_VFX_EVENT_ID = "FlashPortalVfx"
 
 local ENABLE_LERP_SPEED = 4

@@ -434,6 +434,19 @@ Assets {
   }
 }
 Assets {
+  Id: 6289677367844202680
+  Name: "Character2"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "d17421667f1747bcb552c6d4afe0be04"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 6163336933906742235
   Name: "Pipe - Quarter"
   PlatformAssetType: 1

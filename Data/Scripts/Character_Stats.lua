@@ -15,11 +15,7 @@ setmetatable(
 )
 component.id = 'Stats'
 component.autoNetorked = true
-function TriggerEvent(event, ...)
-	if event then
-		event:Trigger(...)
-	end
-end
+
 
 function component:SetStat(stat, statValue)
 	local oldStats = self:GetStats()
@@ -32,7 +28,7 @@ function component:SetStats(stats)
 		for key, value in pairs(stats) do
 			self:GetStats()[key] = value
 		end
-		TriggerEvent(self.statsUpdatedEvent, self, self:GetStats())
+		self.TriggerEvent(self.statsUpdatedEvent, self, self:GetStats())
 	end
 end
 
@@ -56,7 +52,7 @@ function component:SetTempStats(stats)
 		for key, value in pairs(stats) do
 			self:GetTempStats()[key] = value
 		end
-		TriggerEvent(self.tempStatsUpdatedEvent, self, self:GetTempStats())
+		self.TriggerEvent(self.tempStatsUpdatedEvent, self, self:GetTempStats())
 	end
 end
 
@@ -82,7 +78,7 @@ function component:Init()
 end
 
 function component:Serialize()
-	return {}--self:GetStats()
+	return {} --self:GetStats()
 end
 
 function component:Deserialize(data)

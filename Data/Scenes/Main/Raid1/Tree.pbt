@@ -1,6 +1,118 @@
 Name: "Raid1"
 RootId: 4069036831703073384
 Objects {
+  Id: 4986115911067044128
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+      Z: 54645.0859
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4069036831703073384
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Raid1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 5
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Portal.Transfer"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: ""
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8601810345922751586
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+      Z: 54645.0859
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4069036831703073384
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Raid1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 4
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Portal.Summoned"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: ""
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 1838182848635192363
   Name: "ObjectiveEventListener"
   Transform {
@@ -27,11 +139,11 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest.NPCDied"
+      String: "Quest.ClaimReward"
     }
     Overrides {
       Name: "cs:ObjectID"
-      String: "Beast"
+      String: "Beasts1"
     }
   }
   Collidable_v2 {
