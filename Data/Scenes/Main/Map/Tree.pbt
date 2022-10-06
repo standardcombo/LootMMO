@@ -10913,17 +10913,17 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      Y: -46.9174805
-      Z: 13.8583984
+      Y: -18.3925781
+      Z: 13.859375
     }
     Rotation {
       Pitch: -90
       Roll: 90.0000076
     }
     Scale {
-      X: 0.340610921
-      Y: 1.81384122
-      Z: 1.43275094
+      X: 0.341
+      Y: 1.814
+      Z: 2
     }
   }
   ParentId: 5393114179212734407
@@ -11427,6 +11427,60 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2350009335206596571
+  Name: "Collider"
+  Transform {
+    Location {
+      X: -3723
+      Y: -4463.23486
+      Z: 3580
+    }
+    Rotation {
+    }
+    Scale {
+      X: 2.7
+      Y: 3.2
+      Z: 7.8770318
+    }
+  }
+  ParentId: 18092589690976659829
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 198353679974341757
     }
     Teams {
       IsTeamCollisionEnabled: true
