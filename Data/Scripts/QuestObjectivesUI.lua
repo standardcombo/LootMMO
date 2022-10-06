@@ -47,6 +47,7 @@ local fWidth = COLLAPSED_WIDTH
 local fHeight = COLLAPSED_HEIGHT
 
 local activeObjectives = {}
+local prevActiveObjs = {}
 local selectedObjective = nil
 local selectedRow = nil
 local nextSelectedObjective = nil
@@ -410,9 +411,24 @@ function UpdateData()
 	pendingUpdateData = false
 	--print("QuestObjectivesUI::UpdateData() 3")
 	
+	prevActiveObjs = activeObjectives
 	activeObjectives = _G.QuestController.GetActiveObjectives(PLAYER)
 	
 	--print("#activeObjectives = " .. #activeObjectives)
+	
+	if currentState == STATE_EXPANDED then
+		for _,prevObj in ipairs(prevActiveObjs) do
+			for _,obj in ipairs(activeObjectives) do
+				if obj.questId == prevObj.questId then
+					if obj.index > prevObj.index or obj.hasReward then
+						SelectObjective(prevObj)
+						goto breakOut
+					end
+				end
+			end
+		end
+	end
+	:: breakOut ::
 	
 	-- Check for updates in the currently selected objective
 	if selectedObjective and selectedRow then
@@ -460,6 +476,10 @@ function UpdateData()
 				return -- no badge update, etc
 			end
 		end
+		
+	elseif currentState == STATE_EXPANDED then
+		UpdateContents()
+		return
 	end
 	
 	if currentState ~= STATE_CLAIMING_REWARD_1
