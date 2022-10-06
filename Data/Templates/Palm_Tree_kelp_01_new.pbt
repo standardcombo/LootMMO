@@ -93,7 +93,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -111,7 +111,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -123,13 +123,13 @@ Assets {
         Name: "Bush Green 01"
         Transform {
           Location {
-            X: 0.8828125
-            Y: -2.6171875
-            Z: 795.653809
+            X: 0.985013962
+            Y: -8.52222633
+            Z: 780.025
           }
           Rotation {
-            Pitch: -0.0128202643
-            Yaw: 1.02504563
+            Pitch: -0.0128173828
+            Yaw: 1.02504551
             Roll: -159.300491
           }
           Scale {
@@ -180,7 +180,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -232,7 +232,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -249,7 +249,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -301,7 +301,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -318,7 +318,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -370,7 +370,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -387,7 +387,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -456,7 +456,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -508,7 +508,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -525,7 +525,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -594,7 +594,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -612,7 +612,7 @@ Assets {
           }
           Rotation {
             Pitch: 4.75353813
-            Yaw: -84.4660492
+            Yaw: -84.4660645
             Roll: 2.90210509
           }
           Scale {
@@ -649,7 +649,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -666,7 +666,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -735,7 +735,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -804,7 +804,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -856,7 +856,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -874,7 +874,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -926,7 +926,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -944,7 +944,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -996,7 +996,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -1014,7 +1014,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1069,7 +1069,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -1086,7 +1086,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

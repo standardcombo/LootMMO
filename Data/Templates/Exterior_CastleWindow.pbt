@@ -11,7 +11,7 @@ Assets {
         Transform {
           Scale {
             X: 0.804936588
-            Y: 0.804936588
+            Y: -0.804936588
             Z: 0.804936588
           }
         }
@@ -117,7 +117,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -200,7 +200,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -288,7 +288,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -366,7 +366,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -454,7 +454,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -539,7 +539,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -624,7 +624,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -709,7 +709,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -794,7 +794,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }

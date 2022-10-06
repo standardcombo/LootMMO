@@ -10,9 +10,9 @@ Assets {
         Name: "Savanna_tree"
         Transform {
           Scale {
-            X: 1.23517
-            Y: 1.23517
-            Z: 1.23517
+            X: 1.4198184
+            Y: 1.4198184
+            Z: 1.4198184
           }
         }
         ParentId: 4781671109827199097
@@ -75,7 +75,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -242,9 +242,8 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.156347618
-              G: 0.1875
-              B: 0.0175780021
+              R: 0.354166657
+              G: 0.31875
               A: 1
             }
           }
@@ -367,9 +366,8 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.156347618
-              G: 0.1875
-              B: 0.0175780021
+              R: 0.307118028
+              G: 0.317708343
               A: 1
             }
           }
@@ -501,8 +499,8 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.182614028
-              G: 0.219000012
+              R: 0.219000012
+              G: 0.212384388
               B: 0.0205311067
               A: 1
             }
@@ -568,9 +566,8 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.156347618
-              G: 0.1875
-              B: 0.0175780021
+              R: 0.225433975
+              G: 0.276041657
               A: 1
             }
           }
