@@ -26,19 +26,31 @@ local EQUIPMENT_STANCE = EQUIPMENT:GetCustomProperty("EquipmentStance")
 
 -- Internal variables
 local originalStance = "unarmed_stance"
+local callerId = script.id
 
 -- nil OnEquipped(Equipment, Player)
 function OnEquipped(equipment, player)
-    if EQUIPMENT_STANCE then
-        player.animationStance = EQUIPMENT_STANCE
-    end
+	if EQUIPMENT_STANCE then
+		if _G.StanceStack then
+			_G.StanceStack.Add(player, EQUIPMENT_STANCE, callerId)
+		else
+			player.animationStance = EQUIPMENT_STANCE
+		end
+	end
 end
 
 -- nil OnUnequipped(Equipment, Player)
 function OnUnequipped(equipment, player)
-    player.animationStance = originalStance
+	if EQUIPMENT_STANCE then
+		if _G.StanceStack then
+			_G.StanceStack.Remove(player, EQUIPMENT_STANCE, callerId)
+		else
+			player.animationStance = originalStance
+		end
+	end
 end
 
 -- Initialize
 EQUIPMENT.equippedEvent:Connect(OnEquipped)
 EQUIPMENT.unequippedEvent:Connect(OnUnequipped)
+
