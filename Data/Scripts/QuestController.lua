@@ -127,6 +127,11 @@ function AddCompletedQuestID(player, questId)
 		playerData = {}
 		playerData.complete = {}
 	end
+	for _,entry in ipairs(playerData.complete) do
+		if entry == questId then
+			return playerData --Don't add if it's already added
+		end
+	end
 	table.insert(playerData.complete, questId)
 	SetPlayerData(player, playerData)
 	
@@ -308,6 +313,7 @@ function API.ActivateForPlayer(player, questId)
 			return
 		end
 	end
+	
 	table.insert(playerData.active, {id = questId, n = 1})
 	
 	SetPlayerData(player, playerData)
@@ -411,6 +417,7 @@ function API.ClaimReward(questId)
 	local player = Game.GetLocalPlayer()
 	local obj = API.GetQuestObjective(questId, 1)
 	if obj.hasReward then
+		obj.hasReward = nil
 		Events.Broadcast("Quest.ClaimReward", player, questId)
 		Events.BroadcastToServer("Quest.ClaimReward", questId)
 	else
