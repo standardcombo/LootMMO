@@ -233,6 +233,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16760293430730683247
+  Name: "Cabin Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "CabinBold_ref"
+  }
+}
+Assets {
   Id: 16701925266063006038
   Name: "Craftsman Stairs 01 Pillar"
   PlatformAssetType: 1
@@ -701,6 +710,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14100456703306476565
+  Name: "Baloo 2 Extra Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "Baloo2ExtraBold_ref"
+  }
+}
+Assets {
   Id: 14077945805147147789
   Name: "Container - Square Thin 01"
   PlatformAssetType: 1
@@ -887,6 +905,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_urb_office_carpet_004_uv_ref"
+  }
+}
+Assets {
+  Id: 12798912140996043624
+  Name: "Abstract Background 02"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_003"
   }
 }
 Assets {
@@ -1661,6 +1688,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_pillar_001_mid"
+  }
+}
+Assets {
+  Id: 7807628628690351586
+  Name: "Cabin"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "CabinRegular_ref"
   }
 }
 Assets {
