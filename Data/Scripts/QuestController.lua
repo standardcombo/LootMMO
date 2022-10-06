@@ -411,6 +411,7 @@ function API.ClaimReward(questId)
 	local player = Game.GetLocalPlayer()
 	local obj = API.GetQuestObjective(questId, 1)
 	if obj.hasReward then
+		Events.Broadcast("Quest.ClaimReward", player, questId)
 		Events.BroadcastToServer("Quest.ClaimReward", questId)
 	else
 		error("QuestController::ClaimReward() ".. questId .." is not available to claim.")
