@@ -170,6 +170,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16933889644062321308
+  Name: "Water Bubbling Loop 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_water_bubbling_02_Cue_ref"
+  }
+}
+Assets {
   Id: 16907316889031113276
   Name: "Fantasy Dish Set - Chalice 01"
   PlatformAssetType: 1
@@ -383,6 +392,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_capsule_001"
+  }
+}
+Assets {
+  Id: 15590791169563939070
+  Name: "Gem - Round Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_gem_round_polished_001"
   }
 }
 Assets {
@@ -1196,6 +1214,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10773125581909165249
+  Name: "Donut"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_torus_001"
+  }
+}
+Assets {
   Id: 10771108408610196052
   Name: "Chain Tile 01"
   PlatformAssetType: 1
@@ -1898,6 +1925,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5745600633623331248
+  Name: "Cone - Truncated Hollow Thin"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cone_truncated_hollow_003"
+  }
+}
+Assets {
   Id: 5710321233135864073
   Name: "Porcelain Vase 01"
   PlatformAssetType: 1
@@ -2282,6 +2318,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_trimitives_001_curve90_4m_ref"
+  }
+}
+Assets {
+  Id: 3608319738452107164
+  Name: "Liquid Bubbling VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_bubbling_looping"
   }
 }
 Assets {
