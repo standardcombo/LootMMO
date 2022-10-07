@@ -18,6 +18,10 @@
 local API = {}
 _G.AppState = API
 
+--AppState Events
+API.EnterKey = "AppState.Enter"
+API.ExitKey = "AppState.Exit"
+
 -- State numbers
 API.None = 0
 API.Settings = 10
@@ -40,29 +44,29 @@ API.Ability = 170
 
 -- Server/Client
 function API.GetStateForPlayer(player)
-    return player:GetResource('AppState')
+	return player:GetResource('AppState')
 end
 
 -- Server
 function API.SetStateForPlayer(player, newState)
-    local currentState = API.GetStateForPlayer(player)
+	local currentState = API.GetStateForPlayer(player)
 
-    -- TODO: Verify transition is valid from `current` to `new`
+	-- TODO: Verify transition is valid from `current` to `new`
 
-    Events.Broadcast('AppState.Exit', player, currentState, newState)
+	Events.Broadcast(API.EnterKey, player, currentState, newState)
 
-    player:SetResource('AppState', newState)
+	player:SetResource('AppState', newState)
 
-    Events.Broadcast('AppState.Enter', player, newState, currentState)
+	Events.Broadcast(API.EnterKey, player, newState, currentState)
 end
 
 if Environment.IsServer() then
-    Events.ConnectForPlayer(
-        'AppState.Set',
-        function(player, newState)
-            API.SetStateForPlayer(player, newState)
-        end
-    )
+	Events.ConnectForPlayer(
+		'AppState.Set',
+		function(player, newState)
+			API.SetStateForPlayer(player, newState)
+		end
+	)
 end
 
 -- Client
@@ -71,42 +75,42 @@ local _prevLocalPlayerState = 0
 
 -- Client
 function API.GetLocalState()
-    return _localPlayerState
+	return _localPlayerState
 end
 
 function DoLocalStateChange(newState)
-    if newState == 0 and _localPlayerState then
-        return
-    end
-    --print("DoLocalStateChange new = ".. newState ..", prev = ".. _localPlayerState)
+	if newState == 0 and _localPlayerState then
+		return
+	end
+	--print("DoLocalStateChange new = ".. newState ..", prev = ".. _localPlayerState)
 
-    local player = Game.GetLocalPlayer()
+	local player = Game.GetLocalPlayer()
 
-    Events.Broadcast('AppState.Exit', player, _localPlayerState, newState)
+	Events.Broadcast(API.ExitKey, player, _localPlayerState, newState)
 
-    _prevLocalPlayerState = _localPlayerState
-    _localPlayerState = newState
+	_prevLocalPlayerState = _localPlayerState
+	_localPlayerState = newState
 
-    Events.Broadcast('AppState.Enter', player, newState, _prevLocalPlayerState)
+	Events.Broadcast(API.EnterKey, player, newState, _prevLocalPlayerState)
 end
 
 -- Client
 function API.SetLocalState(newState)
-    DoLocalStateChange(newState)
+	DoLocalStateChange(newState)
 
-    Events.BroadcastToServer('AppState.Set', newState)
+	Events.BroadcastToServer('AppState.Set', newState)
 end
 
 if Environment.IsClient() then
-    -- Give other client scripts a chance to connect event listeners
-    Task.Wait()
+	-- Give other client scripts a chance to connect event listeners
+	Task.Wait()
 
-    Game.GetLocalPlayer().resourceChangedEvent:Connect(
-        function(player, resourceId, newState)
-            if resourceId == 'AppState' and newState ~= _localPlayerState then
-                DoLocalStateChange(newState)
-            end
-        end
-    )
-    DoLocalStateChange(Game.GetLocalPlayer():GetResource('AppState'))
+	Game.GetLocalPlayer().resourceChangedEvent:Connect(
+		function(player, resourceId, newState)
+			if resourceId == 'AppState' and newState ~= _localPlayerState then
+				DoLocalStateChange(newState)
+			end
+		end
+	)
+	DoLocalStateChange(Game.GetLocalPlayer():GetResource('AppState'))
 end

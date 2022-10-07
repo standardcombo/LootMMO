@@ -313,5 +313,45 @@ Assets {
       VirtualFolderPath: "Specialty"
       PlatformAssetType: 33
     }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      VirtualFolderPath: "Settings"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      VirtualFolderPath: "Equipment"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Ability"
+      VirtualFolderPath: "Settings"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      VirtualFolderPath: "Effect"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Loot"
+      VirtualFolderPath: "Potions"
+      VirtualFolderPath: "Spawns"
+      PlatformAssetType: 5
+    }
   }
 }

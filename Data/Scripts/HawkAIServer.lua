@@ -1,13 +1,13 @@
 --[[
-	NPCAI - Server
-	v0.13.0
-	by: standardcombo
+	HawkAI - Server
+	v0.1.0
+	original script: standardcombo
+	modified by: Ooccoo  
 	contributions: DarkDev, WaveParadigm
 	
-	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
+	Logical state machine for an hawk NPC. 
 	
-	Will walk over terrain and any objects to get to its objective. To mark objects as not walkable,
-	add to each one a custom property called "Walkable" of type boolean and set to false.
+	Works the same as NPC AI but will return to the owner when sleeping.
 	
 	See the NPC Kit README for more information.
 --]]
@@ -108,6 +108,10 @@ local temporaryVisionRadius = nil
 local temporaryHearingRadius = nil
 
 local root = script:FindTemplateRoot()
+
+-----------------------------------------------------
+----Changes from the Original
+-----------------------------------------------------
 local owner = root.serverUserData.owner
 local timeout = time()+2
 
@@ -115,12 +119,20 @@ while not Object.IsValid(owner) or time() > timeout do
     Task.Wait()
     owner = root.serverUserData.owner
 end
+-----------------------------------------------------
 
 function SetState(newState)
 	if (newState == STATE_SLEEPING) then
 		--RootStopRotate()
+
+		-----------------------------------------------------
+		----Changes from the Original
+		-----------------------------------------------------
+
+		--When resting set the target to the owner and follow
 		SetTarget(owner)
         RootLookAtContinuous(target, true, TURN_SPEED)
+		-----------------------------------------------------
 	elseif (newState == STATE_ENGAGING) then
 		--print("target = " .. tostring(target) .. ", moveSpeed = " .. tostring(MOVE_SPEED) .. ", attackRange = " .. ATTACK_RANGE)
 

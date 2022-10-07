@@ -1,9 +1,10 @@
 local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment']
+local Potions = _G["Potions.Equipment"]
 local EquipApi = {}
 
 function EquipApi.EquipEquipment(player, equipmentName, slot)
 	slot = slot or ''
-	local address = LOOT_ABILITY_EQUIPMENT.GetEquipment(equipmentName)
+	local address = LOOT_ABILITY_EQUIPMENT.GetEquipment(equipmentName) or Potions.GetEquipment(equipmentName)
 	if not address then
 		return
 	end

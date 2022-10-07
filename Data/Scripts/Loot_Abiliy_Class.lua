@@ -34,7 +34,7 @@ local Ability = {
         'unequippedEvent'
     }
 }
-function Ability:GetAbility()
+function Ability:GetEntry()
     return self.currentAbilty
 end
 function Ability:IsA(type)

@@ -5,6 +5,8 @@ local ITEMS = _G.Items
 local SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
+local ROOT = script:GetCustomProperty("Root"):WaitForObject()
+local STAT_DISPLAY = script:GetCustomProperty("StatDisplay"):WaitForObject()
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
@@ -25,10 +27,35 @@ local currentInventory = nil
 local slots = {}
 local isDraging = nil
 
+local function Get(panel, child)
+	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
+end
+
 local function SetImage(panel, icon, itemdata)
 	panel.isFlippedHorizontal = itemdata["flipIconH"] or false
 	panel.isFlippedVertical = itemdata["flipIconV"] or false
 	panel:SetImage(icon)
+end
+
+local function UpdateValues()
+	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
+	local inventory = character:GetComponent("Inventory")
+
+	local stats = inventory:CalculateInventory()
+	local map = {
+		["H"] = "Health",
+		["B"] = "Block",
+		["AP"] = "Attack",
+		["SP"] = "SkillP",
+		["SR"] = "SkillR",
+		["W"] = "Wisdom",
+		["A"] = "Agility",
+		["V"] = "Vitality",
+	}
+	for key, value in pairs(stats) do
+		local panel = Get(STAT_DISPLAY, map[key])
+		panel.text = tostring(math.floor(value))
+	end
 end
 
 local function RealeaseEvent(slot)
@@ -121,8 +148,8 @@ local function HoverSlot(slot)
 			_G["Item.Constructor"].New(
 				{
 					item = item.name,
-					order = item.order,
-					greatness = item.greatness
+					order = item:GetCustomProperty("Order"),
+					greatness = item:GetCustomProperty("Greatness")
 				}
 			)
 
@@ -202,6 +229,7 @@ for index, value in ipairs(SLOTS) do
 end
 
 local function InventoryChanged(inv, slot)
+	UpdateValues()
 	local item = inv:GetItem(slot)
 	local childIcon = slots[slot].icon
 	local childCount = slots[slot].count
@@ -229,6 +257,7 @@ local function InventoryChanged(inv, slot)
 		childIcon.visibility = Visibility.FORCE_OFF
 		childCount.text = ""
 	end
+
 end
 
 local function dataUpdated(character)
@@ -282,6 +311,13 @@ function Tick()
 	end
 end
 
+local function RecieviedOpen(id)
+	if id == ROOT then
+		UpdateValues()
+	end
+end
+
+Events.Connect('Ability_OpenPanel', RecieviedOpen)
 CharacterEquipped(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER), LOCAL_PLAYER)
 EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)

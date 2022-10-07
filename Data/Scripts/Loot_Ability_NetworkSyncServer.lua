@@ -8,7 +8,7 @@ local JSON = require(script:GetCustomProperty('Json'))
 local spawnedAbilities = {}
 
 LOOT_ABILITY_SPAWN_API.spawnFunction = function(abilityName) 
-    local ability = LOOT_ABILITY_DATABASE:GetAbility(abilityName)
+    local ability = LOOT_ABILITY_DATABASE:GetEntry(abilityName)
     if ability then
         local newAbility = LOOT_ABILITY_CONSTRUCTOR.CloneAbility(ability)
         if newAbility then

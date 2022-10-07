@@ -158,9 +158,13 @@ local function Confirm()
 	if not IsState(states.SelectingClass) then
 		return
 	end
-	Events.BroadcastToServer("CCselection", selectedClass["ClassIdentifier"])
-	Close()
-	Events.Broadcast("Ability_PanelComplete")
+	local character = EquipApi.GetCurrentCharacter(LOCAL_PLAYER)
+	assert(character)
+	local class = character:GetComponent("Class")
+	class:SetClass(selectedClass["ClassIdentifier"])
+	Events.BroadcastToServer("CCselection", selectedClass["ClassIdentifier"]) 
+	Task.Wait()
+	Events.Broadcast("Ability_PanelRefresh")
 end
 
 local function RecieviedOpen(id)

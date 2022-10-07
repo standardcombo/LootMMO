@@ -421,7 +421,7 @@ Objects {
     }
     UseParentWidth: true
     Text {
-      Label: "Craft Potions"
+      Label: "Equip Potions"
       Color {
         R: 1
         G: 1

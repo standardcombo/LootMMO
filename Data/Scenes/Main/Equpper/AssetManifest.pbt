@@ -1,13 +1,4 @@
 Assets {
-  Id: 17591585661421947434
-  Name: "UI Basic Shape Circle"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_Circle"
-  }
-}
-Assets {
   Id: 16272829598190271809
   Name: "Frame Outlined 016"
   PlatformAssetType: 9
@@ -86,6 +77,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameFlat_020"
+  }
+}
+Assets {
+  Id: 1170023131880546749
+  Name: "Frame Outline Thin 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameOutline_015"
+  }
+}
+Assets {
+  Id: 126394590291373209
+  Name: "Fantasy Spell Potion 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Potion_004"
   }
 }
 Assets {
