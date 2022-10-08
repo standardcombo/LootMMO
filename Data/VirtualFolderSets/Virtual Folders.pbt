@@ -353,5 +353,13 @@ Assets {
       VirtualFolderPath: "Spawns"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "ClassSelectionScreen"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "ClassSelectionScreen"
+      PlatformAssetType: 34
+    }
   }
 }
