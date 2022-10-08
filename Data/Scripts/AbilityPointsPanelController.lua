@@ -140,7 +140,7 @@ function Update()
 	UPGRADE_BUTTON.visibility = Visibility.INHERIT
 
 	local icon = AbilityAPI.GetIcon(selection)
-	local desc = AbilityAPI.GetAbility(selection)["description"]
+	local desc = AbilityAPI.GetEntry(selection)["description"]
 	ABILITY_NAME.text = selection or ""
 	ABILITY_DESCRIPTION.text = desc or ""
 	ABILITY_RENDER:SetImage(icon)

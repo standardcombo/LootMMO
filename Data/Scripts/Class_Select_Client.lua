@@ -2,9 +2,11 @@ local MAIN_CLASSES = script:GetCustomProperty('MainClasses'):WaitForObject()
 local SubPanel = script:GetCustomProperty('MainClassAcceptPanel'):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local CLASS_IMAGES = require(script:GetCustomProperty("ClassImages"))
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local classMainSelect = 'classMainSelect'
 local classOpen = 'classSelectOpen'
+local EquipApi = _G["Character.EquipAPI"]
 local Classes = _G['Character.Classes']
 local Abilities = _G['Ability.Equipment']
 
@@ -139,9 +141,13 @@ local function Confirm()
 	if not IsState(states.SelectingClass) then
 		return
 	end
-	Events.BroadcastToServer("CCselection", selectedClass["ClassIdentifier"])
-	Close()
-	Events.Broadcast("Ability_PanelComplete")
+	local character = EquipApi.GetCurrentCharacter(LOCAL_PLAYER)
+	assert(character)
+	local class = character:GetComponent("Class")
+	class:SetClass(selectedClass["ClassIdentifier"])
+	Events.BroadcastToServer("CCselection", selectedClass["ClassIdentifier"]) 
+	Task.Wait()
+	Events.Broadcast("Ability_PanelRefresh")
 end
 
 local function RecieviedOpen(id)

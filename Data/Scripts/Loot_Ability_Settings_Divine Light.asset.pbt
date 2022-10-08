@@ -18,4 +18,7 @@ Assets {
     }
   }
   SerializationVersion: 118
+  VirtualFolderPath: "Loot"
+  VirtualFolderPath: "Ability"
+  VirtualFolderPath: "Settings"
 }

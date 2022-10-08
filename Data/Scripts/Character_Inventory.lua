@@ -118,6 +118,8 @@ function component:CalculateInventory()
 		end
 	end
 	TotalStats["H"] = (TotalStats["H"] or 0) + 100
+	TotalStats["AP"] = (TotalStats["AP"] or 0) + 10
+
 	return TotalStats
 end
 

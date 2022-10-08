@@ -1517,8 +1517,8 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Control {
-          Width: 1
-          Height: 1
+          Width: -2
+          Height: -2
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1538,6 +1538,7 @@ Assets {
             }
             TeamSettings {
             }
+            RetainAspectRatio: true
           }
           AnchorLayout {
             SelfAnchor {
@@ -1910,6 +1911,14 @@ Assets {
                 Rotator {
                 }
               }
+              Overrides {
+                Name: "UIY"
+                Float: 20
+              }
+              Overrides {
+                Name: "UIX"
+                Float: -28
+              }
             }
           }
           ParameterOverrideMap {
@@ -2044,11 +2053,11 @@ Assets {
               }
               Overrides {
                 Name: "UIX"
-                Float: 28.407
+                Float: 28
               }
               Overrides {
                 Name: "UIY"
-                Float: 20.0804443
+                Float: 20
               }
               Overrides {
                 Name: "Scale"

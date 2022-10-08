@@ -9,7 +9,7 @@ function database:AddAbility(newAbility)
     end
 end
 
-function database:GetAbility(abilityName)
+function database:GetEntry(abilityName)
     return database:GetElementFromKey('name', abilityName)
 end
  

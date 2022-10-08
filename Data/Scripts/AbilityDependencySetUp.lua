@@ -1,18 +1,18 @@
 local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment'))
 local API = {}
 
-function API.GetAbility(name)
+function API.GetEntry(name)
     return LOOT_ABILITY_EQUIPMENT[name]
 end
 
 function API.GetEquipment(name)
-    local ability = API.GetAbility(name)
+    local ability = API.GetEntry(name)
     if ability then
         return ability['equipment']
     end
 end
 function API.GetIcon(name)
-    local ability = API.GetAbility(name)
+    local ability = API.GetEntry(name)
     if ability then
         return ability['icon']
     end

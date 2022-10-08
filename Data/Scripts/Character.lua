@@ -158,6 +158,7 @@ function constructor.NewCharacter()
 	NewCharacter:AddComponent('Class')
 	NewCharacter:AddComponent('Points')
 	NewCharacter:AddComponent('Inventory')
+	NewCharacter:AddComponent('Potions')
 	constructor.newCharacterFinished:Trigger(NewCharacter)
 	InitCharacter(NewCharacter)
 

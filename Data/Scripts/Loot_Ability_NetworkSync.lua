@@ -6,7 +6,7 @@ LOOT_ABILITY_DATABASE:WaitUntilSetup()
 local spawnedAbilities = {}
 local JSON = require(script:GetCustomProperty('Json'))
 
-local function GetAbility(item)
+local function GetEntry(item)
     for key, value in pairs(spawnedAbilities) do
         if key == item then
             return value
@@ -14,14 +14,14 @@ local function GetAbility(item)
     end
 end
 local function AddAbility(abilityName)
-    local newAbility = LOOT_ABILITY_DATABASE:GetAbility(abilityName)
+    local newAbility = LOOT_ABILITY_DATABASE:GetEntry(abilityName)
     if newAbility then
         return LOOT_ABILITY_CONSTRUCTOR.CloneAbility(newAbility)
     end
 end
 
 function ChangedEvent(item, property)
-    local ability = GetAbility(item)
+    local ability = GetEntry(item)
     if not ability then
         if property == 'AbilityName' then
             ChangedEvent(item, property)

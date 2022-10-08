@@ -98,12 +98,16 @@ function Toggle(newState)
 	Check()
 	local States = {
 		[Visibility.FORCE_OFF] = function()
+			Events.Broadcast("Ability_Close")
 			for index, value in ipairs(Priority) do
-				Events.Broadcast("Ability_Close")
 				value.visibility = Visibility.FORCE_OFF
 			end
 		end,
 		[Visibility.INHERIT] = function()
+			Events.Broadcast("Ability_Close")
+			for index, value in ipairs(Priority) do
+				value.visibility = Visibility.FORCE_OFF
+			end
 			Events.Broadcast("Ability_OpenPanel", wantsToUpdate[1])
 			wantsToUpdate[1].visibility = Visibility.INHERIT
 		end
@@ -122,7 +126,7 @@ function Tick()
 end
 
 function Refresh()
-	Check()
+	Toggle(ROOT.visibility)
 end
 
 function PanelComplete()
@@ -131,5 +135,5 @@ function PanelComplete()
 	end
 end
 
-Events.Connect("RefreshAbilityTab", Refresh)
+Events.Connect("Ability_PanelRefresh", Refresh)
 Events.Connect("Ability_PanelComplete", PanelComplete)

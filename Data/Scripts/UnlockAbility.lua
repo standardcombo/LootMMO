@@ -43,7 +43,7 @@ local function FindNextAccept(Progression, class)
 	for i = 1, 5 do
 		if Progression:GetProgressionKey("AbilitySlot" .. i) and not Progression:GetProgressionKey("AcceptSlot" .. i) then
 			currentSlot = i
-			return Abilities.GetAbility(class["Ability" .. i])
+			return Abilities.GetEntry(class["Ability" .. i])
 		end
 	end
 end
