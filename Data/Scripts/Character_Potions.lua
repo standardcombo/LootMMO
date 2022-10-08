@@ -46,8 +46,9 @@ function component:Serialize()
 end
 
 function component:Deserialize(data)
-	for index, value in ipairs(data) do
-		self:SetEquipped(index, value)
+	if not data then return end
+	for index, value in pairs(data) do
+		self:SetEquipped(value, index)
 	end
 end
 

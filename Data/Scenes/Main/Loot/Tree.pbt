@@ -18291,6 +18291,7 @@ Objects {
   ChildIds: 16076105511023615866
   ChildIds: 17256327127743720303
   ChildIds: 13094987276331356202
+  ChildIds: 92844531922968681
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -18309,6 +18310,43 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 92844531922968681
+  Name: "Character_PotionQuickNetwork_Client"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2907361584324815800
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9192068171390019973
     }
   }
   NetworkRelevanceDistance {
@@ -18562,6 +18600,7 @@ Objects {
   ChildIds: 4221262545014196105
   ChildIds: 16954405015773723522
   ChildIds: 13296195758628668548
+  ChildIds: 2297663423405843202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -18576,6 +18615,43 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2297663423405843202
+  Name: "Character_PotionQuickNetwork_Server"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8537786665085251000
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 13552875232596020869
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

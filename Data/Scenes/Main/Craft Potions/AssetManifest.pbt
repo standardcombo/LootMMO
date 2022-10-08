@@ -17,6 +17,24 @@ Assets {
   }
 }
 Assets {
+  Id: 12688562651744601369
+  Name: "Baloo 2"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "Baloo2Regular_ref"
+  }
+}
+Assets {
+  Id: 11336346532215892341
+  Name: "Germania One"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "GermaniaOneRegular_ref"
+  }
+}
+Assets {
   Id: 11237709767285311165
   Name: "Clunky Click 01 SFX"
   PlatformAssetType: 7
@@ -35,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8578995028087510781
+  Name: "UI Gradient Circular 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_001"
+  }
+}
+Assets {
   Id: 5338351160029262659
   Name: "Pirata One"
   PlatformAssetType: 28
@@ -50,5 +77,32 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Equip_Cauldron_001"
+  }
+}
+Assets {
+  Id: 487025218183620144
+  Name: "Center Arrow 002 Wedge"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterArrow_002Wedge"
+  }
+}
+Assets {
+  Id: 126394590291373209
+  Name: "Fantasy Spell Potion 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Potion_004"
+  }
+}
+Assets {
+  Id: 26986594793006901
+  Name: "Icon Diamond"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Diamond"
   }
 }

@@ -4,8 +4,11 @@ local ABILITY_POINTS = script:GetCustomProperty('AbilityPoints'):WaitForObject()
 local MAIN_CLASS_SELECT = script:GetCustomProperty('MainClassSelect'):WaitForObject()
 local SUB_CLASS_SELECT = script:GetCustomProperty('SubClassSelect'):WaitForObject()
 
-local AppState = _G["AppState"]
-local EquipAPI = _G['Character.EquipAPI']
+local AppState   = _G["AppState"]
+local EquipAPI   = _G['Character.EquipAPI']
+local ClassAPI   = _G["Character.Classes"]
+local AbilityAPI = _G["Ability.Equipment"]
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local lastState = nil
 
@@ -34,7 +37,13 @@ local SlotTable = {
 	"AbilitySlot4",
 	"AbilitySlot5",
 }
-
+local AbilityTable = {
+	"Ability1",
+	"Ability2",
+	"Ability3",
+	"Ability4",
+	"Ability5",
+}
 local function CompleteUnlock(type)
 	Events.BroadcastToServer('CompletedUnlock', type)
 end
@@ -66,7 +75,9 @@ local function Check()
 	local function CheckTrue()
 		for i = 1, #SlotTable, 1 do
 			if progression:GetProgressionKey(SlotTable[i]) and not progression:GetProgressionKey(AcceptTable[i]) then
-				return true
+				if AbilityAPI.GetEntry(ClassAPI.GetClass(class:GetClass())[AbilityTable[i]]) then
+					return true
+				end
 			end
 		end
 	end

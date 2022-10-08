@@ -1,5 +1,5 @@
 "Flag[String]","Level[Int]","CommonKey[String]"
-"AbilitySlot1","2"," AbilitySlot"
+"AbilitySlot1","2","AbilitySlot"
 "ClassSelect","2","ClassSelect"
 "PotionSlot1","3","PotionSlot"
 "HealthPotion1","3","HealthPotion"
