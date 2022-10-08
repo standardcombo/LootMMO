@@ -386,30 +386,12 @@ Assets {
   }
 }
 Assets {
-  Id: 13950225922132296555
-  Name: "Cylinder"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_002"
-  }
-}
-Assets {
   Id: 13840960244963884721
   Name: "Decal Hay Patch 02"
   PlatformAssetType: 14
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_fan_hay_002"
-  }
-}
-Assets {
-  Id: 13802195091322210055
-  Name: "Plastic Matte"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "plastic_matte_001"
   }
 }
 Assets {
@@ -1364,15 +1346,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pyramid_eighsided_truncated_001"
-  }
-}
-Assets {
-  Id: 5646704112327633341
-  Name: "Sphere - Half"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_hemisphere_001"
   }
 }
 Assets {
