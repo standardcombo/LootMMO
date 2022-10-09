@@ -1,11 +1,10 @@
 local PotionApi = _G["Potions.Equipment"]
 
-local function SetPotion(PotionName, slot)
+local function SetPotion(slot, PotionName) 
 	if not PotionApi.GetEntry(PotionName) then
 		return
 	end
-	if not slot then return end
-
+	if not slot then return end 
 	Events.BroadcastToServer('EquipPotion', slot, PotionName)
 end
 

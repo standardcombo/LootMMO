@@ -29,114 +29,113 @@ local deactivateByMovement = true --to be used as parameter TODO
 local isShowingPanel = false
 
 function ToggleIKAs(activ)
-    if occupyingPlayer == nil then warn("Call ToggkeIKAs() always prior to setting occupyingPlayer = nil") return end
-    for _,ika in ipairs(IKAs)do
-    	if _G.IkStack then
-	        if activ then
-	            _G.IkStack.Add(occupyingPlayer, ika)
-	        else
-	            _G.IkStack.Remove(occupyingPlayer, ika)
-	        end
-    	else
-	        if activ then
-	            ika:Activate(occupyingPlayer)
-	        else
-	            ika:Deactivate()
-	        end
-	    end
-    end
+	if occupyingPlayer == nil then warn("Call ToggkeIKAs() always prior to setting occupyingPlayer = nil") return end
+	for _, ika in ipairs(IKAs) do
+		if _G.IkStack then
+			if activ then
+				_G.IkStack.Add(occupyingPlayer, ika)
+			else
+				_G.IkStack.Remove(occupyingPlayer, ika)
+			end
+		else
+			if activ then
+				ika:Activate(occupyingPlayer)
+			else
+				ika:Deactivate()
+			end
+		end
+	end
 end
 
 function GetPlayerFromID(pid)
-    for _,p in ipairs(Game.GetPlayers()) do
-        if p.id == pid then return p end
-    end
-    return false
+	for _, p in ipairs(Game.GetPlayers()) do
+		if p.id == pid then return p end
+	end
+	return false
 end
 
 function EmptySitMe()
-    if occupyingPlayer then
-        ToggleIKAs(false)
-    end
-    if occupyingPlayer == LOCAL_PLAYER then DeactivateSitMeHandle() end
-    occupyingPlayer = nil
+	if occupyingPlayer then
+		ToggleIKAs(false)
+	end
+	if occupyingPlayer == LOCAL_PLAYER then DeactivateSitMeHandle() end
+	occupyingPlayer = nil
 end
 
 function OccupySitMe(p)
-    occupyingPlayer = p
-    if p == LOCAL_PLAYER then ActivateSitMeHandle() end
-    ToggleSitMePanel(false)
-    ToggleIKAs(true)
-    ActivateSitMeHandle()
+	occupyingPlayer = p
+	if p == LOCAL_PLAYER then ActivateSitMeHandle() end
+	ToggleSitMePanel(false)
+	ToggleIKAs(true)
+	ActivateSitMeHandle()
 end
 
 function ToggleSitMePanel(show)
 	if show == isShowingPanel then return end
 	isShowingPanel = show
-	
-    if show then
-    	SIT_ME_PANEL.clientUserData.visibleCount = SIT_ME_PANEL.clientUserData.visibleCount + 1
-    else
-    	SIT_ME_PANEL.clientUserData.visibleCount = SIT_ME_PANEL.clientUserData.visibleCount - 1
-    end
-    
-    if SIT_ME_PANEL.clientUserData.visibleCount == 0 then
-        SIT_ME_PANEL.visibility = Visibility.FORCE_OFF
-    else
-        SIT_ME_PANEL.visibility = Visibility.INHERIT
-    end
-    SIT_ME_PANEL.clientUserData.text.text = TRIGGER_TEXT
+
+	if show then
+		SIT_ME_PANEL.clientUserData.visibleCount = SIT_ME_PANEL.clientUserData.visibleCount + 1
+	else
+		SIT_ME_PANEL.clientUserData.visibleCount = SIT_ME_PANEL.clientUserData.visibleCount - 1
+	end
+
+	if SIT_ME_PANEL.clientUserData.visibleCount == 0 then
+		SIT_ME_PANEL.visibility = Visibility.FORCE_OFF
+	else
+		SIT_ME_PANEL.visibility = Visibility.INHERIT
+	end
+	SIT_ME_PANEL.clientUserData.text.text = TRIGGER_TEXT
 end
 
-function UpdateSitMeState(player,key)
-    if key ~= SIT_ME_ID then return end
-    local currentOwner = LOCAL_PLAYER:GetPrivateNetworkedData(key)
-    --print("currentOwner",currentOwner)
-    currentOwner = GetPlayerFromID(currentOwner)
-    if currentOwner == false then
-        EmptySitMe()
-    elseif currentOwner:IsA("Player") then
-        OccupySitMe(currentOwner)
-    end
+function UpdateSitMeState(player, key)
+	if key ~= SIT_ME_ID then return end
+	local currentOwner = LOCAL_PLAYER:GetPrivateNetworkedData(key)
+	--print("currentOwner",currentOwner)
+	currentOwner = GetPlayerFromID(currentOwner)
+	if currentOwner == false then
+		EmptySitMe()
+	elseif currentOwner:IsA("Player") then
+		OccupySitMe(currentOwner)
+	end
 end
 
 function ActivateSitMeHandle()
-    --print("prior activation reset")
-    DeactivateSitMeHandle()
-    --print("activating handle")
-    activateSitMeHandle = Input.actionPressedEvent:Connect(function (player, action, value)
-        if action == PRIMARY_ACTION or action == SECONDARY_ACTION
-            or (deactivateByMovement == true and occupyingPlayer == LOCAL_PLAYER and action == "Move") then
-                DeactivateSitMeHandle()
-                Events.BroadcastToServer("SitMe",SIT_ME_ID)
-            end
-    end)
+	--print("prior activation reset")
+	DeactivateSitMeHandle()
+	--print("activating handle")
+	activateSitMeHandle = Input.actionPressedEvent:Connect(function(player, action, value)
+		if action == PRIMARY_ACTION --or action == SECONDARY_ACTION
+			or (deactivateByMovement == true and occupyingPlayer == LOCAL_PLAYER and action == "Move") then
+			DeactivateSitMeHandle()
+			Events.BroadcastToServer("SitMe", SIT_ME_ID)
+		end
+	end)
 end
 
 function DeactivateSitMeHandle()
-    --print("dectivating handle")
-    if activateSitMeHandle then
-        activateSitMeHandle:Disconnect()
-    end
+	--print("dectivating handle")
+	if activateSitMeHandle then
+		activateSitMeHandle:Disconnect()
+	end
 end
 
 function OnSitMeTriggerOverlapStart(trigger, other)
-    if other ~= LOCAL_PLAYER then return end
-    if occupyingPlayer then return end
-    ToggleSitMePanel(true)
-    ActivateSitMeHandle()
+	if other ~= LOCAL_PLAYER then return end
+	if occupyingPlayer then return end
+	ToggleSitMePanel(true)
+	ActivateSitMeHandle()
 end
 
 function OnSitMeTriggerOverlapEnds(trigger, other)
-    if other ~= LOCAL_PLAYER then return end
-    ToggleSitMePanel(false)
-    DeactivateSitMeHandle()
+	if other ~= LOCAL_PLAYER then return end
+	ToggleSitMePanel(false)
+	DeactivateSitMeHandle()
 end
-
 
 --wait for data
 while LOCAL_PLAYER:GetPrivateNetworkedData(SIT_ME_ID) == nil do
-    Task.Wait()
+	Task.Wait()
 end
 
 --update status

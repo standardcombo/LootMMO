@@ -21,10 +21,17 @@ function API.GetIcon(name)
 	end
 end
 
+function API.GetName(name)
+	local potion = API.GetEntry(name)
+	if potion then
+		return potion['name']
+	end
+end
+
 function API.FindFromAssetId(assetID)
 	for key, potion in pairs(definitions) do
 		if potion['equipment'] then
-			local string = CoreString(potion['equipment'], ":")
+			local string = CoreString.Split(potion['equipment'], ":") 
 			if string == assetID then
 				return potion
 			end

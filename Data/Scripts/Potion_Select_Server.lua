@@ -4,7 +4,7 @@ local PotionApi = _G["Potions.Equipment"]
 local function EquipPotion(player, slot, potionName)
 	if not PotionApi.GetEntry(potionName) then return end
 	if type(slot) ~= "number" then return end
-
+ 
 	local Character = EquipAPI.GetCurrentCharacter(player)
 	if not Character then
 		return

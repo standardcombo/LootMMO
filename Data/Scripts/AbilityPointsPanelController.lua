@@ -184,7 +184,6 @@ function BroadcastUpgrade()
 end
 
 UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
-
 Events.Connect("Ability.SelectSlot", SelectAbility)
 
 
