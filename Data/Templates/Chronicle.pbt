@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11002928437595490801
+        ParentId: 4781671109827199097
         ChildIds: 5022471939734394159
         ChildIds: 8256245437136167688
         UnregisteredParameters {
@@ -229,6 +229,7 @@ Assets {
         }
         ParentId: 8256245437136167688
         ChildIds: 12595215436884632363
+        ChildIds: 9471742129088438770
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -294,6 +295,43 @@ Assets {
         Script {
           ScriptAsset {
             Id: 11462786613475885873
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 9471742129088438770
+        Name: "EquipmentOverrideFacingMode"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3381802183248860929
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5785948163031759547
           }
         }
         NetworkRelevanceDistance {
