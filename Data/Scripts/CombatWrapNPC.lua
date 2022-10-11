@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.13.1
+	v0.14.0
 	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
@@ -17,6 +17,8 @@
 	- IsValidObject()
 	- AddImpulse()
 	- FindInSphere()
+	- GetMaxWalkSpeed()
+	- SetMaxWalkSpeed()
 --]]
 
 -- Component dependencies
@@ -308,6 +310,16 @@ function FindRoot(npc)
 		return root
 	end
 	return npc
+end
+
+-- GetMaxWalkSpeed()
+function wrapper.GetMaxWalkSpeed(player)
+	return 0
+end
+
+-- SetMaxWalkSpeed()
+function wrapper.SetMaxWalkSpeed(player, value)
+	-- TODO
 end
 
 return wrapper

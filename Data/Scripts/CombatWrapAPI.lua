@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap API
-	v0.13.0
+	v0.14.0
 	by: standardcombo, WaveParadigm
 	
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
@@ -20,6 +20,8 @@
 	- IsValidObject()
 	- AddImpulse()
 	- FindInSphere()
+	- GetMaxWalkSpeed()
+	- SetMaxWalkSpeed()
 --]]
 -- Registers itself into the global table
 local API = {}
@@ -131,6 +133,17 @@ function API.FindInSphere(position, radius, parameters)
 	end
 	return enemies
 end
+
+-- GetMaxWalkSpeed()
+function API.GetMaxWalkSpeed(object)
+	return GetWrapperFor(object).GetMaxWalkSpeed(object)
+end
+
+-- SetMaxWalkSpeed()
+function API.SetMaxWalkSpeed(object, value)
+	GetWrapperFor(object).SetMaxWalkSpeed(object, value)
+end
+
 
 function GetWrapperFor(object)
 	if object and object:IsA("Player") then

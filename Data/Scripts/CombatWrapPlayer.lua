@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - Player
-	v0.13.0
+	v0.14.0
 	by: standardcombo
 	
 	Provides an interface of combat functions that operate on a Player object.
@@ -17,6 +17,8 @@
 	- IsValidObject()
 	- AddImpulse()
 	- FindInSphere()
+	- GetMaxWalkSpeed()
+	- SetMaxWalkSpeed()
 --]]
 
 local wrapper = {}
@@ -86,6 +88,16 @@ end
 -- FindInSphere()
 function wrapper.FindInSphere(position, radius, parameters)
 	return Game.FindPlayersInSphere(position, radius, parameters)
+end
+
+-- GetMaxWalkSpeed()
+function wrapper.GetMaxWalkSpeed(player)
+	return player.maxWalkSpeed
+end
+
+-- SetMaxWalkSpeed()
+function wrapper.SetMaxWalkSpeed(player, value)
+	player.maxWalkSpeed = value
 end
 
 return wrapper
