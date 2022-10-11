@@ -157,13 +157,11 @@ function UpdatePlayerEffectState(player, effectType)
 
 			if statusEffectData.type == effectType then
 				player.movementControlMode = MovementControlMode.NONE
-				--player.lookControlMode = LookControlMode.NONE
 				return
 			end
 		end
 
 		player.movementControlMode = DEFAULT_PLAYER_SETTINGS.movementControlMode
-		--player.lookControlMode = DEFAULT_PLAYER_SETTINGS.lookControlMode
 		return
 	end
 
@@ -306,7 +304,7 @@ function API.GetStatusEffectsOnPlayer(player)
 end
 
 -- Server only
-function API.ApplyStatusEffect(player, id, source, duration, damage, multiplier)
+function API.ApplyStatusEffect(player, id, optionalParameters)
 	if not Object.IsValid(player) then
 		return
 	end
@@ -326,18 +324,18 @@ function API.ApplyStatusEffect(player, id, source, duration, damage, multiplier)
 			if not trackerTbl then
 				--tracker:SetNetworkedCustomProperty(GetIdPropertyName(i), id)
 				--tracker:SetNetworkedCustomProperty(GetStartTimePropertyName(i), time())
-				if source or duration or damage or multiplier then
-					local tempTbl = {
-						[ID_KEY] = id,
-						[TIME_KEY] = CoreMath.Round(time(), 2),
-						[SOURCE_KEY] = source.id,
-						[DURATION_KEY] = duration,
-						[DAMAGE_KEY] = damage,
-						[MULTIPLIER_KEY] = multiplier
-					}
 
-					tracker:SetNetworkedCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
-				end
+				local tempTbl = {
+					[ID_KEY] = id,
+					[TIME_KEY] = CoreMath.Round(time(), 2),
+					[SOURCE_KEY] = (optionalParameters.source or {}).id,
+					[DURATION_KEY] = optionalParameters.duration,
+					[DAMAGE_KEY] = optionalParameters.damage,
+					[MULTIPLIER_KEY] = optionalParameters.multiplier
+				}
+
+				tracker:SetNetworkedCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
+
 				tickCounts[player][i] = 0
 
 				local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
@@ -480,10 +478,9 @@ function API.Tick(deltaTime)
 						end
 					end
 
-					if
-						statusEffectData.duration and
-							time() > tonumber(startTime + (trackerTbl[DURATION_KEY] or statusEffectData.duration))
-					 then
+					if statusEffectData.duration and
+						time() > tonumber(startTime + (trackerTbl[DURATION_KEY] or statusEffectData.duration))
+					then
 						API.RemoveStatusEffect(player, i)
 					end
 				end
@@ -495,4 +492,5 @@ end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 
+_G["StatusEffects.API"] = API
 return API

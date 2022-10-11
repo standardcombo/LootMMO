@@ -5,31 +5,44 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:APIStatusEffects"
-        AssetReference {
-          Id: 6140123420589022677
-        }
+        Name: "cs:DPS"
+        Float: 5
       }
       Overrides {
-        Name: "cs:EffectIcon"
+        Name: "cs:ModuleManager"
         AssetReference {
-          Id: 17056392396159198219
+          Id: 6849549736519012849
         }
       }
       Overrides {
         Name: "cs:EffectTemplate"
         AssetReference {
-          Id: 9200187627411167986
+          Id: 3466880615205517635
         }
       }
-    }
-    Assets {
-      Id: 17056392396159198219
-      Name: "Biohazard"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_SciFI_Icon_024"
+      Overrides {
+        Name: "cs:DPS:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:DPS:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:ModuleManager:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:ModuleManager:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:EffectTemplate:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:EffectTemplate:ml"
+        Bool: false
       }
     }
   }

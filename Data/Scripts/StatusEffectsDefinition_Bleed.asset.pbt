@@ -5,31 +5,30 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:APIStatusEffects"
+        Name: "cs:DPS"
+        Float: 10
+      }
+      Overrides {
+        Name: "cs:ModuleManager"
         AssetReference {
-          Id: 6140123420589022677
+          Id: 6849549736519012849
         }
       }
       Overrides {
-        Name: "cs:EffectIcon"
-        AssetReference {
-          Id: 7227656168876650477
-        }
+        Name: "cs:DPS:isrep"
+        Bool: false
       }
       Overrides {
-        Name: "cs:EffectTemplate"
-        AssetReference {
-          Id: 6034558872979117633
-        }
+        Name: "cs:DPS:ml"
+        Bool: false
       }
-    }
-    Assets {
-      Id: 7227656168876650477
-      Name: "Fantasy Ability Red 011"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_011"
+      Overrides {
+        Name: "cs:ModuleManager:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:ModuleManager:ml"
+        Bool: false
       }
     }
   }

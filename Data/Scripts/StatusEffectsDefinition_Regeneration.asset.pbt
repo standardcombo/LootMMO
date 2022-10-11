@@ -1,12 +1,12 @@
 Assets {
-  Id: 5687327793082581279
-  Name: "StatusEffectsDefinition_Burn"
+  Id: 2863969498963703912
+  Name: "StatusEffectsDefinition_Regeneration"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
         Name: "cs:DPS"
-        Int: 2
+        Float: 10
       }
       Overrides {
         Name: "cs:ModuleManager"
@@ -33,7 +33,4 @@ Assets {
     }
   }
   SerializationVersion: 118
-  VirtualFolderPath: "Loot"
-  VirtualFolderPath: "Ability"
-  VirtualFolderPath: "StatusEffects"
 }
