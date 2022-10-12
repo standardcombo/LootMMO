@@ -6,7 +6,7 @@ Assets {
     CustomParameters {
       Overrides {
         Name: "cs:AdditionalRadius"
-        Int: 20000
+        Int: 10000
       }
       Overrides {
         Name: "cs:TriggerTemplate"
@@ -16,7 +16,7 @@ Assets {
       }
       Overrides {
         Name: "cs:DespawnDelay"
-        Float: 4
+        Float: 10
       }
       Overrides {
         Name: "cs:QuestID"
