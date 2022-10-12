@@ -63,6 +63,7 @@ function OnStunBeginOverlap(thisTrigger, other)
 end
 
 function OnBoulderBeginOverlap(thisTrigger, other)
+    local mods = ROOT.serverUserData.calculateModifier()
     if not Object.IsValid(ABILITY) or other == ABILITY.owner then
         return
     end
@@ -84,7 +85,7 @@ function OnBoulderBeginOverlap(thisTrigger, other)
     end
 
     local dmg = Damage.New()
-    dmg.amount = lastDamage
+    dmg.amount = mods['Damage']
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY

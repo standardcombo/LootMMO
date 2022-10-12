@@ -133,5 +133,14 @@ Assets {
         AssetId: "IllustratedIcons_Japan_Abilities_ChainLightning"
       }
     }
+    Assets {
+      Id: 2269651256238114287
+      Name: "Fantasy Ability Purple 025"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Ability_Purple_025"
+      }
+    }
   }
 }

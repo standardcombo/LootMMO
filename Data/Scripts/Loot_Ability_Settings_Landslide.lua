@@ -13,26 +13,60 @@ MODIFIERAPI.SetupMultipleNewModifiers(
 	}
 )
 
---Set the calcuation and string for the ability and upgrader to Read.
-modifiers['Damage'].calString = "76 + stats.A * 0.1"
+--Formula: Min + (Max - Min) * SP / 156
+modifiers['Damage'].calString = "40 + (150 - 40) * SP / 156"
 modifiers['Damage'].calculation = function(stats)
-	return 76 + stats.A * 0.1
+    local min = 40
+    local max = 150
+    local SP = stats.SP
+    local dmg = min + (max - min) * SP / 156
+    local AGI = stats.A
+    local starRating = stats['Rock Strike']
+    -- Check for crit
+    function IsCrit()
+        local chance = math.random(0,100)/100
+        if chance <= AGI/172 then
+            return true
+        else
+            return false
+        end
+    end
+    -- Get crit multiplier
+    function GetMultiplier()
+        --Min + Star Rating * Base Modifier
+        local min = 1.7
+        local baseModifier = 0.1
+        return min + starRating * baseModifier
+    end
+    if IsCrit() then
+        return GetMultiplier() * dmg
+    else
+        return dmg
+    end
 end
 
--- Star Rating is used by using stats[ability name]
-modifiers['Cooldown'].calString = "11 - stats.W * 0.002- (stats['Landslide'] /2)"
+--Formula: Min - Star Rating * Base Modifier
+modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
-	return 11 - stats.W * 0.002 - (stats['Landslide'] / 2)
+    local min = 12
+    local starRating = stats['Landslide']
+    local baseModifier = 0.5
+    return min - starRating * baseModifier
 end
 
-modifiers['BashRadius'].calString = "1.2 + stats.A * 0.001"
+--Formula: Min + (Max - Min) * VIT / 172
+modifiers['BashRadius'].calString = "5 + (20 - 5) * VIT / 172"
 modifiers['BashRadius'].calculation = function(stats)
-	return 1.2 + stats.A * 0.001
+	local min = 5
+	local max = 20
+	local VIT = stats.V
+	local radius = min + (max - min) * VIT / 172
+	return radius
 end
 
-modifiers['Range'].calString = ".8 + stats.A * 0.001"
+modifiers['Range'].calString = "0.8"
 modifiers['Range'].calculation = function(stats)
-	return .8 + stats.A * 0.001
+	return 0.8
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
