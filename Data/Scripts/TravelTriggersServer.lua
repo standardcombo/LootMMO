@@ -28,7 +28,7 @@ function OnInteracted(trigger, player)
 		
 		gameState = tonumber(gameState)
 		
-		if gameState then
+		if gameState and gameState >= 0 then
 			TravelToGameState(player, gameState)
 		end
 	end

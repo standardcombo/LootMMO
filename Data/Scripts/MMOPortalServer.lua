@@ -7,6 +7,7 @@ local DESPAWN_PORTAL_TRIGGER = script:GetCustomProperty("DespawnPortalTrigger"):
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 local MAX_DURATION = script:GetCustomProperty("MaxDuration")
 
+local TELEPORT_SPAWN_KEY = "PortalReturn"
 local TRANSFER_EVENT_ID = "Portal.Transfer"
 local FLASH_VFX_EVENT_ID = "FlashPortalVfx"
 
@@ -41,7 +42,7 @@ function TransferPlayerToGame(player, destinationGame)
 end
 
 function TransferPlayerToSocialHub(player)
-	SPAWN_UTILS.SpawnPlayerAt(player, "Social")
+	SPAWN_UTILS.SpawnPlayerAt(player, TELEPORT_SPAWN_KEY)
 end
 
 
