@@ -1,6 +1,6 @@
 --[[
 	Damage Feedback - Server
-	v1.1.0
+	v1.2.0
 	by: Wave Paradigm, standardcombo
 	
 	By default player damaged is server-only.
@@ -17,6 +17,7 @@ local BLOCKED_COLOR = script:GetCustomProperty("Blocked") or Color.GRAY
 local HEADSHOT_COLOR = script:GetCustomProperty("Headshot") or Color.YELLOW
 local ARMOR_COLOR = script:GetCustomProperty("Armor") or Color.CYAN
 local CRITICAL_COLOR = script:GetCustomProperty("Critical") or Color.RED
+local HEAL_COLOR = script:GetCustomProperty("Heal") or Color.GREEN
 
 function TAGS() return _G["standardcombo.Combat.Tags"] end
 
@@ -25,10 +26,15 @@ function SendToPlayer(player, value, pos, tags)
 	local color = DEFAULT_COLOR
 	
 	-- Blocked?
-	if value == "0" then
+	if value == 0 or value == "0" then
 		color = BLOCKED_COLOR
 		value = "Blocked"
 	
+	-- Heal?
+	elseif type(value) == "number" and value < 0 then
+		color = HEAL_COLOR
+		value = "+"..(-value)
+
 	-- Headshot?
 	elseif TAGS().Contains(tags, "Headshot") then
 		color = HEADSHOT_COLOR
@@ -56,7 +62,6 @@ function OnDamageTaken(attackData)
 	local player = attackData.source
 	if player and player:IsA("Player") then
 		local amount = math.floor(attackData.damage.amount)
-		local value = tostring(amount)
 		local pos = attackData.position
 		
 		-- Fix the position in case it's missing
@@ -76,7 +81,7 @@ function OnDamageTaken(attackData)
 			attackData.position = pos
 		end
 		
-		SendToPlayer(player, value, pos, attackData.tags)
+		SendToPlayer(player, amount, pos, attackData.tags)
 	end
 end
 

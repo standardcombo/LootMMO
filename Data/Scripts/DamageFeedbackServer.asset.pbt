@@ -45,6 +45,14 @@ Assets {
           A: 1
         }
       }
+      Overrides {
+        Name: "cs:Heal"
+        Color {
+          G: 0.960000038
+          B: 0.101721957
+          A: 1
+        }
+      }
     }
   }
   SerializationVersion: 118
