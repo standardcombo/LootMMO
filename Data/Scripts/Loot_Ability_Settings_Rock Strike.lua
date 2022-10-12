@@ -22,8 +22,7 @@ modifiers['Damage'].calculation = function(stats)
     local starRating = stats['Rock Strike']
     -- Check for crit
     function IsCrit()
-        local chance = math.random(0,100)/100
-        if chance <= AGI/172 then
+        if math.random() <= AGI/172 then
             return true
         else
             return false
@@ -37,9 +36,9 @@ modifiers['Damage'].calculation = function(stats)
         return min + starRating * baseModifier
     end
     if IsCrit() then
-        return GetMultiplier() * dmg
+        return {GetMultiplier() * dmg, true}
     else
-        return dmg
+        return {dmg, false}
     end
 end
 

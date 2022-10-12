@@ -8,7 +8,7 @@ local modifiers =
         'Damage',
         'Cooldown',
         'Bleed',
-        'Stun'
+        'StunDuration'
     }
 )
 modifiers['Damage'].calculation = function(stats)
@@ -20,7 +20,7 @@ end
 modifiers['Bleed'].calculation = function(stats)
     return 5 + stats['A'] * 0.002
 end
-modifiers['Stun'].calculation = function(stats)
+modifiers['StunDuration'].calculation = function(stats)
     return 5 + stats['A'] * 0.002
 end
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

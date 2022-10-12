@@ -25,9 +25,9 @@ function HitObject(other)
         if otherTeam and Teams.AreTeamsFriendly(otherTeam, owner.team) then
             return
         end
-
+        local crit = mods ["Damage"][2]
         local dmg = Damage.New()
-        dmg.amount = mods ["Damage"]
+        dmg.amount = mods ["Damage"][1]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = owner
         dmg.sourceAbility = currentAbility
@@ -38,7 +38,7 @@ function HitObject(other)
             source = owner,
             position = nil,
             rotation = nil,
-            tags = {id = 'Warrior_Q'}
+            tags = {id = 'Warrior_Q', Critical = crit}
         }
         COMBAT().ApplyDamage(attackData)
 
