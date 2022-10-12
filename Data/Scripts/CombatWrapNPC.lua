@@ -79,14 +79,7 @@ function wrapper.GetMaxHitPoints(obj)
 		return obj.context.MAX_HEALTH
 	end
 	
-	local npcScript = nil
-	
-	if NPC_MANAGER() then
-		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
-		if (not npcScript) then
-			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
-		end
-	end
+	local npcScript = FindNPCScript(obj)
 	
 	if not npcScript then return false end
 	
@@ -108,11 +101,7 @@ function wrapper.GetVelocity(obj)
 		return obj.context.GetVelocity()
 	end
 	
-	local npcScript = nil
-	
-	if NPC_MANAGER() then
-		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
-	end
+	local npcScript = FindNPCScript(obj)
 	
 	if not npcScript then return Vector3.ZERO end
 	
@@ -174,14 +163,7 @@ function wrapper.IsDead(obj)
 		return (not obj.context.IsAlive())
 	end
 	
-	local npcScript = nil
-	
-	if NPC_MANAGER() then
-		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
-		if (not npcScript) then
-			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
-		end
-	end
+	local npcScript = FindNPCScript(obj)
 	
 	if not npcScript then return false end
 	
@@ -219,7 +201,7 @@ function wrapper.IsValidObject(obj)
 	if not Object.IsValid(obj) then return false end
 	if NPC_MANAGER() then
 		if NPC_MANAGER().IsRegistered(obj) then return true end
-		return (NPC_MANAGER().FindScriptForCollider(obj) ~= nil or NPC_MANAGER().FindScriptForDamageable(obj) ~= nil)
+		return FindNPCScript(obj) ~= nil
 	end
 	return false
 end
@@ -295,6 +277,32 @@ function wrapper.FindInSphere(position, radius, parameters)
 	return {}
 end
 
+
+-- GetMaxWalkSpeed()
+function wrapper.GetMaxWalkSpeed(npc)
+	if obj.context and obj.context.GetMaxWalkSpeed then
+		return obj.context.GetMaxWalkSpeed()
+	end
+	local npcScript = FindNPCScript(npc)
+	if npcScript then
+		return npcScript.context.GetMaxWalkSpeed()
+	end
+	return 0
+end
+
+
+-- SetMaxWalkSpeed()
+function wrapper.SetMaxWalkSpeed(npc, value)
+	local npcScript = npc
+	if not npcScript.context or not npcScript.context.SetMaxWalkSpeed then
+		npcScript = FindNPCScript(npc)
+	end
+	if npcScript.context and npcScript.context.SetMaxWalkSpeed then
+		npcScript.context.SetMaxWalkSpeed(value)
+	end
+end
+
+
 function FindRoot(npc)
 	if not npc:IsA("CoreObject") then
 		return nil
@@ -312,15 +320,17 @@ function FindRoot(npc)
 	return npc
 end
 
--- GetMaxWalkSpeed()
-function wrapper.GetMaxWalkSpeed(player)
-	return 0
+function FindNPCScript(obj)
+	if NPC_MANAGER() then
+		local npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+		if (not npcScript) then
+			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
+		end
+		return npcScript
+	end
+	return nil
 end
 
--- SetMaxWalkSpeed()
-function wrapper.SetMaxWalkSpeed(player, value)
-	-- TODO
-end
 
 return wrapper
 

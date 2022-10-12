@@ -106,6 +106,7 @@ local waitingForPath = false
 local temporaryVisionAngle = nil
 local temporaryVisionRadius = nil
 local temporaryHearingRadius = nil
+local customMaxMoveSpeed = MOVE_SPEED
 
 
 function SetState(newState)
@@ -508,7 +509,16 @@ function GetMoveSpeed()
 	if currentState == STATE_PATROLLING then
 		return PATROL_SPEED
 	end
-	return MOVE_SPEED
+	return customMaxMoveSpeed
+end
+
+
+function GetMaxMoveSpeed()
+	return customMaxMoveSpeed
+end
+
+function SetMaxMoveSpeed(value)
+	customMaxMoveSpeed = value
 end
 
 
