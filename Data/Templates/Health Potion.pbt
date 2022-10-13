@@ -1,13 +1,13 @@
 Assets {
   Id: 9933374290039402591
-  Name: "HealthPotion"
+  Name: "Health Potion"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 4675055373564156404
       Objects {
         Id: 4675055373564156404
-        Name: "TestPotion"
+        Name: "HealthPotion"
         Transform {
           Scale {
             X: 1
@@ -23,6 +23,7 @@ Assets {
         ChildIds: 15327076593631019359
         ChildIds: 8806148015081501090
         ChildIds: 7644628318215799123
+        Lifespan: 3
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -482,7 +483,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Potions"
   VirtualFolderPath: "Spawns"

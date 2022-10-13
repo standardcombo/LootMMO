@@ -1061,6 +1061,7 @@ Assets {
         ChildIds: 9237682663046149395
         ChildIds: 3825088320648420111
         ChildIds: 9566888245760478096
+        ChildIds: 2799845960217759200
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9229,6 +9230,90 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 2799845960217759200
+        Name: "RootDeathSelfDestroy"
+        Transform {
+          Location {
+            Z: 114.464844
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.398706406
+            Y: 0.398706406
+            Z: 0.398706406
+          }
+        }
+        ParentId: 7943742740318309554
+        ChildIds: 608082674069083364
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 5413985969182385702
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11942308735806448083
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 608082674069083364
+        Name: "TargetRegister"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 2.50811124
+            Y: 2.50811124
+            Z: 2.50811124
+          }
+        }
+        ParentId: 2799845960217759200
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 9213205246501619092
         Name: "Collider"
         Transform {
@@ -9604,6 +9689,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "NPC Templates"
 }
