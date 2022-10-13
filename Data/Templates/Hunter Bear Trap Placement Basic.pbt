@@ -37,6 +37,10 @@ Assets {
             Float: 0
           }
           Overrides {
+            Name: "cs:IsCrit"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:OwnerID:isrep"
             Bool: true
           }
@@ -50,6 +54,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Bleed:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:IsCrit:isrep"
             Bool: true
           }
         }

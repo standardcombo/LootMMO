@@ -31,7 +31,8 @@ function Execute()
     newTrap.lifeSpan = 20
     table.insert(ActiveTraps, newTrap)
     newTrap:SetCustomProperty('OwnerID', ABILITY.owner.id)
-    newTrap:SetCustomProperty('Damage', mod['Damage'])
+    newTrap:SetCustomProperty('Damage', mod['Damage'][1])
+    newTrap:SetCustomProperty('IsCrit', mod['Damage'][2])
     newTrap:SetCustomProperty('Stun', mod['StunDuration'])
     newTrap:SetCustomProperty('Bleed', mod['Bleed'])
 end

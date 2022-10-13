@@ -32,7 +32,7 @@ function Execute()
     end
 
     World.SpawnAsset(ending, {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED})
-    local radius = mods['Range']
+    local radius = 1000
     local enemiesInRange =
         COMBAT().FindInSphere(
         ABILITY.owner:GetWorldPosition(),
@@ -40,29 +40,14 @@ function Execute()
         {ignoreDead = true, ignoreTeams = ABILITY.owner.team}
     )
 
-    local dmgMod = mods['DamageRange']
     local dmg = Damage.New()
-    local dmgAmount = math.random(dmgMod.min, dmgMod.max)
+    local dmgAmount = mods['Damage'][1]
     dmg.amount = dmgAmount
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY
 
-    local selfHeal = Damage.New()
-    selfHeal.amount = -dmgAmount
-    selfHeal.reason = DamageReason.COMBAT
-    selfHeal.sourcePlayer = ABILITY.owner
-    selfHeal.sourceAbility = ABILITY
-
-    local healData = {
-        object = ABILITY.owner,
-        damage = selfHeal,
-        source = ABILITY.owner,
-        position = nil,
-        rotation = nil,
-        tags = {id = 'Assassin_Q'}
-    }
-
+    local isCrit = mods['Damage'][2]
     for _, enemy in ipairs(enemiesInRange) do
         local attackData = {
             object = enemy,
@@ -70,10 +55,9 @@ function Execute()
             source = ABILITY.owner,
             position = nil,
             rotation = nil,
-            tags = {id = 'Assassin_Q'}
+            tags = {id = 'Assassin_Q', Critical = isCrit}
         }
         COMBAT().ApplyDamage(attackData) -- damage enemy
-        COMBAT().ApplyDamage(healData) -- heal caster
     end
 end
 

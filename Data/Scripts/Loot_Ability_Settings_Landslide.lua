@@ -21,7 +21,7 @@ modifiers['Damage'].calculation = function(stats)
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
-    local starRating = stats['Rock Strike']
+    local starRating = stats['Landslide']
     -- Check for crit
     function IsCrit()
         if math.random() <= AGI/172 then

@@ -12,7 +12,8 @@ local function Summon()
     )
     Hawk.serverUserData.owner = Owner
     Hawk:SetCustomProperty('Team', Owner.team)
-    Hawk:SetCustomProperty('Damage', mod['Damage'])
+    Hawk:SetCustomProperty('Damage', mod['Damage'][1])
+    Hawk:SetCustomProperty('IsCrit', mod['Damage'][2])
     Hawk.lifeSpan = mod['Duration'] or 10
 end
 

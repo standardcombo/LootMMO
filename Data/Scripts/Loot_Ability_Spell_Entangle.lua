@@ -41,7 +41,7 @@ function Execute()
         targetPosition.z = targetPosition.z - 100
     end
 
-    local ImpulseRadius = mod["Radius"]
+    local ImpulseRadius = 200
     local vfxScale = Vector3.New(CoreMath.Round(ImpulseRadius / 50, 3))
 
     local trapTemplate = SPAWN_VFX
@@ -61,7 +61,7 @@ function Execute()
     local nearbyEnemies =
         Game.FindPlayersInCylinder(owner:GetWorldPosition(), ImpulseRadius, {ignoreTeams = owner.team})
     local bleedStatus = nil
-    local slowStatus = mil
+    local slowStatus = nil
 
     for _, enemy in pairs(nearbyEnemies) do
         warn('apply bleed')

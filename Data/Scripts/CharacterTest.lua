@@ -27,8 +27,8 @@ function OnReceiveMessage(player, params)
 		print(Ability[2])
 		local stats = newCharacter:GetComponent("Stats")
 		if stats then
-			stats:SetTempStat(Ability[2], tonumber(splitString[3]))
-			stats:SetStat(Ability[2], tonumber(splitString[3]))
+			stats:SetTempStat(Ability[2], tonumber(Ability[3]))
+            stats:SetStat(Ability[2], tonumber(Ability[3]))
 		end
 		return
 	elseif splitString[1] == "/addpoint" then

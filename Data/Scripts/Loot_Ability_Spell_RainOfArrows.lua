@@ -16,7 +16,7 @@ function Execute()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
 
-    local radius = mod[ "Radius"]
+    local radius = 300
     local vfxScale = Vector3.New(CoreMath.Round(radius / 650, 3))
 
     World.SpawnAsset(
@@ -38,18 +38,19 @@ function Execute()
     for _, enemy in pairs(nearbyEnemies) do 
         local dmg = Damage.New()
         local player = ABILITY.owner
-        dmg.amount = mod ["Damage"]
+        dmg.amount = mod ["Damage"][1]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = player
         dmg.sourceAbility = SpecialAbility
-
+        
+        local IsCrit = mod ["Damage"][2]
         local attackData = {
             object = enemy,
             damage = dmg,
             source = dmg.sourcePlayer,
             position = nil,
             rotation = nil,
-            tags = {id = 'Hunter_Q'}
+            tags = {id = 'Hunter_Q', Critical = IsCrit}
         }
         COMBAT().ApplyDamage(attackData)
     end

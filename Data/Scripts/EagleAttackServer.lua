@@ -144,9 +144,8 @@ function OnProjectileImpact(projectile, other, hitResult)
 		item = script,
 		position = pos,
 		rotation = rot,
-		tags = TAGS().GetTags(ROOT)
+		tags = TAGS().GetTags(ROOT), Critical = ROOT:GetCustomProperty("IsCrit")
 	}
-
 	-- Apply the damage
 	COMBAT().ApplyDamage(attackData)
 

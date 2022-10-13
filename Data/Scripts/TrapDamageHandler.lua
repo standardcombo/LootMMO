@@ -5,7 +5,6 @@ end
 local Root = script.parent
 local Trigger = script:GetCustomProperty('Trigger'):WaitForObject()
 local TrapActivationTemplate = script:GetCustomProperty('TrapActivationTemplate')
-local damage = Root:GetCustomProperty('Damage')
 local Stun = Root:GetCustomProperty('Stun')
 local Bleed = Root:GetCustomProperty('Bleed')
 
@@ -56,7 +55,7 @@ function DoDamage(other)
             source = dmg.sourcePlayer,
             position = nil,
             rotation = nil,
-            tags = {id = 'Hunter_R'}
+            tags = {id = 'Hunter_R', Critical = Root:GetCustomProperty('IsCrit')}
         }
         COMBAT().ApplyDamage(attackData)
         Root:Destroy()

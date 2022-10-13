@@ -65,9 +65,7 @@ modifiers['StunDuration'].calString = "0.5 + (2 - 0.5) * VIT / 172"
 modifiers['StunDuration'].calculation = function(stats)
     local min = 0.5
     local max = 2
-    local VIT = stats.V
-    local result = min + (max - min) * VIT / 172
-    return result
+    return min + (max - min) * stats.V / 172
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
