@@ -57,6 +57,18 @@ function SelectTarget()
 		end
 	end
 	CurrentTarget = smallestTarget
+	
+	if _G.EnemyTopBar then
+		local npc = CurrentTarget:FindAncestorByType("DamageableObject")
+		if npc then
+			local params = {
+				player = LOCAL_PLAYER,
+				npc = CurrentTarget,
+				priority = 200,
+			}
+			_G.EnemyTopBar.ShowToPlayer(params)
+		end
+	end
 end
 
 function DeselectTarget()
