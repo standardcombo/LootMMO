@@ -5,6 +5,7 @@ local function OnGoingToTakeDamage(attackData)
 	local damage = attackData.damage
 	local dmgamout = damage.amount
 	local source = attackData.source
+	if not Object.IsValid(source) then return end
 	if not source:IsA("Player") then return end
 	if dmgamout <= 0 then return end
 	
