@@ -2,7 +2,7 @@ Assets {
   Id: 8780229722957927817
   Name: "BurnStatus"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1580899145783672584
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 3337935678893637704
   Name: "Wand"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

@@ -2,7 +2,7 @@ Assets {
   Id: 4658548431088024652
   Name: "Ornate Chestplate"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

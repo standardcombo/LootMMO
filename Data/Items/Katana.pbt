@@ -2,7 +2,7 @@ Assets {
   Id: 10472058698621132224
   Name: "Katana"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

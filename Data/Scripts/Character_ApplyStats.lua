@@ -35,9 +35,10 @@ end
 
 local function AttackResistance(stats, attackData)
 	local Block = stats:GetTempStat("B")
+	local oldDamage = attackData.damage.amount 
 
 	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
-	stats:SetTempStat("B", math.max(Block - 1, 0))
+	stats:SetTempStat("B", math.max(Block - oldDamage, 0))
 end
 
 local function SkillResistance(stats, attackData)

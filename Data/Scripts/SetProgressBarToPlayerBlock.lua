@@ -19,13 +19,13 @@ EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequipped)
 
 
-function Tick()
+function Tick(dt)
 	if UIPROGRESS_BAR.visibility ~= Visibility.FORCE_OFF then
 		if stats then
 			local blockTemp = stats:GetTempStat("B") or 1
 			local block = stats:GetStat("B") or 1
 
-			UIPROGRESS_BAR.progress = math.min(blockTemp / block, 1)
+			UIPROGRESS_BAR.progress = CoreMath.Lerp(UIPROGRESS_BAR.progress, math.min(blockTemp / block, 1), dt * 2)
 		end
 	end
 end

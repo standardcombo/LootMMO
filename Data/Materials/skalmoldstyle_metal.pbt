@@ -2,7 +2,7 @@ Assets {
   Id: 1790263547489504194
   Name: "skalmoldstyle_metal"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 10378479423839914021
     ParameterOverrides {

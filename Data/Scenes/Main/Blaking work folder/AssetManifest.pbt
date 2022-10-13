@@ -1,10 +1,10 @@
 Assets {
-  Id: 18428024847594276808
-  Name: "BG Gradient 004"
+  Id: 17923540808516649059
+  Name: "Fantasy Boot 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundFlat_022"
+    AssetId: "UI_Fantasy_Gear_Boot_002"
   }
 }
 Assets {
@@ -53,12 +53,21 @@ Assets {
   }
 }
 Assets {
-  Id: 14834230905930575854
-  Name: "Navigation"
+  Id: 15165554833363844727
+  Name: "Amarante"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "AmaranteRegular_ref"
+  }
+}
+Assets {
+  Id: 14945771806919897413
+  Name: "Fantasy Glove 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Icon_Navigation"
+    AssetId: "UI_Fantasy_Gear_Glove_003"
   }
 }
 Assets {
@@ -68,15 +77,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_020"
-  }
-}
-Assets {
-  Id: 14002637459053075183
-  Name: "4 Point Star"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_SciFI_Icon_020"
   }
 }
 Assets {
@@ -134,12 +134,12 @@ Assets {
   }
 }
 Assets {
-  Id: 12116345359101143525
-  Name: "Frame Outlined 014"
+  Id: 12385328426085025461
+  Name: "Chest Piece"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid4px_031"
+    AssetId: "UI_Fantasy_Icon_ChestPiece"
   }
 }
 Assets {
@@ -179,15 +179,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10269062453722857721
-  Name: "Japanese Ability Dash"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "IllustratedIcons_Japan_Abilities_Dash"
-  }
-}
-Assets {
   Id: 10067297865473811114
   Name: "Center Circle 001"
   PlatformAssetType: 9
@@ -197,12 +188,12 @@ Assets {
   }
 }
 Assets {
-  Id: 9709214148658914443
-  Name: "Fantasy Dagger 021"
+  Id: 9736987041818260224
+  Name: "Fantasy Sack 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Weapon_Dagger_021"
+    AssetId: "UI_Fantasy_Equip_Sack_002"
   }
 }
 Assets {
@@ -215,12 +206,12 @@ Assets {
   }
 }
 Assets {
-  Id: 9008238566657320754
-  Name: "Sci-fi Frame 006"
+  Id: 8634195622628323616
+  Name: "Fantasy Belt 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_SciFi_Frame_006"
+    AssetId: "UI_Fantasy_Gear_Belt_002"
   }
 }
 Assets {
@@ -296,12 +287,30 @@ Assets {
   }
 }
 Assets {
-  Id: 5001700330521407760
-  Name: "BG Flat 014"
+  Id: 5003662152169500137
+  Name: "Tiled Camo 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_31"
+    AssetId: "UI_TiledBG_041"
+  }
+}
+Assets {
+  Id: 4106662450040501179
+  Name: "Fantasy Jewelry 029"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_029"
+  }
+}
+Assets {
+  Id: 3716322990654389808
+  Name: "Fantasy Jewelry 015"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Jewelry_015"
   }
 }
 Assets {
@@ -320,6 +329,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_wood_floor_dark_001_uv"
+  }
+}
+Assets {
+  Id: 2653837865451130928
+  Name: "Abstract Background 03"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_004"
   }
 }
 Assets {
@@ -377,21 +395,39 @@ Assets {
   }
 }
 Assets {
+  Id: 1537292179389629833
+  Name: "Fantasy Sword 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Weapon_Sword_002"
+  }
+}
+Assets {
+  Id: 1328793714507056410
+  Name: "Tiled Asphalt 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_TiledBG_017"
+  }
+}
+Assets {
+  Id: 1281351767004184340
+  Name: "Helm"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Helm"
+  }
+}
+Assets {
   Id: 1170023131880546749
   Name: "Frame Outline Thin 006"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_015"
-  }
-}
-Assets {
-  Id: 1100030183663206451
-  Name: "Center Arrow 003 Wedge"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterArrow_003Wedge"
   }
 }
 Assets {

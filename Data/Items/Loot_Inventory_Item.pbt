@@ -2,7 +2,7 @@ Assets {
   Id: 10998866699120381452
   Name: "Loot_Inventory_Item"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   ItemAsset {
     CustomParameters {
       Overrides {

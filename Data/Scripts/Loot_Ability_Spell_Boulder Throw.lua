@@ -84,8 +84,9 @@ function OnBoulderBeginOverlap(thisTrigger, other)
         Events.BroadcastToPlayer(other, 'Camera Shake', 2, 90, 5)
     end
 
+    local crit = mods ["Damage"][2]
     local dmg = Damage.New()
-    dmg.amount = mods['Damage']
+    dmg.amount = mods ["Damage"][1]
     dmg.reason = DamageReason.COMBAT
     dmg.sourcePlayer = ABILITY.owner
     dmg.sourceAbility = ABILITY
@@ -95,7 +96,7 @@ function OnBoulderBeginOverlap(thisTrigger, other)
         source = ABILITY.owner,
         position = nil,
         rotation = nil,
-        tags = {id = 'Warrior_T'}
+        tags = {id = 'Warrior_T', Critical = crit}
     }
     COMBAT().ApplyDamage(attackData)
 end

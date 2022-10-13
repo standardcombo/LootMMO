@@ -2,7 +2,7 @@ Assets {
   Id: 11477169610066142044
   Name: "Holy Greaves"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

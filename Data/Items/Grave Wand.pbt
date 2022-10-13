@@ -2,7 +2,7 @@ Assets {
   Id: 12964726518395559569
   Name: "Grave Wand"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

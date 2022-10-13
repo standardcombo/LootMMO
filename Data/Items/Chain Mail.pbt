@@ -2,7 +2,7 @@ Assets {
   Id: 12973965730655309040
   Name: "Chain Mail"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

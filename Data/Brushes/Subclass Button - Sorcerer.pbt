@@ -2,7 +2,7 @@ Assets {
   Id: 9727910756766153830
   Name: "Subclass Button - Sorcerer"
   PlatformAssetType: 34
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "57996595b31842ef967c80b220af4ebe"

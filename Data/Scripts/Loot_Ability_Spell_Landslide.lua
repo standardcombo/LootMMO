@@ -26,11 +26,13 @@ function AddImpulseToPlayer(player)
 	warn('Apply effect stun')
 
 	-- Do damage
-	local dmgAmount = mod["Damage"]
-	local dmg = Damage.New(dmgAmount)
+	local crit = mod ["Damage"][2]
+	local dmg = Damage.New()
+	dmg.amount = mod ["Damage"][1]
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY
+
 
 	local attackData = {
 		object = player,
@@ -38,7 +40,7 @@ function AddImpulseToPlayer(player)
 		source = dmg.sourcePlayer,
 		position = nil,
 		rotation = nil,
-		tags = { id = 'Warrior_R' }
+		tags = { id = 'Warrior_R', Critical = crit }
 	}
 	COMBAT().ApplyDamage(attackData)
 end

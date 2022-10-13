@@ -2,7 +2,7 @@ Assets {
   Id: 5442445972350483075
   Name: "Silk Sash"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

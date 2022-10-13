@@ -2,7 +2,7 @@ Assets {
   Id: 3752344982512544112
   Name: "Ornate Greaves"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

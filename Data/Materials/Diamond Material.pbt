@@ -2,7 +2,7 @@ Assets {
   Id: 18048827074283964159
   Name: "Diamond Material"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 16167005355717555960
     ParameterOverrides {

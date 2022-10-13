@@ -2,7 +2,7 @@ Assets {
   Id: 356173156161878323
   Name: "Class BG - Warlock"
   PlatformAssetType: 34
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "712eef431a064ec2926997f3fcd64231"

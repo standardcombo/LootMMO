@@ -58,7 +58,7 @@ Assets {
       }
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Ability"
   VirtualFolderPath: "AbilityTemplates"

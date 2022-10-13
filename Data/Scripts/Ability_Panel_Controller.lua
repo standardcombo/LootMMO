@@ -1,8 +1,11 @@
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local UNLOCK_BACKGROUND = script:GetCustomProperty('UnlockBackGround'):WaitForObject()
 local ABILITY_POINTS = script:GetCustomProperty('AbilityPoints'):WaitForObject()
-local MAIN_CLASS_SELECT = script:GetCustomProperty('MainClassSelect'):WaitForObject()
-local SUB_CLASS_SELECT = script:GetCustomProperty('SubClassSelect'):WaitForObject()
+local CLASS_SELECT = script:GetCustomProperty("classSelect"):WaitForObject()
+
+local CLOSE_EVENT = "Ability_Close"
+local PREPARE_TO_CLOSE = "Ability_Prepare"
+local OPEN_EVENT = "Ability_OpenPanel"
 
 local AppState   = _G["AppState"]
 local EquipAPI   = _G['Character.EquipAPI']
@@ -12,9 +15,15 @@ local AbilityAPI = _G["Ability.Equipment"]
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local lastState = nil
 
+local STATES = {
+	closed = 1,
+	open = 2,
+	closing = 3,
+}
+local state = STATES.closed
+
 local Priority = {
-	MAIN_CLASS_SELECT,
-	SUB_CLASS_SELECT,
+	CLASS_SELECT,
 	UNLOCK_BACKGROUND,
 	ABILITY_POINTS
 }
@@ -59,14 +68,16 @@ local function Check()
 
 	--Check for MainClass --
 	if progression:GetProgressionKey("ClassSelect") and not class:HasClass() then
-		table.insert(wantsToUpdate, MAIN_CLASS_SELECT)
+		table.insert(wantsToUpdate, CLASS_SELECT)
+		Events.Broadcast("ClassSelection.Show", false)
 	end
 
 
 	-------------------------
 	--Check for SubClass --
 	if progression:GetProgressionKey("SubClassSelect") and class:IsMainClass() then
-		table.insert(wantsToUpdate, SUB_CLASS_SELECT)
+		table.insert(wantsToUpdate, CLASS_SELECT)
+		Events.Broadcast("ClassSelection.Show")
 	end
 
 	-------------------------
@@ -109,17 +120,17 @@ function Toggle(newState)
 	Check()
 	local States = {
 		[Visibility.FORCE_OFF] = function()
-			Events.Broadcast("Ability_Close")
+			Events.Broadcast(CLOSE_EVENT)
 			for index, value in ipairs(Priority) do
 				value.visibility = Visibility.FORCE_OFF
 			end
 		end,
 		[Visibility.INHERIT] = function()
-			Events.Broadcast("Ability_Close")
+			Events.Broadcast(CLOSE_EVENT)
 			for index, value in ipairs(Priority) do
 				value.visibility = Visibility.FORCE_OFF
 			end
-			Events.Broadcast("Ability_OpenPanel", wantsToUpdate[1])
+			Events.Broadcast(OPEN_EVENT, wantsToUpdate[1])
 			wantsToUpdate[1].visibility = Visibility.INHERIT
 		end
 	}
@@ -129,11 +140,36 @@ function Toggle(newState)
 	end
 end
 
-function Tick()
-	if lastState ~= ROOT.visibility then
-		lastState = ROOT.visibility
-		Toggle(ROOT.visibility)
+local SetState = nil
+local function StateUpdated()
+	local actions = {
+		[STATES.closed] = function()
+			ROOT.visibility = Visibility.FORCE_OFF
+			Toggle(ROOT.visibility)
+		end,
+		[STATES.open] = function()
+			ROOT.visibility = Visibility.INHERIT
+			Toggle(ROOT.visibility)
+		end,
+		[STATES.closing] = function()
+			local time = 0
+			Events.Broadcast(PREPARE_TO_CLOSE)
+			while state == STATES.closing and time <= .65 do 
+				time = time + Task.Wait()
+			end
+			if state == STATES.closing then
+				SetState(STATES.closed)
+			end
+		end,
+	}
+	if actions[state] then
+		actions[state]()
 	end
+end
+
+SetState = function(newState)
+	state = newState
+	StateUpdated()
 end
 
 function Refresh()
@@ -145,6 +181,17 @@ function PanelComplete()
 		Events.Broadcast("OpenAbilities")
 	end
 end
+
+Events.Connect(AppState.EnterKey, function(_, newState, oldstate)
+	if newState == AppState.Ability then
+		SetState(STATES.open)
+	end
+end)
+Events.Connect(AppState.ExitKey, function(_, oldstate, newState)
+	if oldstate == AppState.Ability then 
+		SetState(STATES.closing)
+	end
+end)
 
 Events.Connect("Ability_PanelRefresh", Refresh)
 Events.Connect("Ability_PanelComplete", PanelComplete)

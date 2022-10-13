@@ -2,7 +2,7 @@ Assets {
   Id: 10563751854724603448
   Name: "Silk"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"

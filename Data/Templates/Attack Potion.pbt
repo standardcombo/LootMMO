@@ -7,7 +7,7 @@ Assets {
       RootId: 588195442661305553
       Objects {
         Id: 588195442661305553
-        Name: "Block Potion"
+        Name: "Attack Potion"
         Transform {
           Scale {
             X: 1
@@ -23,6 +23,7 @@ Assets {
         ChildIds: 11275927426948068474
         ChildIds: 3674139335213941895
         ChildIds: 2512936333272626294
+        Lifespan: 3
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -482,7 +483,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Potions"
   VirtualFolderPath: "Spawns"

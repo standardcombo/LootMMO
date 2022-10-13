@@ -46,5 +46,5 @@ Assets {
       AssetId: "Default_Bindings"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
 }

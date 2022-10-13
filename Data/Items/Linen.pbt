@@ -2,7 +2,7 @@ Assets {
   Id: 6490763551835189386
   Name: "Linen"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"

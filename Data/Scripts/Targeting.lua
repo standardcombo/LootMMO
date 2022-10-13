@@ -25,7 +25,7 @@ function Tick(dt)
 	end
 	TARGERT_RENDER.visibility = Visibility.INHERIT
 	TARGERT_RENDER:SetWorldPosition(CurrentTarget:GetWorldPosition())
-	local View = Vector3.New(CurrentTarget:GetWorldPosition() - LOCAL_PLAYER:GetWorldPosition()+Vector3.UP*-200)
+	local View = Vector3.New(CurrentTarget:GetWorldPosition() - LOCAL_PLAYER:GetViewWorldPosition() +Vector3.UP )
 	local Distance = View.sizeSquared
 	if Distance > Range then
 		CurrentTarget = nil

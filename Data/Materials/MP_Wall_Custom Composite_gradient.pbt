@@ -2,7 +2,7 @@ Assets {
   Id: 8566933466821268165
   Name: "MP_Wall_Custom Composite_gradient"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 14496936826203266768
     ParameterOverrides {

@@ -23,8 +23,7 @@ end
 modifiers['EvasionChance'].calculation = function(stats)
     local VIT = stats.V
     function IsEvade()
-        local chance = math.random(0,100)/100
-        if chance <= VIT/172 then
+        if math.random() <= VIT/172 then
             return true
         else
             return false

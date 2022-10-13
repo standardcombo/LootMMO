@@ -2,7 +2,7 @@ Assets {
   Id: 7051995105923613030
   Name: "Hammer Metal"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 15935294035480136466
     ParameterOverrides {

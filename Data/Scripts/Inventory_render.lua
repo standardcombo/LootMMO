@@ -12,14 +12,13 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 HOVERDATA = {
 	icon = HOVER_PANEL:FindDescendantByName("Icon"),
-	name = HOVER_PANEL:FindChildByName("Name"),
-	stats = HOVER_PANEL:FindChildByName("Stats")
+	name = HOVER_PANEL:FindDescendantByName("Name"),
+	stats = HOVER_PANEL:FindDescendantByName("Stats")
 }
 DragData = {
 	icon = DRAG_PANEL:FindChildByName("Icon")
 }
 
-HOVER_PANEL.visibility = Visibility.FORCE_OFF
 DRAG_PANEL.visibility = Visibility.FORCE_OFF
 
 local events = nil
@@ -71,13 +70,13 @@ local function RealeaseEvent(slot)
 
 	--Check if hovering over a slot
 	for index, panel in ipairs(SLOTS) do
-		local minwidth = panel.width / 2
-		local minheight = panel.width / 2
+		local minwidth = panel.width
+		local minheight = panel.width
 		local abspo = panel:GetAbsolutePosition()
 		--check width
-		if dropPos.x <= abspo.x + minwidth and dropPos.x >= abspo.x - minwidth then
+		if dropPos.x <= abspo.x + minwidth and dropPos.x >= abspo.x then
 			--check height
-			if dropPos.y <= abspo.y + minheight and dropPos.y >= abspo.y - minheight then
+			if dropPos.y <= abspo.y + minheight and dropPos.y >= abspo.y then
 				--swap slots if true
 				currentInventory:MoveFromSlot(isDraging.slot, index)
 				isDraging = nil
@@ -101,7 +100,9 @@ local function DragSlot(slot)
 		local icon = itemdata["icon"]
 		local childIcon = DragData.icon
 		SetImage(childIcon, icon, itemdata)
-		HOVER_PANEL.visibility = Visibility.FORCE_OFF
+		local panelPos = slot.Button:GetAbsolutePosition()
+		DRAG_PANEL.x = panelPos.x
+		DRAG_PANEL.y = panelPos.y
 		DRAG_PANEL.visibility = Visibility.INHERIT
 		isDraging = { slot = slot.index }
 	end
@@ -114,7 +115,6 @@ local function UnhoverSlot(slot)
 	if isDraging then
 		return
 	end
-	HOVER_PANEL.visibility = Visibility.FORCE_OFF
 end
 
 local function HoverSlot(slot)
@@ -191,7 +191,6 @@ local function HoverSlot(slot)
 			HOVERDATA.name.text = item.name
 			childstats.text = itemdata.description
 		end
-		HOVER_PANEL.visibility = Visibility.FORCE_ON
 	end
 end
 
@@ -225,6 +224,8 @@ for index, value in ipairs(SLOTS) do
 	slots[index].bg = value:FindChildByName("bg")
 	slots[index].count = value:FindChildByName("count")
 	slots[index].Button = value:FindChildByName("Button")
+	slots[index].isBag = Get(value, "IsBag")
+
 	HookUpButton(slots[index])
 end
 
@@ -234,11 +235,20 @@ local function InventoryChanged(inv, slot)
 	local childIcon = slots[slot].icon
 	local childCount = slots[slot].count
 	local childbg = slots[slot].bg
+	local isBag = slots[slot].isBag
 	if item ~= nil then
 		local itemdata = ITEMS.GetDefinition(item.name) or MATERIALS.GetDefinition(item.name)
 		if not itemdata then
 			return
 		end
+		if isBag then
+			if item:GetCustomProperty("IsBag") then
+				isBag.visibility = Visibility.INHERIT
+			else
+				isBag.visibility = Visibility.FORCE_OFF
+			end
+		end
+
 		local icon = itemdata["icon"]
 		SetImage(childIcon, icon, itemdata)
 		if childbg then
@@ -251,6 +261,9 @@ local function InventoryChanged(inv, slot)
 			childCount.text = ""
 		end
 	else
+		if isBag then
+			isBag.visibility = Visibility.FORCE_OFF
+		end
 		if childbg then
 			childbg.visibility = Visibility.INHERIT
 		end
@@ -298,16 +311,13 @@ local function CharacterUnequip(character, player)
 	end
 end
 
-function Tick()
+function Tick(dt)
 	local mpos = Input.GetCursorPosition()
 
-	if HOVER_PANEL.visibility ~= Visibility.FORCE_OFF then
-		HOVER_PANEL.x = mpos.x
-		HOVER_PANEL.y = mpos.y
-	end
+
 	if DRAG_PANEL.visibility ~= Visibility.FORCE_OFF then
-		DRAG_PANEL.x = mpos.x
-		DRAG_PANEL.y = mpos.y
+		DRAG_PANEL.x = CoreMath.Lerp(DRAG_PANEL.x, mpos.x, dt * 20)
+		DRAG_PANEL.y = CoreMath.Lerp(DRAG_PANEL.y, mpos.y, dt * 20)
 	end
 end
 
