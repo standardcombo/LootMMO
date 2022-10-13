@@ -2,7 +2,7 @@ Assets {
   Id: 13717234242777395647
   Name: "Club"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

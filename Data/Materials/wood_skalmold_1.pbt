@@ -2,7 +2,7 @@ Assets {
   Id: 8013702718689619997
   Name: "wood_skalmold_1"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 3817933812062928360
     ParameterOverrides {

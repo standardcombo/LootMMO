@@ -2,7 +2,7 @@ Assets {
   Id: 422605311160428204
   Name: "Club Handle Material"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 2611942411954831737
     ParameterOverrides {

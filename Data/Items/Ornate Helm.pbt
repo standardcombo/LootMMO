@@ -2,7 +2,7 @@ Assets {
   Id: 2237300553439927624
   Name: "Ornate Helm"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

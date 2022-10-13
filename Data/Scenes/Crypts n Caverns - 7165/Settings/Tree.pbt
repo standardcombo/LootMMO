@@ -364,6 +364,14 @@ Objects {
         }
       }
       RelevanceSettings {
+        key: "light"
+        value {
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      RelevanceSettings {
         key: "mergedmesh"
         value {
           LowDistance: 4500

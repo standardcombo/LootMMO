@@ -2,7 +2,7 @@ Assets {
   Id: 12245179864080442426
   Name: "Custom Wood Shingles Cedar 01"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 16479509688551459620
     ParameterOverrides {

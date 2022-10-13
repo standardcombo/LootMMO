@@ -2,7 +2,7 @@ Assets {
   Id: 7107385970547012674
   Name: "Tome"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

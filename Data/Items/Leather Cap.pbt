@@ -2,7 +2,7 @@ Assets {
   Id: 15399925943279714669
   Name: "Leather Cap"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

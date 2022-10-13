@@ -16,7 +16,6 @@ Objects {
   }
   ParentId: 6154689810189097491
   ChildIds: 6710200269420138766
-  ChildIds: 15835927251802127375
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -35,46 +34,6 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 15835927251802127375
-  Name: "TargetRegister"
-  Transform {
-    Location {
-      X: -3725
-      Y: -4500
-      Z: -51050
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7867332860788779234
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1011375461586851027
     }
   }
   NetworkRelevanceDistance {

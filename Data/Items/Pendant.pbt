@@ -2,7 +2,7 @@ Assets {
   Id: 14987009760291025792
   Name: "Pendant"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

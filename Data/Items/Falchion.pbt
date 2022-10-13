@@ -2,7 +2,7 @@ Assets {
   Id: 4137561987139678211
   Name: "Falchion"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

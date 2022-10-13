@@ -2,7 +2,7 @@ Assets {
   Id: 12548453432502305541
   Name: "Helm"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

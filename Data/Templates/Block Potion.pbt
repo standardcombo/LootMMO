@@ -23,6 +23,7 @@ Assets {
         ChildIds: 5011665360851661099
         ChildIds: 16936926684229403094
         ChildIds: 18099572249886503207
+        Lifespan: 3
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -482,7 +483,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Potions"
   VirtualFolderPath: "Spawns"

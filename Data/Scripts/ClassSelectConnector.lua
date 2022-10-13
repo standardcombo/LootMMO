@@ -1,8 +1,44 @@
+local EAPI         = _G["Character.EquipAPI"]
+local Classes      = _G['Character.Classes']
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+function ClassSelectionRecieved(player, class)
+	local Classdata = Classes.GetClass(class)
+	if not (Classdata) then
+		return
+	end
+	local Character = EAPI.GetCurrentCharacter(player)
+	if not Character then
+		return
+	end
+	local Class = Character:GetComponent('Class')
+	local Progression = Character:GetComponent('Progression')
+	if not Classdata['MainClass']['Identifier'] == Class:GetClass() then
+		return
+	end
+	local isMain = (Classes.GetMainClass(class) ~= nil)
+
+	if isMain then
+		if Progression:GetProgressionKey('ClassSelect') then
+			Events.BroadcastToServer("CCselection", class)
+			Class:SetClass(class)
+		end
+		return
+	elseif Progression:GetProgressionKey('SubClassSelect') then
+		Events.BroadcastToServer("CCselection", class)
+		Class:SetClass(class)
+		return
+	end
+end
+
 Events.Connect("ClassSelection.Class", function(classChoice)
-	Events.Broadcast("CCselection", classChoice)
+	ClassSelectionRecieved(LOCAL_PLAYER, classChoice)
+	Task.Wait()
+	Events.Broadcast("Ability_PanelRefresh")
 end)
 
 
 Events.Connect("ClassSelection.Subclass", function(subclassChoice)
-	Events.Broadcast("CCselection", subclassChoice)
+	ClassSelectionRecieved(LOCAL_PLAYER, subclassChoice)
+	Task.Wait()
+	Events.Broadcast("Ability_PanelRefresh")
 end)

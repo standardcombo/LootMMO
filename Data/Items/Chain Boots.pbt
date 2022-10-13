@@ -2,7 +2,7 @@ Assets {
   Id: 2144491830830437739
   Name: "Chain Boots"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

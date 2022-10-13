@@ -17,7 +17,6 @@ Assets {
       Overrides {
         Name: "cs:Root"
         ObjectReference {
-          SelfId: 4016954259598120511
         }
       }
       Overrides {
@@ -60,5 +59,5 @@ Assets {
       }
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 6384604152732752269
   Name: "Subclass Button - Fighter"
   PlatformAssetType: 34
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "4c481216614b4aa4bd07e1d890a65067"

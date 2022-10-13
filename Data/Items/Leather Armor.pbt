@@ -2,7 +2,7 @@ Assets {
   Id: 17472028641550630060
   Name: "Leather Armor"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

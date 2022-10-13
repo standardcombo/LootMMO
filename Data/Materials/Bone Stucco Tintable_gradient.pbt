@@ -2,7 +2,7 @@ Assets {
   Id: 14574329988604054906
   Name: "Bone Stucco Tintable_gradient"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1626097446304398136
     ParameterOverrides {

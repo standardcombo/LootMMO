@@ -53,7 +53,7 @@ function API.SetStateForPlayer(player, newState)
 
 	-- TODO: Verify transition is valid from `current` to `new`
 
-	Events.Broadcast(API.EnterKey, player, currentState, newState)
+	Events.Broadcast(API.ExitKey, player, currentState, newState)
 
 	player:SetResource('AppState', newState)
 

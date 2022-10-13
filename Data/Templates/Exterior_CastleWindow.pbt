@@ -855,6 +855,9 @@ Assets {
           ShadowBias: 0.4
           ShadowSlopeBias: 0.6
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -911,5 +914,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
 }

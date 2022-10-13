@@ -2,7 +2,7 @@ Assets {
   Id: 1737590256434035983
   Name: "Dragonskin Gloves"
   PlatformAssetType: 33
-  SerializationVersion: 118
+  SerializationVersion: 119
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"
