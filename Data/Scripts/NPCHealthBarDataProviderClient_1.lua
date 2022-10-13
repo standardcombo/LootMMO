@@ -11,11 +11,13 @@
 	Commonly, the script's Z position should be adjusted on a per-NPC basis.
 	
 	Implements the interface:
+		GetName()
+		GetLevel()
+		GetTeam()
 		GetHealt()
 		GetMaxHealth()
 		GetArmor()
 		GetMaxArmor()
-		GetTeam()
 --]]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
@@ -23,6 +25,24 @@ local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local HEALTH_BAR_TEMPLATE = script:GetCustomProperty("HealthBarTemplate")
 local MAX_HEALTH = ROOT.maxHitPoints
 local maxArmor = 0
+
+
+function GetName()
+	return ROOT.name
+end
+
+
+function GetLevel()
+	return 0
+end
+
+
+function GetTeam()
+	if Object.IsValid(ROOT) then
+		return ROOT:GetCustomProperty("Team")
+	end
+	return 0
+end
 
 
 function GetHealth()
@@ -50,14 +70,6 @@ function GetMaxArmor()
 		maxArmor = a
 	end
 	return maxArmor
-end
-
-
-function GetTeam()
-	if Object.IsValid(ROOT) then
-		return ROOT:GetCustomProperty("Team")
-	end
-	return 0
 end
 
 -- Creates the health bar UI and places it as a child of this script

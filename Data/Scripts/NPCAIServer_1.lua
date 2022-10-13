@@ -1,6 +1,6 @@
 --[[
 	NPCAI - Server
-	v0.13.0
+	v0.14.0
 	by: standardcombo
 	contributions: DarkDev, WaveParadigm
 	
@@ -10,6 +10,9 @@
 	add to each one a custom property called "Walkable" of type boolean and set to false.
 	
 	See the NPC Kit README for more information.
+	
+	Broadcast Event:
+		"NPC.TargetChanged", thisNpcScript, newTarget, oldTarget
 --]]
 
 -- Component dependencies
@@ -311,6 +314,14 @@ end
 
 
 function SetTarget(newTarget)
+	if newTarget ~= target then
+		local eventData = {
+			npcScript = script,
+			newTarget = newTarget,
+			oldTarget = target,
+		}
+		Events.Broadcast("NPC.TargetChanged", eventData)
+	end
 	target = newTarget
 	
 	if Object.IsValid(target) then

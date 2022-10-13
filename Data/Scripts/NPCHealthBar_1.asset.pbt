@@ -5,6 +5,18 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:HideWhenFull"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:HideWhenEmpty"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:TickWait"
+        Float: 0.1
+      }
+      Overrides {
         Name: "cs:Fill"
         ObjectReference {
         }
@@ -16,6 +28,16 @@ Assets {
       }
       Overrides {
         Name: "cs:Armor"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:Name"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:Level"
         ObjectReference {
         }
       }
