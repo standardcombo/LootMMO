@@ -20,7 +20,7 @@ local despawnTask = nil
 local enemies = {}
 
 
-function SpawnEnemies()
+function SpawnEnemies(level)
 	isSpawned = true
 	
 	for _,point in ipairs(ENEMY_SPAWNS) do
@@ -28,6 +28,11 @@ function SpawnEnemies()
 		local rot = point:GetWorldRotation()
 		local npcTemplate = RPGRAPTOR--TODO
 		local npc = World.SpawnAsset(npcTemplate, {position = pos, rotation = rot})
+		
+		if npc:IsCustomPropertyDynamic("Level") then
+			npc:SetCustomProperty("Level", level)
+		end
+		
 		table.insert(enemies, npc)
 	end
 end
@@ -58,6 +63,8 @@ end
 function OnBeginOverlap(trigger, player)
 	if not player:IsA("Player") then return end
 	
+	local playerLevel = GetPlayerLevel(player)
+	
 	if not countersPerPlayer[player] then
 		countersPerPlayer[player] = 1
 	else
@@ -68,7 +75,7 @@ function OnBeginOverlap(trigger, player)
 		playerCount = playerCount + 1
 		
 		if not isSpawned then
-			SpawnEnemies()
+			SpawnEnemies(playerLevel)
 		else
 			CancelDespawn()
 		end
@@ -89,6 +96,17 @@ function OnEndOverlap(trigger, player)
 			end
 		end
 	end
+end
+
+
+function GetPlayerLevel(player)
+	if _G["Character.EquipAPI"] then
+		local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
+		if char then
+			return char:GetComponent("Level").level
+		end
+	end
+	return player:GetResource("Level")
 end
 
 

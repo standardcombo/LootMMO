@@ -63,7 +63,9 @@ end
 
 
 function GetLevel()
-	return 0
+	if Object.IsValid(activeNPC) then
+		return activeNPC:GetCustomProperty("Level") or 0
+	end
 end
 
 

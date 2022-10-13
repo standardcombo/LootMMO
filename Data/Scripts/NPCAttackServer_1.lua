@@ -1,6 +1,6 @@
 --[[
 	NPCAttack - Server
-	v0.13.0
+	v0.14.0
 	by: standardcombo
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
@@ -117,6 +117,11 @@ function OnProjectileImpact(projectile, other, hitResult)
 
 	if damageAmount == 0 then
 		return
+	end
+	
+	local level = ROOT:GetCustomProperty("Level")
+	if level and level > 0 then
+		damageAmount = damageAmount + CoreMath.Round(damageAmount * level / 3)
 	end
 
 	local dmg = Damage.New(damageAmount)

@@ -1,7 +1,7 @@
 --[[
 	NPCHealthBarDataProvider - Client
 	by: standardcombo
-	v0.13.0
+	v0.14.0
 	
 	Works in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.
 	Other objects could use the same health bar UI by implementing their own data
@@ -23,17 +23,21 @@
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
 local HEALTH_BAR_TEMPLATE = script:GetCustomProperty("HealthBarTemplate")
-local MAX_HEALTH = ROOT.maxHitPoints
 local maxArmor = 0
 
 
 function GetName()
-	return ROOT.name
+	if Object.IsValid(ROOT) then
+		return ROOT.name
+	end
+	return ""
 end
 
 
 function GetLevel()
-	return 0
+	if Object.IsValid(ROOT) then
+		return ROOT:GetCustomProperty("Level") or 0
+	end
 end
 
 
@@ -53,7 +57,10 @@ function GetHealth()
 end
 
 function GetMaxHealth()
-	return MAX_HEALTH or 0
+	if Object.IsValid(ROOT) then
+		return ROOT.maxHitPoints or 0
+	end
+	return 0
 end
 
 
