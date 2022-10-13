@@ -1,6 +1,6 @@
 Assets {
   Id: 7645994610634595213
-  Name: "HawkAIServer"
+  Name: "EagleAIServer"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

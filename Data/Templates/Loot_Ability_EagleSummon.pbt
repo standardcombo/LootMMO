@@ -528,6 +528,7 @@ Assets {
         Name: "LocalContext"
         Transform {
           Location {
+            Z: -25
           }
           Rotation {
           }
@@ -566,7 +567,6 @@ Assets {
         }
         ParentId: 1262806953336043792
         ChildIds: 7577712643662644782
-        ChildIds: 5731531721848410702
         ChildIds: 9212741899637430156
         ChildIds: 4496221888261179657
         ChildIds: 12497658063206460068
@@ -590,7 +590,7 @@ Assets {
       }
       Objects {
         Id: 7577712643662644782
-        Name: "NPCAIServer"
+        Name: "EagleAIServer"
         Transform {
           Location {
           }
@@ -619,7 +619,7 @@ Assets {
           Overrides {
             Name: "cs:AttackComponent"
             ObjectReference {
-              SubObjectId: 5731531721848410702
+              SubObjectId: 12217031484892374906
             }
           }
           Overrides {
@@ -653,101 +653,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 7645994610634595213
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 5731531721848410702
-        Name: "NPCAttackServer"
-        Transform {
-          Location {
-            X: 81.4707
-            Z: 13.3623047
-          }
-          Rotation {
-            Pitch: 6.10298538
-            Yaw: 7.6284e-14
-            Roll: 1.43097795e-12
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 581629701699634310
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 20
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 20
-          }
-          Overrides {
-            Name: "cs:ProjectileBody"
-            AssetReference {
-              Id: 17434832614945470616
-            }
-          }
-          Overrides {
-            Name: "cs:MuzzleFlash"
-            AssetReference {
-              Id: 841534158063459245
-            }
-          }
-          Overrides {
-            Name: "cs:ImpactSurface"
-            AssetReference {
-              Id: 841534158063459245
-            }
-          }
-          Overrides {
-            Name: "cs:ImpactCharacter"
-            AssetReference {
-              Id: 307406115803496087
-            }
-          }
-          Overrides {
-            Name: "cs:ProjectileLifeSpan"
-            Float: 0.11
-          }
-          Overrides {
-            Name: "cs:ProjectileSpeed"
-            Float: 50
-          }
-          Overrides {
-            Name: "cs:ProjectileGravity"
-            Float: 0
-          }
-          Overrides {
-            Name: "cs:ProjectileHoming"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 10190610956955079352
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 13670653971905386821
           }
         }
         NetworkRelevanceDistance {
@@ -881,11 +786,16 @@ Assets {
       }
       Objects {
         Id: 12217031484892374906
-        Name: "HAWKAttackServer"
+        Name: "EagleAttackServer"
         Transform {
           Location {
+            X: 81.4707
+            Z: 13.3623047
           }
           Rotation {
+            Pitch: 6.10298538
+            Yaw: 7.6284e-14
+            Roll: 1.43097795e-12
           }
           Scale {
             X: 1
