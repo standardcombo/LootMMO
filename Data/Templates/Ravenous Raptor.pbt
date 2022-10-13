@@ -1,13 +1,13 @@
 Assets {
   Id: 13441300675391799547
-  Name: "RPG Raptor"
+  Name: "Ravenous Raptor"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 2691092598115470187
       Objects {
         Id: 2691092598115470187
-        Name: "RPG Raptor"
+        Name: "Ravenous Raptor"
         Transform {
           Scale {
             X: 1

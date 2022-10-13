@@ -58,7 +58,7 @@ function SelectTarget()
 	end
 	CurrentTarget = smallestTarget
 	
-	if _G.EnemyTopBar then
+	if _G.EnemyTopBar and Object.IsValid(CurrentTarget) then
 		local npc = CurrentTarget:FindAncestorByType("DamageableObject")
 		if npc then
 			local params = {
