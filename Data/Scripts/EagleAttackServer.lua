@@ -140,7 +140,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 	local attackData = {
 		object = other,
 		damage = dmg,
-		source = script.parent:FindChildByName('NPCAIServer'),
+		source = ROOT,
 		item = script,
 		position = pos,
 		rotation = rot,
