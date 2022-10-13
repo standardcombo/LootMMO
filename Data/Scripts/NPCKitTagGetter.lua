@@ -33,15 +33,23 @@
 	The script should have a reference to the ModuleManager script.
 --]]
 
-local API = {}
+local API = {} 
 _G["standardcombo.Combat.Tags"] = API
 
 -- Gathers the tags on an object and returns the table
 function API.GetTags(obj)
-	if not obj then return {} end
+	if not Object.IsValid(obj) then return {} end
 	
 	if obj.serverUserData and obj.serverUserData.combatTags then
 		return obj.serverUserData.combatTags
+	end
+	
+	if type(obj) == "table" then
+		return obj
+	end
+	
+	if not obj.GetCustomProperties then
+		return {}
 	end
 	
 	local tags = {}
