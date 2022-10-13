@@ -23,10 +23,12 @@ function OnReceiveMessage(player, params)
 		newCharacter:SetOwner(player)
 	elseif splitString[1] == "/stat" then
 		local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
+		local Ability = { CoreString.Split(params.message,'"') } 
+		print(Ability[2])
 		local stats = newCharacter:GetComponent("Stats")
 		if stats then
-			stats:SetTempStat(splitString[2], tonumber(splitString[3]))
-			stats:SetStat(splitString[2], tonumber(splitString[3]))
+			stats:SetTempStat(Ability[2], tonumber(splitString[3]))
+			stats:SetStat(Ability[2], tonumber(splitString[3]))
 		end
 		return
 	elseif splitString[1] == "/addpoint" then
