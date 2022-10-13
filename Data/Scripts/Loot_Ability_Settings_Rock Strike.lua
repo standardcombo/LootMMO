@@ -56,8 +56,7 @@ modifiers['Radius'].calString = "200 + (800 - 200) * VIT / 172"
 modifiers['Radius'].calculation = function(stats)
     local min = 200
     local max = 800
-    local VIT = stats.V
-    return min + (max - min) * VIT / 172
+    return min + (max - min) * stats.V / 172
 end
 
 --Formula: Min + (Max - Min) * VIT / 172

@@ -1,6 +1,6 @@
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local MODIFIABLES = require(script:GetCustomProperty('Loot_Ability_Modifiables'))
+--local MODIFIABLES = require(script:GetCustomProperty('Loot_Ability_Modifiables'))
 
 local startTime = 0
 local endTime = 0

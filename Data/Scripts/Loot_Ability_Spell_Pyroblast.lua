@@ -32,7 +32,7 @@ local function Impact(projectile)
     )
     for _, enemy in pairs(nearbyEnemies) do
         local dmg = Damage.New()
-        dmg.amount = mods ["Damage"] or 0
+        dmg.amount = mods ["Damage"][1]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = player
         dmg.sourceAbility = ABILITY
@@ -42,13 +42,14 @@ local function Impact(projectile)
         directionVector.z = 0.7
         local impulseVector = directionVector * Knockback
 
+        local IsCrit = mods ["Damage"][2]
         local attackData = {
             object = enemy,
             damage = dmg,
             source = dmg.sourcePlayer,
             position = nil,
             rotation = nil,
-            tags = {id = 'Mage_R'}
+            tags = {id = 'Mage_R', Critical = IsCrit}
         }
         COMBAT().ApplyDamage(attackData)
         enemy:SetVelocity(impulseVector)

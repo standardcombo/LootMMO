@@ -26,7 +26,7 @@ function Tick()
         )
     ) do
         local dmg = Damage.New()
-        dmg.amount = DAMAGE * .25
+        dmg.amount = DAMAGE
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = ABILITY.owner
         dmg.sourceAbility = ABILITY

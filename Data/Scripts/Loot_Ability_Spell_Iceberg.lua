@@ -101,7 +101,7 @@ function Tick(deltaTime)
 
         for _, enemy in pairs(nearbyEnemies) do
             local dmg = Damage.New()
-            dmg.amount = mods['Damage']
+            dmg.amount = mods['Damage'][1]
             dmg.reason = DamageReason.COMBAT
             dmg.sourcePlayer = ABILITY.owner
             dmg.sourceAbility = ABILITY
@@ -111,13 +111,14 @@ function Tick(deltaTime)
                 enemy = enemy:GetCustomProperty('Collider'):WaitForObject()
             end
 
+            local IsCrit = mods['Damage'][2]
             local attackData = {
                 object = enemy,
                 damage = dmg,
                 source = dmg.sourcePlayer,
                 position = nil,
                 rotation = nil,
-                tags = {id = 'Mage_T'}
+                tags = {id = 'Mage_T', Critical = IsCrit}
             }
             COMBAT().ApplyDamage(attackData)
         end
