@@ -111,6 +111,11 @@ function Execute()
     local LifeSpan = MoveDuration + 5
 
     local DamageTrigger = RockProjectile:GetCustomProperty('DamageTrigger'):WaitForObject()
+    local newTriggerSize = mods['Radius']/100
+    local newTriggerPos = mods['Radius']/2
+    
+    DamageTrigger:SetPosition(DamageTrigger:GetPosition() - Vector3.New(newTriggerPos,0,0))
+    DamageTrigger:SetScale(DamageTrigger:GetScale() + Vector3.New(newTriggerSize,0,0))
 
     for _, other in ipairs(DamageTrigger:GetOverlappingObjects()) do
         if COMBAT().IsValidObject(other) then
