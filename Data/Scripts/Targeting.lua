@@ -63,7 +63,7 @@ function SelectTarget()
 		if npc then
 			local params = {
 				player = LOCAL_PLAYER,
-				npc = CurrentTarget,
+				npc = npc,
 				priority = 200,
 			}
 			_G.EnemyTopBar.ShowToPlayer(params)

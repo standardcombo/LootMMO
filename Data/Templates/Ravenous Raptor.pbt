@@ -834,6 +834,7 @@ Assets {
         ChildIds: 10195276852652218253
         ChildIds: 1682961592151532946
         ChildIds: 7145993005084827370
+        ChildIds: 5995848736618456698
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1016,7 +1017,6 @@ Assets {
         ChildIds: 15723636327053316230
         ChildIds: 6771513812486686690
         ChildIds: 3384808585879706475
-        ChildIds: 5995848736618456698
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1210,7 +1210,7 @@ Assets {
             Z: 0.398706406
           }
         }
-        ParentId: 7145993005084827370
+        ParentId: 14001881140192835445
         ChildIds: 10106272941420179386
         UnregisteredParameters {
           Overrides {
