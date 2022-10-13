@@ -7,7 +7,7 @@ Assets {
       RootId: 11569940419982232802
       Objects {
         Id: 11569940419982232802
-        Name: "Tank Orc Boulder Throw Projectile Basic"
+        Name: "Warrior Orc Boulder Throw Projectile Basic"
         Transform {
           Scale {
             X: 1
@@ -104,7 +104,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -294,7 +294,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -353,7 +353,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

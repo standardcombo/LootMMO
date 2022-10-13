@@ -7,7 +7,7 @@ Assets {
       RootId: 11030123202232162817
       Objects {
         Id: 11030123202232162817
-        Name: "ClientContext"
+        Name: "Minion Impact Effect"
         Transform {
           Scale {
             X: 1
@@ -81,7 +81,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

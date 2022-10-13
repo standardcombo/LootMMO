@@ -137,7 +137,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -195,7 +195,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -253,7 +253,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -311,7 +311,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -667,14 +667,14 @@ Assets {
         Name: "Craftsman Stairs 01 Pillar"
         Transform {
           Location {
-            X: -16.6610374
-            Y: 254.451462
-            Z: 133.459717
+            X: -16.6619434
+            Y: 254.452
+            Z: 133.459686
           }
           Rotation {
             Pitch: 2.04905664e-05
             Yaw: -3.05175781e-05
-            Roll: 103.84687
+            Roll: 103.846832
           }
           Scale {
             X: 0.59989357
@@ -1229,7 +1229,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5475,14 +5475,14 @@ Assets {
         Name: "Craftsman Stairs 01 Pillar"
         Transform {
           Location {
-            X: -4.55988121
-            Y: 310.637329
-            Z: 66.53125
+            X: -5.98887634
+            Y: 311.099731
+            Z: 61.3869438
           }
           Rotation {
-            Pitch: 13.8465271
+            Pitch: 13.8465347
             Yaw: -89.999939
-            Roll: 89.999939
+            Roll: 89.9999466
           }
           Scale {
             X: 4.22593212
@@ -5839,14 +5839,14 @@ Assets {
         Name: "Fantasy Shield Strap 01"
         Transform {
           Location {
-            X: -8.24059677
-            Y: 300.675049
-            Z: 72.4841309
+            X: -9.67042542
+            Y: 301.137329
+            Z: 67.3399811
           }
           Rotation {
             Pitch: 1.36603776e-05
             Yaw: -3.05175781e-05
-            Roll: 12.6024418
+            Roll: 12.6024227
           }
           Scale {
             X: 2.81404471

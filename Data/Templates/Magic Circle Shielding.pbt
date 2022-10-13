@@ -7,7 +7,7 @@ Assets {
       RootId: 10414299150814377777
       Objects {
         Id: 10414299150814377777
-        Name: "Magic Circle  Shield"
+        Name: "Magic Circle Shielding"
         Transform {
           Scale {
             X: 1
@@ -1207,7 +1207,7 @@ Assets {
           ShadowSlopeBias: 0.6
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

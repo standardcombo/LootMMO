@@ -4,54 +4,18 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 17266975702101077043
-      Objects {
-        Id: 17266975702101077043
-        Name: "FireballImpactBig"
-        Transform {
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11346856131111451494
-        ChildIds: 6206472794644801098
-        UnregisteredParameters {
-        }
-        Lifespan: 2.5
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-      }
+      RootId: 6206472794644801098
       Objects {
         Id: 6206472794644801098
         Name: "ClientContext"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
             Z: 1
           }
         }
-        ParentId: 17266975702101077043
+        ParentId: 6405952138206460852
         ChildIds: 9474808490126248695
         ChildIds: 6915096182309628491
         UnregisteredParameters {

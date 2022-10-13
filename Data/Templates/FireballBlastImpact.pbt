@@ -4,55 +4,22 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 730807542736708294
-      Objects {
-        Id: 730807542736708294
-        Name: "FireballBlastImpact"
-        Transform {
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9562662827358492339
-        ChildIds: 14389690502349006219
-        UnregisteredParameters {
-        }
-        Lifespan: 2.5
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-      }
+      RootId: 14389690502349006219
       Objects {
         Id: 14389690502349006219
         Name: "ClientContext"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
             Z: 1
           }
         }
-        ParentId: 730807542736708294
-        ChildIds: 12747406311470594180
+        ParentId: 11026904340149668040
+        ChildIds: 10820371870002908070
+        ChildIds: 13386939667534453921
+        ChildIds: 6608162462148023284
+        ChildIds: 8676024011332385868
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -78,44 +45,6 @@ Assets {
         }
       }
       Objects {
-        Id: 12747406311470594180
-        Name: "Explosion Feedback"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14389690502349006219
-        ChildIds: 10820371870002908070
-        ChildIds: 13386939667534453921
-        ChildIds: 6608162462148023284
-        ChildIds: 8676024011332385868
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 10820371870002908070
         Name: "Basic Explosion VFX"
         Transform {
@@ -129,7 +58,7 @@ Assets {
             Z: 0.165
           }
         }
-        ParentId: 12747406311470594180
+        ParentId: 14389690502349006219
         UnregisteredParameters {
           Overrides {
             Name: "bp:Enable Ring"
@@ -183,7 +112,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -198,7 +127,7 @@ Assets {
           }
           Rotation {
             Yaw: -179.999939
-            Roll: -9.2461587e-06
+            Roll: -9.24615779e-06
           }
           Scale {
             X: 0.8
@@ -206,7 +135,7 @@ Assets {
             Z: 0.8
           }
         }
-        ParentId: 12747406311470594180
+        ParentId: 14389690502349006219
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -249,7 +178,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -264,8 +193,8 @@ Assets {
           }
           Rotation {
             Pitch: 6.83018879e-06
-            Yaw: -3.05175781e-05
-            Roll: 3.17594167e-05
+            Yaw: -3.05175763e-05
+            Roll: 3.17594131e-05
           }
           Scale {
             X: 0.8
@@ -273,7 +202,7 @@ Assets {
             Z: 0.8
           }
         }
-        ParentId: 12747406311470594180
+        ParentId: 14389690502349006219
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -316,7 +245,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -337,7 +266,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12747406311470594180
+        ParentId: 14389690502349006219
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -380,7 +309,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

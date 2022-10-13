@@ -7,7 +7,7 @@ Assets {
       RootId: 7158150316661716578
       Objects {
         Id: 7158150316661716578
-        Name: "Tank Orc Boulder Throw Pickup Basic"
+        Name: "Warrior Orc Boulder Throw Pickup Basic"
         Transform {
           Scale {
             X: 1
@@ -192,7 +192,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

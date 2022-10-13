@@ -7,7 +7,7 @@ Assets {
       RootId: 4079025086750496989
       Objects {
         Id: 4079025086750496989
-        Name: "tm_fan_candle_sconce_001_lit_01"
+        Name: "Fantasy Candle Lit - Sconce 01 (Prop)"
         Transform {
           Scale {
             X: 1
@@ -118,7 +118,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -180,7 +180,7 @@ Assets {
           ShadowSlopeBias: 0.6
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -227,7 +227,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

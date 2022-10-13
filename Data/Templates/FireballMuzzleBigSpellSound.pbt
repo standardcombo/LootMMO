@@ -4,54 +4,18 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 5028109460282341215
-      Objects {
-        Id: 5028109460282341215
-        Name: "FireballMuzzleBigSpellSound"
-        Transform {
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11346856131111451494
-        ChildIds: 8975524446121914379
-        UnregisteredParameters {
-        }
-        Lifespan: 3
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-      }
+      RootId: 8975524446121914379
       Objects {
         Id: 8975524446121914379
         Name: "ClientContext"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
             Z: 1
           }
         }
-        ParentId: 5028109460282341215
+        ParentId: 9455886530266250155
         ChildIds: 16874148203848077492
         ChildIds: 891159786791964172
         UnregisteredParameters {

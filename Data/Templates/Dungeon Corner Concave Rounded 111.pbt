@@ -7,7 +7,7 @@ Assets {
       RootId: 9360622602673661000
       Objects {
         Id: 9360622602673661000
-        Name: "Dungeon Corner Concave Rounded 111"
+        Name: "Dungeon Corner Concave Rounded"
         Transform {
           Scale {
             X: 1
@@ -2017,7 +2017,7 @@ Assets {
           ShadowSlopeBias: 0.6
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -2257,7 +2257,7 @@ Assets {
           ShadowSlopeBias: 0.6
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

@@ -7,7 +7,7 @@ Assets {
       RootId: 3579950081550903571
       Objects {
         Id: 3579950081550903571
-        Name: "AnimorphPotionProjectile"
+        Name: "Mage Animorph Potion Projectile Basic"
         Transform {
           Scale {
             X: 1
@@ -229,7 +229,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -298,7 +298,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
