@@ -11,15 +11,15 @@ local modifiers =
 )
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = '6 - StarRating * 0.25'
+modifiers['Cooldown'].calString = '8 - StarRating * 0.25'
 modifiers['Cooldown'].calculation = function(stats)
-    local min = 6
+    local min = 8
     local starRating = stats['Roll']
     local baseModifier = 0.25
     return min - starRating * baseModifier
 end
 
---Formula: AGI / 172
+--Formula: VIT / 172
 modifiers['EvasionChance'].calculation = function(stats)
     local VIT = stats.V
     function IsEvade()

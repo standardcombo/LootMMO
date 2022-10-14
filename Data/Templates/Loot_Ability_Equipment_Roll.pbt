@@ -335,6 +335,7 @@ Assets {
         ParentId: 5497828863138998321
         ChildIds: 6371890334523328369
         ChildIds: 15064491239896912543
+        ChildIds: 15157049373016708339
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -430,6 +431,57 @@ Assets {
         Script {
           ScriptAsset {
             Id: 2522797319109204083
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15157049373016708339
+        Name: "Loot_Ability_Spell_Roll"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15086521763237484373
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 8632961435052012600
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 11961601431979488619
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8846244689147040314
           }
         }
         NetworkRelevanceDistance {
