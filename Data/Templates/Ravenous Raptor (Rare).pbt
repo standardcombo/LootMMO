@@ -1017,6 +1017,7 @@ Assets {
         ChildIds: 6429220767327985949
         ChildIds: 16065890425172227705
         ChildIds: 12535202963626109680
+        ChildIds: 2808160828566777145
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1210,6 +1211,76 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 2808160828566777145
+        Name: "Flare Billboard"
+        Transform {
+          Location {
+            X: 35.0105782
+            Y: 0.896606445
+            Z: 112.692055
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.85596925
+            Y: 0.85596925
+            Z: 0.85596925
+          }
+        }
+        ParentId: 16151903950433890161
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Flare Shape"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.0299999714
+              G: 0.320999682
+              B: 1
+              A: 0.504
+            }
+          }
+          Overrides {
+            Name: "bp:Color B"
+            Color {
+              G: 0.533499718
+              B: 0.97
+              A: 0.452000022
+            }
+          }
+          Overrides {
+            Name: "bp:Color C"
+            Color {
+              G: 0.0666663647
+              B: 1
+              A: 0.530000031
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4488444258523261897
+          }
+          TeamSettings {
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 15004082455039236065
         Name: "RootDeathSelfDestroy"
         Transform {
@@ -1368,6 +1439,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AnimatedMeshAssetRef"
         AssetId: "npc_raptor_default_basic_001_ref"
+      }
+    }
+    Assets {
+      Id: 4488444258523261897
+      Name: "Flare Billboard"
+      PlatformAssetType: 6
+      PrimaryAsset {
+        AssetType: "BlueprintAssetRef"
+        AssetId: "fxbp_flare_object"
       }
     }
     Assets {

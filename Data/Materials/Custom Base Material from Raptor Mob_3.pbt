@@ -53,7 +53,7 @@ Assets {
       }
       Overrides {
         Name: "fresnel_emissive_boost"
-        Float: 0.942869902
+        Float: 3
       }
     }
     Assets {
