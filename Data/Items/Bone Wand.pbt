@@ -22,7 +22,7 @@ Assets {
         String: ""
       }
       Overrides {
-        Name: "cs:Type"
+        Name: "cs:BagKey"
         String: ""
       }
       Overrides {
@@ -35,6 +35,10 @@ Assets {
       }
       Overrides {
         Name: "cs:Order:isrep"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:BagKey:isrep"
         Bool: true
       }
     }

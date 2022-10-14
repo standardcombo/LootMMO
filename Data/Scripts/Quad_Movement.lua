@@ -65,10 +65,10 @@ local isActive = false
 local function QuadAnimation(DURATION)
 
 	--World.SpawnAsset(Step_SFX, {parent = Equipment})
-	Ease3D.EasePosition(Body, BodyPOS_MIN, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Front, FrontPOS_MAX, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Back, BackPOS_MIN, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(Seat, SeatROT_MIN, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Body, BodyPOS_MIN, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Front, FrontPOS_MAX, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Back, BackPOS_MIN, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(Seat, SeatROT_MIN, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Position of the Legs
 	Ease3D.EasePosition(FrontLeftTop, FrontTopPOS_MIN, DURATION, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
 	Ease3D.EasePosition(FrontRightTop, FrontTopPOS_MAX, DURATION, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
@@ -80,36 +80,37 @@ local function QuadAnimation(DURATION)
 	Ease3D.EaseRotation(BackLeftTop, BackTopROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackRightTop, BackTopROT_MAX, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	--Rotation of the Knees
-	Ease3D.EaseRotation(FrontRightMid, FrontMidROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(FrontRightMid, FrontMidROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
 	--Ease3D.EaseRotation(BackLeftMid, BackMidROT_MIN, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(BackRightMid, BackMidROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(BackRightMid, BackMidROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Rotation of the Ankles
 	Ease3D.EaseRotation(FrontLeftBot, FrontBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(FrontRightBot, FrontBotROT_MAX, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	--Ease3D.EaseRotation(BackLeftBot, BackBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
-	Ease3D.EaseRotation(BackRightBot, BackBotROT_MAX, DURATION/2, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
-	
-	Task.Wait(DURATION/2)
+	Ease3D.EaseRotation(BackRightBot, BackBotROT_MAX, DURATION / 2, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
+
+	Task.Wait(DURATION / 2)
 	--Position and Rotation of the Chassis
-	Ease3D.EasePosition(Body, BodyPOS_MAX, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Front, FrontPOS_MIN, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Back, BackPOS_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(Seat, SeatROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Body, BodyPOS_MAX, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Front, FrontPOS_MIN, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Back, BackPOS_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(Seat, SeatROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Offset Rotation of the Knees
 	Ease3D.EaseRotation(FrontRightMid, FrontMidROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
 	Ease3D.EaseRotation(BackRightMid, BackMidROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
 	--Offset Rotation of the Ankles
 	Ease3D.EaseRotation(BackRightBot, BackBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
-	Task.Wait(DURATION/2)
+	Task.Wait(DURATION / 2)
 
 	--World.SpawnAsset(Step_SFX, {parent = Equipment})
 	--LEFT SIDE to MAX
 	--RIGHT SIDE to MIN
 	--Position and Rotation of the Chassis
-	Ease3D.EasePosition(Body, BodyPOS_MIN, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Front, FrontPOS_MAX, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Back, BackPOS_MIN, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(Seat, SeatROT_MIN, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Body, BodyPOS_MIN, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Front, FrontPOS_MAX, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Back, BackPOS_MIN, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(Seat, SeatROT_MIN, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Position of the Legs
 	Ease3D.EasePosition(FrontLeftTop, FrontTopPOS_MAX, DURATION, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
 	Ease3D.EasePosition(FrontRightTop, FrontTopPOS_MIN, DURATION, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
@@ -121,61 +122,67 @@ local function QuadAnimation(DURATION)
 	Ease3D.EaseRotation(BackLeftTop, BackTopROT_MAX, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackRightTop, BackTopROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	--Rotation of the Knees
-	Ease3D.EaseRotation(FrontLeftMid, FrontMidROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(BackLeftMid, BackMidROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(FrontLeftMid, FrontMidROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(BackLeftMid, BackMidROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Ease3D.EaseRotation(BackRightMid, BackMidROT_MIN, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Rotation of the Ankles
 	Ease3D.EaseRotation(FrontLeftBot, FrontBotROT_MAX, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(FrontRightBot, FrontBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(BackLeftBot, BackBotROT_MAX, DURATION/2, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
+	Ease3D.EaseRotation(BackLeftBot, BackBotROT_MAX, DURATION / 2, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
 	--Ease3D.EaseRotation(BackRightBot, BackBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
-	
-	Task.Wait(DURATION/2)
+
+	Task.Wait(DURATION / 2)
 	--Position and Rotation of the Chassis
-	Ease3D.EasePosition(Body, BodyPOS_MAX, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Front, FrontPOS_MIN, DURATION/2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(Back, BackPOS_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EaseRotation(Seat, SeatROT_MAX, DURATION/2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Body, BodyPOS_MAX, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Front, FrontPOS_MIN, DURATION / 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(Back, BackPOS_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
+	Ease3D.EaseRotation(Seat, SeatROT_MAX, DURATION / 2, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	--Offset Rotation of the Knees
 	Ease3D.EaseRotation(FrontLeftMid, FrontMidROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
 	Ease3D.EaseRotation(BackLeftMid, BackMidROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
 	--Offset Rotation of the Ankles
 	Ease3D.EaseRotation(BackLeftBot, BackBotROT_MIN, DURATION, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.OUT)
-	Task.Wait(DURATION/2)
-	
+	Task.Wait(DURATION / 2)
+
 end
 
 local function QuadReset(DURATION)
-	
+
 	--World.SpawnAsset(Stop_SFX, {position = Equipment:GetWorldPosition()})
 	Ease3D.EasePosition(Body, BodyPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EasePosition(Front, FrontPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EasePosition(Back, BackPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(Seat, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	
-	Ease3D.EasePosition(FrontLeftTop, FrontLeftTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(FrontRightTop, FrontRightTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(BackLeftTop, BackLeftTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	Ease3D.EasePosition(BackRightTop, BackRightTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	
+
+	Ease3D.EasePosition(FrontLeftTop, FrontLeftTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(FrontRightTop, FrontRightTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(BackLeftTop, BackLeftTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
+	Ease3D.EasePosition(BackRightTop, BackRightTopPOS_DEFAULT, DURATION, Ease3D.EasingEquation.SINE,
+		Ease3D.EasingDirection.INOUT)
+
 	Ease3D.EaseRotation(FrontLeftTop, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(FrontRightTop, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackLeftTop, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackRightTop, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	
+
 	Ease3D.EaseRotation(FrontLeftMid, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackLeftMid, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackRightMid, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(FrontRightMid, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	
+
 	Ease3D.EaseRotation(FrontLeftBot, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(FrontRightBot, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackLeftBot, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
 	Ease3D.EaseRotation(BackRightBot, ROT_DEFAULT, DURATION, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.INOUT)
-	
-	Task.Wait(DURATION/2)
-	
+
+	Task.Wait(DURATION / 2)
+
 end
+
 --[[
 local function DisplayMountUI()
 	Mount_UI.visibility = Visibility.FORCE_ON
@@ -184,48 +191,42 @@ end
 local function HideMountUI()
 	Mount_UI.visibility = Visibility.FORCE_OFF
 end
-]]--
+]] --
 Task.Wait()
+local LasPos = script:GetWorldPosition()
 function Tick()
-	
-	if not Equipment.owner or not Object.IsValid(Equipment.owner) then
-		return
-	end
-	
-	local PLAYER_SPEED = Equipment.owner:GetVelocity()
-	--print(PLAYER_SPEED.size)
+	local currentPos = script:GetWorldPosition()
+	local Velocity = math.abs((currentPos - LasPos).size) or 0
+	LasPos = currentPos
+	local PLAYER_SPEED = Velocity
 
 
-	if PLAYER_SPEED.size == 0 then
+	if PLAYER_SPEED == 0 then
 		DURATION = .35
-	elseif PLAYER_SPEED.size > 100 and PLAYER_SPEED.size < 400 then
+	elseif PLAYER_SPEED > 100 and PLAYER_SPEED < 400 then
 		DURATION = .35
-	elseif PLAYER_SPEED.size > 400 and PLAYER_SPEED.size < 600 then
+	elseif PLAYER_SPEED > 400 and PLAYER_SPEED < 600 then
 		DURATION = .25
-	elseif PLAYER_SPEED.size > 600 then
+	elseif PLAYER_SPEED > 600 then
 		DURATION = .25
 	end
-		
+
 	--if LOCAL_PLAYER and Equipment and LOCAL_PLAYER == Equipment.owner then
-		if not isActive then
-			World.SpawnAsset(Start_SFX, {position = Equipment:GetWorldPosition()})
-			Task.Wait()
-			isActive = true
-			isMoving = false
-					
-		elseif Equipment.owner.isAccelerating and isActive then
-			isMoving = true
-			--Task.Wait() --Good Practice
-			--LEFT SIDE to MIN
-			--RIGHT SIDE to MAX
-			--Position and Rotation of the Chassis
-			QuadAnimation(DURATION)
-			
-		elseif PLAYER_SPEED.size == 0 and isMoving then
-			
-			QuadReset(DURATION)
-			isActive = false
-			
-		end
-	--end
+	if not isActive then
+		World.SpawnAsset(Start_SFX, { position = Equipment:GetWorldPosition() })
+		Task.Wait()
+		isActive = true
+		isMoving = false
+
+	elseif PLAYER_SPEED > 0 and isActive then
+		isMoving = true
+
+		QuadAnimation(DURATION)
+
+	elseif PLAYER_SPEED == 0 and isMoving then
+
+		QuadReset(DURATION)
+		isActive = false
+
+	end
 end

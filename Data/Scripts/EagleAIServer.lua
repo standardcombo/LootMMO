@@ -77,9 +77,11 @@ local STATE_ATTACK_CAST = 2
 local STATE_ATTACK_RECOVERY = 3
 local STATE_PATROLLING = 4
 local STATE_LOOKING_AROUND = 5
-local STATE_DEAD_1 = 6
-local STATE_DEAD_2 = 7
-local STATE_DISABLED = 8
+local STATE_STUNNED = 6
+local STATE_DEAD_1 = 7
+local STATE_DEAD_2 = 8
+local STATE_DISABLED = 9
+
 
 local currentState = STATE_SLEEPING
 local stateTime = 0

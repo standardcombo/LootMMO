@@ -13,6 +13,12 @@ for key, Effect in pairs(STATUS_EFFECT) do
 	if Effect.tickFunction then
 		data.tickFunction = require(Effect.tickFunction)
 	end
+	if Effect.startFunction then
+		data.startFunction = require(Effect.startFunction)
+	end
+	if Effect.finishFunction then
+		data.finishFunction = require(Effect.finishFunction)
+	end
 	data.multiplier = Effect.defaultMultiply
 	API_SE.DefineStatusEffect(data)
 end

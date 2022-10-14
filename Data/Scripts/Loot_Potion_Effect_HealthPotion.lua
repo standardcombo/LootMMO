@@ -13,7 +13,8 @@ local function Execute()
 
 	API_SE.ApplyStatusEffect(ABILITY.owner, "Regen", {
 		source = ABILITY.owner,
-		damage = 10
+		damage = 20,
+		duration = 10,
 	})
 end
 

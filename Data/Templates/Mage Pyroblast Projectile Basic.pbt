@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14162296025304194376
+        ParentId: 4781671109827199097
         ChildIds: 3637276016891827027
         UnregisteredParameters {
         }
@@ -53,12 +53,11 @@ Assets {
           }
         }
         ParentId: 5645632638997810804
+        ChildIds: 2970728262882410547
         ChildIds: 12998181878062928787
         ChildIds: 16494534721684031301
         ChildIds: 15021254031558122692
         ChildIds: 10171057895347709774
-        ChildIds: 6521382542869684129
-        ChildIds: 14692762341199026860
         ChildIds: 2715499949975651818
         UnregisteredParameters {
         }
@@ -79,6 +78,186 @@ Assets {
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2970728262882410547
+        Name: "DisparentAndFollow"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3637276016891827027
+        ChildIds: 14692762341199026860
+        ChildIds: 6521382542869684129
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12172956464244693839
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14692762341199026860
+        Name: "Magic Projectile VFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.99999994
+            Y: 0.99999994
+            Z: 0.99999994
+          }
+        }
+        ParentId: 2970728262882410547
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:ColorB"
+            Color {
+              R: 15
+              G: 8.77964783
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Emissive Boost B"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 2.5479126
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 5
+              G: 1
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9919395327939304349
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6521382542869684129
+        Name: "Fire Volume VFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.339856058
+            Y: 0.339856058
+            Z: 0.339856058
+          }
+        }
+        ParentId: 2970728262882410547
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 0.922481298
+          }
+          Overrides {
+            Name: "bp:density"
+            Float: 8.50799751
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 0.939487517
+          }
+          Overrides {
+            Name: "bp:Gravity"
+            Float: 0.412595749
+          }
+          Overrides {
+            Name: "bp:Wind Speed"
+            Vector {
+              X: 50
+              Z: 100
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14852648510292688866
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -288,147 +467,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6521382542869684129
-        Name: "Fire Volume VFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.339856058
-            Y: 0.339856058
-            Z: 0.339856058
-          }
-        }
-        ParentId: 3637276016891827027
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Particle Scale Multiplier"
-            Float: 0.922481298
-          }
-          Overrides {
-            Name: "bp:density"
-            Float: 8.50799751
-          }
-          Overrides {
-            Name: "bp:Life"
-            Float: 0.939487517
-          }
-          Overrides {
-            Name: "bp:Gravity"
-            Float: 0.412595749
-          }
-          Overrides {
-            Name: "bp:Wind Speed"
-            Vector {
-              X: 50
-              Z: 100
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 14852648510292688866
-          }
-          TeamSettings {
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 14692762341199026860
-        Name: "Magic Projectile VFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3637276016891827027
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:ColorB"
-            Color {
-              R: 15
-              G: 8.77964783
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Emissive Boost"
-            Float: 2
-          }
-          Overrides {
-            Name: "bp:Emissive Boost B"
-            Float: 2
-          }
-          Overrides {
-            Name: "bp:Life"
-            Float: 1
-          }
-          Overrides {
-            Name: "bp:Particle Scale Multiplier"
-            Float: 2.5479126
-          }
-          Overrides {
-            Name: "bp:Secondary Color"
-            Color {
-              R: 5
-              G: 1
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 9919395327939304349
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 2715499949975651818
         Name: "Sphere"
         Transform {
@@ -447,7 +485,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 230872137319562526
+              Id: 7873046479115333864
             }
           }
           Overrides {
@@ -498,6 +536,24 @@ Assets {
       }
     }
     Assets {
+      Id: 9919395327939304349
+      Name: "Magic Projectile VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_magic_projectile"
+      }
+    }
+    Assets {
+      Id: 14852648510292688866
+      Name: "Fire Volume VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_fire_volume_vfx"
+      }
+    }
+    Assets {
       Id: 7165087681498963828
       Name: "Magic Fire Blast Attack 01 SFX"
       PlatformAssetType: 7
@@ -531,24 +587,6 @@ Assets {
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
         AssetId: "fxbp_ChargeUp_Hold"
-      }
-    }
-    Assets {
-      Id: 14852648510292688866
-      Name: "Fire Volume VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_fire_volume_vfx"
-      }
-    }
-    Assets {
-      Id: 9919395327939304349
-      Name: "Magic Projectile VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_magic_projectile"
       }
     }
     Assets {

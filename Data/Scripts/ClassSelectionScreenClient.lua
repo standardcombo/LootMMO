@@ -30,11 +30,14 @@ local MAGE_CORNER_CIRCLE = script:GetCustomProperty("MageCornerCircle"):WaitForO
 local MAGE_NAME = script:GetCustomProperty("MageName"):WaitForObject()
 local MAGE_BUTTON = script:GetCustomProperty("MageButton"):WaitForObject()
 
-local DETAILS_PANEL_WARRIOR = script:GetCustomProperty("DetailsPanelWarrior")
-local DETAILS_PANEL_HUNTER = script:GetCustomProperty("DetailsPanelHunter")
-local DETAILS_PANEL_MAGE = script:GetCustomProperty("DetailsPanelMage")
+local function Get(panel, desendant)
+	local newpanel = panel:FindDescendantByName(desendant)
+	assert(newpanel)
+	return newpanel
+end
 
 local LERP_SPEED = 11.5
+
 
 local warriorUI = {
 	panel = WARRIOR_PANEL,
@@ -105,11 +108,6 @@ local STATE_SUBCLASS_DETAILS = 80
 local currentState = -1
 local stateElapsedTime = 0
 
-
-UI.SetCursorVisible(true)
-UI.SetCanCursorInteractWithUI(true)
-
-
 function Show(panel)
 	if panel == ROOT_CONTAINER then
 		canSelectSubclass = false --_canSelectSubclass
@@ -123,61 +121,61 @@ table.insert(eventListeners,
 
 
 function SetState(newState)
+	local StateSwitch =
+	{
+		['STATE_HIDDEN'] = function()
+			if Object.IsValid(detailsPanel) then
+				detailsPanel:Destroy()
+			end
+			if Object.IsValid(subclassBackground) then
+				subclassBackground:Destroy()
+			end
+			if Object.IsValid(subclassPanel) then
+				subclassPanel:Destroy()
+			end
+			ROOT_CONTAINER.visibility = Visibility.FORCE_OFF
+		end,
+		['STATE_IN'] = function()
+			ROOT_CONTAINER.visibility = Visibility.INHERIT
+			ROOT_CONTAINER.opacity = 0
+			CLASS_SELECTION_PANEL.y = 500
+
+			WARRIOR_BUTTON.visibility = Visibility.FORCE_OFF
+			HUNTER_BUTTON.visibility = Visibility.FORCE_OFF
+			MAGE_BUTTON.visibility = Visibility.FORCE_OFF
+		end,
+		['STATE_CHOOSE_CLASS'] = function()
+			ROOT_CONTAINER.opacity = 1
+			CLASS_SELECTION_PANEL.y = defaultClassPanelY
+
+			WARRIOR_BUTTON.visibility = Visibility.INHERIT
+			HUNTER_BUTTON.visibility = Visibility.INHERIT
+			MAGE_BUTTON.visibility = Visibility.INHERIT
+		end,
+		['STATE_TO_CLASS'] = function()
+			local classDetailsTemplate = nil
+			if selectedClassUI == warriorUI then
+				classDetailsTemplate = DETAILS_PANEL_WARRIOR
+			elseif selectedClassUI == hunterUI then
+				classDetailsTemplate = DETAILS_PANEL_HUNTER
+			else
+				classDetailsTemplate = DETAILS_PANEL_MAGE
+			end
+			detailsPanel = SpawnAndSetupClassDetailsPanel(classDetailsTemplate)
+
+			detailsPanel.opacity = 0
+			detailsPanel.y = -400
+		end,
+
+	}
+
 	if currentState == STATE_CHOOSE_CLASS then
 		WARRIOR_BUTTON.visibility = Visibility.FORCE_OFF
 		HUNTER_BUTTON.visibility = Visibility.FORCE_OFF
 		MAGE_BUTTON.visibility = Visibility.FORCE_OFF
 	end
-
-	if newState == STATE_HIDDEN and currentState > STATE_HIDDEN then
-		DisableCursor()
-
-	elseif newState > STATE_HIDDEN and currentState == STATE_HIDDEN then
-		EnableCursor()
-	end
-
-	if newState == STATE_HIDDEN then
-		if Object.IsValid(detailsPanel) then
-			detailsPanel:Destroy()
-		end
-		if Object.IsValid(subclassBackground) then
-			subclassBackground:Destroy()
-		end
-		if Object.IsValid(subclassPanel) then
-			subclassPanel:Destroy()
-		end
-		ROOT_CONTAINER.visibility = Visibility.FORCE_OFF
-
-	elseif newState == STATE_IN then
-		ROOT_CONTAINER.visibility = Visibility.INHERIT
-		ROOT_CONTAINER.opacity = 0
-		CLASS_SELECTION_PANEL.y = 500
-
-		WARRIOR_BUTTON.visibility = Visibility.FORCE_OFF
-		HUNTER_BUTTON.visibility = Visibility.FORCE_OFF
-		MAGE_BUTTON.visibility = Visibility.FORCE_OFF
-
-	elseif newState == STATE_CHOOSE_CLASS then
-		ROOT_CONTAINER.opacity = 1
-		CLASS_SELECTION_PANEL.y = defaultClassPanelY
-
-		WARRIOR_BUTTON.visibility = Visibility.INHERIT
-		HUNTER_BUTTON.visibility = Visibility.INHERIT
-		MAGE_BUTTON.visibility = Visibility.INHERIT
-
-	elseif newState == STATE_TO_CLASS then
-		local classDetailsTemplate = nil
-		if selectedClassUI == warriorUI then
-			classDetailsTemplate = DETAILS_PANEL_WARRIOR
-		elseif selectedClassUI == hunterUI then
-			classDetailsTemplate = DETAILS_PANEL_HUNTER
-		else
-			classDetailsTemplate = DETAILS_PANEL_MAGE
-		end
-		detailsPanel = SpawnAndSetupClassDetailsPanel(classDetailsTemplate)
-
-		detailsPanel.opacity = 0
-		detailsPanel.y = -400
+	if StateSwitch[currentState] then
+		StateSwitch[currentState]()
 	end
 
 	currentState = newState
@@ -200,7 +198,6 @@ function SelectWarrior()
 		SetState(STATE_TO_CLASS)
 	end
 end
-
 function SelectHunter()
 	if currentState == STATE_CHOOSE_CLASS then
 		selectedClassId = "Hunter"
@@ -214,7 +211,6 @@ function SelectHunter()
 		SetState(STATE_TO_CLASS)
 	end
 end
-
 function SelectMage()
 	if currentState == STATE_CHOOSE_CLASS then
 		selectedClassId = "Mage"
@@ -428,10 +424,10 @@ function OnBackPressed(btn)
 end
 
 function Hide()
-	if currentState == STATE_HIDDEN then return end 
-	if currentState == STATE_CHOOSE_CLASS then 
+	if currentState == STATE_HIDDEN then return end
+	if currentState == STATE_CHOOSE_CLASS then
 		SetState(STATE_BACK_TO_CHOOSE)
-	end 
+	end
 	Task.Wait(1)
 	SetState(STATE_OUT)
 	Task.Wait(1)
@@ -441,8 +437,6 @@ end
 table.insert(eventListeners,
 	Events.Connect(EVENT_HIDE_UI, Hide)
 )
-
-
 
 function OnConfirmPressed(btn)
 	if currentState == STATE_CLASS_DETAILS then
@@ -525,24 +519,6 @@ function SpawnAndSetupClassDetailsPanel(classDetailsTemplate)
 		subclassButton3.clickedEvent:Connect(OnSubclassPressed, subclassBG3, subclassPanel3, subclassIds[3])
 	)
 	return detailsPanel
-end
-
-function EnableCursor()
-	if _G.CursorStack then
-		_G.CursorStack.Enable()
-	else
-		UI.SetCursorVisible(true)
-		UI.SetCanCursorInteractWithUI(true)
-	end
-end
-
-function DisableCursor()
-	if _G.CursorStack then
-		_G.CursorStack.Disable()
-	else
-		UI.SetCursorVisible(false)
-		UI.SetCanCursorInteractWithUI(false)
-	end
 end
 
 table.insert(eventListeners,

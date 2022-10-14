@@ -5,7 +5,7 @@ end
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local Trigger = script:GetCustomProperty('Trigger'):WaitForObject()
-
+local API_SE = _G["StatusEffects.API"]
 local OwnerImpulseAmount = 50000
 local DEFAULT_Stun = { duration = 4.0, damage = 0, multiplier = 0 }
 local OriginalSettings = {}
@@ -23,12 +23,14 @@ local BASH_VFX = script:GetCustomProperty('BashVFX')
 local SpawnedAttachedVFX = nil
 
 function AddImpulseToPlayer(player)
-	warn('Apply effect stun')
-
+	API_SE.ApplyStatusEffect(player, "Stun", {
+		source = ABILITY.owner,
+		duration = mod["StunDuration"]
+	})
 	-- Do damage
-	local crit = mod ["Damage"][2]
+	local crit = mod["Damage"][2]
 	local dmg = Damage.New()
-	dmg.amount = mod ["Damage"][1]
+	dmg.amount = mod["Damage"][1]
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY

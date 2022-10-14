@@ -17,6 +17,7 @@ function BootUpPlayerBag(Character, player)
 					newitem:SetCustomProperty('IsBag', true)
 					newitem:SetCustomProperty('Greatness', Item.greatness)
 					newitem:SetCustomProperty('Order', Item.order or '')
+					newitem:SetCustomProperty('BagKey', selectedbag.tokenId or '')
 					inventory:GetInventory():PickUpItem(newitem)
 				end
 			end

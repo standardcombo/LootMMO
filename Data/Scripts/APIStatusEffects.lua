@@ -49,7 +49,11 @@ local TIME_KEY = 3
 local DURATION_KEY = 4
 local DAMAGE_KEY = 5
 local MULTIPLIER_KEY = 6
+local AllPlayers = {}
 
+local playerSettings = {}
+
+local Combat = _G["standardcombo.Combat.Wrap"]
 local function StringSplit(delimiter, text)
 	local tbl = {}
 	if delimiter == "" then -- this would result in endless loops
@@ -150,21 +154,60 @@ end
 
 function UpdatePlayerEffectState(player, effectType)
 	local statusEffects = API.GetStatusEffectsOnPlayer(player)
-
 	if effectType == API.STATUS_EFFECT_TYPE_STUN then
 		for _, data in pairs(statusEffects) do
 			local statusEffectData = API.STATUS_EFFECT_DEFINITIONS[data.name]
 
 			if statusEffectData.type == effectType then
-				player.movementControlMode = MovementControlMode.NONE
+
+				if player:IsA("Player") then
+					player.movementControlMode = MovementControlMode.NONE
+				else
+					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+					if NPCScript then
+						NPCScript.context.SetState(6)
+					end
+				end
 				return
 			end
 		end
-
-		player.movementControlMode = DEFAULT_PLAYER_SETTINGS.movementControlMode
+		if player:IsA("Player") then
+			player.movementControlMode = DEFAULT_PLAYER_SETTINGS.movementControlMode
+		else
+			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+			if NPCScript then
+				NPCScript.context.SetState(0)
+			end
+		end
 		return
 	end
+	if effectType == API.STATUS_EFFECT_TYPE_BLIND then
+		for _, data in pairs(statusEffects) do
+			local statusEffectData = API.STATUS_EFFECT_DEFINITIONS[data.name]
 
+			if statusEffectData.type == effectType then
+
+				if player:IsA("Player") then
+
+				else
+					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+					if NPCScript then
+						NPCScript.context.SetState(6)
+					end
+				end
+				return
+			end
+		end
+		if player:IsA("Player") then
+
+		else
+			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+			if NPCScript then
+				NPCScript.context.SetState(0)
+			end
+		end
+		return
+	end
 	local minMultiplier = 1.0
 	local maxMultiplier = 1.0
 
@@ -178,9 +221,9 @@ function UpdatePlayerEffectState(player, effectType)
 	end
 
 	if effectType == API.STATUS_EFFECT_TYPE_MOVE_SPEED then
-		player.maxWalkSpeed = DEFAULT_PLAYER_SETTINGS.maxWalkSpeed * minMultiplier * maxMultiplier
+		Combat.SetMaxWalkSpeed(player, playerSettings[player].speed * minMultiplier * maxMultiplier)
 	elseif effectType == API.STATUS_EFFECT_TYPE_DAMAGE_DEALT_MOD then
-		-- do something
+		player.serverUserData.damageModifier = minMultiplier * maxMultiplier
 	elseif effectType == API.STATUS_EFFECT_TYPE_DAMAGE_TAKEN_MOD then
 		-- do something
 	elseif effectType == API.STATUS_EFFECT_TYPE_FRICTION then
@@ -189,12 +232,18 @@ function UpdatePlayerEffectState(player, effectType)
 	end
 end
 
-function OnPlayerJoined(player)
-	tickCounts[player] = {}
-end
-
 function OnPlayerLeft(player)
 	tickCounts[player] = nil
+	playerSettings[player] = nil
+end
+
+function OnPlayerJoined(player)
+	tickCounts[player] = {}
+	playerSettings[player] = {}
+	playerSettings[player].speed = Combat.GetMaxWalkSpeed(player) or 600
+	if not player:IsA("Player") then
+		player.destroyEvent:Connect(OnPlayerLeft)
+	end
 end
 
 -- Client and Server
@@ -305,17 +354,21 @@ end
 
 -- Server only
 function API.ApplyStatusEffect(player, id, optionalParameters)
+	if not player:IsA('Player') then
+		player = player:FindAncestorByType("Damageable")
+	end
+
 	if not Object.IsValid(player) then
 		return
 	end
 	if player.isDead or player.serverUserData.DamageImmunity then
 		return
 	end
+
 	local doesHave, currentId = API.DoesPlayerHaveStatusEffect(player, id)
 	if doesHave then
 		API.RemoveStatusEffect(player, currentId)
 	end
-
 	local tracker = API.GetStateTracker(player)
 	for i = 1, API.MAX_STATUS_EFFECTS do
 		if tracker then
@@ -335,7 +388,7 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 				}
 
 				tracker:SetNetworkedCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
-
+				tickCounts[player] = tickCounts[player] or {}
 				tickCounts[player][i] = 0
 
 				local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
@@ -442,55 +495,101 @@ function API.RemoveAllStatusEffects(player)
 	end
 end
 
--- Server Only
-function API.Tick(deltaTime)
-	local players = Game.GetPlayers()
-	for _, player in ipairs(players) do
-		if Object.IsValid(player) then
-			local tracker = API.GetStateTracker(player)
+-- Server only
+function UpdatePlayers()
+	local players = Game.GetPlayers() --_G["standardcombo.Combat.Wrap"].GetAll()
+	local Damagable = World.FindObjectsByType("Damageable")
 
-			for i = 1, API.MAX_STATUS_EFFECTS do
-				local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
+	for index, value in ipairs(Damagable) do
+		table.insert(players, value)
+	end
 
-				if trackerTbl and trackerTbl[ID_KEY] ~= "" then
-					local id = trackerTbl[ID_KEY]
-					local startTime = tonumber(trackerTbl[TIME_KEY])
-					local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
-					local sourcePlayer
+	local function NotInGame(player)
+		for i = 1, #AllPlayers do
+			if AllPlayers[i] == player then
+				return false
+			end
+		end
+		return true
+	end
 
-					for _, s in ipairs(players) do
-						if s.id == trackerTbl[SOURCE_KEY] then
-							sourcePlayer = s
+	for key, value in pairs(players) do
+		if NotInGame(value) then
+			OnPlayerJoined(value)
+			table.insert(AllPlayers, value)
+		end
+	end
+
+end
+
+local function UpdateEffect(player)
+	local tracker = API.GetStateTracker(player)
+	if tracker then
+		for i = 1, API.MAX_STATUS_EFFECTS do
+			local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
+
+			if trackerTbl and trackerTbl[ID_KEY] ~= "" then
+				local id = trackerTbl[ID_KEY]
+				local startTime = tonumber(trackerTbl[TIME_KEY])
+				local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
+				local sourcePlayer
+
+				for _, s in ipairs(AllPlayers) do
+					if Object.IsValid(s) and s.id == trackerTbl[SOURCE_KEY] then
+						sourcePlayer = s
+					end
+				end
+
+				if statusEffectData.type == API.STATUS_EFFECT_TYPE_CUSTOM and statusEffectData.tickFunction then
+					local ticksExpected = math.floor(time() - startTime)
+
+					for j = tickCounts[player][i] + 1, ticksExpected do
+						tickCounts[player][i] = tickCounts[player][i] + 1
+						statusEffectData.tickFunction(player, sourcePlayer, trackerTbl[DAMAGE_KEY])
+
+						-- The tick might kill you, which removes all your status effects. The rest of this is no longer valid.
+						if player.isDead then
+							return
 						end
 					end
+				end
 
-					if statusEffectData.type == API.STATUS_EFFECT_TYPE_CUSTOM and statusEffectData.tickFunction then
-						local ticksExpected = math.floor(time() - startTime)
-
-						for j = tickCounts[player][i] + 1, ticksExpected do
-							tickCounts[player][i] = tickCounts[player][i] + 1
-							statusEffectData.tickFunction(player, sourcePlayer, trackerTbl[DAMAGE_KEY])
-
-							-- The tick might kill you, which removes all your status effects. The rest of this is no longer valid.
-							if player.isDead then
-								return
-							end
-						end
-					end
-
-					if statusEffectData.duration and
-						time() > tonumber(startTime + (trackerTbl[DURATION_KEY] or statusEffectData.duration))
-					then
-						API.RemoveStatusEffect(player, i)
-					end
+				if statusEffectData.duration and
+					time() > tonumber(startTime + (trackerTbl[DURATION_KEY] or statusEffectData.duration))
+				then
+					API.RemoveStatusEffect(player, i)
 				end
 			end
 		end
 	end
 end
 
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
+-- Server Only
+function API.Tick(deltaTime)
+	UpdatePlayers()
+
+	for _, player in ipairs(AllPlayers) do
+		if Object.IsValid(player) then
+			UpdateEffect(player)
+		end
+	end
+end
+
 Game.playerLeftEvent:Connect(OnPlayerLeft)
+
+
+function OnGoingToTakeDamage(attackData)
+	local player = attackData.source
+	if player:IsA("Script") then
+		player = player:FindAncestorByType("Damageable")
+	end
+	if player.serverUserData.damageModifier then
+		attackData.damage.amount = attackData.damage.amount * player.serverUserData.damageModifier
+	end
+end
+
+Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+
 
 _G["StatusEffects.API"] = API
 return API

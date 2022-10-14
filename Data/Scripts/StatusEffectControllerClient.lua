@@ -5,6 +5,7 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 local EFFECT_FADE_OUT_TIME = 0.6
 
 local effectObjects = {} -- Player -> index -> int
+local AllPlayers = {}
 
 function FadeOutEffect(effectObject)
 	for _, object in pairs(effectObject:FindDescendantsByType("Audio")) do
@@ -26,10 +27,6 @@ function FadeOutEffect(effectObject)
 	end
 end
 
-function OnPlayerJoined(player)
-	effectObjects[player] = {}
-end
-
 function OnPlayerLeft(player)
 	for _, effectObject in pairs(effectObjects[player]) do
 		if Object.IsValid(effectObject) then
@@ -40,8 +37,42 @@ function OnPlayerLeft(player)
 	effectObjects[player] = nil
 end
 
+function OnPlayerJoined(player)
+	effectObjects[player] = {}
+	if not player:IsA("Player") then
+		player.destroyEvent:Connect(OnPlayerLeft)
+	end
+end
+
+function UpdatePlayers()
+	local players = Game.GetPlayers() --_G["standardcombo.Combat.Wrap"].GetAll()
+	local Damagable = World.FindObjectsByType("Damageable")
+
+	for index, value in ipairs(Damagable) do
+		table.insert(players, value)
+	end
+
+	local function NotInGame(player)
+		for i = 1, #AllPlayers do
+			if AllPlayers[i] == player then
+				return false
+			end
+		end
+		return true
+	end
+
+	for key, value in pairs(players) do
+		if NotInGame(value) then
+			OnPlayerJoined(value)
+			table.insert(AllPlayers, value)
+		end
+	end
+
+end
+
 function Tick(deltaTime)
-	for _, player in ipairs(Game.GetPlayers()) do
+	UpdatePlayers()
+	for _, player in ipairs(AllPlayers) do
 		if Object.IsValid(player) then
 			local effects = API_SE.GetStatusEffectsOnPlayer(player)
 
@@ -51,11 +82,19 @@ function Tick(deltaTime)
 				if effects[i] and not effectObject then
 					local statusEffectData = API_SE.STATUS_EFFECT_DEFINITIONS[effects[i].name]
 					effectObjects[player][i] = World.SpawnAsset(statusEffectData.effectTemplate)
-					effectObjects[player][i]:AttachToPlayer(player, "root")
+					if player:IsA("Player") then
+						effectObjects[player][i]:AttachToPlayer(player, "root")
+					else
+						effectObjects[player][i]:SetWorldPosition(player:GetWorldPosition())
+						effectObjects[player][i]:SetWorldRotation(player:GetWorldRotation())
+						effectObjects[player][i]:Follow(player,600)
+						effectObjects[player][i].clientUserData.parent = player
+					end
 					effectObjects[player][i].clientUserData.owner = player -- added so a status template can know the player its attached to
 					effectObjects[player][i].clientUserData.source = effects[i].source
 
-					if effects[i].name == "Blind" and effects[i].source and player == LOCAL_PLAYER and effects[i].source ~= LOCAL_PLAYER.id then
+					if effects[i].name == "Blind" and effects[i].source and player == LOCAL_PLAYER and
+						effects[i].source ~= LOCAL_PLAYER.id then
 						local blind = effectObjects[player][i]:GetCustomProperty("Blind"):WaitForObject()
 						blind:SetSmartProperty("Hold Duration", effects[i].duration)
 						blind:Play()
@@ -72,6 +111,5 @@ function Tick(deltaTime)
 	end
 end
 
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 API_SE.InitializeStatusEffectController(STATE_TRACKER_GROUP)
