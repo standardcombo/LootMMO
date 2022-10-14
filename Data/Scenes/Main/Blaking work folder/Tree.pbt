@@ -45151,7 +45151,7 @@ Objects {
 }
 Objects {
   Id: 16236345720218343928
-  Name: "CauldrenUnlockScript"
+  Name: "CauldronUnlockScript"
   Transform {
     Location {
     }
@@ -46328,7 +46328,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Text {
-    Text: "Cauldren \r\nUnlocks at \r\nLEVEL 5"
+    Text: "Cauldron \r\nUnlocks at \r\nLEVEL 5"
     FontAsset {
       Id: 10737131002278560872
     }
