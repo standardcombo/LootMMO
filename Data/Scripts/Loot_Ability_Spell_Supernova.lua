@@ -4,7 +4,7 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
-
+local API_SE = _G["StatusEffects.API"]
 local scaleDuration = 3
 local chargeUpVFX = script:GetCustomProperty('HealerOrcSupernovaChargeBasic')
 local endingVFX = script:GetCustomProperty('HealerOrcSupernovaEndingBasic')
@@ -92,7 +92,9 @@ function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
             }
             COMBAT().ApplyDamage(attackData)
             -- Stun
-            warn('Add stun')
+            API_SE.ApplyStatusEffect(otherPlayer, "Stun", {
+				duration = mod["StunDuration"]
+			})
         end
     end
 end

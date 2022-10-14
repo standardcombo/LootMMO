@@ -3,6 +3,9 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local API_SE = _G["StatusEffects.API"]
 local activateVFX = script:GetCustomProperty('HealerOrcDivineLightActiveBasic')
 local ImpulseAmount = 14000
+local function COMBAT()
+	return _G["standardcombo.Combat.Wrap"]
+end
 
 function AddImpulseToPlayer(ABILITY, player)
 	local directionVector = player:GetWorldPosition() - ABILITY.owner:GetWorldPosition()
@@ -10,8 +13,8 @@ function AddImpulseToPlayer(ABILITY, player)
 	directionVector.z = 0.5
 	local impulseVector = directionVector * ImpulseAmount
 
-	player:ResetVelocity()
-	player:AddImpulse(impulseVector)
+	--player:ResetVelocity()
+	COMBAT().AddImpulse(player, impulseVector)
 end
 
 function Execute()
@@ -27,12 +30,9 @@ function Execute()
 
 	local StunRadius = mod["Radius"]
 	local nearbyEnemies =
-	Game.FindPlayersInCylinder(ABILITY.owner:GetWorldPosition(), StunRadius, { ignoreTeams = ABILITY.owner.team })
+	COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), StunRadius, { ignoreTeams = ABILITY.owner.team })
 
 	ImpulseAmount = ImpulseAmount
-
-	warn('Add Status effect blind and speed')
-
 
 	local statusEffects = {}
 	local status = statusEffects.BLIND
@@ -41,10 +41,16 @@ function Execute()
 
 	API_SE.ApplyStatusEffect(ABILITY.owner, "SpeedBoost", {
 		source = ABILITY.owner,
+		duration = mod["duration"]
 	})
+
 	ABILITY.owner.hitPoints = CoreMath.Clamp(ABILITY.owner.hitPoints + healAmmount, ABILITY.owner.maxHitPoints)
 
 	for _, enemy in pairs(nearbyEnemies) do
+		API_SE.ApplyStatusEffect(enemy, "Blind", {
+			source = ABILITY.owner,
+			duration = mod["Duration"]
+		})
 		AddImpulseToPlayer(ABILITY, enemy)
 	end
 end

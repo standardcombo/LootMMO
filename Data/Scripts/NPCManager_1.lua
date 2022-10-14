@@ -1,6 +1,6 @@
 --[[
 	NPC Manager
-	v0.13.0
+	v0.14.0
 	by: standardcombo
 	
 	Provides bookkeeping on all NPCs contained in a game.
@@ -18,11 +18,10 @@ local npcDamageables = {}
 function API.Register(npc)
 	if (not allNPCs[npc]) then
 		allNPCs[npc] = true
-		
+
 		npc.destroyEvent:Connect(OnDestroyed)
 	end
 end
-
 
 function API.RegisterCollider(npc, collider)
 	npcColliders[collider] = npc
@@ -36,6 +35,13 @@ function API.IsRegistered(npc)
 	return allNPCs[npc] ~= nil
 end
 
+function API.GetNpcs()
+	local npcs = {}
+	for key, value in pairs(allNPCs) do
+		table.insert(npcs, key)
+	end
+	return npcs
+end
 
 function API.FindScriptForCollider(collider)
 	return npcColliders[collider]
@@ -45,10 +51,9 @@ function API.FindScriptForDamageable(damageable)
 	return npcDamageables[damageable]
 end
 
-
 function API.GetEnemies(team)
 	local enemies = {}
-	for npc,_ in pairs(allNPCs) do
+	for npc, _ in pairs(allNPCs) do
 		local npcTeam = npc.context.GetTeam()
 		if (npcTeam ~= team) then
 			table.insert(enemies, npc)
@@ -57,12 +62,11 @@ function API.GetEnemies(team)
 	return enemies
 end
 
-
 function API.FindInSphere(position, radius, parameters)
 	local result = {}
-	local radiusSquared = radius*radius
-	
-	for npc,_ in pairs(allNPCs) do
+	local radiusSquared = radius * radius
+
+	for npc, _ in pairs(allNPCs) do
 		local npcPos = npc:GetWorldPosition()
 		local distanceSquared = (position - npcPos).sizeSquared
 		if distanceSquared <= radiusSquared then
@@ -72,16 +76,15 @@ function API.FindInSphere(position, radius, parameters)
 	return result
 end
 
-
 function OnDestroyed(obj)
 	-- Clear collider references
-	for collider,npc in pairs(npcColliders) do
+	for collider, npc in pairs(npcColliders) do
 		if npc == obj then
 			npcColliders[collider] = nil
 		end
 	end
 	-- Clear damageable reference
-	for damageable,npc in pairs(npcDamageables) do
+	for damageable, npc in pairs(npcDamageables) do
 		if npc == obj then
 			npcDamageables[damageable] = nil
 			break
@@ -92,5 +95,3 @@ function OnDestroyed(obj)
 		allNPCs[obj] = nil
 	end
 end
-
-

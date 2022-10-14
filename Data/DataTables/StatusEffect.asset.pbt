@@ -86,5 +86,14 @@ Assets {
         AssetId: "Icon_Health"
       }
     }
+    Assets {
+      Id: 981931502498535928
+      Name: "Deer"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Deer"
+      }
+    }
   }
 }

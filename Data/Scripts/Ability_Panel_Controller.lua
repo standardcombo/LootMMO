@@ -7,13 +7,15 @@ local CLOSE_EVENT = "Ability_Close"
 local PREPARE_TO_CLOSE = "Ability_Prepare"
 local OPEN_EVENT = "Ability_OpenPanel"
 
-local AppState   = _G["AppState"]
-local EquipAPI   = _G['Character.EquipAPI']
-local ClassAPI   = _G["Character.Classes"]
-local AbilityAPI = _G["Ability.Equipment"]
+local AppState    = _G["AppState"]
+local EquipAPI    = _G['Character.EquipAPI']
+local ClassAPI    = _G["Character.Classes"]
+local AbilityAPI  = _G["Ability.Equipment"]
+local cursorStack = _G.CursorStack
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
-local lastState = nil
+local lastState    = nil
+local isConnected  = false
 
 local STATES = {
 	closed = 1,
@@ -140,35 +142,45 @@ function Toggle(newState)
 	end
 end
 
-local SetState = nil
-local function StateUpdated()
-	local actions = {
-		[STATES.closed] = function()
-			ROOT.visibility = Visibility.FORCE_OFF
-			Toggle(ROOT.visibility)
-		end,
-		[STATES.open] = function()
-			ROOT.visibility = Visibility.INHERIT
-			Toggle(ROOT.visibility)
-		end,
-		[STATES.closing] = function()
-			local time = 0
-			Events.Broadcast(PREPARE_TO_CLOSE)
-			while state == STATES.closing and time <= .65 do 
-				time = time + Task.Wait()
-			end
-			if state == STATES.closing then
-				SetState(STATES.closed)
-			end
-		end,
-	}
-	if actions[state] then
-		actions[state]()
-	end
-end
-
-SetState = function(newState)
+local function SetState(newState)
+	if state == newState then return end
 	state = newState
+	local function StateUpdated()
+		local actions = {
+
+			[STATES.open] = function()
+				if not isConnected then
+					cursorStack:Enable()
+					isConnected = true
+				end
+				ROOT.visibility = Visibility.INHERIT
+				Toggle(ROOT.visibility)
+			end,
+
+			[STATES.closing] = function()
+				local time = 0
+				Events.Broadcast(PREPARE_TO_CLOSE)
+				while state == STATES.closing and time <= .65 do
+					time = time + Task.Wait()
+				end
+				if state == STATES.closing then
+					SetState(STATES.closed)
+				end
+			end,
+			[STATES.closed] = function()
+				if isConnected then
+					cursorStack:Disable()
+					isConnected = false
+				end
+				ROOT.visibility = Visibility.FORCE_OFF
+				Toggle(ROOT.visibility)
+			end,
+		}
+		if actions[state] then
+			actions[state]()
+		end
+	end
+
 	StateUpdated()
 end
 
@@ -188,8 +200,10 @@ Events.Connect(AppState.EnterKey, function(_, newState, oldstate)
 	end
 end)
 Events.Connect(AppState.ExitKey, function(_, oldstate, newState)
-	if oldstate == AppState.Ability then 
-		SetState(STATES.closing)
+	if oldstate == AppState.Ability then
+		if state == STATES.open then
+			SetState(STATES.closing)
+		end
 	end
 end)
 
