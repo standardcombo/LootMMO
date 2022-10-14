@@ -8,7 +8,7 @@ local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 local ENEMY_COUNT = script:GetCustomProperty("EnemyCount")
 	
 if ENEMY_COUNT <= 0 then
-	error("Enemy count should be positive for quest "..QUEST_ID..", "..OBJECTIVE_INDEX)
+	error("Enemy count should be positive at: ".. script.id)
 end
 
 -- Search for these objects
@@ -16,11 +16,11 @@ local QUEST_AREAS = script.parent:FindDescendantsByName("Quest Area")
 local ENEMY_SPAWNS = script.parent:FindDescendantsByName("Enemy Spawn")
 
 if #QUEST_AREAS <= 0 then
-	error("Insufficient quest area objects for "..QUEST_ID..", "..OBJECTIVE_INDEX)
+	error("Insufficient quest area objects at: ".. script.id)
 end
 
 if ENEMY_COUNT > #ENEMY_SPAWNS then
-	error("Insufficient spawn points for quest "..QUEST_ID..", "..OBJECTIVE_INDEX)
+	error("Insufficient quest spawn points at: ".. script.id)
 end
 
 local SPAWN_POSITIONS = {}
@@ -126,7 +126,9 @@ function SpawnEnemies(level, playerPos)
 	
 	-- End points
 	if #enemyDistribution == 2 and midPoint ~= nil then
+		table.insert(remainingPoints, furthestPoint)
 		furthestPoint = midPoint
+		midPoint = nil
 	end
 	SpawnCluster(remainingPoints, spawnData, furthestPoint, enemyDistribution[#enemyDistribution])
 	
@@ -134,12 +136,19 @@ function SpawnEnemies(level, playerPos)
 	
 	-- Middle
 	for e = 2, #enemyDistribution - 1 do
+		if midPoint == nil then
+			midPoint = remainingPoints[1]
+			table.remove(remainingPoints, 1)
+		end
+		
 		SpawnCluster(remainingPoints, spawnData, midPoint, enemyDistribution[e])
 		
-		if spawnData.remaining > 0 then
+		if spawnData.remaining > 0 and #remainingPoints > 0 then
 			local midIndex = CoreMath.Ceil(#remainingPoints / 2)
-			local midPoint = remainingPoints[midIndex]
+			midPoint = remainingPoints[midIndex]
 			table.remove(remainingPoints, midIndex)
+		else
+			break
 		end
 	end
 end
