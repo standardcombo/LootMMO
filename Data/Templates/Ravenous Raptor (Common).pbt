@@ -1,6 +1,6 @@
 Assets {
   Id: 13441300675391799547
-  Name: "Ravenous Raptor"
+  Name: "Ravenous Raptor (Common)"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
@@ -1150,6 +1150,15 @@ Assets {
         }
         ParentId: 7145993005084827370
         UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"

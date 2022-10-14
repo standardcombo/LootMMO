@@ -19,6 +19,10 @@ Assets {
         Float: 10
       }
       Overrides {
+        Name: "cs:EnemyCount"
+        Int: 4
+      }
+      Overrides {
         Name: "cs:QuestID"
         String: ""
       }

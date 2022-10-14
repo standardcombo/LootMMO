@@ -1,6 +1,219 @@
 Name: "Beasts1"
 RootId: 17848771781286014444
 Objects {
+  Id: 1216609040261058152
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: -3561.83569
+      Y: 5933.65381
+      Z: 2745.84448
+    }
+    Rotation {
+      Yaw: -94.603363
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7520399341805677515
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: -5679.11816
+      Y: 6814.08
+      Z: 2752.72095
+    }
+    Rotation {
+      Yaw: -152.744629
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 10413449198827249328
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: -5456.92969
+      Y: 7275.87158
+      Z: 2746.6604
+    }
+    Rotation {
+      Yaw: -169.670029
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 16193978415028078486
   Name: "Enemy Spawn"
   Transform {
@@ -481,7 +694,7 @@ Objects {
   ParentId: 17848771781286014444
   UnregisteredParameters {
     Overrides {
-      Name: "cs:RPGRaptor"
+      Name: "cs:RaptorCommon"
       AssetReference {
         Id: 13441300675391799547
       }
