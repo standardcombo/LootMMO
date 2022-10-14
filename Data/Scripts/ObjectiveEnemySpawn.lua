@@ -207,17 +207,20 @@ function SpawnOne(pos, spawnData)
 	local def = ENEMY_DEFINITIONS[enemyId]
 	local template = def.commonTemplate
 	if ENEMY_COUNT == 1 or spawnData.remaining < ENEMY_COUNT then
-		if spawnData.legendaryCount < spawnData.maxLegendaries
+		if def.legendaryTemplate
+		and spawnData.legendaryCount < spawnData.maxLegendaries
 		and rng:GetNumber() < CHANCE_LEGENDARY_ENEMY then
 			spawnData.legendaryCount = spawnData.legendaryCount + 1
 			template = def.legendaryTemplate
 			
-		elseif spawnData.epicCount < spawnData.maxEpics
+		elseif def.epicTemplate
+		and spawnData.epicCount < spawnData.maxEpics
 		and rng:GetNumber() < CHANCE_EPIC_ENEMY then
 			spawnData.epicCount = spawnData.epicCount + 1
 			template = def.epicTemplate
 			
-		elseif spawnData.rareCount < spawnData.maxRares
+		elseif def.rareTemplate
+		and spawnData.rareCount < spawnData.maxRares
 		and rng:GetNumber() < CHANCE_RARE_ENEMY then
 			spawnData.rareCount = spawnData.rareCount + 1
 			template = def.rareTemplate
