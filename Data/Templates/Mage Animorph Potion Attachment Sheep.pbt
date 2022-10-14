@@ -115,6 +115,7 @@ Assets {
         ChildIds: 4681303481433525030
         ChildIds: 9039865997825437388
         ChildIds: 4580801035471265860
+        ChildIds: 8789216626065697201
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -6731,6 +6732,52 @@ Assets {
         Script {
           ScriptAsset {
             Id: 13856192302685645792
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8789216626065697201
+        Name: "SummonDespawnEffect"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11103196775125937893
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Effect"
+            AssetReference {
+              Id: 13713238088668800394
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14759216543117411374
           }
         }
         NetworkRelevanceDistance {

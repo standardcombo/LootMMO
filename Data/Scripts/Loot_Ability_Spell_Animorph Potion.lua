@@ -20,7 +20,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
 	--Play ImpactFX
 	local projectilePos = projectile:GetWorldPosition()
 	local impactRotation = Rotation.New(Vector3.FORWARD, hitResult:GetImpactNormal())
-	World.SpawnAsset(impactTemplate, { position = projectile:GetWorldPosition(), rotation = impactRotation })
+	World.SpawnAsset(impactTemplate, { position = projectile:GetWorldPosition(), rotation = impactRotation, networkContext = NetworkContextType.NETWORKED })
 
 	-- init dmg object
 	local DamageAmount = damage
