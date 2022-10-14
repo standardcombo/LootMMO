@@ -694,18 +694,16 @@ Objects {
   ParentId: 17848771781286014444
   UnregisteredParameters {
     Overrides {
-      Name: "cs:RaptorCommon"
-      AssetReference {
-        Id: 13441300675391799547
-      }
-    }
-    Overrides {
       Name: "cs:QuestID"
       String: "Beasts1"
     }
     Overrides {
       Name: "cs:ObjectiveIndex"
       Int: 1
+    }
+    Overrides {
+      Name: "cs:EnemyIDs"
+      String: "Raptor"
     }
   }
   Collidable_v2 {

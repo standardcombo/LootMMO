@@ -1,5 +1,3 @@
-"asset[Asset Reference]"
-"ABC308B804B2FC35"
-"81C5BC25B15EA033"
-"FE90F5AAF74DBDDD"
-"7B29750DE0DD3D63"
+"id[String]","name[String]","commonTemplate[Asset Reference]","rareTemplate[Asset Reference]","epicTemplate[Asset Reference]","legendaryTemplate[Asset Reference]"
+"Raptor","Ravenous Raptor","BA8917BFCBF240FB","BB50FB8F260C3D2E","B1F90EECDB0456A2","8D49F2B3501EC6E6"
+"Skeleton","The Undead","FE90F5AAF74DBDDD","ABC308B804B2FC35","7B29750DE0DD3D63","81C5BC25B15EA033"

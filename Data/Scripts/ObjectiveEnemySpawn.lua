@@ -1,15 +1,35 @@
+--[[
+	Objective Enemy Spawn (server)
+	v1.0
+	by: standardcombo
+	
+	Defines an encounter in which enemies are randomly spawned
+	whenever a player enters the area.
+]]
 
+-- QuestSystemConnection 
 local QUEST_ID = script:GetCustomProperty("QuestID")
 local OBJECTIVE_INDEX = script:GetCustomProperty("ObjectiveIndex")
 
-local ADDITIONAL_RADIUS = script:GetCustomProperty("AdditionalRadius")
-local TRIGGER_TEMPLATE = script:GetCustomProperty("TriggerTemplate")
-local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
+-- EnemyInfo 
+local ENEMY_DEFINITIONS = require(script:GetCustomProperty("enemyDefinitions"))
+local ENEMY_IDS = script:GetCustomProperty("EnemyIDs")
 local ENEMY_COUNT = script:GetCustomProperty("EnemyCount")
-	
+local CHANCE_RARE_ENEMY = script:GetCustomProperty("ChanceRareEnemy")
+local CHANCE_EPIC_ENEMY = script:GetCustomProperty("ChanceEpicEnemy")
+local CHANCE_LEGENDARY_ENEMY = script:GetCustomProperty("ChanceLegendaryEnemy")
+
 if ENEMY_COUNT <= 0 then
 	error("Enemy count should be positive at: ".. script.id)
 end
+
+local splitParams = {delimiters = {",", " "}, removeEmptyResults = true}
+ENEMY_IDS = { CoreString.Split(ENEMY_IDS, splitParams) }
+
+-- EncounterArea
+local ADDITIONAL_RADIUS = script:GetCustomProperty("AdditionalRadius")
+local TRIGGER_TEMPLATE = script:GetCustomProperty("TriggerTemplate")
+local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 
 -- Search for these objects
 local QUEST_AREAS = script.parent:FindDescendantsByName("Quest Area")
@@ -27,10 +47,6 @@ local SPAWN_POSITIONS = {}
 for _,p in ipairs(ENEMY_SPAWNS) do
 	table.insert(SPAWN_POSITIONS, p:GetWorldPosition())
 end
-
--- TODO: Temporary
-local RAPTOR_COMMON = script:GetCustomProperty("RaptorCommon")
-local RAPTOR_RARE = script:GetCustomProperty("RaptorRare")
 
 -- Supports up to 15 enemies in a single encounter, up to 4 clusters
 local DISTRIBUTIONS = {
@@ -66,10 +82,14 @@ function SpawnEnemies(level, playerPos)
 	isSpawned = true
 	
 	local spawnData = {
-		npcId = "Raptor",
-		nextRarity = "Rare",
 		level = level,
 		remaining = ENEMY_COUNT,
+		rareCount = 0,
+		epicCount = 0,
+		legendaryCount = 0,
+		maxRares = 1, -- TODO: Consider player level + enemy count
+		maxEpics = 1, -- TODO: Consider player level
+		maxLegendaries = 1, -- TODO: Consider player level
 	}
 	
 	spawnData.remaining = ENEMY_COUNT
@@ -177,11 +197,35 @@ function SpawnCluster(remainingPoints, spawnData, focusPoint, remainingInCluster
 end
 
 function SpawnOne(pos, spawnData)
+	-- Rotation
 	local rot = spawnData.rotation
 	rot.z = rot.z + rng:GetInteger(-45, 45)
 	
-	local npcTemplate = RAPTOR_COMMON--TODO
-	local npc = World.SpawnAsset(npcTemplate, {position = pos, rotation = rot})
+	-- Template
+	local randomIndex = rng:GetInteger(1, #ENEMY_IDS)
+	local enemyId = ENEMY_IDS[randomIndex]
+	local def = ENEMY_DEFINITIONS[enemyId]
+	local template = def.commonTemplate
+	if ENEMY_COUNT == 1 or spawnData.remaining < ENEMY_COUNT then
+		if spawnData.legendaryCount < spawnData.maxLegendaries
+		and rng:GetNumber() < CHANCE_LEGENDARY_ENEMY then
+			spawnData.legendaryCount = spawnData.legendaryCount + 1
+			template = def.legendaryTemplate
+			
+		elseif spawnData.epicCount < spawnData.maxEpics
+		and rng:GetNumber() < CHANCE_EPIC_ENEMY then
+			spawnData.epicCount = spawnData.epicCount + 1
+			template = def.epicTemplate
+			
+		elseif spawnData.rareCount < spawnData.maxRares
+		and rng:GetNumber() < CHANCE_RARE_ENEMY then
+			spawnData.rareCount = spawnData.rareCount + 1
+			template = def.rareTemplate
+		end
+	end
+	
+	-- Spawn
+	local npc = World.SpawnAsset(template, {position = pos, rotation = rot})
 	
 	if npc:IsCustomPropertyDynamic("Level") then
 		npc:SetCustomProperty("Level", spawnData.level)
@@ -287,6 +331,7 @@ end
 questAreasCenter = questAreasCenter / #QUEST_AREAS
 
 
+--[[
 Events.Connect("Quest.Changed", function(player)
 	print("ObjectiveEnemySpawn")
 	if not isSpawned then
@@ -296,4 +341,4 @@ Events.Connect("Quest.Changed", function(player)
 		end
 	end
 end)
-
+]]
