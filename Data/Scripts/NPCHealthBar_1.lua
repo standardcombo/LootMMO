@@ -69,7 +69,7 @@ function UpdateStaticData()
 		-- Rarity color for name
 		if _data.GetRarity then
 			local rarity = _data:GetRarity()
-			local c = WHITE
+			local c = Color.WHITE
 			if rarity == "Rare" then
 				c = Color.Lerp(Color.BLUE, Color.CYAN, 0.4)
 			elseif rarity == "Epic" then
