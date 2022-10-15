@@ -156,14 +156,18 @@ function SpawnEnemies(level, playerPos)
 	end
 	
 	-- Find middle point
-	table.sort(remainingPoints, function(p1, p2)
-		local d1 = (p1 - nearestPoint).sizeSquared + (p1 - furthestPoint).sizeSquared
-		local d2 = (p2 - nearestPoint).sizeSquared + (p2 - furthestPoint).sizeSquared
-		return d1 < d2
-	end)
-	local midIndex = math.ceil(#remainingPoints / 2)
-	local midPoint = remainingPoints[midIndex]
-	table.remove(remainingPoints, midIndex)
+	local midPoint = nil
+	if #remainingPoints > 0 then
+		table.sort(remainingPoints, function(p1, p2)
+			local d1 = (p1 - nearestPoint).sizeSquared + (p1 - furthestPoint).sizeSquared
+			local d2 = (p2 - nearestPoint).sizeSquared + (p2 - furthestPoint).sizeSquared
+			return d1 < d2
+		end)
+		local midIndex = math.floor(#remainingPoints / 2)
+		if midIndex == 0 then midIndex = 1 end
+		midPoint = remainingPoints[midIndex]
+		table.remove(remainingPoints, midIndex)
+	end
 	
 	-- Start points
 	SpawnCluster(remainingPoints, spawnData, nearestPoint, enemyDistribution[1])

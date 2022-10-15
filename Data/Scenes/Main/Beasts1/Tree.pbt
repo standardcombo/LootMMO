@@ -5,8 +5,8 @@ Objects {
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -3561.83569
-      Y: 5933.65381
+      X: -3655.09448
+      Y: 6271.22266
       Z: 2745.84448
     }
     Rotation {
