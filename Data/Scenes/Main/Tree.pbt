@@ -17,6 +17,7 @@ Objects {
   ChildIds: 17635258934049397073
   ChildIds: 291839474745250044
   ChildIds: 1578154111882892155
+  ChildIds: 18436610494286568512
   ChildIds: 9186864475937043280
   ChildIds: 12626000991766525324
   ChildIds: 880106829888079510
@@ -2938,6 +2939,42 @@ Objects {
     BlueprintAsset {
       Id: 7887238662729938253
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18436610494286568512
+  Name: "Data Definitions"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Data Definitions"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

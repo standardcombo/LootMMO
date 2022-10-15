@@ -39,7 +39,7 @@ function OnShow(eventData)
 	if Object.IsValid(npc) then
 		activeNPC = npc
 		
-		HEALTH_BAR_SCRIPT.context.UpdateNameAndLevel()
+		HEALTH_BAR_SCRIPT.context.UpdateStaticData()
 	end
 end
 
@@ -56,9 +56,28 @@ Events.Connect(HIDE_EVENT_ID, OnHide)
 
 function GetName()
 	if Object.IsValid(activeNPC) then
+		if _G.Enemies then
+			local def = _G.Enemies.GetDefinitionFromMUID(activeNPC.sourceTemplateId)
+			if def then
+				return def.name
+			end
+		end
 		return activeNPC.name
 	end
 	return ""
+end
+
+
+function GetRarity()
+	if Object.IsValid(activeNPC) then
+		if _G.Enemies then
+			local rarity = _G.Enemies.GetRarityFromMUID(activeNPC.sourceTemplateId)
+			if rarity then
+				return rarity
+			end
+		end
+	end
+	return "Common"
 end
 
 

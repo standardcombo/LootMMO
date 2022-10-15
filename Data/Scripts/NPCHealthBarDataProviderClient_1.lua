@@ -12,6 +12,7 @@
 	
 	Implements the interface:
 		GetName()
+		GetRarity()
 		GetLevel()
 		GetTeam()
 		GetHealt()
@@ -28,9 +29,28 @@ local maxArmor = 0
 
 function GetName()
 	if Object.IsValid(ROOT) then
+		if _G.Enemies then
+			local def = _G.Enemies.GetDefinitionFromMUID(ROOT.sourceTemplateId)
+			if def then
+				return def.rarity
+			end
+		end
 		return ROOT.name
 	end
 	return ""
+end
+
+
+function GetRarity()
+	if Object.IsValid(ROOT) then
+		if _G.Enemies then
+			local rarity = _G.Enemies.GetRarityFromMUID(ROOT.sourceTemplateId)
+			if rarity then
+				return rarity
+			end
+		end
+	end
+	return "Common"
 end
 
 

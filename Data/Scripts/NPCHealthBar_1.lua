@@ -12,6 +12,7 @@
 	
 	Optional expected:
 		GetName()
+		GetRarity()
 		GetLevel()
 		GetArmor()
 		GetMaxArmor()
@@ -50,11 +51,11 @@ local _data = nil
 function SetDataProvider(data)
 	_data = data
 	
-	UpdateNameAndLevel()
+	UpdateStaticData()
 end
 
 
-function UpdateNameAndLevel()
+function UpdateStaticData()
 	if not _data then return end
 	
 	-- Name
@@ -63,6 +64,27 @@ function UpdateNameAndLevel()
 			NAME.text = _data:GetName()
 		else
 			NAME.text = ""
+		end
+		
+		-- Rarity color for name
+		if _data.GetRarity then
+			local rarity = _data:GetRarity()
+			local c = WHITE
+			if rarity == "Rare" then
+				c = Color.Lerp(Color.BLUE, Color.CYAN, 0.4)
+			elseif rarity == "Epic" then
+				c = Color.PURPLE
+			elseif rarity == "Legendary" then
+				c = Color.ORANGE
+			end
+			NAME:SetColor(c)
+			if NAME.SetOutlineColor then
+				-- Set the outline as 75% darker than the main color
+				c.r = CoreMath.Lerp(c.r, 0, 0.75)
+				c.g = CoreMath.Lerp(c.g, 0, 0.75)
+				c.b = CoreMath.Lerp(c.b, 0, 0.75)
+				NAME:SetOutlineColor(c)
+			end
 		end
 	end
 	
