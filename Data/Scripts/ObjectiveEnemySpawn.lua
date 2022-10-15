@@ -87,10 +87,35 @@ function SpawnEnemies(level, playerPos)
 		rareCount = 0,
 		epicCount = 0,
 		legendaryCount = 0,
-		maxRares = 1, -- TODO: Consider player level + enemy count
-		maxEpics = 1, -- TODO: Consider player level
-		maxLegendaries = 1, -- TODO: Consider player level
+		maxRares = 1,
+		maxEpics = 1,
+		maxLegendaries = 1,
 	}
+	if level < 5 then
+		spawnData.maxEpics = 0
+		spawnData.maxLegendaries = 0
+		
+	elseif level >= 50 then
+		if ENEMY_COUNT >= 7 then
+			spawnData.maxRares = 4
+		elseif ENEMY_COUNT >= 5 then
+			spawnData.maxRares = 3
+		else
+			spawnData.maxRares = 2
+		end
+		if ENEMY_COUNT >= 5 then
+			spawnData.maxEpics = 2
+		end
+	elseif level >= 35 then
+		if ENEMY_COUNT >= 7 then
+			spawnData.maxRares = 3
+			
+		elseif ENEMY_COUNT >= 5 then
+			spawnData.maxRares = 2
+		end
+	elseif level >= 20 and ENEMY_COUNT >= 6 then
+		spawnData.maxRares = 2
+	end
 	
 	spawnData.remaining = ENEMY_COUNT
 	if spawnData.remaining > #SPAWN_POSITIONS then
