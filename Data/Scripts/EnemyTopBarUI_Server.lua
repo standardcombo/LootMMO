@@ -60,6 +60,16 @@ function OnNPCTargetChanged(eventData)
 				npc = npc,
 				priority = 20,
 			}
+			if _G.Enemies then
+				local rarity = _G.Enemies.GetRarityFromMUID(npc.sourceTemplateId)
+				if rarity == "Rare" then
+					eventData.priority = eventData.priority + 1
+				elseif rarity == "Epic" then
+					eventData.priority = eventData.priority + 3
+				elseif rarity == "Legendary" then
+					eventData.priority = eventData.priority + 5
+				end
+			end
 			API.ShowToPlayer(eventData)
 		end
 	end
