@@ -78,10 +78,14 @@ end
 
 
 function GetHealth()
+	local hp = 0
 	if Object.IsValid(activeNPC) then
-		return activeNPC.hitPoints or 0
+		hp = activeNPC.hitPoints or 0
 	end
-	return 0
+	if hp == 0 then
+		currentPriority = -1
+	end
+	return hp
 end
 
 function GetMaxHealth()
