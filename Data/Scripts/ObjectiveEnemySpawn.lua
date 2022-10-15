@@ -30,6 +30,7 @@ ENEMY_IDS = { CoreString.Split(ENEMY_IDS, splitParams) }
 local ADDITIONAL_RADIUS = script:GetCustomProperty("AdditionalRadius")
 local TRIGGER_TEMPLATE = script:GetCustomProperty("TriggerTemplate")
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
+local MIN_PLAYER_LEVEL = script:GetCustomProperty("MinPlayerLevel")
 
 -- Search for these objects
 local QUEST_AREAS = script.parent:FindDescendantsByName("Quest Area")
@@ -301,11 +302,13 @@ function OnBeginOverlap(trigger, player)
 	if countersPerPlayer[player] == 1 then
 		playerCount = playerCount + 1
 		
-		if not isSpawned then
-			local playerPos = player:GetWorldPosition()
-			SpawnEnemies(playerLevel, playerPos)
-		else
-			CancelDespawn()
+		if playerLevel >= MIN_PLAYER_LEVEL then
+			if not isSpawned then
+				local playerPos = player:GetWorldPosition()
+				SpawnEnemies(playerLevel, playerPos)
+			else
+				CancelDespawn()
+			end
 		end
 	end
 end

@@ -53,6 +53,10 @@ Assets {
         Float: 10
       }
       Overrides {
+        Name: "cs:MinPlayerLevel"
+        Int: 0
+      }
+      Overrides {
         Name: "cs:QuestID:category"
         String: "QuestSystemConnection"
       }
@@ -99,6 +103,10 @@ Assets {
       Overrides {
         Name: "cs:EnemyIDs:tooltip"
         String: "Comma-separated list of enemy IDs to look up in the Enemies data table."
+      }
+      Overrides {
+        Name: "cs:MinPlayerLevel:category"
+        String: "EncounterArea"
       }
     }
   }
