@@ -23,6 +23,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:RewardsParser"
+        AssetReference {
+          Id: 17106048055230886503
+        }
+      }
+      Overrides {
         Name: "cs:QuestMetadata:isrep"
         Bool: false
       }

@@ -196,7 +196,7 @@ end
 function DropRewards(killer)
 	local lootDropFactory = LOOT_DROP_FACTORY()
 	
-	if lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
+	if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
 		local params = {
 			npc = ROOT,
 			killer = killer,
@@ -207,6 +207,7 @@ function DropRewards(killer)
 			resourceAmount = REWARD_RESOURCE_AMOUNT,
 		}
 		lootDropFactory.Drop(params)
+		
 		return
 	end
 	

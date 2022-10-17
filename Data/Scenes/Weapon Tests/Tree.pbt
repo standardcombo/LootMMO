@@ -483,6 +483,10 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "cs:LootId"
+          String: "Epic"
+        }
       }
     }
     TemplateAsset {

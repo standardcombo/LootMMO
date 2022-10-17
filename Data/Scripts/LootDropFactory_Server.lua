@@ -10,6 +10,8 @@ _G["standardcombo.NPCKit.LootDropFactory"] = API
 
 API.VERSION = 2.0
 
+local DATA = require( script:GetCustomProperty("LDFactoryIndex") )
+
 local DROP_EVENT_ID = "LootDropFactory.Drop"
 local PICKUP_EVENT_ID = "LootDropFactory.Pickup"
 
@@ -18,17 +20,56 @@ local dropId = 0
 
 -- Server only
 function API.Drop(eventData)
+	local players = Game.GetPlayers() -- TODO
+	
+	-- Give resources
+	if eventData.resourceType and eventData.resourceAmount then
+		for _,player in ipairs(players) do
+			player:AddResource(eventData.resourceType, eventData.resourceAmount)
+		end
+	end
+	
+	-- Find the correct drop table
+	local lootDropId = eventData.lootId
+	local rowFromDataIndex = DATA[lootDropId]
+	if not rowFromDataIndex then
+		error("[LDFactory] No such data for: "..tostring(lootDropId))
+	end
+	local dropTable = rowFromDataIndex.subTable
+	
+	-- Calculate the total incidence
+	local totalIncidence = dropTable.totalIncidence
+	if not totalIncidence then
+		totalIncidence = 0
+		for _,entry in pairs(dropTable) do
+			totalIncidence = totalIncidence + entry.incidence
+		end
+	end
+	
+	-- Select random row in the table
+	local rng = math.random(totalIncidence)
+	local rewards = nil
+	for _,entry in pairs(dropTable) do
+		local incidence = entry.incidence
+		if rng <= incidence then
+			eventData.rewardId = entry.id
+			rewards = entry.rewards
+			break
+		end
+		rng = rng - incidence
+	end
+	
+	-- There's a chance nothing dropped
+	if rewards == nil or rewards == "" then
+		print("Nothing dropped.")
+		return
+	end
+	
+	-- Prepare to drop treasure
 	dropId = dropId + 1
 	eventData.dropId = dropId
 	
-	eventData.rarity = "Legendary" -- TODO
-	
-	local players = Game.GetPlayers() -- TODO
-	
-	-- Resources
-	for _,player in ipairs(players) do
-		
-	end
+	eventData.rarity = rowFromDataIndex.rarity
 	
 	-- Clear unnecessary properties, to save networking
 	eventData.npc = nil
@@ -49,7 +90,7 @@ end
 
 
 -- Server only
-function API.RegisterEncounter(npcs)
+function API.RegisterEncounter(npcs, lootDropId)
 	-- TODO
 end
 
@@ -63,8 +104,18 @@ local function OnPickup(player, dropId)
 	local eventData = player.serverUserData.lootDrops[dropId]
 	player.serverUserData.lootDrops[dropId] = nil
 	
+	-- Find the correct drop table
+	local lootDropId = eventData.lootId
+	local rowFromDataIndex = DATA[lootDropId]
+	local dropTable = rowFromDataIndex.subTable
+	
+	local entry = dropTable[eventData.rewardId]
+	local rewards = entry.rewards
+	
+	
 	-- TODO
-	print(player.name .." picked up treasure")
+	print(player.name .." picked up treasure: ".. lootDropId..":"..rewards)
+	
 end
 
 Events.ConnectForPlayer(PICKUP_EVENT_ID, OnPickup)

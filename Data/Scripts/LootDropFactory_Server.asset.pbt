@@ -4,6 +4,12 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:LDFactoryIndex"
+        AssetReference {
+          Id: 18435492249933066406
+        }
+      }
     }
   }
   SerializationVersion: 119

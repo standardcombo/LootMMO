@@ -24,6 +24,7 @@ _G.QuestController = API
 local QUEST_METADATA = require(script:GetCustomProperty("QuestMetadata"))
 local QUEST_OBJECTIVES = require(script:GetCustomProperty("QuestObjectives"))
 local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
+local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
 local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
 
@@ -453,14 +454,10 @@ function _ClaimReward(player, questId)
 	player.serverUserData.lockClaimReward = true
 
 	-- Complete the claim
-	local questData = API.GetQuest(questId)
-	local rewards = SplitCommaSeparatedData(questData.rewards)
-	for _,rewardInstruction in ipairs(rewards) do
-		_GrantReward(player, rewardInstruction)
-		-- It's possible the player has left in the middle of reward sequence
-		if not Object.IsValid(player) then return end
-	end
-
+	REWARDS_PARSER.Parse(player, QUEST_METADATA, questId)
+	
+	if not Object.IsValid(player) then return end
+	
 	-- Grab the player data again, in case it was changed by some other process
 	local playerData = API.GetPlayerData(player)
 
@@ -477,86 +474,7 @@ function _ClaimReward(player, questId)
 	-- Release the lock on reward process for this player
 	player.serverUserData.lockClaimReward = nil
 end
-function _GrantReward(player, rewardInstruction)
-	local instruction, key, amount = CoreString.Split(rewardInstruction, {
-		delimiters = {"(","=",")"}, 
-		removeEmptyResults = true
-	})
-	if instruction == "Wait" then
-		local delay = tonumber(key)
-		if delay then
-			Task.Wait(delay)
-		else
-			warn("Failed to delay rewards with instruction: ".. rewardInstruction)
-		end
 
-	elseif instruction == "XP" then
-		-- Add XP
-		local resourceId = "Cxp"
-		local resourceAmount = tonumber(key)
-		player:AddResource(resourceId, resourceAmount)
-		-- Show toast UI
-		local itemDef = _G["Items.More"].GetDefinition("XP")
-		_GrantItem(player, itemDef, resourceAmount)
-
-	elseif instruction == "Material" then
-		local materialDef = _G["Items.Materials"].GetDefinition(key)
-		amount = tonumber(amount)
-		if materialDef and amount then
-			_GrantItem(player, materialDef, amount)
-		else
-			warn("Failed to grant material with instruction:".. rewardInstruction)
-		end
-	
-	elseif instruction == "RandomItem" then
-		print("TODO: Granting random item with ".. key .." ".. amount)
-		
-		local itemDef = _G["Items.More"].GetDefinition("RandomItem")
-		_GrantItem(player, itemDef)
-
-	else
-		local itemDef = _G["Items.More"].GetDefinition(instruction)
-		if itemDef then
-			_GrantItem(player, itemDef, 1)
-		else
-			warn("Failed to grant specific item with instruction:".. rewardInstruction)
-		end
-	end
-end
-function _GrantItem(player, definition, amount)
-	--print("Granting item: ".. definition.id .." x".. amount)
-	-- Popup UI that shows the player what they got
-	local toastParams = {
-		type = definition.rarity,
-		message = definition.name,
-		icon = definition.icon,
-		flipH = definition.flipIconH,
-		flipV = definition.flipIconV,
-		sfx = definition.pickupSfx,
-	}
-	if amount and amount > 1 then
-		toastParams.message = amount .."x ".. definition.name
-	end
-	Events.BroadcastToPlayer(player, "RewardToast", toastParams)
-
-	-- Play cinematic/animation of the player finding the item
-	-- Many rewards will not have this
-	if _G.FoundItemCinematic and definition.pickupAsset then
-		_G.FoundItemCinematic.Show(player, definition.pickupAsset)
-	end
-	
-	-- Actually grant the item (some reward elements may not have an item to grant)
-	if definition.itemAsset then
-		local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-		if char then
-			local inv = char:GetComponent("Inventory"):GetInventory()
-			inv:AddItem(definition.itemAsset, {count = amount})
-		else
-			error("Tried to grant item ".. definition.id .." but player ".. 
-			      player.name .." didn't have a character")
-		end
-	end
-end
 if Environment.IsServer() then
 	Events.ConnectForPlayer("Quest.ClaimReward", _ClaimReward)
 end
