@@ -45956,6 +45956,12 @@ Objects {
     }
   }
   ParentId: 15451791371053072400
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ActionLabel"
+      String: "OpenBars"
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
