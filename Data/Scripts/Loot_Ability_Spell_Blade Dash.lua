@@ -84,19 +84,21 @@ end
 
 function Cooldown()
 	ToggleDash(false)
-    mods = ROOT.serverUserData.calculateModifier()
-    STAB_ANIMATION:Activate()
-	local bashTemplate = ENDING_FXBASIC
-	World.SpawnAsset(
-		bashTemplate,
-		{
-			position = ABILITY.owner:GetWorldPosition(),
-			rotation = ABILITY.owner:GetWorldRotation(),
-			networkContext = NetworkContextType.NETWORKED
-		}
-	)
-	local nearbyEnemies =
-	COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
+end
+
+local bashTemplate = nil
+function Recovery()
+	Task.Wait(1)--Task.Wait(mod["Range"])
+	STAB_ANIMATION:Activate()
+	bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
+	Task.Spawn(function()
+		while Object.IsValid(bashTemplate) do
+			bashTemplate:SetWorldPosition(ABILITY.owner:GetWorldPosition())
+			Task.Wait()
+		end
+	end)
+	mods = ROOT.serverUserData.calculateModifier()
+	local nearbyEnemies = COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
 	local dmg = Damage.New()
 	dmg.amount = mods['Damage'][1]
 	dmg.reason = DamageReason.COMBAT
@@ -104,7 +106,6 @@ function Cooldown()
 	dmg.sourceAbility = ABILITY
 	local isCrit = mods['Damage'][2]
 	for i, enemy in pairs(nearbyEnemies) do
-		print(i,enemy.name)
 		local attackData = {
 			object = enemy,
 			damage = dmg,
@@ -115,10 +116,6 @@ function Cooldown()
 		}
 		COMBAT().ApplyDamage(attackData)
 	end
-end
-
-function Recovery()
-	Task.Wait(1)--Task.Wait(mod["Range"])
 	if not Object.IsValid(ABILITY) then
 		return
 	end
