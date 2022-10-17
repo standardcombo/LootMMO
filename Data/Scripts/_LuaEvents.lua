@@ -8,6 +8,7 @@ local function CheckUsed(event)
 	end
 	return false
 end
+
 local function ConnectEvent(event, listener)
 	local connection = {
 		isConnected = true,
@@ -27,13 +28,13 @@ local function FireEvent(event, ...)
 		listener(...)
 	end
 end
+
 local function DisconnectEvent(event)
-	for key, value in pairs(t) do
-		for _, listener in pairs(event._listeners) do
-			listener:Disconnect()
-		end
+	for _, listener in pairs(event._listeners) do
+		listener:Disconnect()
 	end
 end
+
 function New()
 	---@class LuaEvent
 	local newEvent = {
@@ -58,6 +59,7 @@ function SafeNew()
 			isUsed = true
 		end
 	end
+
 	---@class LuaEvent
 	local luaEvent = {
 		Connect = function(self, listener, ...)
