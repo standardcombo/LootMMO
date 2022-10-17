@@ -38,9 +38,9 @@ modifiers['Damage'].calculation = function(stats)
         return min + starRating * baseModifier
     end
     if IsCrit() then
-        return {GetMultiplier() * dmg, true}
+        return {math.floor(GetMultiplier() * dmg), true}
     else
-        return {dmg, false}
+        return {math.floor(dmg), false}
     end
 end
 

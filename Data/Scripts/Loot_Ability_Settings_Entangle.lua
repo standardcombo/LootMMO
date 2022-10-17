@@ -27,7 +27,7 @@ modifiers['Bleed'].calculation = function(stats)
     local min = 20
     local max = 60
     local SP = stats.SP
-    return min + (max - min) * SP / 156
+    return math.floor(min + (max - min) * SP / 156)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172

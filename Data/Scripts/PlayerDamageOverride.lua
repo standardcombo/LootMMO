@@ -9,7 +9,7 @@ local function OnGoingToTakeDamage(attackData)
 	if not Object.IsValid(source) then return end
 	if not source:IsA("Player") then return end
 	if dmgamout <= 0 then return end
-a	
+
 	--overrideDamage
 	if not Object.IsValid(item) then return end
 	local char = EquipAPI.GetCurrentCharacter(source)
@@ -22,7 +22,7 @@ a
 			dmgamout = stats:GetTempStat("AP")
 		end
 	end
-	damage.amount = dmgamout
+	damage.amount = math.floor(dmgamout)
 end
 
 Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
