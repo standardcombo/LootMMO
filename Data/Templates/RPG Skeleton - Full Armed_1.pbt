@@ -872,6 +872,7 @@ Assets {
         ParentId: 15548784479487036814
         ChildIds: 10339488611739212037
         ChildIds: 14390094257707352419
+        ChildIds: 5555163510841399811
         ChildIds: 3959812485649623493
         ChildIds: 7943742740318309554
         Collidable_v2 {
@@ -997,6 +998,43 @@ Assets {
         Script {
           ScriptAsset {
             Id: 9324991830768780045
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5555163510841399811
+        Name: "NPCKitArmor_Client"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12970774780897749132
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 103381162661707232
           }
         }
         NetworkRelevanceDistance {

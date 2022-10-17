@@ -6,8 +6,9 @@ local HEALTH_BAR_SCRIPT = script:GetCustomProperty("HealthBarScript"):WaitForObj
 local SHOW_EVENT_ID = "EnemyTopBar.Show"
 local HIDE_EVENT_ID = "EnemyTopBar.Hide"
 
-Task.Wait()
-HEALTH_BAR_SCRIPT.context.SetDataProvider(script.context)
+Task.Spawn(function()
+	HEALTH_BAR_SCRIPT.context.SetDataProvider(script.context)
+end)
 
 
 local activeNPC = nil
@@ -85,12 +86,13 @@ function GetLevel()
 	if Object.IsValid(activeNPC) then
 		return activeNPC:GetCustomProperty("Level") or 0
 	end
+	return 0
 end
 
 
 function GetTeam()
 	if Object.IsValid(activeNPC) then
-		return activeNPC:GetCustomProperty("Team")
+		return activeNPC:GetCustomProperty("Team") or 0
 	end
 	return 0
 end
@@ -122,12 +124,13 @@ function GetArmor()
 	return 0
 end
 
-local maxArmor = 0
+
 function GetMaxArmor()
-	local a = GetArmor()
-	if maxArmor == 0 and a > 0 then
-		maxArmor = a
+	if Object.IsValid(activeNPC) then
+		if activeNPC.clientUserData.maxArmor then
+			return activeNPC.clientUserData.maxArmor
+		end
 	end
-	return maxArmor
+	return GetMaxHealth()
 end
 
