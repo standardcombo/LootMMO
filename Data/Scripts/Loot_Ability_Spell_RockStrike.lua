@@ -4,6 +4,7 @@ local function COMBAT()
 end
  
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local API_SE = _G["StatusEffects.API"]
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ProjectileVelocity = Vector3.ZERO
 local CurrentProjectile = nil
@@ -25,6 +26,10 @@ function HitObject(other)
         if otherTeam and Teams.AreTeamsFriendly(otherTeam, owner.team) then
             return
         end
+        API_SE.ApplyStatusEffect(other, "Stun", {
+        source = ABILITY.owner,
+        duration = mods ["StunDuration"]
+	    })
         local crit = mods ["Damage"][2]
         local dmg = Damage.New()
         dmg.amount = mods ["Damage"][1]
