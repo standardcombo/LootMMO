@@ -1,5 +1,5 @@
 --[[
-	HawkAI - Server
+	EagleAI - Server
 	v0.1.0
 	original script: standardcombo
 	modified by: Ooccoo   

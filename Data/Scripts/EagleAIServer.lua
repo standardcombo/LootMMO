@@ -1,11 +1,11 @@
 --[[
-	HawkAI - Server
+	EagleAI - Server
 	v0.1.0
 	original script: standardcombo
 	modified by: Ooccoo  
 	contributions: DarkDev, WaveParadigm
 	
-	Logical state machine for an hawk NPC. 
+	Logical state machine for an eagle NPC. 
 	
 	Works the same as NPC AI but will return to the owner when sleeping.
 	
@@ -28,7 +28,7 @@ local ROTATION_ROOT = script:GetCustomProperty("RotationRoot"):WaitForObject()
 local COLLIDER = script:GetCustomProperty("Collider"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):GetObject()
 local ATTACK_COMPONENT = script:GetCustomProperty("AttackComponent"):WaitForObject()
-HOMING_TARGET = script:GetCustomProperty("HomingTarget"):GetObject()
+local HOMING_TARGET = script:GetCustomProperty("HomingTarget"):GetObject()
 local ENGAGE_EFFECT = script:GetCustomProperty("EngageEffect")
 
 local MOVE_SPEED = ROOT:GetCustomProperty("MoveSpeed") or 400
@@ -51,7 +51,7 @@ local ATTACK_RECOVERY_TIME = ROOT:GetCustomProperty("AttackRecovery") or 1.5
 local ATTACK_COOLDOWN = ROOT:GetCustomProperty("AttackCooldown") or 0
 local OBJECTIVE_THRESHOLD_DISTANCE_SQUARED = 900
 
-MAX_HEALTH = ROOT.maxHitPoints
+local MAX_HEALTH = ROOT.maxHitPoints
 
 local PATHING_STEP = MOVE_SPEED * LOGICAL_PERIOD + 10
 local PATHING_STEP_SQUARED = PATHING_STEP * PATHING_STEP
@@ -104,6 +104,7 @@ local engageStartPosition = nil
 local engageCooldown = 0
 local attackCooldown = 0
 local waitingForPath = false
+local customMaxMoveSpeed = MOVE_SPEED
 
 local temporaryVisionAngle = nil
 local temporaryVisionRadius = nil
@@ -195,6 +196,21 @@ function SetState(newState)
 	if Object.IsValid(ROOT) then
 		ROOT:SetCustomProperty("CurrentState", newState)
 	end
+end
+
+function GetMoveSpeed()
+    if currentState == STATE_PATROLLING then
+        return PATROL_SPEED
+    end
+    return customMaxMoveSpeed
+end
+
+function GetMaxMoveSpeed()
+    return customMaxMoveSpeed
+end
+
+function SetMaxMoveSpeed(value)
+    customMaxMoveSpeed = value
 end
 
 

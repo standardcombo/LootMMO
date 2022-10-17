@@ -1288,7 +1288,7 @@ Assets {
       }
       Objects {
         Id: 15955461966290683853
-        Name: "Hunter Elf Hawk Active Basic"
+        Name: "Hunter Elf Eagle Active Basic"
         Transform {
           Location {
           }
@@ -1399,7 +1399,7 @@ Assets {
       }
       Objects {
         Id: 9748279179978325271
-        Name: "Hawk Costume"
+        Name: "Eagle Costume"
         Transform {
           Rotation {
           }
@@ -6990,7 +6990,7 @@ Assets {
       }
       Objects {
         Id: 2252829329749635150
-        Name: "HawkMobController"
+        Name: "EagleMobController"
         Transform {
           Location {
             X: -9095
@@ -7014,7 +7014,7 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:HawkRoot"
+            Name: "cs:EagleRoot"
             ObjectReference {
               SubObjectId: 10190610956955079352
             }

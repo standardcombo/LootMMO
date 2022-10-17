@@ -215,7 +215,7 @@ Assets {
       }
       Objects {
         Id: 2813113855268551177
-        Name: "Loot_Ability_Settings_Hawk"
+        Name: "Loot_Ability_Settings_Eagle"
         Transform {
           Location {
           }
@@ -351,7 +351,7 @@ Assets {
       }
       Objects {
         Id: 16165137065344390153
-        Name: "Loot_Ability_Settings_Hawk"
+        Name: "Loot_Ability_Settings_Eagle"
         Transform {
           Location {
           }
@@ -435,7 +435,7 @@ Assets {
       }
       Objects {
         Id: 13418282619058867364
-        Name: "Loot_Ability_Spell_Hawk"
+        Name: "Loot_Ability_Spell_Eagle"
         Transform {
           Location {
           }

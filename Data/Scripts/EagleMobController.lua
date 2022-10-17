@@ -1,5 +1,5 @@
 local AnimatedMesh = script:GetCustomProperty('AnimatedMesh'):WaitForObject()
-local HawkRoot = script:GetCustomProperty('HawkRoot'):WaitForObject()
+local EagleRoot = script:GetCustomProperty('EagleRoot'):WaitForObject()
 local AnimationStance = script:GetCustomProperty('AnimationStance')
 local AttackSound = script:GetCustomProperty('AttackSound'):WaitForObject()
 local Costume = script:GetCustomProperty('Costume'):WaitForObject()
@@ -9,20 +9,20 @@ local OFFSET = script:GetCustomProperty('Offset'):WaitForObject()
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 function GetCurrentState()
-    return HawkRoot:GetCustomProperty('CurrentState')
+    return EagleRoot:GetCustomProperty('CurrentState')
 end
 local currentState = GetCurrentState()
 function Setup()
     for _, attachment in ipairs(Costume:GetChildren()) do
         if attachment.name == 'VFX' then
             AnimatedMesh:AttachCoreObject(attachment, 'spine')
-            if LOCAL_PLAYER.id == OwnerID then
-                attachment.visibility = Visibility.FORCE_ON
-            end
+            -- if LOCAL_PLAYER.id == OwnerID then
+            --     attachment.visibility = Visibility.FORCE_ON
+            -- end
         else
-            attachment.visibility = Visibility.FORCE_ON
             AnimatedMesh:AttachCoreObject(attachment, attachment.name)
         end
+        attachment.visibility = Visibility.FORCE_ON
     end
     AnimatedMesh.animationStance = AnimationStance
 
@@ -55,9 +55,9 @@ function OnRootDestroyed(thisObject)
     end
 end
 
-HawkRoot.destroyEvent:Connect(OnRootDestroyed)
-HawkRoot.customPropertyChangedEvent:Connect(OnNetworkPropertyChanged)
+EagleRoot.destroyEvent:Connect(OnRootDestroyed)
+EagleRoot.customPropertyChangedEvent:Connect(OnNetworkPropertyChanged)
 
 function Tick()
-    AnimatedMesh:RotateTo(HawkRoot:GetWorldRotation(), 0.1)
+    AnimatedMesh:RotateTo(EagleRoot:GetWorldRotation(), 0.1)
 end

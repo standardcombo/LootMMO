@@ -15,7 +15,7 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Loot_Ability_HawkSummon"
+        Name: "cs:Loot_Ability_EagleSummon"
         AssetReference {
           Id: 6400205909178909512
         }

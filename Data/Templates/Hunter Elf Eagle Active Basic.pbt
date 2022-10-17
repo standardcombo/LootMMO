@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14162296025304194376
+        ParentId: 4781671109827199097
         ChildIds: 2686505520815898862
         UnregisteredParameters {
           Overrides {
@@ -103,7 +103,7 @@ Assets {
       }
       Objects {
         Id: 17088895296586144230
-        Name: "Hawk Costume"
+        Name: "Eagle Costume"
         Transform {
           Rotation {
           }
@@ -5160,7 +5160,7 @@ Assets {
       }
       Objects {
         Id: 1224932946176067467
-        Name: "HawkMobController"
+        Name: "EagleMobController"
         Transform {
           Location {
             X: -9095
@@ -5184,7 +5184,7 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:HawkRoot"
+            Name: "cs:EagleRoot"
             ObjectReference {
               SubObjectId: 15396417406637580467
             }
