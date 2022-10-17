@@ -105,6 +105,11 @@ local function OnPickup(player, dropId)
 	local eventData = player.serverUserData.lootDrops[dropId]
 	player.serverUserData.lootDrops[dropId] = nil
 	
+	-- Play the pickup animation
+	if player.serverUserData.pickupAbility then
+		player.serverUserData.pickupAbility:Activate()
+	end
+	
 	-- Find the correct drop table
 	local lootDropId = eventData.lootId
 	local rowFromDataIndex = LDF_DATA[lootDropId]

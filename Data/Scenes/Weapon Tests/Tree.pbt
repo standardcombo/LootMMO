@@ -28,6 +28,7 @@ Objects {
   ChildIds: 11002928437595490801
   ChildIds: 14456150676684712690
   ChildIds: 3833344059936018977
+  ChildIds: 4238179513439010723
   ChildIds: 11609901366367975824
   UnregisteredParameters {
   }
@@ -72,6 +73,49 @@ Objects {
       Id: 15438156706895969314
     }
   }
+}
+Objects {
+  Id: 4238179513439010723
+  Name: "ThrowableSupportAbilities"
+  Transform {
+    Location {
+      X: -2268.74902
+      Y: -3020.33
+      Z: -51261.1289
+    }
+    Rotation {
+      Yaw: -124.999992
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9188567862461428945
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 3833344059936018977
