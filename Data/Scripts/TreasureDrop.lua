@@ -82,6 +82,10 @@ function OnBeginOverlap(trigger, player)
 		PICKUP_SFX:Play()
 	end
 	
+	FadeOutAndDestroy()
+end
+
+function FadeOutAndDestroy()
 	NORMAL_GEO.visibility = Visibility.FORCE_OFF
 	FADE_GEO.visibility = Visibility.FORCE_ON
 	FADE_GEO.parent = nil

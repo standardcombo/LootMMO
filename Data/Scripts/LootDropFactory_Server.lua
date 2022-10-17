@@ -13,9 +13,9 @@ API.VERSION = 2.0
 local LDF_DATA = require(script:GetCustomProperty("LDFactoryData"))
 local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
-local DROP_EVENT_ID = "LootDropFactory.Drop"
-local PICKUP_EVENT_ID = "LootDropFactory.Pickup"
-
+local DROP_EVENT_ID = "LDFactory.Drop"
+local PICKUP_EVENT_ID = "LDFactory.Pickup"
+local CANCEL_EVENT_ID = "LDFactory.Cancel"
 
 local dropId = 0
 
@@ -32,11 +32,11 @@ function API.Drop(eventData)
 	
 	-- Find the correct drop table
 	local lootDropId = eventData.lootId
-	local rowFromDataIndex = LDF_DATA[lootDropId]
-	if not rowFromDataIndex then
+	local metadataRow = LDF_DATA[lootDropId]
+	if not metadataRow then
 		error("[LDFactory] No such data for: "..tostring(lootDropId))
 	end
-	local dropTable = rowFromDataIndex.subTable
+	local dropTable = metadataRow.subTable
 	
 	-- Calculate the total incidence
 	local totalIncidence = dropTable.totalIncidence
@@ -70,7 +70,7 @@ function API.Drop(eventData)
 	dropId = dropId + 1
 	eventData.dropId = dropId
 	
-	eventData.rarity = rowFromDataIndex.rarity
+	eventData.rarity = metadataRow.rarity
 	
 	-- Clear unnecessary properties, to save networking
 	eventData.npc = nil
@@ -87,6 +87,19 @@ function API.Drop(eventData)
 		end
 		player.serverUserData.lootDrops[dropId] = eventData
 	end
+	
+	-- Set time limit
+	Task.Spawn(function()
+		for _,player in ipairs(Game.GetPlayers()) do
+			if player.serverUserData.lootDrops
+			and player.serverUserData.lootDrops[dropId]
+			then
+				player.serverUserData.lootDrops[dropId] = nil
+				Events.BroadcastToPlayer(player, CANCEL_EVENT_ID, dropId)
+			end
+		end
+	end, 
+	metadataRow.timeLimit)
 end
 
 
@@ -112,8 +125,8 @@ local function OnPickup(player, dropId)
 	
 	-- Find the correct drop table
 	local lootDropId = eventData.lootId
-	local rowFromDataIndex = LDF_DATA[lootDropId]
-	local dropTable = rowFromDataIndex.subTable
+	local metadataRow = LDF_DATA[lootDropId]
+	local dropTable = metadataRow.subTable
 	local rowId = eventData.rewardId
 	
 	--local rewards = dropTable[rowId].rewards

@@ -13,12 +13,13 @@ local DROP_OFFSET_Z = script:GetCustomProperty("DropOffsetZ")
 local DROP_VELOCITY_Z = script:GetCustomProperty("DropVelocityZ")
 local DROP_ROTATION_RNG = script:GetCustomProperty("DropRotationRNG")
 
-local DROP_EVENT_ID = "LootDropFactory.Drop"
-local PICKUP_EVENT_ID = "LootDropFactory.Pickup"
+local DROP_EVENT_ID = "LDFactory.Drop"
+local PICKUP_EVENT_ID = "LDFactory.Pickup"
+local CANCEL_EVENT_ID = "LDFactory.Cancel"
 
 local TREASURE_PICKUP_EVENT = "Treasure.PickedUp"
 
-local treasureToDropIdMap = {}
+local activeTreasures = {}
 
 
 -- Called by server as a networked event
@@ -47,6 +48,7 @@ local function Drop(eventData)
 	
 	-- Spawn the treasure
 	local treasure = World.SpawnAsset(treasureTemplate, {position = position, rotation = rotation})
+	activeTreasures[eventData.dropId] = treasure
 	
 	-- Set ID
 	local userData = treasure.clientUserData
@@ -66,8 +68,26 @@ Events.Connect(DROP_EVENT_ID, Drop)
 function OnPickup(treasure, player)
 	local userData = treasure.clientUserData
 	local dropId = treasure.clientUserData.dropId
+	activeTreasures[dropId] = nil
+	
 	Events.BroadcastToServer(PICKUP_EVENT_ID, dropId)
 end
 
 Events.Connect(TREASURE_PICKUP_EVENT, OnPickup)
+
+
+-- Called by the server to cancel and cleanup the loot drop
+function OnCancel(dropId)
+	if activeTreasures[dropId] then
+		local treasure = activeTreasures[dropId]
+		activeTreasures[dropId] = nil
+		
+		local dropScript = treasure:FindChildByName("TreasureDrop")
+		if dropScript and dropScript.context then
+			dropScript.context.FadeOutAndDestroy()
+		end
+	end
+end
+
+Events.Connect(CANCEL_EVENT_ID, OnCancel)
 
