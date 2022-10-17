@@ -34,7 +34,7 @@ function OnChannelingComplete(player)
 end
 
 function OnBindingPressed(player, action)
-	if action == KEY_BINDING 
+	if action == "BackToTavern" 
 	and _G.AppState.GetStateForPlayer(player) == _G.AppState.Adventure 
 	and _G.ChannelAbility.CanChannel(player)
 	then
@@ -42,7 +42,8 @@ function OnBindingPressed(player, action)
 	end
 end
 
-Game.playerJoinedEvent:Connect(function(player)
-	player.bindingPressedEvent:Connect(OnBindingPressed)
-end)
+-- Game.playerJoinedEvent:Connect(function(player)
+-- 	player.bindingPressedEvent:Connect(OnBindingPressed)
+-- end)
 
+Input.actionPressedEvent:Connect(OnBindingPressed)
