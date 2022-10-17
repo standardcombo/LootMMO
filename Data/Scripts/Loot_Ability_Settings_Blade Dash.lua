@@ -9,6 +9,7 @@ local modifiers =
         'Cooldown',
     }
 )
+
 --Formula: Min + (Max - Min) * SP / 156
 modifiers['Damage'].calString = "20 + (200 - 20) * SP / 156"
 modifiers['Damage'].calculation = function(stats)

@@ -1,64 +1,140 @@
-local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
-local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local ASSASSIN_ORC_BLADE_DASH_PLACEMENT_BASIC = script:GetCustomProperty('AssassinOrcBladeDashPlacementBasic')
-local ASSASSIN_ORC_BLADE_DASH_ENDING_FXBASIC = script:GetCustomProperty('AssassinOrcBladeDashEndingFXBasic')
-
-function COMBAT()
-    return require(script:GetCustomProperty('Combat_Connector'))
+local function COMBAT()
+	return require(script:GetCustomProperty('Combat_Connector'))
 end
 
-local placement = ASSASSIN_ORC_BLADE_DASH_PLACEMENT_BASIC
-local ending = ASSASSIN_ORC_BLADE_DASH_ENDING_FXBASIC
+local ROOT = script:GetCustomProperty('Root'):WaitForObject()
+local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local ENDING_FXBASIC = script:GetCustomProperty("AssassinOrcBladeDashEndingFXBasic")
+local BLADE_DASH_VFXBASIC = script:GetCustomProperty("BladeDashVFXBasic")
+local STAB_ANIMATION = script:GetCustomProperty("StabAnimation"):WaitForObject()
+
+local mods = {}
+local DashImpulseVector = nil
+local originalPlayerSettings = {}
+local isDashing = false
+local OwnerImpulseAmount = 50000
+
+local SpawnedAttachedVFX = nil
+
+local function DashOn()
+	if Object.IsValid(ABILITY) and ABILITY:GetCurrentPhase() == AbilityPhase.READY then
+		return
+	end
+	local owner = ABILITY.owner
+	originalPlayerSettings = {}
+	originalPlayerSettings.BrakingDecelerationWalking = owner.brakingDecelerationWalking
+	originalPlayerSettings.AnimationStance = owner.animationStance
+
+	owner.movementControlMode = MovementMode.NONE
+	owner.animationStance = '1hand_melee_shield_block'
+	owner.groundFriction = 0
+	owner.brakingDecelerationWalking = 0
+
+	local directionVector = owner:GetWorldRotation() * Vector3.FORWARD
+	DashImpulseVector = directionVector * OwnerImpulseAmount
+
+	local attachmentTemplate = BLADE_DASH_VFXBASIC
+	SpawnedAttachedVFX =
+	World.SpawnAsset(
+		attachmentTemplate,
+		{ position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED }
+	)
+	SpawnedAttachedVFX:AttachToPlayer(ABILITY.owner, 'root')
+end
+
+local function DashOff()
+	local owner = ABILITY.owner
+
+	if Object.IsValid(SpawnedAttachedVFX) then
+		SpawnedAttachedVFX:Destroy()
+	end
+
+	if Object.IsValid(ABILITY) and originalPlayerSettings ~= {} then
+		owner.brakingDecelerationWalking = originalPlayerSettings.BrakingDecelerationWalking
+		owner.animationStance = originalPlayerSettings.AnimationStance
+		owner.groundFriction = 8
+		owner.movementControlMode = MovementControlMode.LOOK_RELATIVE
+	end
+end
+
+function ToggleDash(mode)
+	if mode then
+		DashOn()
+	else
+		DashOff()
+	end
+	isDashing = mode
+end
+
+function Cast()
+	if not ABILITY.owner.isGrounded then
+		ABILITY:Interrupt()
+	end
+end
 
 function Execute()
-    local mods = ROOT.serverUserData.calculateModifier()
-    local targetData = ABILITY:GetTargetData()
-    local position = targetData:GetHitPosition()
-    local v = targetData:GetAimPosition()
-    local rotation = Rotation.New(v.x, v.y, v.z)
-    World.SpawnAsset(
-        placement,
-        {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
-    )
-    Task.Wait(.4)
+	ToggleDash(true)
+end
 
-    if not Object.IsValid(ABILITY) or not ABILITY.owner or not Object.IsValid(ABILITY.owner) then
-        return
-    end
+function OnInterrupted()
+	if isDashing then
+		ToggleDash(false)
+	end
+end
 
-    if not ABILITY.owner.isFlying then -- Allows for a quick Q-T combo without teleporting
-        ABILITY.owner:SetWorldPosition(position + Vector3.New(0, 0, 180))
-        ABILITY.owner:ResetVelocity()
-    end
+function Cooldown()
+	ToggleDash(false)
+    mods = ROOT.serverUserData.calculateModifier()
+    STAB_ANIMATION:Activate()
+	local bashTemplate = ENDING_FXBASIC
+	World.SpawnAsset(
+		bashTemplate,
+		{
+			position = ABILITY.owner:GetWorldPosition(),
+			rotation = ABILITY.owner:GetWorldRotation(),
+			networkContext = NetworkContextType.NETWORKED
+		}
+	)
+	local nearbyEnemies =
+	COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
+	local dmg = Damage.New()
+	dmg.amount = mods['Damage'][1]
+	dmg.reason = DamageReason.COMBAT
+	dmg.sourcePlayer = ABILITY.owner
+	dmg.sourceAbility = ABILITY
+	local isCrit = mods['Damage'][2]
+	for i, enemy in pairs(nearbyEnemies) do
+		print(i,enemy.name)
+		local attackData = {
+			object = enemy,
+			damage = dmg,
+			source = dmg.sourcePlayer,
+			position = nil,
+			rotation = nil,
+			tags = { id = 'Hunter_Q', Critical = isCrit}
+		}
+		COMBAT().ApplyDamage(attackData)
+	end
+end
 
-    World.SpawnAsset(ending, {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED})
-    local radius = 1000
-    local enemiesInRange =
-        COMBAT().FindInSphere(
-        ABILITY.owner:GetWorldPosition(),
-        radius,
-        {ignoreDead = true, ignoreTeams = ABILITY.owner.team}
-    )
+function Recovery()
+	Task.Wait(1)--Task.Wait(mod["Range"])
+	if not Object.IsValid(ABILITY) then
+		return
+	end
+	if ABILITY:GetCurrentPhase() == AbilityPhase.RECOVERY then
+		ABILITY:AdvancePhase()
+	end
+end
 
-    local dmg = Damage.New()
-    local dmgAmount = mods['Damage'][1]
-    dmg.amount = dmgAmount
-    dmg.reason = DamageReason.COMBAT
-    dmg.sourcePlayer = ABILITY.owner
-    dmg.sourceAbility = ABILITY
-
-    local isCrit = mods['Damage'][2]
-    for _, enemy in ipairs(enemiesInRange) do
-        local attackData = {
-            object = enemy,
-            damage = dmg,
-            source = ABILITY.owner,
-            position = nil,
-            rotation = nil,
-            tags = {id = 'Assassin_Q', Critical = isCrit}
-        }
-        COMBAT().ApplyDamage(attackData) -- damage enemy
-    end
+function Tick(deltaTime)
+	if Object.IsValid(ABILITY) and Object.IsValid(ABILITY.owner) and isDashing then
+		ABILITY.owner:AddImpulse((DashImpulseVector or Vector3.ZERO) * (deltaTime * 10))
+	end
 end
 
 ABILITY.executeEvent:Connect(Execute)
+ABILITY.castEvent:Connect(Cast)
+ABILITY.cooldownEvent:Connect(Cooldown)
+ABILITY.recoveryEvent:Connect(Recovery)
+ABILITY.interruptedEvent:Connect(OnInterrupted)

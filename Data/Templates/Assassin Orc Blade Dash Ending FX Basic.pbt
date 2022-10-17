@@ -166,8 +166,8 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              R: 1.03333378
-              B: 2
+              R: 2.71523118
+              G: 10
               A: 1
             }
           }

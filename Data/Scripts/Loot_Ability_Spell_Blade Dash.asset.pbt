@@ -21,15 +21,20 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:AssassinOrcBladeDashPlacementBasic"
-        AssetReference {
-          Id: 5847803406760630635
-        }
-      }
-      Overrides {
         Name: "cs:AssassinOrcBladeDashEndingFXBasic"
         AssetReference {
           Id: 579776759173474023
+        }
+      }
+      Overrides {
+        Name: "cs:BladeDashVFXBasic"
+        AssetReference {
+          Id: 2200159213573038007
+        }
+      }
+      Overrides {
+        Name: "cs:StabAnimation"
+        ObjectReference {
         }
       }
     }

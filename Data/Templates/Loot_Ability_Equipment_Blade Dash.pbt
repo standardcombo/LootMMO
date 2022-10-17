@@ -18,6 +18,7 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 12188050976211067147
         ChildIds: 3092568615889835291
+        ChildIds: 12904309112111036280
         UnregisteredParameters {
           Overrides {
             Name: "cs:AbilityBinding"
@@ -109,7 +110,7 @@ Assets {
         ParentId: 12188050976211067147
         ChildIds: 15187963172542588253
         ChildIds: 15055259945783801664
-        ChildIds: 11738919420717083812
+        ChildIds: 14318904693041581107
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -258,8 +259,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11738919420717083812
-        Name: "Ability_Placement_Handler"
+        Id: 14318904693041581107
+        Name: "Ability_Activator"
         Transform {
           Location {
           }
@@ -273,14 +274,6 @@ Assets {
         }
         ParentId: 9928206527512488254
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:AlignToRotation"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:AlignToNormal"
-            Bool: false
-          }
           Overrides {
             Name: "cs:Root"
             ObjectReference {
@@ -308,7 +301,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13332602089683172171
+            Id: 13356681744914853853
           }
         }
         NetworkRelevanceDistance {
@@ -453,6 +446,12 @@ Assets {
               SubObjectId: 16008285176588027570
             }
           }
+          Overrides {
+            Name: "cs:StabAnimation"
+            ObjectReference {
+              SubObjectId: 12904309112111036280
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -549,12 +548,137 @@ Assets {
                   Z: 1
                 }
               }
+              Overrides {
+                Name: "CastCanJump"
+                Bool: false
+              }
+              Overrides {
+                Name: "CastCanRotate"
+                Bool: false
+              }
+              Overrides {
+                Name: "CastPreventOtherAbilities"
+                Bool: true
+              }
+              Overrides {
+                Name: "ExecuteDuration"
+                Float: 0.03
+              }
+              Overrides {
+                Name: "ExecuteCanJump"
+                Bool: false
+              }
+              Overrides {
+                Name: "ExecuteCanRotate"
+                Bool: false
+              }
+              Overrides {
+                Name: "ExecutePreventOtherAbilities"
+                Bool: true
+              }
+              Overrides {
+                Name: "RecoveryDuration"
+                Float: 100
+              }
+              Overrides {
+                Name: "RecoveryCanJump"
+                Bool: false
+              }
+              Overrides {
+                Name: "RecoveryCanRotate"
+                Bool: false
+              }
+              Overrides {
+                Name: "Animation"
+                String: "unarmed_point_forward"
+              }
             }
           }
           TemplateAsset {
             Id: 2682557459929965087
           }
         }
+      }
+      Objects {
+        Id: 12904309112111036280
+        Name: "Stab Animation"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4078315541762211252
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            Duration: 0.15
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            Duration: 0.5
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            Duration: 0.1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 3
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "1hand_melee_thrust"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
+          }
+          Version: 3
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
     }
     PrimaryAssetId {
