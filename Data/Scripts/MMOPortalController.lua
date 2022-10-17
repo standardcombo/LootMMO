@@ -1,7 +1,6 @@
 
 local PORTAL_TEMPLATE = script:GetCustomProperty("PortalTemplate")
 
-local KEY_BINDING = "ability_extra_24" --T
 local PORTAL_SPAWN_OFFSET_FORWARD = 135
 local PORTAL_SPAWN_OFFSET_Z = -102
 local CHANNEL_DURATION = 4
@@ -41,9 +40,5 @@ function OnBindingPressed(player, action)
 		_G.ChannelAbility.Start(player, CHANNEL_DURATION, OnChannelingComplete)
 	end
 end
-
--- Game.playerJoinedEvent:Connect(function(player)
--- 	player.bindingPressedEvent:Connect(OnBindingPressed)
--- end)
 
 Input.actionPressedEvent:Connect(OnBindingPressed)

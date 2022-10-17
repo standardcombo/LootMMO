@@ -527,8 +527,6 @@ function IsInActiveState()
 end
 
 
---PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
-
 Input.actionPressedEvent:Connect(OnBindingPressed)
 
 Task.Wait()

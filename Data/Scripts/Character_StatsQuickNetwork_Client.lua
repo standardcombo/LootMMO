@@ -37,7 +37,7 @@ end
 function UpdateOnEquip(char, player)
 	if player == LOCAL_PLAYER then
 		for key, value in pairs(LOCAL_PLAYER:GetResources()) do
-			if(string.find(key, "^ST")) then
+			if string.find(key, "^ST") then
 				ResourceChanged(LOCAL_PLAYER, key, LOCAL_PLAYER:GetResource(key))
 			end
 		end

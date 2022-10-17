@@ -82,6 +82,9 @@ function OnCast(ability)
 				return
 			end
 			
+			-- Stop if the player loses armor
+				-- TODO
+			
 			-- Stop if the player moves
 			local pos = player:GetWorldPosition()
 			
