@@ -1,6 +1,6 @@
 --[[
 	NPCAttack - Server
-	v0.14.0
+	v0.14.0 - 2022/10/20
 	by: standardcombo
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
@@ -194,14 +194,30 @@ function SetHealth(value)
 end
 
 function DropRewards(killer)
+	local lootDropFactory = LOOT_DROP_FACTORY()
+	
+	if lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
+		local params = {
+			npc = ROOT,
+			killer = killer,
+			lootId = LOOT_ID,
+			position = ROOT:GetWorldPosition(),
+			rotation = ROOT:GetWorldRotation(),
+			resourceType = REWARD_RESOURCE_TYPE,
+			resourceAmount = REWARD_RESOURCE_AMOUNT,
+		}
+		lootDropFactory.Drop(params)
+		return
+	end
+	
 	-- Give resources
 	if REWARD_RESOURCE_TYPE and Object.IsValid(killer) and killer:IsA("Player") then
 		killer:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)
 	end
 
 	-- Drop loot
-	if LOOT_ID ~= "" and LOOT_DROP_FACTORY() then
+	if LOOT_ID ~= "" and lootDropFactory then
 		local pos = script:GetWorldPosition()
-		LOOT_DROP_FACTORY().Drop(LOOT_ID, pos)
+		lootDropFactory.Drop(LOOT_ID, pos)
 	end
 end

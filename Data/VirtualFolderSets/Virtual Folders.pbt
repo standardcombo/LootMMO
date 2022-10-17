@@ -361,5 +361,9 @@ Assets {
       VirtualFolderPath: "ClassSelectionScreen"
       PlatformAssetType: 34
     }
+    Folders {
+      VirtualFolderPath: "Loot Drop Factory"
+      PlatformAssetType: 31
+    }
   }
 }
