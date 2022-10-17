@@ -20,6 +20,12 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:Combat_Connector"
+        AssetReference {
+          Id: 12483969483192492711
+        }
+      }
     }
   }
   SerializationVersion: 119

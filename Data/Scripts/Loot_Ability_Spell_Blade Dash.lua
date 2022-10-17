@@ -86,11 +86,10 @@ function Cooldown()
 	ToggleDash(false)
 end
 
-local bashTemplate = nil
 function Recovery()
 	Task.Wait(1)--Task.Wait(mod["Range"])
 	STAB_ANIMATION:Activate()
-	bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
+	local bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
 	Task.Spawn(function()
 		while Object.IsValid(bashTemplate) do
 			bashTemplate:SetWorldPosition(ABILITY.owner:GetWorldPosition())
