@@ -81,8 +81,8 @@ function Tick()
 	end
 end
 
-Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
-	if action == "ability_primary" and UI.IsCursorVisible() then
+Input.actionPressedEvent:Connect(function(player, action)
+	if action == "Shoot" and UI.IsCursorVisible() then
 		
 		if LEFT_UIACTIVE.visibility == Visibility.INHERIT then
 			Previous()
