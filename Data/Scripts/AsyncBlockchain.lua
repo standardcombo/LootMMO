@@ -93,6 +93,8 @@ function API.GetTokens(contractAddress, params, callbackFunction)
 	
 	local retries = params.retries or RETRIES
 	
+	params.retries = nil -- Clear out invalid param for GetTokens function or you get a warning.
+
 	for i = 1, retries do
 		collection, resultCode, err = Blockchain.GetTokens(contractAddress, params)
 		
@@ -107,6 +109,8 @@ function API.GetTokens(contractAddress, params, callbackFunction)
 			break
 		end
 	end
+
+	params.retries = retries -- Add back in due to pass by reference.
 		
 	while collection do
 		local tokens = collection:GetResults()
