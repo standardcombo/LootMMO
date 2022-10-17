@@ -96,5 +96,28 @@ Assets {
       }
       IsEnabledOnStart: true
     }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:q"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "OpenQuests"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
   }
 }

@@ -1647,6 +1647,7 @@ Objects {
     }
   }
   ParentId: 1249845985007012679
+  ChildIds: 8749910211811583448
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1708,6 +1709,49 @@ Objects {
         }
       }
     }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8749910211811583448
+  Name: "GetActionLabelClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11871129959812260913
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ActionLabel"
+      String: "OpenQuests"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 12731352524387894652
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }

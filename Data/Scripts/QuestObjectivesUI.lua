@@ -318,7 +318,7 @@ end
 CLOSE_BUTTON.clickedEvent:Connect(Collapse)
 
 function OnBindingPressed(player, action)
-	if action == "ability_1" 
+	if action == "OpenQuests" 
 	and IsInActiveState() then
 		if currentState == STATE_EXPANDED then
 			Collapse()
@@ -527,8 +527,9 @@ function IsInActiveState()
 end
 
 
-PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
+--PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
+Input.actionPressedEvent:Connect(OnBindingPressed)
 
 Task.Wait()
 
