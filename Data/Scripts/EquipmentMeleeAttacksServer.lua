@@ -68,7 +68,15 @@ end
 -- Returns the valid Player or Damageable object
 function GetValidTarget(target)
 	if not Object.IsValid(target) then return nil end
-
+	
+	local isValid = false
+	pcall(function()
+		if target.id then
+			isValid = true
+		end
+	end)
+	if not isValid then return nil end
+	
 	if target:IsA("Player") or target:IsA("Damageable") then
 		return target
 	else
@@ -114,11 +122,13 @@ function MeleeAttack(target, abilityInfo, hitResult)
 	if (abilityInfo.ignoreList[target] ~= 1) then
 		local damageValue = abilityInfo.damage
 
-		--overrideDamage
-		local char = EquipAPI.GetCurrentCharacter(ability.owner)
-		if char then
-			local stats = char:GetComponent("Stats")
-			damageValue = stats:GetStat("AP")
+		-- Override damage with character stats
+		if EquipAPI then
+			local char = EquipAPI.GetCurrentCharacter(ability.owner)
+			if char then
+				local stats = char:GetComponent("Stats")
+				damageValue = stats:GetStat("AP")
+			end
 		end
 		-- Creates new damage info at apply it to the enemy
 		local damage = Damage.New(damageValue)
