@@ -300,12 +300,12 @@ end
 function PressedEvent(_, action, value)
     if action == 'Click' then
         pressedEvent:Trigger(value)
-        touchLocation = UI:GetCursorPosition()
+        touchLocation = Input.GetCursorPosition()
         deltaCursorTask =
             Task.Spawn(
             function()
                 while not isDragging do
-                    currentLocation = UI.GetCursorPosition()
+                    currentLocation = Input.GetCursorPosition()
                     if (touchLocation - currentLocation).sizeSquared > DragDistanceSqr then
                         Drag()
                     end
