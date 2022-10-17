@@ -1,6 +1,54 @@
 Name: "Other Components"
 RootId: 12785624939370825655
 Objects {
+  Id: 9008656502296120942
+  Name: "Loot Drop Factory 3.0"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12785624939370825655
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12522389637121468714
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Loot Drop Factory 3.0"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15438156706895969314
+    }
+  }
+}
+Objects {
   Id: 7761162871175552815
   Name: "Found Item Cinematic"
   Transform {

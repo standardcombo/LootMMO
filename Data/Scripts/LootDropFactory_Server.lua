@@ -10,7 +10,8 @@ _G["standardcombo.NPCKit.LootDropFactory"] = API
 
 API.VERSION = 2.0
 
-local DATA = require( script:GetCustomProperty("LDFactoryIndex") )
+local LDF_DATA = require(script:GetCustomProperty("LDFactoryData"))
+local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
 local DROP_EVENT_ID = "LootDropFactory.Drop"
 local PICKUP_EVENT_ID = "LootDropFactory.Pickup"
@@ -31,7 +32,7 @@ function API.Drop(eventData)
 	
 	-- Find the correct drop table
 	local lootDropId = eventData.lootId
-	local rowFromDataIndex = DATA[lootDropId]
+	local rowFromDataIndex = LDF_DATA[lootDropId]
 	if not rowFromDataIndex then
 		error("[LDFactory] No such data for: "..tostring(lootDropId))
 	end
@@ -106,16 +107,14 @@ local function OnPickup(player, dropId)
 	
 	-- Find the correct drop table
 	local lootDropId = eventData.lootId
-	local rowFromDataIndex = DATA[lootDropId]
+	local rowFromDataIndex = LDF_DATA[lootDropId]
 	local dropTable = rowFromDataIndex.subTable
+	local rowId = eventData.rewardId
 	
-	local entry = dropTable[eventData.rewardId]
-	local rewards = entry.rewards
+	--local rewards = dropTable[rowId].rewards
+	--print(player.name .." picked up treasure: ".. lootDropId..":"..rewards)
 	
-	
-	-- TODO
-	print(player.name .." picked up treasure: ".. lootDropId..":"..rewards)
-	
+	REWARDS_PARSER.Parse(player, dropTable, rowId)
 end
 
 Events.ConnectForPlayer(PICKUP_EVENT_ID, OnPickup)

@@ -28,7 +28,7 @@ Objects {
   ChildIds: 11002928437595490801
   ChildIds: 14456150676684712690
   ChildIds: 3833344059936018977
-  ChildIds: 5649500303200276205
+  ChildIds: 11609901366367975824
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -48,13 +48,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5649500303200276205
-  Name: "Loot Drop Factory 2.0"
+  Id: 11609901366367975824
+  Name: "Loot Drop Factory 3.0"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -62,163 +58,20 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  ChildIds: 207871585917283807
-  ChildIds: 6193709016083913973
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 6193709016083913973
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5649500303200276205
-  ChildIds: 12490710614979965890
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-    MinDetailLevel {
-      Value: "mc:edetaillevel:low"
-    }
-    MaxDetailLevel {
-      Value: "mc:edetaillevel:ultra"
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12490710614979965890
-  Name: "LootDropFactory_Client"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6193709016083913973
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:LegendaryTreasureDrop"
-      AssetReference {
-        Id: 12888348717690736901
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12522389637121468714
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Loot Drop Factory 3.0"
+        }
       }
     }
-    Overrides {
-      Name: "cs:EpicTreasureDrop"
-      AssetReference {
-        Id: 7329290546600037547
-      }
-    }
-    Overrides {
-      Name: "cs:RareTreasureDrop"
-      AssetReference {
-        Id: 6642944144592190585
-      }
+    TemplateAsset {
+      Id: 15438156706895969314
     }
   }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 3425538406598518647
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 207871585917283807
-  Name: "LootDropFactory_Server"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5649500303200276205
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 10435028356538285218
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 3833344059936018977
@@ -485,7 +338,11 @@ Objects {
         }
         Overrides {
           Name: "cs:LootId"
-          String: "Epic"
+          String: "Rare"
+        }
+        Overrides {
+          Name: "Damageable.StartingHitPoints"
+          Float: 1
         }
       }
     }

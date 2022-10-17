@@ -36,7 +36,7 @@ Assets {
           }
           Overrides {
             Name: "cs:LootId"
-            String: "Uncommon"
+            String: "Common"
           }
           Overrides {
             Name: "cs:AttackRange"

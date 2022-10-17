@@ -7,7 +7,7 @@ Assets {
       RootId: 2691092598115470187
       Objects {
         Id: 2691092598115470187
-        Name: "Ravenous Raptor"
+        Name: "Ravenous Raptor (Common)"
         Transform {
           Scale {
             X: 1
@@ -36,7 +36,7 @@ Assets {
           }
           Overrides {
             Name: "cs:LootId"
-            String: "Uncommon"
+            String: "Common"
           }
           Overrides {
             Name: "cs:AttackRange"
