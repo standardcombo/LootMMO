@@ -149,6 +149,7 @@ Assets {
         ChildIds: 2277045214287908911
         ChildIds: 18318012796242043282
         ChildIds: 12320417208762004615
+        ChildIds: 8045772309425385338
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -322,6 +323,57 @@ Assets {
         Script {
           ScriptAsset {
             Id: 13332602089683172171
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8045772309425385338
+        Name: "Ability_Activator"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16309572580476664976
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 17930334563823945795
+            }
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 16648077234985388346
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13356681744914853853
           }
         }
         NetworkRelevanceDistance {

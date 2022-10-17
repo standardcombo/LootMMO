@@ -1,4 +1,3 @@
- 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
@@ -9,7 +8,6 @@ local placementTemplate = script:GetCustomProperty('HunterOrcRainOfArrowsPlaceme
 
 function Execute()
     local mod = ROOT.serverUserData.calculateModifier()
-
     local SpecialAbility = ABILITY
     local targetData = SpecialAbility:GetTargetData()
     local position = targetData:GetHitPosition()
@@ -21,7 +19,7 @@ function Execute()
 
     World.SpawnAsset(
         placementTemplate,
-        {position = position, rotation = rotation, scale = vfxScale, networkContext = NetworkContextType.NETWORKED}
+        {position = position, scale = vfxScale, networkContext = NetworkContextType.NETWORKED}
     )
 
     Task.Wait(0.25)
