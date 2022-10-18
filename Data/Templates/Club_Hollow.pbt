@@ -205,9 +205,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.1
+            Y: 1.1
+            Z: 1.1
           }
         }
         ParentId: 15742455568535793833
@@ -568,6 +568,10 @@ Assets {
         ChildIds: 8706650983218495959
         ChildIds: 14574074176939728110
         ChildIds: 2023820484001810922
+        ChildIds: 5365204693064879311
+        ChildIds: 13019539905897898960
+        ChildIds: 14197474506319567273
+        ChildIds: 11570087445699830459
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -905,6 +909,242 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 5365204693064879311
+        Name: "Urban - Modern Pickaxe 01 - Head 01"
+        Transform {
+          Location {
+            X: 1.84857833
+            Y: 0.153536499
+            Z: 53.13311
+          }
+          Rotation {
+            Pitch: 2.00277519
+            Yaw: 0.00959100202
+            Roll: 0.16792801
+          }
+          Scale {
+            X: 0.359768689
+            Y: 0.514482319
+            Z: 0.428543985
+          }
+        }
+        ParentId: 6253932501673395597
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 4988698631329936829
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18268036459904397400
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13019539905897898960
+        Name: "Decal Bullet Damage Wood"
+        Transform {
+          Location {
+            X: 3.32439208
+            Y: 0.169856116
+            Z: 56.2385902
+          }
+          Rotation {
+            Pitch: -81.6148529
+            Yaw: 78.9537735
+            Roll: -70.4691467
+          }
+          Scale {
+            X: 0.0249905437
+            Y: 0.0509120263
+            Z: 0.0368738547
+          }
+        }
+        ParentId: 6253932501673395597
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 17786706417721973926
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14197474506319567273
+        Name: "Urban - Modern Pickaxe 01 - Head 01"
+        Transform {
+          Location {
+            X: 1.90649712
+            Y: 0.0342425555
+            Z: 47.6715469
+          }
+          Rotation {
+            Pitch: 1.29951167
+            Yaw: 0.0075293337
+            Roll: 0.167868584
+          }
+          Scale {
+            X: 0.325092405
+            Y: 0.514482319
+            Z: 0.428543568
+          }
+        }
+        ParentId: 6253932501673395597
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 4988698631329936829
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18268036459904397400
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11570087445699830459
+        Name: "Decal Bullet Damage Wood"
+        Transform {
+          Location {
+            X: 2.58051062
+            Y: 0.153031409
+            Z: 50.5111351
+          }
+          Rotation {
+            Pitch: 24.7922668
+            Yaw: -86.2665176
+            Roll: 101.501457
+          }
+          Scale {
+            X: 0.0249905437
+            Y: 0.0509120263
+            Z: 0.0368738547
+          }
+        }
+        ParentId: 6253932501673395597
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 17786706417721973926
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 13950225922132296555
@@ -940,6 +1180,33 @@ Assets {
       PrimaryAsset {
         AssetType: "DecalBlueprintAssetRef"
         AssetId: "bp_decal_stain_round_001"
+      }
+    }
+    Assets {
+      Id: 18268036459904397400
+      Name: "Urban - Modern Pickaxe 01 - Head 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_pickaxe_mod_001_head_001_ref"
+      }
+    }
+    Assets {
+      Id: 4988698631329936829
+      Name: "Bricks Stone Block 01"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_bricks_stone_block_001"
+      }
+    }
+    Assets {
+      Id: 17786706417721973926
+      Name: "Decal Bullet Damage Wood"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_bullet_wood_001"
       }
     }
     PrimaryAssetId {
