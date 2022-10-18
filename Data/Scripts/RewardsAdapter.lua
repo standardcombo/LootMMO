@@ -13,10 +13,23 @@
 	============
 	- Reward Toast UI: A component that shows the rewards earned.
 		-> Players receive the "RewardToast" networked event.
+	
+	API
+	===
+	- AddXP(player, int amount)
+	- AddItem(player, data table definition, int amount)
 ]]
 
 local API = {}
 _G.RewardsAdapter = API
+
+
+local XP_RESOURCE_KEY = "Cxp"
+
+
+function API.AddXP(player, amount)
+	player:AddResource(XP_RESOURCE_KEY, amount)
+end
 
 
 function API.AddItem(player, definition, amount)

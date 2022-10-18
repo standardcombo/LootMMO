@@ -63,8 +63,6 @@
 
 local API = {}
 
-local XP_RESOURCE_KEY = "Cxp"
-
 local stackDepth = 0
 
 
@@ -132,9 +130,12 @@ function _GrantReward(player, dataTable, rewardInstruction)
 
 	elseif instruction == "XP" then
 		-- Add XP
-		local resourceId = XP_RESOURCE_KEY
-		local resourceAmount = _ParseAmount(param)
-		player:AddResource(resourceId, resourceAmount)
+		local amount = _ParseAmount(param)
+		if _G.RewardsAdapter then
+			_G.RewardsAdapter.AddXP(player, amount)
+		else
+			player:AddResource("XP", amount)
+		end
 		-- Show toast UI
 		local itemDef = _G["Items.More"].GetDefinition("XP")
 		_GrantItem(player, itemDef, resourceAmount)
