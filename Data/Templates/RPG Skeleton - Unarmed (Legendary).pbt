@@ -923,18 +923,6 @@ Assets {
         ParentId: 9788527659389899512
         UnregisteredParameters {
           Overrides {
-            Name: "cs:DamageFX"
-            AssetReference {
-              Id: 6439897776520759745
-            }
-          }
-          Overrides {
-            Name: "cs:DestroyFX"
-            AssetReference {
-              Id: 6439897776520759745
-            }
-          }
-          Overrides {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 1679327176466008060

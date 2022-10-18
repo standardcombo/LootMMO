@@ -7,7 +7,7 @@ Assets {
       RootId: 7972568633645979307
       Objects {
         Id: 7972568633645979307
-        Name: "RPG Skeleton - Swordsman"
+        Name: "RPG Skeleton - Swordsman (Rare)"
         Transform {
           Scale {
             X: 1
@@ -918,18 +918,6 @@ Assets {
         }
         ParentId: 4640628425894428479
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageFX"
-            AssetReference {
-              Id: 6439897776520759745
-            }
-          }
-          Overrides {
-            Name: "cs:DestroyFX"
-            AssetReference {
-              Id: 6439897776520759745
-            }
-          }
           Overrides {
             Name: "cs:Root"
             ObjectReference {
