@@ -45,7 +45,7 @@ end
 modifiers['Cooldown'].calString = "20 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     --Formula: Min - Star Rating * Base Modifier
-    local min = 0 --SHOULD BE 20 ***********************************
+    local min = 20
     local starRating = stats['Teleport']
     local BaseModifier = 0.5
     return min - starRating * BaseModifier
