@@ -20,7 +20,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Tag_1"
-            String: "Beast"
+            String: "Dragon"
           }
           Overrides {
             Name: "cs:Tag_2"
