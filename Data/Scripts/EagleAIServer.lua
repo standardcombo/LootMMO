@@ -1,6 +1,6 @@
 --[[
 	EagleAI - Server
-	v0.1.0
+	v1.0.0
 	original script: standardcombo
 	modified by: Ooccoo  
 	contributions: DarkDev, WaveParadigm
@@ -843,7 +843,7 @@ end
 
 
 function IsAlive()
-	return currentState < STATE_DEAD_1
+	return currentState < STATE_DEAD_1 or currentState > STATE_DISABLED
 end
 
 

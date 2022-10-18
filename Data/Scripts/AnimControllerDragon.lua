@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Dragon
-	v1.1.1
+	v1.2.0
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Dragon Animated Mesh.
@@ -102,7 +102,7 @@ ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
 	local state = GetCurrentState()
 	if state == STATE_ATTACK_CAST then return end
-	if state >= STATE_DEAD_1 then return end
+	if state >= STATE_DEAD_1 and state <= STATE_DISABLED then return end
 	
 	-- Ignore other NPCs, make sure this event is about this NPC
 	if id == ROOT.id then
