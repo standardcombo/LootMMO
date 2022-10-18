@@ -704,11 +704,11 @@ Assets {
           }
           Overrides {
             Name: "cs:ProjectileGravity"
-            Float: 1
+            Float: 0
           }
           Overrides {
             Name: "cs:ProjectileHoming"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:Root"
