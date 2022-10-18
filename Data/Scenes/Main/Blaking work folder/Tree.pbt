@@ -1,6 +1,43 @@
 Name: "Blaking work folder"
 RootId: 15515718211942672915
 Objects {
+  Id: 4821163052361079636
+  Name: "Craft-NFT_Saving"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15515718211942672915
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7637429431069973704
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 3993525529671177181
   Name: "UI"
   Transform {
@@ -10733,24 +10770,6 @@ Objects {
         SelfId: 14225645240323413165
       }
     }
-    Overrides {
-      Name: "cs:DetailsPanelWarrior"
-      AssetReference {
-        Id: 2388174274148449319
-      }
-    }
-    Overrides {
-      Name: "cs:DetailsPanelHunter"
-      AssetReference {
-        Id: 17516583695670477843
-      }
-    }
-    Overrides {
-      Name: "cs:DetailsPanelMage"
-      AssetReference {
-        Id: 867441926697224961
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10792,11 +10811,22 @@ Objects {
   ChildIds: 8714633011634623162
   ChildIds: 13860591565395670366
   ChildIds: 5841100769820222734
+  ChildIds: 14305335395350795185
+  ChildIds: 15256696116490452450
+  ChildIds: 13686068822043895640
+  ChildIds: 5042722073759331123
+  ChildIds: 8811388751766534065
+  ChildIds: 7723677646045744513
+  ChildIds: 13132036323933517284
+  ChildIds: 16489403404174639445
+  ChildIds: 13478569614863021369
+  ChildIds: 14558832353818600068
+  ChildIds: 6356492346205098941
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceon"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10833,6 +10863,457 @@ Objects {
     }
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6356492346205098941
+  Name: "DetailsPanel - Warrior"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14317723646762347174
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Warrior"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2388174274148449319
+    }
+  }
+}
+Objects {
+  Id: 14558832353818600068
+  Name: "DetailsPanel - Warlock"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16107958606438946431
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Warlock"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16984363365245043363
+    }
+  }
+}
+Objects {
+  Id: 13478569614863021369
+  Name: "DetailsPanel - Sorcerer"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16004837457670497067
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Sorcerer"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5207602576951033879
+    }
+  }
+}
+Objects {
+  Id: 16489403404174639445
+  Name: "DetailsPanel - Shaman"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4143207345294892129
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Shaman"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3864001005573607376
+    }
+  }
+}
+Objects {
+  Id: 13132036323933517284
+  Name: "DetailsPanel - Rogue"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8523353716820905893
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Rogue"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13366179051296517388
+    }
+  }
+}
+Objects {
+  Id: 7723677646045744513
+  Name: "DetailsPanel - Ranger"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17668495767861975353
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Ranger"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16181690418712161550
+    }
+  }
+}
+Objects {
+  Id: 8811388751766534065
+  Name: "DetailsPanel - Paladin"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11889055228970738524
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Paladin"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4717036618269067129
+    }
+  }
+}
+Objects {
+  Id: 5042722073759331123
+  Name: "DetailsPanel - Mage"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 829629242493765953
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Mage"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 867441926697224961
+    }
+  }
+}
+Objects {
+  Id: 13686068822043895640
+  Name: "DetailsPanel - Hunter"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 18270338226199637669
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Hunter"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17516583695670477843
+    }
+  }
+}
+Objects {
+  Id: 15256696116490452450
+  Name: "DetailsPanel - Healer"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9617714541269274386
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Healer"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16973731259622566749
+    }
+  }
+}
+Objects {
+  Id: 14305335395350795185
+  Name: "DetailsPanel - Fighter"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10784706415918458962
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2463006932507552674
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Fighter"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.00415080134
+            Y: -0.0055239629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2355516684402863266
+    }
+  }
 }
 Objects {
   Id: 5841100769820222734

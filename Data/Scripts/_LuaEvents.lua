@@ -86,7 +86,7 @@ end
 
 local returntable = {
 	name = "Lua Event",
-	version = 1.3,
+	version = 1.4,
 	desctription = "Custom events system",
 	New = New,
 	NewSafeEvent = SafeNew

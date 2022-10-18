@@ -38,7 +38,6 @@ end
 
 local LERP_SPEED = 11.5
 
-
 local warriorUI = {
 	panel = WARRIOR_PANEL,
 	bg = WARRIOR_BG,

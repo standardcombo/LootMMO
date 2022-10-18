@@ -16,8 +16,8 @@ for key, Effect in pairs(STATUS_EFFECT) do
 	if Effect.startFunction then
 		data.startFunction = require(Effect.startFunction)
 	end
-	if Effect.finishFunction then
-		data.finishFunction = require(Effect.finishFunction)
+	if Effect.endFunction then
+		data.endFunction = require(Effect.endFunction)
 	end
 	data.multiplier = Effect.defaultMultiply
 	API_SE.DefineStatusEffect(data)

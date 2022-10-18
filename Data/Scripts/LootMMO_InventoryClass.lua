@@ -8,12 +8,20 @@ local Equipmentkeys = slotTypes.GetKeySlots()
 local lootmmoInv = {}
 local Slot = {}
 
+local function FindElementFromName(itemname)
+	return Materials.GetDefinition(itemname) or Items.GetDefinition(itemname)
+end
 
-
+local function FindAssetIdFromId(itemname)
+	local itemdata = FindElementFromName(itemname)
+	if itemdata then
+		return itemdata["itemAsset"]
+	end
+end
 
 local function GetItemDataFromItem(item)
 	if not item then return end
-	return Materials.GetDefinition(item.name) or Items.GetDefinition(item.name)
+	return FindElementFromName(item.name)
 end
 
 local function GetCategoryFromItemData(itemdata)
@@ -122,6 +130,38 @@ end
 function lootmmoInv:GetSlotType(slot)
 	if not slot then return "any" end
 	return self.slotData[slot].type or "any"
+end
+
+function lootmmoInv:GetItemCount(itemId)
+	local items
+	local itemAssetId = FindAssetIdFromId(itemId)
+	if not itemAssetId then
+		items = self:GetItems({ itemAssetId = itemId })
+	else
+		items = self:GetItems({ itemAssetId = itemAssetId })
+	end
+	local count = 0
+	for key, value in pairs(items) do
+		count = count + value.count
+	end
+	return count
+end
+
+function lootmmoInv:CanAddItem(item, properties)
+	properties = properties or {}
+	properties.slot = properties.slot or FindFreeSlot(self, item)
+	local canAdd = Slot.CanAddItem(self.slotData[properties.slot] or {}, item) and
+		self._inventory:CanAddItem(item, properties)
+	return canAdd
+end
+
+function lootmmoInv:HasRequiredItems(elementTables)
+	for key, value in pairs(elementTables) do
+		if self:GetItemCount(key) < (value or 0) then
+			return false
+		end
+	end
+	return true
 end
 
 local constructor = {}

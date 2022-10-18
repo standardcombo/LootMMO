@@ -263,6 +263,7 @@ Objects {
       PlayerStorageMode {
         Value: "mc:eplayerstoragemode:writable"
       }
+      EnableConcurrentPlayerStorage: true
       EnableNetworkedEventsQueuing: true
     }
   }
