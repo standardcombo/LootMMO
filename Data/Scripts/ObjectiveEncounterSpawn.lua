@@ -35,6 +35,7 @@ local ADDITIONAL_RADIUS = script:GetCustomProperty("AdditionalRadius")
 local TRIGGER_TEMPLATE = script:GetCustomProperty("TriggerTemplate")
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 local MIN_PLAYER_LEVEL = script:GetCustomProperty("MinPlayerLevel")
+local MAX_PLAYER_LEVEL = script:GetCustomProperty("MaxPlayerLevel")
 
 -- Rewards 
 local COMMON_LOOT_ID = script:GetCustomProperty("CommonLootId")
@@ -333,7 +334,9 @@ function OnBeginOverlap(trigger, player)
 	if countersPerPlayer[player] == 1 then
 		playerCount = playerCount + 1
 		
-		if playerLevel >= MIN_PLAYER_LEVEL then
+		if playerLevel >= MIN_PLAYER_LEVEL 
+		and playerLevel <= MAX_PLAYER_LEVEL 
+		then
 			if not isSpawned then
 				local playerPos = player:GetWorldPosition()
 				SpawnEnemies(playerLevel, playerPos)

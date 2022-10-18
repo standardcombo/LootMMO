@@ -13,6 +13,14 @@ Assets {
         Int: 0
       }
       Overrides {
+        Name: "cs:MinPlayerLevel"
+        Int: 0
+      }
+      Overrides {
+        Name: "cs:MaxPlayerLevel"
+        Int: 9999
+      }
+      Overrides {
         Name: "cs:enemyDefinitions"
         AssetReference {
           Id: 3622322006152135864
@@ -69,10 +77,6 @@ Assets {
         Float: 10
       }
       Overrides {
-        Name: "cs:MinPlayerLevel"
-        Int: 0
-      }
-      Overrides {
         Name: "cs:QuestID:category"
         String: "QuestSystemConnection"
       }
@@ -122,7 +126,7 @@ Assets {
       }
       Overrides {
         Name: "cs:MinPlayerLevel:category"
-        String: "EncounterArea"
+        String: "LevelLimits"
       }
       Overrides {
         Name: "cs:CommonLootId:category"
@@ -139,6 +143,10 @@ Assets {
       Overrides {
         Name: "cs:LegendaryLootId:category"
         String: "Rewards"
+      }
+      Overrides {
+        Name: "cs:MaxPlayerLevel:category"
+        String: "LevelLimits"
       }
     }
   }

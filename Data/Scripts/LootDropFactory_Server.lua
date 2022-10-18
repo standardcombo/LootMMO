@@ -154,8 +154,9 @@ function API.Drop(eventData)
 				
 			else
 				-- Encounter is complete. Change the drop to that of the encounter
-				if encounterDropIds[encounterId] then
-					eventData.lootId = encounterDropIds[encounterId]
+				local _encounterDropId = encounterDropIds[encounterId]
+				if _encounterDropId and _encounterDropId ~= "" then
+					eventData.lootId = _encounterDropId
 				end
 			end
 		end
@@ -168,6 +169,9 @@ function API.Drop(eventData)
 		error("[LDFactory] No such data for: "..tostring(lootDropId))
 	end
 	local dropTable = metadataRow.subTable
+	if not dropTable then
+		error("[LDFactory] No drop table for: "..tostring(lootDropId))
+	end
 	
 	-- Calculate the total incidence
 	local totalIncidence = dropTable.totalIncidence

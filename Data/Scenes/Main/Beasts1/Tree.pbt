@@ -678,6 +678,61 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 11583678914648295619
+  Name: "ObjectiveEncounterSpawn"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17848771781286014444
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Beasts1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:EnemyIDs"
+      String: "Raptor"
+    }
+    Overrides {
+      Name: "cs:MinPlayerLevel"
+      Int: 2
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15156443327978326566
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 1523768206662357258
   Name: "ObjectiveEncounterSpawn"
   Transform {
@@ -704,6 +759,34 @@ Objects {
     Overrides {
       Name: "cs:EnemyIDs"
       String: "Raptor"
+    }
+    Overrides {
+      Name: "cs:CommonLootId"
+      String: "Nothing"
+    }
+    Overrides {
+      Name: "cs:RareLootId"
+      String: "Nothing"
+    }
+    Overrides {
+      Name: "cs:EpicLootId"
+      String: "Nothing"
+    }
+    Overrides {
+      Name: "cs:LegendaryLootId"
+      String: "Nothing"
+    }
+    Overrides {
+      Name: "cs:MaxPlayerLevel"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:ChanceEpicEnemy"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:ChanceLegendaryEnemy"
+      Float: 0
     }
   }
   Collidable_v2 {
