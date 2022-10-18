@@ -1,4 +1,3 @@
-
 local ABILITY = script.parent
 
 local TOLERANCE_POSITION = 85
@@ -67,6 +66,7 @@ function OnCast(ability)
 	if not Object.IsValid(player) then return end
 	
 	local startHitpoints = player.hitPoints
+	local startBlockpoints = player.serverUserData.blockPoints
 	local startPosition = player:GetWorldPosition()
 	local startRotation = player:GetWorldRotation()
 	
@@ -84,6 +84,11 @@ function OnCast(ability)
 			
 			-- Stop if the player loses armor
 				-- TODO
+				if player.serverUserData.blockPoints < startBlockpoints then
+					--print("Interrupted channeling because the player lost blockPoints")
+					ability:Interrupt()
+					return
+				end
 			
 			-- Stop if the player moves
 			local pos = player:GetWorldPosition()

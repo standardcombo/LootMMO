@@ -9,6 +9,7 @@ local function StatsChanged(player, values)
 		local hPercent = player.hitPoints / player.maxHitPoints
 		player.maxHitPoints = values["H"] or 100
 		player.hitPoints = math.ceil(player.maxHitPoints * hPercent)
+		player.serverUserData.blockPoints = values['B'] or 0
 		return
 	end
 end
@@ -33,19 +34,23 @@ local function playerEquipped(character, player)
 	end
 end
 
-local function AttackResistance(stats, attackData)
+local function AttackResistance(stats, attackData, player)
 	local Block = stats:GetTempStat("B")
 	local oldDamage = attackData.damage.amount 
 
 	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
 	stats:SetTempStat("B", math.max(Block - oldDamage, 0))
+	player.serverUserData.blockPoints = stats:GetTempStat("B")
+
 end
 
-local function SkillResistance(stats, attackData)
+local function SkillResistance(stats, attackData, player)
 	local Block = stats:GetTempStat("B")
+
 	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
 
 	stats:SetTempStat("B", math.max(Block - 1, 0))
+	player.serverUserData.blockPoints = stats:GetTempStat("B")
 end
 
 local attackTagsHandler = {
@@ -65,7 +70,7 @@ local function GoingToTakeDamage(attackData)
 		if attackData.damage.amount > 0 then
 			for key, value in pairs(attackData.tags or {}) do
 				if attackTagsHandler[key] then
-					attackTagsHandler[key](stats, attackData)
+					attackTagsHandler[key](stats, attackData, attacked)
 				end
 			end
 		end
