@@ -13,8 +13,8 @@ Assets {
       Overrides {
         Name: "glow color"
         Color {
-          R: 10
-          G: 0.6304425
+          R: 4
+          G: 2.4
           A: 1
         }
       }
