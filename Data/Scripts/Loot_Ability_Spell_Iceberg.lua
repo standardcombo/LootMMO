@@ -58,10 +58,6 @@ function Execute()
     Task.Wait(0.5)
 end
 
-function Recovery()
-    BreakIceCube(ABILITY.owner)
-end
-
 function BreakIceCube(player)
     isActive = false
     if goingToTakeDamageListener then
@@ -86,6 +82,10 @@ function BreakIceCube(player)
     player.movementControlMode = PlayerSettings.movementControlMode
     player.maxJumpCount = PlayerSettings.maxJumpCount
     player.serverUserData.DamageImmunity = false
+end
+
+function Recovery()
+    BreakIceCube(ABILITY.owner)
 end
 
 function Tick(deltaTime)
@@ -146,3 +146,4 @@ end
 
 ABILITY.executeEvent:Connect(Execute)
 ABILITY.recoveryEvent:Connect(Recovery)
+ABILITY.interruptedEvent:Connect(Recovery)

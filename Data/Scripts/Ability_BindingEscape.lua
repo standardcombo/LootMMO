@@ -14,9 +14,11 @@ local AcceptedValues = {
 function Advance()
     ABILITY:AdvancePhase()
 end
+
 function Interrupt()
     ABILITY:Interrupt()
 end
+
 function OnActionPressed(player, action, value)
     if AcceptedValues[action] then
         if INTERRUPT then

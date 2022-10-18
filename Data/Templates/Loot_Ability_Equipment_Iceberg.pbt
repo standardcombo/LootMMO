@@ -85,6 +85,10 @@ Assets {
                 Rotator {
                 }
               }
+              Overrides {
+                Name: "ExecuteCanMove"
+                Bool: false
+              }
             }
           }
           TemplateAsset {
@@ -348,6 +352,10 @@ Assets {
             ObjectReference {
               SubObjectId: 4501676093133407451
             }
+          }
+          Overrides {
+            Name: "cs:Interrupt"
+            Bool: true
           }
         }
         Collidable_v2 {
