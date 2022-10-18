@@ -201,7 +201,7 @@ function SpawnEnemies(level, playerPos)
 		SpawnCluster(remainingPoints, spawnData, midPoint, enemyDistribution[e])
 		
 		if spawnData.remaining > 0 and #remainingPoints > 0 then
-			local midIndex = CoreMath.Ceil(#remainingPoints / 2)
+			local midIndex = math.ceil(#remainingPoints / 2)
 			midPoint = remainingPoints[midIndex]
 			table.remove(remainingPoints, midIndex)
 		else

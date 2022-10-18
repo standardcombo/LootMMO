@@ -1,5 +1,5 @@
 "id[String]","incidence[Int]","rewards[String]"
 "Nothing","1",""
 "Coins","1","Material(Coins=RNG[3-10])"
-"Bone3PlusCoins","2","Loop(3=Bone1), Wait(0.5), Material(Coins=RNG[1-5])"
+"BonesPlusCoins","2","Loop(3=Bone1), Wait(0.5), Material(Coins=RNG[1-5])"
 "Bone1","0","Material(Bone=1), Wait(0.5)"
