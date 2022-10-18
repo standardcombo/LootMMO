@@ -1,13 +1,13 @@
 Assets {
-  Id: 18343431396922342877
-  Name: "RPG Skeleton - Unarmed"
+  Id: 12298797564658899637
+  Name: "RPG Skeleton - Marksman (Legendary)"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 5965388886224970353
+      RootId: 1997282349948663995
       Objects {
-        Id: 5965388886224970353
-        Name: "RPG Skeleton - Unarmed"
+        Id: 1997282349948663995
+        Name: "RPG Skeleton - Marksman (Legendary)"
         Transform {
           Scale {
             X: 1
@@ -16,7 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 5731096188612423720
+        ChildIds: 739700093450327591
         UnregisteredParameters {
           Overrides {
             Name: "cs:Tag_1"
@@ -24,7 +24,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Tag_2"
-            String: "Melee"
+            String: "Ranged"
           }
           Overrides {
             Name: "cs:RewardResourceType"
@@ -40,7 +40,7 @@ Assets {
           }
           Overrides {
             Name: "cs:AttackRange"
-            Float: 200
+            Float: 1300
           }
           Overrides {
             Name: "cs:AttackMinAngle"
@@ -60,7 +60,7 @@ Assets {
           }
           Overrides {
             Name: "cs:MoveSpeed"
-            Float: 550
+            Float: 450
           }
           Overrides {
             Name: "cs:TurnSpeed"
@@ -500,7 +500,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5731096188612423720
+        Id: 739700093450327591
         Name: "LocalContext"
         Transform {
           Location {
@@ -508,12 +508,12 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.45
+            Y: 1.45
+            Z: 1.45
           }
         }
-        ParentId: 5965388886224970353
+        ParentId: 1997282349948663995
         ChildIds: 4605403733082337837
         ChildIds: 14001881140192835445
         ChildIds: 7963678825654784679
@@ -540,7 +540,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5731096188612423720
+        ParentId: 739700093450327591
         ChildIds: 7483351866561982690
         ChildIds: 8407864205170865650
         ChildIds: 7089654655840687501
@@ -597,12 +597,6 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:EngageEffect"
-            AssetReference {
-              Id: 936843770711510315
-            }
-          }
-          Overrides {
             Name: "cs:HomingTarget"
             ObjectReference {
               SubObjectId: 7963678825654784679
@@ -611,13 +605,13 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
           Overrides {
             Name: "cs:RotationRoot"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -661,7 +655,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 15
+            Int: 5
           }
           Overrides {
             Name: "cs:DamageToNPCs"
@@ -670,19 +664,19 @@ Assets {
           Overrides {
             Name: "cs:ProjectileBody"
             AssetReference {
-              Id: 17434832614945470616
+              Id: 4591186836374158816
             }
           }
           Overrides {
             Name: "cs:MuzzleFlash"
             AssetReference {
-              Id: 11134480703754803044
+              Id: 9281011578601836522
             }
           }
           Overrides {
             Name: "cs:ImpactSurface"
             AssetReference {
-              Id: 841534158063459245
+              Id: 15728676179772725900
             }
           }
           Overrides {
@@ -693,24 +687,24 @@ Assets {
           }
           Overrides {
             Name: "cs:ProjectileLifeSpan"
-            Float: 0.11
+            Float: 2
           }
           Overrides {
             Name: "cs:ProjectileSpeed"
-            Float: 50
+            Float: 3500
           }
           Overrides {
             Name: "cs:ProjectileGravity"
-            Float: 0
+            Float: 1
           }
           Overrides {
             Name: "cs:ProjectileHoming"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -781,7 +775,7 @@ Assets {
         Name: "NPCHeadshot"
         Transform {
           Location {
-            Z: 85
+            Z: 90
           }
           Rotation {
           }
@@ -825,7 +819,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5731096188612423720
+        ParentId: 739700093450327591
         ChildIds: 14248742502636160267
         ChildIds: 10195276852652218253
         ChildIds: 1682961592151532946
@@ -883,7 +877,7 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -937,7 +931,7 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -1010,12 +1004,14 @@ Assets {
         }
         ParentId: 14001881140192835445
         ChildIds: 15723636327053316230
-        ChildIds: 6464111299266707516
+        ChildIds: 18298766963528642205
         ChildIds: 17113873121481887918
+        ChildIds: 16844161198568677528
         ChildIds: 3384808585879706475
+        ChildIds: 7047102102491409701
         ChildIds: 9655984082787811693
         ChildIds: 1099910075558183614
-        ChildIds: 12635008277890546368
+        ChildIds: 7720453019178633765
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1059,7 +1055,7 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -1083,7 +1079,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6464111299266707516
+        Id: 18298766963528642205
         Name: "AnimControllerZombie"
         Transform {
           Location {
@@ -1105,9 +1101,37 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:AttackAnim"
+            String: "2hand_rifle_shoot"
+          }
+          Overrides {
+            Name: "cs:AttackPlayback"
+            Float: 1.4
+          }
+          Overrides {
+            Name: "cs:PlayAttackOnRecovery"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:IdleStance"
+            String: "2hand_rifle_idle_relaxed"
+          }
+          Overrides {
+            Name: "cs:ReadyStance"
+            String: "2hand_rifle_aim_shoulder"
+          }
+          Overrides {
+            Name: "cs:WalkStance"
+            String: "2hand_rifle_walk_forward"
+          }
+          Overrides {
+            Name: "cs:RunStance"
+            String: "2hand_rifle_run_forward"
+          }
+          Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -1165,6 +1189,54 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 16844161198568677528
+        Name: "AnimControllerHideAttackProp"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7145993005084827370
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:AttackProp"
+            ObjectReference {
+              SubObjectId: 2528170336675951647
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 1997282349948663995
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2099941017973188377
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 3384808585879706475
         Name: "Skeleton Mob"
         Transform {
@@ -1185,7 +1257,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14698875350380456389
+              Id: 11549531726905446930
             }
           }
         }
@@ -1230,6 +1302,446 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:low"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 7047102102491409701
+        Name: "right_prop"
+        Transform {
+          Location {
+            X: 7.66796875
+            Y: 53.328125
+            Z: 107.507202
+          }
+          Rotation {
+            Pitch: 74.4261703
+            Yaw: -133.846
+            Roll: 46.8663063
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7145993005084827370
+        ChildIds: 14008115931884416978
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14008115931884416978
+        Name: "Fantasy Weapon - Crossbow 01 (Prop)"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 9.56226431e-05
+            Yaw: -179.999939
+            Roll: 7.5559e-05
+          }
+          Scale {
+            X: 0.763853908
+            Y: 0.763853908
+            Z: 0.763853908
+          }
+        }
+        ParentId: 7047102102491409701
+        ChildIds: 2528170336675951647
+        ChildIds: 207089652037650061
+        ChildIds: 8500951056941348429
+        ChildIds: 12879008106155865893
+        ChildIds: 9747014920530474810
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2528170336675951647
+        Name: "Fantasy Crossbow Bolt 01"
+        Transform {
+          Location {
+            X: 39.5371933
+            Z: 25.1326046
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14008115931884416978
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 0.388
+              G: 0.245442152
+              B: 0.10476
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 10184847056121543272
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 3337256621200851928
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 207089652037650061
+        Name: "Fantasy Crossbow Bow 01"
+        Transform {
+          Location {
+            X: 78.3212357
+            Y: 0.234184265
+            Z: 13.1491394
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14008115931884416978
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 9651684874529213799
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:utile"
+            Float: 4.40646601
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:vtile"
+            Float: 3.62334657
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 12875975218361332960
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8500951056941348429
+        Name: "Fantasy Crossbow Foregrip 01"
+        Transform {
+          Location {
+            X: 33.3169479
+            Z: 15.1326046
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14008115931884416978
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 9651684874529213799
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:utile"
+            Float: 4.85937834
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:vtile"
+            Float: 2.70171261
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.609
+              G: 0.609
+              B: 0.609
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15312805567995783140
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 12879008106155865893
+        Name: "Fantasy Crossbow Grip 01"
+        Transform {
+          Location {
+            X: 1.7599206
+            Y: -7.62939453e-06
+            Z: 8.08739853
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14008115931884416978
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 9651684874529213799
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:utile"
+            Float: 2.33294129
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:vtile"
+            Float: 5.90964317
+          }
+          Overrides {
+            Name: "ma:Shared_Trim2:color"
+            Color {
+              R: 0.603000045
+              G: 0.603000045
+              B: 0.603000045
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1562290466453296467
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 9747014920530474810
+        Name: "Fantasy Crossbow Stock 01"
+        Transform {
+          Location {
+            X: -3.46280432
+            Z: 17.1326046
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14008115931884416978
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 9651684874529213799
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:utile"
+            Float: 1.73953426
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:vtile"
+            Float: 1.50209606
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:color"
+            Color {
+              R: 0.60800004
+              G: 0.60800004
+              B: 0.60800004
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 5386842465317264650
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2654,7 +3166,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12635008277890546368
+        Id: 7720453019178633765
         Name: "RootDeathSelfDestroy"
         Transform {
           Location {
@@ -2669,12 +3181,12 @@ Assets {
           }
         }
         ParentId: 7145993005084827370
-        ChildIds: 6185290505566163266
+        ChildIds: 6381291050402144170
         UnregisteredParameters {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 5965388886224970353
+              SubObjectId: 1997282349948663995
             }
           }
         }
@@ -2701,7 +3213,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6185290505566163266
+        Id: 6381291050402144170
         Name: "TargetRegister"
         Transform {
           Location {
@@ -2714,7 +3226,7 @@ Assets {
             Z: 2.50811124
           }
         }
-        ParentId: 12635008277890546368
+        ParentId: 7720453019178633765
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2742,17 +3254,17 @@ Assets {
         Name: "Collider"
         Transform {
           Location {
-            Z: 105
+            Z: 110
           }
           Rotation {
           }
           Scale {
             X: 0.9
             Y: 0.9
-            Z: 1
+            Z: 1.1
           }
         }
-        ParentId: 5731096188612423720
+        ParentId: 739700093450327591
         UnregisteredParameters {
           Overrides {
             Name: "cs:Walkable"
@@ -2813,12 +3325,12 @@ Assets {
       }
     }
     Assets {
-      Id: 7436120957885304537
-      Name: "Thorn"
+      Id: 3337256621200851928
+      Name: "Fantasy Crossbow Bolt 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_tooth_002"
+        AssetId: "sm_weap_fan_bolt_cross_001"
       }
     }
     Assets {
@@ -2828,6 +3340,60 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_basic_pbr_material_001"
+      }
+    }
+    Assets {
+      Id: 12875975218361332960
+      Name: "Fantasy Crossbow Bow 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_bow_cross_001"
+      }
+    }
+    Assets {
+      Id: 9651684874529213799
+      Name: "Metal Iron Rusted 02"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_metal_iron_003"
+      }
+    }
+    Assets {
+      Id: 15312805567995783140
+      Name: "Fantasy Crossbow Foregrip 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_foregrip_cross_001"
+      }
+    }
+    Assets {
+      Id: 1562290466453296467
+      Name: "Fantasy Crossbow Grip 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_grip_cross_001"
+      }
+    }
+    Assets {
+      Id: 5386842465317264650
+      Name: "Fantasy Crossbow Stock 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_stock_cross_001"
+      }
+    }
+    Assets {
+      Id: 7436120957885304537
+      Name: "Thorn"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_tooth_002"
       }
     }
     Assets {

@@ -1,6 +1,6 @@
 Assets {
-  Id: 14698875350380456389
-  Name: "Custom Base Material from Skeleton Mob"
+  Id: 14098019906676820682
+  Name: "Skeleton Material - Rare"
   PlatformAssetType: 13
   SerializationVersion: 119
   CustomMaterialAsset {
@@ -17,6 +17,34 @@ Assets {
           G: 0.6304425
           A: 1
         }
+      }
+      Overrides {
+        Name: "specular"
+        Float: 0.3
+      }
+      Overrides {
+        Name: "fresnel_power"
+        Float: 0.337914497
+      }
+      Overrides {
+        Name: "primary color"
+        Color {
+          G: 0.179549962
+          B: 0.513
+          A: 1
+        }
+      }
+      Overrides {
+        Name: "fresnel_color"
+        Color {
+          G: 0.643499851
+          B: 0.99
+          A: 1
+        }
+      }
+      Overrides {
+        Name: "fresnel_emissive_boost"
+        Float: 3
       }
     }
     Assets {

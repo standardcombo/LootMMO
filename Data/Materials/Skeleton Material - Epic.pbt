@@ -1,45 +1,29 @@
 Assets {
-  Id: 10177837637419358532
-  Name: "Raptor Material (Rare)"
+  Id: 3672157562576738267
+  Name: "Skeleton Material - Epic"
   PlatformAssetType: 13
   SerializationVersion: 119
   CustomMaterialAsset {
-    BaseMaterialId: 6530174169967151099
+    BaseMaterialId: 12125245193133919026
     ParameterOverrides {
+      Overrides {
+        Name: "emissive_boost"
+        Float: 24.1550331
+      }
+      Overrides {
+        Name: "glow color"
+        Color {
+          R: 10
+          G: 0.6304425
+          A: 1
+        }
+      }
       Overrides {
         Name: "primary color"
         Color {
-          G: 0.179549962
-          B: 0.513
-          A: 1
-        }
-      }
-      Overrides {
-        Name: "secondary color"
-        Color {
-          G: 0.0378806926
-          B: 0.26
-          A: 1
-        }
-      }
-      Overrides {
-        Name: "tertiary color"
-        Color {
-          R: 1
-          G: 0.87324512
-          B: 0.13
-          A: 1
-        }
-      }
-      Overrides {
-        Name: "fresnel_power"
-        Float: 0.337914497
-      }
-      Overrides {
-        Name: "fresnel_color"
-        Color {
-          G: 0.643499851
-          B: 0.99
+          R: 0.673642695
+          G: 0.120000005
+          B: 1
           A: 1
         }
       }
@@ -48,21 +32,33 @@ Assets {
         Float: 0.3
       }
       Overrides {
+        Name: "fresnel_color"
+        Color {
+          R: 0.99
+          B: 0.924436748
+          A: 1
+        }
+      }
+      Overrides {
+        Name: "fresnel_power"
+        Float: 0.213956982
+      }
+      Overrides {
         Name: "fresnel_sharpness"
-        Float: 1
+        Float: 0.523062348
       }
       Overrides {
         Name: "fresnel_emissive_boost"
-        Float: 3
+        Float: 3.73253679
       }
     }
     Assets {
-      Id: 6530174169967151099
-      Name: "Raptor Body Material"
+      Id: 12125245193133919026
+      Name: "Skeleton Material"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "npc_raptor_body_001_mi_ref"
+        AssetId: "skeletonBody"
       }
     }
   }

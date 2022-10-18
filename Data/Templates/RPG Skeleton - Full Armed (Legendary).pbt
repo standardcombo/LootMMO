@@ -1,13 +1,13 @@
 Assets {
-  Id: 9351087071380283443
-  Name: "RPG Skeleton - Full Armed"
+  Id: 13656867302588347830
+  Name: "RPG Skeleton - Full Armed (Legendary)"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 5413985969182385702
       Objects {
         Id: 5413985969182385702
-        Name: "RPG Skeleton - Full Armed"
+        Name: "RPG Skeleton - Full Armed (Legendary)"
         Transform {
           Scale {
             X: 1
@@ -516,9 +516,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.45
+            Y: 1.45
+            Z: 1.45
           }
         }
         ParentId: 5413985969182385702
@@ -1289,7 +1289,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14698875350380456389
+              Id: 11549531726905446930
             }
           }
         }
