@@ -1,6 +1,6 @@
 Assets {
   Id: 15156443327978326566
-  Name: "ObjectiveEnemySpawn"
+  Name: "ObjectiveEncounterSpawn"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

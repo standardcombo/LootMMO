@@ -679,7 +679,7 @@ Objects {
 }
 Objects {
   Id: 1523768206662357258
-  Name: "ObjectiveEnemySpawn"
+  Name: "ObjectiveEncounterSpawn"
   Transform {
     Location {
     }
