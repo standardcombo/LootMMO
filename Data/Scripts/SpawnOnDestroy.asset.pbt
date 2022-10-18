@@ -10,6 +10,10 @@ Assets {
           Id: 209252807676211461
         }
       }
+      Overrides {
+        Name: "cs:Scale"
+        Float: 1
+      }
     }
   }
   SerializationVersion: 119

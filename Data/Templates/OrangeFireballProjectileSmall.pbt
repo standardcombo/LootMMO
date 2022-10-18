@@ -1,13 +1,13 @@
 Assets {
-  Id: 14217196346262489139
-  Name: "Dragon Fireball Medium"
+  Id: 16197724571903786063
+  Name: "OrangeFireballProjectileSmall"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 4158428330768656943
+      RootId: 9431749848711998151
       Objects {
-        Id: 4158428330768656943
-        Name: "Dragon Fireball Medium"
+        Id: 9431749848711998151
+        Name: "FireballProjectileSmall"
         Transform {
           Scale {
             X: 1
@@ -15,44 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12672486409129060877
-        ChildIds: 9431749848711998151
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
-        }
-      }
-      Objects {
-        Id: 9431749848711998151
-        Name: "ClientContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-        ParentId: 4158428330768656943
-        ChildIds: 17633334249015374909
+        ParentId: 9726411393389382430
+        ChildIds: 16546042568459738957
         ChildIds: 9151018050947669736
+        ChildIds: 17633334249015374909
         ChildIds: 8929408256206219458
         ChildIds: 13745722591575214277
         UnregisteredParameters {
@@ -76,8 +42,117 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16546042568459738957
+        Name: "SpawnOnDestroy"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9431749848711998151
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SpawnOnDestroy"
+            AssetReference {
+              Id: 9850682398819614982
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12116595540199498749
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 9151018050947669736
+        Name: "Ball"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.3
+            Y: 0.3
+            Z: 0.3
+          }
+        }
+        ParentId: 9431749848711998151
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 7873046479115333864
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 2
+              G: 0.5
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 9426188198345824359
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17633334249015374909
@@ -130,69 +205,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9151018050947669736
-        Name: "Ball"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.3
-            Y: 0.3
-            Z: 0.3
-          }
-        }
-        ParentId: 9431749848711998151
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 8255411499280225015
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.199999809
-              G: 2
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 9426188198345824359
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 8929408256206219458
         Name: "Point Light"
         Transform {
@@ -222,8 +234,8 @@ Assets {
         Light {
           Intensity: 10
           Color {
-            G: 5
-            B: 0.666667223
+            R: 5
+            G: 0.8
             A: 1
           }
           VolumetricIntensity: 5
@@ -247,7 +259,7 @@ Assets {
           ShadowSlopeBias: 0.6
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -282,14 +294,6 @@ Assets {
             Name: "bp:Life"
             Float: 0.3
           }
-          Overrides {
-            Name: "bp:color"
-            Color {
-              R: 1.99999809
-              G: 15
-              A: 1
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -309,21 +313,12 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
-      }
-    }
-    Assets {
-      Id: 10118144510199222253
-      Name: "Fire and Flame Burning Loop Set 01 SFX"
-      PlatformAssetType: 10
-      PrimaryAsset {
-        AssetType: "AudioBlueprintAssetRef"
-        AssetId: "sfxabp_nature_fireloops_ref"
       }
     }
     Assets {
@@ -333,6 +328,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_sphere_001"
+      }
+    }
+    Assets {
+      Id: 10118144510199222253
+      Name: "Fire and Flame Burning Loop Set 01 SFX"
+      PlatformAssetType: 10
+      PrimaryAsset {
+        AssetType: "AudioBlueprintAssetRef"
+        AssetId: "sfxabp_nature_fireloops_ref"
       }
     }
     Assets {
