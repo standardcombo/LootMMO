@@ -5,6 +5,10 @@
 	
 	Defines an encounter in which enemies are randomly spawned
 	whenever a player enters the area.
+	
+	Dependencies
+	============
+	- Loot Drop Factory v3.0
 ]]
 
 -- QuestSystemConnection 
@@ -31,6 +35,12 @@ local ADDITIONAL_RADIUS = script:GetCustomProperty("AdditionalRadius")
 local TRIGGER_TEMPLATE = script:GetCustomProperty("TriggerTemplate")
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay")
 local MIN_PLAYER_LEVEL = script:GetCustomProperty("MinPlayerLevel")
+
+-- Rewards 
+local COMMON_LOOT_ID = script:GetCustomProperty("CommonLootId")
+local RARE_LOOT_ID = script:GetCustomProperty("RareLootId")
+local EPIC_LOOT_ID = script:GetCustomProperty("EpicLootId")
+local LEGENDARY_LOOT_ID = script:GetCustomProperty("LegendaryLootId")
 
 -- Search for these objects
 local QUEST_AREAS = script.parent:FindDescendantsByName("Quest Area")
@@ -201,6 +211,23 @@ function SpawnEnemies(level, playerPos)
 			break
 		end
 	end
+	
+	-- Register the encounter with Loot Drop Factory
+	local enemiesCopy = {}
+	for _,e in ipairs(enemies) do
+		table.insert(enemiesCopy, e)
+	end
+	local lootId = COMMON_LOOT_ID
+	if spawnData.legendaryCount > 0 then
+		lootId = LEGENDARY_LOOT_ID
+	
+	elseif spawnData.epicCount > 0 then
+		lootId = EPIC_LOOT_ID
+		
+	elseif spawnData.rareCount > 0 then
+		lootId = RARE_LOOT_ID
+	end
+	_G.LootDropFactory.RegisterEncounter(enemiesCopy, lootId)
 end
 
 function SpawnCluster(remainingPoints, spawnData, focusPoint, remainingInCluster)

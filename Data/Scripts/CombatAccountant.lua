@@ -5,6 +5,14 @@
 	
 	Keeps track of who dealt damage to what.
 	Can be consulted when crediting rewards or assists.
+	
+	API
+	===
+	- GetReportForTarget(Damageable/Player target)
+		Returns a combat report about the given object
+		
+	- ClearDataForTarget(Damageable/Player target)
+		Clears existing combat data for a given object
 ]]
 
 local API = {}

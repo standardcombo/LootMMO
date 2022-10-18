@@ -39,6 +39,22 @@ Assets {
         Float: 0.001
       }
       Overrides {
+        Name: "cs:CommonLootId"
+        String: "Common"
+      }
+      Overrides {
+        Name: "cs:RareLootId"
+        String: "Rare"
+      }
+      Overrides {
+        Name: "cs:EpicLootId"
+        String: "Epic"
+      }
+      Overrides {
+        Name: "cs:LegendaryLootId"
+        String: "Legendary"
+      }
+      Overrides {
         Name: "cs:TriggerTemplate"
         AssetReference {
           Id: 7623065181165501899
@@ -107,6 +123,22 @@ Assets {
       Overrides {
         Name: "cs:MinPlayerLevel:category"
         String: "EncounterArea"
+      }
+      Overrides {
+        Name: "cs:CommonLootId:category"
+        String: "Rewards"
+      }
+      Overrides {
+        Name: "cs:RareLootId:category"
+        String: "Rewards"
+      }
+      Overrides {
+        Name: "cs:EpicLootId:category"
+        String: "Rewards"
+      }
+      Overrides {
+        Name: "cs:LegendaryLootId:category"
+        String: "Rewards"
       }
     }
   }

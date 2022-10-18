@@ -77,9 +77,13 @@ local CANCEL_EVENT_ID = "LDFactory.Cancel"
 local auto_encounterId = 0
 local auto_dropId = 0
 
+local activeEncounters = {}
+local encounterDropIds = {}
+
 
 -- Server only
 function API.Drop(eventData)
+	-- Figure out the players who will see the drop
 	local players = {}
 	local target = eventData.object
 	if target and _G.CombatAccountant then
@@ -95,13 +99,65 @@ function API.Drop(eventData)
 	elseif Object.IsValid(eventData.killer) and eventData.killer:IsA("Player") then
 		table.insert(players, eventData.killer)
 	else
-		--?
+		-- Nobody gets the reward?
+		return
 	end
+	
+	-- Include allied party members. Everyone gets rewards!
+	local work_hashSet = {}
+	local parties = {}
+	for _,player in ipairs(players) do
+		-- Keep track of existing players, so we don't add duplicates
+		work_hashSet[player.id] = true
+		
+		if player.isInParty then
+			local partyInfo = player:GetPartyInfo()
+			parties[partyInfo] = true
+		end
+	end
+	for partyInfo,v in pairs(parties) do
+		for _,playerId in ipairs(partyInfo:GetMemberIds()) do
+			-- Avoid adding duplicates
+			if not work_hashSet[playerId] then
+				local player = Game.FindPlayer(playerId)
+				if player then
+					table.insert(players, player)
+					work_hashSet[playerId] = true
+				end
+			end
+		end
+	end
+	work_hashSet = nil
 	
 	-- Give resources
 	if eventData.resourceType and eventData.resourceAmount then
 		for _,player in ipairs(players) do
 			player:AddResource(eventData.resourceType, eventData.resourceAmount)
+		end
+	end
+	
+	-- Check if this NPC is part of a larger encounter
+	if target then
+		local encounterId = target.serverUserData.LDFactoryEncounterId
+		local encounterNpcs = activeEncounters[encounterId]
+		if encounterNpcs then
+			-- Remove this NPC from the encounter
+			for i,npc in ipairs(encounterNpcs) do
+				if npc == target then
+					table.remove(encounterNpcs, i)
+				end
+			end
+			
+			if #encounterNpcs > 0 then
+				-- There's still enemies in the encounter. Wait
+				return
+				
+			else
+				-- Encounter is complete. Change the drop to that of the encounter
+				if encounterDropIds[encounterId] then
+					eventData.lootId = encounterDropIds[encounterId]
+				end
+			end
 		end
 	end
 	
@@ -185,8 +241,28 @@ end
 
 
 -- Server only
-function API.RegisterEncounter(npcs, lootDropId)
-	-- TODO
+function API.RegisterEncounter(encounterNpcs, lootDropId)
+	auto_encounterId = auto_encounterId + 1
+	
+	activeEncounters[auto_encounterId] = encounterNpcs
+	encounterDropIds[auto_encounterId] = lootDropId
+	
+	for _,npc in ipairs(encounterNpcs) do
+		npc.serverUserData.LDFactoryEncounterId = auto_encounterId
+		
+		npc.destroyEvent:Connect(OnNpcDestroyed)
+	end
+end
+-- Cleanup destroyed NPCs
+function OnNpcDestroyed(npc)
+	local encounterId = npc.serverUserData.LDFactoryEncounterId
+	local encounterNpcs = activeEncounters[encounterId]
+	for i,obj in ipairs(encounterNpcs) do
+		if npc == obj then
+			table.remove(encounterNpcs, i)
+			break
+		end
+	end
 end
 
 
