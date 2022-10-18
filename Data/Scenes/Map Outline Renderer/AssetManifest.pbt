@@ -537,6 +537,19 @@ Assets {
   }
 }
 Assets {
+  Id: 2801073568035059033
+  Name: "NFT_Save"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "58c40a4164b14bf08b10e56602799d67"
+      Type {
+        Value: "mc:enetreferencetype:concurrentplayerpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 2175052947894896062
   Name: "Gold Pack 4"
   PlatformAssetType: 24

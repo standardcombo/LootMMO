@@ -3,9 +3,10 @@ while not _G["Character.Constructor"] do
 end
 
 local character = _G["Character.Constructor"]
-local SaveAPI = _G["Character.SaveApi"]
-local CLASS = _G["Character.Classes"]
-
+local SaveAPI   = _G["Character.SaveApi"]
+local CLASS     = _G["Character.Classes"]
+local Itemdat   = _G["Items"]
+local materials = _G["Items.Materials"]
 function OnReceiveMessage(player, params)
 	local splitString = { CoreString.Split(params.message, " ") }
 	if splitString[1] == "/help" then
@@ -23,12 +24,11 @@ function OnReceiveMessage(player, params)
 		newCharacter:SetOwner(player)
 	elseif splitString[1] == "/stat" then
 		local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-		local Ability = { CoreString.Split(params.message,'"') } 
-		print(Ability[2])
+		local Ability = { CoreString.Split(params.message, '"') }
 		local stats = newCharacter:GetComponent("Stats")
 		if stats then
 			stats:SetTempStat(Ability[2], tonumber(Ability[3]))
-            stats:SetStat(Ability[2], tonumber(Ability[3]))
+			stats:SetStat(Ability[2], tonumber(Ability[3]))
 		end
 		return
 	elseif splitString[1] == "/addpoint" then
@@ -36,6 +36,15 @@ function OnReceiveMessage(player, params)
 		local points = newCharacter:GetComponent("Points")
 		if points then
 			points:AddPoint()
+		end
+		return
+	elseif splitString[1] == "/additem" then
+		local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
+		local Inventory = newCharacter:GetComponent("Inventory")
+		local itemstring = { CoreString.Split(params.message, '"') }
+		local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+		if iteminfo then
+			Inventory:GetInventory():AddItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 		end
 		return
 	elseif splitString[1] == "/classes" then

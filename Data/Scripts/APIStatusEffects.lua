@@ -395,7 +395,7 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 
 				if statusEffectData.type == API.STATUS_EFFECT_TYPE_CUSTOM then
 					if statusEffectData.startFunction then
-						statusEffectData.startFunction(player)
+						statusEffectData.startFunction(player, tempTbl[SOURCE_KEY], tempTbl[DAMAGE_KEY], tempTbl[MULTIPLIER_KEY])
 					end
 				else
 					UpdatePlayerEffectState(player, statusEffectData.type)
@@ -545,7 +545,7 @@ local function UpdateEffect(player)
 
 					for j = tickCounts[player][i] + 1, ticksExpected do
 						tickCounts[player][i] = tickCounts[player][i] + 1
-						statusEffectData.tickFunction(player, sourcePlayer, trackerTbl[DAMAGE_KEY])
+						statusEffectData.tickFunction(player, sourcePlayer, trackerTbl[DAMAGE_KEY], trackerTbl[MULTIPLIER_KEY])
 
 						-- The tick might kill you, which removes all your status effects. The rest of this is no longer valid.
 						if player.isDead then

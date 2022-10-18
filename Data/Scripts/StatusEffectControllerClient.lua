@@ -74,7 +74,7 @@ function Tick(deltaTime)
 	UpdatePlayers()
 	for _, player in ipairs(AllPlayers) do
 		if Object.IsValid(player) then
-			local effects = API_SE.GetStatusEffectsOnPlayer(player)
+			local effects = API_SE.GetStatusEffectsOnPlayer(player) or {}
 
 			for i = 1, API_SE.MAX_STATUS_EFFECTS do
 				local effectObject = effectObjects[player][i]
@@ -87,7 +87,7 @@ function Tick(deltaTime)
 					else
 						effectObjects[player][i]:SetWorldPosition(player:GetWorldPosition())
 						effectObjects[player][i]:SetWorldRotation(player:GetWorldRotation())
-						effectObjects[player][i]:Follow(player,600)
+						effectObjects[player][i]:Follow(player, 600)
 						effectObjects[player][i].clientUserData.parent = player
 					end
 					effectObjects[player][i].clientUserData.owner = player -- added so a status template can know the player its attached to

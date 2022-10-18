@@ -1,17 +1,14 @@
 local ABILITY = script:GetCustomProperty("Ability"):WaitForObject()
-local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local EquipApi = _G["Character.EquipAPI"]
-
+local ROOT = script:GetCustomProperty("Root"):WaitForObject()
+local API_SE = _G['StatusEffects.API']
 
 local function Execute()
-	local owner = ABILITY.owner
-	local character = EquipApi.GetCurrentCharacter(owner)
-	if not character then
-		return
-	end
-
-	local stats = character:GetComponent("Stats")
-	stats:SetTempStat("AP", stats:GetStat("AP") + 100)
+	local owner = ABILITY.owner 
+	API_SE.ApplyStatusEffect(owner, "AttackUp", {
+		multiplier = 1.6,
+		duration = 20,
+	})
 end
 
 ABILITY.executeEvent:Connect(Execute)

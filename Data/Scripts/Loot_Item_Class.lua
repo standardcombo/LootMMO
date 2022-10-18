@@ -33,7 +33,11 @@ function Class:CalculateStats()
 		calculation[value] = 0
 		calculation[value] = math.floor(item[value] * scale)
 		if self.greatness >= 15 then
-			calculation[value] = math.floor(calculation[value] + self.order[value] * (greatness - 14))
+			local ordervalue = 0
+			if self.order then
+				ordervalue = self.order[value]
+			end
+			calculation[value] = math.floor(calculation[value] + ordervalue * (greatness - 14))
 		end
 	end
 	return calculation
