@@ -90,12 +90,13 @@ function Recovery()
 	Task.Wait(1)--Task.Wait(mod["Range"])
 	STAB_ANIMATION:Activate()
 	local bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
-	Task.Spawn(function()
-		while Object.IsValid(bashTemplate) do
-			bashTemplate:SetWorldPosition(ABILITY.owner:GetWorldPosition())
-			Task.Wait()
-		end
-	end)
+	-- Task.Spawn(function()
+	-- 	while Object.IsValid(bashTemplate) do
+	-- 		bashTemplate:SetWorldPosition(ABILITY.owner:GetWorldPosition())
+	-- 		Task.Wait()
+	-- 	end
+	-- end)
+	bashTemplate:AttachToPlayer(ABILITY.owner, 'lower_spine')
 	mods = ROOT.serverUserData.calculateModifier()
 	local nearbyEnemies = COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
 	local dmg = Damage.New()
