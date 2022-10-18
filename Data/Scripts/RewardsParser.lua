@@ -56,6 +56,15 @@ function _GrantReward(player, dataTable, rewardInstruction)
 	elseif instruction == "Ref" then
 		-- Recursive
 		_Parse(player, dataTable, param)
+		
+	elseif instruction == "Loop" then
+		local loopCount, ref = CoreString.Split(param, "=")
+		loopCount = _ParseAmount(loopCount)
+		for i = 1,loopCount do
+			_Parse(player, dataTable, ref)
+			Task.Wait()
+			if not Object.IsValid(player) then return end
+		end
 
 	elseif instruction == "XP" then
 		-- Add XP
