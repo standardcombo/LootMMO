@@ -596,14 +596,6 @@ Objects {
   ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
-      Name: "cs:QuestID"
-      String: "Beasts1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
       Name: "cs:EnemyIDs"
       String: "Raptor"
     }

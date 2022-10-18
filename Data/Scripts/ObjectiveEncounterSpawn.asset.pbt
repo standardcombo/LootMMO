@@ -5,14 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:QuestID"
-        String: ""
-      }
-      Overrides {
-        Name: "cs:ObjectiveIndex"
-        Int: 0
-      }
-      Overrides {
         Name: "cs:MinPlayerLevel"
         Int: 0
       }
@@ -75,14 +67,6 @@ Assets {
       Overrides {
         Name: "cs:DespawnDelay"
         Float: 10
-      }
-      Overrides {
-        Name: "cs:QuestID:category"
-        String: "QuestSystemConnection"
-      }
-      Overrides {
-        Name: "cs:ObjectiveIndex:category"
-        String: "QuestSystemConnection"
       }
       Overrides {
         Name: "cs:enemyDefinitions:category"

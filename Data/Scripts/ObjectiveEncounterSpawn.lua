@@ -11,10 +11,6 @@
 	- Loot Drop Factory v3.0
 ]]
 
--- QuestSystemConnection 
-local QUEST_ID = script:GetCustomProperty("QuestID")
-local OBJECTIVE_INDEX = script:GetCustomProperty("ObjectiveIndex")
-
 -- EnemyInfo 
 local ENEMY_DEFINITIONS = require(script:GetCustomProperty("enemyDefinitions"))
 local ENEMY_IDS = script:GetCustomProperty("EnemyIDs")
@@ -132,7 +128,7 @@ function SpawnEnemies(level, playerPos)
 	spawnData.remaining = ENEMY_COUNT
 	if spawnData.remaining > #SPAWN_POSITIONS then
 		spawnData.remaining = #SPAWN_POSITIONS
-		warn("Not enough spawn points for quest "..QUEST_ID..", "..OBJECTIVE_INDEX)
+		warn("Not enough spawn points for encounter "..script.parent.id)
 	end
 	
 	-- Look towards the player
@@ -395,15 +391,3 @@ for _,area in ipairs(QUEST_AREAS) do
 end
 questAreasCenter = questAreasCenter / #QUEST_AREAS
 
-
---[[
-Events.Connect("Quest.Changed", function(player)
-	print("ObjectiveEnemySpawn")
-	if not isSpawned then
-		local obj = _G.QuestController.GetQuestObjective(QUEST_ID, OBJECTIVE_INDEX)
-		if _G.QuestController.IsActive(player, obj) then
-
-		end
-	end
-end)
-]]
