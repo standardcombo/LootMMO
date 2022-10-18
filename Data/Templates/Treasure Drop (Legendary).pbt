@@ -118,6 +118,12 @@ Assets {
             Name: "cs:OpenDelay"
             Float: 3.1
           }
+          Overrides {
+            Name: "cs:SparklesVfx"
+            ObjectReference {
+              SubObjectId: 16390505701693381479
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -161,6 +167,7 @@ Assets {
         ChildIds: 18418057035667650221
         ChildIds: 8773490158630797204
         ChildIds: 6188882155452312531
+        ChildIds: 16390505701693381479
         ChildIds: 1493808738605153233
         ChildIds: 9378122644316549004
         ChildIds: 621861363291480293
@@ -351,7 +358,7 @@ Assets {
         Transform {
           Location {
             X: 2.17982724e-05
-            Z: 23.9787102
+            Z: -2.92053366
           }
           Rotation {
           }
@@ -399,6 +406,57 @@ Assets {
         Blueprint {
           BlueprintAsset {
             Id: 16693287233971223649
+          }
+          TeamSettings {
+          }
+          Vfx {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16390505701693381479
+        Name: "Callout Sparkle"
+        Transform {
+          Location {
+            Z: 13.468997
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.364820719
+            Y: 0.99902308
+            Z: 0.530728757
+          }
+        }
+        ParentId: 16511175990383211684
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.6
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14231394991004806063
           }
           TeamSettings {
           }
@@ -472,8 +530,8 @@ Assets {
         }
         ParentId: 16511175990383211684
         ChildIds: 1496633549042646669
-        ChildIds: 1853838326590283864
         ChildIds: 11496358719907627023
+        ChildIds: 1853838326590283864
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -543,69 +601,6 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1853838326590283864
-        Name: "Fantasy Chest Treasure Pile 01"
-        Transform {
-          Location {
-            X: -0.238313302
-            Y: 5.03677802e-05
-            Z: -8.16342163
-          }
-          Rotation {
-            Yaw: 90.0000153
-          }
-          Scale {
-            X: 1.50566411
-            Y: 0.752832055
-            Z: 0.903398514
-          }
-        }
-        ParentId: 9378122644316549004
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 15153963755059509736
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 3533190463953898497
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 11496358719907627023
         Name: "Fantasy Chest Lid 03"
         Transform {
@@ -648,6 +643,69 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 9927175959700879828
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1853838326590283864
+        Name: "Fantasy Chest Treasure Pile 01"
+        Transform {
+          Location {
+            X: -0.238313317
+            Y: 5.03677838e-05
+            Z: -8.16342354
+          }
+          Rotation {
+            Yaw: 90.0000153
+          }
+          Scale {
+            X: 1.50566411
+            Y: 0.752832055
+            Z: 0.703909636
+          }
+        }
+        ParentId: 9378122644316549004
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 15153963755059509736
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 3533190463953898497
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -942,6 +1000,15 @@ Assets {
       }
     }
     Assets {
+      Id: 14231394991004806063
+      Name: "Callout Sparkle"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_sparkles_volume_vfx"
+      }
+    }
+    Assets {
       Id: 16786565957515303135
       Name: "Magic Poof Sparkle 01 SFX"
       PlatformAssetType: 7
@@ -960,21 +1027,21 @@ Assets {
       }
     }
     Assets {
-      Id: 3533190463953898497
-      Name: "Fantasy Chest Treasure Pile 01"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_fantasy_chest_treasure_pile_001_ref"
-      }
-    }
-    Assets {
       Id: 9927175959700879828
       Name: "Fantasy Chest Lid 03"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_fantasy_chest_lid_003_ref"
+      }
+    }
+    Assets {
+      Id: 3533190463953898497
+      Name: "Fantasy Chest Treasure Pile 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_fantasy_chest_treasure_pile_001_ref"
       }
     }
     PrimaryAssetId {

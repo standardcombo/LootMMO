@@ -40,6 +40,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:SparklesVfx"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:NormalGeo"
         ObjectReference {
         }

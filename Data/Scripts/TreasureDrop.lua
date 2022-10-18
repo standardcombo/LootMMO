@@ -16,6 +16,7 @@ local FADE_GEO = script:GetCustomProperty("FadeGeo"):WaitForObject()
 local POP_ANGULAR_IMPULSE = script:GetCustomProperty("PopAngularImpulse")
 local OPEN_DELAY = script:GetCustomProperty("OpenDelay")
 local VFX_DELAY = script:GetCustomProperty("VfxDelay")
+local SPARKLES_VFX = script:GetCustomProperty("SparklesVfx"):WaitForObject()
 local PICKUP_DELAY = script:GetCustomProperty("PickupDelay")
 local PICKUP_SFX = script:GetCustomProperty("PickupSfx"):WaitForObject()
 
@@ -66,6 +67,9 @@ OPEN_SFX:Play()
 -- Play the opening VFX
 Task.Wait(VFX_DELAY)
 OPEN_VFX:Play()
+if SPARKLES_VFX then
+	SPARKLES_VFX:Play()
+end
 
 
 -- Allow pickup
@@ -90,6 +94,10 @@ function FadeOutAndDestroy()
 	FADE_GEO.visibility = Visibility.FORCE_ON
 	FADE_GEO.parent = nil
 	PHYSICS_OBJECT.collision = Collision.FORCE_OFF
+	
+	if SPARKLES_VFX then
+		SPARKLES_VFX:Stop()
+	end
 	
 	local fadeChildren = FADE_GEO:GetChildren()
 	local startTime = time()

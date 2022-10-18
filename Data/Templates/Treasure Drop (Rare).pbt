@@ -118,6 +118,12 @@ Assets {
             Name: "cs:OpenDelay"
             Float: 2.4
           }
+          Overrides {
+            Name: "cs:SparklesVfx"
+            ObjectReference {
+              SubObjectId: 17344722889624313970
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -161,6 +167,7 @@ Assets {
         ChildIds: 2306203356018508373
         ChildIds: 11987139790689815404
         ChildIds: 9977726582651592491
+        ChildIds: 17344722889624313970
         ChildIds: 14636771166308110121
         ChildIds: 6755005997256694644
         ChildIds: 15508736221841052701
@@ -399,6 +406,57 @@ Assets {
         Blueprint {
           BlueprintAsset {
             Id: 16693287233971223649
+          }
+          TeamSettings {
+          }
+          Vfx {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17344722889624313970
+        Name: "Callout Sparkle"
+        Transform {
+          Location {
+            Z: 26.8578281
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.723131716
+            Y: 0.723131716
+            Z: 0.723131716
+          }
+        }
+        ParentId: 4231177912938217564
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.6
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14231394991004806063
           }
           TeamSettings {
           }
@@ -1113,6 +1171,15 @@ Assets {
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
         AssetId: "fxbp_resurrection"
+      }
+    }
+    Assets {
+      Id: 14231394991004806063
+      Name: "Callout Sparkle"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_sparkles_volume_vfx"
       }
     }
     Assets {
