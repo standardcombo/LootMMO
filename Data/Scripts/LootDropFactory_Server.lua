@@ -21,7 +21,23 @@ local dropId = 0
 
 -- Server only
 function API.Drop(eventData)
-	local players = Game.GetPlayers() -- TODO
+	local players = {}
+	if _G.CombatAccountant then
+		local target = eventData.object
+		local report = _G.CombatAccountant.GetReportForTarget(target)
+		
+		for sourceId,v in pairs(report.preDamage) do
+			local player = Game.FindPlayer(sourceId)
+			if player then
+				table.insert(players, player)
+			end
+		end
+		
+	elseif Object.IsValid(eventData.killer) and eventData.killer:IsA("Player") then
+		table.insert(players, eventData.killer)
+	else
+		--?
+	end
 	
 	-- Give resources
 	if eventData.resourceType and eventData.resourceAmount then

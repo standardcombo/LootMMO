@@ -198,7 +198,7 @@ function DropRewards(killer)
 	
 	if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
 		local params = {
-			npc = ROOT,
+			object = ROOT,
 			killer = killer,
 			lootId = LOOT_ID,
 			position = ROOT:GetWorldPosition(),
