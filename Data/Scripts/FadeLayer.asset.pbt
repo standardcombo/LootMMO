@@ -4,6 +4,11 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:Image"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 119

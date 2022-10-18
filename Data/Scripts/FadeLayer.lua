@@ -28,7 +28,7 @@
 		Changes the layer to black over time.
 ]]
 
-local IMAGE = script.parent
+local IMAGE = script:GetCustomProperty("Image"):WaitForObject()
 local LERP_SPEED = 0.65
 
 Task.Wait(0.1)

@@ -1,6 +1,32 @@
 Name: "Top-Level UI"
 RootId: 764194984864902660
 Objects {
+  Id: 3902248818464519377
+  Name: "Fade Layer"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 764194984864902660
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14705646024795445827
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Fade Layer"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9913224587088657507
+    }
+  }
+}
+Objects {
   Id: 13538073745225936914
   Name: "Reward Toast UI"
   Transform {
