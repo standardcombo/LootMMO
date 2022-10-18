@@ -3,6 +3,7 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local function COMBAT()
     return require(script:GetCustomProperty('Combat_Connector'))
 end
+local API_SE = _G["StatusEffects.API"]
 
 local ABILITY = ROOT:GetCustomProperty('ability'):WaitForObject()
 
@@ -18,7 +19,7 @@ function Tick()
         return
     end
 
-    for key, value in pairs(
+    for key, enemy in pairs(
         COMBAT().FindInSphere(
             TRIGGER:GetWorldPosition(),
             TRIGGER:GetWorldScale().z * 50,
@@ -31,13 +32,17 @@ function Tick()
         dmg.sourcePlayer = ABILITY.owner
         dmg.sourceAbility = ABILITY
         local attackData = {
-            object = value,
+            object = enemy,
             damage = dmg,
             source = dmg.sourcePlayer,
             position = nil,
             rotation = nil,
             tags = {id = 'Mage_Q'}
         }
+        API_SE.ApplyStatusEffect(enemy, "Slow", {
+			source = ABILITY.owner,
+			--duration = mod["Duration"]
+		})
         COMBAT().ApplyDamage(attackData)
     end
     Task.Wait(0.25)

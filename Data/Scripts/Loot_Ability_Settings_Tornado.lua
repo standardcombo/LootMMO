@@ -8,7 +8,8 @@ local modifiers =
         'DOT',
         'Cooldown',
         'Radius',
-        'Duration'
+        'Duration',
+        'Slow'
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
@@ -44,6 +45,15 @@ modifiers['Duration'].calculation = function(stats)
     local min = 5
     local max = 10
     return min + (max - min) * stats.W / 172
+end
+
+--Formula: Min + (Max - Min) * AGI / 172
+modifiers['Slow'].calString = "0.2 + (0.8 - 0.2) * AGI / 172"
+modifiers['Slow'].calculation = function(stats)
+    local min = 0.2
+    local max = 0.8
+    local AGI = stats.A
+    return min + (max - min) * AGI / 172
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
