@@ -153,7 +153,6 @@ Objects {
   Name: "Study"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -190,7 +189,6 @@ Objects {
   Name: "Pig"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -227,7 +225,6 @@ Objects {
   Name: "Potions"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -264,7 +261,6 @@ Objects {
   Name: "Lv5"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -301,7 +297,6 @@ Objects {
   Name: "Craft1"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -338,7 +333,6 @@ Objects {
   Name: "Raid2"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -375,7 +369,6 @@ Objects {
   Name: "Equip"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -408,11 +401,46 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 5492091841538764092
+  Name: "Beasts2"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17798732759644559527
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Beasts2"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 17848771781286014444
   Name: "Beasts1"
   Transform {
     Location {
-      Z: 40000
     }
     Rotation {
     }
@@ -449,7 +477,6 @@ Objects {
   Name: "Raid1"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -523,7 +550,6 @@ Objects {
   Name: "Welcome"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -560,7 +586,6 @@ Objects {
   Name: "ClientContext"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }
@@ -2727,7 +2752,6 @@ Objects {
   Name: "ServerContext"
   Transform {
     Location {
-      Z: -14645.0869
     }
     Rotation {
     }

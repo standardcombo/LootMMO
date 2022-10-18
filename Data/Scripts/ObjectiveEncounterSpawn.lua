@@ -381,7 +381,7 @@ local params = {
 	parent = script.parent
 }
 for _,area in ipairs(QUEST_AREAS) do
-	params.position = area:GetWorldPosition()
+	params.position = area:GetPosition()
 	params.scale = area:GetScale() + Vector3.ONE * ADDITIONAL_RADIUS / 100
 	local trigger = World.SpawnAsset(TRIGGER_TEMPLATE, params)
 	trigger.beginOverlapEvent:Connect(OnBeginOverlap)

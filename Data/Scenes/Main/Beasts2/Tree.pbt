@@ -1,16 +1,16 @@
-Name: "Beasts1"
-RootId: 17848771781286014444
+Name: "Beasts2"
+RootId: 5492091841538764092
 Objects {
-  Id: 1216609040261058152
+  Id: 18269381166059076043
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -3655.09448
-      Y: 6271.22266
-      Z: 42745.8438
+      X: -5150
+      Y: -16050
+      Z: 43056.5781
     }
     Rotation {
-      Yaw: -94.603363
+      Yaw: 107.896622
     }
     Scale {
       X: 1
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -72,16 +72,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7520399341805677515
+  Id: 976378152099177617
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -5679.11816
-      Y: 6814.08
-      Z: 42752.7227
+      X: -3072.30371
+      Y: -15776.9756
+      Z: 42937.2188
     }
     Rotation {
-      Yaw: -152.744629
+      Yaw: 49.7552567
     }
     Scale {
       X: 1
@@ -89,7 +89,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -143,16 +143,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10413449198827249328
+  Id: 13425850831422293604
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -5456.92969
-      Y: 7275.87158
-      Z: 42746.6602
+      X: -3100.86
+      Y: -16288.6426
+      Z: 43045.0273
     }
     Rotation {
-      Yaw: -169.670013
+      Yaw: 32.8299332
     }
     Scale {
       X: 1
@@ -160,7 +160,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -214,16 +214,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16193978415028078486
+  Id: 2661833170126569680
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -1126.72021
-      Y: 6906.29248
-      Z: 42626.1953
+      X: -7242.88428
+      Y: -17604.2949
+      Z: 43424.2266
     }
     Rotation {
-      Yaw: -169.670044
+      Yaw: 32.8298645
     }
     Scale {
       X: 1
@@ -231,7 +231,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -285,16 +285,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6156277920054950659
+  Id: 8821535715047265820
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -1604.46387
-      Y: 7385.32471
-      Z: 42673.6133
+      X: -6618.1875
+      Y: -17864.0371
+      Z: 43521.3672
     }
     Rotation {
-      Yaw: -152.744629
+      Yaw: 49.7552567
     }
     Scale {
       X: 1
@@ -302,7 +302,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -356,16 +356,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6600031699183343162
+  Id: 9060820636674982628
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -4224.72949
-      Y: 7155.35254
-      Z: 42751.5859
+      X: -4285.38525
+      Y: -16648.8398
+      Z: 43209.2383
     }
     Rotation {
-      Yaw: -94.603363
+      Yaw: 107.896622
     }
     Scale {
       X: 1
@@ -373,7 +373,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -427,15 +427,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 743125130032740494
+  Id: 8825262709701628185
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -4708.59375
-      Y: 4309.21436
-      Z: 42751.5859
+      X: -4711.43115
+      Y: -13850
+      Z: 42859.7109
     }
     Rotation {
+      Yaw: -157.500031
     }
     Scale {
       X: 1
@@ -443,7 +444,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -497,15 +498,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7414480708433334331
+  Id: 8288128175019914838
   Name: "Quest Area"
   Transform {
     Location {
-      X: -3254.677
-      Y: 5991.09766
-      Z: 42751.5859
+      X: -5225.32617
+      Y: -16071.377
+      Z: 42949.6406
     }
     Rotation {
+      Yaw: -157.500031
     }
     Scale {
       X: 38
@@ -513,7 +515,7 @@ Objects {
       Z: 38
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -578,107 +580,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8164303100992641847
-  Name: "Spawn Point - Beasts1"
-  Transform {
-    Location {
-      X: -4568.62061
-      Y: 967.691101
-      Z: 43349.3633
-    }
-    Rotation {
-      Yaw: 94.0753479
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17848771781286014444
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  PlayerSpawnPoint {
-    TeamInt: 1
-    PlayerScaleMultiplier: 1
-    SpawnKey: "Beasts1"
-    SpawnEffectsTemplate {
-      Id: 841534158063459245
-    }
-    ShouldDecrowdPlayers: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3504960791711328446
-  Name: "ObjectiveEventListener"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17848771781286014444
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:QuestID"
-      String: "Beasts1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:EventID"
-      String: "Quest.NPCDied"
-    }
-    Overrides {
-      Name: "cs:ObjectID"
-      String: "Beast"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9246345034586664616
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 11583678914648295619
+  Id: 17543181731112145621
   Name: "ObjectiveEncounterSpawn"
   Transform {
     Location {
@@ -691,7 +593,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17848771781286014444
+  ParentId: 5492091841538764092
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -708,85 +610,6 @@ Objects {
     Overrides {
       Name: "cs:MinPlayerLevel"
       Int: 2
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 15156443327978326566
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1523768206662357258
-  Name: "ObjectiveEncounterSpawn"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17848771781286014444
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:QuestID"
-      String: "Beasts1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:EnemyIDs"
-      String: "Raptor"
-    }
-    Overrides {
-      Name: "cs:CommonLootId"
-      String: "Nothing"
-    }
-    Overrides {
-      Name: "cs:RareLootId"
-      String: "Nothing"
-    }
-    Overrides {
-      Name: "cs:EpicLootId"
-      String: "Nothing"
-    }
-    Overrides {
-      Name: "cs:LegendaryLootId"
-      String: "Nothing"
-    }
-    Overrides {
-      Name: "cs:MaxPlayerLevel"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:ChanceEpicEnemy"
-      Float: 0
-    }
-    Overrides {
-      Name: "cs:ChanceLegendaryEnemy"
-      Float: 0
     }
   }
   Collidable_v2 {
