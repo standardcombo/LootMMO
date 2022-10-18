@@ -6,15 +6,25 @@
 	Parses reward instructions for the Loot Drop and Quest systems.
 	Uses a meta-scripting language that define complex reward sequences.
 	
+	
 	Usage
 	=====
 	Added as a require() script to other scripts. Then call Parse()
+	
+	
+	Dependencies
+	============
+	- RewardsAdapter.lua: A small interface called by the Rewards Parser.
+		Allows easier integration with various inventory systems. Implement
+		the adapter to work with your game.
+	
 	
 	API
 	===
 	- Parse(player, dataTable, rowId)
 		Runs the instructions found in the given data table, at row "rowId".
 		Instructions should be in the column named "rewards".
+	
 	
 	Meta-scripting
 	==============
@@ -184,36 +194,10 @@ end
 
 function _GrantItem(player, definition, amount)
 	--print("Granting item: ".. definition.id .." x".. amount)
-	-- Popup UI that shows the player what they got
-	local toastParams = {
-		type = definition.rarity,
-		message = definition.name,
-		icon = definition.icon,
-		flipH = definition.flipIconH,
-		flipV = definition.flipIconV,
-		sfx = definition.pickupSfx,
-	}
-	if amount and amount > 1 then
-		toastParams.message = amount .."x ".. definition.name
-	end
-	Events.BroadcastToPlayer(player, "RewardToast", toastParams)
-
-	-- Play cinematic/animation of the player finding the item
-	-- Many rewards will not have this
-	if _G.FoundItemCinematic and definition.pickupAsset then
-		_G.FoundItemCinematic.Show(player, definition.pickupAsset)
-	end
-	
-	-- Actually grant the item (some reward elements may not have an item to grant)
-	if definition.itemAsset and _G["Character.EquipAPI"] then
-		local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-		if char then
-			local inv = char:GetComponent("Inventory"):GetInventory()
-			inv:AddItem(definition.itemAsset, {count = amount})
-		else
-			error("Tried to grant item ".. definition.id .." but player ".. 
-			      player.name .." didn't have a character")
-		end
+	if _G.RewardsAdapter then
+		_G.RewardsAdapter.AddItem(player, definition, amount)
+	else
+		warn("Missing rewards adapter. Implement _G.RewardsAdapter.AddItem()")
 	end
 end
 

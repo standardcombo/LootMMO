@@ -42,6 +42,13 @@ local function Drop(eventData)
 	
 	-- Rotation for treasure
 	local rotation = eventData.rotation
+	if not rotation then
+		-- Look at the local player
+		local playerPos = Game.GetLocalPlayer():GetWorldPosition()
+		local forward = playerPos - position
+		forward.z = 0
+		rotation = Rotation.New(forward, Vector3.UP)
+	end
 	rotation.x = rotation.x + math.random(-DROP_ROTATION_RNG, DROP_ROTATION_RNG)
 	rotation.y = rotation.y + math.random(-DROP_ROTATION_RNG, DROP_ROTATION_RNG)
 	rotation.z = rotation.z + math.random(-DROP_ROTATION_RNG, DROP_ROTATION_RNG)

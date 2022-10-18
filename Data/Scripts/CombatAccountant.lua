@@ -1,6 +1,6 @@
 --[[
 	Combat Accountant (server)
-	v1.0
+	v1.0 - 2022/10/20
 	by: standardcombo
 	
 	Keeps track of who dealt damage to what.

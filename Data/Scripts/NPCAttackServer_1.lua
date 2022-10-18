@@ -134,7 +134,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 		source = script.parent:FindChildByName("NPCAIServer"),
 		item = script,
 		position = pos,
-		rotation = rot,
+		--rotation = rot, --Without this parameter treasures will point at the local player
 		tags = TAGS().GetTags(ROOT)
 	}
 

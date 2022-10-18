@@ -29,7 +29,7 @@ Objects {
   ChildIds: 14456150676684712690
   ChildIds: 3833344059936018977
   ChildIds: 4238179513439010723
-  ChildIds: 12482369806165284166
+  ChildIds: 6208673823758755536
   ChildIds: 11609901366367975824
   UnregisteredParameters {
   }
@@ -76,8 +76,8 @@ Objects {
   }
 }
 Objects {
-  Id: 12482369806165284166
-  Name: "CombatAccountant"
+  Id: 6208673823758755536
+  Name: "RewardsAdapter"
   Transform {
     Location {
     }
@@ -104,7 +104,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 417526496155837014
+      Id: 14343187592492468620
     }
   }
   NetworkRelevanceDistance {
