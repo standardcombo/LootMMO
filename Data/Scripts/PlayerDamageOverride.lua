@@ -1,4 +1,6 @@
 local EquipAPI = _G["Character.EquipAPI"]
+local MIN_HEADSHOT_MULT = 1.1
+local MAX_HEADSHOT_MULT = 2.0
 
 local function OnGoingToTakeDamage(attackData)
 	local item = attackData.item
@@ -17,12 +19,13 @@ local function OnGoingToTakeDamage(attackData)
 		local stats = char:GetComponent("Stats")
 		--Check if Headshot tag is applied
 		if headshot then
-			dmgamout = stats:GetTempStat("AP") * 1.25
+			-- Formula: AP * (Min + (Max - Min) * AGI / 172)
+			dmgamout = CoreMath.Round(stats:GetTempStat("AP") * (MIN_HEADSHOT_MULT + (MAX_HEADSHOT_MULT - MIN_HEADSHOT_MULT) * stats:GetStat("A") / 172))
 		else
-			dmgamout = stats:GetTempStat("AP")
+			dmgamout = CoreMath.Round(stats:GetTempStat("AP"))
 		end
 	end
-	damage.amount = math.floor(dmgamout)
+	damage.amount = CoreMath.Round(dmgamout)
 end
 
 Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
