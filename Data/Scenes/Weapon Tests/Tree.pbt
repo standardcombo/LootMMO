@@ -29,6 +29,7 @@ Objects {
   ChildIds: 14456150676684712690
   ChildIds: 3833344059936018977
   ChildIds: 4238179513439010723
+  ChildIds: 12482369806165284166
   ChildIds: 11609901366367975824
   UnregisteredParameters {
   }
@@ -73,6 +74,43 @@ Objects {
       Id: 15438156706895969314
     }
   }
+}
+Objects {
+  Id: 12482369806165284166
+  Name: "CombatAccountant"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 417526496155837014
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 4238179513439010723
@@ -379,10 +417,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "cs:LootId"
-          String: "Rare"
         }
         Overrides {
           Name: "Damageable.StartingHitPoints"

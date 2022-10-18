@@ -105,6 +105,11 @@ function API.Drop(eventData)
 	end
 	
 	-- Set time limit
+	local timeLimit = metadataRow.timeLimit
+	if timeLimit <= 5 then
+		warn("Time limit is too low for Loot Drop ".. lootDropId ..", setting it to 30 seconds.")
+		timeLimit = 30
+	end
 	Task.Spawn(function()
 		for _,player in ipairs(Game.GetPlayers()) do
 			if player.serverUserData.lootDrops
@@ -115,7 +120,7 @@ function API.Drop(eventData)
 			end
 		end
 	end, 
-	metadataRow.timeLimit)
+	timeLimit)
 end
 
 
