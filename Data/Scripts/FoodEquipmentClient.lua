@@ -96,7 +96,8 @@ function OnPropertyChanged(obj, propName, newValue)
 	elseif propName == "usesRemaining" then
 		usesRemaining = EQUIPMENT:GetCustomProperty("usesRemaining")
 	end
-	if player == EQUIPMENT.owner then return end
+
+	if PLAYER == EQUIPMENT.owner then return end
 	
 	if propName == "isActive" then
 		if EQUIPMENT:GetCustomProperty("isActive") then
