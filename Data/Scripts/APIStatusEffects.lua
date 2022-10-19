@@ -176,7 +176,7 @@ function UpdatePlayerEffectState(player, effectType)
 		else
 			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
 			if NPCScript then
-				NPCScript.context.SetState(0)
+				NPCScript.context.GoToSleepState()
 			end
 		end
 		return
@@ -192,7 +192,7 @@ function UpdatePlayerEffectState(player, effectType)
 				else
 					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
 					if NPCScript then
-						NPCScript.context.SetState(6)
+						NPCScript.context.GoToDeadState()
 					end
 				end
 				return
@@ -203,7 +203,7 @@ function UpdatePlayerEffectState(player, effectType)
 		else
 			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
 			if NPCScript then
-				NPCScript.context.SetState(0)
+				NPCScript.context.GoToSleepState()
 			end
 		end
 		return
@@ -375,8 +375,8 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 			local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
 
 			if not trackerTbl then
-				--tracker:SetNetworkedCustomProperty(GetIdPropertyName(i), id)
-				--tracker:SetNetworkedCustomProperty(GetStartTimePropertyName(i), time())
+				--tracker:SetCustomProperty(GetIdPropertyName(i), id)
+				--tracker:SetCustomProperty(GetStartTimePropertyName(i), time())
 
 				local tempTbl = {
 					[ID_KEY] = id,
@@ -387,7 +387,7 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 					[MULTIPLIER_KEY] = optionalParameters.multiplier
 				}
 
-				tracker:SetNetworkedCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
+				tracker:SetCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
 				tickCounts[player] = tickCounts[player] or {}
 				tickCounts[player][i] = 0
 
@@ -421,7 +421,7 @@ function API.RemoveStatusEffect(player, index)
 	local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(index)))
 	if trackerTbl and trackerTbl[ID_KEY] ~= "" then
 		local id = trackerTbl[ID_KEY]
-		tracker:SetNetworkedCustomProperty(API.GetSourceProperty(index), "")
+		tracker:SetCustomProperty(API.GetSourceProperty(index), "")
 		tickCounts[player][index] = nil
 
 		local statusEffectData = STATUS_EFFECT_ID_TABLE[id]

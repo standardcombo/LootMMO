@@ -191,6 +191,14 @@ function GoToStunState()
 	SetState(STATE_STUNNED)
 end
 
+function GoToSleepState()
+	SetState(STATE_SLEEPING)
+end
+
+function GoToDeadState()
+	SetState(STATE_DEAD_1)
+end
+
 function Tick(deltaTime)
 	stateTime = stateTime + deltaTime
 	logicStepDelay = logicStepDelay - deltaTime
