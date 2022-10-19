@@ -279,7 +279,6 @@ Objects {
     }
   }
   ParentId: 14285885658177600987
-  ChildIds: 8160510952579734017
   ChildIds: 8610507585124379868
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -367,46 +366,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 3859698148828962870
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 8160510952579734017
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 475648902908340293
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-    MinDetailLevel {
-      Value: "mc:edetaillevel:low"
-    }
-    MaxDetailLevel {
-      Value: "mc:edetaillevel:ultra"
     }
   }
   NetworkRelevanceDistance {
