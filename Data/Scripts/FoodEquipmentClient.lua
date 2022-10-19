@@ -1,7 +1,7 @@
 --[[
 	Food Equipment - Client
 	by: standardcombo
-	v1.1
+	v1.1.1
 --]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
