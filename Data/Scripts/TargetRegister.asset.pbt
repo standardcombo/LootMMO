@@ -10,6 +10,11 @@ Assets {
           Id: 13229274731817534197
         }
       }
+      Overrides {
+        Name: "cs:DamageableObject"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 119

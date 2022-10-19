@@ -826,7 +826,6 @@ Assets {
         ChildIds: 9291365561488795080
         ChildIds: 1933870672587397079
         ChildIds: 7973274874855468207
-        ChildIds: 15580345780560316688
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -996,6 +995,7 @@ Assets {
         ParentId: 14978344754035557680
         ChildIds: 15544449444169622211
         ChildIds: 5797353628081911207
+        ChildIds: 15580345780560316688
         ChildIds: 11456907142275360696
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1110,6 +1110,52 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 15580345780560316688
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 89.8144531
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.99999952
+            Y: 1.99999952
+            Z: 1.99999952
+          }
+        }
+        ParentId: 7973274874855468207
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageableObject"
+            ObjectReference {
+              SubObjectId: 2942477774013888814
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 11456907142275360696
         Name: "Spider Rig"
         Transform {
@@ -1198,44 +1244,6 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:low"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15580345780560316688
-        Name: "TargetRegister"
-        Transform {
-          Location {
-            Z: 89.8144531
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.99999952
-            Y: 1.99999952
-            Z: 1.99999952
-          }
-        }
-        ParentId: 14978344754035557680
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1011375461586851027
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

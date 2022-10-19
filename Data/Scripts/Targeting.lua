@@ -2,8 +2,8 @@
 local TARGETING_API = require(script:GetCustomProperty('Targeting_API'))
 local TARGERT_RENDER = script:GetCustomProperty('TargertRender'):WaitForObject()
 
--- 30 meters
-local MAX_RANGE = 3000 ^ 2
+-- 34 meters
+local MAX_RANGE = 3400 ^ 2
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
@@ -18,7 +18,10 @@ function ClosestPointOnInfinateLine(vectorStart, vectorEnd, vectorPoint)
 end
 
 function Tick(dt)
-	if not Object.IsValid(CurrentTarget) then
+	if not Object.IsValid(CurrentTarget) 
+	or CurrentTarget.context == nil 
+	or CurrentTarget.context.IsDead()
+	then
 		CurrentTarget = nil
 	end
 	if not CurrentTarget then
@@ -59,6 +62,10 @@ function SelectTarget()
 	local LookEnd = LookPos + LookDir
 	
 	for index, target in ipairs(TARGETING_API.GetTargets()) do
+		if target.context and target.context.IsDead() then
+			goto continue
+		end
+		
 		local targetPos = target:GetWorldPosition()
 		
 		local viewVector = targetPos - LookPos
@@ -72,7 +79,10 @@ function SelectTarget()
 				smallestTarget = target
 			end
 		end
+		
+		:: continue ::
 	end
+	
 	CurrentTarget = smallestTarget
 	
 	if not CurrentTarget then
