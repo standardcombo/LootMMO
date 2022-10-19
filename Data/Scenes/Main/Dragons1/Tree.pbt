@@ -655,12 +655,12 @@ Objects {
   Name: "Spawn Point - Dragons1"
   Transform {
     Location {
-      X: -2084.76196
-      Y: -2383.82202
+      X: -1129.54065
+      Y: -2765.59375
       Z: 43624.6172
     }
     Rotation {
-      Yaw: -20.9612236
+      Yaw: -0.733459473
     }
     Scale {
       X: 1

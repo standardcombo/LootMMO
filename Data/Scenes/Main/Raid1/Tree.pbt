@@ -195,7 +195,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ObjectID"
-      String: "Play"
+      String: "Play:Beasts1"
     }
   }
   Collidable_v2 {
