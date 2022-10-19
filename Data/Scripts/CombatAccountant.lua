@@ -38,6 +38,7 @@ end
 -- Pre-damage event
 function OnGoingToTakeDamage(attackData)
 	local report, target, source, id, sId = _Boilerplate(attackData)
+	if not report then return end
 	
 	if report.preDamage[sId] then
 		report.preDamage[sId] = report.preDamage[sId] + attackData.damage.amount
@@ -49,7 +50,8 @@ end
 -- Damage event
 function OnDamageTaken(attackData)
 	local report, target, source, id, sId = _Boilerplate(attackData)
-	
+	if not report then return end
+
 	if report.damage[sId] then
 		report.damage[sId] = report.damage[sId] + attackData.damage.amount
 	else
@@ -60,7 +62,8 @@ end
 -- Killed event
 function OnObjectDied(attackData)
 	local report, target, source, id, sId = _Boilerplate(attackData)
-	
+	if not report then return end
+
 	report.killerId = sId
 	report.killerName = source.name
 end
