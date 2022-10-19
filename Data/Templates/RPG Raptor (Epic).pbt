@@ -834,7 +834,7 @@ Assets {
         ChildIds: 18210626401157231210
         ChildIds: 7394583875241623669
         ChildIds: 1364142891333286669
-        ChildIds: 2517594470897451933
+        ChildIds: 18268134785173375581
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1268,67 +1268,21 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2517594470897451933
-        Name: "RootDeathSelfDestroy"
-        Transform {
-          Location {
-            Z: 114.464844
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.398706406
-            Y: 0.398706406
-            Z: 0.398706406
-          }
-        }
-        ParentId: 12940370925616222866
-        ChildIds: 18268134785173375581
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 6097148253337398924
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11942308735806448083
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 18268134785173375581
         Name: "TargetRegister"
         Transform {
           Location {
+            Z: 114.464294
           }
           Rotation {
           }
           Scale {
-            X: 2.50811124
-            Y: 2.50811124
-            Z: 2.50811124
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1.00000012
           }
         }
-        ParentId: 2517594470897451933
+        ParentId: 12940370925616222866
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

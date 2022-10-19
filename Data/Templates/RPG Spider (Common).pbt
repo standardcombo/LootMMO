@@ -1,13 +1,13 @@
 Assets {
   Id: 6450517745501709501
-  Name: "RPG Spider"
+  Name: "RPG Spider (Common)"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 2942477774013888814
       Objects {
         Id: 2942477774013888814
-        Name: "RPG Spider"
+        Name: "RPG Spider (Common)"
         Transform {
           Scale {
             X: 1
@@ -482,7 +482,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 120
+            MaxHitpoints: 40
             StartingHitpoints: 120
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -636,8 +636,8 @@ Assets {
         Name: "NPCAttackServer"
         Transform {
           Location {
-            X: 142.599609
-            Z: 61.9680176
+            X: 90
+            Z: -19
           }
           Rotation {
             Pitch: 6.10298538
@@ -660,11 +660,11 @@ Assets {
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 20
+            Int: 5
           }
           Overrides {
             Name: "cs:DamageToNPCs"
-            Float: 20
+            Float: 5
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -826,6 +826,7 @@ Assets {
         ChildIds: 9291365561488795080
         ChildIds: 1933870672587397079
         ChildIds: 7973274874855468207
+        ChildIds: 15580345780560316688
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1197,6 +1198,44 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:low"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15580345780560316688
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 89.8144531
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.99999952
+            Y: 1.99999952
+            Z: 1.99999952
+          }
+        }
+        ParentId: 14978344754035557680
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

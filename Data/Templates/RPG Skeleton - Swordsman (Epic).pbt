@@ -482,8 +482,8 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 300
-            StartingHitpoints: 300
+            MaxHitpoints: 310
+            StartingHitpoints: 310
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
             DestroyOnDeathClientTemplateId {
@@ -657,11 +657,11 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 20
+            Int: 30
           }
           Overrides {
             Name: "cs:DamageToNPCs"
-            Float: 20
+            Float: 30
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -826,6 +826,7 @@ Assets {
         ChildIds: 10295700201501263203
         ChildIds: 1496987459080091516
         ChildIds: 6969004081683516420
+        ChildIds: 13597358480170659810
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1000,7 +1001,6 @@ Assets {
         ChildIds: 7084475065572999115
         ChildIds: 9628054790573085571
         ChildIds: 927425885151907920
-        ChildIds: 13371369311734458678
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5044,6 +5044,7 @@ Assets {
         ChildIds: 18187616530379806744
         ChildIds: 13330643251013151857
         ChildIds: 9800307359897697765
+        ChildIds: 17937926053426749031
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6078,6 +6079,83 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 17937926053426749031
+        Name: "Flare Billboard"
+        Transform {
+          Location {
+            X: -2.99973083
+            Z: 14.0005398
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 9628054790573085571
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Flare Shape"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.676667
+              G: 0.0299999714
+              B: 1
+              A: 0.504
+            }
+          }
+          Overrides {
+            Name: "bp:Color B"
+            Color {
+              R: 0.97
+              B: 0.905333
+              A: 0.452000022
+            }
+          }
+          Overrides {
+            Name: "bp:Color C"
+            Color {
+              R: 0.3397834
+              B: 0.551
+              A: 0.530000031
+            }
+          }
+          Overrides {
+            Name: "bp:Width"
+            Float: 3.5
+          }
+          Overrides {
+            Name: "bp:Height"
+            Float: 6.5
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4488444258523261897
+          }
+          TeamSettings {
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 927425885151907920
         Name: "head"
         Transform {
@@ -6442,67 +6520,21 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13371369311734458678
-        Name: "RootDeathSelfDestroy"
-        Transform {
-          Location {
-            Z: 114.464844
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.398706406
-            Y: 0.398706406
-            Z: 0.398706406
-          }
-        }
-        ParentId: 6969004081683516420
-        ChildIds: 15787344264781481649
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 17226114784646614031
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11942308735806448083
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15787344264781481649
+        Id: 13597358480170659810
         Name: "TargetRegister"
         Transform {
           Location {
+            Z: 155
           }
           Rotation {
           }
           Scale {
-            X: 2.50811124
-            Y: 2.50811124
-            Z: 2.50811124
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
-        ParentId: 13371369311734458678
+        ParentId: 13965071152588055963
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6724,6 +6756,15 @@ Assets {
       PrimaryAsset {
         AssetType: "DecalBlueprintAssetRef"
         AssetId: "bp_decal_moss_patch_001"
+      }
+    }
+    Assets {
+      Id: 4488444258523261897
+      Name: "Flare Billboard"
+      PlatformAssetType: 6
+      PrimaryAsset {
+        AssetType: "BlueprintAssetRef"
+        AssetId: "fxbp_flare_object"
       }
     }
     Assets {

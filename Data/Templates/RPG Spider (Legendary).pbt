@@ -482,8 +482,8 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 120
-            StartingHitpoints: 120
+            MaxHitpoints: 250
+            StartingHitpoints: 250
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
             DestroyOnDeathClientTemplateId {
@@ -636,8 +636,8 @@ Assets {
         Name: "NPCAttackServer"
         Transform {
           Location {
-            X: 142.599609
-            Z: 61.9680176
+            X: 90
+            Z: -18.9990234
           }
           Rotation {
             Pitch: 6.10298538
@@ -826,6 +826,7 @@ Assets {
         ChildIds: 14924632961971396120
         ChildIds: 6140940098376330247
         ChildIds: 2398657303684110207
+        ChildIds: 13590418707585526185
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -996,6 +997,7 @@ Assets {
         ChildIds: 10977391272453331219
         ChildIds: 2277461532337409655
         ChildIds: 15064647418937547880
+        ChildIds: 14253838146608773195
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1207,6 +1209,111 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 14253838146608773195
+        Name: "Flare Billboard"
+        Transform {
+          Location {
+            Z: 79.8884048
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.01283121
+            Y: 1.01283121
+            Z: 1.01283121
+          }
+        }
+        ParentId: 2398657303684110207
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Flare Shape"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 1
+              G: 0.897218764
+              B: 0.0299999714
+              A: 0.504
+            }
+          }
+          Overrides {
+            Name: "bp:Color B"
+            Color {
+              R: 0.97
+              G: 0.33950004
+              A: 0.452000022
+            }
+          }
+          Overrides {
+            Name: "bp:Color C"
+            Color {
+              R: 1
+              A: 0.530000031
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4488444258523261897
+          }
+          TeamSettings {
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13590418707585526185
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 84.8102798
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.14286435
+            Y: 1.14286435
+            Z: 1.14286435
+          }
+        }
+        ParentId: 9237648556399165152
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 3235483869331921714
         Name: "Collider"
         Transform {
@@ -1290,6 +1397,15 @@ Assets {
       PrimaryAsset {
         AssetType: "SkinnedMeshAssetRef"
         AssetId: "npc_spider_default_ref"
+      }
+    }
+    Assets {
+      Id: 4488444258523261897
+      Name: "Flare Billboard"
+      PlatformAssetType: 6
+      PrimaryAsset {
+        AssetType: "BlueprintAssetRef"
+        AssetId: "fxbp_flare_object"
       }
     }
     Assets {

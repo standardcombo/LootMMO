@@ -490,7 +490,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 300
+            MaxHitpoints: 50
             StartingHitpoints: 300
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -664,11 +664,11 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 15
+            Int: 5
           }
           Overrides {
             Name: "cs:DamageToNPCs"
-            Float: 20
+            Float: 5
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -826,6 +826,7 @@ Assets {
         ChildIds: 996875787364912541
         ChildIds: 7125735817542226196
         ChildIds: 7267803948805097850
+        ChildIds: 12781201162921152356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1194,6 +1195,45 @@ Assets {
         }
         Relevance {
           Value: "mc:eproxyrelevance:high"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 12781201162921152356
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 289.355469
+          }
+          Rotation {
+            Yaw: 3.05175727e-05
+          }
+          Scale {
+            X: 2.66666603
+            Y: 2.66666603
+            Z: 2.66666603
+          }
+        }
+        ParentId: 12798097454814209362
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

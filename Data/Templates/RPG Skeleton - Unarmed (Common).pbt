@@ -1,13 +1,13 @@
 Assets {
   Id: 18343431396922342877
-  Name: "RPG Skeleton - Unarmed"
+  Name: "RPG Skeleton - Unarmed (Common)"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 5965388886224970353
       Objects {
         Id: 5965388886224970353
-        Name: "RPG Skeleton - Unarmed"
+        Name: "RPG Skeleton - Unarmed (Common)"
         Transform {
           Scale {
             X: 1
@@ -482,7 +482,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 200
+            MaxHitpoints: 100
             StartingHitpoints: 200
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -661,11 +661,11 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 15
+            Int: 5
           }
           Overrides {
             Name: "cs:DamageToNPCs"
-            Float: 20
+            Float: 5
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -830,6 +830,7 @@ Assets {
         ChildIds: 10195276852652218253
         ChildIds: 1682961592151532946
         ChildIds: 7145993005084827370
+        ChildIds: 6926424021450528768
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1003,7 +1004,6 @@ Assets {
         ChildIds: 3384808585879706475
         ChildIds: 9655984082787811693
         ChildIds: 1099910075558183614
-        ChildIds: 12635008277890546368
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2642,67 +2642,21 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12635008277890546368
-        Name: "RootDeathSelfDestroy"
-        Transform {
-          Location {
-            Z: 114.464844
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.398706406
-            Y: 0.398706406
-            Z: 0.398706406
-          }
-        }
-        ParentId: 7145993005084827370
-        ChildIds: 6185290505566163266
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 5965388886224970353
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11942308735806448083
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6185290505566163266
+        Id: 6926424021450528768
         Name: "TargetRegister"
         Transform {
           Location {
+            Z: 155
           }
           Rotation {
           }
           Scale {
-            X: 2.50811124
-            Y: 2.50811124
-            Z: 2.50811124
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
-        ParentId: 12635008277890546368
+        ParentId: 14001881140192835445
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
