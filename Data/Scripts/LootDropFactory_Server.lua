@@ -131,6 +131,7 @@ function API.Drop(eventData)
 	
 	-- Give resources
 	if eventData.resourceType and eventData.resourceAmount then
+		--print("LDFactory Giving Resources: "..eventData.resourceType.."="..eventData.resourceAmount)
 		for _,player in ipairs(players) do
 			player:AddResource(eventData.resourceType, eventData.resourceAmount)
 		end

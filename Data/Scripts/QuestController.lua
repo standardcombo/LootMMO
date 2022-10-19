@@ -61,9 +61,13 @@ local fullGameIdMapping = {}
 Task.Spawn(function()
 	for k,quest in pairs(QUEST_METADATA) do
 		if not fullGameIdMapping[quest.gameId] then
-			local coreGameInfo = CorePlatform.GetGameInfo(quest.gameId)
-			local fullGameID = coreGameInfo.id
-			fullGameIdMapping[quest.gameId] = fullGameID
+			if quest.gameId and quest.gameId ~= "" then
+				local coreGameInfo = CorePlatform.GetGameInfo(quest.gameId)
+				local fullGameID = coreGameInfo.id
+				fullGameIdMapping[quest.gameId] = fullGameID
+			else
+				warn("Quest ".. quest.id .." has no game ID.")
+			end
 		end
 	end
 end)
@@ -122,8 +126,7 @@ function API.GetCompletedQuestIDs(player)
 	return {}
 end
 
-function AddCompletedQuestID(player, questId)
-	local playerData = API.GetPlayerData(player)
+function AddCompletedQuestID(playerData, questId)
 	if not playerData then
 		playerData = {}
 		playerData.complete = {}
@@ -134,13 +137,11 @@ function AddCompletedQuestID(player, questId)
 		end
 	end
 	table.insert(playerData.complete, questId)
-	SetPlayerData(player, playerData)
 	
 	return playerData
 end
 
-function RemoveCompletedQuestID(player, questId)
-	local playerData = API.GetPlayerData(player)
+function RemoveCompletedQuestID(playerData, questId)
 	if not playerData then
 		return
 	end
@@ -148,8 +149,6 @@ function RemoveCompletedQuestID(player, questId)
 	for i,id in ipairs(playerData.complete) do
 		if id == questId then
 			table.remove(playerData.complete, i)
-			
-			SetPlayerData(player, playerData)
 			break
 		end
 	end
@@ -373,12 +372,11 @@ function CompleteQuest(player, questId)
 	for i,entry in ipairs(playerData.active) do
 		if entry.id == questId then
 			table.remove(playerData.active, i)
-			SetPlayerData(player, playerData)
 			break
 		end
 	end
 	-- Mark the quest as complete
-	playerData = AddCompletedQuestID(player, questId)
+	playerData = AddCompletedQuestID(playerData, questId)
 
 	local questData = API.GetQuest(questId)
 	if questData.rewards ~= "" then
@@ -390,6 +388,7 @@ function CompleteQuest(player, questId)
 		SetPlayerData(player, playerData)
 	else
 		-- Move directly to unlocking the next quests
+		SetPlayerData(player, playerData)
 		ProcessQuestUnlocks(player, questId)
 	end
 	

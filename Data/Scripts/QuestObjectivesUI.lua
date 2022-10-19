@@ -437,6 +437,9 @@ function UpdateData()
 				-- Check if the selected quest has a reward to be claimed
 				if obj.hasReward then
 					if currentState == STATE_SELECTED then
+						nextSelectedObjective = nil
+						nextSelectedRow = nil
+						
 						CONTENT_SCRIPT.context.SetRowStateCompleted(selectedRow)
 						SetState(STATE_COMPLETED_1)
 					end

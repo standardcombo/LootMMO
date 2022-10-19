@@ -15,5 +15,7 @@ end
 Hide()
 
 Task.Wait()
+
+-- Register itself to the objective pickup system
 _G.ObjectivePickup.Add(script)
 
