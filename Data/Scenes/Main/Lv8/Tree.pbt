@@ -1,7 +1,7 @@
-Name: "Lv5"
-RootId: 12352191436114464191
+Name: "Lv8"
+RootId: 10378803602025891973
 Objects {
-  Id: 7216574369302471895
+  Id: 12823844185713909324
   Name: "ObjectiveLevelReached"
   Transform {
     Location {
@@ -14,8 +14,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12352191436114464191
+  ParentId: 10378803602025891973
   UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Lv8"
+    }
+    Overrides {
+      Name: "cs:TargetLevel"
+      Int: 8
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

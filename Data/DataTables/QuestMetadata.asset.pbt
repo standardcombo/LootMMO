@@ -33,6 +33,24 @@ Assets {
       }
     }
     Assets {
+      Id: 9136876702884038594
+      Name: "Daggers"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Daggers"
+      }
+    }
+    Assets {
+      Id: 6209684280949620244
+      Name: "Icon Stat Offense"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_StatOffense"
+      }
+    }
+    Assets {
       Id: 5541180419929889488
       Name: "Dragon"
       PlatformAssetType: 9
@@ -75,15 +93,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Icon_Boot"
-      }
-    }
-    Assets {
-      Id: 9136876702884038594
-      Name: "Daggers"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Icon_Daggers"
       }
     }
     Assets {
