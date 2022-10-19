@@ -94,13 +94,13 @@ end
 
 SetUp()
 local ScreenEvent = ScreenSizeChanged.screensizeUpdated:Connect(Update)
-local PresedEvent = LOCAL_PLAYER.bindingPressedEvent:Connect(Pressed)
-local ReleaseddEvent = LOCAL_PLAYER.bindingReleasedEvent:Connect(Released)
+local PressedEvent = LOCAL_PLAYER.bindingPressedEvent:Connect(Pressed)
+local ReleasedEvent = LOCAL_PLAYER.bindingReleasedEvent:Connect(Released)
 
 script.destroyEvent:Connect(
 function()
 	ScreenEvent:Disconnect()
-	PresedEvent:Disconnect()
-	ReleaseddEvent:Disconnect()
+	PressedEvent:Disconnect()
+	ReleasedEvent:Disconnect()
 end
 )

@@ -9,7 +9,7 @@ local TexasPoker_ClientRender = require(script:GetCustomProperty('TexasPoker_Cli
 local PARTY_CONST = require(script:GetCustomProperty("PartyConst"))
 
 local CAMERA = script:GetCustomProperty('Camera'):WaitForObject() ---@type Camera
-local TEXAS_HOLDERM_CLIENT_USER_INTERFACE = script:GetCustomProperty('TexasHolderm_Client_UserInterface')
+local TEXAS_HOLDEM_CLIENT_USER_INTERFACE = script:GetCustomProperty('TexasHolderm_Client_UserInterface')
 local TEXAS_HOLDEM_CLIENT_DATA_PASS = require(script:GetCustomProperty('TexasHoldem_Client_DataPass'))
 local TEXAS_POKER_SFXMANAGER = script:GetCustomProperty('TexasPoker_SFXManager')
 local TABLE = script:GetCustomProperty('Table'):WaitForObject()
@@ -229,7 +229,7 @@ function Open(data)
     Task.Wait(.2)
     TexasPoker_ClientRender:Open(data)
 
-    interface = World.SpawnAsset(TEXAS_HOLDERM_CLIENT_USER_INTERFACE)
+    interface = World.SpawnAsset(TEXAS_HOLDEM_CLIENT_USER_INTERFACE)
 
     TableSettingsConnection =
         Events.Connect(
@@ -298,7 +298,7 @@ end
 
 eventListeners[#eventListeners+1] = LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(UpdateData)
 
--- Disconnect listners when script is destroyed
+-- Disconnect listeners when script is destroyed
 eventListeners[#eventListeners+1] = script.destroyEvent:Connect(function ()
     Close()
     

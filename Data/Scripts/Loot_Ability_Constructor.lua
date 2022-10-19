@@ -1,8 +1,8 @@
 --- @type CustomAbility
-local LOOT_ABILIY_CLASS = require(script:GetCustomProperty('Loot_Abiliy_Class'))
+local LOOT_ABILITY_CLASS = require(script:GetCustomProperty('Loot_Abiliy_Class'))
 
 --- @class CustomAbilityConstruct
-local AbilityConstuct = {}
+local AbilityConstruct = {}
 while not _G.CC_Util do
     Task.Wait()
 end
@@ -25,8 +25,8 @@ local OverrideTable = {
     'Update'
 }
 
-function AbilityConstuct.NewAbility(overrides, params)
-    local newAbility = setmetatable({}, {__index = LOOT_ABILIY_CLASS})
+function AbilityConstruct.NewAbility(overrides, params)
+    local newAbility = setmetatable({}, {__index = LOOT_ABILITY_CLASS})
     newAbility.data = params
 
     for key, name in pairs(newAbility.tableElemets) do
@@ -41,9 +41,9 @@ function AbilityConstuct.NewAbility(overrides, params)
     return newAbility
 end
 
-function AbilityConstuct.CloneAbility(ability)
+function AbilityConstruct.CloneAbility(ability)
     if ability:IsA('Ability') then
-        local newAbility = AbilityConstuct.NewAbility(ability)
+        local newAbility = AbilityConstruct.NewAbility(ability)
         for index, name in ipairs(newAbility.events) do
             newAbility[name] = luaEvents.NewSafeEvent()
         end
@@ -52,4 +52,4 @@ function AbilityConstuct.CloneAbility(ability)
     end
 end
 
-return AbilityConstuct
+return AbilityConstruct

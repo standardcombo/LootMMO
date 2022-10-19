@@ -1,5 +1,5 @@
 -- Custom
-local TURN_INTEFACE = script:GetCustomProperty('Turn_inteface'):WaitForObject() ---@type UIContainer
+local TURN_INTERFACE = script:GetCustomProperty('Turn_interface'):WaitForObject() ---@type UIContainer
 local INTERFACE = script:GetCustomProperty('interface'):WaitForObject() ---@type UIContainer
 local TEXAS_POKER_APICLIENT = require(script:GetCustomProperty('TexasPoker_APIClient'))
 local TEXAS_POKER_ENUMS = require(script:GetCustomProperty('TexasPoker_Enums'))
@@ -9,7 +9,7 @@ local TEXAS_HOLDEM_EVENTS = require(script:GetCustomProperty('TexasHoldem_Events
 local LEAVE = script:GetCustomProperty('Leave'):WaitForObject()
 local WAITING_FOR_PLAYERS = script:GetCustomProperty("WaitingForPlayers"):WaitForObject()
 
-local QUICK_BET = TURN_INTEFACE:GetCustomProperty("QuickBet"):WaitForObject()
+local QUICK_BET = TURN_INTERFACE:GetCustomProperty("QuickBet"):WaitForObject()
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local oldData = {
@@ -18,7 +18,7 @@ local oldData = {
 
 local BetPercentage = 0
 local AllInterFaces = {
-    TURN_INTEFACE,
+    TURN_INTERFACE,
     INTERFACE
 }
 
@@ -107,12 +107,12 @@ local function Open()
         end,
         {AllInterFaces[1]}
     )
-    TURN_INTEFACE:GetCustomProperty('Call'):GetObject().pressedEvent:Connect(
+    TURN_INTERFACE:GetCustomProperty('Call'):GetObject().pressedEvent:Connect(
         function()
             TEXAS_POKER_APICLIENT.Call(oldData.roundBet or 0)
         end
     )
-    TURN_INTEFACE:GetCustomProperty('Fold'):GetObject().pressedEvent:Connect(
+    TURN_INTERFACE:GetCustomProperty('Fold'):GetObject().pressedEvent:Connect(
         function()
             TEXAS_POKER_APICLIENT.Fold(oldData.roundBet or 0)
         end
@@ -199,7 +199,7 @@ local function SwapUI(turn, _, data)
         HideUI()
         Task.Wait(0.1)
         UpdateQuickBetButtons(data)
-        TURN_INTEFACE.visibility = Visibility.INHERIT
+        TURN_INTERFACE.visibility = Visibility.INHERIT
     else
         HideUI()
         INTERFACE.visibility = Visibility.INHERIT

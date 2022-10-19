@@ -42,7 +42,7 @@ eventListeners[#eventListeners+1] = Chat.receiveMessageHook:Connect( function (p
     end
 end)
 
--- Disconnect listners when script is destroyed
+-- Disconnect listeners when script is destroyed
 eventListeners[#eventListeners+1] = script.destroyEvent:Connect(function ()
     for index, value in ipairs(eventListeners) do
         value:Disconnect()

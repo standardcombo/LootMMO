@@ -21,7 +21,7 @@ function Destroyed(character)
     end
 end
 
-function ConnectIventory(Character, Inventory)
+function ConnectInventory(Character, Inventory)
     Inventory.backpack = World.SpawnAsset(LOOT_INVENTORY_SPAWN, {networkContext = NetworkContextType.NETWORKED})
     Inventory.backpack.name = tostring(Character.id)
     Inventory.backpack:Resize(Inventory.inventorySize)
@@ -54,7 +54,7 @@ function CharacterSetUp(character)
     character.setOwnerEvent:Connect(SetOwner)
     character.removeOwnerEvent:Connect(SetOwner)
     character.destroyedEvent:Connect(Destroyed)
-    ConnectIventory(character, Inventory)
+    ConnectInventory(character, Inventory)
 end
 
 CharacterConstruction.newCharacterFinished:Connect(CharacterSetUp)

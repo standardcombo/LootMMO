@@ -79,11 +79,11 @@ function Api.UnPack(packed)
     end
     return newInventory
 end
-function Api.New(OptinalParams)
-    OptinalParams = OptinalParams or {}
+function Api.New(OptionalParams)
+    OptionalParams = OptionalParams or {}
     local newDeck = setmetatable({}, Deck)
     newDeck.inventory = {}
-    newDeck.maxCards = OptinalParams.maxCards or newDeck.maxCards 
+    newDeck.maxCards = OptionalParams.maxCards or newDeck.maxCards 
     return newDeck
 end
 

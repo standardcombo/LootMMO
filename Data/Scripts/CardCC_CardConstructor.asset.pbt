@@ -1,6 +1,6 @@
 Assets {
   Id: 15261211459819570505
-  Name: "CardCC_CardContructor"
+  Name: "CardCC_CardConstructor"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

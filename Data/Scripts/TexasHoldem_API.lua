@@ -73,16 +73,16 @@ function api.SearchGames(player)
     end
 end
 
-function api.RequestInfo(gameid)
-    local game = api.FindGame(gameid)
+function api.RequestInfo(gameId)
+    local game = api.FindGame(gameId)
     if not game then
         return
     end
     return game:RequestInfo()
 end
 
-function api.PlayerSpectate(gameid, player)
-    local game = api.FindGame(gameid)
+function api.PlayerSpectate(gameId, player)
+    local game = api.FindGame(gameId)
     if not game then
         return
     end
@@ -97,17 +97,17 @@ function api.PlayerLeave(player)
         end
     end
 end
-function api.PlayerJoin(gameid, player, value)
-    local game = api.FindGame(gameid)
+function api.PlayerJoin(gameId, player, value)
+    local game = api.FindGame(gameId)
     if not game then
         return
     end
     return game:PlayerJoin(player, value)
 end
-function api.GameEnd(gameid)
-    if RunningGames[gameid] then
-        RunningGames[gameid]:GameEnd()
-        RunningGames[gameid] = nil
+function api.GameEnd(gameId)
+    if RunningGames[gameId] then
+        RunningGames[gameId]:GameEnd()
+        RunningGames[gameId] = nil
     end
 end
 

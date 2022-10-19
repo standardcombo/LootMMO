@@ -5,13 +5,13 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Loot_Ability_Componant_AbilityCycle_Manu"
+        Name: "cs:Loot_Ability_Component_AbilityCycle_Manu"
         AssetReference {
           Id: 1045861525336358870
         }
       }
       Overrides {
-        Name: "cs:Loot_Ability_Componant_CastType_Instant"
+        Name: "cs:Loot_Ability_Component_CastType_Instant"
         AssetReference {
           Id: 5040880154610425163
         }
