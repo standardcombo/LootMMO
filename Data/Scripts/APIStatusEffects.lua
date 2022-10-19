@@ -152,18 +152,18 @@ function API.GetSourceProperty(n)
 	return string.format("SE%d_Source", n)
 end
 
-function UpdatePlayerEffectState(player, effectType)
-	local statusEffects = API.GetStatusEffectsOnPlayer(player)
+function UpdateTargetEffectState(target, effectType)
+	local statusEffects = API.GetStatusEffectsOnPlayer(target)
 	if effectType == API.STATUS_EFFECT_TYPE_STUN then
 		for _, data in pairs(statusEffects) do
 			local statusEffectData = API.STATUS_EFFECT_DEFINITIONS[data.name]
 
 			if statusEffectData.type == effectType then
 
-				if player:IsA("Player") then
-					player.movementControlMode = MovementControlMode.NONE
+				if target:IsA("Player") then
+					target.movementControlMode = MovementControlMode.NONE
 				else
-					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(target)
 					if NPCScript then
 						NPCScript.context.GoToStunState()
 					end
@@ -171,10 +171,10 @@ function UpdatePlayerEffectState(player, effectType)
 				return
 			end
 		end
-		if player:IsA("Player") then
-			player.movementControlMode = DEFAULT_PLAYER_SETTINGS.movementControlMode
+		if target:IsA("Player") then
+			target.movementControlMode = DEFAULT_PLAYER_SETTINGS.movementControlMode
 		else
-			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(target)
 			if NPCScript then
 				NPCScript.context.GoToSleepState()
 			end
@@ -187,10 +187,10 @@ function UpdatePlayerEffectState(player, effectType)
 
 			if statusEffectData.type == effectType then
 
-				if player:IsA("Player") then
+				if target:IsA("Player") then
 
 				else
-					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(target)
 					if NPCScript then
 						NPCScript.context.GoToStunState()
 					end
@@ -198,10 +198,10 @@ function UpdatePlayerEffectState(player, effectType)
 				return
 			end
 		end
-		if player:IsA("Player") then
+		if target:IsA("Player") then
 
 		else
-			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
+			local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(target)
 			if NPCScript then
 				NPCScript.context.GoToSleepState()
 			end
@@ -221,14 +221,14 @@ function UpdatePlayerEffectState(player, effectType)
 	end
 
 	if effectType == API.STATUS_EFFECT_TYPE_MOVE_SPEED then
-		Combat.SetMaxWalkSpeed(player, playerSettings[player].speed * minMultiplier * maxMultiplier)
+		Combat.SetMaxWalkSpeed(target, playerSettings[target].speed * minMultiplier * maxMultiplier)
 	elseif effectType == API.STATUS_EFFECT_TYPE_DAMAGE_DEALT_MOD then
-		player.serverUserData.damageModifier = minMultiplier * maxMultiplier
+		target.serverUserData.damageModifier = minMultiplier * maxMultiplier
 	elseif effectType == API.STATUS_EFFECT_TYPE_DAMAGE_TAKEN_MOD then
 		-- do something
 	elseif effectType == API.STATUS_EFFECT_TYPE_FRICTION then
-		player.groundFriction = DEFAULT_PLAYER_SETTINGS.groundFriction * minMultiplier * maxMultiplier
-		player.brakingFrictionFactor = DEFAULT_PLAYER_SETTINGS.brakingFrictionFactor * minMultiplier * maxMultiplier
+		target.groundFriction = DEFAULT_PLAYER_SETTINGS.groundFriction * minMultiplier * maxMultiplier
+		target.brakingFrictionFactor = DEFAULT_PLAYER_SETTINGS.brakingFrictionFactor * minMultiplier * maxMultiplier
 	end
 end
 
@@ -353,23 +353,24 @@ function API.GetStatusEffectsOnPlayer(player)
 end
 
 -- Server only
-function API.ApplyStatusEffect(player, id, optionalParameters)
-	if not player:IsA('Player') then
-		player = player:FindAncestorByType("Damageable")
-	end
-
-	if not Object.IsValid(player) then
-		return
-	end
-	if player.isDead or player.serverUserData.DamageImmunity then
+function API.ApplyStatusEffect(target, id, optionalParameters)
+	if not Object.IsValid(target) then
 		return
 	end
 
-	local doesHave, currentId = API.DoesPlayerHaveStatusEffect(player, id)
+	if not target:IsA('Player') then
+		target = target:FindAncestorByType("Damageable")
+	end
+
+	if target.isDead or target.serverUserData.DamageImmunity then
+		return
+	end
+
+	local doesHave, currentId = API.DoesTargetHaveStatusEffect(target, id)
 	if doesHave then
-		API.RemoveStatusEffect(player, currentId)
+		API.RemoveStatusEffect(target, currentId)
 	end
-	local tracker = API.GetStateTracker(player)
+	local tracker = API.GetStateTracker(target)
 	for i = 1, API.MAX_STATUS_EFFECTS do
 		if tracker then
 			local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
@@ -388,17 +389,17 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 				}
 
 				tracker:SetCustomProperty(API.GetSourceProperty(i), ConvertTableToString(tempTbl))
-				tickCounts[player] = tickCounts[player] or {}
-				tickCounts[player][i] = 0
+				tickCounts[target] = tickCounts[target] or {}
+				tickCounts[target][i] = 0
 
 				local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
 
 				if statusEffectData.type == API.STATUS_EFFECT_TYPE_CUSTOM then
 					if statusEffectData.startFunction then
-						statusEffectData.startFunction(player, tempTbl[SOURCE_KEY], tempTbl[DAMAGE_KEY], tempTbl[MULTIPLIER_KEY])
+						statusEffectData.startFunction(target, tempTbl[SOURCE_KEY], tempTbl[DAMAGE_KEY], tempTbl[MULTIPLIER_KEY])
 					end
 				else
-					UpdatePlayerEffectState(player, statusEffectData.type)
+					UpdateTargetEffectState(target, statusEffectData.type)
 				end
 
 				return
@@ -407,44 +408,44 @@ function API.ApplyStatusEffect(player, id, optionalParameters)
 	end
 
 	-- Knock one off?
-	if id and type(id) == "number" and player and Object.IsValid(player) then
-		warn(string.format("Failed to apply status effect id: %d to player %s because they already had max", id, player.name))
+	if id and type(id) == "number" and target and Object.IsValid(target) then
+		warn(string.format("Failed to apply status effect id: %d to target %s because they already had max", id, target.name))
 	end
 end
 
 -- Server only
-function API.RemoveStatusEffect(player, index)
-	if not Object.IsValid(player) then
+function API.RemoveStatusEffect(target, index)
+	if not Object.IsValid(target) then
 		return
 	end
-	local tracker = API.GetStateTracker(player)
+	local tracker = API.GetStateTracker(target)
 	local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(index)))
 	if trackerTbl and trackerTbl[ID_KEY] ~= "" then
 		local id = trackerTbl[ID_KEY]
 		tracker:SetCustomProperty(API.GetSourceProperty(index), "")
-		tickCounts[player][index] = nil
+		tickCounts[target][index] = nil
 
 		local statusEffectData = STATUS_EFFECT_ID_TABLE[id]
 
 		if statusEffectData.type == API.STATUS_EFFECT_TYPE_CUSTOM then
 			if statusEffectData.endFunction then
-				statusEffectData.endFunction(player)
+				statusEffectData.endFunction(target)
 			end
 		else
-			UpdatePlayerEffectState(player, statusEffectData.type)
+			UpdateTargetEffectState(target, statusEffectData.type)
 		end
 
 		return
 	end
 
-	error(string.format("Failed to remove status effect index: %d on player %s (they don't have it)", index, player.name))
+	error(string.format("Failed to remove status effect index: %d on target %s (they don't have it)", index, target.name))
 end
 
-function API.DoesPlayerHaveStatusEffect(player, name)
-	if not Object.IsValid(player) then
+function API.DoesTargetHaveStatusEffect(target, name)
+	if not Object.IsValid(target) then
 		return false
 	end
-	local tracker = API.GetStateTracker(player)
+	local tracker = API.GetStateTracker(target)
 
 	if not tracker or not Object.IsValid(tracker) then
 		return false
@@ -464,33 +465,33 @@ function API.DoesPlayerHaveStatusEffect(player, name)
 end
 
 -- Server only
-function API.RemoveStatusEffectByName(player, name)
-	if not Object.IsValid(player) then
+function API.RemoveStatusEffectByName(target, name)
+	if not Object.IsValid(target) then
 		return
 	end
-	local tracker = API.GetStateTracker(player)
+	local tracker = API.GetStateTracker(target)
 	for i = 1, API.MAX_STATUS_EFFECTS do
 		local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
 		if trackerTbl and trackerTbl[ID_KEY] ~= "" then
 			local statusEffectData = STATUS_EFFECT_ID_TABLE[trackerTbl[ID_KEY]]
 			if (statusEffectData.name == name) then
-				API.RemoveStatusEffect(player, i)
+				API.RemoveStatusEffect(target, i)
 			end
 		end
 	end
 end
 
 -- Server only
-function API.RemoveAllStatusEffects(player)
-	if not Object.IsValid(player) then
+function API.RemoveAllStatusEffects(target)
+	if not Object.IsValid(target) then
 		return
 	end
-	local tracker = API.GetStateTracker(player)
+	local tracker = API.GetStateTracker(target)
 	for i = 1, API.MAX_STATUS_EFFECTS do
 		local trackerTbl = GetStatusTbl(tracker:GetCustomProperty(API.GetSourceProperty(i)))
 		if trackerTbl and trackerTbl[ID_KEY] ~= "" then
 			local statusEffectData = STATUS_EFFECT_ID_TABLE[trackerTbl[ID_KEY]]
-			API.RemoveStatusEffect(player, i)
+			API.RemoveStatusEffect(target, i)
 		end
 	end
 end
@@ -579,6 +580,7 @@ Game.playerLeftEvent:Connect(OnPlayerLeft)
 
 
 function OnGoingToTakeDamage(attackData)
+	if not Object.IsValid(attackData.source) then return end
 	local player = attackData.source
 	if player:IsA("Script") then
 		player = player:FindAncestorByType("Damageable")
