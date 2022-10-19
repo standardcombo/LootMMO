@@ -7,9 +7,9 @@ local DatabaseName = Root:GetCustomProperty('DatabaseName')
 local DatabaseAPI = require(script:GetCustomProperty('DatabaseAPI')).NewDatabase(DatabaseName)
  
 function SetUp()
-    for _, catagory in pairs(AttributeFolder:GetChildren()) do
-        for _, attribute in pairs(catagory:GetChildren()) do
-            DatabaseAPI:NewAttribute(attribute, catagory.name)
+    for _, category in pairs(AttributeFolder:GetChildren()) do
+        for _, attribute in pairs(category:GetChildren()) do
+            DatabaseAPI:NewAttribute(attribute, category.name)
         end
     end
     Task.Wait()

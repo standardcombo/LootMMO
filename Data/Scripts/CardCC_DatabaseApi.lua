@@ -84,11 +84,11 @@ function api:RegisterNewCard(gameObject)
     return newCard
 end
 
-function api:NewAttribute(gameObject, catagory)
+function api:NewAttribute(gameObject, category)
     local NewAttribute = gameObject:GetCustomProperties()
-    self.attributes[catagory] = self.attributes[catagory] or {}
+    self.attributes[category] = self.attributes[category] or {}
     NewAttribute.name = NewAttribute.name or gameObject.name
-    table.insert(self.attributes[catagory], NewAttribute)
+    table.insert(self.attributes[category], NewAttribute)
 end
 
 function api:AddComponent(name)
@@ -122,23 +122,23 @@ function api:PrintCards()
     end
 end
 
-function api:GetAttribute(catagory, attributename)
-    if not self.attributes[catagory] then
+function api:GetAttribute(category, attributename)
+    if not self.attributes[category] then
         return
     end
-    for index, value in ipairs(self.attributes[catagory]) do
+    for index, value in ipairs(self.attributes[category]) do
         if value.name == attributename then
             return value
         end
     end
 end
 
-function api:GetAttributes(catagory)
-    return self.attributes[catagory]
+function api:GetAttributes(category)
+    return self.attributes[category]
 end
-function api:GetAttibyteByProperty(catagory, property, value)
-    if self.attributes[catagory] then
-        for key, attribute in ipairs(self.attributes[catagory]) do
+function api:GetAttibyteByProperty(category, property, value)
+    if self.attributes[category] then
+        for key, attribute in ipairs(self.attributes[category]) do
             if attribute[property] == value then
                 return attribute
             end
