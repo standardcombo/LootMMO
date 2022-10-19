@@ -3,7 +3,7 @@
 	v1.0 - 2022/10/20
 	by: standardcombo
 	
-	Parses reward instructions for the Loot Drop and Quest systems.
+	Parses reward instructions for Loot Drops, Quests, or any other system.
 	Uses a meta-scripting language that define complex reward sequences.
 	
 	
@@ -136,37 +136,45 @@ function _GrantReward(player, dataTable, rewardInstruction)
 		else
 			player:AddResource("XP", amount)
 		end
-		-- Show toast UI
-		local itemDef = _G["Items.More"].GetDefinition("XP")
-		_GrantItem(player, itemDef, resourceAmount)
 
 	elseif instruction == "Material" then
 		-- Give a crafting material
 		local key, amount = CoreString.Split(param, "=")
-		local materialDef = _G["Items.Materials"].GetDefinition(key)
 		amount = _ParseAmount(amount)
-		if materialDef and amount then
-			_GrantItem(player, materialDef, amount)
+		if key and amount then
+			if _G.RewardsAdapter then
+				_G.RewardsAdapter.AddMaterial(player, key, amount)
+			else
+				warn("Missing rewards adapter. Implement _G.RewardsAdapter.AddMaterial()")
+			end
 		else
 			warn("Failed to grant material with instruction:".. rewardInstruction)
 		end
 		
 	elseif instruction == "Item" then
 		-- Specific item, by ID
-		local itemDef = _G["Items.More"].GetDefinition(param)
-		if itemDef then
-			_GrantItem(player, itemDef, 1)
+		if param then
+			if _G.RewardsAdapter then
+				_G.RewardsAdapter.AddItem(player, param)
+			else
+				warn("Missing rewards adapter. Implement _G.RewardsAdapter.AddItem()")
+			end
 		else
 			warn("Failed to grant specific item with instruction:".. rewardInstruction)
 		end
 	
 	elseif instruction == "RandomItem" then
-		local key, amount = CoreString.Split(param, "=")
-		
-		print("TODO: Granting random item with ".. key .." ".. amount)
-		
-		local itemDef = _G["Items.More"].GetDefinition("RandomItem")
-		_GrantItem(player, itemDef)
+		-- Random item
+		local key, value = CoreString.Split(param, "=")
+		if key and value then
+			if _G.RewardsAdapter then
+				_G.RewardsAdapter.AddRandomItem(player, key, value)
+			else
+				warn("Missing rewards adapter. Implement _G.RewardsAdapter.AddItem()")
+			end
+		else
+			warn("Failed to grant specific item with instruction:".. rewardInstruction)
+		end
 
 	else
 		warn("Failed to parse reward with instruction:".. rewardInstruction)
@@ -191,15 +199,6 @@ function _ParseAmount(value)
 		return math.random(min, max)
 	end
 	return nil
-end
-
-function _GrantItem(player, definition, amount)
-	--print("Granting item: ".. definition.id .." x".. amount)
-	if _G.RewardsAdapter then
-		_G.RewardsAdapter.AddItem(player, definition, amount)
-	else
-		warn("Missing rewards adapter. Implement _G.RewardsAdapter.AddItem()")
-	end
 end
 
 

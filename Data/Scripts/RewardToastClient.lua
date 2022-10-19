@@ -24,6 +24,7 @@
 			type = "<Rarity>", ("Common", "Rare", "Epic" or "Legendary")
 			message = "<name of the reward or other text>",
 			icon = <UI image asset ID>,
+			level = <optional int>, (number that appears in the corner)
 			flipH = <optional bool>, (flips the icon horizontally)
 			flipV = <optional bool>, (flips the icon vertically)
 			sfx = <Audio asset ID>, (optional, played when the card appears)
@@ -160,6 +161,16 @@ function SetupRow(data)
 	if data.message then
 		local rowText = row:GetCustomProperty("Message"):WaitForObject()
 		rowText.text = data.message
+	end
+	
+	-- Level
+	local levelFrame = row:GetCustomProperty("LevelFrame"):WaitForObject()
+	if data.level then
+		levelFrame.visibility = Visibility.INHERIT
+		local levelText = row:GetCustomProperty("LevelText"):WaitForObject()
+		levelText.text = tostring(data.level)
+	else
+		levelFrame.visibility = Visibility.FORCE_OFF
 	end
 
 	-- SFX
