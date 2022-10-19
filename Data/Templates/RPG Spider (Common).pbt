@@ -1043,6 +1043,12 @@ Assets {
               SubObjectId: 2942477774013888814
             }
           }
+          Overrides {
+            Name: "cs:HealthBarTemplate"
+            AssetReference {
+              Id: 4315867458127260351
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
