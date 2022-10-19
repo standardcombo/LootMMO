@@ -39,12 +39,14 @@ function DoDamage(other)
 			{ position = Root:GetWorldPosition(), rotation = Root:GetWorldRotation() }
 		)
 		API_SE.ApplyStatusEffect(other, "Bleed", {
+			source = TrapOwner,
 			duration = mod["Duration"],
 			damage = mod["Bleed"],
 		})
 
 		API_SE.ApplyStatusEffect(other, "Stun", {
-			duration = mod["StunDuration"]
+			source = TrapOwner,
+			duration = mod ["StunDuration"]
 		})
 
 		local dmg = Damage.New()
