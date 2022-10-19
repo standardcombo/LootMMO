@@ -36,9 +36,9 @@ modifiers['Damage'].calculation = function(stats)
         return min + starRating * baseModifier
     end
     if IsCrit() then
-        return {GetMultiplier() * dmg, true}
+        return {CoreMath.Round(GetMultiplier() * dmg), true}
     else
-        return {dmg, false}
+        return {CoreMath.Round(dmg), false}
     end
 end
 
@@ -57,14 +57,14 @@ modifiers['Bleed'].calculation = function(stats)
     local min = 10
     local max = 50
     local SP = stats.SP
-    return math.floor(min + (max - min) * SP / 156)
+    return CoreMath.Round(min + (max - min) * SP / 156)
 end
 
 --Formula: Min + (Max - Min) * AGI / 156
-modifiers['StunDuration'].calString = "10 + (50 - 10) * SP / 156"
+modifiers['StunDuration'].calString = "0.5 + (3 - 0.5) * SP / 156"
 modifiers['StunDuration'].calculation = function(stats)
-    local min = 10
-    local max = 50
+    local min = 0.5
+    local max = 3
     local AGI = stats.A
     return min + (max - min) * AGI / 156
 end
