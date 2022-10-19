@@ -5,7 +5,7 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:TexturaAtlasApi"
+        Name: "cs:TextureAtlasApi"
         AssetReference {
           Id: 18277034758135759723
         }

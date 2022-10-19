@@ -84,7 +84,7 @@ function Contructor.New(gameObject, database)
                     local data = value:sub(2, #value)
                     local catagory, attribute = CoreString.Split(data, '-')
 
-                    local attrtable = database:GetAttibute(catagory, attribute)
+                    local attrtable = database:GetAttribute(catagory, attribute)
                     if attrtable then
                         value = attrtable
                     end
