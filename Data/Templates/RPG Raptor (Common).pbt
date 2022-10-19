@@ -28,7 +28,7 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceType"
-            String: "Cxp"
+            String: "XP"
           }
           Overrides {
             Name: "cs:RewardResourceAmount"

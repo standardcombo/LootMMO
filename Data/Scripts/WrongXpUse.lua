@@ -1,7 +1,7 @@
 local EquipAPI = _G['Character.EquipAPI']
 
 local function ResourceUpdated(player, resource, value)
-    if resource == 'Cxp' then
+    if resource == "XP" then
         local character = EquipAPI.GetCurrentCharacter(player)
         if character then
             local level = character:GetComponent('Level')

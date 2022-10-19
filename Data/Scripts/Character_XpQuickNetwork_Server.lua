@@ -1,4 +1,4 @@
-local Pkey = 'Cxp'
+local Pkey = "XP"
 
 while not _G['Character.EquipAPI'] do
     Task.Wait()

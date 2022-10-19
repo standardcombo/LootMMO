@@ -1,4 +1,4 @@
-local Pkey = 'Cxp'
+local Pkey = "XP"
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 while not _G['Character.EquipAPI'] do

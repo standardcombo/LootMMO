@@ -28,11 +28,11 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceType"
-            String: "Cxp"
+            String: "XP"
           }
           Overrides {
             Name: "cs:RewardResourceAmount"
-            Int: 50
+            Int: 200
           }
           Overrides {
             Name: "cs:LootId"

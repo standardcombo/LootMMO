@@ -26,7 +26,7 @@ local API = {}
 _G.RewardsAdapter = API
 
 
-local XP_RESOURCE_KEY = "Cxp"
+local XP_RESOURCE_KEY = "XP"
 
 
 function API.AddXP(player, amount)
@@ -114,7 +114,7 @@ end
 
 function GetRarityForGreatness(greatness)
 	greatness = tonumber(greatness)
-	
+
 	if not greatness or greatness <= 3 then
 		return "Common"
 	
