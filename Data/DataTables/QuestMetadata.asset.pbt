@@ -42,6 +42,24 @@ Assets {
       }
     }
     Assets {
+      Id: 338139243958881271
+      Name: "Icon Skull"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Skull"
+      }
+    }
+    Assets {
+      Id: 12774504574327834489
+      Name: "Spider"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Spider"
+      }
+    }
+    Assets {
       Id: 10260266135439350248
       Name: "Award"
       PlatformAssetType: 9

@@ -21,11 +21,11 @@ end)
 
 Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 	if Object.IsValid(player) then
-
-		Events.Broadcast("Quest.Map", player, "Play")
 		
 		local mapQuests = _G.QuestController.GetUnlockedMapQuests(player)
 		local quest = mapQuests[selectedIndex]
+
+		Events.Broadcast("Quest.Map", player, "Play:"..quest.id)
 		
 		if quest then
 			-- Activate the map quest

@@ -2263,6 +2263,51 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 377865247354968570
+  Name: "Spawn Point - Undead1"
+  Transform {
+    Location {
+      X: -14142.8203
+      Y: 119.856201
+      Z: 42930.6133
+    }
+    Rotation {
+      Yaw: 122.66433
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7006174973993846663
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnKey: "Undead1"
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 9239213713710815773
   Name: "ObjectiveEncounterSpawn"
   Transform {
