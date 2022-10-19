@@ -935,7 +935,7 @@ Objects {
 }
 Objects {
   Id: 11139475088052789855
-  Name: "ServerContext"
+  Name: "Misc Server"
   Transform {
     Location {
     }
@@ -1436,7 +1436,7 @@ Objects {
 }
 Objects {
   Id: 3125753175296963885
-  Name: "ClientContext"
+  Name: "Misc Client"
   Transform {
     Location {
     }
