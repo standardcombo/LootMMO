@@ -121,7 +121,7 @@ function _GrantReward(player, dataTable, rewardInstruction)
 	elseif instruction == "Loop" then
 		-- Repeat a reward several times
 		local loopCount, ref = CoreString.Split(param, "=")
-		loopCount = _ParseAmount(loopCount)
+		loopCount = _ParseNumber(loopCount)
 		for i = 1,loopCount do
 			_Parse(player, dataTable, ref)
 			Task.Wait()
@@ -130,7 +130,7 @@ function _GrantReward(player, dataTable, rewardInstruction)
 
 	elseif instruction == "XP" then
 		-- Add XP
-		local amount = _ParseAmount(param)
+		local amount = _ParseNumber(param)
 		if _G.RewardsAdapter then
 			_G.RewardsAdapter.AddXP(player, amount)
 		else
@@ -140,7 +140,7 @@ function _GrantReward(player, dataTable, rewardInstruction)
 	elseif instruction == "Material" then
 		-- Give a crafting material
 		local key, amount = CoreString.Split(param, "=")
-		amount = _ParseAmount(amount)
+		amount = _ParseNumber(amount)
 		if key and amount then
 			if _G.RewardsAdapter then
 				_G.RewardsAdapter.AddMaterial(player, key, amount)
@@ -167,6 +167,10 @@ function _GrantReward(player, dataTable, rewardInstruction)
 		-- Random item
 		local key, value = CoreString.Split(param, "=")
 		if key and value then
+			local num = _ParseNumber(value)
+			if num then
+				value = num
+			end
 			if _G.RewardsAdapter then
 				_G.RewardsAdapter.AddRandomItem(player, key, value)
 			else
@@ -181,7 +185,7 @@ function _GrantReward(player, dataTable, rewardInstruction)
 	end
 end
 
-function _ParseAmount(value)
+function _ParseNumber(value)
 	if not value then
 		return nil
 	end

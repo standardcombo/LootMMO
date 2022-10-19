@@ -52,9 +52,22 @@ function API.AddItem(player, itemId, amount)
 end
 
 function API.AddRandomItem(player, key, value)
-	-- TODO
-	local definition = _G["Items.More"].GetDefinition(itemId)
-	AddItem(player, definition, amount, greatness)
+	local allItems = _G["Items"].GetDefinitions()
+	local total = 0
+	for k,v in pairs(allItems) do
+		total = total + 1
+	end
+	local rndIndex = math.random(1, total)
+	local definition = nil
+	for k,v in pairs(allItems) do
+		rndIndex = rndIndex - 1
+		if rndIndex <= 0 then
+			definition = v
+			break
+		end
+	end
+	local greatness = value
+	AddItem(player, definition, 1, greatness)
 end
 
 
@@ -99,14 +112,16 @@ function AddItem(player, definition, amount, greatness)
 	end
 end
 
-function GetRarityForGreatness(greatnessNumber)
-	if not greatnessNumber or greatnessNumber <= 3 then
+function GetRarityForGreatness(greatness)
+	greatness = tonumber(greatness)
+	
+	if not greatness or greatness <= 3 then
 		return "Common"
 	
-	elseif greatnessNumber <= 9 then
+	elseif greatness <= 9 then
 		return "Rare"
 
-	elseif greatnessNumber <= 14 then
+	elseif greatness <= 14 then
 		return "Epic"
 	else
 		return "Legendary"
