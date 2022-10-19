@@ -34,12 +34,16 @@ function ClassSelectionRecieved(player, class)
         if Progression:GetProgressionKey('ClassSelect') then
             ReplyToPlayer(player, ReturnCodes.Success)
             Class:SetClass(class)
+            
+            Events.Broadcast("ClassSelect.Chosen", player, "BaseClass")
         end
         ReplyToPlayer(player, ReturnCodes.Fail)
         return
     elseif Progression:GetProgressionKey('SubClassSelect') then
         ReplyToPlayer(player, ReturnCodes.Success)
         Class:SetClass(class)
+            
+        Events.Broadcast("ClassSelect.Chosen", player, "SubClass")
         return
     end
 

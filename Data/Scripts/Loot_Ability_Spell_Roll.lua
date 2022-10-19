@@ -21,6 +21,8 @@ function Cast()
             ABILITY:Interrupt()
         end
         isEvading = mods['EvasionChance']
+        
+        Events.Broadcast("Ability.Used", ABILITY.owner, "Roll")
     end
 end
 

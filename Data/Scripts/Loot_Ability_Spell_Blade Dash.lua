@@ -74,6 +74,8 @@ end
 
 function Execute()
 	ToggleDash(true)
+	
+	Events.Broadcast("Ability.Used", player, "BladeDash")
 end
 
 function OnInterrupted()

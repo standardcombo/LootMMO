@@ -14,6 +14,9 @@ function Execute()
     if not Object.IsValid(player) then
         return
     end
+    
+    Events.Broadcast("Ability.Used", player, "Teleport")
+    
     mods = ROOT.serverUserData.calculateModifier()
     local Direction = player:GetWorldTransform():GetForwardVector()
     local playerpos = player:GetWorldPosition()
