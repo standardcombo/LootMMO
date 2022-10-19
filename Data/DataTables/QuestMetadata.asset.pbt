@@ -42,6 +42,15 @@ Assets {
       }
     }
     Assets {
+      Id: 10260266135439350248
+      Name: "Award"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Military_Icon_036"
+      }
+    }
+    Assets {
       Id: 15361521404808479615
       Name: "Boot"
       PlatformAssetType: 9
@@ -66,15 +75,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Icon_Anvil"
-      }
-    }
-    Assets {
-      Id: 10260266135439350248
-      Name: "Award"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Military_Icon_036"
       }
     }
     Assets {
