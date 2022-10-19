@@ -441,9 +441,12 @@ function _ClaimReward(player, questId)
 
 	-- Make sure this reward is available for this player
 	local foundIt = false
+	local questIndex = 1
+
 	for i,qId in ipairs(playerData.rewards) do
 		if qId == questId then
 			foundIt = true
+			questIndex = i
 		end
 	end
 	if not foundIt then
@@ -462,7 +465,7 @@ function _ClaimReward(player, questId)
 	local playerData = API.GetPlayerData(player)
 
 	-- Clear this reward set
-	table.remove(playerData.rewards, i)
+	table.remove(playerData.rewards, questIndex)
 	SetPlayerData(player, playerData)
 
 	-- Now that the quest is complete and claimed, unlock the next ones
