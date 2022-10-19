@@ -619,6 +619,12 @@ Assets {
               SubObjectId: 11985226095517367024
             }
           }
+          Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 4122074694147868642
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
