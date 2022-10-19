@@ -60,10 +60,10 @@ modifiers['Radius'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['StunDuration'].calString = "0.5 + (2 - 0.5) * VIT / 172"
+modifiers['StunDuration'].calString = "0.5 + (3 - 0.5) * VIT / 172"
 modifiers['StunDuration'].calculation = function(stats)
     local min = 0.5
-    local max = 2
+    local max = 3
     return min + (max - min) * stats.V / 172
 end
 

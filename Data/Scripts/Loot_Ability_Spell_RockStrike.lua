@@ -27,8 +27,8 @@ function HitObject(other)
             return
         end
         API_SE.ApplyStatusEffect(other, "Stun", {
-        source = ABILITY.owner,
-        duration = mods ["StunDuration"]
+            source = ABILITY.owner,
+            duration = mods ["StunDuration"]
 	    })
         local crit = mods ["Damage"][2]
         local dmg = Damage.New()
