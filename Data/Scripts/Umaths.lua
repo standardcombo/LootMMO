@@ -669,9 +669,9 @@ function API.CurveLerp(startValue, endValue, percent, curve)
 end
 
 --- @param points table Vector3 of points
---- @param tolerence number max offset it can be
+--- @param tolerance number max offset it can be
 --- @return boolean boolean are points on the same plane
-function API.PointsAreCollinear(points, tolerence)
+function API.PointsAreCollinear(points, tolerance)
     if #points < 3 then
         return true
     end
@@ -680,9 +680,9 @@ function API.PointsAreCollinear(points, tolerence)
 end
 
 --- @param points table Vector3 of points
---- @param tolerence number max offset it can be
+--- @param tolerance number max offset it can be
 --- @return boolean boolean are points on the same plane
-function API.PointsAreCoplanar(points, tolerence)
+function API.PointsAreCoplanar(points, tolerance)
     if #points < 4 then
         return true
     end

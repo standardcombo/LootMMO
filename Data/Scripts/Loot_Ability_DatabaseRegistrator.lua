@@ -4,9 +4,9 @@ local LOOT_ABILITY_CONSTRUCTOR = require(script:GetCustomProperty('Loot_Ability_
 local DEFAULT_CYCLE = require(script:GetCustomProperty('DefaultCycle'))
 local DEFAULT_CASTER = require(script:GetCustomProperty('DefaultCaster'))
 local LOOT_ABILITY_COMPONANT_ABILITY_CYCLE_CLAS =
-    require(script:GetCustomProperty('Loot_Ability_Componant_AbilityCycle_Clas'))
+    require(script:GetCustomProperty('Loot_Ability_Component_AbilityCycle_Clas'))
 local LOOT_ABILITY_COMPONANT_CAST_TYPE_CLASS =
-    require(script:GetCustomProperty('Loot_Ability_Componant_CastType_Class'))
+    require(script:GetCustomProperty('Loot_Ability_Component_CastType_Class'))
 local FOLDER = script:GetCustomProperty('Folder'):WaitForObject()
 Task.Wait()
 for key, abil in pairs(FOLDER:GetChildren()) do

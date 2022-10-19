@@ -21,20 +21,20 @@ component.totalPoints = 0
 
 component.autoNetorked = true
 
-function component:SetPending(catagory, value)
-	self.pendingPoints[catagory] = value
+function component:SetPending(category, value)
+	self.pendingPoints[category] = value
 end
 
-function component:SetSpent(catagory, value)
-	if not catagory then
+function component:SetSpent(category, value)
+	if not category then
 		return
 	end
 	if value == 0 then
-		self.spentPoints[catagory] = nil
+		self.spentPoints[category] = nil
 		COMPONET_DATATYPE.TriggerEvent(self.spentChangedEvent, self)
 		return
 	end
-	self.spentPoints[catagory] = value
+	self.spentPoints[category] = value
 	COMPONET_DATATYPE.TriggerEvent(self.spentChangedEvent, self)
 end
 
@@ -47,15 +47,15 @@ function component:SetPoints(value)
 	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
 end
 
-function component:GetPendingPoints(catagory)
-	return self.pendingPoints[catagory]
+function component:GetPendingPoints(category)
+	return self.pendingPoints[category]
 end
 
-function component:GetSpentPoints(catagory)
-	if not catagory then
+function component:GetSpentPoints(category)
+	if not category then
 		return self.spentPoints
 	end
-	return self.spentPoints[catagory]
+	return self.spentPoints[category]
 end
 
 function component:GetTotalPoints()
@@ -90,40 +90,40 @@ function component:ValidatePoints()
 	end
 end
 
-function component:SpendPoint(catagory)
-	if not catagory then
+function component:SpendPoint(category)
+	if not category then
 		return
 	end
 	if self.unspentPoints > 0 then
 		self.unspentPoints = self.unspentPoints - 1
-		self.spentPoints[catagory] = self.spentPoints[catagory] + 1
+		self.spentPoints[category] = self.spentPoints[category] + 1
 	end
 end
 
-function component:RemovePendingPoint(catagory)
-	if not catagory then
+function component:RemovePendingPoint(category)
+	if not category then
 		return
 	end
-	if self.pendingPoint[catagory] > 0 then
-		self.pendingPoint[catagory] = self.pendingPoint[catagory] - 1
-		if self.pendingPoint[catagory] == 0 then
-			self.pendingPoint[catagory] = nil
+	if self.pendingPoint[category] > 0 then
+		self.pendingPoint[category] = self.pendingPoint[category] - 1
+		if self.pendingPoint[category] == 0 then
+			self.pendingPoint[category] = nil
 		end
 	end
 end
 
 function component:ConfirmSpending()
-	for catagory, value in pairs(self.pendingPoints) do
-		self.spentPoints[catagory] = self.spentPoints[catagory] + self.pendingPoints[catagory]
-		self.pendingPoints[catagory] = nil
+	for category, value in pairs(self.pendingPoints) do
+		self.spentPoints[category] = self.spentPoints[category] + self.pendingPoints[category]
+		self.pendingPoints[category] = nil
 	end
 	COMPONET_DATATYPE.TriggerEvent(self.confirmPointEvent, self)
 end
 
 function component:CancelSpending()
-	for catagory, value in pairs(self.pendingPoints) do
-		self.unspentPoints = self.unspentPoints + self.pendingPoint[catagory]
-		self.pendingPoint[catagory] = nil
+	for category, value in pairs(self.pendingPoints) do
+		self.unspentPoints = self.unspentPoints + self.pendingPoint[category]
+		self.pendingPoint[category] = nil
 	end
 	COMPONET_DATATYPE.TriggerEvent(self.pointChangedEvent, self)
 end
@@ -154,11 +154,11 @@ function component:Deserialize(data)
 	if type(data.spentPoints) == "number" then
 		data.spentPoints = {}
 	end
-	for catagory, value in pairs(data.spentPoints or {}) do
-		self:SetSpent(catagory, value or 0)
+	for category, value in pairs(data.spentPoints or {}) do
+		self:SetSpent(category, value or 0)
 	end
-	for catagory, value in pairs(data.pendingPoints or {}) do
-		self:SetPending(catagory, value or 0)
+	for category, value in pairs(data.pendingPoints or {}) do
+		self:SetPending(category, value or 0)
 	end
 end
 

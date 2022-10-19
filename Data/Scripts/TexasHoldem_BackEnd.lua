@@ -73,7 +73,7 @@ function poker:RequestInfo()
         maxBuyin = self.maxBuyin,
         maxPlayers = self.maxPlayers,
         turnTime = self.turnTime,
-        gameid = self.id
+        gameId = self.id
     }
     return data
 end
@@ -407,9 +407,9 @@ function poker:PlayerLeave(player)
 
     self.players[player] = nil
     self.spectating[player] = nil
-    local Rvalue = player:GetResource(self.resource .. self.additionString)
+    local rValue = player:GetResource(self.resource .. self.additionString)
     player:SetResource(self.resource .. self.additionString, 0)
-    player:AddResource(self.resource, Rvalue)
+    player:AddResource(self.resource, rValue)
 
     player:SetPrivateNetworkedData(TexasPoker_Settings.storageKey, nil)
     self:UpdatePlayers()
@@ -458,7 +458,7 @@ function poker:StartGame()
         self.usableCards[index] = value
     end
     local playerCount = 0
-    for p, value in pairs(self.players) do
+    for key, value in pairs(self.players) do
         playerCount = playerCount + 1
         
         Events.Broadcast("Quest.Poker", p, "Play")
@@ -544,9 +544,9 @@ function poker:AddToPot(bets)
         local value = bets[1].value
         RemoveValueFromBets(value)
         AddValue(value * #bets)
-        local Allin, allInPlayers = CheckAllIn()
+        local AllIn, allInPlayers = CheckAllIn()
 
-        if Allin then
+        if AllIn then
             NewPot(allInPlayers)
         end
 

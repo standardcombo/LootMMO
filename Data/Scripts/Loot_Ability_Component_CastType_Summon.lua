@@ -1,7 +1,7 @@
-local LOOT_ABILITY_COMPONANT_CAST_TYPE_CLASS =
-    require(script:GetCustomProperty('Loot_Ability_Componant_CastType_Class'))
+local LOOT_ABILITY_COMPONENT_CAST_TYPE_CLASS =
+    require(script:GetCustomProperty('Loot_Ability_Component_CastType_Class'))
 
-local Component = setmetatable({}, {__index = LOOT_ABILITY_COMPONANT_CAST_TYPE_CLASS})
+local Component = setmetatable({}, {__index = LOOT_ABILITY_COMPONENT_CAST_TYPE_CLASS})
 
 local DEFAULT_RANGE = 1000
 function Component:Update(ability)

@@ -1,6 +1,6 @@
 local Renderer = {}
 local TexasHoldemArt = script:GetCustomProperty('TexasHoldemArt')
-local TexasHoldemcharacter = script:GetCustomProperty('TexasHoldemcharacter')
+local TexasHoldemCharacter = script:GetCustomProperty('TexasHoldemCharacter')
 local TexasPoker_Settings = require(script:GetCustomProperty('TexasPoker_Settings'))
 local TexasPoker_Enums = require(script:GetCustomProperty('TexasPoker_Enums'))
 local TEXAS_HOLDEM_CLIENT_DATA_PASS = require(script:GetCustomProperty('TexasHoldem_Client_DataPass'))
@@ -11,7 +11,7 @@ local BUTTON_SHOW_CARDS_CONTAINER = script:GetCustomProperty('Button_ShowCards_C
 
 local BetText = script:GetCustomProperty('BetText')
 local DealerToken = script:GetCustomProperty('DealerToken')
-local TexasHolem_popupText = script:GetCustomProperty('TexasHolem_popupText')
+local TexasHoldem_popupText = script:GetCustomProperty('TexasHoldem_popupText')
 local CARD_SLIDE = script:GetCustomProperty('CardSlide')
 local POT_TEXT = script:GetCustomProperty('PotText')
 local CARD_HIGH_LIGHT = script:GetCustomProperty('CardHighLight')
@@ -79,12 +79,12 @@ local function SlotToCircle(data, mainslot, slot)
     return math.pi * 2 / maxPlayers * (UMaths.Wrap(slot + (maxPlayers - mainslot) + 2, 1, maxPlayers + 1)) + .35
 end
 
-local FlipedCard = {}
+local FlippedCard = {}
 local isFlipped = false
 
 local function AddFlipped(card)
-    FlipedCard[card] = true
-    for key, value in pairs(FlipedCard) do
+    FlippedCard[card] = true
+    for key, value in pairs(FlippedCard) do
         isFlipped = true
         return
     end
@@ -92,8 +92,8 @@ local function AddFlipped(card)
 end
 
 local function RemoveFlipped(card)
-    FlipedCard[card] = nil
-    for key, value in pairs(FlipedCard) do
+    FlippedCard[card] = nil
+    for key, value in pairs(FlippedCard) do
         isFlipped = true
         return
     end
@@ -210,12 +210,12 @@ end
 function PopUpAction(player, text)
     if PlayerMarkers[player.name] and Object.IsValid(art) then
         local popup =
-            World.SpawnAsset(TexasHolem_popupText, {parent = art:GetCustomProperty('PlayerMarkers'):GetObject()})
-        local posx = PlayerMarkers[player.name].x - 125
-        local posy = PlayerMarkers[player.name].y
+            World.SpawnAsset(TexasHoldem_popupText, {parent = art:GetCustomProperty('PlayerMarkers'):GetObject()})
+        local posX = PlayerMarkers[player.name].x - 125
+        local posY = PlayerMarkers[player.name].y
         popup.text = text
-        popup.x = posx
-        popup.y = posy
+        popup.x = posX
+        popup.y = posY
         popup.lifeSpan = 1.5
     end
 end
@@ -469,7 +469,7 @@ local function PlayerJoined(player, data)
 
     local _player = FindPlayerFromName(player.name)
     PlayerMarkers[player.name] =
-        World.SpawnAsset(TexasHoldemcharacter, {parent = art:GetCustomProperty('PlayerMarkers'):GetObject()})
+        World.SpawnAsset(TexasHoldemCharacter, {parent = art:GetCustomProperty('PlayerMarkers'):GetObject()})
     PlayerMarkers[player.name]:GetCustomProperty('Name'):GetObject().text = player.name
     if _player then
         PlayerMarkers[player.name]:GetCustomProperty('PlayerImage'):GetObject():SetPlayerProfile(_player)
@@ -568,8 +568,8 @@ local function DealerChanged(dealerTurn, oldTurn, data)
             local tme = 0
             local tablePos = desk:GetWorldPosition()
             while Object.IsValid(DealerTokenSpawn) and tme <= 1 do
-                local lerptime = CoreMath.Lerp(oldTurn, dealerTurn, tme)
-                local ID = SlotToCircle(data, playerSlot, lerptime)
+                local lerpTime = CoreMath.Lerp(oldTurn, dealerTurn, tme)
+                local ID = SlotToCircle(data, playerSlot, lerpTime)
                 local tableSphere =
                     Vector3.New(math.cos(ID + 1.54) / 1.5 * distance / 2, math.sin(ID + 1.54) * distance / 2, 0) +
                     tablePos
@@ -590,7 +590,7 @@ local function DealerChanged(dealerTurn, oldTurn, data)
     )
 end
 
-local function OutlineWinining(playername)
+local function OutlineWinning(playername)
     local AllCards = {}
     if not Cards[playername] then
         return
@@ -641,7 +641,7 @@ end
 local function gameEnd(data)
     local function RenderFirst(winnings)
         for _, playername in pairs(winnings[1] or {}) do
-            OutlineWinining(playername)
+            OutlineWinning(playername)
             return
         end
     end
@@ -778,16 +778,16 @@ local function NewPot()
     newText.y = -160 + (index * 35)
 end
 
-local function RemovePot(potid, data)
-    if Object.IsValid(potChips[potid]) then
-        potChips[potid]:Destroy()
+local function RemovePot(potId, data)
+    if Object.IsValid(potChips[potId]) then
+        potChips[potId]:Destroy()
     end
-    if Object.IsValid(PotTexts[potid]) then
-        PotTexts[potid]:Destroy()
+    if Object.IsValid(PotTexts[potId]) then
+        PotTexts[potId]:Destroy()
     end
 end
 
-local function PotChangedEvent(potid, value, data)
+local function PotChangedEvent(potId, value, data)
     local returnTable = {
         [TexasPoker_Enums.rounds['endGame']] = true,
         [TexasPoker_Enums.rounds['payOut']] = true
@@ -795,8 +795,8 @@ local function PotChangedEvent(potid, value, data)
     if returnTable[data.roundState] then
         return
     end
-    if Object.IsValid(PotTexts[potid]) then
-        PotTexts[potid]:GetCustomProperty('Text'):GetObject().text = CommaValue(value)
+    if Object.IsValid(PotTexts[potId]) then
+        PotTexts[potId]:GetCustomProperty('Text'):GetObject().text = CommaValue(value)
     end
 end
 

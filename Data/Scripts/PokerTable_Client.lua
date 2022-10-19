@@ -13,7 +13,7 @@ local JOIN_GAME_POP_UP = script:GetCustomProperty('Join_Game_PopUp')
 local SpawnedPopUp
 
 local eventListeners = {}
-local RecieveinfoEvent
+local ReceiveinfoEvent
 
 local function CommaValue(n) -- credit http://richard.warburton.it
     local left, num, right = string.match(n, '^([^%d]*%d)(%d*)(.-)$')
@@ -24,10 +24,10 @@ while not _G.CC_Util do
     Task.Wait()
 end
 local UMaths = _G.CC_Util:WaitForlibrary('Math_Utilities')
-local function RecieveInfo(info)
-    if RecieveinfoEvent then
-        RecieveinfoEvent:Disconnect()
-        RecieveinfoEvent = nil
+local function ReceiveInfo(info)
+    if ReceiveinfoEvent then
+        ReceiveinfoEvent:Disconnect()
+        ReceiveinfoEvent = nil
     end
     if Object.IsValid(SpawnedPopUp) then
         SpawnedPopUp:Destroy()
@@ -93,7 +93,7 @@ eventListeners[#eventListeners + 1] =
         if time() < lastTime then return end
 
         _G.pokerJoinTime = time()+1
-        RecieveinfoEvent = Events.Connect('Poker_SendInfo', RecieveInfo)
+        ReceiveinfoEvent = Events.Connect('Poker_SendInfo', ReceiveInfo)
         Events.BroadcastToServer('PokerTable_AttemptToJoin', Root.id)
     end
 )
@@ -118,12 +118,12 @@ function UpdateData(p, key)
 end
 eventListeners[#eventListeners + 1] = LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(UpdateData)
 
--- Disconnect listners when script is destroyed
+-- Disconnect listeners when script is destroyed
 eventListeners[#eventListeners + 1] =
     script.destroyEvent:Connect(
     function()
-        if RecieveinfoEvent then
-            RecieveinfoEvent:Disconnect()
+        if ReceiveinfoEvent then
+            ReceiveinfoEvent:Disconnect()
         end
 
         for index, value in ipairs(eventListeners) do

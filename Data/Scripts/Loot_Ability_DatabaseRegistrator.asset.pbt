@@ -34,13 +34,13 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Loot_Ability_Componant_AbilityCycle_Clas"
+        Name: "cs:Loot_Ability_Component_AbilityCycle_Clas"
         AssetReference {
           Id: 1950499550881833483
         }
       }
       Overrides {
-        Name: "cs:Loot_Ability_Componant_CastType_Class"
+        Name: "cs:Loot_Ability_Component_CastType_Class"
         AssetReference {
           Id: 12482732593026533068
         }

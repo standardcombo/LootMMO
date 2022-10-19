@@ -1,11 +1,11 @@
 Assets {
   Id: 4831742929754964640
-  Name: "Loot_Ability_Componant_CastType_Summon"
+  Name: "Loot_Ability_Component_CastType_Summon"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Loot_Ability_Componant_CastType_Class"
+        Name: "cs:Loot_Ability_Component_CastType_Class"
         AssetReference {
           Id: 12482732593026533068
         }

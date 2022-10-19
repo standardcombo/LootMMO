@@ -75,7 +75,7 @@ function Class:SetItem(item)
 	self.item = item
 end
 
-function Class:GetCatagory()
+function Class:GetCategory()
 	return self:GetItem()['category']
 end
 
