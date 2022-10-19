@@ -192,7 +192,7 @@ function UpdatePlayerEffectState(player, effectType)
 				else
 					local NPCScript = _G["standardcombo.NPCKit.NPCManager"].FindScriptForDamageable(player)
 					if NPCScript then
-						NPCScript.context.GoToDeadState()
+						NPCScript.context.GoToStunState()
 					end
 				end
 				return
