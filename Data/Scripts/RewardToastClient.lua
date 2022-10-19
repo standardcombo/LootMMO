@@ -183,6 +183,17 @@ function SetupRow(data)
 		sfx.lifeSpan = 2
 	end
 	
+	-- Add extra time duration, based on rarity
+	if data.type == "Rare" then
+		row.clientUserData.time = -DURATION * 0.25
+		
+	elseif data.type == "Epic" then
+		row.clientUserData.time = -DURATION * 0.5
+		
+	elseif data.type == "Legendary" then
+		row.clientUserData.time = -DURATION
+	end
+	
 	return row
 end
 

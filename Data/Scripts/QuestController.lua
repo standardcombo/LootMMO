@@ -291,6 +291,12 @@ function API.UnlockMapForPlayer(player, questId)
 	table.insert(playerData.map, questId)
 	
 	SetPlayerData(player, playerData)
+	
+	-- Show the toast popup UI, notifying of new adventure
+	Task.Wait(1)
+	if Object.IsValid(player) then
+		_G.RewardsAdapter.AddItem(player, "NewAdventure")
+	end
 end
 
 

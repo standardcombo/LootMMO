@@ -24,6 +24,15 @@ Assets {
       }
     }
     Assets {
+      Id: 8170242434031464722
+      Name: "Fantasy Key 003"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Key_003"
+      }
+    }
+    Assets {
       Id: 3070657924883967515
       Name: "Fantasy Package 002"
       PlatformAssetType: 9
@@ -48,6 +57,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_paper_page_turn_light_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17357850495544150838
+      Name: "Magic Water Crystal Spell Cast 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_water_crystal_spell_cast_01_Cue_ref"
       }
     }
     Assets {
