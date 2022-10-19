@@ -1637,6 +1637,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3374193802675370255
+  Name: "Spiderweb VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_web"
+  }
+}
+Assets {
   Id: 3179843506183788979
   Name: "Sphere"
   PlatformAssetType: 1
