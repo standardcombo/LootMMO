@@ -39,7 +39,7 @@ if(TRIGGER ~= nil and TRIGGER:IsA("Trigger")) then
 				if(IsObjTypePlayable(effectChild)) then
 					effectChild:Play()
 				else 
-					for _, effectChildChild in pairs(effects:GetChildren()) do
+					for _, effectChildChild in pairs(effectChild:GetChildren()) do
 						if(IsObjTypePlayable(effectChildChild)) then
 							effectChildChild:Play()
 						end
