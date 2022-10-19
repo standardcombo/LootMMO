@@ -62,7 +62,8 @@ function OnStunBeginOverlap(thisTrigger, other)
 		return
 	end
 	API_SE.ApplyStatusEffect(other, "Stun", {
-		duration = mod["StunDuration"]
+		duration = mod["StunDuration"],
+		sourcePlayer = ABILITY.owner,
 	})
 end
 

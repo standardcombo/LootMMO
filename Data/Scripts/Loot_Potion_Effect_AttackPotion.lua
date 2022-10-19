@@ -4,8 +4,9 @@ local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local API_SE = _G['StatusEffects.API']
 
 local function Execute()
-	local owner = ABILITY.owner 
+	local owner = ABILITY.owner
 	API_SE.ApplyStatusEffect(owner, "AttackUp", {
+		source = owner,
 		multiplier = 1.6,
 		duration = 20,
 	})

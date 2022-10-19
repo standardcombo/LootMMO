@@ -41,7 +41,6 @@ function Tick()
         }
         API_SE.ApplyStatusEffect(enemy, "Slow", {
 			source = ABILITY.owner,
-			--duration = mod["Duration"]
 		})
         COMBAT().ApplyDamage(attackData)
     end

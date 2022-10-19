@@ -93,7 +93,8 @@ function SupernovaEnding(CurrentChargeUp, EffectRadius, mods)
             COMBAT().ApplyDamage(attackData)
             -- Stun
             API_SE.ApplyStatusEffect(otherPlayer, "Stun", {
-				duration = mod["StunDuration"]
+				duration = mod["StunDuration"],
+                source = SpecialAbility.owner
 			})
         end
     end

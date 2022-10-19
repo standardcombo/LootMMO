@@ -55,6 +55,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
 			API_SE.ApplyStatusEffect(enemy, "Animorph", {
 				duration = mod["Duration"],
 				multiplier = 0,
+				source = ABILITY.owner,
 			})
 
 		end

@@ -23,10 +23,6 @@ local BASH_VFX = script:GetCustomProperty('BashVFX')
 local SpawnedAttachedVFX = nil
 
 function AddImpulseToPlayer(player)
-	-- API_SE.ApplyStatusEffect(player, "Stun", {
-	-- 	source = ABILITY.owner,
-	-- 	duration = mod["StunDuration"]
-	-- })
 	-- Do damage
 	local crit = mod["Damage"][2]
 	local dmg = Damage.New()

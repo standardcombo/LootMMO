@@ -36,9 +36,9 @@ modifiers['Damage'].calculation = function(stats)
         return min + starRating * baseModifier
     end
     if IsCrit() then
-        return {math.floor(GetMultiplier() * dmg), true}
+        return {CoreMath.Round(GetMultiplier() * dmg), true}
     else
-        return {math.floor(dmg), false}
+        return {CoreMath.Round(dmg), false}
     end
 end
 

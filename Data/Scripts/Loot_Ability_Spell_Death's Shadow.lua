@@ -47,7 +47,8 @@ function Attack()
 		}
 		COMBAT().ApplyDamage(attackData)
 		API_SE.ApplyStatusEffect(enemy, "Stun", {
-			duration = mods["StunDuration"]
+			duration = mods["StunDuration"],
+			source = ABILITY.owner
 		})
 	end
 end

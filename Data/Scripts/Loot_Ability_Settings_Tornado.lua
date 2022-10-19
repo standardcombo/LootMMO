@@ -19,7 +19,7 @@ modifiers['DOT'].calculation = function(stats)
     local max = 50
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
-    return math.floor(dmg)
+    return CoreMath.Round(dmg)
 end
 
 --Formula: Min - Star Rating * Base Modifier
