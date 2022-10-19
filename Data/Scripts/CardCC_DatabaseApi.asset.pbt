@@ -5,7 +5,7 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:CardCC_CardContructor"
+        Name: "cs:CardCC_CardConstructor"
         AssetReference {
           Id: 15261211459819570505
         }

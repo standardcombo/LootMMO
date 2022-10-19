@@ -145,9 +145,9 @@ function inventory:GiveFromSlot(slot, recipient, parameters)
 	return self._inventory:GiveFromSlot(slot, recipient, parameters)
 end
 
-local inventoryConstuctor = {}
+local inventoryConstructor = {}
 
-function inventoryConstuctor.NewInventory(Inventory)
+function inventoryConstructor.NewInventory(Inventory)
 	local newInventory = setmetatable({}, { __index = inventory })
 	if not Inventory then
 		if Environment.IsServer() then
@@ -174,7 +174,7 @@ function inventoryConstuctor.NewInventory(Inventory)
 	return newInventory
 end
 
-function inventoryConstuctor.FindInventoryFromInventory(inv)
+function inventoryConstructor.FindInventoryFromInventory(inv)
 	for index, value in pairs(SpawnedInventories) do
 		if value._inventory == inv then
 			return value
@@ -182,21 +182,21 @@ function inventoryConstuctor.FindInventoryFromInventory(inv)
 	end
 end
 
-function inventoryConstuctor.WaitForInventory(id)
+function inventoryConstructor.WaitForInventory(id)
 	while not SpawnedInventories[id] do
 		Task.Wait()
 	end
 	return SpawnedInventories[id]
 end
 
-_G["Inventory.Constructor"] = inventoryConstuctor
+_G["Inventory.Constructor"] = inventoryConstructor
 
 
 function Tick()
 	local Inventories = World.FindObjectsByType("Inventory")
 	for key, newInventory in pairs(Inventories) do
-		if not inventoryConstuctor.FindInventoryFromInventory(newInventory) then
-			inventoryConstuctor.NewInventory(newInventory)
+		if not inventoryConstructor.FindInventoryFromInventory(newInventory) then
+			inventoryConstructor.NewInventory(newInventory)
 		end
 	end
 

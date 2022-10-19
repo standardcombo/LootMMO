@@ -1,13 +1,13 @@
 -- Custom
 local TP_Client = require(script:GetCustomProperty('TexasHoldem_Events'))
 local Lootbox_DATABASE = require(script:GetCustomProperty('Lootbox_Database'))
-local TEXAS_POER_LOOT_BOX_RENDER = require(script:GetCustomProperty('TexasPoer_LootBox_Render'))
+local TEXAS_POKER_LOOT_BOX_RENDER = require(script:GetCustomProperty('TexasPoker_LootBox_Render'))
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local function OpenLootBox(data)
     Task.Spawn(function()
     
         data.TexasHoldemArt.visibility = Visibility.FORCE_OFF
-        TEXAS_POER_LOOT_BOX_RENDER:Open(Lootbox_DATABASE:GetEntry(data.lootBox))
+        TEXAS_POKER_LOOT_BOX_RENDER:Open(Lootbox_DATABASE:GetEntry(data.lootBox))
         Task.Wait(7)
         if Object.IsValid(data.TexasHoldemArt) then 
             data.TexasHoldemArt.visibility = Visibility.FORCE_ON
@@ -17,7 +17,7 @@ end
 
 local function CheckLootBox(data)
     if data.lootBox then
-        TEXAS_POER_LOOT_BOX_RENDER:SpawnChest(data)
+        TEXAS_POKER_LOOT_BOX_RENDER:SpawnChest(data)
     end
 end
 
@@ -37,7 +37,7 @@ local function GameEnd(data)
             elseif (data.WorldMarkers[winner] or {}).playerMarker then
                 Task.Spawn(
                     function()
-                        TEXAS_POER_LOOT_BOX_RENDER:PayOut(data, (data.WorldMarkers[winner] or {}).playerMarker)
+                        TEXAS_POKER_LOOT_BOX_RENDER:PayOut(data, (data.WorldMarkers[winner] or {}).playerMarker)
                     end
                 )
             end

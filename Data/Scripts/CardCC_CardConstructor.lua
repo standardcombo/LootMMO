@@ -82,9 +82,9 @@ function Contructor.New(gameObject, database)
             if attr == '@' then
                 if database then
                     local data = value:sub(2, #value)
-                    local catagory, attribute = CoreString.Split(data, '-')
+                    local category, attribute = CoreString.Split(data, '-')
 
-                    local attrtable = database:GetAttibute(catagory, attribute)
+                    local attrtable = database:GetAttribute(category, attribute)
                     if attrtable then
                         value = attrtable
                     end

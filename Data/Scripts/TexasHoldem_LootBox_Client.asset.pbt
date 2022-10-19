@@ -5,7 +5,7 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:TexasPoer_LootBox_Render"
+        Name: "cs:TexasPoker_LootBox_Render"
         AssetReference {
           Id: 5471052373148158149
         }

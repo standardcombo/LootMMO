@@ -1,4 +1,4 @@
-local TEXTURA_ATLAS_API = require(script:GetCustomProperty('TexturaAtlasApi'))
+local TEXTURE_ATLAS_API = require(script:GetCustomProperty('TextureAtlasApi'))
 
 local LootboxDatabase = {
     Entries = {}
@@ -33,7 +33,7 @@ end
 function LootboxDatabase:SetImage(image, index)
     local entry = self:GetEntry(index)
     if image and entry then
-        TEXTURA_ATLAS_API:SetUIImage(image, entry.portalLink, entry.index, entry.position, entry.scale)
+        TEXTURE_ATLAS_API:SetUIImage(image, entry.portalLink, entry.index, entry.position, entry.scale)
     end
 end
 

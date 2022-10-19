@@ -1,4 +1,4 @@
-local CardCC_CardContructor = require(script:GetCustomProperty('CardCC_CardContructor'))
+local CardCC_CardConstructor = require(script:GetCustomProperty('CardCC_CardConstructor'))
 local CardCC_Class_Card = require(script:GetCustomProperty('CardCC_Class_Card'))
 
 
@@ -63,25 +63,32 @@ end
 function api:Clone(id)
     local card =  self:ReturnCardById(id)
     if not card then return end 
-    local cloneCard = CardCC_CardContructor.Clone(card)
+    local cloneCard = CardCC_CardConstructor.Clone(card)
     cloneCard.destroyEvent = luaEvents.New()
     self.cloneCardEvent:Trigger(cloneCard,self)
     return cloneCard
 end
 
+-- Clears out our card database.  Used to make sure there isn't
+-- any lingering data from previous games.
+function api:ClearCardList()
+    self.database = {}
+end
+
+
 --- @return Card
 function api:RegisterNewCard(gameObject)
-    local newCard = CardCC_CardContructor.New(gameObject, self)
+    local newCard = CardCC_CardConstructor.New(gameObject, self)
     table.insert(self.database, newCard)
     self.addedCardEvent:Trigger(newCard,self)
     return newCard
 end
 
-function api:NewAttribute(gameObject, catagory)
+function api:NewAttribute(gameObject, category)
     local NewAttribute = gameObject:GetCustomProperties()
-    self.attributes[catagory] = self.attributes[catagory] or {}
+    self.attributes[category] = self.attributes[category] or {}
     NewAttribute.name = NewAttribute.name or gameObject.name
-    table.insert(self.attributes[catagory], NewAttribute)
+    table.insert(self.attributes[category], NewAttribute)
 end
 
 function api:AddComponent(name)
@@ -115,23 +122,23 @@ function api:PrintCards()
     end
 end
 
-function api:GetAttibute(catagory, attributename)
-    if not self.attributes[catagory] then
+function api:GetAttribute(category, attributename)
+    if not self.attributes[category] then
         return
     end
-    for index, value in ipairs(self.attributes[catagory]) do
+    for index, value in ipairs(self.attributes[category]) do
         if value.name == attributename then
             return value
         end
     end
 end
 
-function api:GetAttibutes(catagory)
-    return self.attributes[catagory]
+function api:GetAttributes(category)
+    return self.attributes[category]
 end
-function api:GetAttibyteByProperty(catagory, property, value)
-    if self.attributes[catagory] then
-        for key, attribute in ipairs(self.attributes[catagory]) do
+function api:GetAttibyteByProperty(category, property, value)
+    if self.attributes[category] then
+        for key, attribute in ipairs(self.attributes[category]) do
             if attribute[property] == value then
                 return attribute
             end

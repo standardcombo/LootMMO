@@ -1,13 +1,13 @@
 Assets {
-  Id: 5040880154610425163
-  Name: "Loot_Ability_Componant_CastType_Instant"
+  Id: 1045861525336358870
+  Name: "Loot_Ability_Component_AbilityCycle_Manual"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Loot_Ability_Componant_CastType_Class"
+        Name: "cs:DefaultAbility"
         AssetReference {
-          Id: 12482732593026533068
+          Id: 5122933870968791329
         }
       }
     }
@@ -16,5 +16,5 @@ Assets {
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Ability"
   VirtualFolderPath: "Componants"
-  VirtualFolderPath: "CastType"
+  VirtualFolderPath: "AbilityCycle"
 }

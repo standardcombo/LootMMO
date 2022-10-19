@@ -18,7 +18,7 @@ Util.errorMessages = {
 }
 
 ---Register new libraries to CC_Util
---- @param name string
+--- @param name string?
 --- @param Tble table
 --- @return Tble
 function Util:Register(name, Tble)
@@ -44,7 +44,7 @@ function Util:Getlibrary(name)
     return registry[name]
 end
 
----Waits for a library to be added and returns the libary
+---Waits for a library to be added and returns the library
 --- @param name string
 --- @param version number
 --- @param timeout number
