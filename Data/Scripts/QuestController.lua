@@ -195,7 +195,7 @@ function API.GetActiveObjectives(player)
 					entry.n = 1
 					
 				elseif entry.n <= 0 or entry.n > #quest.objectives then
-					error("Quest ".. entry.id .." does not have a step index ".. entry.n)
+					error("Quest ".. entry.id .." does not have an objective at index ".. entry.n)
 				end
 				
 				local obj = quest.objectives[entry.n]

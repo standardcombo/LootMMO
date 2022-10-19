@@ -33,14 +33,20 @@ function API.AddXP(player, amount)
 	player:AddResource(XP_RESOURCE_KEY, amount)
 
 	-- Show toast UI
-	local itemDef = _G["Items.More"].GetDefinition("XP")
-	AddItem(player, itemDef, amount)
+	local definition = _G["Items.More"].GetDefinition("XP")
+	if definition then
+		AddItem(player, definition, amount)
+	end
 end
 
 
 function API.AddMaterial(player, materialId, amount)
 	local definition = _G["Items.Materials"].GetDefinition(materialId)
-	AddItem(player, definition, amount)
+	if definition then
+		AddItem(player, definition, amount)
+	else
+		error("Rewards Adapter: No material found with id "..materialId)
+	end
 end
 
 function API.AddItem(player, itemId, amount)
@@ -48,7 +54,11 @@ function API.AddItem(player, itemId, amount)
 	if not definition then
 		definition = _G["Items.More"].GetDefinition(itemId)
 	end
-	AddItem(player, definition, amount)
+	if definition then
+		AddItem(player, definition, amount)
+	else
+		error("Rewards Adapter: No item found with id "..itemId)
+	end
 end
 
 function API.AddRandomItem(player, key, value)
