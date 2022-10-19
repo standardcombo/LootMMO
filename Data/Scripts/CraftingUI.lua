@@ -19,6 +19,8 @@ local currentDisplay = nil
 local selectedRecipe = nil
 local selectedFilter = nil
 
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 local COLLECTIONS = {}
 for index, value in pairs(LOOT_BAG_PARSER.Collection) do
 	table.insert(COLLECTIONS, value)
@@ -64,7 +66,7 @@ local ItemDetail    = Get(SelectedPanel, "ItemDetails")
 local DefaultSelectIcon = SelectedIcon:GetImage()
 
 local Tabs = {
-	[Get(Get(tabpanel, "craft"), "Button")]   = states.crafting,
+	--[Get(Get(tabpanel, "craft"), "Button")]   = states.crafting,
 	[Get(Get(tabpanel, "Scrap"), "Button")]   = states.scrapping,
 	[Get(Get(tabpanel, "upgrade"), "Button")] = states.upgrading,
 }
@@ -124,7 +126,7 @@ local function GetUpgradeRecipes(inventory)
 			goto continue
 		end
 		local newRecipie = {
-			item = value,
+			item = { Greatness = value:GetCustomProperty("Greatness"), name = value.name, value:GetCustomProperty("Order") },
 			itemid = value.name,
 			recipe = {},
 			slot = index,
@@ -140,16 +142,46 @@ local function GetUpgradeRecipes(inventory)
 		::continue::
 	end
 
+	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
 	for index, Collection in ipairs(COLLECTIONS) do
 		AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-			for key, value in pairs(tokens) do
-				local itemdata = LOOT_BAG_PARSER.ParseFromToken(tokens)
-				local items = itemdata.items
-				for key, value in pairs(items) do
+			for key, token in pairs(tokens) do
+				local parsedBag = LOOT_BAG_PARSER.Parse(token)
+				local items = parsedBag.items
+				local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
 
+				for key, itemdata in pairs(items) do
+					local Greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+					local newrecipe = craftAPI.GetGreatnessValue(itemdata.name, Greatness + 1)
+					if newrecipe then
+						local newRecipie = {
+							item = { Greatness = Greatness, name = itemdata.name, itemdata.Order },
+							itemid = itemdata.name,
+							recipe = newrecipe,
+							NFT = CoreString.Join("|", token.contractAddress, token.tokenId)
+						}
+						table.insert(recipes, newRecipie)
+					end
+				end
+				if currentState ~= states.upgrading then
+					return
 				end
 			end
+
 		end)
+	end
+	if currentState ~= states.upgrading then
+		return
+	end
+
+	if selectedFilter then
+		for i = #recipes, 1, -1 do
+			local itemElements = itemAPI.GetDefinition(recipes[i].itemid)
+			if itemElements["category"] ~= selectedFilter then
+				table.remove(recipes, i)
+			end
+		end
+
 	end
 	return recipes
 end
@@ -158,7 +190,7 @@ local function GetScrapRecipes(inventory)
 	local recipes = {}
 	for index, value in pairs(inventory:GetItems()) do
 		local newRecipe = {
-			item = value,
+			item = { Greatness = value:GetCustomProperty("Greatness"), name = value.name, value:GetCustomProperty("Order") },
 			itemid = value.name,
 			recipe = {},
 			slot = index
@@ -248,6 +280,7 @@ local function CraftSelectPanel()
 		["A"]  = "Agility",
 		["V"]  = "Vitality",
 	}
+	local canCraft = false
 	if selectedRecipe then
 		local newitem = itemconstruct.New(
 			{
@@ -273,7 +306,11 @@ local function CraftSelectPanel()
 			statVal.text  = tostring(value)
 			::continue::
 		end
+
+
 	end
+	ViewButtons[currentState].isInteractable = canCraft
+
 end
 
 local function UpgradeSelectPanel()
@@ -288,19 +325,20 @@ local function UpgradeSelectPanel()
 		["V"]  = "Vitality",
 	}
 
+	local canCraft = false
 	if selectedRecipe and selectedRecipe.item then
 		local newitem = itemconstruct.New(
 			{
 				item      = selectedRecipe.item.name,
-				order     = selectedRecipe.item:GetCustomProperty("Order"),
-				greatness = selectedRecipe.item:GetCustomProperty("Greatness")
+				order     = selectedRecipe.item.Order,
+				greatness = selectedRecipe.item.Greatness
 			}
 		)
 		local newitemNext = itemconstruct.New(
 			{
 				item      = selectedRecipe.item.name,
-				order     = selectedRecipe.item:GetCustomProperty("Order"),
-				greatness = selectedRecipe.item:GetCustomProperty("Greatness") + 1
+				order     = selectedRecipe.item.Order,
+				greatness = selectedRecipe.item.Greatness + 1
 			}
 		)
 		local stats = newitem:CalculateStats()
@@ -325,10 +363,14 @@ local function UpgradeSelectPanel()
 			::continue::
 		end
 	end
+	ViewButtons[currentState].isInteractable = canCraft
+
 end
 
 local function ScrapSelectPanel()
+	local canCraft = true
 
+	ViewButtons[currentState].isInteractable = canCraft
 end
 
 local function UpdateSelectPanel()
@@ -348,8 +390,8 @@ local function UpdateSelectPanel()
 		SelectedTitle.text = string.format(
 			"%s %s | Greatness %d",
 			selectedRecipe.item.name,
-			selectedRecipe.item:GetCustomProperty("Order"),
-			selectedRecipe.item:GetCustomProperty("Greatness")
+			selectedRecipe.item.Order or "",
+			selectedRecipe.item.Greatness
 		)
 	else
 		SelectedTitle.text = selectedRecipe.itemid
@@ -468,16 +510,20 @@ for key, value in pairs(Tabs) do
 	end)
 end
 
-Get(ViewPanels[states.crafting], "Button").pressedEvent:Connect(function()
-	if selectedRecipe and currentState == states.crafting then
-		Events.Broadcast(events.CcraftItem, selectedRecipe.itemid)
-		Refresh()
-	end
-end)
+--[[
+
+	Get(ViewPanels[states.crafting], "Button").pressedEvent:Connect(function()
+		if selectedRecipe and currentState == states.crafting then
+			Events.Broadcast(events.CcraftItem, selectedRecipe.itemid)
+			Refresh()
+		end
+	end)
+	]]
 Get(ViewPanels[states.upgrading], "Button").pressedEvent:Connect(function()
 	if selectedRecipe and currentState == states.upgrading then
 		if selectedRecipe.NFT then
-			Events.Broadcast(events.CupgradeNFT)
+			local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
+			Events.Broadcast(events.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
 		else
 			Events.Broadcast(events.Cupgrade, selectedRecipe.slot)
 		end
@@ -493,7 +539,7 @@ end)
 
 Events.Connect(AppState.EnterKey, function(player, newstate)
 	if newstate == AppState.Anvil then
-		SetState(states.crafting)
+		SetState(states.upgrading)
 	end
 end)
 

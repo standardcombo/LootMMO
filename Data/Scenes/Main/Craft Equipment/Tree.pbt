@@ -4579,7 +4579,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4855,7 +4855,7 @@ Objects {
   Control {
     Width: 184
     Height: 94
-    UIX: 280.969
+    UIX: 100
     UIY: 81.5979919
     RenderTransformPivot {
       Anchor {
@@ -5120,7 +5120,7 @@ Objects {
   Control {
     Width: 184
     Height: 94
-    UIX: 440
+    UIX: 259.031
     UIY: 81.5979919
     RenderTransformPivot {
       Anchor {
@@ -5974,6 +5974,7 @@ Objects {
     }
   }
   ParentId: 4692250487048010082
+  ChildIds: 4821163052361079636
   ChildIds: 15026015859442753275
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -6025,6 +6026,43 @@ Objects {
   Script {
     ScriptAsset {
       Id: 13101248778273175816
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4821163052361079636
+  Name: "Craft-NFT_Saving"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6846850692160025328
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7637429431069973704
     }
   }
   NetworkRelevanceDistance {

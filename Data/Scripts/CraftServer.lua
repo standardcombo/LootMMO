@@ -77,11 +77,11 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 		if not token then return end
 		local Greatness = NFTSaving.LoadNFT(player, token, itemid)
 		if not Greatness then
-			local itemdata = LOOT_BAG_PARSER.ParseFromToken(token)
+			local itemdata = LOOT_BAG_PARSER.Parse(token)
 			local items = itemdata.items
 			for key, value in pairs(items) do
-				if itemid == item.name then
-					Greatness = item.greatness
+				if itemid == value.name then
+					Greatness = value.greatness
 				end
 			end
 		end
@@ -90,10 +90,15 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 		local Recipe = CraftingAPI.GetGreatnessValue(itemid, Greatness + 1)
 		if inventory:HasRequiredItems(Recipe) then
 			for key, value in pairs(Recipe) do
-				inventory:RemoveItem(key, { count = value })
+				local materialdata = ItemApi.GetDefinition(key) or Marerials.GetDefinition(key)
+				inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 			end
 			NFTSaving.Save(player, token, itemid, Greatness + 1)
+			NFTSaving.UpdateClient(player)
+		else
+			return
 		end
+
 		local BagKey = CoreString.Join("|", token.contractAddress, token.tokenId)
 		local itemEntry = ItemApi.GetDefinition(itemid)
 		local icon = nil
@@ -105,10 +110,10 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 			if item.name == itemid then
 				local value = item:GetCustomProperty("BagKey")
 				if value == BagKey then
-					item:SetCustomProperty("Greatness", item:GetCustomProperty("Greatness") + 1)
+					item:SetCustomProperty("Greatness", Greatness + 1)
 					Events.BroadcastToPlayer(player, "RewardToast", {
 						icon = icon,
-						message = "Success: Equipment Upgraded"
+						message = "Success: NFT Upgraded"
 					})
 					return true
 				end
@@ -117,7 +122,7 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 
 		Events.BroadcastToPlayer(player, "RewardToast", {
 			icon = icon,
-			message = "Success: Equipment Upgraded"
+			message = "Success: NFT Upgraded"
 		})
 		return true
 
@@ -194,4 +199,4 @@ end
 Events.ConnectForPlayer(events.upgrade, UpgradeItem)
 Events.ConnectForPlayer(events.scrap, ScrapItem)
 Events.ConnectForPlayer(events.upgradeNFT, UpgradeNFT)
-Events.ConnectForPlayer(events.craftItem, CraftItem)
+--Events.ConnectForPlayer(events.craftItem, CraftItem)
