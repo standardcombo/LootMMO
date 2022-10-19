@@ -1,13 +1,13 @@
-Name: "Dragons1"
-RootId: 7572143779451249459
+Name: "Spiders1"
+RootId: 4370789170075393638
 Objects {
-  Id: 10640789607220046717
+  Id: 17898330903081020249
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: 6902.76318
-      Y: -141.012939
-      Z: 43368.8945
+      X: 17589.6641
+      Y: -18143.2559
+      Z: 45331.4844
     }
     Rotation {
       Yaw: 107.896622
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -72,368 +72,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8435713097192541981
+  Id: 39579457534620141
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: 6346.97217
-      Y: -1294.02625
-      Z: 43172.5508
-    }
-    Rotation {
-      Yaw: 49.7552643
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Y Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:X Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Z Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:evolumetype:1"
-      }
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Absolute Scale"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 15895911216899816748
-    }
-    TeamSettings {
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10877079506133176058
-  Name: "Enemy Spawn"
-  Transform {
-    Location {
-      X: 5869.16406
-      Y: -48.6751709
-      Z: 42639.3203
-    }
-    Rotation {
-      Yaw: 49.7552834
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Y Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:X Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Z Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:evolumetype:1"
-      }
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Absolute Scale"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 15895911216899816748
-    }
-    TeamSettings {
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16938978503669352536
-  Name: "Enemy Spawn"
-  Transform {
-    Location {
-      X: 4417.68359
-      Y: -957.864807
-      Z: 42327.9219
-    }
-    Rotation {
-      Yaw: 32.8299522
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Y Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:X Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Z Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:evolumetype:1"
-      }
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Absolute Scale"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 15895911216899816748
-    }
-    TeamSettings {
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2580643553375647228
-  Name: "Enemy Spawn"
-  Transform {
-    Location {
-      X: 3290.78149
-      Y: -2979.03784
-      Z: 42764.8086
-    }
-    Rotation {
-      Yaw: 32.8298836
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Y Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:X Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Z Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:evolumetype:1"
-      }
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Absolute Scale"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 15895911216899816748
-    }
-    TeamSettings {
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13634738271207143190
-  Name: "Enemy Spawn"
-  Transform {
-    Location {
-      X: 2874.46729
-      Y: -1560.20251
-      Z: 42405.1211
-    }
-    Rotation {
-      Yaw: 49.7552643
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Y Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:X Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Z Scale"
-      Float: 1.5
-    }
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:evolumetype:1"
-      }
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Absolute Scale"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 15895911216899816748
-    }
-    TeamSettings {
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10696190449361594856
-  Name: "Enemy Spawn"
-  Transform {
-    Location {
-      X: 1760.22888
-      Y: -1522.32007
-      Z: 43445.1211
+      X: 17066.5547
+      Y: -19613.6504
+      Z: 45303.9453
     }
     Rotation {
       Yaw: 107.896622
@@ -444,7 +89,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -498,13 +143,155 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15758521417605164974
+  Id: 17608912530462994266
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: 2752.51562
-      Y: -3770.41699
-      Z: 43357.0352
+      X: 17774.2422
+      Y: -19010.3574
+      Z: 45340.7656
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3894021147538711357
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 12560.7939
+      Y: -19215.7324
+      Z: 45346.3672
+    }
+    Rotation {
+      Yaw: 49.7553101
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8544952184411998190
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 12594.4502
+      Y: -18553.1855
+      Z: 45339.9453
     }
     Rotation {
       Yaw: -157.500031
@@ -515,7 +302,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -569,24 +356,521 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16905444173863309287
+  Id: 216699073314901159
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 11702.3018
+      Y: -15438.1816
+      Z: 46166.2812
+    }
+    Rotation {
+      Yaw: 49.755291
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17566369283163708802
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 12200.5713
+      Y: -16810.6641
+      Z: 46094.9062
+    }
+    Rotation {
+      Yaw: 32.8300171
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8050634257035846238
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 11130.8564
+      Y: -17320.4824
+      Z: 46256.4
+    }
+    Rotation {
+      Yaw: 32.8299599
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4981965389948345217
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 13551.6445
+      Y: -14133.5488
+      Z: 46318.4297
+    }
+    Rotation {
+      Yaw: 49.755291
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14892160596657951548
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 14845.2285
+      Y: -15746.252
+      Z: 45346.25
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5992731182797126998
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 15559.7559
+      Y: -15196.6055
+      Z: 45345.9766
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14924403427036579098
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 15942.8691
+      Y: -14523.4336
+      Z: 45356.6953
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9842427853951256114
   Name: "Quest Area"
   Transform {
     Location {
-      X: 4143.30664
-      Y: -1485.24866
-      Z: 42284.3
+      X: 13964.6104
+      Y: -16409.6523
+      Z: 39000
     }
     Rotation {
       Yaw: -157.500031
     }
     Scale {
-      X: 45.7309761
-      Y: 45.7309761
-      Z: 45.7309761
+      X: 64.1438522
+      Y: 64.1438522
+      Z: 64.1438522
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -651,16 +935,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12601416956438180201
-  Name: "Spawn Point - Dragons1"
+  Id: 5822920051083399908
+  Name: "Spawn Point - Spiders1"
   Transform {
     Location {
-      X: -2084.76196
-      Y: -2383.82202
-      Z: 43624.6172
+      X: 5888.21729
+      Y: -13461.5576
+      Z: 45948.4609
     }
     Rotation {
-      Yaw: -20.9612236
+      Yaw: -20.9611511
     }
     Scale {
       X: 1
@@ -668,7 +952,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -684,7 +968,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Dragons1"
+    SpawnKey: "Spiders1"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -696,62 +980,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 990341269626375123
-  Name: "ObjectiveEventListener"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7572143779451249459
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:QuestID"
-      String: "Dragons1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:EventID"
-      String: "Quest.NPCDied"
-    }
-    Overrides {
-      Name: "cs:ObjectID"
-      String: "Dragon"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9246345034586664616
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13247756631941646759
+  Id: 17594994849148370947
   Name: "ObjectiveEncounterSpawn"
   Transform {
     Location {
@@ -764,23 +993,31 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7572143779451249459
+  ParentId: 4370789170075393638
   UnregisteredParameters {
     Overrides {
       Name: "cs:EnemyIDs"
-      String: "Dragon"
+      String: "Spider"
     }
     Overrides {
       Name: "cs:MinPlayerLevel"
-      Int: 2
-    }
-    Overrides {
-      Name: "cs:EnemyCount"
       Int: 5
     }
     Overrides {
+      Name: "cs:EnemyCount"
+      Int: 8
+    }
+    Overrides {
       Name: "cs:ChanceEpicEnemy"
-      Float: 0.05
+      Float: 0.1
+    }
+    Overrides {
+      Name: "cs:ChanceLegendaryEnemy"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:AdditionalRadius"
+      Int: 10000
     }
   }
   Collidable_v2 {
