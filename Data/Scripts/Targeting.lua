@@ -1,8 +1,15 @@
-local CurrentTarget = nil
-local Range = 2500 ^ 2
-local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 local TARGETING_API = require(script:GetCustomProperty('Targeting_API'))
 local TARGERT_RENDER = script:GetCustomProperty('TargertRender'):WaitForObject()
+
+-- 30 meters
+local MAX_RANGE = 3000 ^ 2
+
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+
+local CurrentTarget = nil
+
+
 function ClosestPointOnInfinateLine(vectorStart, vectorEnd, vectorPoint)
 	local directionToLastNode = (vectorEnd - vectorStart)
 	local dotA = directionToLastNode:GetNormalized() .. (vectorPoint - vectorStart)
@@ -25,17 +32,20 @@ function Tick(dt)
 	end
 	TARGERT_RENDER.visibility = Visibility.INHERIT
 	TARGERT_RENDER:SetWorldPosition(CurrentTarget:GetWorldPosition())
-	local View = Vector3.New(CurrentTarget:GetWorldPosition() - LOCAL_PLAYER:GetViewWorldPosition() +Vector3.UP )
-	local Distance = View.sizeSquared
-	if Distance > Range then
+	
+	local LookPos = LOCAL_PLAYER:GetViewWorldPosition() + Vector3.UP
+	local viewVector = CurrentTarget:GetWorldPosition() - LookPos
+	local viewDist = viewVector.sizeSquared
+	
+	if viewDist > MAX_RANGE then
 		CurrentTarget = nil
 		return
 	end
-	if Distance < 30000 then
+	if viewDist < 30000 then
 		return
 	end
 	local Start = Quaternion.New(LOCAL_PLAYER:GetLookWorldRotation())
-	local End = Quaternion.New(Rotation.New(View:GetNormalized(), Vector3.UP))
+	local End = Quaternion.New(Rotation.New(viewVector:GetNormalized(), Vector3.UP))
 	local Slerpy = Quaternion.Slerp(Start, End, dt * 4)
 
 	LOCAL_PLAYER:SetLookWorldRotation(Rotation.New(Slerpy))
@@ -43,20 +53,33 @@ end
 
 function SelectTarget()
 	local smallestTarget = nil
-	local smallestSize = Range + 1
+	local smallestSize = MAX_RANGE + 1
 	local LookPos = LOCAL_PLAYER:GetViewWorldPosition() 
 	local LookDir = LOCAL_PLAYER:GetLookWorldRotation() * Vector3.FORWARD
 	local LookEnd = LookPos + LookDir
-	for index, value in ipairs(TARGETING_API.GetTargets()) do
-		local valuePos = value:GetWorldPosition()
-		local pointPosition = ClosestPointOnInfinateLine(LookPos, LookEnd, valuePos)
-		local newRange = Vector3.New(valuePos - pointPosition).sizeSquared
-		if newRange < smallestSize and (LookDir .. (valuePos - LookPos):GetNormalized()) > 0 then
-			smallestSize = newRange
-			smallestTarget = value
+	
+	for index, target in ipairs(TARGETING_API.GetTargets()) do
+		local targetPos = target:GetWorldPosition()
+		
+		local viewVector = targetPos - LookPos
+		local viewDist = viewVector.sizeSquared
+		
+		if viewDist < MAX_RANGE then
+			local pointPosition = ClosestPointOnInfinateLine(LookPos, LookEnd, targetPos)
+			local newRange = Vector3.New(targetPos - pointPosition).sizeSquared
+			if newRange < smallestSize and (LookDir .. (targetPos - LookPos):GetNormalized()) > 0 then
+				smallestSize = newRange
+				smallestTarget = target
+			end
 		end
 	end
 	CurrentTarget = smallestTarget
+	
+	if not CurrentTarget then
+		UI.ShowFlyUpText("No target found", 
+			LOCAL_PLAYER:GetWorldPosition() + Vector3.UP * 110,
+			{isBig = true, duration = 1})
+	end
 	
 	if _G.EnemyTopBar and Object.IsValid(CurrentTarget) then
 		local npc = CurrentTarget:FindAncestorByType("DamageableObject")

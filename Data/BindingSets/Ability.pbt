@@ -290,7 +290,7 @@ Assets {
             Value: "mc:ebindingkeyboard:tab"
           }
           KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
+            Value: "mc:ebindingkeyboard:pageup"
           }
           Controller {
             Value: "mc:ebindinggamepad:none"
