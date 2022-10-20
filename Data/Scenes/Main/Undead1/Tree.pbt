@@ -2564,7 +2564,7 @@ Objects {
     }
     Overrides {
       Name: "cs:MinPlayerLevel"
-      Int: 2
+      Int: 3
     }
     Overrides {
       Name: "cs:EnemyCount"
