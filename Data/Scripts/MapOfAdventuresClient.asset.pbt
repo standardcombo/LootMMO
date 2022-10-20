@@ -40,6 +40,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:FTUEArrowIndicator"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:Trigger:isrep"
         Bool: false
       }

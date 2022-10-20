@@ -215,6 +215,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8643205952937730457
+  Name: "Abstract Frame 02"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Cframe_002"
+  }
+}
+Assets {
   Id: 8174910052356597265
   Name: "Urban Vehicle Sedan - Door Rear 01 - Window 01"
   PlatformAssetType: 1

@@ -8140,6 +8140,7 @@ Objects {
   ChildIds: 18000746922375813372
   ChildIds: 14045045770949829477
   ChildIds: 12430188912358625884
+  ChildIds: 15702027395339858450
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -8165,6 +8166,81 @@ Objects {
       Opacity: 1
       OpacityMaskBrush {
       }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15702027395339858450
+  Name: "FTUE Right Arrow Indicator"
+  Transform {
+    Location {
+      X: 293.638611
+      Y: -281.16153
+      Z: 524.121277
+    }
+    Rotation {
+      Pitch: -3.4150944e-05
+      Yaw: 89.2200775
+      Roll: -89.9999924
+    }
+    Scale {
+      X: 2.44941664
+      Y: 2.44941664
+      Z: 2.44941664
+    }
+  }
+  ParentId: 6724958446802583321
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 94
+    Height: 94
+    UIX: 78
+    RotationAngle: 180
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 8643205952937730457
+      }
+      Color {
+        R: 0.339000016
+        A: 1
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
     }
     AnchorLayout {
       SelfAnchor {
@@ -11158,6 +11234,12 @@ Objects {
       Name: "cs:RightArrow"
       ObjectReference {
         SelfId: 14045045770949829477
+      }
+    }
+    Overrides {
+      Name: "cs:FTUEArrowIndicator"
+      ObjectReference {
+        SelfId: 15702027395339858450
       }
     }
   }

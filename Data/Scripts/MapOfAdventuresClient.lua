@@ -6,6 +6,7 @@ local CALLOUT_SPARKLE = script:GetCustomProperty("CalloutSparkle"):WaitForObject
 local CONTENT_PANEL = script:GetCustomProperty("ContentPanel"):WaitForObject()
 local LEFT_ARROW = script:GetCustomProperty("LeftArrow"):WaitForObject()
 local RIGHT_ARROW = script:GetCustomProperty("RightArrow"):WaitForObject()
+local FTUEARROW_INDICATOR = script:GetCustomProperty("FTUEArrowIndicator"):WaitForObject()
 
 local CAM_APPROACH_DISTANCE = 20
 local CAM_APPROACH_SPEED = 1.8
@@ -17,6 +18,8 @@ local selectedIndex = 1
 
 local isFocused = false
 local isAwaitingTransfer = false
+
+ftueIndicatorSize = FTUEARROW_INDICATOR.width
 
 Task.Wait()
 
@@ -45,6 +48,14 @@ end
 function Tick(deltaTime)
 	local t = deltaTime * CAM_APPROACH_SPEED
 	OVERRIDE_CAMERA.currentDistance = CoreMath.Lerp(OVERRIDE_CAMERA.currentDistance, 0, t)
+	
+	if FTUEARROW_INDICATOR.visibility == Visibility.INHERIT then
+		local amplitude = 14
+		local frequency = 3
+		local size = CoreMath.Round(ftueIndicatorSize + math.sin(time() * frequency) * amplitude)
+		FTUEARROW_INDICATOR.width = size
+		FTUEARROW_INDICATOR.height = size
+	end
 end
 
 
@@ -62,6 +73,8 @@ function EnterFocus()
 	TRIGGER.isEnabled = false
 	
 	Events.BroadcastToServer("Map.Focus", true)
+	
+	UpdateFTUEIndicator()
 end
 
 function ExitFocus()
@@ -80,6 +93,8 @@ function ExitFocus()
 	TRIGGER.isEnabled = true
 	
 	Events.BroadcastToServer("Map.Focus", false)
+	
+	UpdateFTUEIndicator()
 end
 
 
@@ -123,6 +138,19 @@ function UpdateContents()
 end
 
 
+function UpdateFTUEIndicator()
+	if isFocused 
+	and #maps > 1
+	and selectedIndex ~= 2 
+	and not _G.QuestController.HasCompleted(Game.GetLocalPlayer(), "Raid2")
+	then
+		FTUEARROW_INDICATOR.visibility = Visibility.INHERIT
+	else
+		FTUEARROW_INDICATOR.visibility = Visibility.FORCE_OFF
+	end
+end
+
+
 function UpdateMapVisibility()
 	for i, map in ipairs(maps) do
 		if i == selectedIndex then
@@ -138,6 +166,8 @@ function UpdateMapVisibility()
 		LEFT_ARROW.visibility = Visibility.FORCE_OFF
 		RIGHT_ARROW.visibility = Visibility.FORCE_OFF
 	end
+		
+	UpdateFTUEIndicator()
 end
 
 
