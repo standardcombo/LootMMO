@@ -198,7 +198,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:ResourceName"
-      String: "Cash"
+      String: "Coins"
     }
     Overrides {
       Name: "cs:AlwaysShow"

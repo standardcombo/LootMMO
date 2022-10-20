@@ -1,15 +1,21 @@
 --[[
-    Script Purpose.
-        1. When player selects character, get number of inventory coins and create a coin resource.
-        2. When player inventory coins changes, update the coin resource.
-        3. When player selects a different character, destroy the coin resource.
-        4. When player earns coins resource changes, update the player's inventory coin quantity.
+    =======================
+    LootCoinsAdapter_Server
+    V1.0
+    Created by: Luapi
+    =======================
+    Unifies inventory coins with resource coins.
+    Improves interoperability (e.g. Pinball/Poker).
+
+    1. When player selects character, get number of inventory coins and create a coin resource.
+    2. When player inventory coins changes, update the coin resource.
+    3. When player selects a different character, destroy the coin resource.
+    4. When player earns coins resource changes, update the player's inventory coin quantity.
 ]]
 while not _G['Character.EquipAPI'] do
 	Task.Wait()
 end
 local MATERIALS = _G["Items.Materials"]
-local ITEM_DATA = _G["Items"]
 local EquipAPI = _G['Character.EquipAPI']
 local COINS = "Coins" --Inventory item/Resource name to track as a resource
 local iteminfo = MATERIALS.GetDefinition(COINS)
@@ -27,57 +33,47 @@ function OnResourceChanged(player, resName, value) --When coins resource changes
     local CoreInv = GetInventory(player)
     if not CoreInv then return end
     if not iteminfo then return end
-    local invCoinCount = 0
-    for i = 1, CoreInv.slotCount do
-        local item = CoreInv:GetItem(i)
-        if item and item.name == COINS then
-            invCoinCount = item.count
-            break
-        end
-    end
+
+    if player.serverUserData.locked then return end
+    player.serverUserData.locked = true
+
+    local invCoinCount = CoreInv:GetItemCount(iteminfo["itemAsset"])
     --[[
         If the players coins inventory is less than the resource, add the difference to the inventory.
         If the players coins inventory is more than the resource, remove the difference from the inventory.
     ]]
-    print(invCoinCount, value)
+    --print(invCoinCount, value)
     local difference = 0
     if invCoinCount < value then
         difference = value - invCoinCount
-        CoreInv:AddItem(iteminfo["itemAsset"], { count = difference })
+        CoreInv:AddItem(iteminfo["itemAsset"], {count = difference })
     elseif invCoinCount > value then
         difference = invCoinCount - value
-        CoreInv:RemoveItem(iteminfo["itemAsset"], difference)
+        CoreInv:RemoveItem(iteminfo["itemAsset"], {count = difference})
     end
+    player.serverUserData.locked = false
 end
 
-function UpdateKey(coreInv, slot) --When player's inventory changes, update coins resource
+function UpdateResourceFromInventory(coreInv) --When player's inventory changes, update coins resource
     local coinCount = coreInv:GetItemCount(iteminfo["itemAsset"])
-    print("INVENTORY COINS",coinCount)
+    if coinCount == coreInv.owner:GetResource(COINS) then return end
+    --print("INVENTORY COINS",coinCount)
     coreInv.owner:SetResource(COINS, coinCount)
 end
 
-function UpdateResourceFromInv(coreInv)
-    for i = 1, coreInv.slotCount do
-        local item = coreInv:GetItem(i)
-        if item and item.name == COINS then
-            print("INVENTORY COINS",item.count)
-            coreInv.owner:SetResource(COINS, item.count)
-            break
-        end
-    end
-end
-
 function OnPlayerEquippedEvent(char, player)
-    Task.Spawn(function()
-        player:AddResource(COINS, 22)
-    end,10)
     local CoreInv = GetInventory(player)
     if not CoreInv then return end
+
+    if player.serverUserData.locked then return end
+    player.serverUserData.locked = true
+
     player.serverUserData.inventoryChangedListener = CoreInv.changedEvent:Connect(function(_,slot)
-        UpdateKey(CoreInv, slot)
+        UpdateResourceFromInventory(CoreInv)
     end)
-    UpdateResourceFromInv(CoreInv)
+    UpdateResourceFromInventory(CoreInv)
     player.serverUserData.resourceChangedListener = player.resourceChangedEvent:Connect(OnResourceChanged)
+    player.serverUserData.locked = false
 end
 
 function OnPlayerUnequippedEvent(char, player)

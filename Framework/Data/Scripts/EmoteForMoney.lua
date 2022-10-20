@@ -6,7 +6,7 @@ function Tick()
     for key, other in pairs(Trigger:GetOverlappingObjects()) do
         if other:IsA("Player") then 
             if other.activeEmote and other:GetResource(TEXAS_POKER_SETTINGS.resource) < TEXAS_POKER_SETTINGS.minBuyin then 
-                other:AddResource(TEXAS_POKER_SETTINGS.resource,50)
+                other:AddResource(TEXAS_POKER_SETTINGS.resource,TEXAS_POKER_SETTINGS.emoteForMoney)
                 World.SpawnAsset(VFX, {position = other:GetWorldPosition() + Vector3.UP*150, networkContext = NetworkContextType.NETWORKED})
             end 
         end 
