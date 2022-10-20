@@ -18153,44 +18153,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3022631973096814541
-  Name: "Item Data Loader"
-  Transform {
-    Location {
-      Z: -115
-    }
-    Rotation {
-      Yaw: 163.949936
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2852741563843667238
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Item Data Loader"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 17869976470032262922
   Name: "Character"
   Transform {
