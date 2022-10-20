@@ -10,9 +10,9 @@ Assets {
         Name: "Map Content - Dragons1"
         Transform {
           Scale {
-            X: 14.6956224
-            Y: 14.6956224
-            Z: 14.6956224
+            X: 35.9957
+            Y: 35.9957
+            Z: 35.9957
           }
         }
         ParentId: 3926631431061671274
@@ -412,8 +412,8 @@ Assets {
         Control {
           Width: 24
           Height: 24
-          UIX: 21.5896416
-          UIY: 26.268074
+          UIX: 23.799118
+          UIY: 31.2035141
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -485,8 +485,8 @@ Assets {
         Control {
           Width: 24
           Height: 24
-          UIX: -9.99197769
-          UIY: 23.4120979
+          UIX: 10.7575111
+          UIY: -18.6472206
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -558,8 +558,8 @@ Assets {
         Control {
           Width: 24
           Height: 24
-          UIX: -14.6373749
-          UIY: -35.4175072
+          UIX: -23.8056984
+          UIY: -29.9003181
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -777,9 +777,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: -0.612052917
+          UIX: 1.34316063
           UIY: 49.1553192
-          RotationAngle: 305.734161
+          RotationAngle: 323.871887
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -851,9 +851,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 3.95496821
-          UIY: 4.37692928
-          RotationAngle: 55.850441
+          UIX: 0.478214324
+          UIY: 16.4701099
+          RotationAngle: 35.953476
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -925,9 +925,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: -8.97213
-          UIY: -11.4378052
-          RotationAngle: 239.516678
+          UIX: -10.4115152
+          UIY: -3.7441678
+          RotationAngle: 269.206909
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -999,9 +999,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 3.82499862
-          UIY: -49.8002815
-          RotationAngle: 147.654495
+          UIX: 2.78038216
+          UIY: -41.8997383
+          RotationAngle: 133.927887
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1074,8 +1074,8 @@ Assets {
           Width: 14
           Height: 5
           UIX: 22.4743958
-          UIY: -57.6656876
-          RotationAngle: 168.097107
+          UIY: -55.5468483
+          RotationAngle: 150.587936
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
