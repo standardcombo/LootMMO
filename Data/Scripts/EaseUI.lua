@@ -160,6 +160,9 @@ function Module.Ease(uiElement, property, goal, easeDuration, easingEquation, ea
 
 	local direction = ((start < goal) and 1) or -1
 
+	if property == "width" or property == "height" then
+		goal = CoreMath.Round(goal)
+	end
 	wrapTask(property, uiElement, function()
 		if (not Object.IsValid(uiElement)) then
 			return clearFromTask(uiElement, property)
@@ -168,13 +171,18 @@ function Module.Ease(uiElement, property, goal, easeDuration, easingEquation, ea
 		local currentTime = time() - startTime
 
 		if (currentTime >= easeDuration) then
+
 			uiElement[property] = goal
 
 			return clearFromTask(uiElement, property)
 		end
-
-		uiElement[property] = CoreMath.Round(easingFormula(currentTime, start, direction * math.abs(goal - start), easeDuration)
+		local nextFrame = CoreMath.Round(easingFormula(currentTime, start, direction * math.abs(goal - start), easeDuration)
 			, 4)
+
+		if property == "width" or property == "height" then
+			nextFrame = CoreMath.Round(nextFrame)
+		end
+		uiElement[property] = nextFrame
 	end)
 end
 

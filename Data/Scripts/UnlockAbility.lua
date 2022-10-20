@@ -8,6 +8,12 @@ local MARKER = script:GetCustomProperty("Marker"):WaitForObject()
 local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
 local LEFT_PANEL = script:GetCustomProperty("Left_Panel"):WaitForObject()
 local potionicon = script:GetCustomProperty("FantasySpellPotion016")
+local EASE_UI = require(script:GetCustomProperty("EaseUI"))
+local UNLOCK_BACK_GROUND = script:GetCustomProperty("UnlockBackGround"):WaitForObject()
+
+local CLOSE_EVENT = "Ability_Close"
+local PREPARE_TO_CLOSE = "Ability_Prepare"
+local OPEN_EVENT = "Ability_OpenPanel"
 
 local EquipAPI = _G["Character.EquipAPI"]
 local Abilities = _G["Ability.Equipment"]
@@ -60,7 +66,7 @@ local function FindNextAcceptPotions(Progression)
 	for i = 1, 3 do
 		if Progression:GetProgressionKey("PotionSlot" .. i) and not Progression:GetProgressionKey("AcceptPotion" .. i) then
 			currentSlot = i
-			unlockKey = "AbilitySlot"
+			unlockKey = "PotionSlot"
 			nextPanel = PotionSlots[i]
 			return true
 		end
@@ -189,6 +195,7 @@ end
 local function Open()
 	HideDisplay()
 	HideMarker()
+	EASE_UI.EaseOpacity(UNLOCK_BACK_GROUND, 1, .4)
 
 	local char = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	if not char then
@@ -211,6 +218,14 @@ local function Open()
 		end
 	end
 
+	for i = 1, 3 do
+		if Progression:GetProgressionKey("PotionSlot" .. i) and Progression:GetProgressionKey("AcceptPotion" .. i) then
+			PotionSlots[i].visibility = Visibility.INHERIT
+		else
+			PotionSlots[i].visibility = Visibility.FORCE_OFF
+		end
+	end
+
 	InputBinding = CONFIRM.pressedEvent:Connect(NextScreen)
 	NextScreen()
 end
@@ -225,5 +240,10 @@ local function RecieveClosed()
 	Close()
 end
 
+local function PreptoClose()
+	EASE_UI.EaseOpacity(UNLOCK_BACK_GROUND, 0, .4)
+end
+
+Events.Connect(PREPARE_TO_CLOSE, PreptoClose)
 Events.Connect('Ability_OpenPanel', RecieviedOpen)
 Events.Connect("Ability_Close", RecieveClosed)

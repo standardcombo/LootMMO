@@ -116,6 +116,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12017066556531936775
+  Name: "Frame Outline Thin 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameOutline_019"
+  }
+}
+Assets {
   Id: 11336346532215892341
   Name: "Germania One"
   PlatformAssetType: 28
@@ -188,12 +197,30 @@ Assets {
   }
 }
 Assets {
+  Id: 7494676458495629711
+  Name: "Fantasy Ability Blue 029"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ability_Blue_029"
+  }
+}
+Assets {
   Id: 6488609383494304708
   Name: "Fantasy Frame 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Frame_003"
+  }
+}
+Assets {
+  Id: 6307410126904806920
+  Name: "Fantasy Ability Green 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ability_Green_006"
   }
 }
 Assets {
@@ -320,6 +347,33 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_015"
+  }
+}
+Assets {
+  Id: 925967446720088194
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
+  }
+}
+Assets {
+  Id: 202360450294152261
+  Name: "Fantasy Ability Red 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ability_Red_002"
+  }
+}
+Assets {
+  Id: 126394590291373209
+  Name: "Fantasy Spell Potion 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Potion_004"
   }
 }
 Assets {
