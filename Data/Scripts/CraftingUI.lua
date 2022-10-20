@@ -280,7 +280,7 @@ local function CraftSelectPanel()
 		["A"]  = "Agility",
 		["V"]  = "Vitality",
 	}
-	local canCraft = false
+	local canCraft = true
 	if selectedRecipe then
 		local newitem = itemconstruct.New(
 			{
@@ -325,7 +325,7 @@ local function UpgradeSelectPanel()
 		["V"]  = "Vitality",
 	}
 
-	local canCraft = false
+	local canCraft = true
 	if selectedRecipe and selectedRecipe.item then
 		local newitem = itemconstruct.New(
 			{
