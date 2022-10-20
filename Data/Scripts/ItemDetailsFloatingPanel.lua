@@ -1,6 +1,8 @@
 local ICON = script:GetCustomProperty('Icon'):WaitForObject()
 local NAME = script:GetCustomProperty('Name'):WaitForObject()
 local STATS = script:GetCustomProperty('Stats'):WaitForObject()
+local LEVEL_FRAME = script:GetCustomProperty("LevelFrame"):WaitForObject()
+local LEVEL_TEXT = script:GetCustomProperty("LevelText"):WaitForObject()
 
 function SetItem(item, itemClass)
     local def = _G.Items.GetDefinition(item.name)
@@ -42,6 +44,9 @@ function SetItem(item, itemClass)
     end
 
     STATS.text = ChatString
+    
+    LEVEL_TEXT.text = tostring(item.greatness)
+    
     -- TODO: Stat bonuses
 
     -- TODO: Triggered ability description

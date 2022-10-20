@@ -89,15 +89,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13591847256893365151
-  Name: "Target"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_icon_Target"
-  }
-}
-Assets {
   Id: 13462854128336502995
   Name: "Center Circle 001 Outline"
   PlatformAssetType: 9
@@ -233,15 +224,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4569484101736324280
-  Name: "BG Gradient 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundFlat_015"
-  }
-}
-Assets {
   Id: 3483798833601977176
   Name: "Fantasy Shape 003"
   PlatformAssetType: 9
@@ -320,6 +302,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Crafting_Crystal_018"
+  }
+}
+Assets {
+  Id: 653554309488938617
+  Name: "Frame Beveled 007"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameSolid8px_024"
+  }
+}
+Assets {
+  Id: 299308943708112015
+  Name: "BG Gradient 007"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_024"
   }
 }
 Assets {

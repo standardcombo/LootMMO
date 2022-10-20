@@ -157,11 +157,11 @@ function Tick(deltaTime)
         local t = deltaTime * 5
         HEADER_PANEL.y = CoreMath.Lerp(HEADER_PANEL.y, HEADER_START_Y, t)
     end
-    if ITEM_DETAILS_PANEL.visibility == Visibility.INHERIT then
+    --[[if ITEM_DETAILS_PANEL.visibility == Visibility.INHERIT then
         local pos = Input.GetCursorPosition()
         ITEM_DETAILS_PANEL.x = pos.x
         ITEM_DETAILS_PANEL.y = pos.y
-    end
+    end]]
 end
 
 for _, button in ipairs(itemButtons) do
@@ -172,6 +172,10 @@ for _, button in ipairs(itemButtons) do
             if item and itemClass then
                 ITEM_DETAILS_SCRIPT.context.SetItem(item, itemClass)
                 ITEM_DETAILS_PANEL.visibility = Visibility.INHERIT
+                
+                local pos = b:GetAbsolutePosition()
+		        ITEM_DETAILS_PANEL.x = pos.x - 10
+		        ITEM_DETAILS_PANEL.y = pos.y
             end
         end
     )

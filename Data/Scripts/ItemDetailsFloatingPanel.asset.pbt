@@ -19,6 +19,16 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:LevelFrame"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:LevelText"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 119
