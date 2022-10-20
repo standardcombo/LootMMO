@@ -708,7 +708,7 @@ Objects {
     }
     Overrides {
       Name: "cs:SpawnKey"
-      String: "BagSelection"
+      String: "Social"
     }
   }
   Collidable_v2 {

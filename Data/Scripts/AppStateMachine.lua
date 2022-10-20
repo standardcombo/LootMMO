@@ -50,7 +50,9 @@ end
 -- Server
 function API.SetStateForPlayer(player, newState)
 	local currentState = API.GetStateForPlayer(player)
-
+	
+	--print("AppStateMachine::SetStateForPlayer() ".. player.name ..", newState = ".. newState)
+	
 	-- TODO: Verify transition is valid from `current` to `new`
 
 	Events.Broadcast(API.ExitKey, player, currentState, newState)
