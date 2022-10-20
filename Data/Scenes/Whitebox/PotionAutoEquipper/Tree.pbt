@@ -1,8 +1,8 @@
-Name: "Blaking work folder"
-RootId: 15515718211942672915
+Name: "PotionAutoEquipper"
+RootId: 119869593066758090
 Objects {
-  Id: 17890108579371209114
-  Name: "Sounds"
+  Id: 7393420265162061278
+  Name: "ClientContext"
   Transform {
     Location {
     }
@@ -14,9 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15515718211942672915
-  ChildIds: 7415843634294900179
-  ChildIds: 16779061978413813071
+  ParentId: 119869593066758090
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -43,8 +41,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16779061978413813071
-  Name: "Sounds"
+  Id: 2213775182838303208
+  Name: "ServerContext"
   Transform {
     Location {
     }
@@ -56,7 +54,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17890108579371209114
+  ParentId: 119869593066758090
+  ChildIds: 11318846105816186527
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -69,9 +68,8 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Sounds"
+  NetworkContext {
+    Type: Server
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -79,8 +77,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7415843634294900179
-  Name: "SoundsLibrary"
+  Id: 11318846105816186527
+  Name: "PotionAutoEquip"
   Transform {
     Location {
     }
@@ -92,15 +90,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17890108579371209114
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Sounds"
-      ObjectReference {
-        SelfId: 16779061978413813071
-      }
-    }
-  }
+  ParentId: 2213775182838303208
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -115,7 +105,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 14789455394855263645
+      Id: 14326098358875983326
     }
   }
   NetworkRelevanceDistance {

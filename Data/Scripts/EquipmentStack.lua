@@ -18,11 +18,14 @@ end
 
 function API.UpdateStack(player, socket)
     local stack = API.GetStackPlayer(player, socket)
-    for i = 1, #stack do
-        SetEnabled(stack[i].value, false)
+    if #stack >= 1 then
+	    for i = 1, #stack do
+	        SetEnabled(stack[i].value, false)
+	    end
+	    SetEnabled(stack[#stack].value, true)
     end
-    SetEnabled(stack[#stack].value, true)
 end
+
 function API.Equip(player, equipment, priority)
     local socket = equipment.socket
     priority = priority or 0

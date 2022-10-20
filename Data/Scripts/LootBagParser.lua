@@ -16,6 +16,9 @@
 	
 	ParseItemSVG(string/tokenMetadata) - Returns table
 		Parses raw NFT metadata into a table of items.
+
+	Serialize(table LootBag) - Returns string
+		Converts a gameplay Loot Bag data object into a string.
 	
 	
 	=== SCHEMAS ===

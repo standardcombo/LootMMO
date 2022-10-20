@@ -1,6 +1,49 @@
 Name: "Other Components"
 RootId: 2790649864418413103
 Objects {
+  Id: 3890360190990563893
+  Name: "ThrowableSupportAbilities"
+  Transform {
+    Location {
+      X: -2268.74902
+      Y: -3020.33
+      Z: -51261.1289
+    }
+    Rotation {
+      Yaw: -124.999992
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2790649864418413103
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9188567862461428945
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 10862582226663805320
   Name: "EquipmentCleanupOnLeave"
   Transform {
@@ -2205,6 +2248,12 @@ Objects {
     }
   }
   ParentId: 1719394165844903556
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:StartingState"
+      Int: 130
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

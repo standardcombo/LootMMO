@@ -80,15 +80,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14806072637514890048
-  Name: "Fantasy Ability Teal 026"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Teal_026"
-  }
-}
-Assets {
   Id: 14060330023043759337
   Name: "BG Flat 001"
   PlatformAssetType: 9
@@ -125,15 +116,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13141977356100001493
-  Name: "Fantasy Ability Green 017"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Green_017"
-  }
-}
-Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -152,15 +134,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12707166629963791990
-  Name: "Fantasy Spell Potion 019"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Potion_019"
-  }
-}
-Assets {
   Id: 12465662665234122161
   Name: "UI Bright Notification 01 SFX"
   PlatformAssetType: 7
@@ -176,15 +149,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Icon_ChestPiece"
-  }
-}
-Assets {
-  Id: 12193421660254454342
-  Name: "Fantasy Ability Red 043"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Red_043"
   }
 }
 Assets {
@@ -287,15 +251,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7615847344375253670
-  Name: "UI Basic Frame 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Frame_001"
-  }
-}
-Assets {
   Id: 7608871351729600570
   Name: "Icon Star"
   PlatformAssetType: 9
@@ -368,39 +323,12 @@ Assets {
   }
 }
 Assets {
-  Id: 5751567816530114738
-  Name: "Fantasy Ability Red 029"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Red_029"
-  }
-}
-Assets {
-  Id: 5577214413368822822
-  Name: "Fantasy Ability Red 040"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Red_040"
-  }
-}
-Assets {
   Id: 5003662152169500137
   Name: "Tiled Camo 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_TiledBG_041"
-  }
-}
-Assets {
-  Id: 4990637989068521051
-  Name: "Fantasy Ability Red 007"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Red_007"
   }
 }
 Assets {
@@ -458,39 +386,12 @@ Assets {
   }
 }
 Assets {
-  Id: 2486107982593657747
-  Name: "Fantasy Ability Blue 022"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Blue_022"
-  }
-}
-Assets {
-  Id: 2453109304991346687
-  Name: "Fantasy Ability Green 014"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Green_014"
-  }
-}
-Assets {
   Id: 2293664526516803821
   Name: "Military Ability Melee Attack"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Military_Ability_Blue_006"
-  }
-}
-Assets {
-  Id: 2117690284510589350
-  Name: "Fantasy Ability Red 008"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Red_008"
   }
 }
 Assets {
@@ -509,15 +410,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameFlat_020"
-  }
-}
-Assets {
-  Id: 1781466024055278323
-  Name: "Fantasy Ability Teal 007"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Teal_007"
   }
 }
 Assets {
@@ -572,15 +464,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_015"
-  }
-}
-Assets {
-  Id: 1004023313208396778
-  Name: "Fantasy Ability Teal 011"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Ability_Teal_011"
   }
 }
 Assets {

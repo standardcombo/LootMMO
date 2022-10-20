@@ -30,12 +30,17 @@ local swappingPanelBackGround = Get(swappingPanel, "backgound")
 local allPanels = ROOT:FindDescendantsByType("UIControl")
 local allPanelData = {}
 
-
-
+local function PlaySound(Soundid)
+	Events.Broadcast("Sounds.PlaySound", Soundid)
+end
 
 local UnselectableClasses = {
+	["Healer"] = true,
+	["ShadowMancer"] = true,
+	["Rogue"] = true,
 	["Druid"] = true,
-
+	["Shaman"] = true,
+	["Paladin"] = true,
 }
 
 local subClass = {
@@ -242,6 +247,14 @@ local function SetUpPanels(class)
 					end
 					data.name.text = childClass["ClassIdentifier"]
 					data.class = childClass["ClassIdentifier"]
+					local comingSoon = Get(data.root,
+						"Coming Soon Panel"
+					)
+					if UnselectableClasses[data.class] then
+						comingSoon.visibility = Visibility.INHERIT
+					else
+						comingSoon.visibility = Visibility.FORCE_OFF
+					end
 				end
 			end
 		end
@@ -310,6 +323,7 @@ for key, panel in pairs(ClassSelectionPanels) do
 	}
 	paneldata.button.pressedEvent:Connect(function()
 		if UnselectableClasses[paneldata.class] then return end
+		PlaySound("Click")
 		SetSelectableClass(paneldata.class)
 		OpenPanel(paneldata.root)
 		paneldata.button.visibility = Visibility.FORCE_OFF
@@ -326,6 +340,7 @@ for key, panel in pairs(detailPanels) do
 	}
 
 	paneldata.confirmButton.pressedEvent:Connect(function()
+		PlaySound("Click")
 		SelectClass(key)
 	end)
 	paneldata.backButton.pressedEvent:Connect(Back)
@@ -341,9 +356,8 @@ for key, value in pairs(classAPI.GetMainClasses()) do
 			local subpanel = Get(detailPanels[key], "Subclass " .. i)
 			local button   = Get(subpanel, "Button")
 			button.pressedEvent:Connect(function()
-				if not UnselectableClasses[subClass[key][i]] then
-					ViewClass(subClass[key][i])
-				end
+				PlaySound("Click")
+				ViewClass(subClass[key][i])
 			end)
 		end
 	end
