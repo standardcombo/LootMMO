@@ -118,21 +118,27 @@ end
 local function GetUpgradeRecipes(inventory)
 	local recipes = {}
 	for index, value in pairs(inventory:GetItems()) do
-		if value:GetCustomProperty("IsBag") == true then
-			goto continue
-		end
-		local itemdata = itemAPI.GetDefinition(value.name)
-		if itemdata and selectedFilter and itemdata["category"] ~= selectedFilter then
-			goto continue
-		end
-		local newRecipie = {
-			item = { Greatness = value:GetCustomProperty("Greatness"), name = value.name, value:GetCustomProperty("Order") },
-			itemid = value.name,
-			recipe = {},
-			slot = index,
-		}
 		local greatness, hasValue = value:GetCustomProperty("Greatness")
 		if hasValue then
+			if value:GetCustomProperty("IsBag") == true then
+				goto continue
+			end
+			local itemdata = itemAPI.GetDefinition(value.name)
+			if itemdata and selectedFilter and itemdata["category"] ~= selectedFilter then
+				goto continue
+			end
+
+			if value:GetCustomProperty("Greatness") >= 20 then
+				goto continue
+			end
+
+			local newRecipie = {
+				item = { Greatness = value:GetCustomProperty("Greatness"), name = value.name, value:GetCustomProperty("Order") },
+				itemid = value.name,
+				recipe = {},
+				slot = index,
+			}
+
 			local newrecipe = craftAPI.GetGreatnessValue(value.name, greatness + 1)
 			if newrecipe then
 				newRecipie.recipe = newrecipe
@@ -152,6 +158,10 @@ local function GetUpgradeRecipes(inventory)
 
 				for key, itemdata in pairs(items) do
 					local Greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+					if Greatness >= 20 then
+						goto continue
+					end
+
 					local newrecipe = craftAPI.GetGreatnessValue(itemdata.name, Greatness + 1)
 					if newrecipe then
 						local newRecipie = {
@@ -162,6 +172,7 @@ local function GetUpgradeRecipes(inventory)
 						}
 						table.insert(recipes, newRecipie)
 					end
+					::continue::
 				end
 				if currentState ~= states.upgrading then
 					return
@@ -362,6 +373,15 @@ local function UpgradeSelectPanel()
 			nstatVal.text = tostring(nextstats[key])
 			::continue::
 		end
+
+
+		local inv = GetInventory(LOCAL_PLAYER)
+		if inv and inv:HasRequiredItems(selectedRecipe.recipe) then
+			canCraft = true
+		else
+			canCraft = false
+		end
+
 	end
 	ViewButtons[currentState].isInteractable = canCraft
 
