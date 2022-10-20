@@ -198,6 +198,10 @@ Assets {
               Id: 15071796687113620886
             }
           }
+          Overrides {
+            Name: "cs:DamageAmount"
+            Int: 200
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
