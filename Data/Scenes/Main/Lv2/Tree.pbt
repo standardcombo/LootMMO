@@ -197,6 +197,10 @@ Objects {
       Name: "cs:EventID"
       String: "ClassSelect.Chosen"
     }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "BaseClass"
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -248,6 +252,10 @@ Objects {
     Overrides {
       Name: "cs:EventID"
       String: "ClassSelect.Open"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "BaseClass"
     }
   }
   Collidable_v2 {
