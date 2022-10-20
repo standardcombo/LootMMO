@@ -144,6 +144,15 @@ function Update()
 	ABILITY_NAME.text = selection or ""
 	ABILITY_DESCRIPTION.text = desc or ""
 	ABILITY_RENDER:SetImage(icon)
+
+	if _G["Modifiers.CalculationString"][selection] then
+		local calculations = _G["Modifiers.CalculationString"][selection]
+		local newString = ""
+		for key, value in pairs(calculations) do
+			newString = string.format("%s%s : %s \n", newString, key, value)
+		end
+		ABILITY_PROPERTIES.text = newString
+	end
 end
 
 function SelectAbility(abilityString)
