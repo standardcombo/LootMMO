@@ -820,7 +820,7 @@ Objects {
   }
   Trigger {
     Interactable: true
-    InteractionLabel: "Travel to Whitebox Land"
+    InteractionLabel: "Travel to Tavern"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
