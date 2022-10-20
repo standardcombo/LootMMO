@@ -1,4 +1,5 @@
 local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
+_G["Modifiers.CalculationString"] = {}
 local function UserDataBypass()
 	if Environment.IsClient() then
 		return 'clientUserData'
@@ -46,6 +47,17 @@ function Api.RegisterCalculation(Root, modifiers)
 	Root[bypass].calculateString = function()
 		return CalculateString(modifiers)
 	end
+
+	Task.Spawn(function()
+		if not Object.IsValid(Root) then return end
+		if not _G["Modifiers.CalculationString"][Root.name] then
+			local newstats = {}
+			for key, value in pairs(modifiers or {}) do
+				newstats[key] = value.calString or ""
+			end
+			_G["Modifiers.CalculationString"][Root.name] = newstats
+		end
+	end)
 end
 
 return Api
