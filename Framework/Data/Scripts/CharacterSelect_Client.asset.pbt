@@ -1,0 +1,89 @@
+Assets {
+  Id: 5339414360460565188
+  Name: "CharacterSelect_Client"
+  PlatformAssetType: 3
+  TextAsset {
+    CustomParameters {
+      Overrides {
+        Name: "cs:UIScrollPanel"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:UIContainer"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:ConfirmDeletion"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:NewCharacter"
+        AssetReference {
+          Id: 2446001781875574867
+        }
+      }
+      Overrides {
+        Name: "cs:SelectCharacter"
+        AssetReference {
+          Id: 2542175688488272662
+        }
+      }
+      Overrides {
+        Name: "cs:EaseUI"
+        AssetReference {
+          Id: 14902373637656864644
+        }
+      }
+      Overrides {
+        Name: "cs:Cameras"
+        ObjectReference {
+          SelfId: 2175780554564620074
+        }
+      }
+      Overrides {
+        Name: "cs:UIScrollPanel:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:UIScrollPanel:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:NewCharacter:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:NewCharacter:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:SelectCharacter:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:SelectCharacter:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:UIContainer:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:UIContainer:ml"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:ConfirmDeletion:isrep"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:ConfirmDeletion:ml"
+        Bool: false
+      }
+    }
+  }
+  SerializationVersion: 119
+}
