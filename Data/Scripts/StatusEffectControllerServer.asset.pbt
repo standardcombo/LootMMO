@@ -4,6 +4,12 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:NPCManager"
+        AssetReference {
+          Id: 4760095941513075407
+        }
+      }
     }
   }
   SerializationVersion: 119

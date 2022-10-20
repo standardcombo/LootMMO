@@ -23,15 +23,14 @@ local events = {
 
 local function UpgradeItem(slot)
 	Events.BroadcastToServer(events.upgrade, slot)
-
 end
 
 local function ScrapItem(slot)
 	Events.BroadcastToServer(events.scrap, slot)
 end
 
-local function UpgradeNFT()
-	--Events.BroadcastToServer(events.craftItem)
+local function UpgradeNFT(Collection, tokenid, itemid)
+	Events.BroadcastToServer(events.upgradeNFT, Collection, tokenid, itemid)
 end
 
 local function CraftItem(itemid)

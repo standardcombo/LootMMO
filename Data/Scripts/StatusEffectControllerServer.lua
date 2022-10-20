@@ -1,3 +1,5 @@
+require(script:GetCustomProperty("NPCManager"))
+NPCMANAGER = _G["standardcombo.NPCKit.NPCManager"]
 local API_SE = require(script:GetCustomProperty("APIStatusEffects"))
 local STATE_TRACKER_GROUP = script:GetCustomProperty("StateTrackerGroup"):WaitForObject()
 local PLAYER_STATE_TEMPLATE = script:GetCustomProperty("PlayerStateTemplate")
@@ -20,23 +22,26 @@ function OnPlayerLeft(player)
 end
 
 function OnPlayerJoined(player)
-	if player:IsA("Damageable") and not player:IsA("Player") then
-		player.destroyEvent:Connect(OnPlayerLeft)
-	end
-	local stateTracker = World.SpawnAsset(PLAYER_STATE_TEMPLATE, { parent = STATE_TRACKER_GROUP })
-	stateTracker.name = API_SE.GetStateTrackerName(player)
+	if player:IsA("Damageable") then
+		if not player:IsA("Player") then
+			player.destroyEvent:Connect(OnPlayerLeft)
+		end
+		local stateTracker = World.SpawnAsset(PLAYER_STATE_TEMPLATE, { parent = STATE_TRACKER_GROUP })
+		stateTracker.name = API_SE.GetStateTrackerName(player)
 
-	if not playerSettingsInitialized then
-		API_SE.InitializePlayerSettings(player)
-		playerSettingsInitialized = true
-	end
+		if not playerSettingsInitialized then
+			API_SE.InitializePlayerSettings(player)
+			playerSettingsInitialized = true
+		end
 
-	player.diedEvent:Connect(OnPlayerDied)
+		assert(player.diedEvent, player)
+		player.diedEvent:Connect(OnPlayerDied)
+	end
 end
 
 function UpdatePlayers()
 	local players = Game.GetPlayers()
-	local Damagable = World.FindObjectsByType("Damageable")
+	local Damagable = NPCMANAGER.GetDamageables()
 
 	for index, value in ipairs(Damagable) do
 		table.insert(players, value)
@@ -66,5 +71,4 @@ function Tick(deltaTime)
 end
 
 Game.playerLeftEvent:Connect(OnPlayerLeft)
-
 API_SE.InitializeStatusEffectController(STATE_TRACKER_GROUP)
