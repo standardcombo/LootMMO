@@ -105,15 +105,6 @@ Assets {
       }
     }
     Assets {
-      Id: 8801447905243755302
-      Name: "Potion"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Icon_Potion"
-      }
-    }
-    Assets {
       Id: 9154621129836835425
       Name: "Boar"
       PlatformAssetType: 9
