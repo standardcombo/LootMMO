@@ -51,6 +51,14 @@ function API.FindScriptForDamageable(damageable)
 	return npcDamageables[damageable]
 end
 
+function API.GetDamageables()
+	local damageables = {}
+	for key, value in pairs(npcDamageables) do
+		table.insert(damageables, key)
+	end
+	return damageables
+end
+
 function API.GetEnemies(team)
 	local enemies = {}
 	for npc, _ in pairs(allNPCs) do
