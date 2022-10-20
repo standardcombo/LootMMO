@@ -11,6 +11,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:LootBagParser"
+        AssetReference {
+          Id: 18201773013207943147
+        }
+      }
+      Overrides {
         Name: "cs:SpawnUtils:isrep"
         Bool: false
       }

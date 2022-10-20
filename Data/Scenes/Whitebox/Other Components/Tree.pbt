@@ -2248,6 +2248,12 @@ Objects {
     }
   }
   ParentId: 1719394165844903556
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:StartingState"
+      Int: 130
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
