@@ -528,8 +528,8 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 200
-            StartingHitpoints: 300
+            MaxHitpoints: 360
+            StartingHitpoints: 360
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
             DestroyOnDeathClientTemplateId {
