@@ -45,6 +45,11 @@ function component:GetLevel()
 	return level or 1
 end
 
+function component:GetXPInLevel()
+	local level = self:GetLevel()
+	return LEVELCURVE:GetValue(level)
+end
+
 function component:GetXPForNextLevel()
 	local level = self:GetLevel()
 	return LEVELCURVE:GetValue(level + 1)
@@ -57,11 +62,12 @@ function component:GetXPUntilNextLevel()
 	return math.floor(nextXp - xp)
 end
 
-function component:GetXPInLevel()
+function component:GetXPPercent()
 	local xp = self:GetXP()
 	local level = self:GetLevel()
-	local nextXp = LEVELCURVE:GetValue(level)
-	return math.floor(xp - nextXp)
+	local prevXp = LEVELCURVE:GetValue(level)
+	local nextXp = LEVELCURVE:GetValue(level + 1)
+	return (xp - prevXp) / (nextXp - prevXp)
 end
 
 function component:GetXP()

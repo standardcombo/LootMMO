@@ -23,11 +23,7 @@ function Tick()
             PROGRESS_TEXT.text = string.format('Max Level')
             return
         end
-        local inLevel = level:GetXPInLevel()
-        local nextLevel = level:GetXPForNextLevel()
-        local progress = inLevel / nextLevel
-        PROGRESS_BAR.progress = progress
-        PROGRESS_TEXT.text = string.format('%d/%d', inLevel, nextLevel)
+        PROGRESS_BAR.progress = level:GetXPPercent()
     end
 end
 
