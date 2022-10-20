@@ -30,6 +30,9 @@ local swappingPanelBackGround = Get(swappingPanel, "backgound")
 local allPanels = ROOT:FindDescendantsByType("UIControl")
 local allPanelData = {}
 
+local function PlaySound(Soundid)
+	Events.Broadcast("Sounds.PlaySound", Soundid)
+end
 
 local UnselectableClasses = {
 	["Healer"] = true,
@@ -320,6 +323,7 @@ for key, panel in pairs(ClassSelectionPanels) do
 	}
 	paneldata.button.pressedEvent:Connect(function()
 		if UnselectableClasses[paneldata.class] then return end
+		PlaySound("Click")
 		SetSelectableClass(paneldata.class)
 		OpenPanel(paneldata.root)
 		paneldata.button.visibility = Visibility.FORCE_OFF
@@ -336,6 +340,7 @@ for key, panel in pairs(detailPanels) do
 	}
 
 	paneldata.confirmButton.pressedEvent:Connect(function()
+		PlaySound("Click")
 		SelectClass(key)
 	end)
 	paneldata.backButton.pressedEvent:Connect(Back)
@@ -351,6 +356,7 @@ for key, value in pairs(classAPI.GetMainClasses()) do
 			local subpanel = Get(detailPanels[key], "Subclass " .. i)
 			local button   = Get(subpanel, "Button")
 			button.pressedEvent:Connect(function()
+				PlaySound("Click")
 				ViewClass(subClass[key][i])
 			end)
 		end
