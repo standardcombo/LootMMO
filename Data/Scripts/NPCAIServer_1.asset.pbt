@@ -47,12 +47,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:EngageEffect"
-        AssetReference {
-          Id: 841534158063459245
-        }
-      }
-      Overrides {
         Name: "cs:NPCManager:tooltip"
         String: "Reference to the NPC Manager allows the NPC to register itself into the system."
       }

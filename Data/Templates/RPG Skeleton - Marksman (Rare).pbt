@@ -39,6 +39,12 @@ Assets {
             String: "SkeletonCommon"
           }
           Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+          Overrides {
             Name: "cs:AttackRange"
             Float: 1300
           }
@@ -57,6 +63,14 @@ Assets {
           Overrides {
             Name: "cs:AttackCooldown"
             Float: 1.5
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 10
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs"
+            Int: 10
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -466,6 +480,30 @@ Assets {
             Name: "cs:LootId:category"
             String: "Drops"
           }
+          Overrides {
+            Name: "cs:EngageEffect:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:EngageEffect:tooltip"
+            String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -653,14 +691,6 @@ Assets {
         }
         ParentId: 4605403733082337837
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 10
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 10
-          }
           Overrides {
             Name: "cs:ProjectileBody"
             AssetReference {

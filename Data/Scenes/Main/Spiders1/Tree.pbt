@@ -849,6 +849,61 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 4674617562400381925
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4370789170075393638
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Dragons1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Quest.NPCDied"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "Poison"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 17594994849148370947
   Name: "ObjectiveEncounterSpawn"
   Transform {

@@ -36,7 +36,11 @@ local COLLIDER = script:GetCustomProperty("Collider"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):GetObject()
 local ATTACK_COMPONENT = script:GetCustomProperty("AttackComponent"):WaitForObject()
 HOMING_TARGET = script:GetCustomProperty("HomingTarget"):GetObject()
-local ENGAGE_EFFECT = script:GetCustomProperty("EngageEffect")
+
+local ENGAGE_EFFECT = ROOT:GetCustomProperty("EngageEffect")
+if not ENGAGE_EFFECT then
+	ENGAGE_EFFECT = script:GetCustomProperty("EngageEffect")
+end
 
 local MOVE_SPEED = ROOT:GetCustomProperty("MoveSpeed") or 400
 local TURN_SPEED = ROOT:GetCustomProperty("TurnSpeed") or 2
