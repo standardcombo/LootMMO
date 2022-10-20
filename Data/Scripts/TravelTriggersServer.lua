@@ -50,7 +50,7 @@ function TravelToScene(player, sceneName, spawnKey)
 	if not Object.IsValid(player) then return end
 	
 	-- Travel
-	if spawnKey then
+	if spawnKey and spawnKey ~= "" then
 		player:TransferToScene(sceneName, {spawnKey = spawnKey})
 	else
 		player:TransferToScene(sceneName)

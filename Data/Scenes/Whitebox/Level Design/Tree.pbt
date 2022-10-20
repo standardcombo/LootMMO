@@ -476,9 +476,8 @@ Objects {
   }
   ParentId: 4246661819917374883
   ChildIds: 1332877016399537971
-  ChildIds: 13819897216441765044
-  ChildIds: 6399296081945513796
   ChildIds: 15135226831213000383
+  ChildIds: 4956981229252362931
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -500,16 +499,200 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15135226831213000383
-  Name: "Trigger - Portal to Adventure"
+  Id: 4956981229252362931
+  Name: "Portal to SocialHub"
   Transform {
     Location {
-      X: -6358.94141
-      Y: -5720.24316
-      Z: -50710.1133
+      X: 1650
+      Y: 2314.35522
     }
     Rotation {
-      Yaw: 49.9926376
+      Yaw: 89.9999771
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6598851658832106982
+  ChildIds: 1591623429730140820
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IsEnabled"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DestinationName"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IsEnabled:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DestinationName:isrep"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:high"
+  }
+}
+Objects {
+  Id: 1591623429730140820
+  Name: "Portal VFX"
+  Transform {
+    Location {
+      X: -2.91038305e-11
+      Y: 5.53131104e-05
+      Z: 316.210449
+    }
+    Rotation {
+      Yaw: -1.36603776e-05
+    }
+    Scale {
+      X: 0.55800271
+      Y: 0.927319288
+      Z: 1.38385987
+    }
+  }
+  ParentId: 4956981229252362931
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Portal Shape"
+      Int: 2
+    }
+    Overrides {
+      Name: "bp:Portal Spread"
+      Float: 0.4
+    }
+    Overrides {
+      Name: "bp:Intensity Color Blend"
+      Float: 1
+    }
+    Overrides {
+      Name: "bp:Background Texture"
+      Enum {
+        Value: "mc:eportalbackground:15"
+      }
+    }
+    Overrides {
+      Name: "bp:Scene View Distortion Type"
+      Enum {
+        Value: "mc:eportalscenedistortiontype:newenumerator0"
+      }
+    }
+    Overrides {
+      Name: "bp:Edge Distortion"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Speed"
+      Float: 0.247848794
+    }
+    Overrides {
+      Name: "bp:Intersection Distance"
+      Float: 44.234417
+    }
+    Overrides {
+      Name: "bp:Cast Shadows"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Maintain picture scale"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Edge Distance"
+      Float: 0.45
+    }
+    Overrides {
+      Name: "bp:Unlit"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Disable Swirl and Edge"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Color A"
+      Color {
+        G: 1.79999971
+        B: 2
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color B"
+      Color {
+        G: 0.228999957
+        B: 0.687000036
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color C"
+      Color {
+        G: 0.0599999391
+        B: 0.399999976
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Swirl Color"
+      Color {
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 6677237403455816226
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15135226831213000383
+  Name: "Trigger - Portal to Main game"
+  Transform {
+    Location {
+      X: 1650
+      Y: 2273.39624
+      Z: 155.700851
+    }
+    Rotation {
+      Yaw: 90
     }
     Scale {
       X: 0.51303339
@@ -521,11 +704,11 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:SceneName"
-      String: ""
+      String: "Main"
     }
     Overrides {
       Name: "cs:SpawnKey"
-      String: ""
+      String: "BagSelection"
     }
   }
   Collidable_v2 {
@@ -543,128 +726,6 @@ Objects {
   Trigger {
     Interactable: true
     InteractionLabel: "Travel to Whitebox Land"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-    }
-    BreadcrumbTemplate {
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 6399296081945513796
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: -7217.94922
-      Y: -4807.37158
-      Z: 3551.59741
-    }
-    Rotation {
-      Yaw: 62.6992607
-    }
-    Scale {
-      X: 0.999994218
-      Y: 2.29162335
-      Z: 3.33578062
-    }
-  }
-  ParentId: 6598851658832106982
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:GameState"
-      Int: 40
-    }
-    Overrides {
-      Name: "cs:SpawnKey"
-      String: "Tavern"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Enter Tavern"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-    }
-    BreadcrumbTemplate {
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13819897216441765044
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: -6941.40088
-      Y: -7658.59082
-      Z: 3901.00366
-    }
-    Rotation {
-      Yaw: 62.6992531
-    }
-    Scale {
-      X: 0.999994636
-      Y: 4.07832766
-      Z: 4.94959831
-    }
-  }
-  ParentId: 6598851658832106982
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:GameState"
-      Int: 40
-    }
-    Overrides {
-      Name: "cs:SpawnKey"
-      String: "Social"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Enter Tavern"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
