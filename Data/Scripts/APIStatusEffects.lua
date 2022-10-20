@@ -1,3 +1,6 @@
+require(script:GetCustomProperty("NPCManager"))
+NPCMANAGER = _G["standardcombo.NPCKit.NPCManager"]
+
 local API = {}
 
 local STATE_TRACKER_GROUP = nil
@@ -498,8 +501,8 @@ end
 
 -- Server only
 function UpdatePlayers()
-	local players = Game.GetPlayers() --_G["standardcombo.Combat.Wrap"].GetAll()
-	local Damagable = World.FindObjectsByType("Damageable")
+	local players = Game.GetPlayers()
+	local Damagable = NPCMANAGER.GetDamageables()
 
 	for index, value in ipairs(Damagable) do
 		table.insert(players, value)
