@@ -225,6 +225,8 @@ for index, value in ipairs(SLOTS) do
 	slots[index].count = value:FindChildByName("count")
 	slots[index].Button = value:FindChildByName("Button")
 	slots[index].isBag = Get(value, "IsBag")
+	slots[index].levelFrame = Get(value, "Level Frame")
+	slots[index].levelText = Get(value, "Level Text")
 
 	HookUpButton(slots[index])
 end
@@ -236,6 +238,7 @@ local function InventoryChanged(inv, slot)
 	local childCount = slots[slot].count
 	local childbg = slots[slot].bg
 	local isBag = slots[slot].isBag
+	local levelFrame = slots[slot].levelFrame
 	if item ~= nil then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
@@ -260,6 +263,13 @@ local function InventoryChanged(inv, slot)
 		else
 			childCount.text = ""
 		end
+		local greatness = item:GetCustomProperty("Greatness")
+		if greatness then
+			levelFrame.visibility = Visibility.INHERIT
+			slots[slot].levelText.text = tostring(greatness)
+		else
+			levelFrame.visibility = Visibility.FORCE_OFF
+		end
 	else
 		if isBag then
 			isBag.visibility = Visibility.FORCE_OFF
@@ -269,6 +279,7 @@ local function InventoryChanged(inv, slot)
 		end
 		childIcon.visibility = Visibility.FORCE_OFF
 		childCount.text = ""
+		levelFrame.visibility = Visibility.FORCE_OFF
 	end
 
 end
