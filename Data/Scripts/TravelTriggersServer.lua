@@ -97,7 +97,7 @@ function OnInteracted(trigger, player)
 
 	-- Game Transfer
 	local gameId = trigger:GetCustomProperty("GameID")
-	if gameId then
+	if gameId and gameId ~= "" then
 		TravelToGame(player, gameId)
 		return
 	end
@@ -105,11 +105,11 @@ function OnInteracted(trigger, player)
 	-- Scene Transfer
 	local sceneName = trigger:GetCustomProperty("SceneName")
 	local spawnKey = trigger:GetCustomProperty("SpawnKey")
-	if sceneName then
+	if sceneName and sceneName ~= "" then
 		TravelToScene(player, sceneName, spawnKey)
 	
 	-- Respawn at key
-	elseif spawnKey then
+	elseif spawnKey and spawnKey ~= "" then
 		TravelToSpawnKey(player, spawnKey)
 	end
 end

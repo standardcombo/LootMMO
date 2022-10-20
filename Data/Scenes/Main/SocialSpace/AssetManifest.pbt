@@ -1871,6 +1871,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6677237403455816226
+  Name: "Portal VFX"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_portal"
+  }
+}
+Assets {
   Id: 6645541369262067888
   Name: "Main Street Window Frame 02"
   PlatformAssetType: 1
