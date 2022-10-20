@@ -12,6 +12,13 @@ MapBuilder.Type.Wall = "1"
 MapBuilder.Type.Spawn = "S"
 MapBuilder.Type.Encounter = "E"
 
+local ENEMY_IDS = {
+	"Skeleton",
+	"Skeleton2",
+	"Skeleton3",
+	"Skeleton4"
+}
+
 function MapBuilder.Build(opts)
 	local map = ASCIIParser.BuildMap(opts.map, opts.width, opts.height)
 
@@ -30,7 +37,8 @@ end
 
 function MapBuilder.SpawnEnemies()
 	for index, point in ipairs(MapBuilder.enemySpawnPoints) do
-		local enemyAsset = ENEMIES[math.random(#ENEMIES)].asset
+		local enemyId = ENEMY_IDS[math.random(#ENEMY_IDS)]
+		local enemyAsset = ENEMIES[enemyId].commonTemplate
 		local enemy = World.SpawnAsset(enemyAsset, {
 			
 			position = point + (Vector3.UP * 50),
