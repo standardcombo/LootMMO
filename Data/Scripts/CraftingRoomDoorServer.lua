@@ -49,6 +49,8 @@ local function OnBeginOverlap(trigger, player)
 			Events.BroadcastToPlayer(player, "CraftingRoom.LockedMessage")
 			return
 		end
+		
+		Events.Broadcast("Quest.CraftingRoomEnter", player)
 	end
 	
 	playerCount = playerCount + 1
