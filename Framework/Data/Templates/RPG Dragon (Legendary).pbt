@@ -133,6 +133,10 @@ Assets {
             Int: 0
           }
           Overrides {
+            Name: "cs:Level"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:Team:tooltip"
             String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
           }
@@ -511,6 +515,10 @@ Assets {
           Overrides {
             Name: "cs:EngageEffect:tooltip"
             String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
+          Overrides {
+            Name: "cs:Level:isrep"
+            Bool: true
           }
         }
         WantsNetworking: true
