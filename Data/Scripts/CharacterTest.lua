@@ -47,6 +47,15 @@ function OnReceiveMessage(player, params)
 			Inventory:GetInventory():AddItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 		end
 		return
+	elseif splitString[1] == "/removeitem" then
+		local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
+		local Inventory = newCharacter:GetComponent("Inventory")
+		local itemstring = { CoreString.Split(params.message, '"') }
+		local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+		if iteminfo then
+			Inventory:GetInventory():RemoveItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
+		end
+		return
 	elseif splitString[1] == "/classes" then
 		local message = ""
 		for key, value in pairs(CLASS.GetClasses()) do

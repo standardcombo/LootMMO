@@ -70,7 +70,7 @@ function Tick(deltaTime)
 		PANEL.visibility = Visibility.FORCE_OFF
 		return
 	end
-	
+
     local resource = LOCAL_PLAYER:GetResource(RESOURCE_NAME)
 
     -- Update things if our resource changed
@@ -101,8 +101,7 @@ function Tick(deltaTime)
 end
 
 function IsValidAppState()
-	return _G.AppState.GetLocalState() == _G.AppState.SocialHub
-	and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
+	return _G.AppState.GetLocalState() == _G.AppState.SocialHub	and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
 end
 
 -- Initialize
