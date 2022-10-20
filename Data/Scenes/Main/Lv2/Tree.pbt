@@ -5,7 +5,6 @@ Objects {
   Name: "ObjectiveEventListener"
   Transform {
     Location {
-      Z: -14645.0859
     }
     Rotation {
     }
@@ -61,7 +60,6 @@ Objects {
   Name: "ObjectiveEventListener"
   Transform {
     Location {
-      Z: -14645.0859
     }
     Rotation {
     }
@@ -117,7 +115,6 @@ Objects {
   Name: "ObjectiveEventListener"
   Transform {
     Location {
-      Z: -14645.0859
     }
     Rotation {
     }
@@ -173,7 +170,6 @@ Objects {
   Name: "ObjectiveEventListener"
   Transform {
     Location {
-      Z: -14645.0859
     }
     Rotation {
     }
@@ -229,7 +225,6 @@ Objects {
   Name: "ObjectiveEventListener"
   Transform {
     Location {
-      Z: -14645.0859
     }
     Rotation {
     }

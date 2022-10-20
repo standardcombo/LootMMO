@@ -81,14 +81,29 @@ end
 
 function lootmmoInv:MoveFromSlot(fromSlot, toSlot, parameters)
 	if not (fromSlot or toSlot) then return end
-	local toSlotAccept = Slot.CanAddItem(self.slotData[toSlot] or {}, (self:GetItem(fromSlot) or {}).itemAssetId)
-	local fromSlotAccept = Slot.CanAddItem(self.slotData[fromSlot] or {}, (self:GetItem(toSlot) or {}).itemAssetId)
+	
+	local fromSlotItem = self:GetItem(fromSlot) or {}
+	local toSlotItem = self:GetItem(toSlot) or {}
+	
+	local toSlotAccept = Slot.CanAddItem(self.slotData[toSlot] or {}, fromSlotItem.itemAssetId)
+	local fromSlotAccept = Slot.CanAddItem(self.slotData[fromSlot] or {}, toSlotItem.itemAssetId)
+	
 	if fromSlotAccept and toSlotAccept then
 		if Environment.IsClient() then
 			Events.BroadcastToServer('inventory.move', fromSlot, toSlot)
 			return
 		end
 		self._inventory:MoveFromSlot(fromSlot, toSlot, parameters)
+
+		-- Detects if a Loot item has been equipped, for the FTUE quest "Equip"
+		if toSlot >= 1 and toSlot <= 8
+		and fromSlotItem and fromSlotItem.GetCustomProperty 
+		then
+			local greatness = fromSlotItem:GetCustomProperty("Greatness")
+			if greatness then
+				Events.Broadcast("Inventory.Equipped", self._inventory.owner, fromSlotItem.name)
+			end
+		end
 	end
 end
 
