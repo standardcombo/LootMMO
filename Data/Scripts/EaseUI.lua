@@ -89,7 +89,7 @@ local EasingEquations = require(script:GetCustomProperty("EasingEquations"))
 local tasks = {}
 
 local function checkTask(property)
-	if(tasks[property]) then return end
+	if (tasks[property]) then return end
 
 	tasks[property] = {}
 end
@@ -109,26 +109,26 @@ local function clearFromTask(object, taskType)
 	checkTask(taskType)
 
 	local task = tasks[taskType][object]
-	if(not task) then return end
+	if (not task) then return end
 
 	task:Cancel()
 	tasks[taskType][object] = nil
 end
 
 local function verifyEase(uiElement, goal, easeDuration, easingEquation, easingDirection)
-	if(not Object.IsValid(uiElement)) then
+	if (not Object.IsValid(uiElement)) then
 		return false, "Attempting to ease an object that does not exist"
-	elseif(not uiElement:IsA("UIControl")) then
+	elseif (not uiElement:IsA("UIControl")) then
 		return false, "Attempting to ease an object that is not a UI Element"
-	elseif(uiElement:IsA("UIContainer")) then
+	elseif (uiElement:IsA("UIContainer")) then
 		return false, "Attempting to ease a UIContainer"
-	elseif(type(easeDuration) ~= "number") then
+	elseif (type(easeDuration) ~= "number") then
 		return false, "Attempting to ease with an invalid amount of time"
-	elseif(type(goal) ~= "number") then
+	elseif (type(goal) ~= "number") then
 		return false, "Attempting to ease to a goal that is not a number"
-	elseif(type(easingEquation) ~= "number") then
+	elseif (type(easingEquation) ~= "number") then
 		return false, "Attempting to ease with an invalid easing equation"
-	elseif(type(easingDirection) ~= "number") then
+	elseif (type(easingDirection) ~= "number") then
 		return false, "Attempting to ease with an invalid easing direction"
 	end
 
@@ -142,15 +142,16 @@ Module.EasingEquation = EasingEquations.EasingEquation
 Module.EasingDirection = EasingEquations.EasingDirection
 
 function Module.Ease(uiElement, property, goal, easeDuration, easingEquation, easingDirection)
-	if(type(easeDuration) == "nil") then easeDuration = 1 end
-	if(type(easingEquation) == "nil") then easingEquation = Module.EasingEquation.LINEAR end
-	if(type(easingDirection) == "nil") then easingDirection = Module.EasingDirection.INOUT end
+	if (type(easeDuration) == "nil") then easeDuration = 1 end
+	if (type(easingEquation) == "nil") then easingEquation = Module.EasingEquation.LINEAR end
+	if (type(easingDirection) == "nil") then easingDirection = Module.EasingDirection.INOUT end
 
 	local success, response = verifyEase(uiElement, goal, easeDuration, easingEquation, easingDirection)
 	assert(success, response)
 
 	local easingFormula = EasingEquations.GetEasingEquationFormula(easingEquation, easingDirection)
-	assert(easingFormula, "Attempting to ease with an invalid easing equation enum; check that you spelled the enum correctly")
+	assert(easingFormula,
+		"Attempting to ease with an invalid easing equation enum; check that you spelled the enum correctly")
 
 	clearFromTask(uiElement, property)
 
@@ -160,19 +161,20 @@ function Module.Ease(uiElement, property, goal, easeDuration, easingEquation, ea
 	local direction = ((start < goal) and 1) or -1
 
 	wrapTask(property, uiElement, function()
-		if(not Object.IsValid(uiElement)) then
+		if (not Object.IsValid(uiElement)) then
 			return clearFromTask(uiElement, property)
 		end
 
 		local currentTime = time() - startTime
 
-		if(currentTime >= easeDuration) then
-			uiElement[property] = CoreMath.Round(goal)
+		if (currentTime >= easeDuration) then
+			uiElement[property] = goal
 
 			return clearFromTask(uiElement, property)
 		end
 
-		uiElement[property] = CoreMath.Round(easingFormula(currentTime, start, direction * math.abs(goal - start), easeDuration))
+		uiElement[property] = CoreMath.Round(easingFormula(currentTime, start, direction * math.abs(goal - start), easeDuration)
+			, 4)
 	end)
 end
 
@@ -194,6 +196,10 @@ end
 
 function Module.EaseRotation(uiElement, goal, easeDuration, easingEquation, easingDirection)
 	Module.Ease(uiElement, "rotationAngle", goal, easeDuration, easingEquation, easingDirection)
+end
+
+function Module.EaseOpacity(uiElement, goal, easeDuration, easingEquation, easingDirection)
+	Module.Ease(uiElement, "opacity", goal, easeDuration, easingEquation, easingDirection)
 end
 
 return Module

@@ -195,12 +195,13 @@ function PanelComplete()
 end
 
 Events.Connect(AppState.EnterKey, function(_, newState, oldstate)
-	if newState == AppState.Ability then
+	if newState == AppState.Ability and oldstate ~= AppState.Ability then
 		SetState(STATES.open)
 	end
 end)
+
 Events.Connect(AppState.ExitKey, function(_, oldstate, newState)
-	if oldstate == AppState.Ability then
+	if oldstate == AppState.Ability and newState ~= AppState.Ability then
 		if state == STATES.open then
 			SetState(STATES.closing)
 		end

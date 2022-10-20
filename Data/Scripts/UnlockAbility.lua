@@ -3,17 +3,21 @@ local CONFIRM = script:GetCustomProperty("Confirm"):WaitForObject()
 
 local ICONS = script:GetCustomProperty("icons"):WaitForObject()
 local AbilitySlots = ICONS:FindChildByName("AbilityIcon"):GetChildren()
+local PotionSlots = ICONS:FindChildByName("Poitions"):GetChildren()
 local MARKER = script:GetCustomProperty("Marker"):WaitForObject()
 local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
 local LEFT_PANEL = script:GetCustomProperty("Left_Panel"):WaitForObject()
+local potionicon = script:GetCustomProperty("FantasySpellPotion016")
 
 local EquipAPI = _G["Character.EquipAPI"]
 local Abilities = _G["Ability.Equipment"]
 local LOCAL_PLAYER = Game.GetLocalPlayer()
+local unlockKey = nil
 local InputBinding = nil
 local character = nil
 local currentAbility = nil
 local currentSlot = nil
+local nextPanel = nil
 local currentBinding
 local isOpen = false
 
@@ -42,8 +46,23 @@ end
 local function FindNextAccept(Progression, class)
 	for i = 1, 5 do
 		if Progression:GetProgressionKey("AbilitySlot" .. i) and not Progression:GetProgressionKey("AcceptSlot" .. i) then
+			nextPanel = AbilitySlots[i]
+			unlockKey = "AbilitySlot"
 			currentSlot = i
-			return Abilities.GetEntry(class["Ability" .. i])
+			currentAbility = Abilities.GetEntry(class["Ability" .. i])
+			return true
+		end
+	end
+
+end
+
+local function FindNextAcceptPotions(Progression)
+	for i = 1, 3 do
+		if Progression:GetProgressionKey("PotionSlot" .. i) and not Progression:GetProgressionKey("AcceptPotion" .. i) then
+			currentSlot = i
+			unlockKey = "AbilitySlot"
+			nextPanel = PotionSlots[i]
+			return true
 		end
 	end
 end
@@ -77,14 +96,13 @@ local function Close()
 	SetState(states.closed)
 end
 
-local function SetUpDisplay()
-	if not currentAbility then return end
+local function DisplayAbility()
 	local abilityName = Get(CENTER_PANEL, "AbilityName")
 	local Description = Get(CENTER_PANEL, "Description")
 	local Properties = Get(CENTER_PANEL, "Properties")
 	local Flavourtext = Get(CENTER_PANEL, "Flavour text")
 	local AbilityRender = Get(LEFT_PANEL, "AbilityRender")
-	abilityName.text = "New Unlock: " .. currentAbility.name
+	abilityName.text = "New unlock: " .. currentAbility.name
 	Description.text = currentAbility.description
 	Properties.text = ""
 	Flavourtext.text = ""
@@ -92,28 +110,63 @@ local function SetUpDisplay()
 	ShowDisplay()
 end
 
+local function DisplayPotion()
+	local abilityName = Get(CENTER_PANEL, "AbilityName")
+	local Description = Get(CENTER_PANEL, "Description")
+	local Properties = Get(CENTER_PANEL, "Properties")
+	local Flavourtext = Get(CENTER_PANEL, "Flavour text")
+	local AbilityRender = Get(LEFT_PANEL, "AbilityRender")
+
+	abilityName.text = "New potion slot unlocked"
+	Description.text = "Go to the cauldren to equip the new potion to the slot"
+	Properties.text = ""
+	Flavourtext.text = ""
+	AbilityRender:SetImage(potionicon)
+	ShowDisplay()
+end
+
+local function SetUpDisplay()
+	if unlockKey == "AbilitySlot" then
+		if not currentAbility then return end
+		DisplayAbility()
+	elseif unlockKey == "PotionSlot" then
+		DisplayPotion()
+	end
+end
+
 local function NextScreen()
 	local class = character:GetComponent("Class"):GetClassTable()
 	local Progression = character:GetComponent("Progression")
 
 	if GetState() == states.unlocking then
-		Events.BroadcastToServer("AcceptSlot", currentSlot)
-		Progression:SetProgression("AcceptSlot" .. currentSlot, true)
+		if unlockKey == "AbilitySlot" then
+			Events.BroadcastToServer("AcceptSlot", currentSlot)
+			Progression:SetProgression("AcceptSlot" .. currentSlot, true)
+		elseif unlockKey == "PotionSlot" then
+			Events.BroadcastToServer("AcceptPotion", currentSlot)
+			Progression:SetProgression("AcceptPotion" .. currentSlot, true)
+
+		end
 		SetState(states.displaying)
 	end
+
 	if GetState() == states.displaying then
 		SetUpDisplay()
 		SetState(states.searching)
 		return
 	end
+
 	if GetState() == states.closed then
 		SetState(states.searching)
 	end
+
 	if GetState() == states.searching then
 		HideDisplay()
 		local found = FindNextAccept(Progression, class)
+		if not found then
+			found = FindNextAcceptPotions(Progression)
+		end
 		if found then
-			currentAbility = found
 			SetState(states.unlocking)
 		else
 			Events.Broadcast("Ability_PanelComplete")
@@ -122,11 +175,11 @@ local function NextScreen()
 	end
 
 	if GetState() == states.unlocking then
-		if currentAbility then
-			local position = AbilitySlots[currentSlot]:GetAbsolutePosition()
+		if nextPanel then
+			local position = nextPanel:GetAbsolutePosition()
 			MARKER.x = position.x
 			MARKER.y = position.y
-			AbilitySlots[currentSlot].visibility = Visibility.INHERIT
+			nextPanel.visibility = Visibility.INHERIT
 		end
 		ShowMarker()
 	end

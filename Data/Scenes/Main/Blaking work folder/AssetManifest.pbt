@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16871783667230751551
+  Name: "Fantasy Spell Potion 016"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Potion_016"
+  }
+}
+Assets {
   Id: 16272829598190271809
   Name: "Frame Outlined 016"
   PlatformAssetType: 9

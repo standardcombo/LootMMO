@@ -1,8 +1,38 @@
+
+------------------------------------------------------------------
+-- Handles player stats that are applied on spawn and damage taken. 
+
+-- attackTagsHandler handles how attacks are procee
+------------------------------------------------------------------
 while not _G["Character.EquipAPI"] do
 	Task.Wait()
 end
 
 EApi = _G["Character.EquipAPI"]
+
+local function AttackResistance(stats, attackData, player)
+	local Block = stats:GetTempStat("B")
+	local oldDamage = attackData.damage.amount 
+
+	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
+	stats:SetTempStat("B", math.max(Block - oldDamage, 0))
+	player.serverUserData.blockPoints = stats:GetTempStat("B")
+
+end
+
+local function SkillResistance(stats, attackData, player)
+	local Block = stats:GetTempStat("B")
+
+	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
+
+	stats:SetTempStat("B", math.max(Block - 1, 0))
+	player.serverUserData.blockPoints = stats:GetTempStat("B")
+end
+
+local attackTagsHandler = {
+	["Melee"] = AttackResistance,
+	["ability"] = SkillResistance
+}
 
 local function StatsChanged(player, values)
 	if values then
@@ -34,29 +64,6 @@ local function playerEquipped(character, player)
 	end
 end
 
-local function AttackResistance(stats, attackData, player)
-	local Block = stats:GetTempStat("B")
-	local oldDamage = attackData.damage.amount 
-
-	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
-	stats:SetTempStat("B", math.max(Block - oldDamage, 0))
-	player.serverUserData.blockPoints = stats:GetTempStat("B")
-
-end
-
-local function SkillResistance(stats, attackData, player)
-	local Block = stats:GetTempStat("B")
-
-	attackData.damage.amount = math.max(0, attackData.damage.amount - Block)
-
-	stats:SetTempStat("B", math.max(Block - 1, 0))
-	player.serverUserData.blockPoints = stats:GetTempStat("B")
-end
-
-local attackTagsHandler = {
-	["Melee"] = AttackResistance,
-	["ability"] = SkillResistance
-}
 
 local function GoingToTakeDamage(attackData)
 	local attacked = attackData.object

@@ -1,43 +1,6 @@
 Name: "Blaking work folder"
 RootId: 15515718211942672915
 Objects {
-  Id: 4821163052361079636
-  Name: "Craft-NFT_Saving"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15515718211942672915
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 7637429431069973704
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 3993525529671177181
   Name: "UI"
   Transform {
@@ -8632,11 +8595,17 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 957.945679
+          Float: 955
         }
         Overrides {
           Name: "UIY"
           Float: 217
+        }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+            Y: 3
+          }
         }
       }
     }
@@ -8753,6 +8722,12 @@ Objects {
           Name: "UIY"
           Float: 217
         }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+            Y: 3
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -8857,11 +8832,16 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 957.945679
+          Float: 955
         }
         Overrides {
           Name: "UIY"
           Float: 121
+        }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+          }
         }
       }
     }
@@ -8965,6 +8945,11 @@ Objects {
           Name: "UIY"
           Float: 121
         }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -9065,6 +9050,11 @@ Objects {
             X: 1
             Y: 1
             Z: 1
+          }
+        }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
           }
         }
       }
@@ -9168,6 +9158,12 @@ Objects {
         Overrides {
           Name: "UIY"
           Float: 217
+        }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+            Y: 3
+          }
         }
       }
     }
@@ -9283,6 +9279,11 @@ Objects {
           Name: "UIY"
           Float: 25
         }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -9384,6 +9385,11 @@ Objects {
         Overrides {
           Name: "UIY"
           Float: 25
+        }
+        Overrides {
+          Name: "ShadowOffset"
+          Vector2 {
+          }
         }
       }
     }
@@ -10551,16 +10557,17 @@ Objects {
     }
   }
   ParentId: 6829756092568336149
-  ChildIds: 15731982575648729341
+  ChildIds: 9375187806441226779
   ChildIds: 14517772649427773096
   ChildIds: 10784706415918458962
+  ChildIds: 8570017893300268504
   ChildIds: 5232331521569794508
   ChildIds: 6712360355206055679
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10641,12 +10648,8 @@ Objects {
   Name: "ClassSelectionScreenClient"
   Transform {
     Location {
-      X: 7586.82275
-      Y: -12539.3623
-      Z: -2110.76172
     }
     Rotation {
-      Yaw: -62.5835457
     }
     Scale {
       X: 1
@@ -10657,117 +10660,21 @@ Objects {
   ParentId: 10822891042497715009
   UnregisteredParameters {
     Overrides {
-      Name: "cs:UIContainer"
+      Name: "cs:ClassImages"
+      AssetReference {
+        Id: 18311875139268052948
+      }
+    }
+    Overrides {
+      Name: "cs:Root"
       ObjectReference {
         SelfId: 10822891042497715009
       }
     }
     Overrides {
-      Name: "cs:BackgroundFade"
-      ObjectReference {
-        SelfId: 15731982575648729341
-      }
-    }
-    Overrides {
-      Name: "cs:Title"
-      ObjectReference {
-        SelfId: 14517772649427773096
-      }
-    }
-    Overrides {
-      Name: "cs:ClassSelectionPanel"
-      ObjectReference {
-        SelfId: 10784706415918458962
-      }
-    }
-    Overrides {
-      Name: "cs:WarriorPanel"
-      ObjectReference {
-        SelfId: 8714633011634623162
-      }
-    }
-    Overrides {
-      Name: "cs:WarriorBG"
-      ObjectReference {
-        SelfId: 78830024410768379
-      }
-    }
-    Overrides {
-      Name: "cs:WarriorCornerCircle"
-      ObjectReference {
-        SelfId: 1587087993989671699
-      }
-    }
-    Overrides {
-      Name: "cs:WarriorName"
-      ObjectReference {
-        SelfId: 8581028321395578018
-      }
-    }
-    Overrides {
-      Name: "cs:WarriorButton"
-      ObjectReference {
-        SelfId: 13634369096343367721
-      }
-    }
-    Overrides {
-      Name: "cs:HunterPanel"
-      ObjectReference {
-        SelfId: 13860591565395670366
-      }
-    }
-    Overrides {
-      Name: "cs:HunterBG"
-      ObjectReference {
-        SelfId: 681572714113050247
-      }
-    }
-    Overrides {
-      Name: "cs:HunterCornerCircle"
-      ObjectReference {
-        SelfId: 14665609003760434410
-      }
-    }
-    Overrides {
-      Name: "cs:HunterName"
-      ObjectReference {
-        SelfId: 18127950769924522022
-      }
-    }
-    Overrides {
-      Name: "cs:HunterButton"
-      ObjectReference {
-        SelfId: 8875834999659512894
-      }
-    }
-    Overrides {
-      Name: "cs:MagePanel"
-      ObjectReference {
-        SelfId: 5841100769820222734
-      }
-    }
-    Overrides {
-      Name: "cs:MageBG"
-      ObjectReference {
-        SelfId: 8717183238450293494
-      }
-    }
-    Overrides {
-      Name: "cs:MageCornerCircle"
-      ObjectReference {
-        SelfId: 3692609415598638231
-      }
-    }
-    Overrides {
-      Name: "cs:MageName"
-      ObjectReference {
-        SelfId: 8748684875631493263
-      }
-    }
-    Overrides {
-      Name: "cs:MageButton"
-      ObjectReference {
-        SelfId: 14225645240323413165
+      Name: "cs:EaseUI"
+      AssetReference {
+        Id: 14902373637656864644
       }
     }
   }
@@ -10794,6 +10701,894 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 8570017893300268504
+  Name: "DetailPanels"
+  Transform {
+    Location {
+      X: 19124.7148
+      Y: 15414.6611
+      Z: -16410
+    }
+    Rotation {
+      Yaw: -112.499977
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10822891042497715009
+  ChildIds: 5042722073759331123
+  ChildIds: 13478569614863021369
+  ChildIds: 15256696116490452450
+  ChildIds: 6356492346205098941
+  ChildIds: 13686068822043895640
+  ChildIds: 14305335395350795185
+  ChildIds: 8811388751766534065
+  ChildIds: 7723677646045744513
+  ChildIds: 13132036323933517284
+  ChildIds: 16489403404174639445
+  ChildIds: 14558832353818600068
+  ChildIds: 5970024303596081708
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 100
+    Height: 100
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Panel {
+      Opacity: 1
+      OpacityMaskBrush {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5970024303596081708
+  Name: "DetailsPanel - Druid"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16107958606438946431
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Druid"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21560.0059
+            Y: -11769.9863
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499931
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 1040
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6127446802205225136
+    }
+  }
+}
+Objects {
+  Id: 14558832353818600068
+  Name: "DetailsPanel - Warlock"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16107958606438946431
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Warlock"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16984363365245043363
+    }
+  }
+}
+Objects {
+  Id: 16489403404174639445
+  Name: "DetailsPanel - Shaman"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4143207345294892129
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Shaman"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3864001005573607376
+    }
+  }
+}
+Objects {
+  Id: 13132036323933517284
+  Name: "DetailsPanel - Rogue"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8523353716820905893
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Rogue"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13366179051296517388
+    }
+  }
+}
+Objects {
+  Id: 7723677646045744513
+  Name: "DetailsPanel - Ranger"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17668495767861975353
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Ranger"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16181690418712161550
+    }
+  }
+}
+Objects {
+  Id: 8811388751766534065
+  Name: "DetailsPanel - Paladin"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11889055228970738524
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Paladin"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4717036618269067129
+    }
+  }
+}
+Objects {
+  Id: 14305335395350795185
+  Name: "DetailsPanel - Fighter"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2463006932507552674
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Fighter"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceon"
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2355516684402863266
+    }
+  }
+}
+Objects {
+  Id: 13686068822043895640
+  Name: "DetailsPanel - Hunter"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 18270338226199637669
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Hunter"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17516583695670477843
+    }
+  }
+}
+Objects {
+  Id: 6356492346205098941
+  Name: "DetailsPanel - Warrior"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14317723646762347174
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Warrior"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2388174274148449319
+    }
+  }
+}
+Objects {
+  Id: 15256696116490452450
+  Name: "DetailsPanel - Healer"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9617714541269274386
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Healer"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16973731259622566749
+    }
+  }
+}
+Objects {
+  Id: 13478569614863021369
+  Name: "DetailsPanel - Sorcerer"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16004837457670497067
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Sorcerer"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5207602576951033879
+    }
+  }
+}
+Objects {
+  Id: 5042722073759331123
+  Name: "DetailsPanel - Mage"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8570017893300268504
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 829629242493765953
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DetailsPanel - Mage"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21559.9941
+            Y: -11769.9961
+            Z: 16410
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 112.499962
+          }
+        }
+        Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 280
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 20
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 867441926697224961
+    }
+  }
+}
+Objects {
   Id: 10784706415918458962
   Name: "Class Selection Panel"
   Transform {
@@ -10811,22 +11606,11 @@ Objects {
   ChildIds: 8714633011634623162
   ChildIds: 13860591565395670366
   ChildIds: 5841100769820222734
-  ChildIds: 14305335395350795185
-  ChildIds: 15256696116490452450
-  ChildIds: 13686068822043895640
-  ChildIds: 5042722073759331123
-  ChildIds: 8811388751766534065
-  ChildIds: 7723677646045744513
-  ChildIds: 13132036323933517284
-  ChildIds: 16489403404174639445
-  ChildIds: 13478569614863021369
-  ChildIds: 14558832353818600068
-  ChildIds: 6356492346205098941
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -10865,459 +11649,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6356492346205098941
-  Name: "DetailsPanel - Warrior"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14317723646762347174
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Warrior"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 2388174274148449319
-    }
-  }
-}
-Objects {
-  Id: 14558832353818600068
-  Name: "DetailsPanel - Warlock"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16107958606438946431
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Warlock"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16984363365245043363
-    }
-  }
-}
-Objects {
-  Id: 13478569614863021369
-  Name: "DetailsPanel - Sorcerer"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16004837457670497067
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Sorcerer"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 5207602576951033879
-    }
-  }
-}
-Objects {
-  Id: 16489403404174639445
-  Name: "DetailsPanel - Shaman"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 4143207345294892129
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Shaman"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 3864001005573607376
-    }
-  }
-}
-Objects {
-  Id: 13132036323933517284
-  Name: "DetailsPanel - Rogue"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8523353716820905893
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Rogue"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13366179051296517388
-    }
-  }
-}
-Objects {
-  Id: 7723677646045744513
-  Name: "DetailsPanel - Ranger"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 17668495767861975353
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Ranger"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16181690418712161550
-    }
-  }
-}
-Objects {
-  Id: 8811388751766534065
-  Name: "DetailsPanel - Paladin"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 11889055228970738524
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Paladin"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4717036618269067129
-    }
-  }
-}
-Objects {
-  Id: 5042722073759331123
-  Name: "DetailsPanel - Mage"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 829629242493765953
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Mage"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 867441926697224961
-    }
-  }
-}
-Objects {
-  Id: 13686068822043895640
-  Name: "DetailsPanel - Hunter"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 18270338226199637669
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Hunter"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17516583695670477843
-    }
-  }
-}
-Objects {
-  Id: 15256696116490452450
-  Name: "DetailsPanel - Healer"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9617714541269274386
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Healer"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16973731259622566749
-    }
-  }
-}
-Objects {
-  Id: 14305335395350795185
-  Name: "DetailsPanel - Fighter"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10784706415918458962
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 2463006932507552674
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DetailsPanel - Fighter"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.00415080134
-            Y: -0.0055239629
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 2355516684402863266
-    }
-  }
-}
-Objects {
   Id: 5841100769820222734
-  Name: "Mage Panel"
+  Name: "W Panel"
   Transform {
     Location {
     }
@@ -11438,7 +11771,7 @@ Objects {
 }
 Objects {
   Id: 14225645240323413165
-  Name: "Mage Button"
+  Name: "Button"
   Transform {
     Location {
     }
@@ -11548,7 +11881,6 @@ Objects {
   ParentId: 3536968460418964464
   ChildIds: 8717183238450293494
   ChildIds: 3692609415598638231
-  ChildIds: 8748684875631493263
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -11594,88 +11926,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8748684875631493263
-  Name: "Mage Name"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6233060267688468272
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 450
-    Height: 160
-    UIX: -76
-    UIY: 323
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Text {
-      Label: "Mage"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Size: 60
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
-        Id: 15165554833363844727
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      OutlineColor {
-        A: 1
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 3692609415598638231
-  Name: "Mage Corner Circle"
+  Name: "Highlight"
   Transform {
     Location {
     }
@@ -11688,6 +11940,7 @@ Objects {
     }
   }
   ParentId: 6233060267688468272
+  ChildIds: 8748684875631493263
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -11745,8 +11998,88 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 8748684875631493263
+  Name: "Name"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3692609415598638231
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 450
+    Height: 160
+    UIX: 232
+    UIY: -350.000061
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Mage"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 60
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 15165554833363844727
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 8717183238450293494
-  Name: "Mage BG"
+  Name: "BG"
   Transform {
     Location {
     }
@@ -11952,7 +12285,7 @@ Objects {
 }
 Objects {
   Id: 13860591565395670366
-  Name: "Hunter Panel"
+  Name: "A Panel"
   Transform {
     Location {
     }
@@ -12072,7 +12405,7 @@ Objects {
 }
 Objects {
   Id: 8875834999659512894
-  Name: "Hunter Button"
+  Name: "Button"
   Transform {
     Location {
     }
@@ -12182,7 +12515,6 @@ Objects {
   ParentId: 16150726513058645124
   ChildIds: 681572714113050247
   ChildIds: 14665609003760434410
-  ChildIds: 18127950769924522022
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -12228,88 +12560,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 18127950769924522022
-  Name: "Hunter Name"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9654118512111383980
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 450
-    Height: 160
-    UIX: -76
-    UIY: 323
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Text {
-      Label: "Hunter"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Size: 60
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
-        Id: 15165554833363844727
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      OutlineColor {
-        A: 1
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 14665609003760434410
-  Name: "Hunter Corner Circle"
+  Name: "Highlight"
   Transform {
     Location {
     }
@@ -12322,6 +12574,7 @@ Objects {
     }
   }
   ParentId: 9654118512111383980
+  ChildIds: 18127950769924522022
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -12379,8 +12632,88 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 18127950769924522022
+  Name: "Name"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14665609003760434410
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 450
+    Height: 160
+    UIX: 232
+    UIY: -350.000061
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Hunter"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 60
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 15165554833363844727
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 681572714113050247
-  Name: "Hunter BG"
+  Name: "BG"
   Transform {
     Location {
     }
@@ -12586,7 +12919,7 @@ Objects {
 }
 Objects {
   Id: 8714633011634623162
-  Name: "Warrior Panel"
+  Name: "V Panel"
   Transform {
     Location {
     }
@@ -12707,7 +13040,7 @@ Objects {
 }
 Objects {
   Id: 13634369096343367721
-  Name: "Warrior Button"
+  Name: "Button"
   Transform {
     Location {
     }
@@ -12817,7 +13150,6 @@ Objects {
   ParentId: 2620147304434267347
   ChildIds: 78830024410768379
   ChildIds: 1587087993989671699
-  ChildIds: 8581028321395578018
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -12863,88 +13195,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8581028321395578018
-  Name: "Warrior Name"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11737585224407704027
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 450
-    Height: 160
-    UIX: -76
-    UIY: 323
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Text {
-      Label: "Warrior"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Size: 60
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
-        Id: 15165554833363844727
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      OutlineColor {
-        A: 1
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 1587087993989671699
-  Name: "Warrior Corner Circle"
+  Name: "Highlight"
   Transform {
     Location {
     }
@@ -12957,6 +13209,7 @@ Objects {
     }
   }
   ParentId: 11737585224407704027
+  ChildIds: 8581028321395578018
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -13014,8 +13267,88 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 8581028321395578018
+  Name: "Name"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1587087993989671699
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 450
+    Height: 160
+    UIX: 232
+    UIY: -350.000061
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Warrior"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 60
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 15165554833363844727
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 78830024410768379
-  Name: "Warrior BG"
+  Name: "BG"
   Transform {
     Location {
     }
@@ -13298,6 +13631,69 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 9375187806441226779
+  Name: "background"
+  Transform {
+    Location {
+      X: 11550.7568
+      Y: -921.904297
+      Z: 1749.23828
+    }
+    Rotation {
+      Yaw: -152.583542
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10822891042497715009
+  ChildIds: 15731982575648729341
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 100
+    Height: 100
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Panel {
+      Opacity: 0.85
+      OpacityMaskBrush {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 15731982575648729341
   Name: "Background Fade"
   Transform {
@@ -13311,7 +13707,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10822891042497715009
+  ParentId: 9375187806441226779
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -13339,7 +13735,7 @@ Objects {
         Id: 841534158063459245
       }
       Color {
-        A: 0.85
+        A: 1
       }
       TeamSettings {
       }
@@ -13494,6 +13890,12 @@ Objects {
       Name: "cs:Left_Panel"
       ObjectReference {
         SelfId: 4600577894178217907
+      }
+    }
+    Overrides {
+      Name: "cs:FantasySpellPotion016"
+      AssetReference {
+        Id: 16871783667230751551
       }
     }
   }
