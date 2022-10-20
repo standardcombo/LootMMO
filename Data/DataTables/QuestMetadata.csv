@@ -12,7 +12,7 @@
 "Equip","D52F16542F2B437F","0BADBADBADBADBAD","False","Material(Coins=5)","Raid2, Dragons1","5cb37e/loot-mmo","Social"
 "Craft1","0E4510A3AE585DD7","0BADBADBADBADBAD","False","Material(Coins=40)","Pig","5cb37e/loot-mmo","Social"
 "Lv5","8E63C9B05FD519E8","0BADBADBADBADBAD","False","Wait(1), RandomItem(Greatness=15)","Raid3, Undead1, Lv8","5cb37e/loot-mmo","Social"
-"Lv8","8E63C9B05FD519E8","0BADBADBADBADBAD","False","Material(Gems=1), Wait(0.5), Material(Gems=1), Wait(0.5), Material(Encantations=1), Wait(0.5), Material(Encantations=1)","Spiders1","5cb37e/loot-mmo","Social"
+"Lv8","8E63C9B05FD519E8","0BADBADBADBADBAD","False","Material(Gemstones=1), Wait(0.5), Material(Gemstones=1), Wait(0.5), Material(Encantations=1), Wait(0.5), Material(Encantations=1)","Spiders1","5cb37e/loot-mmo","Social"
 "Potions","7A25063CDD28F326","0BADBADBADBADBAD","False","Material(Metal=1)","Pig","5cb37e/loot-mmo","Social"
 "Pig","7F0BBF6A1135B261","0BADBADBADBADBAD","False","Material(Coins=100), Wait(0.5), Material(Metal=5)","","5cb37e/loot-mmo","Social"
 "Study","09D26C9842A7CDE1","0BADBADBADBADBAD","False","Wait(0.5), Material(Incense=1)","","5cb37e/loot-mmo","Social"
