@@ -18,8 +18,14 @@ function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 ---@type DamageableObject
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
-local DAMAGE_TO_PLAYERS = script:GetCustomProperty("DamageToPlayers") or 1
-local DAMAGE_TO_NPCS = script:GetCustomProperty("DamageToNPCs") or 1
+local DAMAGE_TO_PLAYERS = ROOT:GetCustomProperty("DamageToPlayers")
+local DAMAGE_TO_NPCS = ROOT:GetCustomProperty("DamageToNPCs")
+if not DAMAGE_TO_PLAYERS then
+	DAMAGE_TO_PLAYERS = script:GetCustomProperty("DamageToPlayers") or 5
+end
+if not DAMAGE_TO_NPCS then
+	DAMAGE_TO_NPCS = script:GetCustomProperty("DamageToNPCs") or 5
+end
 
 local PROJECTILE_BODY = script:GetCustomProperty("ProjectileBody")
 local MUZZLE_FLASH_VFX = script:GetCustomProperty("MuzzleFlash")

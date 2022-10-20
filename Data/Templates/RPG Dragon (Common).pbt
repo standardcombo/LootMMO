@@ -28,7 +28,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Tag_3"
-            String: "Poison"
+            String: "Flying"
           }
           Overrides {
             Name: "cs:RewardResourceType"
@@ -41,6 +41,12 @@ Assets {
           Overrides {
             Name: "cs:LootId"
             String: "Common"
+          }
+          Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 7507469334442477538
+            }
           }
           Overrides {
             Name: "cs:AttackRange"
@@ -61,6 +67,14 @@ Assets {
           Overrides {
             Name: "cs:AttackCooldown"
             Float: 1.5
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 5
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs"
+            Int: 5
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -474,6 +488,30 @@ Assets {
             Name: "cs:Tag_3:category"
             String: "Tags"
           }
+          Overrides {
+            Name: "cs:EngageEffect:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:EngageEffect:tooltip"
+            String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -600,12 +638,6 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:EngageEffect"
-            AssetReference {
-              Id: 7507469334442477538
-            }
-          }
-          Overrides {
             Name: "cs:HomingTarget"
             ObjectReference {
               SubObjectId: 4441873327481576871
@@ -662,14 +694,6 @@ Assets {
         }
         ParentId: 10101430813486348292
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 5
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 5
-          }
           Overrides {
             Name: "cs:ProjectileBody"
             AssetReference {

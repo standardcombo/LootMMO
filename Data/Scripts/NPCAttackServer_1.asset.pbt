@@ -16,14 +16,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:DamageToPlayers"
-        Int: 5
-      }
-      Overrides {
-        Name: "cs:DamageToNPCs"
-        Float: 5
-      }
-      Overrides {
         Name: "cs:ProjectileBody"
         AssetReference {
         }
@@ -70,14 +62,6 @@ Assets {
       Overrides {
         Name: "cs:Root:tooltip"
         String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
-      }
-      Overrides {
-        Name: "cs:DamageToPlayers:tooltip"
-        String: "How much damage this NPC deals to players."
-      }
-      Overrides {
-        Name: "cs:DamageToNPCs:tooltip"
-        String: "How much damage this NPC deals to other NPCs."
       }
       Overrides {
         Name: "cs:ProjectileBody:tooltip"
