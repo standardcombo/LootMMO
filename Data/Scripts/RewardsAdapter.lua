@@ -95,7 +95,7 @@ function AddItem(player, definition, amount, greatness)
 		sfx = definition.pickupSfx,
 	}
 	if amount and amount > 1 then
-		toastParams.message = amount .."x ".. definition.name
+		toastParams.message = amount .." ".. definition.name
 	end
 	Events.BroadcastToPlayer(player, "RewardToast", toastParams)
 
