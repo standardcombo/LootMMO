@@ -1,3 +1,8 @@
+--[[
+	This script keeps in sync the player resource "XP" and the
+	character system's implementation of XP. This helps with
+	interoperability.
+]]
 local EquipAPI = _G['Character.EquipAPI']
 
 local function ResourceUpdated(player, resource, value)
