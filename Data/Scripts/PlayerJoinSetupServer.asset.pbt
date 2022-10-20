@@ -4,6 +4,10 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:StartingState"
+        Int: 30
+      }
     }
   }
   SerializationVersion: 119

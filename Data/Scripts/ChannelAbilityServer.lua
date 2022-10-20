@@ -83,7 +83,8 @@ function OnCast(ability)
 			end
 			
 			-- Stop if the player loses armor
-			if player.serverUserData.blockPoints < startBlockpoints then
+			if startBlockpoints
+			and player.serverUserData.blockPoints < startBlockpoints then
 				--print("Interrupted channeling because the player lost blockPoints")
 				ability:Interrupt()
 				return

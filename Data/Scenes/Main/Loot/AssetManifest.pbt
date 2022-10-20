@@ -1,13 +1,4 @@
 Assets {
-  Id: 18283604462096221912
-  Name: "Roboto Slab Black"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "RobotoSlabBlack_ref"
-  }
-}
-Assets {
   Id: 17440982127418626575
   Name: "Frame Tri 001 Wedge"
   PlatformAssetType: 9
@@ -167,15 +158,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Gear_Boot_006"
-  }
-}
-Assets {
-  Id: 9141481781676223235
-  Name: "Fantasy Coins 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Coins_006"
   }
 }
 Assets {

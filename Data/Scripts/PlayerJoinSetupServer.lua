@@ -1,4 +1,6 @@
 
+local STARTING_STATE = script:GetCustomProperty("StartingState")
+
 Game.playerJoinedEvent:Connect(function(player)
 	-- TODO: Check player characters and go to character selection instead,
 	--if they have a character level 2 or higher
@@ -9,7 +11,7 @@ Game.playerJoinedEvent:Connect(function(player)
 	Task.Wait()
 	Task.Wait()
 	
-	_G.AppState.SetStateForPlayer(player, _G.AppState.BagSelection)
+	_G.AppState.SetStateForPlayer(player, STARTING_STATE)
 	--end
 end)
 
