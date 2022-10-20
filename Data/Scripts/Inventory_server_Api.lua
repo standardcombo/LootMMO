@@ -7,11 +7,11 @@ function API.MoveInventory(oldInventory, newInventory, slotA, slotB)
 	warn("Not Yet Implimented")
 end
 
-function API.MoveSlot(player, slotA, SlotB)
+function API.MoveSlot(player, slotA, slotB)
 	local char = EquipApi.GetCurrentCharacter(player)
 	if char then
 		local inv = char:GetComponent("Inventory")
-		inv:GetInventory():MoveFromSlot(slotA, SlotB)
+		inv:GetInventory():MoveFromSlot(slotA, slotB)
 	end
 end
 

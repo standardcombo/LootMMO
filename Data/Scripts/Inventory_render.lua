@@ -126,7 +126,7 @@ local function HoverSlot(slot)
 	end
 	local item = currentInventory:GetItem(slot.index)
 	if item then
-		local itemdata = ITEMS.GetDefinition(item.name) or MATERIALS.GetDefinition(item.name)
+		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
 			return
 		end
@@ -237,7 +237,7 @@ local function InventoryChanged(inv, slot)
 	local childbg = slots[slot].bg
 	local isBag = slots[slot].isBag
 	if item ~= nil then
-		local itemdata = ITEMS.GetDefinition(item.name) or MATERIALS.GetDefinition(item.name)
+		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
 			return
 		end
