@@ -22,7 +22,13 @@ function OnBindingPressed(player, action)
 		EQUIPMENT:SetCustomProperty("isActive", true)
 		
 		local usesRemaining = EQUIPMENT:GetCustomProperty("usesRemaining")
-		EQUIPMENT:SetCustomProperty("usesRemaining", usesRemaining - 1)
+		usesRemaining = usesRemaining - 1
+		
+		EQUIPMENT:SetCustomProperty("usesRemaining", usesRemaining)
+
+		if usesRemaining == 0 and _G.RewardsAdapter then
+			_G.RewardsAdapter.AddXP(player, 2)
+		end
 	end
 end
 
