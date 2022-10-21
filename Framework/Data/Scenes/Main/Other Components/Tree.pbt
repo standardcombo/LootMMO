@@ -3660,7 +3660,7 @@ Objects {
 }
 Objects {
   Id: 9583552097270062017
-  Name: "Respawn Zone"
+  Name: "Respawn Zone (under the world)"
   Transform {
     Location {
       Z: -1700
