@@ -1,4 +1,6 @@
 
+**Version 1.0.1**
+Too many changes to mention. This is the first public release of the framework, with full game loop, quest system, NPCs, portals, abilities, character progression, etc.
 
 **Version 0.3**
 General Improvements
