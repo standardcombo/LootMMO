@@ -890,6 +890,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12905923173550510229
+  Name: "Cylinder - Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cylinder_hq_test_001"
+  }
+}
+Assets {
   Id: 12889861000896994476
   Name: "Invisible"
   PlatformAssetType: 2
@@ -1256,6 +1265,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_chain_001"
+  }
+}
+Assets {
+  Id: 10737131002278560872
+  Name: "Oswald Semi Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "OswaldSemiBold_ref"
   }
 }
 Assets {
@@ -1826,6 +1844,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6937801349599486808
+  Name: " Wood 9 Slice Crate 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mat_advanced_9slice_wooden_crates_001_ref"
+  }
+}
+Assets {
   Id: 6888255164699252233
   Name: "Candle Group 01"
   PlatformAssetType: 1
@@ -1940,6 +1967,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_quarter-pipe_001"
+  }
+}
+Assets {
+  Id: 6153872282683135526
+  Name: "Fantasy Chain 8m Arch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_chain_8x4_001_ref"
   }
 }
 Assets {
@@ -2438,6 +2474,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2723232960546970913
+  Name: "Wood Floor Dark"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_floor_dark_001_uv"
+  }
+}
+Assets {
   Id: 2635330027741249494
   Name: "Diamond - 6-Sided"
   PlatformAssetType: 1
@@ -2561,6 +2606,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_fog_adjustment"
+  }
+}
+Assets {
+  Id: 1680011468336307827
+  Name: "Rocky Ground 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "rocky_001"
   }
 }
 Assets {

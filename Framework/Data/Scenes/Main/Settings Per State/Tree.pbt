@@ -1,4 +1,4 @@
-Name: "Settings Per Location"
+Name: "Settings Per State"
 RootId: 2561084474995652434
 Objects {
   Id: 6706733858564631194

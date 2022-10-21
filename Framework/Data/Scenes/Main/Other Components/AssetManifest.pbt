@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13283446771505524663
+  Name: "Center Arrow 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterArrow_002"
+  }
+}
+Assets {
   Id: 9014903050588939206
   Name: "Fantasy Ability Blue 048"
   PlatformAssetType: 9

@@ -23,7 +23,6 @@ Objects {
   ChildIds: 16937607096047638534
   ChildIds: 1888181817911919837
   ChildIds: 2561084474995652434
-  ChildIds: 10537337840704340836
   ChildIds: 17798732759644559527
   ChildIds: 764194984864902660
   ChildIds: 8212739915466549664
@@ -1250,44 +1249,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10537337840704340836
-  Name: "CompletedFolder"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "CompletedFolder"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 2561084474995652434
-  Name: "Settings Per Location"
+  Name: "Settings Per State"
   Transform {
     Location {
       X: 31461.1699
@@ -1317,7 +1280,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Settings Per Location"
+    FilePartitionName: "Settings Per State"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
