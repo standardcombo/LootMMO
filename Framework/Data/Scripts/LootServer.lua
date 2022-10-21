@@ -1,5 +1,5 @@
-local STORAGE_KEY_UTIL = require(script:GetCustomProperty('StorageKeyUtil'))
-local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey('PlayerProgress')
+local STORAGE_KEY_UTIL = require(script:GetCustomProperty('StorageKeys'))
+local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey('charAdditional')
 local LOOT_BAG_PARSER = require(script:GetCustomProperty('LootBagParser'))
 
 function OnClearEquipment(player)

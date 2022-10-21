@@ -1,6 +1,6 @@
 local savekeys = require(script:GetCustomProperty("StorageKeys"))
 
-local key = savekeys.GetKeyFromName("NFTUpgraded")
+local key = savekeys.GetKey("NFTUpgraded")
 local EquipAPi = _G["Character.EquipAPI"]
 
 local api = {}

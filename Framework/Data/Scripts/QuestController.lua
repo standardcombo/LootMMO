@@ -23,10 +23,10 @@ _G.QuestController = API
 
 local QUEST_METADATA = require(script:GetCustomProperty("QuestMetadata"))
 local QUEST_OBJECTIVES = require(script:GetCustomProperty("QuestObjectives"))
-local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
+local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeys"))
 local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
-local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
+local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("charAdditional")
 
 local SERIALIZATION_VERSION = 1
 

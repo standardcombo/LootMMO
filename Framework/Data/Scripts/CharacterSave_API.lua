@@ -1,8 +1,8 @@
 local savekeys = require(script:GetCustomProperty("StorageKeys"))
 
-local CHARACTER = savekeys.GetKeyFromName('character')
-local CHARACTER2 = savekeys.GetKeyFromName('character2')
-local ADDITIONAL = savekeys.GetKeyFromName('charAdditional')
+local CHARACTER = savekeys.GetKey('character')
+local CHARACTER2 = savekeys.GetKey('character2')
+local ADDITIONAL = savekeys.GetKey('charAdditional')
 assert(CHARACTER)
 assert(CHARACTER2)
 assert(ADDITIONAL)

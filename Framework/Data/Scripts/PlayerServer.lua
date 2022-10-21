@@ -1,8 +1,8 @@
 
-local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeyUtil"))
+local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeys"))
 local FALLBACK_WEAPON = script:GetCustomProperty("FallbackWeapon")
 
-local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("PlayerProgress")
+local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("charAdditional")
 
 local isReady = false
 

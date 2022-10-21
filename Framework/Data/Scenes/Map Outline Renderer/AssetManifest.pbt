@@ -1,17 +1,4 @@
 Assets {
-  Id: 18225988759160807764
-  Name: "PlayerProgress_LootMMO"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "6716fd5a561c42dea7c08d6b1140ce0d"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
   Id: 17157977466683768474
   Name: "NFTUpgraded"
   PlatformAssetType: 23
