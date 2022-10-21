@@ -1,13 +1,13 @@
 Assets {
-  Id: 14261142793805627850
-  Name: "Default Bindings"
+  Id: 9892673916373725528
+  Name: "Ability"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 2307506665685072506
+      RootId: 17390626378360673258
       Objects {
-        Id: 2307506665685072506
-        Name: "Default Bindings"
+        Id: 17390626378360673258
+        Name: "Ability"
         Transform {
           Scale {
             X: 1
@@ -15,9 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12650245047976557178
-        UnregisteredParameters {
-        }
+        ParentId: 1578154111882892155
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -32,7 +30,7 @@ Assets {
         }
         BindingSet {
           BindingSetAsset {
-            Id: 736360303936294653
+            Id: 7528756236054095518
           }
         }
         NetworkRelevanceDistance {
@@ -42,8 +40,8 @@ Assets {
       }
     }
     PrimaryAssetId {
-      AssetType: "TemplateAssetRef"
-      AssetId: "Default_Bindings"
+      AssetType: "None"
+      AssetId: "None"
     }
   }
   SerializationVersion: 119

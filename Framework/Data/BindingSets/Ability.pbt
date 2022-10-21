@@ -303,5 +303,28 @@ Assets {
       }
       IsEnabledOnStart: true
     }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:f"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:rightclick"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:righttrigger"
+          }
+        }
+      }
+      Action: "Throw"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
   }
 }

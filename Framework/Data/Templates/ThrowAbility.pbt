@@ -78,7 +78,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:invalid"
           }
-          KeyBinding_v3: "Attack"
+          KeyBinding_v3: "Throw"
           Version: 3
         }
         NetworkRelevanceDistance {

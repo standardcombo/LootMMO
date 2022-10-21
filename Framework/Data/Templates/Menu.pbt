@@ -1,13 +1,13 @@
 Assets {
-  Id: 14261142793805627850
-  Name: "Default Bindings"
+  Id: 13165357800686183681
+  Name: "Menu"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 2307506665685072506
+      RootId: 11851352683820224809
       Objects {
-        Id: 2307506665685072506
-        Name: "Default Bindings"
+        Id: 11851352683820224809
+        Name: "Menu"
         Transform {
           Scale {
             X: 1
@@ -15,9 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12650245047976557178
-        UnregisteredParameters {
-        }
+        ParentId: 1578154111882892155
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -32,7 +30,7 @@ Assets {
         }
         BindingSet {
           BindingSetAsset {
-            Id: 736360303936294653
+            Id: 12986852327509848639
           }
         }
         NetworkRelevanceDistance {
@@ -42,8 +40,8 @@ Assets {
       }
     }
     PrimaryAssetId {
-      AssetType: "TemplateAssetRef"
-      AssetId: "Default_Bindings"
+      AssetType: "None"
+      AssetId: "None"
     }
   }
   SerializationVersion: 119
