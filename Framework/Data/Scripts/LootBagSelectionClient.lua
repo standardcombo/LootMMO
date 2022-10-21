@@ -8,7 +8,6 @@ local ROW_PROTOTYPE = script:GetCustomProperty('RowPrototype'):WaitForObject()
 local ROW_PROTOTYPE_FREE = script:GetCustomProperty('RowPrototypeFree'):WaitForObject()
 local UP_BUTTON = script:GetCustomProperty('UpButton'):WaitForObject()
 local DOWN_BUTTON = script:GetCustomProperty('DownButton'):WaitForObject()
-local CHARACTERS_BUTTON = script:GetCustomProperty("CharactersButton"):WaitForObject()
 
 local ROW_SPACING = 20
 local ROWS_PER_PAGE = 6
@@ -200,13 +199,6 @@ end
 
 UP_BUTTON.pressedEvent:Connect(OnUpPressed)
 DOWN_BUTTON.pressedEvent:Connect(OnDownPressed)
-
-
-function OnCharactersPressed()
-	_G.AppState.SetLocalState(_G.AppState.CharacterSelection)
-end
-
-CHARACTERS_BUTTON.pressedEvent:Connect(OnCharactersPressed)
 
 
 -- Animate the "Loading..." text while it's busy

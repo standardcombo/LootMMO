@@ -16062,6 +16062,12 @@ Objects {
         SelfId: 2045700571869378511
       }
     }
+    Overrides {
+      Name: "cs:CharactersButton"
+      ObjectReference {
+        SelfId: 10000263861690393152
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

@@ -31,6 +31,7 @@ local PLAY_BUTTON_ROOT = script:GetCustomProperty('PlayButtonRoot'):WaitForObjec
 local PLAY_BUTTON = script:GetCustomProperty('PlayButton'):WaitForObject()
 local PLAY_BUTTON_SFX = script:GetCustomProperty('PlayButtonSFX'):WaitForObject()
 local RETURN_TO_BAG_SELECTION_TRIGGER = script:GetCustomProperty('ReturnToBagSelectionTrigger'):WaitForObject()
+local CHARACTERS_BUTTON = script:GetCustomProperty("CharactersButton"):WaitForObject()
 
 local itemImages = {
     WEAPON_IMAGE,
@@ -128,14 +129,23 @@ function EquipLoot(lootBag)
 end
 Events.Connect('EquipLoot', EquipLoot)
 
+
+Events.Connect("AppState.Enter", function(player, newState, prevPlayerState)
+	if newState == _G.AppState.BagSelection then
+		UI_ROOT.visibility = Visibility.INHERIT
+		UpdateCharactersButton()
+	else
+		UI_ROOT.visibility = Visibility.FORCE_OFF
+	end
+end)
+
 function OnPlay()
     PLAY_BUTTON_SFX:Play()
 
     _G.AppState.SetLocalState(_G.AppState.SocialHub)
-
-    UI_ROOT.visibility = Visibility.FORCE_OFF
 end
 PLAY_BUTTON.clickedEvent:Connect(OnPlay)
+
 
 function ReturnToBagSelect(trigger, player)
     if player ~= Game.GetLocalPlayer() then
@@ -143,10 +153,30 @@ function ReturnToBagSelect(trigger, player)
     end
 
     _G.AppState.SetLocalState(_G.AppState.BagSelection)
-
-    UI_ROOT.visibility = Visibility.INHERIT
 end
 RETURN_TO_BAG_SELECTION_TRIGGER.interactedEvent:Connect(ReturnToBagSelect)
+
+
+function OnCharactersPressed()
+    PLAY_BUTTON_SFX:Play()
+    
+	_G.AppState.SetLocalState(_G.AppState.CharacterSelection)
+end
+CHARACTERS_BUTTON.pressedEvent:Connect(OnCharactersPressed)
+
+
+function UpdateCharactersButton()
+	if HasCharacters() then
+		CHARACTERS_BUTTON.visibility = Visibility.INHERIT
+	else
+		CHARACTERS_BUTTON.visibility = Visibility.FORCE_OFF
+	end
+end
+function HasCharacters()
+	local data = Game.GetLocalPlayer():GetPrivateNetworkedData('Cselect')
+	return #data > 0
+end
+
 
 function IsInSocialHub()
     return _G.AppState.GetLocalState() == _G.AppState.SocialHub
