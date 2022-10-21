@@ -45,8 +45,8 @@ function Execute()
 		targetPosition.z = targetPosition.z - 100
 	end
 
-	local ImpulseRadius = 200
-	local vfxScale = Vector3.New(CoreMath.Round(ImpulseRadius / 50, 3))
+	local ImpulseRadius = 400
+	local vfxScale = Vector3.New(CoreMath.Round(ImpulseRadius / 75, 3))
 
 	local trapTemplate = SPAWN_VFX
 	local newTrap =
@@ -60,12 +60,12 @@ function Execute()
 		}
 	)
 	newTrap.lifeSpan = lifeSpan
+	newTrap:SetCustomProperty('ability', ABILITY)
 	newTrap:SetCustomProperty('lifeSpan', newTrap.lifeSpan)
+	newTrap:SetCustomProperty('damage', mod["Bleed"])
 
 	local nearbyEnemies =
 	COMBAT().FindInSphere(owner:GetWorldPosition(), ImpulseRadius, { ignoreTeams = owner.team })
-	local bleedStatus = nil
-	local slowStatus = nil
 
 	for _, enemy in pairs(nearbyEnemies) do
 		API_SE.ApplyStatusEffect(enemy, "Bleed", {

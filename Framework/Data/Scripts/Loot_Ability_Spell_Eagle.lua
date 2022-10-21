@@ -5,12 +5,15 @@ local LOOT_ABILITY_EAGLE_SUMMON = script:GetCustomProperty("Loot_Ability_EagleSu
 local function Summon()
     local Owner = ABILITY.owner
     local mod = ROOT.serverUserData.calculateModifier()
-    local Eagle = World.SpawnAsset(LOOT_ABILITY_EAGLE_SUMMON, {position = Owner:GetWorldPosition() + Vector3.UP * 75, networkContext = NetworkContextType.NETWORKED})
-    Eagle.serverUserData.owner = Owner
-    Eagle:SetCustomProperty('Team', Owner.team)
-    Eagle:SetCustomProperty('Damage', mod['Damage'][1])
-    Eagle:SetCustomProperty('IsCrit', mod['Damage'][2])
-    Eagle.lifeSpan = mod['Duration'] or 10
+    if Object.IsValid(ABILITY.owner.serverUserData.Eagle) then
+        ABILITY.owner.serverUserData.Eagle:Destroy()
+    end
+    ABILITY.owner.serverUserData.Eagle = World.SpawnAsset(LOOT_ABILITY_EAGLE_SUMMON, {position = Owner:GetWorldPosition() + Vector3.UP * 75, networkContext = NetworkContextType.NETWORKED})
+    ABILITY.owner.serverUserData.Eagle.serverUserData.owner = Owner
+    ABILITY.owner.serverUserData.Eagle:SetCustomProperty('Team', Owner.team)
+    ABILITY.owner.serverUserData.Eagle:SetCustomProperty('Damage', mod['Damage'][1])
+    ABILITY.owner.serverUserData.Eagle:SetCustomProperty('IsCrit', mod['Damage'][2])
+    ABILITY.owner.serverUserData.Eagle.lifeSpan = mod['Duration'] or 10
 end
 
 ABILITY.executeEvent:Connect(Summon)
