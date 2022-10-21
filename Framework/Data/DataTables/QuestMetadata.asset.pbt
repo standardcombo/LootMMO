@@ -33,6 +33,15 @@ Assets {
       }
     }
     Assets {
+      Id: 10260266135439350248
+      Name: "Award"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Military_Icon_036"
+      }
+    }
+    Assets {
       Id: 9136876702884038594
       Name: "Daggers"
       PlatformAssetType: 9
@@ -75,15 +84,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Icon_Spider"
-      }
-    }
-    Assets {
-      Id: 10260266135439350248
-      Name: "Award"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Military_Icon_036"
       }
     }
     Assets {
