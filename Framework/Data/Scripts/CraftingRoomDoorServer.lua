@@ -44,7 +44,7 @@ local function OnBeginOverlap(trigger, player)
 	
 	if isOutside then
 		-- Check if the player has access
-		local hasKey = _G.QuestController.HasCompleted(player, "Raid2")
+		local hasKey = _G.QuestController.HasCompleted(player, "Lv5")
 		if not hasKey then
 			Events.BroadcastToPlayer(player, "CraftingRoom.LockedMessage")
 			return
