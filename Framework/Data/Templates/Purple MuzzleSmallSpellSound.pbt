@@ -7,7 +7,7 @@ Assets {
       RootId: 4874778156704607500
       Objects {
         Id: 4874778156704607500
-        Name: "Purple Magic Muzzle Flash"
+        Name: "Purple MuzzleSmallSpellSound"
         Transform {
           Scale {
             X: 1
@@ -76,7 +76,7 @@ Assets {
           }
           AutoPlay: true
           Volume: 1
-          Falloff: -1
+          Falloff: 4000
           Radius: -1
           EnableOcclusion: true
           IsSpatializationEnabled: true

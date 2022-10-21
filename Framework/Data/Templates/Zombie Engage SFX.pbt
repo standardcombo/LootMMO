@@ -71,7 +71,7 @@ Assets {
           AutoPlay: true
           Pitch: 603.19104
           Volume: 1.65663683
-          Falloff: 2000
+          Falloff: 4000
           Radius: -1
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true

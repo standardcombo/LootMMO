@@ -65,7 +65,7 @@ Assets {
           }
           Pitch: 0.3
           Volume: 1
-          Falloff: 2000
+          Falloff: 4000
           Radius: 1000
           EnableOcclusion: true
           IsSpatializationEnabled: true

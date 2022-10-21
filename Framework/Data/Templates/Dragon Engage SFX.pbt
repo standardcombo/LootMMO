@@ -70,7 +70,7 @@ Assets {
           }
           AutoPlay: true
           Volume: 1.66
-          Falloff: 2000
+          Falloff: 4000
           Radius: -1
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true

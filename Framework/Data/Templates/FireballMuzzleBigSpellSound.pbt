@@ -7,7 +7,7 @@ Assets {
       RootId: 8975524446121914379
       Objects {
         Id: 8975524446121914379
-        Name: "ClientContext"
+        Name: "FireballMuzzleBigSpellSound"
         Transform {
           Scale {
             X: 1
@@ -74,7 +74,7 @@ Assets {
           }
           AutoPlay: true
           Volume: 0.8
-          Falloff: 3600
+          Falloff: 4000
           Radius: 700
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
@@ -116,7 +116,7 @@ Assets {
           }
           AutoPlay: true
           Volume: 0.7
-          Falloff: 3600
+          Falloff: 4000
           Radius: 400
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
