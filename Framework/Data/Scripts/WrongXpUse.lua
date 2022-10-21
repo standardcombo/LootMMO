@@ -3,11 +3,10 @@
 	character system's implementation of XP. This helps with
 	interoperability.
 ]]
-local EquipAPI = _G['Character.EquipAPI']
 
 local function ResourceUpdated(player, resource, value)
     if resource == "XP" then
-        local character = EquipAPI.GetCurrentCharacter(player)
+        local character = _G['Character.EquipAPI'].GetCurrentCharacter(player)
         if character then
             local level = character:GetComponent('Level')
             if level then
