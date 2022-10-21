@@ -85142,7 +85142,6 @@ Objects {
   }
   ParentId: 16937607096047638534
   ChildIds: 15469691398536073426
-  ChildIds: 10877294365028340337
   ChildIds: 9827868258598449120
   ChildIds: 14518386033921349452
   ChildIds: 12889894066878329792
@@ -86411,43 +86410,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4123599689619108647
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 10877294365028340337
-  Name: "CharacterSelect_Connector"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4321043947943921354
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 15376335980291104838
     }
   }
   NetworkRelevanceDistance {

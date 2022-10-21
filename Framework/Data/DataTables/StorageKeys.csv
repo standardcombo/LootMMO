@@ -1,4 +1,5 @@
 "name[String]","storagekey[Net Reference]"
-"character","mc:enetreferencetype:sharedpersistence|6f9084df388046e49b033c8e98257774"
-"character2","mc:enetreferencetype:sharedpersistence|d17421667f1747bcb552c6d4afe0be04"
-"NFTUpgraded","mc:enetreferencetype:concurrentplayerpersistence|58c40a4164b14bf08b10e56602799d67"
+"character","mc:enetreferencetype:sharedpersistence|66225082990c4a5ca0d0d5323ea57a88"
+"character2","mc:enetreferencetype:sharedpersistence|01c69676f0a843e09e8665b546791748"
+"NFTUpgraded","mc:enetreferencetype:concurrentplayerpersistence|5fa066f7d0324fd399216a37ae4a361c"
+"charAdditional","mc:enetreferencetype:sharedpersistence|350b16dafb75496a9dd65a3fc488cf8e"

@@ -1,6 +1,6 @@
 Assets {
   Id: 3120332404910366941
-  Name: "SaveKeys"
+  Name: "StorageKeys"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

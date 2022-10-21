@@ -17,12 +17,12 @@ Objects {
   ChildIds: 17635258934049397073
   ChildIds: 291839474745250044
   ChildIds: 1578154111882892155
+  ChildIds: 2561084474995652434
   ChildIds: 18436610494286568512
   ChildIds: 12785624939370825655
   ChildIds: 2852741563843667238
   ChildIds: 16937607096047638534
   ChildIds: 1888181817911919837
-  ChildIds: 2561084474995652434
   ChildIds: 17798732759644559527
   ChildIds: 764194984864902660
   ChildIds: 8212739915466549664
@@ -1249,45 +1249,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2561084474995652434
-  Name: "Settings Per State"
-  Transform {
-    Location {
-      X: 31461.1699
-      Y: 1898.45984
-      Z: 14398.2715
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Settings Per State"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 1888181817911919837
   Name: "SocialSpace"
   Transform {
@@ -1464,6 +1425,45 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Data Definitions"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2561084474995652434
+  Name: "Settings Per State"
+  Transform {
+    Location {
+      X: 31461.1699
+      Y: 1898.45984
+      Z: 14398.2715
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Settings Per State"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

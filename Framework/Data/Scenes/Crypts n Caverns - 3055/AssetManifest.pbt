@@ -12,6 +12,19 @@ Assets {
   }
 }
 Assets {
+  Id: 17157977466683768474
+  Name: "NFTUpgraded"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "5fa066f7d0324fd399216a37ae4a361c"
+      Type {
+        Value: "mc:enetreferencetype:concurrentplayerpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 16772265683136066156
   Name: "JewelPack4"
   PlatformAssetType: 24
@@ -311,6 +324,19 @@ Assets {
   }
 }
 Assets {
+  Id: 9003723600529713560
+  Name: "Character1"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "66225082990c4a5ca0d0d5323ea57a88"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 8892646755837011518
   Name: "Starter Pack"
   PlatformAssetType: 24
@@ -519,6 +545,19 @@ Assets {
   }
 }
 Assets {
+  Id: 3295690706030492699
+  Name: "Character2"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "01c69676f0a843e09e8665b546791748"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 2801073568035059033
   Name: "NFT_Save"
   PlatformAssetType: 23
@@ -527,6 +566,19 @@ Assets {
       Key: "58c40a4164b14bf08b10e56602799d67"
       Type {
         Value: "mc:enetreferencetype:concurrentplayerpersistence"
+      }
+    }
+  }
+}
+Assets {
+  Id: 2283140197907962775
+  Name: "CharacterAdditional"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "350b16dafb75496a9dd65a3fc488cf8e"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
   }

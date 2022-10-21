@@ -91,7 +91,7 @@ function ClosePanel()
     UICONTAINER.visibility = Visibility.FORCE_OFF
     CursorStack.Disable()
     if appstate.GetLocalState() == appstate.CharacterSelection then
-        appstate.SetLocalState(appstate.SocialHub)
+        appstate.SetLocalState(appstate.BagSelection)
     end
 end
 

@@ -26,62 +26,12 @@
 ]]
 
 local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
-local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 
 local TRIGGERS = script.parent:GetChildren()
 
-local LOAD_GEAR_ON_JOIN = script:GetCustomProperty("LoadGearOnJoin")
-
-
-Game.playerJoinedEvent:Connect(function(player)
-	if LOAD_GEAR_ON_JOIN then
-		LoadGear(player)
-	end
-end)
-
-
-function SaveGear(player)
-	local character = _G['Character.EquipAPI'].GetCurrentCharacter(player)
-	if character then
-		local data = Storage.GetPlayerData(player)
-
-		data.travel = {}
-		data.travel.selectedCharacterId = character.id
-		data.travel.bag = LOOT_BAG_PARSER.Serialize(player.serverUserData.currentBag)
-
-		local resultCode,errorMessage = Storage.SetPlayerData(player, data)
-	end
-end
-
-function LoadGear(player)
-	local data = Storage.GetPlayerData(player)
-	if data.travel then
-		player.serverUserData.currentBag = LOOT_BAG_PARSER.Parse(data.travel.bag)
-
-		Task.Wait(1)
-		
-		local characterId = data.travel.selectedCharacterId
-		SelectCharacter(player, characterId)
-	end
-end
-
-function SelectCharacter(player, characterId)
-    local playercharacters = _G['Character.SaveApi'].GetSavedPlayerCharacterData(player)
-    for index, value in ipairs(playercharacters) do
-        if value.id == characterId then
-            local newCharacter = _G['Character.Constructor'].NewCharacter()
-            newCharacter:Deserialize(value)
-            newCharacter:SetOwner(player)
-            newCharacter.autoSave = true
-            return
-        end
-    end
-end
 
 
 function TravelToGame(player, gameId)
-	SaveGear(player)
-
 	-- Fade out
 	player.serverUserData.isWaitingToTravelTriggers = true
 	Events.BroadcastToPlayer(player, "FadeOut", 8)
@@ -94,8 +44,6 @@ end
 
 
 function TravelToScene(player, sceneName, spawnKey)
-	SaveGear(player)
-
 	-- Fade out
 	player.serverUserData.isWaitingToTravelTriggers = true
 	Events.BroadcastToPlayer(player, "FadeOut", 8)

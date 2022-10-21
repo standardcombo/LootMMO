@@ -53,6 +53,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:CharactersButton"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:LootBagParser:isrep"
         Bool: false
       }

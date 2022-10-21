@@ -2,7 +2,7 @@ Name: "Settings Per State"
 RootId: 2561084474995652434
 Objects {
   Id: 6706733858564631194
-  Name: "Settings Per Location"
+  Name: "Settings Per State"
   Transform {
     Location {
       X: -37123.9688
@@ -161,7 +161,7 @@ Objects {
 }
 Objects {
   Id: 5311426855956534671
-  Name: "SettingsPerLocationClient"
+  Name: "SettingsPerStateClient"
   Transform {
     Location {
       X: 1071.29578
@@ -379,8 +379,88 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 10877294365028340337
+  Name: "CharacterSelect_Connector"
+  Transform {
+    Location {
+      X: -31461.1699
+      Y: -1898.45984
+      Z: -14398.2715
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2561084474995652434
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15376335980291104838
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17740691586929688237
+  Name: "PlayerJoinSetupServer"
+  Transform {
+    Location {
+      X: -31461.1699
+      Y: -1898.45984
+      Z: -14398.2715
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2561084474995652434
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1456247989168864579
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 12590653002649133676
-  Name: "SettingsPerLocationServer"
+  Name: "SettingsPerStateServer"
   Transform {
     Location {
     }

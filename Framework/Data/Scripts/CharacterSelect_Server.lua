@@ -70,23 +70,27 @@ function SelectCharacter(player, characterId)
 	local playercharacters = CSave.GetSavedPlayerCharacterData(player)
 	for index, value in ipairs(playercharacters) do
 		if value.id == characterId then
-			local newCharacter = CHARACTERCONSTUCT.NewCharacter()
-			newCharacter:Deserialize(value)
-			newCharacter:SetOwner(player)
-			newCharacter.autoSave = true
-			newCharacter.removeOwnerEvent:Connect(UpdatePlayersDataOnRemove)
+			CSave.SetLastPlayedCharacterId(player, characterId)
+			
 			Acknowledge(player)
 			return
 		end
 	end
 end
 
-function NewCharacter(player)
+function NewCharacterSelected(player)
+	CSave.SetLastPlayedCharacterId(player, "New")
+	Acknowledge(player)
+end
+
+function MakeNewCharacter(player)
 	assert(player)
+	
 	local currentCharacter = CHARACTERCONSTUCT.NewCharacter()
 	currentCharacter:SetOwner(player)
 	currentCharacter.autoSave = true
 	currentCharacter.removeOwnerEvent:Connect(UpdatePlayersDataOnRemove)
+	
 	Acknowledge(player)
 	UpdatePlayerData(player)
 end
@@ -103,6 +107,6 @@ end
 Game.playerJoinedEvent:Connect(PlayerJoined)
 
 Events.ConnectForPlayer(SelectCharacterEvent, SelectCharacter)
-Events.ConnectForPlayer(NewCharacterEvent, NewCharacter)
+Events.ConnectForPlayer(NewCharacterEvent, NewCharacterSelected)
 Events.ConnectForPlayer(DeleteCharacterEvent, DeleteCharacter)
-Events.Connect(NewCharacterEvent .. "S", NewCharacter)
+Events.Connect(NewCharacterEvent .. "S", MakeNewCharacter)
