@@ -14,10 +14,10 @@ MODIFIERAPI.SetupMultipleNewModifiers(
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "40 + (150 - 40) * SP / 156"
+modifiers['Damage'].calString = "100 + (500 - 100) * SP / 156"
 modifiers['Damage'].calculation = function(stats)
-    local min = 40
-    local max = 150
+    local min = 100
+    local max = 500
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
@@ -47,7 +47,7 @@ end
 --Formula: Min - Star Rating * Base Modifier
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
-    local min = 12
+    local min = 10
     local starRating = stats['Landslide']
     local baseModifier = 0.5
     return min - starRating * baseModifier

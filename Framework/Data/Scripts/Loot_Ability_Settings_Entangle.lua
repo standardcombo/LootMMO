@@ -22,9 +22,9 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Bleed'].calString = "60 + (60 - 20) * SP / 156"
+modifiers['Bleed'].calString = "60 + (60 - 10) * SP / 156"
 modifiers['Bleed'].calculation = function(stats)
-    local min = 20
+    local min = 10
     local max = 60
     local SP = stats.SP
     return CoreMath.Round(min + (max - min) * SP / 156)

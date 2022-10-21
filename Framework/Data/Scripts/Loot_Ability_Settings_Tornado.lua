@@ -13,10 +13,10 @@ local modifiers =
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['DOT'].calString = "10 + (50 - 10) * SP / 156"
+modifiers['DOT'].calString = "10 + (60 - 10) * SP / 156"
 modifiers['DOT'].calculation = function(stats)
     local min = 10
-    local max = 50
+    local max = 60
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     return CoreMath.Round(dmg)
@@ -48,10 +48,10 @@ modifiers['Duration'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * AGI / 172
-modifiers['Slow'].calString = "0.2 + (0.8 - 0.2) * AGI / 172"
+modifiers['Slow'].calString = "0.4 + (0.85 - 0.4) * AGI / 172"
 modifiers['Slow'].calculation = function(stats)
-    local min = 0.2
-    local max = 0.8
+    local min = 0.4
+    local max = 0.85
     local AGI = stats.A
     return min + (max - min) * AGI / 172
 end

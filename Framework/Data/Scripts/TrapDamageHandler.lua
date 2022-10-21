@@ -40,7 +40,7 @@ function DoDamage(other)
 		)
 		API_SE.ApplyStatusEffect(other, "Bleed", {
 			source = TrapOwner,
-			duration = mod["Duration"],
+			duration = mod["BleedDuration"],
 			damage = mod["Bleed"],
 		})
 

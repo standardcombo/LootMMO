@@ -12,10 +12,10 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "50 + (100 - 50) * SP / 156"
+modifiers['Damage'].calString = "200 + (1700 - 200) * SP / 156"
 modifiers['Damage'].calculation = function(stats)
-    local min = 20
-    local max = 200
+    local min = 200
+    local max = 1700
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
@@ -52,7 +52,7 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Radius'].calString = "200 + (800 - 200) * WIS / 172"
+modifiers['Radius'].calString = "400 + (1000 - 200) * WIS / 172"
 modifiers['Radius'].calculation = function(stats)
     local min = 400
     local max = 1000

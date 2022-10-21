@@ -45,17 +45,17 @@ end
 --Formula: Min - Star Rating * Base Modifier
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
-    local min = 12
+    local min = 18
     local starRating = stats['Eagle']
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * AGI / 172
-modifiers['Duration'].calString = "5 + (15 - 5) * AGI / 172"
+modifiers['Duration'].calString = "60 + (120 - 60) * AGI / 172"
 modifiers['Duration'].calculation = function(stats)
-    local min = 5
-    local max = 15
+    local min = 60
+    local max = 120
     local AGI = stats.A
     local result = min + (max - min) * AGI / 172
     return result

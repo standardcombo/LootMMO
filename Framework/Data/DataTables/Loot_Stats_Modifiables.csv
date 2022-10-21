@@ -9,6 +9,7 @@
 "ChargingDamage","Additional damage multiplier applied from charging the attack.","E3BD71D1375837E4"
 "BlockPercentage","The percentage of damage that will be blocked","0B2ACDF8FDEB543D"
 "Bleed","The amount of damage applied to enemies per second","644DCAFDE88DAFED"
+"BleedDuration","How long the bleed effect will last on the enemy.","D4BF568D76EA512B"
 "Slow","How long an enemy will be slowed","75F95BD8E7BE7B07"
 "StunDuration","How long an enemy will be stunned","75F95BD8E7BE7B07"
 "FullChargeBonus","Additional damage applied from a fully charged attack","2F8432F9479C5880"

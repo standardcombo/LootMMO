@@ -8,7 +8,8 @@ local modifiers =
         'Damage',
         'Cooldown',
         'Bleed',
-        'StunDuration'
+        'StunDuration',
+        'BleedDuration'
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
@@ -54,10 +55,17 @@ end
 --Formula: Min + (Max - Min) * SP / 156
 modifiers['Bleed'].calString = "10 + (50 - 10) * SP / 156"
 modifiers['Bleed'].calculation = function(stats)
-    local min = 10
-    local max = 50
+    local min = 20
+    local max = 250
     local SP = stats.SP
     return CoreMath.Round(min + (max - min) * SP / 156)
+end
+
+--Formula: min
+modifiers['BleedDuration'].calString = "6"
+modifiers['BleedDuration'].calculation = function(stats)
+    local min = 6
+    return min
 end
 
 --Formula: Min + (Max - Min) * AGI / 156

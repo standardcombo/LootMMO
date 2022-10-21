@@ -36,6 +36,7 @@ function Execute()
 	newTrap:SetCustomProperty('IsCrit', mod['Damage'][2])
 	newTrap:SetCustomProperty('Stun', mod['StunDuration'])
 	newTrap:SetCustomProperty('Bleed', mod['Bleed'])
+	newTrap:SetCustomProperty('BleedDuration', mod['BleedDuration'])
 end
 
 ABILITY.executeEvent:Connect(Execute)

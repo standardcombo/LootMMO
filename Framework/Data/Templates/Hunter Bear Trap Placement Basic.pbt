@@ -41,6 +41,10 @@ Assets {
             Bool: false
           }
           Overrides {
+            Name: "cs:BleedDuration"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:OwnerID:isrep"
             Bool: true
           }
@@ -58,6 +62,10 @@ Assets {
           }
           Overrides {
             Name: "cs:IsCrit:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:BleedDuration:isrep"
             Bool: true
           }
         }

@@ -11,10 +11,10 @@ local modifiers =
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "100 + (500 - 100) * SP / 156"
+modifiers['Damage'].calString = "300 + (1500 - 300) * SP / 156"
 modifiers['Damage'].calculation = function(stats)
-    local min = 100
-    local max = 500
+    local min = 300
+    local max = 1500
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
