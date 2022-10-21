@@ -2,7 +2,7 @@ Assets {
   Id: 4752973283450985875
   Name: "Custom Base Material from Porcelain Vase 02"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1262347481516771892
     ParameterOverrides {

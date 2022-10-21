@@ -325,6 +325,6 @@ Assets {
   Marketplace {
     Description: "This is a mannequin/costume template inspired by the ones made by Sobchak.\tThis version of the mannequin can automatically change which template is used based on the gender of the player\'s character. Additional settings allow the creator to control when the costume is allowed to change and whether a preview is spawned. Next possibile update will allow the creator to \"force fit\" a costume to a player no matter which gender the player\'s character is.\r\n\r\nCredit to Sobchack for the original mannequin_guy and mannequin_gal costumes. The method for attaching the costumes were based on these original templates."
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   DirectlyPublished: true
 }

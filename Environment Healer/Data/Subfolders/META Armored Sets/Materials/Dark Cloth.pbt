@@ -2,7 +2,7 @@ Assets {
   Id: 9562070591617164328
   Name: "Dark Cloth"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 132672053610873933
     ParameterOverrides {

@@ -1,11 +1,14 @@
-GameId: "748eb4e5211e4a7281635d47214cd496"
-ClientVersion: "1.0.262-prod-s"
-Name: "Shaman Background"
-Description: "Shaman Background"
-Tags: "Fantasy"
-ScreenshotPaths: "C:/Users/Outru/OneDrive/Documents/My Games/Core/Saved/Maps/LootGame/Shaman Background/Screenshots/Screenshot0001.png"
-OwnerId: "c51d9bb1185a426fbee7e1b4ab27f26b"
+GameId: "db7797ca4c354a9aabf21fa738113cfd"
+ClientVersion: "1.0.268-prod-s"
+Name: "LootMMO - Environment Shaman"
+Description: "Not a game, just an art reference for environments."
+IsOpenForEdit: true
+Tags: "Action"
+Tags: "RPG"
+ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Environment Shaman\\Screenshots\\Screenshot0001.png"
+OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
+PublishedState: Public
 SceneNameToSceneIdMap {
   key: "Main"
   value: "d0c346e0482efa6deed1f8ba52a53846"

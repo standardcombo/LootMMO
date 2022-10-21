@@ -2,7 +2,7 @@ Assets {
   Id: 17010407426128035463
   Name: "ENV_Porcelain"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 5066038686047195335
     ParameterOverrides {

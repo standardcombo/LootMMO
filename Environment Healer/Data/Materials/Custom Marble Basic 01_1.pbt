@@ -2,7 +2,7 @@ Assets {
   Id: 14472016303208680196
   Name: "Marble_Blue_Tint"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 15377096960086681777
     ParameterOverrides {

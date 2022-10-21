@@ -1,11 +1,14 @@
-GameId: "82419135678144079e1515ed11575639"
-ClientVersion: "1.0.259-prod-s"
-Name: "Healer Background"
-Description: "Healer Background"
+GameId: "aa7256c7cb244a2f97ef5d249872163e"
+ClientVersion: "1.0.268-prod-s"
+Name: "LootMMO - Environment Healer"
+Description: "Not a game, just an art reference for environments."
+IsOpenForEdit: true
 Tags: "Action"
-ScreenshotPaths: "C:/Users/Outru/OneDrive/Documents/My Games/Core/Saved/Maps/LootGame/Healer Background/Screenshots/Screenshot0001.png"
-OwnerId: "c51d9bb1185a426fbee7e1b4ab27f26b"
+Tags: "RPG"
+ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Environment Healer\\Screenshots\\Screenshot0001.png"
+OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
+PublishedState: Public
 SceneNameToSceneIdMap {
   key: "Crypts n Caverns - 2768"
   value: "a84f07554da76d3b7aa734bb5ec10cf0"

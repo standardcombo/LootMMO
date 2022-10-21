@@ -38171,6 +38171,6 @@ Assets {
   Marketplace {
     Description: "This pack includes (5) player equippable fully body armored sets.\r\n\r\nCredits -\r\nOrginally created by: StormHawk\r\nOptimized by: WindfallDrifter"
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   DirectlyPublished: true
 }

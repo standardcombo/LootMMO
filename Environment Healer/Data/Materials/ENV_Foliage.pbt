@@ -2,7 +2,7 @@ Assets {
   Id: 15565641643095672374
   Name: "ENV_Foliage"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1708708922409483333
     ParameterOverrides {

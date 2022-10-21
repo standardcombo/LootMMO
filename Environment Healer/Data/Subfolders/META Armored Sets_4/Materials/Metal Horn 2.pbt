@@ -2,7 +2,7 @@ Assets {
   Id: 5497584454756764418
   Name: "Metal Horn 2"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 4276855756034614144
     ParameterOverrides {

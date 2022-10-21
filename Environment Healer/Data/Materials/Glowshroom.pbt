@@ -2,7 +2,7 @@ Assets {
   Id: 3001586577837027788
   Name: "Glowshroom"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 17338603580893501133
     ParameterOverrides {

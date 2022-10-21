@@ -2,7 +2,7 @@ Assets {
   Id: 16074847576827870134
   Name: "ENV_FlowerPedals"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 11233041162395523523
     ParameterOverrides {

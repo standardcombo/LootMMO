@@ -2,7 +2,7 @@ Assets {
   Id: 4673243761803307836
   Name: "Darkness"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 3786559222004126605
     ParameterOverrides {

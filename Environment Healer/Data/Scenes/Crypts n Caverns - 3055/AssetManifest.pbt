@@ -246,19 +246,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9776541837915640538
-  Name: "PlayerProgress"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "33a7d462b7c8403a81fc2d58b6ba5088"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
   Id: 9360906347466037585
   Name: "Self Boost Gold"
   PlatformAssetType: 24

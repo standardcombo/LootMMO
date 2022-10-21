@@ -3410,6 +3410,9 @@ Objects {
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -3985,6 +3988,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7279,6 +7285,9 @@ Objects {
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -7854,6 +7863,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -15736,6 +15748,9 @@ Objects {
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -18253,6 +18268,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -22327,6 +22345,9 @@ Objects {
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -24863,6 +24884,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -28274,6 +28298,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -32390,6 +32417,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -48875,6 +48905,9 @@ Objects {
     }
     ShadowBias: 0.4
     ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

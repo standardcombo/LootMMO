@@ -2,7 +2,7 @@ Assets {
   Id: 17492744645214510808
   Name: "Custom Opaque Bubble Glass"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 6414569565439168134
     ParameterOverrides {

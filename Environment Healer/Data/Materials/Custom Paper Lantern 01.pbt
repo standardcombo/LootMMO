@@ -2,7 +2,7 @@ Assets {
   Id: 16305374634543853944
   Name: "Custom Paper Lantern 01"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 13847869354908598419
     ParameterOverrides {

@@ -1,11 +1,14 @@
-GameId: "5c880a327d70456aa71354571b25695e"
-ClientVersion: "1.0.259-prod-s"
-Name: "Warlock Background"
-Description: "Warlock Background WIP\r\n"
-Tags: "Fantasy"
-ScreenshotPaths: "C:/Users/mydyl/Documents/My Games/CORE/Saved/Maps/LootGame/Warlock Background/Screenshots/Screenshot0001.png"
-OwnerId: "c51d9bb1185a426fbee7e1b4ab27f26b"
+GameId: "d0c1151ce4d94d14b0c480da54d42969"
+ClientVersion: "1.0.268-prod-s"
+Name: "LootMMO - Environment Warlock"
+Description: "Not a game, just an art reference for environments."
+IsOpenForEdit: true
+Tags: "Action"
+Tags: "RPG"
+ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Warlock_Solo.png"
+OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
+PublishedState: Public
 SceneNameToSceneIdMap {
   key: "Main"
   value: "d0c346e0482efa6deed1f8ba52a53846"

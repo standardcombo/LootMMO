@@ -2,7 +2,7 @@ Assets {
   Id: 3093546233121838327
   Name: "Fantasy Metal Weapon Material"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1099743708281141555
     ParameterOverrides {

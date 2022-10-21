@@ -2,7 +2,7 @@ Assets {
   Id: 7132924396827611426
   Name: "Dark Metal 2"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 14212988502358508072
     ParameterOverrides {

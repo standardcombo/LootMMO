@@ -2,7 +2,7 @@ Assets {
   Id: 12370800804709706898
   Name: "Custom Base Material from Carpet Tile Stairs 01"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 4007710442181875633
     ParameterOverrides {

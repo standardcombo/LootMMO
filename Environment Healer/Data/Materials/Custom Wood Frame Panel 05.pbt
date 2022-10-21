@@ -2,7 +2,7 @@ Assets {
   Id: 2408374828957323054
   Name: "ENV_WoodPaneling"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 6295126198586271272
     ParameterOverrides {

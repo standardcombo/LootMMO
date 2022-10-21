@@ -2,7 +2,7 @@ Assets {
   Id: 15607405318033257835
   Name: "MannequinSack"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 1130340492552830476
     ParameterOverrides {

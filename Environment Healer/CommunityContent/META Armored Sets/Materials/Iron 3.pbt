@@ -2,7 +2,7 @@ Assets {
   Id: 10568618149138206080
   Name: "Iron 3"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 14212988502358508072
     ParameterOverrides {

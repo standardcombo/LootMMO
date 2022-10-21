@@ -2,7 +2,7 @@ Assets {
   Id: 2930203184095180308
   Name: "Custom Wood Frame Panel 01"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 8858287257007729944
     ParameterOverrides {

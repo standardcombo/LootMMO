@@ -1,11 +1,14 @@
-GameId: "e7d6e43e292243cd959dbdf4ecd4665f"
-ClientVersion: "1.0.259-prod-s"
-Name: "Ranger Background"
-Description: "Background (Screenshot is background position for ranger)"
-Tags: "Adventure"
-ScreenshotPaths: "C:/Users/mydyl/Documents/My Games/CORE/Saved/Maps/LootGame/Ranger Background/Screenshots/Screenshot0002.png"
-OwnerId: "c51d9bb1185a426fbee7e1b4ab27f26b"
+GameId: "1aaf0b32b4c846eb812f04d9e334ab73"
+ClientVersion: "1.0.268-prod-s"
+Name: "LootMMO - Environment Ranger"
+Description: "Not a game, just an art reference for environments."
+IsOpenForEdit: true
+Tags: "Action"
+Tags: "RPG"
+ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Environment Ranger\\Screenshots\\Screenshot0001.png"
+OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
+PublishedState: Public
 SceneNameToSceneIdMap {
   key: "Main"
   value: "f1109dc84b5e0b172829f28fb6562a33"

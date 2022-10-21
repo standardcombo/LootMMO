@@ -226,6 +226,9 @@ Assets {
           ShadowBias: 0.4
           ShadowSlopeBias: 0.6
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -255,5 +258,5 @@ Assets {
       AssetId: "tm_fan_candle_holder_001_lit_01"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
 }

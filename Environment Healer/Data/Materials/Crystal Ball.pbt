@@ -2,7 +2,7 @@ Assets {
   Id: 111310029656468413
   Name: "Crystal Ball"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 6717054932271956401
     ParameterOverrides {

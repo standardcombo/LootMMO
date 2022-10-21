@@ -2,7 +2,7 @@ Assets {
   Id: 7751364886677345160
   Name: "Custom Composite Triplanar Blend"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 12822559358167921858
     ParameterOverrides {

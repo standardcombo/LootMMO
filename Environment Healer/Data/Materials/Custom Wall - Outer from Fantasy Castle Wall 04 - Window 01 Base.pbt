@@ -2,7 +2,7 @@ Assets {
   Id: 6075095080854346920
   Name: "ENV_BrickWalls"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 2614584345588684400
     ParameterOverrides {

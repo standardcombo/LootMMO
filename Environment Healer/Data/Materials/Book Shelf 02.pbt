@@ -2,7 +2,7 @@ Assets {
   Id: 16657676943790179449
   Name: "Book Shelf 02"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 10331679657340263542
     ParameterOverrides {
