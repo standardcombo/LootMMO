@@ -12,7 +12,8 @@ local function Save(character, player)
 	CSave.SavePlayerCharacter(player, character)
 end
 
-function AutoSave(player)
+-- Auto save on leave
+function OnPlayerLeft(player)
 	local character = EAPI.GetCurrentCharacter(player)
 	if character then
 		if character.autoSave then
@@ -22,9 +23,9 @@ function AutoSave(player)
 	end
 end
 
-function PlayerEquipped(character, player)
+function OnPlayerEquipped(character, player)
 	character.removeOwnerEvent:Connect(Save)
 end
 
-Game.playerLeftEvent:Connect(AutoSave)
-EAPI.playerEquippedEvent:Connect(PlayerEquipped)
+Game.playerLeftEvent:Connect(OnPlayerLeft)
+EAPI.playerEquippedEvent:Connect(OnPlayerEquipped)
