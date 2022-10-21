@@ -16,8 +16,8 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 14651924112717711116
-        ChildIds: 6965323227927916583
+        ChildIds: 7070062197676057404
+        ChildIds: 15995543815435158277
         UnregisteredParameters {
           Overrides {
             Name: "cs:lifeSpan"
@@ -30,7 +30,24 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:ability"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:damage"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:lifeSpan:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:ability:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:damage:isrep"
             Bool: true
           }
         }
@@ -54,6 +71,48 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 7070062197676057404
+        Name: "ClientContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1404575228675216371
+        ChildIds: 14651924112717711116
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          MinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 14651924112717711116
         Name: "GEO"
         Transform {
@@ -67,7 +126,7 @@ Assets {
             Z: 0.0879343599
           }
         }
-        ParentId: 1404575228675216371
+        ParentId: 7070062197676057404
         ChildIds: 18113301160883627080
         ChildIds: 12408785000891572622
         ChildIds: 10596764506764598302
@@ -77,7 +136,6 @@ Assets {
         ChildIds: 14145773110864121335
         ChildIds: 5886897213126880583
         ChildIds: 9868859483522256761
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -9838,11 +9896,49 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 15995543815435158277
+        Name: "ServerContext"
+        Transform {
+          Location {
+            Z: 12.5999985
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1404575228675216371
+        ChildIds: 6965323227927916583
+        ChildIds: 3038587417234208362
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 6965323227927916583
         Name: "Trigger"
         Transform {
           Location {
-            Z: 12.5999985
           }
           Rotation {
           }
@@ -9852,8 +9948,7 @@ Assets {
             Z: 0.42
           }
         }
-        ParentId: 1404575228675216371
-        WantsNetworking: true
+        ParentId: 15995543815435158277
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9874,6 +9969,63 @@ Assets {
           InteractionTemplate {
           }
           BreadcrumbTemplate {
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3038587417234208362
+        Name: "Entangle_Damage_Server"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.734999955
+            Y: 0.734999955
+            Z: 0.42
+          }
+        }
+        ParentId: 15995543815435158277
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 1404575228675216371
+            }
+          }
+          Overrides {
+            Name: "cs:Trigger"
+            ObjectReference {
+              SubObjectId: 6965323227927916583
+            }
+          }
+          Overrides {
+            Name: "cs:Combat_Connector"
+            AssetReference {
+              Id: 12483969483192492711
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 15976487797281081922
           }
         }
         NetworkRelevanceDistance {
