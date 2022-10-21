@@ -18,8 +18,11 @@ function OnEvent(player, objectId)
 		if OBJECT_ID ~= "" and objectId ~= OBJECT_ID then return end
 
 		local obj = _G.QuestController.GetQuestObjective(QUEST_ID, OBJECTIVE_INDEX)
-
-		TryAdvanceObjectiveForPlayer(player, obj)
+		if obj then
+			TryAdvanceObjectiveForPlayer(player, obj)
+		else
+			warn("Couldn't advance quest "..QUEST_ID.." to step "..OBJECTIVE_INDEX..". Verify the quest design.")
+		end
 	end
 end
 
