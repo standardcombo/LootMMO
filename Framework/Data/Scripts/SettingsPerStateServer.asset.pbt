@@ -1,6 +1,6 @@
 Assets {
   Id: 3394354123281869471
-  Name: "SettingsPerLocationServer"
+  Name: "SettingsPerStateServer"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

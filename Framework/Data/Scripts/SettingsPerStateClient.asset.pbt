@@ -1,6 +1,6 @@
 Assets {
   Id: 3014156083592942671
-  Name: "SettingsPerLocationClient"
+  Name: "SettingsPerStateClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
