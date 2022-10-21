@@ -246,6 +246,19 @@ Assets {
   }
 }
 Assets {
+  Id: 10441760965546680272
+  Name: "Character Additional"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "9990c175b82342c784bf5360e242fd67"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 10039668417810932723
   Name: "SELFGOLDBOOST"
   PlatformAssetType: 24
@@ -553,19 +566,6 @@ Assets {
       Key: "58c40a4164b14bf08b10e56602799d67"
       Type {
         Value: "mc:enetreferencetype:concurrentplayerpersistence"
-      }
-    }
-  }
-}
-Assets {
-  Id: 2283140197907962775
-  Name: "CharacterAdditional"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "350b16dafb75496a9dd65a3fc488cf8e"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
   }

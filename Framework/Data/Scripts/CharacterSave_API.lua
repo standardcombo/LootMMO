@@ -101,7 +101,7 @@ function API.DeleteSavedPlayerCharacter(player, characterid)
 	-- Quest data
 	local questDataAllCharacters = additionalStorage
 	questDataAllCharacters[characterid] = nil
-	API.SaveQuestData(player, questDataAllCharacters)
+	Storage.SetSharedPlayerData(ADDITIONAL, player, questDataAllCharacters)
 end
 
 function SetStorage(player, characters)
