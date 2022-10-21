@@ -93,7 +93,7 @@ local function DragSlot(slot)
 	end
 	local item = currentInventory:GetItem(slot.index)
 	if item then
-		local itemdata = ITEMS.GetDefinition(item.name) or MATERIALS.GetDefinition(item.name)
+		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
 			return
 		end
