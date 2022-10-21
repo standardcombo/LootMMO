@@ -58,7 +58,7 @@ end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 Events.ConnectForPlayer("ClientReady", function(player)
-	if not player.serverUserData.hasSpawned then
+	if _G.AppState and not player.serverUserData.hasSpawned then
 		_G.AppState.SetStateForPlayer(player, STARTING_STATE)
 	end
 end)
