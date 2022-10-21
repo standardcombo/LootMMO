@@ -1,6 +1,148 @@
 Name: "Class Selection Areas"
 RootId: 16937607096047638534
 Objects {
+  Id: 12889894066878329792
+  Name: "MMOSafeZone"
+  Transform {
+    Location {
+      X: -5429.22559
+      Y: -3459.96851
+      Z: 3417.71167
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16937607096047638534
+  ChildIds: 1006465748657535726
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Trigger"
+      ObjectReference {
+        SelfId: 1006465748657535726
+      }
+    }
+    Overrides {
+      Name: "cs:ZoneName"
+      String: "Social Lodge"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7595779808583929273
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1006465748657535726
+  Name: "SafeZone Trigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 24.4128933
+      Y: 24.4128933
+      Z: 24.4128933
+    }
+  }
+  ParentId: 12889894066878329792
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14518386033921349452
+  Name: "Spawn Point - CharacterSelect"
+  Transform {
+    Location {
+      X: -5439.52539
+      Y: -3448.04175
+      Z: 3515.07764
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16937607096047638534
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnKey: "CharacterSelect"
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 16998440782871337572
   Name: "Additional Spawn points"
   Transform {

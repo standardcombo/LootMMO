@@ -38,9 +38,8 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Cameras"
+        Name: "cs:Camera"
         ObjectReference {
-          SelfId: 2175780554564620074
         }
       }
       Overrides {

@@ -19,14 +19,16 @@ Events.Connect("AppState.Enter", function(player, newState, prevState)
 	
 	if not Object.IsValid(player) then return end
 	
-	if newState == _G.AppState.SocialHub 
-	and prevState == _G.AppState.BagSelection then
+	if newState == _G.AppState.CharacterSelection then
+		SPAWN_UTILS.SpawnPlayerAt(player, "CharacterSelect")
+	
+	elseif newState == _G.AppState.SocialHub 
+	and (prevState == _G.AppState.BagSelection or prevState == _G.AppState.CharacterSelection) then
 		PLAYER_SETTINGS_SOCIAL_SPACE:ApplyToPlayer(player)
 		
 		SPAWN_UTILS.SpawnPlayerAt(player, "Social")
-	end
 
-	if newState == _G.AppState.BagSelection
+	elseif newState == _G.AppState.BagSelection
 	and prevState ~= _G.AppState.None then
 		PLAYER_SETTINGS_BAG_SELECTION:ApplyToPlayer(player)
 		

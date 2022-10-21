@@ -94632,7 +94632,6 @@ Objects {
     }
   }
   ParentId: 10537337840704340836
-  ChildIds: 2175780554564620074
   ChildIds: 15469691398536073426
   ChildIds: 10877294365028340337
   ChildIds: 9827868258598449120
@@ -94673,6 +94672,7 @@ Objects {
   }
   ParentId: 4321043947943921354
   ChildIds: 9547663123370747556
+  ChildIds: 9986320708485232333
   ChildIds: 4746263945268355817
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -95514,6 +95514,158 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 9986320708485232333
+  Name: "Object Rotator Continuous"
+  Transform {
+    Location {
+      X: -5246.51855
+      Y: -5220.56885
+      Z: 3364.63721
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14513922963825664494
+  ChildIds: 15684430718062713564
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Object"
+      ObjectReference {
+        SelfId: 9986320708485232333
+        SubObjectId: 5456438743692384211
+        InstanceId: 9949895367718839270
+        TemplateId: 11770376231824422191
+      }
+    }
+    Overrides {
+      Name: "cs:RotateVelocity"
+      Rotator {
+        Yaw: 1
+      }
+    }
+    Overrides {
+      Name: "cs:RotationMultiplier"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:LocalSpace"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:StartDelayRange"
+      Vector2 {
+        Y: 1
+      }
+    }
+    Overrides {
+      Name: "cs:RotationMultiplier:tooltip"
+      String: "Optional multiplier for very fast rotations."
+    }
+    Overrides {
+      Name: "cs:StartDelayRange:tooltip"
+      String: "Random delay range for the object to take action at the start of the game."
+    }
+    Overrides {
+      Name: "cs:LocalSpace:tooltip"
+      String: "Whether RotateTo is in local space"
+    }
+    Overrides {
+      Name: "cs:Object:tooltip"
+      String: "Object to transform"
+    }
+    Overrides {
+      Name: "cs:RotateVelocity:tooltip"
+      String: "Smoothly rotates the object over time by the given angular velocity."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2331688389429807128
+    }
+  }
+  InstanceHistory {
+    SelfId: 9986320708485232333
+    SubobjectId: 5456438743692384211
+    InstanceId: 9949895367718839270
+    TemplateId: 11770376231824422191
+    WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15684430718062713564
+  Name: "Camera"
+  Transform {
+    Location {
+      X: 9674.82812
+      Y: 9582.04102
+      Z: 6769.72119
+    }
+    Rotation {
+      Pitch: -33.3532333
+      Yaw: -137.856873
+      Roll: 1.02212e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9986320708485232333
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  Camera {
+    InitialDistance: 250
+    MinDistance: 300
+    MaxDistance: 600
+    PositionOffset {
+    }
+    RotationOffset {
+    }
+    FieldOfView: 90
+    ViewWidth: 1200
+    RotationMode {
+      Value: "mc:erotationmode:default"
+    }
+    MinPitch: -89
+    MaxPitch: 89
+    AudioListenerOffset {
+    }
+    IsCameraCollisionEnabled: true
+    EnablePictureInPicture: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 9547663123370747556
   Name: "CharacterSelect_Client"
   Transform {
@@ -95545,6 +95697,12 @@ Objects {
       Name: "cs:UIScrollPanel"
       ObjectReference {
         SelfId: 748127297815182830
+      }
+    }
+    Overrides {
+      Name: "cs:Camera"
+      ObjectReference {
+        SelfId: 15684430718062713564
       }
     }
   }
@@ -95675,341 +95833,6 @@ Objects {
     ScriptAsset {
       Id: 18137001416467180831
     }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2175780554564620074
-  Name: "CharacterSelectCameras"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4321043947943921354
-  ChildIds: 1064517596667112214
-  ChildIds: 9639204299391229853
-  ChildIds: 13695778844294499561
-  ChildIds: 5278841807031346656
-  ChildIds: 13657922890614714598
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-    MinDetailLevel {
-      Value: "mc:edetaillevel:low"
-    }
-    MaxDetailLevel {
-      Value: "mc:edetaillevel:ultra"
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13657922890614714598
-  Name: "Camera"
-  Transform {
-    Location {
-      X: -4850
-      Y: -5025
-      Z: -50925
-    }
-    Rotation {
-      Pitch: -17.2669678
-      Yaw: -52.9715881
-      Roll: 0.196878925
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2175780554564620074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Camera {
-    InitialDistance: 250
-    MinDistance: 300
-    MaxDistance: 600
-    PositionOffset {
-    }
-    RotationOffset {
-    }
-    FieldOfView: 90
-    ViewWidth: 1200
-    RotationMode {
-      Value: "mc:erotationmode:default"
-    }
-    MinPitch: -89
-    MaxPitch: 89
-    AudioListenerOffset {
-    }
-    IsCameraCollisionEnabled: true
-    EnablePictureInPicture: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 5278841807031346656
-  Name: "Camera"
-  Transform {
-    Location {
-      X: -4438.35107
-      Y: -3637.73413
-      Z: -50600.5625
-    }
-    Rotation {
-      Pitch: -17.2669678
-      Yaw: -58.22229
-      Roll: 0.196886986
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2175780554564620074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Camera {
-    InitialDistance: 250
-    MinDistance: 300
-    MaxDistance: 600
-    PositionOffset {
-    }
-    RotationOffset {
-    }
-    FieldOfView: 90
-    ViewWidth: 1200
-    RotationMode {
-      Value: "mc:erotationmode:default"
-    }
-    MinPitch: -89
-    MaxPitch: 89
-    AudioListenerOffset {
-    }
-    IsCameraCollisionEnabled: true
-    EnablePictureInPicture: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13695778844294499561
-  Name: "Camera"
-  Transform {
-    Location {
-      X: -2467.75049
-      Y: -4583.82959
-      Z: -50863.5859
-    }
-    Rotation {
-      Pitch: -17.2669678
-      Yaw: 107.83387
-      Roll: 0.196864188
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2175780554564620074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Camera {
-    InitialDistance: 250
-    MinDistance: 300
-    MaxDistance: 600
-    PositionOffset {
-    }
-    RotationOffset {
-    }
-    FieldOfView: 90
-    ViewWidth: 1200
-    RotationMode {
-      Value: "mc:erotationmode:default"
-    }
-    MinPitch: -89
-    MaxPitch: 89
-    AudioListenerOffset {
-    }
-    IsCameraCollisionEnabled: true
-    EnablePictureInPicture: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 9639204299391229853
-  Name: "Camera"
-  Transform {
-    Location {
-      X: -2971.73535
-      Y: -5956.49854
-      Z: -50737.1562
-    }
-    Rotation {
-      Pitch: -17.5341187
-      Yaw: 18.764225
-      Roll: 0.750668943
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2175780554564620074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Camera {
-    InitialDistance: 250
-    MinDistance: 300
-    MaxDistance: 600
-    PositionOffset {
-    }
-    RotationOffset {
-    }
-    FieldOfView: 90
-    ViewWidth: 1200
-    RotationMode {
-      Value: "mc:erotationmode:default"
-    }
-    MinPitch: -89
-    MaxPitch: 89
-    AudioListenerOffset {
-    }
-    IsCameraCollisionEnabled: true
-    EnablePictureInPicture: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1064517596667112214
-  Name: "Camera"
-  Transform {
-    Location {
-      X: -5201.89844
-      Y: -4380.11768
-      Z: -50298.8516
-    }
-    Rotation {
-      Pitch: -28.0433655
-      Yaw: 3.73826218
-      Roll: -3.28985596
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2175780554564620074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Camera {
-    InitialDistance: 250
-    MinDistance: 300
-    MaxDistance: 600
-    PositionOffset {
-    }
-    RotationOffset {
-    }
-    FieldOfView: 90
-    ViewWidth: 1200
-    RotationMode {
-      Value: "mc:erotationmode:default"
-    }
-    MinPitch: -89
-    MaxPitch: 89
-    AudioListenerOffset {
-    }
-    IsCameraCollisionEnabled: true
-    EnablePictureInPicture: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
