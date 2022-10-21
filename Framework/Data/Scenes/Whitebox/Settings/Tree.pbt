@@ -1,50 +1,9 @@
 Name: "Settings"
 RootId: 9970684983361868256
 Objects {
-  Id: 7799582416119825484
-  Name: "Ability"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9970684983361868256
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  BindingSet {
-    BindingSetAsset {
-      Id: 7528756236054095518
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12421927625280253612
+  Id: 6561272848406488447
   Name: "Menu"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -52,27 +11,82 @@ Objects {
     }
   }
   ParentId: 9970684983361868256
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  BindingSet {
-    BindingSetAsset {
-      Id: 12986852327509848639
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11851352683820224809
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Menu"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13165357800686183681
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
+}
+Objects {
+  Id: 10855434701482295410
+  Name: "Ability"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
   }
-  IsReplicationEnabledByDefault: true
+  ParentId: 9970684983361868256
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17390626378360673258
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ability"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9892673916373725528
+    }
+  }
 }
 Objects {
   Id: 8882916145695718275

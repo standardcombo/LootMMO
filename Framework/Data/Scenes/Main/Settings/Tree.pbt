@@ -1,13 +1,9 @@
 Name: "Settings"
 RootId: 1578154111882892155
 Objects {
-  Id: 13339655012013492346
+  Id: 12027737536324965123
   Name: "Ability"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -15,36 +11,25 @@ Objects {
     }
   }
   ParentId: 1578154111882892155
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  BindingSet {
-    BindingSetAsset {
-      Id: 7528756236054095518
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17390626378360673258
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ability"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9892673916373725528
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5119797180428233470
+  Id: 8035191221090867729
   Name: "Menu"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -52,27 +37,20 @@ Objects {
     }
   }
   ParentId: 1578154111882892155
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  BindingSet {
-    BindingSetAsset {
-      Id: 12986852327509848639
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11851352683820224809
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Menu"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13165357800686183681
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 10123167325616138635
