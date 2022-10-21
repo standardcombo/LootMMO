@@ -260,19 +260,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10742631008145115590
-  Name: "Character"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "6f9084df388046e49b033c8e98257774"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
   Id: 10441760965546680272
   Name: "Character Additional"
   PlatformAssetType: 23
@@ -451,19 +438,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6289677367844202680
-  Name: "Character2"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "d17421667f1747bcb552c6d4afe0be04"
-      Type {
-        Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
   Id: 6146440987156857156
   Name: "Self Boost XP"
   PlatformAssetType: 24
@@ -589,19 +563,6 @@ Assets {
       Key: "01c69676f0a843e09e8665b546791748"
       Type {
         Value: "mc:enetreferencetype:sharedpersistence"
-      }
-    }
-  }
-}
-Assets {
-  Id: 2801073568035059033
-  Name: "NFT_Save"
-  PlatformAssetType: 23
-  NetReferenceAsset {
-    NetReference {
-      Key: "58c40a4164b14bf08b10e56602799d67"
-      Type {
-        Value: "mc:enetreferencetype:concurrentplayerpersistence"
       }
     }
   }
