@@ -93,6 +93,8 @@ function MakeNewCharacter(player)
 	
 	Acknowledge(player)
 	UpdatePlayerData(player)
+
+	CSave.SetLastPlayedCharacterId(player, currentCharacter.id)
 end
 
 function DeleteCharacter(player, characterId)

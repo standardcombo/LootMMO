@@ -92,12 +92,40 @@ function API.DeleteSavedPlayerCharacter(player, characterid)
 			break
 		end
 	end
+	
+	local additionalStorage = Storage.GetSharedPlayerData(ADDITIONAL, player)
+	-- Last played
+	if additionalStorage.lastPlayedId == characterid then
+		additionalStorage.lastPlayedId = nil
+	end
+	-- Quest data
+	local questDataAllCharacters = additionalStorage
+	questDataAllCharacters[characterid] = nil
+	API.SaveQuestData(player, questDataAllCharacters)
 end
 
 function SetStorage(player, characters)
 	Storage.SetSharedPlayerData(CHARACTER, player, { characters[1], characters[2], characters[3] })
 	Storage.SetSharedPlayerData(CHARACTER2, player, { characters[4], characters[5], characters[6] })
 end
+
+
+function API.LoadQuestData(player)
+	local activeCharacterId = API.GetLastPlayedCharacterId(player)
+	if activeCharacterId == "New" or activeCharacterId == nil then
+		return nil
+	end
+	local questDataAllCharacters = Storage.GetSharedPlayerData(ADDITIONAL, player)
+	return questDataAllCharacters[activeCharacterId]
+end
+
+function API.SaveQuestData(player, data)
+	local activeCharacterId = API.GetLastPlayedCharacterId(player)
+	local questDataAllCharacters = Storage.GetSharedPlayerData(ADDITIONAL, player)
+	questDataAllCharacters[activeCharacterId] = data
+	Storage.SetSharedPlayerData(ADDITIONAL, player, questDataAllCharacters)
+end
+
 
 _G['Character.SaveApi'] = API
 return API

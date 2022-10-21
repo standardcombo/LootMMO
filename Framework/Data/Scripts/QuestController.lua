@@ -23,10 +23,7 @@ _G.QuestController = API
 
 local QUEST_METADATA = require(script:GetCustomProperty("QuestMetadata"))
 local QUEST_OBJECTIVES = require(script:GetCustomProperty("QuestObjectives"))
-local STORAGE_KEY_UTIL = require(script:GetCustomProperty("StorageKeys"))
 local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
-
-local PROGRESS_KEY = STORAGE_KEY_UTIL.GetKey("charAdditional")
 
 local SERIALIZATION_VERSION = 1
 
@@ -531,22 +528,16 @@ function API.SavePlayerData(player)
 	if not Object.IsValid(player) then return end
 	if player.serverUserData.isLoadingQuestData then return end
 	
-	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
-	
-	storageData.quests = API.GetPlayerData(player)
-	storageData.quests.version = SERIALIZATION_VERSION
-	
-	local resultCode,errorMessage = Storage.SetSharedPlayerData(PROGRESS_KEY, player, storageData)
-	
-	--storageData = Storage.GetPlayerData(player)
-	--print("")
+	local playerData = API.GetPlayerData(player)
+	playerData.version = SERIALIZATION_VERSION
+
+	_G['Character.SaveApi'].SaveQuestData(player, playerData)
 end
 
 local function LoadPlayerData(player)
 	player.serverUserData.isLoadingQuestData = true
 	
-	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
-	local playerData = storageData.quests
+	local playerData = _G['Character.SaveApi'].LoadQuestData(player)
 	
 	playerData = PatchData(playerData)
 	
@@ -566,8 +557,23 @@ local function LoadPlayerData(player)
 end
 
 
+function OnCharacterEquipped(character, player)
+	--print("QuestController::CharacterEquipped", character.id)
+	LoadPlayerData(player)
+	
+	if not API.HasCompleted(player, "Welcome") then
+		API.ActivateForPlayer(player, "Welcome")
+	end
+end
+function OnCharacterUnequipped(character, player)
+	--print("QuestController::CharacterUnequipped", character.id)
+	Events.BroadcastToPlayer(player, "Quest.ResetForPlayer")
+end
+
 if Environment.IsServer() then
-	Game.playerJoinedEvent:Connect(LoadPlayerData)
+	EApi = _G['Character.EquipAPI']
+	EApi.playerEquippedEvent:Connect(OnCharacterEquipped)
+	EApi.playerUnequippedEvent:Connect(OnCharacterUnequipped)
 end
 
 
@@ -592,14 +598,10 @@ if Environment.IsClient() then
 end
 
 
-function ResetQuestsForPlayer(player)
-	print("ResetQuestsForPlayer() " .. player.name)
+function API.ResetQuestsForPlayer(player)
+	--print("ResetQuestsForPlayer() " .. player.name)
 
 	Events.BroadcastToPlayer(player, "Quest.ResetForPlayer")
-	
-	local storageData = Storage.GetSharedPlayerData(PROGRESS_KEY, player)
-	storageData.quests = nil
-	local resultCode,errorMessage = Storage.SetSharedPlayerData(PROGRESS_KEY, player, storageData)
 	
 	LoadPlayerData(player)
 	
@@ -631,6 +633,7 @@ function SplitCommaSeparatedData(data)
 end
 
 -- Cheat to reset quests. E.g.: "/reset quests MyName"
+--[[
 function OnChatMessage(player, params)
 	if not Environment.IsPreview()
 	and string.lower(player.name) ~= "lootmmo" 
@@ -661,6 +664,7 @@ end
 if Environment.IsServer() then
 	Chat.receiveMessageHook:Connect(OnChatMessage)
 end
+]]
 
 
 

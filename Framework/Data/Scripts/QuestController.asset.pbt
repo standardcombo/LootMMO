@@ -17,12 +17,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:StorageKeys"
-        AssetReference {
-          Id: 3120332404910366941
-        }
-      }
-      Overrides {
         Name: "cs:RewardsParser"
         AssetReference {
           Id: 17106048055230886503

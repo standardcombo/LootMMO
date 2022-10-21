@@ -30,16 +30,9 @@ Events.Connect(
 			local lastCharId = Csave.GetLastPlayedCharacterId(player)
 			--print("CharacterSelect_Connector, lastCharId = "..tostring(lastCharId))
 			
-			if lastCharId == "New" or lastCharId == nil then
-				-- Creates a new character
-				Events.Broadcast(NewCharacterEvent .. "S", player)
-			else
-				-- Loads the last one played
-				SelectCharacter(player, lastCharId)
-			end
-			return
-		end
-		if newState == appstate.BagSelection then
+			SelectCharacter(player, lastCharId)
+		
+		elseif newState == appstate.BagSelection then
 			local character = EAPI.GetCurrentCharacter(player)
 			if character then
 				character:Destroy()
@@ -78,11 +71,18 @@ function LoadGear(player)
 		Task.Wait(1)
 		if not Object.IsValid(player) then return end
 		
-		SelectCharacter(player, lastCharId)
+		local success = SelectCharacter(player, lastCharId)
 	end
 end
 
 function SelectCharacter(player, characterId)
+	if characterId == "New" or characterId == nil then
+		-- Creates a new character
+		RequestNewCharacter(player)
+		return
+	end
+	
+	-- Loads the last one played
     local playercharacters = _G['Character.SaveApi'].GetSavedPlayerCharacterData(player)
     for index, value in ipairs(playercharacters) do
         if value.id == characterId then
@@ -93,5 +93,10 @@ function SelectCharacter(player, characterId)
             return
         end
     end
+    -- Failed to load, create a new character
+	RequestNewCharacter(player)
+end
+function RequestNewCharacter(player)
+	Events.Broadcast(NewCharacterEvent .. "S", player)
 end
 

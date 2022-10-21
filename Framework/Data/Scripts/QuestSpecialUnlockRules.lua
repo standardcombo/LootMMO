@@ -10,9 +10,10 @@ function OnAppStateEnter(player, newState, prevState)
 	if newState == _G.AppState.SocialHub then
 		--print("QuestSpecialUnlockRules::OnAppStateEnter()", player.name, newState, prevState)
 		
-		if not _G.QuestController.HasCompleted(player, "Welcome") then
-			Unlock(player, "Welcome")
-		end
+		--Task.Wait()
+		--if not _G.QuestController.HasCompleted(player, "Welcome") then
+		--	Unlock(player, "Welcome")
+		--end
 	end
 end
 Events.Connect("AppState.Enter", OnAppStateEnter)
