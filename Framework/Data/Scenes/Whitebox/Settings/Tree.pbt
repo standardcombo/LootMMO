@@ -1,7 +1,7 @@
 Name: "Settings"
-RootId: 8247438779089513878
+RootId: 9970684983361868256
 Objects {
-  Id: 16506720287146601207
+  Id: 7799582416119825484
   Name: "Ability"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
+  ParentId: 9970684983361868256
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -38,7 +38,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14930815858183006907
+  Id: 12421927625280253612
   Name: "Menu"
   Transform {
     Location {
@@ -51,7 +51,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
+  ParentId: 9970684983361868256
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -75,7 +75,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6787753131417837117
+  Id: 8882916145695718275
   Name: "Default Bindings"
   Transform {
     Scale {
@@ -84,7 +84,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
+  ParentId: 9970684983361868256
   TemplateInstance {
     ParameterOverrideMap {
       key: 2307506665685072506
@@ -120,7 +120,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17027708811352227477
+  Id: 13727578046388391098
   Name: "Team Settings"
   Transform {
     Location {
@@ -133,7 +133,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
+  ParentId: 9970684983361868256
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -158,7 +158,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11217620614551544671
+  Id: 5891232191065598964
   Name: "LootMMORespawn"
   Transform {
     Location {
@@ -171,13 +171,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
-  ChildIds: 16328079211305090184
+  ParentId: 9970684983361868256
+  ChildIds: 13121738759399816697
   UnregisteredParameters {
     Overrides {
       Name: "cs:SpawnSettings"
       ObjectReference {
-        SelfId: 16328079211305090184
+        SelfId: 13121738759399816697
       }
     }
   }
@@ -204,7 +204,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16328079211305090184
+  Id: 13121738759399816697
   Name: "Spawn Settings"
   Transform {
     Location {
@@ -217,7 +217,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11217620614551544671
+  ParentId: 5891232191065598964
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -247,7 +247,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14029167035870863223
+  Id: 1050425569856344919
   Name: "Game Settings"
   Transform {
     Location {
@@ -260,7 +260,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8247438779089513878
+  ParentId: 9970684983361868256
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -327,7 +327,7 @@ Objects {
         value {
           LowDistance: 4500
           MediumDistance: 7000
-          HighDistance: 9000
+          HighDistance: 45000
         }
       }
       RelevanceSettings {

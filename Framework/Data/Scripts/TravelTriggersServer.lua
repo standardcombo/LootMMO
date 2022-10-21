@@ -29,9 +29,12 @@ local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
 
 local TRIGGERS = script.parent:GetChildren()
 
+local PRE_TRAVEL_EVENT = "GoingToTravel"
 
 
 function TravelToGame(player, gameId)
+	Events.Broadcast(PRE_TRAVEL_EVENT, player)
+	
 	-- Fade out
 	player.serverUserData.isWaitingToTravelTriggers = true
 	Events.BroadcastToPlayer(player, "FadeOut", 8)
@@ -44,6 +47,8 @@ end
 
 
 function TravelToScene(player, sceneName, spawnKey)
+	Events.Broadcast(PRE_TRAVEL_EVENT, player)
+	
 	-- Fade out
 	player.serverUserData.isWaitingToTravelTriggers = true
 	Events.BroadcastToPlayer(player, "FadeOut", 8)

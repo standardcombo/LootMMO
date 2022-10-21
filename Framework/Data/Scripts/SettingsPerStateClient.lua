@@ -14,6 +14,9 @@ local CAMERA_SOCIAL_SPACE = script:GetCustomProperty("CameraSocialSpace"):WaitFo
 
 local player = Game.GetLocalPlayer()
 
+Events.BroadcastToServer("ClientReady")
+
+
 Events.Connect("AppState.Enter", function(player, newState, prevState)
 	--print("SettingsPerLocation, new = "..newState..", prev = "..prevState)
 	

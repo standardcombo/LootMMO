@@ -15,13 +15,14 @@ Objects {
     }
   }
   ChildIds: 5387736946797339937
-  ChildIds: 8247438779089513878
-  ChildIds: 9356207142353509503
-  ChildIds: 2790649864418413103
+  ChildIds: 9970684983361868256
+  ChildIds: 5984199028671989143
+  ChildIds: 7475499298705237626
+  ChildIds: 11299696855387386535
+  ChildIds: 16194698060440896494
   ChildIds: 4246661819917374883
-  ChildIds: 13818361969646595860
   ChildIds: 4244745184024888751
-  ChildIds: 9201996533943799660
+  ChildIds: 1882718114171607823
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -41,7 +42,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9201996533943799660
+  Id: 1882718114171607823
   Name: "Top-Level UI"
   Transform {
     Location {
@@ -113,42 +114,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13818361969646595860
-  Name: "CompletedFolder"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "CompletedFolder"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 4246661819917374883
   Name: "Level Design"
   Transform {
@@ -182,8 +147,89 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2790649864418413103
+  Id: 16194698060440896494
+  Name: "Other Screens"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Other Screens"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11299696855387386535
   Name: "Other Components"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4594542242463950141
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Other Components"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5338087018861399484
+    }
+  }
+}
+Objects {
+  Id: 7475499298705237626
+  Name: "Settings Per State"
   Transform {
     Location {
     }
@@ -210,7 +256,14 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Other Components"
+    FilePartitionName: "Settings Per State"
+  }
+  InstanceHistory {
+    SelfId: 7475499298705237626
+    SubobjectId: 11056115110144583225
+    InstanceId: 4467219278668593436
+    TemplateId: 18354689802855935396
+    WasRoot: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -218,7 +271,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9356207142353509503
+  Id: 5984199028671989143
   Name: "Data Definitions"
   Transform {
     Location {
@@ -254,7 +307,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8247438779089513878
+  Id: 9970684983361868256
   Name: "Settings"
   Transform {
     Location {

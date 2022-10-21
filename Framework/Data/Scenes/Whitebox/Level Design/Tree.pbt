@@ -666,8 +666,54 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 5184229362970815540
+  Name: "Spawn Point - PortalReturn"
+  Transform {
+    Location {
+      X: -150
+      Y: 150
+      Z: 115
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4246661819917374883
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnKey: "PortalReturn"
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 16813558807825262224
-  Name: "Spawn Point"
+  Name: "Spawn Point - Social"
   Transform {
     Location {
       Z: 115
@@ -698,6 +744,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
+    SpawnKey: "Social"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }

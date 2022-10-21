@@ -5,7 +5,6 @@ Objects {
   Name: "ClientContext"
   Transform {
     Location {
-      Z: -40193.9
     }
     Rotation {
     }
@@ -51,7 +50,7 @@ Objects {
     Location {
       X: -5801.82324
       Y: -3319.18579
-      Z: 4954.25195
+      Z: -35239.6484
     }
     Rotation {
       Yaw: -176.661255
@@ -1873,6 +1872,7 @@ Objects {
   Name: "ObjectivePickupManagerClient"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }
@@ -2121,6 +2121,7 @@ Objects {
   Name: "QuestController"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }
@@ -2172,7 +2173,6 @@ Objects {
   Name: "ServerContext"
   Transform {
     Location {
-      Z: -40193.9
     }
     Rotation {
     }
@@ -2212,6 +2212,7 @@ Objects {
   Name: "EnemyDiedEventAdapter"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }
@@ -2249,6 +2250,7 @@ Objects {
   Name: "QuestSpecialUnlockRules"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }
@@ -2286,6 +2288,7 @@ Objects {
   Name: "ObjectivePickupManagerServer"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }
@@ -2323,6 +2326,7 @@ Objects {
   Name: "QuestController"
   Transform {
     Location {
+      Z: -40193.9
     }
     Rotation {
     }

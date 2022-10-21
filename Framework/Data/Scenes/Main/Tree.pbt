@@ -17,11 +17,11 @@ Objects {
   ChildIds: 17635258934049397073
   ChildIds: 291839474745250044
   ChildIds: 1578154111882892155
-  ChildIds: 2561084474995652434
+  ChildIds: 11825627350939597535
   ChildIds: 18436610494286568512
-  ChildIds: 12785624939370825655
-  ChildIds: 2852741563843667238
+  ChildIds: 13620541732778982903
   ChildIds: 16937607096047638534
+  ChildIds: 2130210533214886950
   ChildIds: 1888181817911919837
   ChildIds: 17798732759644559527
   ChildIds: 764194984864902660
@@ -1288,6 +1288,40 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 2130210533214886950
+  Name: "Loot Bag Selection"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13152592770104615447
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Loot Bag Selection"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 31461.1699
+            Y: 1898.45984
+            Z: 14398.2715
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2054261471615310875
+    }
+  }
+}
+Objects {
   Id: 16937607096047638534
   Name: "Other Screens"
   Transform {
@@ -1321,52 +1355,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2852741563843667238
-  Name: "Loot Bag Selection"
-  Transform {
-    Location {
-      X: 31461.1699
-      Y: 1898.45984
-      Z: 14398.2715
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Loot Bag Selection"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 12785624939370825655
+  Id: 13620541732778982903
   Name: "Other Components"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1374,26 +1365,20 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4594542242463950141
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Other Components"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5338087018861399484
+    }
   }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Other Components"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 18436610494286568512
@@ -1432,16 +1417,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2561084474995652434
+  Id: 11825627350939597535
   Name: "Settings Per State"
   Transform {
-    Location {
-      X: 31461.1699
-      Y: 1898.45984
-      Z: 14398.2715
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1455,20 +1433,30 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11056115110144583225
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Settings Per State"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 18354689802855935396
+    }
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Settings Per State"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 1578154111882892155

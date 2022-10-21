@@ -20,6 +20,14 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:StartingState"
+        Int: 30
+      }
+      Overrides {
+        Name: "cs:StartingSpawnKey"
+        String: "BagSelection"
+      }
     }
   }
   SerializationVersion: 119

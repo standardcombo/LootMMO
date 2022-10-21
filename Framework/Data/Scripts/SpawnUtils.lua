@@ -36,16 +36,21 @@ end
 
 
 function API.SpawnPlayerAt(player, point)
+	local key
 	if type(point) == "string" then
+		key = point
 		point = GetSpawnPointsWithKey(point)
 	end
 	if type(point) == "table" then
 		--local randomIndex = math.random(1, #point)
 		--point = point[randomIndex]
-		point  = GetPointFurthestFromPlayers(point)
+		point = GetPointFurthestFromPlayers(point)
 	end
 	--print("SpawnUtils::SpawnPlayerAt() "..tostring(point))
 	
+	if not point then
+		error("Couldn't find a spawn point named "..key)
+	end
 	player:Spawn({
 		position = point:GetWorldPosition(), 
 		rotation = point:GetWorldRotation()

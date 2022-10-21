@@ -2,22 +2,29 @@
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local LOAD_GEAR_ON_JOIN = script:GetCustomProperty("LoadGearOnJoin")
 
+local waitCount = 0
 while not _G.AppState do
 	Task.Wait()
+	waitCount = waitCount + 1
 end
+
 local appstate = _G.AppState
 local DataKey = 'Cselect'
 local EAPI = _G['Character.EquipAPI']
 local NewCharacterEvent = 'NewCharacter'
 
+local PRE_TRAVEL_EVENT = "GoingToTravel"
 
-Game.playerJoinedEvent:Connect(function(player)
+
+function OnPlayerJoined(player)
 	if LOAD_GEAR_ON_JOIN then
 		LoadGear(player)
 	end
-end)
+end
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
-Game.playerLeftEvent:Connect(function(player)
+-- Leaving the game
+Events.Connect(PRE_TRAVEL_EVENT, function(player)
 	SaveGear(player)
 end)
 
@@ -52,26 +59,31 @@ function SaveGear(player)
 		CSave.SetLastPlayedLootBag(player, serializedBag)
 		CSave.SetLastPlayedCharacterId(player, character.id)
 
-		-- TODO quest data
-
 		CSave.SavePlayerCharacter(player, character)
 	end
 end
 
 function LoadGear(player)
 	local data = Storage.GetPlayerData(player)
-	if data.travel then
-		local CSave = _G['Character.SaveApi']
-		
-		local lastBagData = CSave.GetLastPlayedLootBag(player)
-		local lastCharId = CSave.GetLastPlayedCharacterId(player)
 
+	local CSave = _G['Character.SaveApi']
+	
+	local lastBagData = CSave.GetLastPlayedLootBag(player)
+	local lastCharId = CSave.GetLastPlayedCharacterId(player)
+
+	if lastBagData then
 		player.serverUserData.currentBag = LOOT_BAG_PARSER.Parse(lastBagData)
+	else
+		warn("No Loot bag selection found.")
+	end
 
+	if lastCharId then
 		Task.Wait(1)
 		if not Object.IsValid(player) then return end
 		
 		local success = SelectCharacter(player, lastCharId)
+	else
+		warn("No character data found.")
 	end
 end
 
@@ -98,5 +110,11 @@ function SelectCharacter(player, characterId)
 end
 function RequestNewCharacter(player)
 	Events.Broadcast(NewCharacterEvent .. "S", player)
+end
+
+if waitCount > 0 then
+	for _,p in ipairs(Game.GetPlayers()) do
+		OnPlayerJoined(p)
+	end
 end
 
