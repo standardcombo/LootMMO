@@ -159,6 +159,15 @@ Assets {
       }
     }
     Assets {
+      Id: 7706689563557844751
+      Name: "Icon Potion"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Potion"
+      }
+    }
+    Assets {
       Id: 3004630166765701041
       Name: "Crystal Ball"
       PlatformAssetType: 9

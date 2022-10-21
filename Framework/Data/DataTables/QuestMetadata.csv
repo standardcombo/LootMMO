@@ -19,4 +19,5 @@
 "Pinball","6F44CFFD6977A504","0BADBADBADBADBAD","False","XP(20), Wait(1), Material(Coins=20)","ThrowChair","5cb37e/loot-mmo","Social"
 "ThrowChair","0C81EB3E371487F2","0BADBADBADBADBAD","False","XP(60), Wait(1), Material(Coins=50)","Poker","5cb37e/loot-mmo","Social"
 "Poker","C25CC86E574C6FEF","0BADBADBADBADBAD","False","XP(100), Wait(1), Material(Coins=100)","","5cb37e/loot-mmo","Social"
+"Potions","6AF3A9538613570F","0BADBADBADBADBAD","False","TODO","TODO","5cb37e/loot-mmo","Social"
 "Relic","29B29737AB7E07B1","0BADBADBADBADBAD","False","Material(Gems=5)","","5cb37e/loot-mmo","Social"

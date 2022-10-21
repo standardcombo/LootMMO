@@ -9,7 +9,7 @@ local lootmmoInv = {}
 local Slot = {}
 
 local function FindElementFromName(itemname)
-	return Materials.GetDefinition(itemname) or Items.GetDefinition(itemname)
+	return Materials.GetDefinition(itemname, true) or Items.GetDefinition(itemname, true)
 end
 
 local function FindAssetIdFromId(itemname)
