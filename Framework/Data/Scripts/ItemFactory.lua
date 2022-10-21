@@ -1,4 +1,6 @@
 
+-- Used by the Tavern's consumable, e.g. the Pint
+
 local API = {}
 _G.ItemFactory = API
 
