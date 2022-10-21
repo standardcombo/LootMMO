@@ -18,14 +18,15 @@ Objects {
   ChildIds: 291839474745250044
   ChildIds: 1578154111882892155
   ChildIds: 18436610494286568512
-  ChildIds: 8212739915466549664
   ChildIds: 12785624939370825655
   ChildIds: 2852741563843667238
+  ChildIds: 16937607096047638534
   ChildIds: 1888181817911919837
   ChildIds: 2561084474995652434
   ChildIds: 10537337840704340836
   ChildIds: 17798732759644559527
   ChildIds: 764194984864902660
+  ChildIds: 8212739915466549664
   ChildIds: 880106829888079510
   ChildIds: 12626000991766525324
   UnregisteredParameters {
@@ -1143,6 +1144,39 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 8212739915466549664
+  Name: "Level Design"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level Design"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 764194984864902660
   Name: "Top-Level UI"
   Transform {
@@ -1330,8 +1364,41 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 16937607096047638534
+  Name: "Other Screens"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Other Screens"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 2852741563843667238
-  Name: "Loot"
+  Name: "Loot Bag Selection"
   Transform {
     Location {
       X: 31461.1699
@@ -1361,7 +1428,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Loot"
+    FilePartitionName: "Loot Bag Selection"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1398,39 +1465,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Other Components"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 8212739915466549664
-  Name: "Level Design"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Level Design"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

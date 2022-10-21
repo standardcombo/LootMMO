@@ -328,7 +328,7 @@ Objects {
         value {
           LowDistance: 4500
           MediumDistance: 7000
-          HighDistance: 9000
+          HighDistance: 45000
         }
       }
       RelevanceSettings {

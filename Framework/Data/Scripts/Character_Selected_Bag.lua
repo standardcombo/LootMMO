@@ -11,7 +11,6 @@ function BootUpPlayerBag(Character, player)
 			local entry = items.GetDefinition(name)
 			if entry then
 				local item = entry['itemAsset']
-				warn(item, "no item found " .. Item.name)
 				if item then
 					local newitem = World.SpawnAsset(item)
 					newitem:SetCustomProperty('IsBag', true)
@@ -19,6 +18,8 @@ function BootUpPlayerBag(Character, player)
 					newitem:SetCustomProperty('Order', Item.order or '')
 					newitem:SetCustomProperty('BagKey', CoreString.Join("|", selectedbag.collection, selectedbag.tokenId) or '')
 					inventory:GetInventory():PickUpItem(newitem)
+				else
+					warn(item, ", No item found " .. Item.name)
 				end
 			end
 		end

@@ -1,7 +1,7 @@
 local EquipApi       = _G["Character.EquipAPI"]
 local CraftingAPI    = _G["Crafting.CraftingAPI"]
 local ItemApi        = _G.Items
-local Marerials      = _G["Items.Materials"]
+local Materials      = _G["Items.Materials"]
 local ItemConstuctor = _G["Item.Constructor"]
 local NFTSaving      = _G["Crafting.SaveNFT"]
 
@@ -40,12 +40,12 @@ local function CraftItem(player, itemid)
 	if not Recipe then
 		return
 	end
-	local itemdata = ItemApi.GetDefinition(itemid) or Marerials.GetDefinition(itemid)
+	local itemdata = ItemApi.GetDefinition(itemid, true) or Materials.GetDefinition(itemid, true)
 	if not itemdata then return end
 
 	if inventory:HasRequiredItems(Recipe) and inventory:CanAddItem(itemdata["itemAsset"]) then
 		for key, value in pairs(Recipe) do
-			local materialdata = ItemApi.GetDefinition(key) or Marerials.GetDefinition(key)
+			local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 			inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 		end
 		local icon = nil
@@ -90,7 +90,7 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 		local Recipe = CraftingAPI.GetGreatnessValue(itemid, Greatness + 1)
 		if inventory:HasRequiredItems(Recipe) then
 			for key, value in pairs(Recipe) do
-				local materialdata = ItemApi.GetDefinition(key) or Marerials.GetDefinition(key)
+				local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 				inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 			end
 			NFTSaving.Save(player, token, itemid, Greatness + 1)
@@ -145,7 +145,7 @@ local function UpgradeItem(player, slot)
 	local Recipe = CraftingAPI.GetGreatnessValue(itemToUpgrade.name, value + 1)
 	if inventory:HasRequiredItems(Recipe) then
 		for key, value in pairs(Recipe) do
-			local materialdata = ItemApi.GetDefinition(key) or Marerials.GetDefinition(key)
+			local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 			inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 		end
 		itemToUpgrade:SetCustomProperty("Greatness", value + 1)
@@ -181,7 +181,7 @@ local function ScrapItem(player, slot)
 	if not recipe then return end
 	inventory:RemoveFromSlot(slot)
 	for key, value in pairs(recipe) do
-		local materialdata = ItemApi.GetDefinition(key) or Marerials.GetDefinition(key)
+		local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 		inventory:AddItem(materialdata["itemAsset"], { count = value })
 	end
 	local itemEntry = ItemApi.GetDefinition(itemid)
