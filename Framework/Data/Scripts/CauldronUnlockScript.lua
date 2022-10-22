@@ -10,17 +10,17 @@ local function DisconnectEvent()
 	end
 end
 
-local function DisableCauldren()
+local function DisableCauldron()
 	GEO.isEnabled = true
 end
 
-local function UnlockCauldren()
+local function UnlockCauldron()
 	GEO.isEnabled = false
 end
 
 local function ProgressUpdated(progress)
 	if progress:GetProgressionKey("PotionSlot2") then
-		UnlockCauldren()
+		UnlockCauldron()
 		DisconnectEvent()
 	end
 end
@@ -28,7 +28,7 @@ end
 local function PlayerUnequipped(char, player)
 	if player ~= LOCAL_PLAYER then return end
 	DisconnectEvent()
-	DisableCauldren()
+	DisableCauldron()
 end
 
 local function PlayerEquipped(char, player)

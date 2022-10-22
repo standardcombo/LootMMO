@@ -124,7 +124,7 @@ local function DisplayPotion()
 	local AbilityRender = Get(LEFT_PANEL, "AbilityRender")
 
 	abilityName.text = "New potion slot unlocked"
-	Description.text = "Go to the cauldren to equip the new potion to the slot"
+	Description.text = "Go to the cauldron to equip the new potion to the slot"
 	Properties.text = ""
 	Flavourtext.text = ""
 	AbilityRender:SetImage(potionicon)
