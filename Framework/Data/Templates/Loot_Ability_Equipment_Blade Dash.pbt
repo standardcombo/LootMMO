@@ -17,8 +17,7 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 12188050976211067147
-        ChildIds: 3092568615889835291
-        ChildIds: 12904309112111036280
+        ChildIds: 17171202700903917238
         UnregisteredParameters {
           Overrides {
             Name: "cs:AbilityBinding"
@@ -161,7 +160,7 @@ Assets {
           Overrides {
             Name: "cs:Ability"
             ObjectReference {
-              SubObjectId: 16008285176588027570
+              SubObjectId: 17171202700903917238
             }
           }
         }
@@ -283,7 +282,7 @@ Assets {
           Overrides {
             Name: "cs:Ability"
             ObjectReference {
-              SubObjectId: 16008285176588027570
+              SubObjectId: 17171202700903917238
             }
           }
         }
@@ -443,7 +442,7 @@ Assets {
           Overrides {
             Name: "cs:Ability"
             ObjectReference {
-              SubObjectId: 16008285176588027570
+              SubObjectId: 17171202700903917238
             }
           }
           Overrides {
@@ -521,7 +520,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3092568615889835291
+        Id: 17171202700903917238
         Name: "Blade Dash"
         Transform {
           Scale {
@@ -531,73 +530,72 @@ Assets {
           }
         }
         ParentId: 4078315541762211252
-        WantsNetworking: true
-        TemplateInstance {
-          ParameterOverrideMap {
-            key: 13801931515292370039
-            value {
-              Overrides {
-                Name: "Name"
-                String: "Blade Dash"
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
-                }
-              }
-              Overrides {
-                Name: "CastCanJump"
-                Bool: false
-              }
-              Overrides {
-                Name: "CastCanRotate"
-                Bool: false
-              }
-              Overrides {
-                Name: "CastPreventOtherAbilities"
-                Bool: true
-              }
-              Overrides {
-                Name: "ExecuteDuration"
-                Float: 0.03
-              }
-              Overrides {
-                Name: "ExecuteCanJump"
-                Bool: false
-              }
-              Overrides {
-                Name: "ExecuteCanRotate"
-                Bool: false
-              }
-              Overrides {
-                Name: "ExecutePreventOtherAbilities"
-                Bool: true
-              }
-              Overrides {
-                Name: "RecoveryDuration"
-                Float: 100
-              }
-              Overrides {
-                Name: "RecoveryCanJump"
-                Bool: false
-              }
-              Overrides {
-                Name: "RecoveryCanRotate"
-                Bool: false
-              }
-              Overrides {
-                Name: "Animation"
-                String: "unarmed_point_forward"
-              }
-            }
-          }
-          TemplateAsset {
-            Id: 2682557459929965087
+        ChildIds: 12904309112111036280
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Binding"
+            String: "ability_extra_20"
           }
         }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Ability {
+          IsEnabled: true
+          KeyBinding: "ability_primary"
+          CastPhaseSettings {
+            Duration: 0.1
+            CanMove: true
+            PreventOtherAbilities: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            Duration: 0.03
+            CanMove: true
+            PreventOtherAbilities: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            Duration: 100
+            CanMove: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 100
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+          }
+          Animation: "unarmed_point_forward"
+          CanBePrevented: true
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
+          }
+        }
+        InstanceHistory {
+          SelfId: 16008285176588027570
+          SubobjectId: 13801931515292370039
+          InstanceId: 3092568615889835291
+          TemplateId: 2682557459929965087
+          WasRoot: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12904309112111036280
@@ -613,7 +611,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4078315541762211252
+        ParentId: 17171202700903917238
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
