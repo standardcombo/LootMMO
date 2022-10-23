@@ -393,6 +393,9 @@ function poker:PlayerJoin(player, value)
     self:PlayerNetwork(player)
     self:UpdatePlayers()
     self.playerJoinedEvent:Trigger(player)
+
+	_G.AppState.SetStateForPlayer(player, _G.AppState.Minigame)
+
     return true
 end
 
@@ -413,6 +416,8 @@ function poker:PlayerLeave(player)
 
     player:SetPrivateNetworkedData(TexasPoker_Settings.storageKey, nil)
     self:UpdatePlayers()
+
+	_G.AppState.SetStateForPlayer(player, _G.AppState.SocialHub)
 end
 
 function poker:FindPlayerFromSlot(number)
