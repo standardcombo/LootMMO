@@ -1,6 +1,6 @@
 --[[
 	LootMMO Respawn
-	v1.0 - 2022/10/20
+	v1.0.1 - 2022/10/22
 	by: standardcombo
 	
 	Checks if a dying player is in a safe zone or not.
@@ -48,6 +48,7 @@ end
 
 function OnPlayerDied(player, dmg)
 	if player.serverUserData 
+	and player.serverUserData.safeZoneCount
 	and player.serverUserData.safeZoneCount > 0
 	then
 		SafeZoneRespawn(player)
