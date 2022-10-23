@@ -1,4 +1,12 @@
 
+**Version 1.0.2**
+- Blade Dash ability now displays correctly in the HUD.
+- Fixed typos in the Cauldron.
+- Updated the Weapon Tests scene to have the latest "Settings" folder. This adds respawn and changed a few other small things.
+- Fixed errors in poker that would prevent playing.
+- Fixed a bug in poker where the HUD could disappear completely after a player was booted from the table (when running out of money).
+- Fixed an error in LootMMORespawn.lua if the game didn't have any safe zones.
+
 **Version 1.0.1**
 Too many changes to mention. This is the first public release of the framework, with full game loop, quest system, NPCs, portals, abilities, character progression, etc.
 
