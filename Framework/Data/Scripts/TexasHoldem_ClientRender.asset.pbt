@@ -59,13 +59,13 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:TexasHoldemcharacter"
+        Name: "cs:TexasHoldemCharacter"
         AssetReference {
           Id: 10340341836069713027
         }
       }
       Overrides {
-        Name: "cs:TexasHolem_popupText"
+        Name: "cs:TexasHoldem_popupText"
         AssetReference {
           Id: 1626217326356308669
         }
