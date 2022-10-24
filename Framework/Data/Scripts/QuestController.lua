@@ -487,6 +487,9 @@ end
 
 -- Server/Client
 function API.IsLocalGame(questData)
+	if Environment.IsLocalGame() then
+		return true
+	end
 	local thisGameID = Game.GetCurrentGameId()
 	if thisGameID == questData.gameId then
 		return true
