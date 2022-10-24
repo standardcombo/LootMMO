@@ -22,7 +22,7 @@ end
 
 ROOT.destroyEvent:Connect(OnDestroyed)
 ROOT.clientUserData.GEO_ROOT = GEO_ROOT
-GEO_ROOT.parent = World.GetRootObject()
+GEO_ROOT.parent = nil
 GEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)
 
 local STATE_SLEEPING = 0
