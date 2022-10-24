@@ -36,7 +36,11 @@ end
 function SetActionName(name)
 	if name then
 		for key, child in pairs(ACTION_NAME:GetChildren()) do
-			child.text = name
+			if name ~= "Shift" then
+				child.text = Input.GetActionInputLabel(name)
+			else
+				child.text = name
+			end
 		end
 	end
 end
@@ -110,6 +114,7 @@ function Tick(deltaTime)
 
 	-- Update the level text for the ability
 	NAME_TEXT.text = currentAbility.name
+	
 	if not (currentPhase == AbilityPhase.COOLDOWN) then
 		PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 	else
