@@ -13,7 +13,7 @@ ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Paladin_Solo.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Shaman_Solo.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Healer_Solo.png"
-ReleaseNotes: "v1.0.2\r\n- Blade Dash ability now displays correctly in the HUD.\r\n- Fixed typos in the Cauldron.\r\n- Updated the Weapon Tests scene to have the latest \"Settings\" folder. This adds respawn and changed a few other small things.\r\n- Fixed errors in poker that would prevent playing.\r\n- Fixed a bug in poker where the HUD could disappear completely after a player was booted from the table (when running out of money).\r\n- Fixed an error in LootMMORespawn.lua if the game didn\'t have any safe zones."
+ReleaseNotes: "**Version 1.0.3**\r\n- Fixed a framework usability issue where the Map of Adventures would not transfer players outdoors until quest data was reconfigured."
 OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
 PublishedState: Public
