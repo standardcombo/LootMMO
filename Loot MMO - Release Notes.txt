@@ -1,4 +1,7 @@
 
+**Version 1.0.3**
+- Fixed a framework usability issue where the Map of Adventures would not transfer players outdoors until quest data was reconfigured.
+
 **Version 1.0.2**
 - Blade Dash ability now displays correctly in the HUD.
 - Fixed typos in the Cauldron.

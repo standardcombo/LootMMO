@@ -1,12 +1,34 @@
 
 --[[
-	Quest Controller
-	(Server + Client)
+	Quest Controller (Server + Client)
+	v1.0.1 - 2022/10/23
+	by: standardcombo
 	
-	TODO: API
+	API
+	===
+	-- Client/Server
+	GetUnlockedMapQuests(player)
+	GetCompletedQuestIDs(player)
+	HasCompleted(player, questId)
+	GetActiveObjectives(player)
+	GetObjectiveProgress(player, obj)
+	IsActive(player, obj)
+	IsLocalGame(questData)
+	IsLocalScene(questData)
 	
-	Player data structure in storage:
+	-- Client only
+	SelectObjective(player, obj)
+	ClaimReward(questId)
+
+	-- Server only
+	ActivateForPlayer(player, questId)
+	AdvanceObjective(player, questId, objectiveIndex)
+	SavePlayerData(player)
+	ResetQuestsForPlayer(player)
 	
+	
+	Storage Player Data schema
+	==========================
 	complete = {list of quest IDs}
 	active = {
 		list of abbreviated objectives
@@ -487,6 +509,9 @@ end
 
 -- Server/Client
 function API.IsLocalGame(questData)
+	if Environment.IsLocalGame() then
+		return true
+	end
 	local thisGameID = Game.GetCurrentGameId()
 	if thisGameID == questData.gameId then
 		return true
@@ -524,6 +549,7 @@ local function PatchData(playerData)
 	return playerData
 end
 
+-- Server only
 function API.SavePlayerData(player)
 	if not Object.IsValid(player) then return end
 	if player.serverUserData.isLoadingQuestData then return end
@@ -597,7 +623,7 @@ if Environment.IsClient() then
 	end)
 end
 
-
+-- Server only
 function API.ResetQuestsForPlayer(player)
 	--print("ResetQuestsForPlayer() " .. player.name)
 
@@ -665,6 +691,4 @@ if Environment.IsServer() then
 	Chat.receiveMessageHook:Connect(OnChatMessage)
 end
 ]]
-
-
 
