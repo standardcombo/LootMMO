@@ -22,7 +22,7 @@ end
 
 ROOT.destroyEvent:Connect(OnDestroyed)
 ROOT.clientUserData.GEO_ROOT = GEO_ROOT
-GEO_ROOT.parent = nil
+GEO_ROOT.parent = World.GetRootObject()
 GEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)
 
 local STATE_SLEEPING = 0
@@ -51,7 +51,7 @@ end
 function OnPropertyChanged(object, propertyName)
 	if (propertyName == "CurrentState") then
 		local newState = GetCurrentState()
-
+		if currentState == newState then return end
 		if newState == STATE_PATROLLING and currentState ~= STATE_PATROLLING then
 			GEO_ROOT:Follow(script, PATROL_SPEED)
 		elseif newState ~= STATE_PATROLLING and currentState == STATE_PATROLLING then
