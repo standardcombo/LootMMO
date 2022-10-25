@@ -1,28 +1,10 @@
 Assets {
-  Id: 14100456703306476565
-  Name: "Baloo 2 Extra Bold"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "Baloo2ExtraBold_ref"
-  }
-}
-Assets {
-  Id: 12798912140996043624
-  Name: "Abstract Background 02"
+  Id: 13835327457650939377
+  Name: "UI Gradient Rectangular 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "Core_UI_AbstractPack_Background_003"
-  }
-}
-Assets {
-  Id: 12688562651744601369
-  Name: "Baloo 2"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "Baloo2Regular_ref"
+    AssetId: "UI_Basic_Shape_003"
   }
 }
 Assets {
@@ -62,21 +44,39 @@ Assets {
   }
 }
 Assets {
-  Id: 5338351160029262659
-  Name: "Pirata One"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "PirataOneRegular_ref"
-  }
-}
-Assets {
-  Id: 2706703758510635640
-  Name: "Fantasy Cauldron 001"
+  Id: 8031754533012253259
+  Name: "Crosshair 021"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Cauldron_001"
+    AssetId: "Crosshair_021"
+  }
+}
+Assets {
+  Id: 5003662152169500137
+  Name: "Tiled Camo 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_TiledBG_041"
+  }
+}
+Assets {
+  Id: 2653837865451130928
+  Name: "Abstract Background 03"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_004"
+  }
+}
+Assets {
+  Id: 1328793714507056410
+  Name: "Tiled Asphalt 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_TiledBG_017"
   }
 }
 Assets {
@@ -95,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Potion_004"
+  }
+}
+Assets {
+  Id: 48307754774318265
+  Name: "UI Gradient Rectangular 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_002"
   }
 }
 Assets {
