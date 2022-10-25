@@ -1,8 +1,8 @@
 Name: "VileShinobi"
 RootId: 10671278793063807372
 Objects {
-  Id: 6386077687221545343
-  Name: "SubVileControlGroup"
+  Id: 3035041294554889352
+  Name: "SafeToTake"
   Transform {
     Location {
     }
@@ -52,7 +52,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6386077687221545343
+  ParentId: 3035041294554889352
   ChildIds: 15337694730650390766
   UnregisteredParameters {
     Overrides {
@@ -475,6 +475,41 @@ Objects {
   }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6386077687221545343
+  Name: "NotSafeToTake"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10671278793063807372
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
