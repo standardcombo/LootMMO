@@ -37,7 +37,22 @@ function API.FindFromAssetId(assetID)
 			end
 		end
 	end
+end
 
+---Example: _G['Potions.Equipment'].FindFromAssetIdName("Loot_Potion_Ability_HealthPotion")
+function API.FindFromAssetIdName(assetID)
+	for key, potion in pairs(definitions) do
+		if potion['equipment'] then
+			local id, name = CoreString.Split(potion['equipment'], ":")
+
+			-- Replace words in the asset id string to match potion name
+			name = string.gsub(name, "Equipment", "Ability")
+
+			if name == assetID then
+				return potion
+			end
+		end
+	end
 end
 
 function API.GetTable()
