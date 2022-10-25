@@ -1546,6 +1546,15 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 3258023367585170663
+      value {
+        Overrides {
+          Name: "CameraIsDefault"
+          Bool: true
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11056115110144583225
       value {
         Overrides {
