@@ -62,7 +62,7 @@ API.Events = {
 
 -- Default settings
 settings[API.Setting.DragUIContainer] = DEFAULT_DRAG_UI_CONTAINER
-settings[API.Setting.LookDistance] = 2000
+settings[API.Setting.LookDistance] = 350
 settings[API.Setting.LookSize] = 50
 settings[API.Setting.TriggerLocally] = true
 settings[API.Setting.CameraDistance] = 2000

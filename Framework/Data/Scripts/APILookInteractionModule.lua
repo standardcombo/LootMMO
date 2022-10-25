@@ -255,12 +255,6 @@ end
 function OnUpdate()
     local lookRotation = LOCAL_PLAYER:GetLookWorldRotation()
     local cam = LOCAL_PLAYER:GetActiveCamera()
-    repeat
-        cam = LOCAL_PLAYER:GetActiveCamera()
-        Task.Wait(1)
-        print(cam, " please")
-    until cam
-    print("made it")
     local cameraOffset = LOCAL_PLAYER:GetActiveCamera():GetPositionOffset()
     local lookForward = lookRotation * Vector3.FORWARD
     local cameraPivotPosition = LOCAL_PLAYER:GetWorldPosition() - lookForward + lookRotation * cameraOffset + Vector3.UP * 74
