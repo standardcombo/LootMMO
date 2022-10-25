@@ -112,7 +112,7 @@ function Tick(deltaTime)
 
 	PANEL.visibility = Visibility.INHERIT
 	
-	local potion_data = _G['Potions.Equipment'].FindFromAssetIdName(currentAbility.name)
+	local potion_data = _G['Potions.Equipment'].FindByAssetIdName(currentAbility.name)
 
 	if potion_data ~= nil then
 		NAME_TEXT.text = potion_data.name

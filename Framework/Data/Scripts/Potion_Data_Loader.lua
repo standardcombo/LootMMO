@@ -1,5 +1,5 @@
 local API = {}
-_G.Potions = API
+_G['Potions.Equipment'] = API
 
 local definitions = require(script:GetCustomProperty("DataTable"))
 
@@ -39,8 +39,8 @@ function API.FindFromAssetId(assetID)
 	end
 end
 
----Example: _G['Potions.Equipment'].FindFromAssetIdName("Loot_Potion_Ability_HealthPotion")
-function API.FindFromAssetIdName(assetID)
+---Example: _G['Potions.Equipment'].FindByAssetIdName("Loot_Potion_Ability_HealthPotion")
+function API.FindByAssetIdName(assetID)
 	for key, potion in pairs(definitions) do
 		if potion['equipment'] then
 			local id, name = CoreString.Split(potion['equipment'], ":")
@@ -58,5 +58,3 @@ end
 function API.GetTable()
 	return definitions
 end
-
-_G['Potions.Equipment'] = API
