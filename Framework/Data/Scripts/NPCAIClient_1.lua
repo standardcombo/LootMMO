@@ -51,7 +51,7 @@ end
 function OnPropertyChanged(object, propertyName)
 	if (propertyName == "CurrentState") then
 		local newState = GetCurrentState()
-
+		
 		if newState == STATE_PATROLLING and currentState ~= STATE_PATROLLING then
 			GEO_ROOT:Follow(script, PATROL_SPEED)
 		elseif newState ~= STATE_PATROLLING and currentState == STATE_PATROLLING then

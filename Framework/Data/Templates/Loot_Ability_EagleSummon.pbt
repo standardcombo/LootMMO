@@ -1033,7 +1033,6 @@ Assets {
           }
         }
         ParentId: 1262806953336043792
-        ChildIds: 5274624722305019291
         ChildIds: 143525153632646653
         ChildIds: 17346195986269019483
         ChildIds: 12138277205487695916
@@ -1056,61 +1055,6 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:low"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 5274624722305019291
-        Name: "NPCAIClient"
-        Transform {
-          Location {
-            Z: 200
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 8236933984233397266
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:GeoRoot"
-            ObjectReference {
-              SubObjectId: 12138277205487695916
-            }
-          }
-          Overrides {
-            Name: "cs:ForwardNode"
-            ObjectReference {
-              SubObjectId: 17346195986269019483
-            }
-          }
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 10190610956955079352
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16526478722992756359
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

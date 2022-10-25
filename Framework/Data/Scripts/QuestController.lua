@@ -1,7 +1,7 @@
 
 --[[
 	Quest Controller (Server + Client)
-	v1.0.1 - 2022/10/23
+	v1.0.2 - 2022/10/24
 	by: standardcombo
 	
 	API
@@ -48,6 +48,7 @@ local QUEST_OBJECTIVES = require(script:GetCustomProperty("QuestObjectives"))
 local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
 local SERIALIZATION_VERSION = 1
+local DEBUG_DONT_SAVE_PROGRESS = false
 
 
 -- Create direct connection between quests and their objectives
@@ -551,6 +552,7 @@ end
 
 -- Server only
 function API.SavePlayerData(player)
+	if DEBUG_DONT_SAVE_PROGRESS then return end
 	if not Object.IsValid(player) then return end
 	if player.serverUserData.isLoadingQuestData then return end
 	

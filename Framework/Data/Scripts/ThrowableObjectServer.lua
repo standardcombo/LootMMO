@@ -95,12 +95,12 @@ EQUIPMENT.equippedEvent:Connect(OnEquipped)
 
 
 function OnThrow(ability)
-	Events.Broadcast("Quest.ThrowChair", ability.owner, "Throw")
-	
 	-- Spawn the physics object that will contain the equipment
 	local obj = SpawnPhysicsObject()
 	
 	if ability then
+		Events.Broadcast("Quest.ThrowChair", ability.owner, "Throw")
+
 		obj.serverUserData.damageAmount = DAMAGE_AMOUNT
 		obj.serverUserData.throwingPlayer = ability.owner
 		

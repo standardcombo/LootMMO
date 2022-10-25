@@ -1,8 +1,8 @@
 --[[
 	EagleAI - Server
-	v1.0.0
+	v1.0.1
 	original script: standardcombo
-	modified by: Ooccoo  
+	modified by: Ooccoo, Luapi
 	contributions: DarkDev, WaveParadigm
 	
 	Logical state machine for an eagle NPC. 
@@ -44,6 +44,7 @@ local SEARCH_DURATION = ROOT:GetCustomProperty("SearchDuration") or 6
 local POSSIBILITY_RADIUS = ROOT:GetCustomProperty("PossibilityRadius") or 600
 local CHASE_RADIUS = ROOT:GetCustomProperty("ChaseRadius") or 3500
 local MAX_CHASE_DISTANCE = ROOT:GetCustomProperty("MaxChaseDistance") or 25000
+local MAX_DISTANCE_FROM_OWNER = ROOT:GetCustomProperty("MaxDistanceFromOwner") or 2000
 local ATTACK_RANGE = ROOT:GetCustomProperty("AttackRange") or 1500
 local ATTACK_MIN_ANGLE = ROOT:GetCustomProperty("AttackMinAngle") or 180
 local ATTACK_CAST_TIME = ROOT:GetCustomProperty("AttackCast") or 0.5
@@ -81,6 +82,7 @@ local STATE_DEAD_1 = 6
 local STATE_DEAD_2 = 7
 local STATE_DISABLED = 8
 local STATE_STUNNED = 9
+local STATE_TELEPORTING = 10
 
 local currentState = STATE_SLEEPING
 local stateTime = 0
@@ -212,6 +214,24 @@ function SetMaxMoveSpeed(value)
     customMaxMoveSpeed = value
 end
 
+function GetDistanceBetween(a,b)
+	local result = a - b
+	return result.size
+end
+
+function TeleportToOwner()
+	if Object.IsValid(ROOT) then
+		ROOT:SetWorldPosition(owner:GetWorldPosition() + Vector3.UP * 100)
+		--print("Teleporting to owner", ROOT:GetWorldPosition(), owner:GetWorldPosition())
+		SetState(STATE_TELEPORTING)
+		Task.Spawn(function()
+			if Object.IsValid(ROOT) then
+				SetState(STATE_SLEEPING)
+			end
+		end, 0.5)
+	end
+end
+
 
 function Tick(deltaTime)
 	stateTime = stateTime + deltaTime
@@ -224,6 +244,15 @@ function Tick(deltaTime)
 	end
 	
     --print("Current state:", currentState)
+
+	-- If Eagle has reached the maximum distance from the owner then telport to owner
+	local distanceFromOwner = GetDistanceBetween(ROOT:GetWorldPosition(), owner:GetWorldPosition())
+	if distanceFromOwner > MAX_DISTANCE_FROM_OWNER then
+		--print(distanceFromOwner,"Eagle too far from player")
+		SetTarget(nil)
+		TeleportToOwner()
+		return
+	end
 
 	if (currentState == STATE_ATTACK_CAST or currentState == STATE_ATTACK_RECOVERY) and
 		COMBAT().IsDead(target) then
@@ -255,7 +284,7 @@ function Tick(deltaTime)
 		end
 		
     elseif currentState == STATE_SLEEPING then
-        local targetPosition = target:GetWorldPosition()--+Vector3.New(0,0,200)
+        local targetPosition = target:GetWorldPosition()
         StepTowards(targetPosition)
         UpdateMovement(deltaTime)
 	elseif currentState == STATE_PATROLLING then
@@ -346,7 +375,7 @@ function Tick(deltaTime)
 			end
 		end
 	end
-	
+
 	UpdateTemporaryProperties(deltaTime)
 end
 

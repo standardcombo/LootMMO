@@ -1,3 +1,8 @@
+--[[
+	Quest Objectives UI (content panel)
+	v1.0.2 - 2022/10/24
+	by: standardcombo
+]]
 
 local ROW_PROTOTYPE = script:GetCustomProperty("RowPrototype"):WaitForObject()
 local ROW_SPACING = 3
