@@ -1,3 +1,8 @@
+--[[
+	Quest Objectives UI (main view, state machine)
+	v1.0.2 - 2022/10/24
+	by: standardcombo
+]]
 
 _G.QuestObjectivesUI = script
 
@@ -392,7 +397,11 @@ function UpdateContents()
 		else
 			obj.hasSeen = true --Mark objective as seen
 		end
-		CONTENT_SCRIPT.context.AddObjective(obj)
+		local row = CONTENT_SCRIPT.context.AddObjective(obj)
+		
+		if selectedObjective == obj then
+			selectedRow = row
+		end
 	end
 	
 	-- Disable Badge
