@@ -310,10 +310,10 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:f"
+            Value: "mc:ebindingkeyboard:rightclick"
           }
           KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:rightclick"
+            Value: "mc:ebindingkeyboard:f"
           }
           Controller {
             Value: "mc:ebindinggamepad:righttrigger"

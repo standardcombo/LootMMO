@@ -48,6 +48,9 @@ end
 
 function OnInteracted(trigger, player)
 	if player.clientUserData.hasThrowable then return end
+	UI.ShowFlyUpText(Input.GetActionInputLabel("Throw", {inputType = InputType.KEYBOARD_AND_MOUSE}) .. " to Throw.", 
+	PLAYER:GetWorldPosition() + Vector3.UP * 110,
+	{isBig = true, duration = 1.5})
 	if isOnGround then
 		for _,ability in ipairs(player:GetAbilities()) do
 			if ability.name == "PickupAbility" then
