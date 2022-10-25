@@ -24,6 +24,7 @@ Objects {
   ChildIds: 4244745184024888751
   ChildIds: 1882718114171607823
   ChildIds: 3240051364922901556
+  ChildIds: 5973387218209979504
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -41,6 +42,33 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5973387218209979504
+  Name: "RPG Skeleton - Marksman (Common)"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 1997282349948663995
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Skeleton - Marksman (Common)"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8874753243177893219
+    }
+  }
 }
 Objects {
   Id: 3240051364922901556

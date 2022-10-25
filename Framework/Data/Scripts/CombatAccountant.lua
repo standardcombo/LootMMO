@@ -22,6 +22,9 @@ local data = {}
 
 
 function API.GetReportForTarget(target)
+	if string.find(target.name, "Gatherable") ~= nil then
+		return "Gatherable"
+	end
 	if not target.id then
 		error("Can only report on targets that have an ID")
 	end

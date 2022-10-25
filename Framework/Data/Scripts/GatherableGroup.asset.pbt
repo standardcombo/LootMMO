@@ -80,6 +80,12 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:ModuleManager"
+        AssetReference {
+          Id: 6849549736519012849
+        }
+      }
     }
   }
   SerializationVersion: 119

@@ -8,6 +8,9 @@ if not _G.CheckFrameworkVersionUpToDate(REQUIRED_VERSION) then
     return
 end
 
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
+function LOOT_DROP_FACTORY() return MODULE.Get("standardcombo.NPCKit.LootDropFactory") end
+
 local COMPONENT_ROOT = script:GetCustomProperty("ComponentRoot"):WaitForObject()
 
 ---@type APIGatherables
@@ -505,36 +508,69 @@ function DestroyGatherableAtIndex(player, index)
 end
 
 function DropGatherable(player, entry)
+-- Code for lootfactory goes here
     if entry.data.Drops then
-        if not INVENTORY.IsAnyInventoryRegistered(false) then
-            warn("No Inventory could be found. Do you have an Inventory Template in the scene?")
+        local lootDropFactory = LOOT_DROP_FACTORY()
+        
+        if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
+            local params = {
+                object = entry.staticCoreObject,
+                killer = player,
+                lootId = "Common", --The string the lootfactory checks the data table for
+                position = entry.staticCoreObject:GetWorldPosition(),
+                rotation = entry.staticCoreObject:GetWorldRotation(),
+                resourceType = "XP",
+                resourceAmount = 1,
+            }
+            lootDropFactory.Drop(params)
+            
             return
         end
-
-        local drops = DROPS.CalculateDrops(entry.data.Drops)
-        if entry.data.DropOnGather then
-            ITEM_PICKUPS.CreateItemPickupsForDrops(
-                player,
-                drops,
-                entry.data.DropItemPickupTemplate,
-                entry.staticCoreObject:GetWorldPosition(),
-                entry.data.DropMinDistance,
-                entry.data.DropMaxDistance,
-                entry.data.DropForAllPlayers,
-                entry.data.SinglePlayerDrops,
-                entry.data.DropTimeoutSeconds,
-                entry.data.MaxPickupsPerDrop
-            )
-        else
-            for itemId, amount in pairs(drops.Items) do
-                INVENTORY.AddToInventory(player, nil, INVENTORY.ItemType.Item, itemId, amount, 0, false)
-            end
-
-            for currencyId, amount in pairs(drops.Currencies) do
-                CURRENCY.AddCurrencyAmount(player, currencyId, amount)
-            end
-        end
     end
+    -- -- Give resources
+    -- if REWARD_RESOURCE_TYPE and Object.IsValid(killer) and killer:IsA("Player") then
+    --     killer:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)
+    -- end
+
+    -- -- Drop loot
+    -- if LOOT_ID ~= "" and lootDropFactory then
+    --     local pos = script:GetWorldPosition()
+    --     lootDropFactory.Drop(LOOT_ID, pos)
+    -- end
+
+    -- local position = entry.staticCoreObject:GetWorldPosition()
+    -- LOOT_DROP_FACTORY().Drop("Common", position)
+
+    -- if entry.data.Drops then
+    --     if not INVENTORY.IsAnyInventoryRegistered(false) then
+    --         warn("No Inventory could be found. Do you have an Inventory Template in the scene?")
+    --         return
+    --     end
+
+    --     local drops = DROPS.CalculateDrops(entry.data.Drops)
+    --     if entry.data.DropOnGather then
+    --         ITEM_PICKUPS.CreateItemPickupsForDrops(
+    --             player,
+    --             drops,
+    --             entry.data.DropItemPickupTemplate,
+    --             entry.staticCoreObject:GetWorldPosition(),
+    --             entry.data.DropMinDistance,
+    --             entry.data.DropMaxDistance,
+    --             entry.data.DropForAllPlayers,
+    --             entry.data.SinglePlayerDrops,
+    --             entry.data.DropTimeoutSeconds,
+    --             entry.data.MaxPickupsPerDrop
+    --         )
+    --     else
+    --         for itemId, amount in pairs(drops.Items) do
+    --             INVENTORY.AddToInventory(player, nil, INVENTORY.ItemType.Item, itemId, amount, 0, false)
+    --         end
+
+    --         for currencyId, amount in pairs(drops.Currencies) do
+    --             CURRENCY.AddCurrencyAmount(player, currencyId, amount)
+    --         end
+    --     end
+    -- end
 end
 
 function FindGatherableIndex(coreObject)
