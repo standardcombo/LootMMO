@@ -12,6 +12,8 @@ while not _G["Character.Constructor"] do
 	Task.Wait()
 end
 
+--- Add/Remove player names to the table below that can use cheats.
+--- Note: Local preview mode doesn't need names added.
 local AdminList = {
 	["blaking707"] = true,
 	["CommanderFoo"] = true
