@@ -13,7 +13,7 @@ ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Paladin_Solo.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Shaman_Solo.png"
 ScreenshotPaths: "D:\\CORE\\Maps\\LootMMO\\Framework\\Screenshots\\UI\\Character Classes\\LootMMO_Healer_Solo.png"
-ReleaseNotes: "**Version 1.0.3**\r\n- Fixed a framework usability issue where the Map of Adventures would not transfer players outdoors until quest data was reconfigured."
+ReleaseNotes: "**Version 1.0.4**\r\n- Fixed an error if a player left the game while throwing a chair.\r\n- Ability key labels now dynamically update based on action names.\r\n- The Eagle now teleports with the player when they travel to/from an adventure.\r\n- Fixed an error in the Quest UI when completing a quest while another quest was selected."
 OwnerId: "cf0c4aa3f2b14c26bd8649b034d0cca8"
 SerializationVersion: 4
 PublishedState: Public

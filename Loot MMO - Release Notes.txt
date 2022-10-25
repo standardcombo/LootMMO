@@ -1,4 +1,10 @@
 
+**Version 1.0.4**
+- Fixed an error if a player left the game while throwing a chair.
+- Ability key labels now dynamically update based on action names.
+- The Eagle now teleports with the player when they travel to/from an adventure.
+- Fixed an error in the Quest UI when completing a quest while another quest was selected.
+
 **Version 1.0.3**
 - Fixed a framework usability issue where the Map of Adventures would not transfer players outdoors until quest data was reconfigured.
 
