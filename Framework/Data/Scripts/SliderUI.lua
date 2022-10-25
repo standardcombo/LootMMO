@@ -48,7 +48,7 @@ local function UpdateSlider()
 end
 
 local function UpdateSliderMouse()
-	local mouse = UI.GetCursorPosition()
+	local mouse = Input.GetCursorPosition()
 	mouse.x = math.max(Slider.x, math.min(Slider.x + Bar.width, mouse.x))
 	local NewPercent = CalPercent(mouse)
 	Slider.updateEvent:Trigger(Slider, NewPercent)

@@ -491,7 +491,7 @@ Events.Connect("DarkPirateMagic", multiballCannon)
 function cursorUpdateLoop()
   if not Object.IsValid(currentPlayer) then return end
 
-  local cursorPos = UI.GetCursorPosition()
+  local cursorPos = Input.GetCursorPosition()
 
   UICursor.x = cursorPos.x
   UICursor.y = cursorPos.y

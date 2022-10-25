@@ -114,7 +114,7 @@ function API.IsCursorOver(object, includeHidden)
         return false
     end
 
-    local cursorPosition = UI.GetCursorPosition()
+    local cursorPosition = Input.GetCursorPosition()
     local absoluteX, absoluteY = API.GetAbsolutePosition(object)
     
     return cursorPosition.x >= absoluteX and cursorPosition.x <= absoluteX + object.width and
