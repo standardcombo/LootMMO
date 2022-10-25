@@ -111,10 +111,15 @@ function Tick(deltaTime)
 	local currentPhase = ability:GetCurrentPhase()
 
 	PANEL.visibility = Visibility.INHERIT
-
-	-- Update the level text for the ability
-	NAME_TEXT.text = currentAbility.name
 	
+	local potion_data = _G['Potions.Equipment'].FindFromAssetIdName(currentAbility.name)
+
+	if potion_data ~= nil then
+		NAME_TEXT.text = potion_data.name
+	else
+		NAME_TEXT.text = currentAbility.name
+	end
+
 	if not (currentPhase == AbilityPhase.COOLDOWN) then
 		PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 	else
