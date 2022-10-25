@@ -8,6 +8,8 @@ Character Cheats
 -----------------
 ]]
 
+local TELEPORT_LOCATIONS = script:GetCustomProperty("TeleportLocations"):WaitForObject()
+
 while not _G["Character.Constructor"] do
 	Task.Wait()
 end
@@ -155,6 +157,22 @@ cheats = {
 		end,
 		description = "Add xp to character",
 	},
+
+	--- Example: /teleport Cauldron
+	--- Add more locations in the Teleport Locations group inside the Cheats script
+	--- in the Hierarchy.
+	--- Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs
+	["/teleport"] = {
+		func = function(player, _, splitString)
+			local location = TELEPORT_LOCATIONS:FindChildByName(splitString[2])
+
+			if location ~= nil then
+				player:SetWorldPosition(location:GetWorldPosition())
+				player:SetWorldRotation(location:GetWorldRotation())
+			end
+		end,
+		description = "Teleports to various areas for quick testing.",
+	}
 }
 
 

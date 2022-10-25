@@ -19,7 +19,7 @@ Objects {
   ChildIds: 1578154111882892155
   ChildIds: 11825627350939597535
   ChildIds: 18436610494286568512
-  ChildIds: 13620541732778982903
+  ChildIds: 12785624939370825655
   ChildIds: 16937607096047638534
   ChildIds: 2130210533214886950
   ChildIds: 1888181817911919837
@@ -1355,7 +1355,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13620541732778982903
+  Id: 12785624939370825655
   Name: "Other Components"
   Transform {
     Scale {
@@ -1365,29 +1365,33 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 4594542242463950141
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Other Components"
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 17480609481426325531
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Cheats"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 5338087018861399484
-    }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Other Components"
+  }
+  InstanceHistory {
+    SelfId: 12785624939370825655
+    SubobjectId: 4594542242463950141
+    InstanceId: 13620541732778982903
+    TemplateId: 5338087018861399484
+    WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 18436610494286568512
