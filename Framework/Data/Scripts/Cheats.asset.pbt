@@ -1,6 +1,6 @@
 Assets {
   Id: 5038874356007781134
-  Name: "CharacterTest"
+  Name: "Cheats"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
