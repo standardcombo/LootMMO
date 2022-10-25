@@ -159,7 +159,7 @@ end)
 
 function Tick(dt)
 	if isDragging then
-		local MouseLocation = UI.GetCursorPosition()
+		local MouseLocation = Input.GetCursorPosition()
 		local absPos        = dragpanel:GetAbsolutePosition()
 		dragpanel.x         = CoreMath.Lerp(absPos.x, MouseLocation.x, .2)
 		dragpanel.y         = CoreMath.Lerp(absPos.y, MouseLocation.y, .2)
