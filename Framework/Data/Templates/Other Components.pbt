@@ -1047,6 +1047,16 @@ Assets {
                 Name: "Name"
                 String: "Character Equipper"
               }
+              Overrides {
+                Name: "Position"
+                Vector {
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
             }
           }
           ParameterOverrideMap {
