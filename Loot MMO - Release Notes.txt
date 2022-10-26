@@ -1,4 +1,21 @@
 
+**Version 1.1.0**
+Improvements
+- Polished Cauldron UI
+- Added cheat "/teleport" that takes an additional parameter of either: Cauldron, Crafting, Map, Workshop, Pinball or Chairs.
+- Potions will now display their name instead of their asset ID string.
+- Added flyup text with throw instructions when pickup.
+- Renamed "CharacterTest" to "Cheats" in the hierarchy, making it easier to find.
+- Combat Dependencies: Added CombatEvents component that adds priority order for event listeners.
+
+Bugs
+- Fixed an error in the LDF Common treasure table, where it would try to drop "Bone", which doesn't exist.
+- Fixed LeashZone healing by connecting to CombatEvents with the improved priority orders.
+
+Other
+- Fixed various warnings related to deprecated API.
+- Core Update changed Material Bark Redwood 01 to Bark Redwood Avanced 01.
+
 **Version 1.0.4**
 - Fixed an error if a player left the game while throwing a chair.
 - Ability key labels now dynamically update based on action names.
