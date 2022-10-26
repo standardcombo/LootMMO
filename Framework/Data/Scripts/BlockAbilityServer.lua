@@ -15,7 +15,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER I
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --]]
 
---v0.12 NPC Kit
+--v0.14 NPC Kit
 
 -- Internal custom properties
 local EQUIPMENT = script:FindAncestorByType('Equipment')
@@ -58,7 +58,7 @@ function OnAbilityCast(ability)
 
 	owner.animationStance = ABILITY_ANIMATION_STANCE
     releasedHandle = owner.bindingReleasedEvent:Connect(OnShieldReleased)
-    goingToTakeDamageListener = Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+    goingToTakeDamageListener = _G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
 end
 
 -- nil OnAbilityExecute(Ability)

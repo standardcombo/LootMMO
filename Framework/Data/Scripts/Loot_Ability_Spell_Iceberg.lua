@@ -1,3 +1,9 @@
+--[[
+	Loot Ability Spell: Iceberg
+	v1.0.1 - 2022/10/25
+	by: Blaking, Luapi
+]]
+
 local MAGE_ABILITY_BREAK_BASIC = script:GetCustomProperty('MageIcebergBreakBasic')
 local MAGE_ORC_ABILITY_ATTACHMENT_BASIC = script:GetCustomProperty('MageOrcIcebergAttachmentBasic')
 local function COMBAT()
@@ -54,7 +60,7 @@ function Execute()
     local DamageRadius = 500
     CurrentIceCube:SetWorldScale(Vector3.New(CoreMath.Round(DamageRadius / 300, 3)))
     CurrentIceCube:AttachToPlayer(ABILITY.owner, 'root')
-    goingToTakeDamageListener = Events.Connect('CombatWrapAPI.GoingToTakeDamage', OnGoingToTakeDamage)
+    goingToTakeDamageListener = _G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
     Task.Wait(0.5)
 end
 
