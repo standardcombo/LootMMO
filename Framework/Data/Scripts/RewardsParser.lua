@@ -1,6 +1,6 @@
 --[[
 	Rewards Parser
-	v1.0 - 2022/10/20
+	v1.0.1 - 2022/10/25
 	by: standardcombo
 	
 	Parses reward instructions for Loot Drops, Quests, or any other system.
@@ -78,6 +78,9 @@ function _Parse(player, dataTable, rowId)
 	end
 	
 	local entry = dataTable[rowId]
+	if not entry then
+		error("Failed to parse rewards for row: "..tostring(rowId))
+	end
 	local rewards = SplitCommaSeparatedData(entry.rewards)
 	for _,rewardInstruction in ipairs(rewards) do
 		_GrantReward(player, dataTable, rewardInstruction)

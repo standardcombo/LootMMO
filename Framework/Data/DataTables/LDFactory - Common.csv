@@ -2,7 +2,7 @@
 "Nothing","1",""
 "Coins","1","Material(Coins=RNG[3-10])"
 "CoinsPlusMat","1","Material(Coins=RNG[1-5]), Wait(1), Ref(RndMat)"
-"RndMat","0","Ref(Wood | Metal | Leather | Cotton | Linen | Silk | Bone)"
+"RndMat","0","Ref(Wood | Metal | Leather | Cotton | Linen | Silk)"
 "Wood","0","Material(Wood=1 | Wood=2)"
 "Metal","0","Material(Metal=1)"
 "Leather","0","Material(Leather=1)"
