@@ -12,6 +12,7 @@ Game.playerJoinedEvent:Connect(function(player)
 	for abilityName,template in pairs(TEMPLATES) do
 		local ability = World.SpawnAsset(template, spawnParams)
 		ability.owner = player
+		ability:AttachToPlayer(player, "root")
 		player.serverUserData[abilityName] = ability
 	end
 end)

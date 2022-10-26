@@ -21,11 +21,13 @@ end
 Game.playerJoinedEvent:Connect(function(player)
 	local throwAbility = World.SpawnAsset(THROW_ABILITY_TEMPLATE)
 	throwAbility.owner = player
+	throwAbility:AttachToPlayer(player, "root")
 	player.serverUserData.throwAbility = throwAbility
 	throwAbility.isEnabled = false
 	
 	local pickupAbility = World.SpawnAsset(PICKUP_ABILITY_TEMPLATE)
 	pickupAbility.owner = player
+	pickupAbility:AttachToPlayer(player, "root")
 	player.serverUserData.pickupAbility = pickupAbility
 end)
 
