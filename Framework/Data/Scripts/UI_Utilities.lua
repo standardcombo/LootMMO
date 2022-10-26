@@ -20,7 +20,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 -------------------------------------------------------------------------------
 --- @type UI_Utilities
 local API = {}
-API.version = 0.3
+API.version = 0.4
 API.name = 'UI_Utilities'
 API.desc = 'utilities for UI scaling and absolute position'
 

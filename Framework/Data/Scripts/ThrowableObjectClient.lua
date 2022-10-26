@@ -1,6 +1,6 @@
 --[[
 	Throwable Object - Client
-	v1.0.1
+	v1.1.0 - 2022/10/25
 	by: standardcombo
 	
 	Implements an environment object that can be picked up and thrown.

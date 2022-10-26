@@ -1,3 +1,8 @@
+--[[
+	Cauldron UI
+	v1.0.1 - 2022/10/25
+	by: Blaking, CommanderFoo
+]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]
 local Root = script.parent

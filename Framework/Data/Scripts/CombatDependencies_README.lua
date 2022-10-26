@@ -1,6 +1,6 @@
 --[[
 	Combat Dependencies - Template
-	v1.3.0
+	v1.3.0 - 2022/10/25
 	by: standardcombo, WaveParadigm
 	
 	Add a copy of the Combat Dependencies template to the hierarchy.

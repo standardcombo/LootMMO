@@ -1,3 +1,8 @@
+--[[
+  Pirate Pinball - Client Game Controller
+  v1.1 - 2022/10/25
+  by: Varglbargl
+]]
 local BALL = script:GetCustomProperty("PinballBall")
 local SPAWN_POINT = script:GetCustomProperty("RespawnPoint"):WaitForObject():GetWorldPosition()
 local TILT_RESPAWN = script:GetCustomProperty("TiltRespawn"):WaitForObject():GetWorldPosition()

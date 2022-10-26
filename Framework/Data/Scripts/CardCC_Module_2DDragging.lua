@@ -1,3 +1,11 @@
+--[[
+    2D Dragging
+    v1.0.1 - 2022/10/25
+    by: ?
+
+    A component that implements drag-and-drop operations in UI.
+]]
+
 local componentName = '2D_Dragging'
 
 local Root = script:GetCustomProperty('Root'):WaitForObject()

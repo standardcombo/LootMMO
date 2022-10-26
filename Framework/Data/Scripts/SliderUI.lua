@@ -1,3 +1,6 @@
+
+-- v1.0.1 - 2022/10/25
+
 local Bar = script:GetCustomProperty('Bar'):WaitForObject()
 local Cursor = script:GetCustomProperty('Cursor'):WaitForObject()
 local Root = script:GetCustomProperty('Root'):WaitForObject()
