@@ -1,6 +1,6 @@
 --[[
 	Character Cheats 
-	v1.0.0 - 2022/10/26
+	v1.0.1 - 2022/10/26
 	by: Blaking, CommanderFoo
 	
 	To help with testing various parts of the game, cheats can be used to give

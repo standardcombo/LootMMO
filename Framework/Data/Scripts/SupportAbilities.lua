@@ -1,3 +1,17 @@
+--[[
+	Support Abilities
+	v1.1 - 2022/10/26
+	by: standardcombo, Luapi
+	
+	Takes any number of abilities and spawns a copy of each, per player,
+	as they join the game.
+	
+	Abilities are added to this script as custom properties. The name
+	of the property doesn't affect this process.
+
+	The abilities are assigned to each player's serverUserData table,
+	allowing global access. The key in the table is the custom property name.
+--]]
 
 local API = {}
 _G.SupportAbilities = API
