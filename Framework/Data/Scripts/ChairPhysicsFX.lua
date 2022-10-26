@@ -1,7 +1,17 @@
+--[[
+	Chair Physics FX
+	v1.1 - 2022/10/26
+	by: standardcombo
+	
+	Handles the collision of throwable object (e.g. Chair).
+	Deals damage to impacted Damageable Objects and plays sound effects.
+]]
 
 local IMPACT_SOUND = script:GetCustomProperty("ImpactSound"):WaitForObject()
+local MIN_TIME_TO_DAMAGE = 0.2
 
 local sfxCooldown = 0
+local spawnTime = time()
 
 
 function IsInvulnerable(target)
@@ -15,6 +25,8 @@ function IsInvulnerable(target)
 end
 
 script.parent.collidedEvent:Connect(function(_, hitResult)
+	if time() - spawnTime < MIN_TIME_TO_DAMAGE then return end
+	
 	local velocity = script.parent:GetVelocity()
 	local speedSquared = velocity.sizeSquared
 	
