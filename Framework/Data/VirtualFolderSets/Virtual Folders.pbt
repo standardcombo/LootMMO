@@ -515,5 +515,38 @@ Assets {
       VirtualFolderPath: "Areas and Player Lots"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      PlatformAssetType: 29
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      PlatformAssetType: 31
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      VirtualFolderPath: "Example"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      VirtualFolderPath: "Example"
+      VirtualFolderPath: "Actors"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Talking Heads"
+      VirtualFolderPath: "Example"
+      VirtualFolderPath: "Audio"
+      PlatformAssetType: 5
+    }
   }
 }

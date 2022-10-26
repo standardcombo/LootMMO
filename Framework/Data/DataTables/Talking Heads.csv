@@ -1,0 +1,9 @@
+"Key[String]","Name[String]","Message[String]","RandomMessages[Asset Reference]","Actor[Asset Reference]","PositionOffset[Vector3]","Stance[String]","Animation[String]","AnimationDelay[Float]","AnimationLoop[Bool]","Audio[Asset Reference]","DisplayDuration[Float]","PanelWidth[Float]","PanelHeight[Float]"
+"Karl Laugh","Prince TEDATHOR","You think you can beat me {name}?
+
+I am too powerful for you. I can not be beat.","0BADBADBADBADBAD","A0A22BAD410CA3E1","0.000000,0.000000,0.000000","","unarmed_laugh","1.0","False","7815776ABEB067E8","7.0","0.0","0.0"
+"Wolfy Growl","Wolfy","*Growl*","0BADBADBADBADBAD","69CD0B79BB288F8A","-124.625999,0.000000,38.657001","","unarmed_bite","0.5","False","0BADBADBADBADBAD","0.0","0.0","0.0"
+"Welcome","Kamil","Welcome {name}, I hope you are having a wonderful day.","B4599676B610E1C5","2682FCB218410B9C","0.000000,0.000000,0.000000","","","0.0","False","0BADBADBADBADBAD","0.0","0.0","0.0"
+"TestingStuff","Evil Demon","Go away, {name}.
+
+I am too powerful a demon for you, pest.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_laugh","1.0","False","78B6CCDA18631070","7.0","0.0","0.0"
