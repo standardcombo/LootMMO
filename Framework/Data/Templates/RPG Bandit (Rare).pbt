@@ -710,7 +710,7 @@ Assets {
           Overrides {
             Name: "cs:MuzzleFlash"
             AssetReference {
-              Id: 11731221552292390181
+              Id: 6127107864223153877
             }
           }
           Overrides {
