@@ -176,5 +176,14 @@ Assets {
         AssetId: "UI_Fantasy_Icon_CrystalBall"
       }
     }
+    Assets {
+      Id: 40318633574378902
+      Name: "Icon Scroll"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Scroll"
+      }
+    }
   }
 }

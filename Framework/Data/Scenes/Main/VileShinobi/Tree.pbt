@@ -497,6 +497,7 @@ Objects {
   }
   ParentId: 10671278793063807372
   ChildIds: 12367323923389280920
+  ChildIds: 18056535583387865548
   ChildIds: 367015528366833324
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -520,7 +521,7 @@ Objects {
 }
 Objects {
   Id: 367015528366833324
-  Name: "ClientContext"
+  Name: "AnnoyedDemon"
   Transform {
     Location {
       X: -2396.46509
@@ -581,7 +582,7 @@ Objects {
     }
   }
   ParentId: 367015528366833324
-  ChildIds: 14152960240423732082
+  ChildIds: 1091273998560571458
   ChildIds: 18095125044842127298
   ChildIds: 2049427570254444991
   ChildIds: 10856701100396169533
@@ -151895,21 +151896,109 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 1091273998560571458
+  Name: "StanceSet"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15027106573536119336
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TargetCharacter"
+      ObjectReference {
+        SelfId: 15027106573536119336
+      }
+    }
+    Overrides {
+      Name: "cs:SetStance"
+      String: "unarmed_idle_relaxed"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6924037017478332481
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18056535583387865548
+  Name: "TestDemonQuestWithTalking"
+  Transform {
+    Location {
+      X: -2447.86206
+      Y: -4418.77588
+      Z: -50441.875
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6386077687221545343
+  ChildIds: 14152960240423732082
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: Local
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 14152960240423732082
   Name: "Trigger"
   Transform {
     Location {
     }
     Rotation {
-      Yaw: -6.83019289e-06
+      Yaw: -54.0534706
     }
     Scale {
-      X: 4.04348
-      Y: 4.04348
-      Z: 4.04348
+      X: 3
+      Y: 3
+      Z: 3
     }
   }
-  ParentId: 15027106573536119336
+  ParentId: 18056535583387865548
   ChildIds: 6169043504865437903
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
@@ -151925,13 +152014,13 @@ Objects {
   }
   Trigger {
     Interactable: true
-    InteractionLabel: "Talk to dragon?"
+    InteractionLabel: "Annoy The Demon?"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
     TriggerShape_v2 {
-      Value: "mc:etriggershape:sphere"
+      Value: "mc:etriggershape:box"
     }
     InteractionTemplate {
       Id: 841534158063459245
