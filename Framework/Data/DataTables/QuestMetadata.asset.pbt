@@ -69,6 +69,15 @@ Assets {
       }
     }
     Assets {
+      Id: 3939487665446591130
+      Name: "Axe"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Axe"
+      }
+    }
+    Assets {
       Id: 338139243958881271
       Name: "Icon Skull"
       PlatformAssetType: 9
