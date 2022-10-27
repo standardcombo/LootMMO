@@ -1,3 +1,6 @@
+
+-- v1.0.1 - 2022/10/25
+
 local Bar = script:GetCustomProperty('Bar'):WaitForObject()
 local Cursor = script:GetCustomProperty('Cursor'):WaitForObject()
 local Root = script:GetCustomProperty('Root'):WaitForObject()
@@ -48,7 +51,7 @@ local function UpdateSlider()
 end
 
 local function UpdateSliderMouse()
-	local mouse = UI.GetCursorPosition()
+	local mouse = Input.GetCursorPosition()
 	mouse.x = math.max(Slider.x, math.min(Slider.x + Bar.width, mouse.x))
 	local NewPercent = CalPercent(mouse)
 	Slider.updateEvent:Trigger(Slider, NewPercent)

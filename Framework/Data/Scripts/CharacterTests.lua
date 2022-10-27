@@ -1,17 +1,98 @@
 --[[
-===============
-Character Cheats 
-===============
-	AdminList - A list of admins able to use commands.
+	Character Cheats 
+	v1.0.1 - 2022/10/26
+	by: Blaking, CommanderFoo
 	
-	Cheats exploits used for testing 
------------------
-]]
+	To help with testing various parts of the game, cheats can be used to give
+	materials, loot, and other things. These commands can only be used by players
+	who are in the AdminList table.
+
+	Cheats are enabled in local preview by default. But for multiplayer, you will 
+	need to add your Core username to the AdminList below in the script.
+
+	Commands:
+
+	/help
+		Lists all the commands in the Cheats table along with the description.
+
+		Example: /help
+
+	/class
+		Changes the class of the character. See the Class_Description data table
+		for a list of class names that can be used.
+
+		Example: /class Mage
+
+	/newchar
+		Creates a new character. This will reset things like XP, upgrade points, but
+		not quest progress.
+
+		Example: /newchar
+
+	/stat
+		Modify the stats of the character. See the Class_Stats table for the colums 
+		that can be used.
+
+		Example: /stat "B" 5000
+
+	/addpoint
+		Adds an upgrade point for the character to spend on an ability.
+
+		Example: /addpoint
+	
+	/additem
+		Adds an item or material to the players inventory if there is space
+		in the stack. See the Loot Items and Loot Materials data tables for
+		the names of items that can be added.
+
+		Example: /additem "Titanium Ring" 1
+		Example: /additem "Metal" 99
+		Example: /additem "Coins" 10000
+
+	/removeitem
+		Removes an item from the players inventory. See the Loot Items and Loot
+		Materials data tables.
+
+		Example: /removeitem "Metal" 1
+	
+	/classes
+		Lists all the classes available in the Chat window.
+
+		Example: /classes
+
+	/mystats
+		Lists all the stats and level for the character in the Chat window.
+
+		Example: /mystats
+
+	/cheat
+		Sets character to max rank and unlocks all abilities for that class.
+
+		Example: /cheat
+
+	/addxp
+		Adds XP to the character.
+
+		/addxp 500
+
+	/teleport
+		Teleports to various locations around the Tavern to speed up testing. Add 
+		more locations in the Teleport Locations group inside the Cheats script in
+		the Hierarchy.
+
+		Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs
+
+		Example: /teleport Chairs
+--]]
+
+local TELEPORT_LOCATIONS = script:GetCustomProperty("TeleportLocations"):WaitForObject()
 
 while not _G["Character.Constructor"] do
 	Task.Wait()
 end
 
+--- Add/Remove player names to the table below that can use cheats.
+--- Note: Local preview mode doesn't need names added.
 local AdminList = {
 	["blaking707"] = true,
 	["CommanderFoo"] = true,
@@ -141,8 +222,8 @@ cheats = {
 	["/progress"] = {
 		func = function(player, _, splitString)
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-			local Progress = newCharacter:GetComponent("Progress")
-			Progress:SetProgression(splitString[1], splitString[2] == "true")
+			local Progress = newCharacter:GetComponent("Progression")
+			Progress:SetProgression(splitString[2], splitString[3] == "true")
 		end,
 		description = "Set character progress flags",
 	},
@@ -154,9 +235,18 @@ cheats = {
 		end,
 		description = "Add xp to character",
 	},
+	["/teleport"] = {
+		func = function(player, _, splitString)
+			local location = TELEPORT_LOCATIONS:FindChildByName(splitString[2])
+
+			if location ~= nil then
+				player:SetWorldPosition(location:GetWorldPosition())
+				player:SetWorldRotation(location:GetWorldRotation())
+			end
+		end,
+		description = "Teleports to various areas for quick testing.",
+	}
 }
-
-
 
 function OnReceiveMessage(player, params)
 	if not AdminList[player.name] and not Environment.IsPreview() then return end

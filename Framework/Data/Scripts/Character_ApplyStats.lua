@@ -1,9 +1,12 @@
+--[[
+	Character Apply Stats
+	v1.0.1 - 2022/10/25
+	by: Blaking
+	
+	Handles player stats that are applied on spawn and damage taken.
+	attackTagsHandler handles how attacks are proceced.
+]]
 
-------------------------------------------------------------------
--- Handles player stats that are applied on spawn and damage taken. 
-
--- attackTagsHandler handles how attacks are procee
-------------------------------------------------------------------
 while not _G["Character.EquipAPI"] do
 	Task.Wait()
 end
@@ -65,7 +68,7 @@ local function playerEquipped(character, player)
 end
 
 
-local function GoingToTakeDamage(attackData)
+local function OnGoingToTakeDamage(attackData)
 	local attacked = attackData.object
 	local character = EApi.GetCurrentCharacter(attacked)
 	if not character then
@@ -84,5 +87,5 @@ local function GoingToTakeDamage(attackData)
 	end
 end
 
-Events.Connect("CombatWrapAPI.GoingToTakeDamage", GoingToTakeDamage)
+_G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage, 200)
 EApi.playerEquippedEvent:Connect(playerEquipped)

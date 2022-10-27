@@ -7,7 +7,7 @@ Assets {
       RootId: 4105394437550983763
       Objects {
         Id: 4105394437550983763
-        Name: "Shift"
+        Name: "AbilityDisplay"
         Transform {
           Scale {
             X: 1
@@ -1518,8 +1518,8 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Control {
-          Width: -2
-          Height: -2
+          Width: 4
+          Height: 4
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"

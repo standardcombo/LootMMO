@@ -21,6 +21,26 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 10029502995319538580
+      value {
+        Overrides {
+          Name: "Width"
+          Int: 1700
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16553177687411290700
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 15017071524491817913
     }

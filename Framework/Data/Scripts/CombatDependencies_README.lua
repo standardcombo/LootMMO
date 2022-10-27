@@ -1,6 +1,6 @@
 --[[
 	Combat Dependencies - Template
-	v1.2.0
+	v1.3.0 - 2022/10/25
 	by: standardcombo, WaveParadigm
 	
 	Add a copy of the Combat Dependencies template to the hierarchy.
@@ -9,6 +9,9 @@
 	
 	- Combat Wrap API
 	  Generalizes combat between players and NPCs.
+	  
+	- Combat Events
+	  Implements priority order on top of events fired by the Wrap API.
 	  
 	- Player Homing Targets
 	  Allows NPCs and weapons to use homing shots against players.

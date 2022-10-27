@@ -20,7 +20,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 -------------------------------------------------------------------------------
 --- @type UI_Utilities
 local API = {}
-API.version = 0.3
+API.version = 0.4
 API.name = 'UI_Utilities'
 API.desc = 'utilities for UI scaling and absolute position'
 
@@ -114,7 +114,7 @@ function API.IsCursorOver(object, includeHidden)
         return false
     end
 
-    local cursorPosition = UI.GetCursorPosition()
+    local cursorPosition = Input.GetCursorPosition()
     local absoluteX, absoluteY = API.GetAbsolutePosition(object)
     
     return cursorPosition.x >= absoluteX and cursorPosition.x <= absoluteX + object.width and

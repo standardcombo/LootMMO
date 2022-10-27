@@ -1,3 +1,8 @@
+--[[
+	Cauldron UI
+	v1.0.1 - 2022/10/25
+	by: Blaking, CommanderFoo
+]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]
 local Root = script.parent
@@ -22,7 +27,7 @@ local function Release()
 	for index, slot in ipairs(PotionSlots:GetChildren()) do
 		if slot.isEnabled then
 			local position   = slot:GetAbsolutePosition()
-			local mousePos   = UI.GetCursorPosition()
+			local mousePos   = Input.GetCursorPosition()
 			local halfwidth  = slot.width / 2
 			local halfheight = slot.height / 2
 			if mousePos.x >= position.x - halfwidth and mousePos.x <= position.x + halfwidth then
@@ -37,6 +42,7 @@ local function Release()
 end
 
 local function Drag(point)
+
 	local potion = point.clientUserData.potion
 	dragpanel.clientUserData.potion = potion
 	dragpanel:SetImage(PotionsAPI.GetIcon(potion))
@@ -60,6 +66,7 @@ function StartUp()
 		local potionIcon = Get(potionPoint, "PotionIcon")
 		local potionName = Get(potionPoint, "PotionName")
 		local Button = Get(potionPoint, "Drag")
+
 		Button.pressedEvent:Connect(function()
 			Drag(potionPoint)
 		end)
@@ -69,9 +76,9 @@ function StartUp()
 		potionName.text = PotionsAPI.GetName(key)
 		potionIcon:SetImage(PotionsAPI.GetIcon(key))
 		potionPoint.y = y
-		potionPoint.x = -240 + (count % 4) * 160
+		potionPoint.x = -120 + (count % 3) * 120
 		count = count + 1
-		if (count % 4) == 0 then y = y + 150 end
+		if (count % 3) == 0 then y = y + 150 end
 	end
 
 	for key, value in pairs(PotionSlots:GetChildren()) do
@@ -159,7 +166,7 @@ end)
 
 function Tick(dt)
 	if isDragging then
-		local MouseLocation = UI.GetCursorPosition()
+		local MouseLocation = Input.GetCursorPosition()
 		local absPos        = dragpanel:GetAbsolutePosition()
 		dragpanel.x         = CoreMath.Lerp(absPos.x, MouseLocation.x, .2)
 		dragpanel.y         = CoreMath.Lerp(absPos.y, MouseLocation.y, .2)

@@ -1,3 +1,8 @@
+--[[
+	Potion Auto-Equip
+	v1.0.1 - 2022/10/25
+	by: Blaking
+]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]
 local Equipper = _G["Equipper"]
@@ -40,7 +45,7 @@ local function PotionsChanged(character, PotionComponent, player)
 	spawnnedEquipment[character.id] = spawnnedEquipment[character.id] or {}
 	for i = 1, PotionComponent.slotCount do
 		if Object.IsValid((spawnnedEquipment[character.id])[i]) then
-			local potion = PotionsAPI.FindFromAssetId(spawnnedEquipment[character.id][i].sourceTemplateId)
+			local potion = PotionsAPI.FindByAssetId(spawnnedEquipment[character.id][i].sourceTemplateId)
 			if potion and potion.id ~= PotionComponent:GetEquipped(i) then
 				UnequipEquipment(character, i)
 				SpawnEquipment(character, PotionComponent, player, i)

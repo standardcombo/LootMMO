@@ -1,3 +1,9 @@
+--[[
+	Loot Ability Spell: Roll
+	v1.0.1 - 2022/10/25
+	by: Blaking, Luapi
+]]
+
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
@@ -33,6 +39,6 @@ function OnDestroyListener()
     end
 end
 
-goingToTakeDamageListener = Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+goingToTakeDamageListener = _G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
 ABILITY.destroyEvent:Connect(OnDestroyListener)
 ABILITY.castEvent:Connect(Cast)

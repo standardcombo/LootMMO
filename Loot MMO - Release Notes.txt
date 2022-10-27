@@ -1,4 +1,25 @@
 
+**Version 1.1.0**
+Improvements
+- Polished Cauldron UI
+- Added cheat "/teleport" that takes an additional parameter of either: Cauldron, Crafting, Map, Workshop, Pinball or Chairs.
+- Added a damage delay to throwable chairs, so it's less likely players will kill themselves when throwing.
+- Added flyup text with throw instructions when you pickup a chair.
+- Renamed "CharacterTest" to "Cheats" in the hierarchy, making it easier to find.
+- Combat Dependencies: Added CombatEvents component that adds priority order for event listeners.
+- Potions will now display their name instead of their asset ID string.
+- Adjusted the outlines on the ability HUD buttons.
+
+Bugs
+- Fixed chair throwing, inside and out of the tavern.
+- Fixed LeashZone healing by connecting to CombatEvents with the improved priority orders.
+- Fixed an error in the LDF Common treasure table, where it would try to drop "Bone", which doesn't exist.
+
+Other
+- Added documentation headers to several scripts.
+- Fixed various warnings related to deprecated API.
+- Core Update changed Material Bark Redwood 01 to Bark Redwood Avanced 01.
+
 **Version 1.0.4**
 - Fixed an error if a player left the game while throwing a chair.
 - Ability key labels now dynamically update based on action names.

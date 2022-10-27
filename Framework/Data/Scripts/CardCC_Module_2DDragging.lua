@@ -1,3 +1,11 @@
+--[[
+    2D Dragging
+    v1.0.1 - 2022/10/25
+    by: ?
+
+    A component that implements drag-and-drop operations in UI.
+]]
+
 local componentName = '2D_Dragging'
 
 local Root = script:GetCustomProperty('Root'):WaitForObject()
@@ -92,7 +100,7 @@ function CardCC_Class_Card:Drag()
         self.returnPosition = self:GetLocalPosition()
         self.dragged = true
         local StartPosition = UiToVector2(self.spawnedCard)
-        local StartCursor = UI.GetCursorPosition()
+        local StartCursor = Input.GetCursorPosition()
         Task.Spawn(
             function()
                 if dragging ~= self then
@@ -100,7 +108,7 @@ function CardCC_Class_Card:Drag()
                 end 
                 self.draggedEvent:Trigger(self)
                 while self.dragged and Object.IsValid(self.spawnedCard) do
-                    local offset = UI.GetCursorPosition() - StartCursor
+                    local offset = Input.GetCursorPosition() - StartCursor
                     self.spawnedCard.x = StartPosition.x + offset.x
                     self.spawnedCard.y = StartPosition.y + offset.y
                     Task.Wait()

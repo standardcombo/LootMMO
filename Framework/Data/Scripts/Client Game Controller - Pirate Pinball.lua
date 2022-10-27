@@ -1,3 +1,8 @@
+--[[
+  Pirate Pinball - Client Game Controller
+  v1.1 - 2022/10/25
+  by: Varglbargl
+]]
 local BALL = script:GetCustomProperty("PinballBall")
 local SPAWN_POINT = script:GetCustomProperty("RespawnPoint"):WaitForObject():GetWorldPosition()
 local TILT_RESPAWN = script:GetCustomProperty("TiltRespawn"):WaitForObject():GetWorldPosition()
@@ -491,7 +496,7 @@ Events.Connect("DarkPirateMagic", multiballCannon)
 function cursorUpdateLoop()
   if not Object.IsValid(currentPlayer) then return end
 
-  local cursorPos = UI.GetCursorPosition()
+  local cursorPos = Input.GetCursorPosition()
 
   UICursor.x = cursorPos.x
   UICursor.y = cursorPos.y

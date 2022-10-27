@@ -1,6 +1,6 @@
 --[[
 	Leash Zone
-	v1.0
+	v1.0.1 - 2022/10/25
 	by: standardcombo
 	
 	Placed under a trigger that defines the zone. When NPCs exit the trigger/zone
@@ -18,6 +18,10 @@ local LEASH_HEALS = script:GetCustomProperty("LeashHeals") or false
 local leashedNPCs = {}
 
 function FindAiScript(obj)
+	if obj.serverUserData.npcAiScript then
+		return obj.serverUserData.npcAiScript
+	end
+	
 	if not obj.FindTemplateRoot then return end
 	
 	local templateRoot = obj:FindTemplateRoot()
@@ -35,6 +39,7 @@ function FindAiScript(obj)
 		local scripts = templateRoot:FindDescendantsByType("Script")
 		for _,s in ipairs(scripts) do
 			if s.context.SetObjective then
+				obj.serverUserData.npcAiScript = s
 				return s
 			end
 		end
@@ -73,10 +78,13 @@ function OnGoingToTakeDamage(attackData)
 	local aiScript = FindAiScript(attackData.object)
 	if aiScript and leashedNPCs[aiScript] then
 		if LEASH_HEALS then
-			attackData.damage.amount = -attackData.damage.amount
+			if attackData.damage.amount > 0 then
+				attackData.damage.amount = -attackData.damage.amount
+			end
 		else
 			attackData.damage.amount = 0
 		end
 	end
 end
-Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+_G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage, 0)
+

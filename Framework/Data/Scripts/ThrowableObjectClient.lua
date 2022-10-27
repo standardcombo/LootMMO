@@ -1,6 +1,6 @@
 --[[
 	Throwable Object - Client
-	v1.0
+	v1.1.0 - 2022/10/25
 	by: standardcombo
 	
 	Implements an environment object that can be picked up and thrown.
@@ -48,6 +48,9 @@ end
 
 function OnInteracted(trigger, player)
 	if player.clientUserData.hasThrowable then return end
+	UI.ShowFlyUpText(Input.GetActionInputLabel("Throw") .. " to Throw.", 
+	PLAYER:GetWorldPosition() + Vector3.UP * 110,
+	{isBig = true, duration = 1.5})
 	if isOnGround then
 		for _,ability in ipairs(player:GetAbilities()) do
 			if ability.name == "PickupAbility" then

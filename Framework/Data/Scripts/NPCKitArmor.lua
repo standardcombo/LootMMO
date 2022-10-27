@@ -1,6 +1,6 @@
 --[[
 	NPC Kit Armor
-	v1.0
+	v1.0.1 - 2022/10/25
 	by: standardcombo
 	
 	Place inside an NPC or an Equipment to give them armor.
@@ -111,5 +111,5 @@ function OnGoingToTakeDamage(attackData)
 	end
 end
 
-Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+_G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
 

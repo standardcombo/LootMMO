@@ -1,6 +1,6 @@
 --[[
 	Equipment Critical Chance
-	v1.0
+	v1.0.1 - 2022/10/25
 	by: standardcombo
 	
 	Place this inside a weapon to apply critical chance and multipier.
@@ -26,5 +26,5 @@ function OnGoingToTakeDamage(attackData)
 	end
 end
 
-Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
+_G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage, 50)
 

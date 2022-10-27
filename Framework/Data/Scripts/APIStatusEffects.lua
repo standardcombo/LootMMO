@@ -1,7 +1,17 @@
+--[[
+	Status Effects
+	v0.14.0 - 2022/10/25
+	by: Blaking, Luapi, standardcombo
+	
+	TODO: Documentation
+	
+--]]
+
 require(script:GetCustomProperty("NPCManager"))
 NPCMANAGER = _G["standardcombo.NPCKit.NPCManager"]
 
 local API = {}
+_G["StatusEffects.API"] = API
 
 local STATE_TRACKER_GROUP = nil
 
@@ -593,8 +603,9 @@ function OnGoingToTakeDamage(attackData)
 	end
 end
 
-Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
 
+if _G.CombatEvents then
+	_G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
+end
 
-_G["StatusEffects.API"] = API
 return API
