@@ -25,6 +25,7 @@ Objects {
   ChildIds: 1882718114171607823
   ChildIds: 3240051364922901556
   ChildIds: 5973387218209979504
+  ChildIds: 5005335861699929259
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -37,6 +38,43 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5005335861699929259
+  Name: "EquipOnJoin"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2915611009592338127
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

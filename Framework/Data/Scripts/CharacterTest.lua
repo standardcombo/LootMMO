@@ -14,7 +14,8 @@ end
 
 local AdminList = {
 	["blaking707"] = true,
-	["CommanderFoo"] = true
+	["CommanderFoo"] = true,
+	["Bot1"] = true
 }
 
 local character = _G["Character.Constructor"]

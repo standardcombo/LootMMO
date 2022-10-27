@@ -25,14 +25,14 @@ local API_ACTIVE = require(script:GetCustomProperty("APIActiveCoreObjects"))
 local EQUIPMENT = require(script:GetCustomProperty("APIEquipment"))
 ---@type APIDatabase
 local DATABASE = require(script:GetCustomProperty("APIDatabase"))
----@type APICurrency
-local CURRENCY = require(script:GetCustomProperty("APICurrency"))
----@type APIItemPickups
-local ITEM_PICKUPS = require(script:GetCustomProperty("APIItemPickups"))
----@type APIDrops
-local DROPS = require(script:GetCustomProperty("APIDrops"))
----@type APIInventory
-local INVENTORY = require(script:GetCustomProperty("APIInventory"))
+-- ---@type APICurrency
+-- local CURRENCY = require(script:GetCustomProperty("APICurrency"))
+-- ---@type APIItemPickups
+-- local ITEM_PICKUPS = require(script:GetCustomProperty("APIItemPickups"))
+-- ---@type APIDrops
+-- local DROPS = require(script:GetCustomProperty("APIDrops"))
+-- ---@type APIInventory
+-- local INVENTORY = require(script:GetCustomProperty("APIInventory"))
 
 local GROUP = script:GetCustomProperty("Group"):WaitForObject()
 
@@ -249,6 +249,7 @@ function AddEntriesFromGroup(group)
                     numberOfStates = 2
                 end
 
+                entry.lootID = child:GetCustomProperty("LootID")
                 entry.transform = child:GetTransform()
                 entry.worldTransform = child:GetWorldTransform()
                 entry.staticCoreObject = child
@@ -516,7 +517,7 @@ function DropGatherable(player, entry)
             local params = {
                 object = entry.staticCoreObject,
                 killer = player,
-                lootId = "Common", --The string the lootfactory checks the data table for
+                lootId = entry.lootID, --The string the lootfactory checks the data table for
                 position = entry.staticCoreObject:GetWorldPosition(),
                 rotation = entry.staticCoreObject:GetWorldRotation(),
                 resourceType = "XP",

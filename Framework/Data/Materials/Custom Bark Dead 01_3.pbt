@@ -13,7 +13,7 @@ Assets {
     }
     Assets {
       Id: 705109368338738633
-      Name: "Bark Dead Advanced 01"
+      Name: "Bark Dead 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
