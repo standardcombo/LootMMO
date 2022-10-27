@@ -1,0 +1,3 @@
+"id[String]","incidence[Int]","rewards[String]"
+"Coins","1","Loop(5=Coins1)"
+"Coins1","0","Material(Coins=RNG[2-10]), Wait(0.5)"
