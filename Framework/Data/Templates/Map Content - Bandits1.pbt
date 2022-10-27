@@ -10,9 +10,9 @@ Assets {
         Name: "Map Content - Bandits1"
         Transform {
           Scale {
-            X: 35.9957
-            Y: 35.9957
-            Z: 35.9957
+            X: 88.1684723
+            Y: 88.1684723
+            Z: 88.1684723
           }
         }
         ParentId: 3926631431061671274
@@ -105,7 +105,7 @@ Assets {
             }
           }
           Text {
-            Label: "Bandits"
+            Label: "Ruffians"
             Color {
               R: 0.101
               G: 0.0404000059
@@ -189,7 +189,7 @@ Assets {
             }
           }
           Text {
-            Label: "There are thievs!\r\n\r\nGo get \'em..."
+            Label: "A gang of violent thieves is stalking one of the tavern\'s supply routes.\r\n\r\nIt\'s time to teach them good manners."
             Color {
               R: 0.101
               G: 0.0404000059
@@ -262,6 +262,7 @@ Assets {
         ChildIds: 4954659824751472712
         ChildIds: 14963253297293159884
         ChildIds: 17038731645898444252
+        ChildIds: 13912802361478022905
         ChildIds: 7631031054220989802
         ChildIds: 13889562234295466604
         ChildIds: 15435020708220332354
@@ -281,7 +282,7 @@ Assets {
         Control {
           Width: 160
           Height: 240
-          UIX: -100.655205
+          UIX: -99.2451
           UIY: 90.2689209
           RenderTransformPivot {
             Anchor {
@@ -414,7 +415,7 @@ Assets {
           Width: 24
           Height: 24
           UIX: -25.3912964
-          UIY: 21.0799465
+          UIY: 16.6758556
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -486,8 +487,8 @@ Assets {
         Control {
           Width: 24
           Height: 24
-          UIX: 21.5896416
-          UIY: 26.268074
+          UIX: 19.582283
+          UIY: 28.5754986
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -559,8 +560,8 @@ Assets {
         Control {
           Width: 24
           Height: 24
-          UIX: -14.6373749
-          UIY: -20.2922325
+          UIX: 3.73693085
+          UIY: -16.3585453
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -851,9 +852,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: -0.612052917
-          UIY: 57.0875473
-          RotationAngle: 322.238983
+          UIX: -17.8886261
+          UIY: 38.5547256
+          RotationAngle: 265.072723
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -925,9 +926,83 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 11.4997816
-          UIY: 44.8458557
-          RotationAngle: 307.54129
+          UIX: 1.64480972
+          UIY: 47.1685219
+          RotationAngle: 309.550354
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 2653837865451130928
+            }
+            Color {
+              R: 0.0840000063
+              G: 0.0294000041
+              A: 0.512
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13912802361478022905
+        Name: "Segment"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 0.000129773587
+            Yaw: 2.53223442e-10
+            Roll: 3.90012578e-10
+          }
+          Scale {
+            X: 3.16897106
+            Y: 3.16897106
+            Z: 3.16897106
+          }
+        }
+        ParentId: 17742102499553148676
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 14
+          Height: 5
+          UIX: -2.84942317
+          UIY: 22.6130753
+          RotationAngle: 15.6896286
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -999,9 +1074,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 2.44131088
-          UIY: 16.0253906
-          RotationAngle: 28.1128864
+          UIX: 9.16919708
+          UIY: 7.75645113
+          RotationAngle: 65.9875183
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1074,8 +1149,8 @@ Assets {
           Width: 14
           Height: 5
           UIX: -8.97213
-          UIY: 1.65327454
-          RotationAngle: 252.288
+          UIY: 2.37531042
+          RotationAngle: 310.736938
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1147,9 +1222,9 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 1.16707039
-          UIY: -35.9948807
-          RotationAngle: 134.088043
+          UIX: 10.3804226
+          UIY: -40.1421204
+          RotationAngle: 109.783241
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1221,8 +1296,8 @@ Assets {
         Control {
           Width: 14
           Height: 5
-          UIX: 15.1409092
-          UIY: -50.4149971
+          UIX: 21.7985764
+          UIY: -57.818119
           RotationAngle: 134.088043
           RenderTransformPivot {
             Anchor {

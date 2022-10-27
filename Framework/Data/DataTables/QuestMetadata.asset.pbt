@@ -69,12 +69,12 @@ Assets {
       }
     }
     Assets {
-      Id: 3939487665446591130
-      Name: "Axe"
+      Id: 9173135995611232178
+      Name: "Glove"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Icon_Axe"
+        AssetId: "UI_Fantasy_Icon_Glove"
       }
     }
     Assets {
