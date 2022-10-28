@@ -1,6 +1,6 @@
 --[[
 	Character Cheats 
-	v1.0.2 - 2022/10/26
+	v1.0.3 - 2022/10/26
 	by: Blaking, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
@@ -119,6 +119,7 @@ cheats = {
 	},
 	["/class"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local class = newCharacter:GetComponent("Class")
 			if class then
@@ -221,6 +222,7 @@ cheats = {
 	},
 	["/progress"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Progress = newCharacter:GetComponent("Progression")
 			Progress:SetProgression(splitString[2], splitString[3] == "true")
@@ -229,14 +231,17 @@ cheats = {
 	},
 	["/addxp"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local level = newCharacter:GetComponent("Level")
+			if not tonumber(splitString[2]) then return end
 			level:AddXP(tonumber(splitString[2]))
 		end,
 		description = "Add xp to character",
 	},
 	["/teleport"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local location = TELEPORT_LOCATIONS:FindChildByName(splitString[2])
 
 			if location ~= nil then
