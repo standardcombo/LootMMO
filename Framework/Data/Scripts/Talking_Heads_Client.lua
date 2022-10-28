@@ -184,7 +184,9 @@ local function play_talking_head(key, world_actor, world_delay)
 		if(row.PanelWidth > 0) then
 			PANEL.width =  row.PanelWidth
 		end
-
+		if(row.GetResponse) then
+			Events.Broadcast("Talking.GetResponse",row.ResponseKey, row.DisplayDuration)
+		end
 		Task.Spawn(function()
 			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 6)
 			hide = true
