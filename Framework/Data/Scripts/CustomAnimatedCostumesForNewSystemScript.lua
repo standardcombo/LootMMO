@@ -30,7 +30,7 @@ local MESH = ROOT
 
 local allObjects = ROOT:GetChildren()
 Task.Spawn(function() 
-	Task.Wait(1)
+	Task.Wait()
 	if SafetyBool==true then return end
 	for _,obj in ipairs(allObjects) do
 		if obj:IsA("Folder") then

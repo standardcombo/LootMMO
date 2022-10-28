@@ -13,6 +13,7 @@ local SpawnedButtons = {}
 local ButtonEvents = {}
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local ResponsesActive = false
+local EdgeWidth = 50
 
 local function parse_message(message)
 	local replacements = {
@@ -53,6 +54,7 @@ local function ResponseChosen(button)
     print(BName, "This was the response chosen")
     if CleanUpChoices() then
         print("I should Send out this info or something",BName)
+        Events.Broadcast("Talking.Heads", BName)
     end
 end
 
@@ -68,7 +70,7 @@ local function GetResponse(key, duration, name, msg)
             local Responses =  row.Messages
             local screenSize = UI.GetScreenSize()
             TargetWidth = CoreMath.Round(screenSize.x)
-
+            ResponseCount = 0 -- set variable back to 0 for count
             -- lay out the possible responses
             for k, v in pairs(Responses) do
                 ResponseCount = ResponseCount + 1
@@ -83,10 +85,10 @@ local function GetResponse(key, duration, name, msg)
             for i = 1, ResponseCount do 
                 SpawnedButtons[i] = World.SpawnAsset(ResponseTemplate,{parent = TargetPanel})
                 local TEXT = SpawnedButtons[i]:FindChildByName("ResponseText")
-                local PositionFormula = ((TargetWidth/ResponseCount)*i)
+                local PositionFormula = (((TargetWidth-EdgeWidth)/ResponseCount)*i)
                 print(SpawnedButtons[i].width, TargetWidth/ResponseCount, "Comparison of button width verse, targeth with ratio")
-                if SpawnedButtons[i].width > (TargetWidth/ResponseCount) then
-                    SpawnedButtons[i].width = (TargetWidth/ResponseCount)
+                if SpawnedButtons[i].width ~= (TargetWidth/ResponseCount) then
+                    SpawnedButtons[i].width = CoreMath.Round(TargetWidth/ResponseCount)-EdgeWidth
                 end
                 print(i, TargetWidth, ResponseCount, "position:", PositionFormula)
                 SpawnedButtons[i].name = ResponseNames[i]

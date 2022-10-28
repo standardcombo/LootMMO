@@ -15,7 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13562394005487771670
+        ParentId: 1360594598706113660
+        ChildIds: 5828170813062507994
         ChildIds: 17766556385030587482
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -105,6 +106,82 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 5828170813062507994
+        Name: "Frame"
+        Transform {
+          Location {
+            X: -5363.26562
+            Y: -2515.1123
+            Z: 3646.95166
+          }
+          Rotation {
+            Yaw: 3.87929463
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5863568901587875051
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 21
+          Height: 19
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 7261178334144458402
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 17766556385030587482
         Name: "ResponseText"
         Transform {
@@ -132,11 +209,14 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
+          Width: -10
+          Height: -10
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
+          AddSizeToParentIfUsingParentSize: true
           UseParentWidth: true
           UseParentHeight: true
           Text {
@@ -183,6 +263,15 @@ Assets {
           }
         }
         IsReplicationEnabledByDefault: true
+      }
+    }
+    Assets {
+      Id: 7261178334144458402
+      Name: "Frame Beveled 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "FrameSolid8px__019"
       }
     }
     Assets {
