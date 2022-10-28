@@ -1,8 +1,10 @@
 --[[
   Pirate Pinball - Client Game Controller
-  v1.1 - 2022/10/25
+  v1.3 - 2022/10/28
   by: Varglbargl
+  Modified by: Luapi
 ]]
+
 local BALL = script:GetCustomProperty("PinballBall")
 local SPAWN_POINT = script:GetCustomProperty("RespawnPoint"):WaitForObject():GetWorldPosition()
 local TILT_RESPAWN = script:GetCustomProperty("TiltRespawn"):WaitForObject():GetWorldPosition()
@@ -163,7 +165,7 @@ function initGame(machineId, player)
   UI_CONTAINER.visibility = Visibility.INHERIT
   LAUNCH_BOOSTER.collision = Collision.FORCE_OFF
   
-  UI.SetCanCursorInteractWithUI(true)
+  _G.CursorStack.Enable()
   resetMachineState()
   showControls()
 
@@ -276,7 +278,7 @@ function quitGame()
     
     currentPlayer.isVisibleToSelf = true
     currentPlayer:ClearOverrideCamera(0.5)
-    UI.SetCanCursorInteractWithUI(false)
+    _G.CursorStack.Disable()
     UI_CONTAINER.visibility = Visibility.FORCE_OFF
     bindingPressedEvent:Disconnect()
     bindingReleasedEvent:Disconnect()

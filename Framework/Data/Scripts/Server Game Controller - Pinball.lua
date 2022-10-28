@@ -1,3 +1,12 @@
+--[[
+  ------------------
+  Pirate Pinball - Server Game Controller
+  v1.0.1 - 2022/10/28
+  by: varglbargl
+  Modified by: Luapi
+  ------------------
+]]
+
 local PLAY_TRIGGER = script:GetCustomProperty("PlayTrigger"):WaitForObject()
 local LEFT_HAND_ANCHOR = script:GetCustomProperty("LeftHandAnchor"):WaitForObject()
 local RIGHT_HAND_ANCHOR = script:GetCustomProperty("RightHandAnchor"):WaitForObject()
@@ -35,6 +44,12 @@ function handleInteracted(_, player)
       eq.visibility = Visibility.FORCE_OFF
     end
   end
+
+  for _, ability in ipairs(player:GetAbilities()) do --Disable all abilities during pinball
+    player.serverUserData[ability] = ability.isEnabled
+    ability.isEnabled = false
+  end
+
   player.serverUserData.isInvulnerable = true
 
   Events.BroadcastToPlayer(player, "StartPinball", thisMachine.id, player)
@@ -59,6 +74,12 @@ function handleQuit(machineId, player)
         eq.visibility = Visibility.INHERIT
       end
     end
+
+    for _, ability in ipairs(player:GetAbilities()) do --Re-enable all abilities
+      ability.isEnabled = player.serverUserData[ability]
+      player.serverUserData[ability] = nil
+    end
+
     player.serverUserData.isInvulnerable = false
   end
 
