@@ -1,7 +1,8 @@
 --[[
 	NPCAI - Client
-	v0.14.0
+	v0.14.1
 	by: standardcombo
+	Modified by: Luapi
 	
 	The client counterpart for NPCAIServer. Detaches and smooths the
 	visual parts of the NPC from the logical ones.
@@ -51,7 +52,8 @@ end
 function OnPropertyChanged(object, propertyName)
 	if (propertyName == "CurrentState") then
 		local newState = GetCurrentState()
-		
+
+		if not script then return end
 		if newState == STATE_PATROLLING and currentState ~= STATE_PATROLLING then
 			GEO_ROOT:Follow(script, PATROL_SPEED)
 		elseif newState ~= STATE_PATROLLING and currentState == STATE_PATROLLING then
