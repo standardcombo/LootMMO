@@ -1,7 +1,8 @@
 --[[
 	Throwable Object - Server
-	v1.0
+	v1.1
 	by: standardcombo
+	Modifiedy by: Luapi
 	
 	Implements an environment object that can be picked up and thrown.
 ]]
@@ -75,7 +76,6 @@ function OnPickup(player, equipment)
 end
 Events.ConnectForPlayer(PICKUP_EVENT_NAME, OnPickup)
 
-
 function OnEquipped(equipment, player)
 	local t = SPINE_ANCHOR:GetTransform()
 	t = t:GetInverse()
@@ -95,9 +95,10 @@ EQUIPMENT.equippedEvent:Connect(OnEquipped)
 
 
 function OnThrow(ability)
+	resetTask = Task.Spawn(Reset, RESET_DELAY)
 	-- Spawn the physics object that will contain the equipment
 	local obj = SpawnPhysicsObject()
-	
+
 	if ability then
 		Events.Broadcast("Quest.ThrowChair", ability.owner, "Throw")
 
@@ -145,8 +146,8 @@ function OnThrow(ability)
 	end
 	
 	Task.Wait(3)
-	while Object.IsValid(obj) and obj:GetVelocity().sizeSquared > 600 do
-		Task.Wait(0.2)
+	while Object.IsValid(obj) and obj:GetVelocity().sizeSquared > 600 and resetTask do
+		Task.Wait()
 	end
 	if Object.IsValid(EQUIPMENT) then
 		EQUIPMENT.parent = World.GetRootObject()
@@ -161,8 +162,6 @@ function OnThrow(ability)
 	if Object.IsValid(obj) then
 		obj:Destroy()
 	end
-	
-	resetTask = Task.Spawn(Reset, RESET_DELAY)
 end
 
 function SpawnPhysicsObject()
