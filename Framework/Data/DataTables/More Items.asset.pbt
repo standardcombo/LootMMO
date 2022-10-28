@@ -42,6 +42,15 @@ Assets {
       }
     }
     Assets {
+      Id: 16246639544817053534
+      Name: "Fantasy Axe 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Weapon_Axe_001"
+      }
+    }
+    Assets {
       Id: 18108420544862680383
       Name: "Magic Dark Powerup 02 SFX"
       PlatformAssetType: 7
@@ -75,6 +84,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_coins_victory_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 3376479110829751483
+      Name: "Bones Wood Pile Search Movement 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_bones_wood_pile_movement_01a_Cue_ref"
       }
     }
   }

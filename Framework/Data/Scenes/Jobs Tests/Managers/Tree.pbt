@@ -4634,7 +4634,7 @@ Objects {
     }
     Overrides {
       Name: "cs:CanEquip"
-      Bool: true
+      Bool: false
     }
     Overrides {
       Name: "cs:Priority"

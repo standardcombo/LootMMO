@@ -71,6 +71,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -94,6 +95,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -117,6 +119,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -140,6 +143,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {
@@ -163,6 +167,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      Networked: true
       IsEnabledOnStart: true
     }
     Bindings {

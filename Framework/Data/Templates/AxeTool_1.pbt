@@ -1,13 +1,13 @@
 Assets {
-  Id: 11437400117408092840
-  Name: "Axe"
+  Id: 1779551680881298357
+  Name: "AxeTool"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 17788508593830940244
+      RootId: 7323614680277702535
       Objects {
-        Id: 17788508593830940244
-        Name: "Axe Tool"
+        Id: 7323614680277702535
+        Name: "AxeTool"
         Transform {
           Scale {
             X: 1
@@ -16,10 +16,10 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 13921730856130087441
-        ChildIds: 13344068297157477715
-        ChildIds: 13361153589258019102
-        ChildIds: 10161179598682511347
+        ChildIds: 5930152855917138882
+        ChildIds: 3049052967615372416
+        ChildIds: 3031930287323347149
+        ChildIds: 2196646026937749024
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolType"
@@ -188,7 +188,7 @@ Assets {
         Equipment {
           SocketName: "right_prop"
           PickupTrigger {
-            SubObjectId: 10161179598682511347
+            SubObjectId: 2196646026937749024
           }
         }
         NetworkRelevanceDistance {
@@ -197,7 +197,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13921730856130087441
+        Id: 5930152855917138882
         Name: "Tool"
         Transform {
           Location {
@@ -210,7 +210,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17788508593830940244
+        ParentId: 7323614680277702535
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -281,7 +281,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13344068297157477715
+        Id: 3049052967615372416
         Name: "ServerContext"
         Transform {
           Location {
@@ -294,8 +294,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17788508593830940244
-        ChildIds: 11930593290677150771
+        ParentId: 7323614680277702535
+        ChildIds: 3958160003838737888
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -319,7 +319,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11930593290677150771
+        Id: 3958160003838737888
         Name: "BasicEquipmentServer"
         Transform {
           Location {
@@ -332,7 +332,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13344068297157477715
+        ParentId: 3049052967615372416
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -356,7 +356,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13361153589258019102
+        Id: 3031930287323347149
         Name: "ClientContext"
         Transform {
           Location {
@@ -369,11 +369,11 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17788508593830940244
-        ChildIds: 14290065987741989602
-        ChildIds: 2944022144229949677
-        ChildIds: 2656092855949146649
-        ChildIds: 1261019760778896981
+        ParentId: 7323614680277702535
+        ChildIds: 6138210182335800113
+        ChildIds: 13521084146314303806
+        ChildIds: 13232587870826537930
+        ChildIds: 9439479006739464070
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -401,7 +401,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14290065987741989602
+        Id: 6138210182335800113
         Name: "BasicEquipmentClient"
         Transform {
           Location {
@@ -414,12 +414,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13361153589258019102
+        ParentId: 3031930287323347149
         UnregisteredParameters {
           Overrides {
             Name: "cs:ComponentRoot"
             ObjectReference {
-              SubObjectId: 17788508593830940244
+              SubObjectId: 7323614680277702535
             }
           }
           Overrides {
@@ -437,13 +437,13 @@ Assets {
           Overrides {
             Name: "cs:Ability"
             ObjectReference {
-              SubObjectId: 13921730856130087441
+              SubObjectId: 5930152855917138882
             }
           }
           Overrides {
             Name: "cs:OutlineObject"
             ObjectReference {
-              SubObjectId: 2656092855949146649
+              SubObjectId: 13232587870826537930
             }
           }
           Overrides {
@@ -484,7 +484,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2944022144229949677
+        Id: 13521084146314303806
         Name: "Tool README"
         Transform {
           Location {
@@ -497,7 +497,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13361153589258019102
+        ParentId: 3031930287323347149
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -521,7 +521,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2656092855949146649
+        Id: 13232587870826537930
         Name: "Selection Outline"
         Transform {
           Location {
@@ -534,7 +534,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13361153589258019102
+        ParentId: 3031930287323347149
         UnregisteredParameters {
           Overrides {
             Name: "bp:Outline Channel"
@@ -623,7 +623,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1261019760778896981
+        Id: 9439479006739464070
         Name: "Geo"
         Transform {
           Location {
@@ -636,16 +636,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13361153589258019102
-        ChildIds: 9480763701295485543
-        ChildIds: 15331908371162988227
-        ChildIds: 5694837534688384435
-        ChildIds: 775005624599532344
-        ChildIds: 15262818396122413965
-        ChildIds: 5219182889931432571
-        ChildIds: 11767515964787739311
-        ChildIds: 4612402287571182081
-        ChildIds: 13626938713048837543
+        ParentId: 3031930287323347149
+        ChildIds: 1219840756767624116
+        ChildIds: 5168495753098618640
+        ChildIds: 15886428439233072224
+        ChildIds: 11078452026481330923
+        ChildIds: 4661122918684779102
+        ChildIds: 15785554033116707752
+        ChildIds: 3472648606084125564
+        ChildIds: 15239413263519071186
+        ChildIds: 3342605929261855860
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -667,7 +667,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9480763701295485543
+        Id: 1219840756767624116
         Name: "Fantasy Axe Grip 01"
         Transform {
           Location {
@@ -684,7 +684,7 @@ Assets {
             Z: 0.920366883
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -744,7 +744,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15331908371162988227
+        Id: 5168495753098618640
         Name: "Cylinder - Chamfered Small Polished"
         Transform {
           Location {
@@ -761,7 +761,7 @@ Assets {
             Z: 0.0868175104
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -825,7 +825,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5694837534688384435
+        Id: 15886428439233072224
         Name: "Cylinder - Chamfered Small Polished"
         Transform {
           Location {
@@ -842,7 +842,7 @@ Assets {
             Z: 0.117046639
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -915,7 +915,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 775005624599532344
+        Id: 11078452026481330923
         Name: "Prism - 6-Sided Half"
         Transform {
           Location {
@@ -933,7 +933,7 @@ Assets {
             Z: 0.0275946148
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -997,7 +997,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15262818396122413965
+        Id: 4661122918684779102
         Name: "Prism - 3-Sided"
         Transform {
           Location {
@@ -1014,7 +1014,7 @@ Assets {
             Z: 0.142200023
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -1087,7 +1087,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5219182889931432571
+        Id: 15785554033116707752
         Name: "Cube - Chamfered Small Polished"
         Transform {
           Location {
@@ -1106,7 +1106,7 @@ Assets {
             Z: 0.0679470301
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -1170,7 +1170,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11767515964787739311
+        Id: 3472648606084125564
         Name: "Prism - 6-Sided Polished"
         Transform {
           Location {
@@ -1189,7 +1189,7 @@ Assets {
             Z: 0.0760742128
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -1253,7 +1253,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4612402287571182081
+        Id: 15239413263519071186
         Name: "Prism - 6-Sided Polished"
         Transform {
           Location {
@@ -1272,7 +1272,7 @@ Assets {
             Z: 0.0760742128
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -1336,7 +1336,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13626938713048837543
+        Id: 3342605929261855860
         Name: "Prism - 6-Sided Polished"
         Transform {
           Location {
@@ -1355,7 +1355,7 @@ Assets {
             Z: 0.0760742128
           }
         }
-        ParentId: 1261019760778896981
+        ParentId: 9439479006739464070
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -1419,7 +1419,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10161179598682511347
+        Id: 2196646026937749024
         Name: "Pickup Trigger"
         Transform {
           Location {
@@ -1432,7 +1432,7 @@ Assets {
             Z: 3.32309794
           }
         }
-        ParentId: 17788508593830940244
+        ParentId: 7323614680277702535
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1554,5 +1554,4 @@ Assets {
     }
   }
   SerializationVersion: 119
-  VirtualFolderPath: "Tools"
 }

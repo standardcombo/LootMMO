@@ -13728,12 +13728,6 @@ Objects {
       Bool: true
     }
     Overrides {
-      Name: "cs:EquipmentTemplate"
-      AssetReference {
-        Id: 4616059653628925444
-      }
-    }
-    Overrides {
       Name: "cs:EquipmentVisualTemplate"
       AssetReference {
         Id: 841534158063459245
@@ -14005,12 +13999,6 @@ Objects {
     Overrides {
       Name: "cs:CanEquip"
       Bool: true
-    }
-    Overrides {
-      Name: "cs:EquipmentTemplate"
-      AssetReference {
-        Id: 1944721137948680989
-      }
     }
     Overrides {
       Name: "cs:EquipmentVisualTemplate"
