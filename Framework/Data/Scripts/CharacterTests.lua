@@ -1,7 +1,7 @@
 --[[
 	Character Cheats 
-	v1.0.1 - 2022/10/26
-	by: Blaking, CommanderFoo
+	v1.0.2 - 2022/10/26
+	by: Blaking, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
 	materials, loot, and other things. These commands can only be used by players
@@ -94,8 +94,9 @@ end
 --- Add/Remove player names to the table below that can use cheats.
 --- Note: Local preview mode doesn't need names added.
 local AdminList = {
-	["blaking707"] = true,
-	["CommanderFoo"] = true
+	["CommanderFoo"] = true,
+	["Luapi"] = true,
+	["LootMMO"] = true,
 }
 
 local character = _G["Character.Constructor"]
@@ -244,13 +245,17 @@ cheats = {
 			end
 		end,
 		description = "Teleports to various areas for quick testing.",
-	}
+	},
 }
 
 function OnReceiveMessage(player, params)
 	if not AdminList[player.name] and not Environment.IsPreview() then return end
 	local splitString = { CoreString.Split(params.message, " ") }
-
+	
+	if splitString[1] == "/tp" then -- Associate abbreviated commands to full length cheat commands
+		splitString[1] = "/teleport"
+	end
+	
 	if cheats[splitString[1]] then
 		cheats[splitString[1]].func(player, params.message, splitString)
 		return
