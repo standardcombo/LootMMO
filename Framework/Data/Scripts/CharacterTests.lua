@@ -1,7 +1,7 @@
 --[[
 	Character Cheats 
 	v1.0.4 - 2022/10/29
-	by: Blaking, CommanderFoo, Luapi
+	by: blaking707, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
 	materials, loot, and other things. These commands can only be used by players

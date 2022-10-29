@@ -1,7 +1,7 @@
 --[[
 	Loot Ability Spell: Roll
 	v1.0.1 - 2022/10/25
-	by: Blaking, Luapi
+	by: blaking707, Luapi
 ]]
 
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()

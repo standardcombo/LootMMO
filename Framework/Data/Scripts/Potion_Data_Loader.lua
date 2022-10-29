@@ -1,7 +1,7 @@
 --[[
 	Potion Data Loader
 	v1.1.0 - 2022/10/25
-	by: Blaking, CommanderFoo, standardcombo
+	by: blaking707, CommanderFoo, standardcombo
 
 	Loads the definitions for potions and provides a global API to access them.
 

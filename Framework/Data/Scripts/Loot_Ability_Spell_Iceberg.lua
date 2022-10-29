@@ -1,7 +1,7 @@
 --[[
 	Loot Ability Spell: Iceberg
 	v1.0.1 - 2022/10/25
-	by: Blaking, Luapi
+	by: blaking707, Luapi
 ]]
 
 local MAGE_ABILITY_BREAK_BASIC = script:GetCustomProperty('MageIcebergBreakBasic')

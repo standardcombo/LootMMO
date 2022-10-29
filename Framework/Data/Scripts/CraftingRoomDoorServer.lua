@@ -1,4 +1,11 @@
-
+--[[
+	-----------
+	CraftingRoomDoorServer.lua
+	V1.0.1 - 2022-10-29
+	By: standardcombo
+	Modified by: Luapi
+	-----------
+]]
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local NET_OBJECT = script:GetCustomProperty("NetObject"):WaitForObject()
 
@@ -45,7 +52,7 @@ local function OnBeginOverlap(trigger, player)
 	if isOutside then
 		-- Check if the player has access
 		local hasKey = _G.QuestController.HasCompleted(player, "Lv5")
-		if not hasKey then
+		if not hasKey and IsClosed() then
 			Events.BroadcastToPlayer(player, "CraftingRoom.LockedMessage")
 			return
 		end
@@ -66,17 +73,26 @@ local function OnBeginOverlap(trigger, player)
 	
 end
 
-local function OnEndOverlap(trigger, player)
-	if not player:IsA("Player") then return end
+function ShouldDoorClose(player)
 	if not playersReferenced[player] then return end
 	
 	playerCount = playerCount - 1
-	
+	playersReferenced[player] = nil
+
 	if playerCount == 0 then
 		SetState(STATE_CLOSED)
 	end
 end
 
+local function OnEndOverlap(trigger, player)
+	if not player:IsA("Player") then return end
+	ShouldDoorClose(player)
+end
+
+function OnPlayerLeft(player)
+	ShouldDoorClose(player)
+end
+
 TRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)
 TRIGGER.endOverlapEvent:Connect(OnEndOverlap)
-
+Game.playerLeftEvent:Connect(OnPlayerLeft)

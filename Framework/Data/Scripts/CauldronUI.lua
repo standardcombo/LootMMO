@@ -1,7 +1,7 @@
 --[[
 	Cauldron UI
 	v1.0.1 - 2022/10/25
-	by: Blaking, CommanderFoo
+	by: blaking707, CommanderFoo
 ]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]

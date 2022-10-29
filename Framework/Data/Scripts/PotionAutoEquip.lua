@@ -1,7 +1,7 @@
 --[[
 	Potion Auto-Equip
 	v1.0.1 - 2022/10/25
-	by: Blaking
+	by: blaking707
 ]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]

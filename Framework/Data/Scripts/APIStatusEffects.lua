@@ -1,7 +1,7 @@
 --[[
 	Status Effects
 	v0.14.0 - 2022/10/25
-	by: Blaking, Luapi, standardcombo
+	by: blaking707, Luapi, standardcombo
 	
 	TODO: Documentation
 	

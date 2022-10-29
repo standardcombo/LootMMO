@@ -1,7 +1,7 @@
 --[[
 	Character Apply Stats
 	v1.0.1 - 2022/10/25
-	by: Blaking
+	by: blaking707
 	
 	Handles player stats that are applied on spawn and damage taken.
 	attackTagsHandler handles how attacks are proceced.
