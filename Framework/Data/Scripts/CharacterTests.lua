@@ -1,6 +1,6 @@
 --[[
 	Character Cheats 
-	v1.0.3 - 2022/10/28
+	v1.0.4 - 2022/10/29
 	by: Blaking, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
@@ -139,7 +139,9 @@ cheats = {
 		func = function(player, message)
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Ability = { CoreString.Split(message, '"') }
+			if not Ability[2] then return end
 			local stats = newCharacter:GetComponent("Stats")
+			Ability[3] = CoreString.Trim(Ability[3])
 			if stats then
 				stats:SetTempStat(Ability[2], tonumber(Ability[3]))
 				stats:SetStat(Ability[2], tonumber(Ability[3]))
@@ -220,21 +222,11 @@ cheats = {
 		end,
 		description = "Cheat character to max",
 	},
-	["/progress"] = {
-		func = function(player, _, splitString)
-			if not splitString[2] then return end
-			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-			local Progress = newCharacter:GetComponent("Progression")
-			Progress:SetProgression(splitString[2], splitString[3] == "true")
-		end,
-		description = "Set character progress flags",
-	},
 	["/addxp"] = {
 		func = function(player, _, splitString)
-			if not splitString[2] then return end
+			if not tonumber(splitString[2]) then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local level = newCharacter:GetComponent("Level")
-			if not tonumber(splitString[2]) then return end
 			level:AddXP(tonumber(splitString[2]))
 		end,
 		description = "Add xp to character",
