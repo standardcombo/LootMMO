@@ -51,6 +51,7 @@ local function InventoryUpdated(inv, i)
 	end
 
 	local item = inv:GetItem(i)
+	Events.Broadcast("WeaponChanged", owner)
 	if item and KWeapons[item.name] then
 		local equipItem = items.GetDefinition(item.name)
 		if equipItem then

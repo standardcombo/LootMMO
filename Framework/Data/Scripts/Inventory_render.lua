@@ -233,6 +233,7 @@ end
 
 local function InventoryChanged(inv, slot)
 	UpdateValues()
+	if slot == 54 then return end
 	local item = inv:GetItem(slot)
 	local childIcon = slots[slot].icon
 	local childCount = slots[slot].count

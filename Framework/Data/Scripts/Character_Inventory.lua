@@ -22,7 +22,7 @@ setmetatable(
 	{ __index = COMPONET_DATATYPE }
 )
 component.id = "Inventory"
-component.inventorySize = 45 + 8
+component.inventorySize = 46 + 8
 
 local function setupInv(self, inventory)
 	self._inventory = LOOTMMOINV.NewInventory(inventory)

@@ -147,6 +147,13 @@ Objects {
           Name: "Name"
           String: "RPG Skeleton - Marksman (Common)"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2074.73608
+            Y: -586.729
+          }
+        }
       }
     }
     TemplateAsset {
