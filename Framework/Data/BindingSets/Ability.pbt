@@ -326,5 +326,29 @@ Assets {
       }
       IsEnabledOnStart: true
     }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:leftclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:x"
+          }
+        }
+      }
+      Action: "Drink"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      Networked: true
+      IsEnabledOnStart: true
+    }
   }
 }
