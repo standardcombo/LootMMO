@@ -4,7 +4,6 @@ local ITEM_ID = "pint"
 
 function OnFillCup(player, obj)
 	if obj ~= script then return end
-	
 	for _,equip in ipairs(player:GetEquipment()) do
 		local itemId, exists = equip:GetCustomProperty("itemId")
 		if exists and itemId == ITEM_ID then

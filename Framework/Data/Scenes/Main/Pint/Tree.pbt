@@ -593,7 +593,7 @@ Objects {
   }
   ParentId: 17788186485443267771
   ChildIds: 7790428312065717952
-  ChildIds: 6611052668985417197
+  ChildIds: 556430674268751815
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -620,25 +620,24 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6611052668985417197
-  Name: "Highlight"
+  Id: 556430674268751815
+  Name: "Highlight Group"
   Transform {
     Location {
+      X: 105.677979
+      Y: -14.0570068
     }
     Rotation {
-      Yaw: -144.062363
     }
     Scale {
       X: 1
-      Y: 0.99999994
+      Y: 1
       Z: 1
     }
   }
   ParentId: 17038173957984419154
-  ChildIds: 909119009937997794
-  ChildIds: 13253044722790700610
-  ChildIds: 5824080316298335255
-  ChildIds: 14479895020705052351
+  ChildIds: 16660979633527447911
+  ChildIds: 8452137174036801934
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -660,13 +659,54 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14479895020705052351
+  Id: 8452137174036801934
+  Name: "Highlight"
+  Transform {
+    Location {
+      X: 129.946045
+      Y: -288.805176
+    }
+    Rotation {
+      Yaw: -114.695114
+    }
+    Scale {
+      X: 1
+      Y: 0.99999994
+      Z: 1
+    }
+  }
+  ParentId: 556430674268751815
+  ChildIds: 10015834433339701920
+  ChildIds: 12879369344697360148
+  ChildIds: 5798525742596497479
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5798525742596497479
   Name: "Sign Neon Arrow Outline: Long Pointed"
   Transform {
     Location {
-      X: -2.27728271
-      Y: 139.359909
-      Z: 141.987305
+      X: -2.2980051
+      Y: 109.609947
+      Z: 141.988281
     }
     Rotation {
       Yaw: 89.9601364
@@ -678,7 +718,7 @@ Objects {
       Z: 0.340137482
     }
   }
-  ParentId: 6611052668985417197
+  ParentId: 8452137174036801934
   UnregisteredParameters {
     Overrides {
       Name: "ma:Font_Neon:id"
@@ -724,25 +764,24 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5824080316298335255
+  Id: 12879369344697360148
   Name: "Cane - Thin 01"
   Transform {
     Location {
-      X: -12.9902344
-      Y: 229.019104
-      Z: 0.0876464844
+      X: 19.0665588
+      Y: 118.990074
+      Z: 2.453125
     }
     Rotation {
-      Yaw: 179.084396
-      Roll: -89.9999924
+      Roll: 90
     }
     Scale {
       X: 0.777182937
-      Y: 0.999996901
-      Z: 1.17714906
+      Y: 0.1
+      Z: 1.5
     }
   }
-  ParentId: 6611052668985417197
+  ParentId: 8452137174036801934
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -788,25 +827,25 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13253044722790700610
+  Id: 10015834433339701920
   Name: "Cane - Thin 01"
   Transform {
     Location {
-      X: -15.5867844
-      Y: 66.6033096
-      Z: 0.0876464844
+      X: -15.9002686
+      Y: 91.1530228
+      Z: 2.90625
     }
     Rotation {
-      Yaw: 179.084396
+      Yaw: 180
       Roll: 90.0000076
     }
     Scale {
       X: 0.777182937
-      Y: 0.999996901
-      Z: 1.17714906
+      Y: 0.1
+      Z: 1.5
     }
   }
-  ParentId: 6611052668985417197
+  ParentId: 8452137174036801934
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -852,25 +891,130 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 909119009937997794
-  Name: "Cylinder - Bottom-Aligned"
+  Id: 16660979633527447911
+  Name: "Highlight"
   Transform {
     Location {
-      X: 17.9646454
-      Y: 6.33126163
-      Z: 0.0876464844
+      X: -129.946045
+      Y: 288.80542
     }
     Rotation {
-      Yaw: 179.084396
-      Roll: -89.9999924
+      Yaw: 175.937698
     }
     Scale {
-      X: 0.0396401174
-      Y: 0.0396373235
-      Z: 2.83
+      X: 1
+      Y: 0.99999994
+      Z: 1
     }
   }
-  ParentId: 6611052668985417197
+  ParentId: 556430674268751815
+  ChildIds: 6061981290068871957
+  ChildIds: 10070778766961865763
+  ChildIds: 11784153569288632855
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11784153569288632855
+  Name: "Sign Neon Arrow Outline: Long Pointed"
+  Transform {
+    Location {
+      X: -2.2980051
+      Y: 109.609947
+      Z: 141.988281
+    }
+    Rotation {
+      Yaw: 89.9601364
+      Roll: -179.999985
+    }
+    Scale {
+      X: 0.340137482
+      Y: 0.340137511
+      Z: 0.340137482
+    }
+  }
+  ParentId: 16660979633527447911
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Neon:id"
+      AssetReference {
+        Id: 13991406898625561976
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 6228751569640294279
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 10070778766961865763
+  Name: "Cane - Thin 01"
+  Transform {
+    Location {
+      X: 18.8096313
+      Y: 118.109756
+      Z: 2.47265625
+    }
+    Rotation {
+      Yaw: -1.44082642
+      Roll: 90
+    }
+    Scale {
+      X: 0.777182937
+      Y: 0.1
+      Z: 1.5
+    }
+  }
+  ParentId: 16660979633527447911
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -893,7 +1037,71 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 14017539756736382852
+      Id: 11731837839377866748
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6061981290068871957
+  Name: "Cane - Thin 01"
+  Transform {
+    Location {
+      X: -16.2161751
+      Y: 91.1983
+      Z: 1.98046875
+    }
+    Rotation {
+      Yaw: 178.559158
+      Roll: 90
+    }
+    Scale {
+      X: 0.777182937
+      Y: 0.1
+      Z: 1.5
+    }
+  }
+  ParentId: 16660979633527447911
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13991406898625561976
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 11731837839377866748
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -932,14 +1140,14 @@ Objects {
   ParentId: 17038173957984419154
   UnregisteredParameters {
     Overrides {
-      Name: "cs:Object"
-      ObjectReference {
-        SelfId: 6611052668985417197
-      }
-    }
-    Overrides {
       Name: "cs:QuestID"
       String: "Pint"
+    }
+    Overrides {
+      Name: "cs:Object"
+      ObjectReference {
+        SelfId: 556430674268751815
+      }
     }
   }
   Collidable_v2 {

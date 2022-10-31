@@ -2354,6 +2354,7 @@ Assets {
         ChildIds: 1899688081797355022
         ChildIds: 1665267928618689438
         ChildIds: 230388195682412653
+        ChildIds: 129676580603262643
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2585,6 +2586,46 @@ Assets {
           }
           Rotation {
             Yaw: 89.9999771
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1379649659023357046
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 15895911216899816748
+          }
+          TeamSettings {
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 129676580603262643
+        Name: "Bar"
+        Transform {
+          Location {
+            X: -2244.82666
+            Y: -3879.36426
+            Z: -51150
+          }
+          Rotation {
+            Yaw: -143.511
           }
           Scale {
             X: 1
