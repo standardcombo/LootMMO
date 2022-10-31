@@ -3,7 +3,8 @@
 	by: standardcombo
 	modified by: Luapi
 	v1.2
---]] local EQUIPMENT = script.parent
+--]]
+local EQUIPMENT = script.parent
 
 local STANCE = script:GetCustomProperty("AnimationStance")
 local BINDING = script:GetCustomProperty("ActionBinding")
@@ -60,6 +61,7 @@ function OnUnequippedEvent(equipment, player)
     if Object.IsValid(equipment) then
         equipment:Destroy()
     end
+
 end
 EQUIPMENT.unequippedEvent:Connect(OnUnequippedEvent)
 
@@ -85,6 +87,12 @@ script.destroyEvent:Connect(function()
     if leftListener then
         leftListener:Disconnect()
         leftListener = nil
+    end
+end)
+
+Events.ConnectForPlayer("Map.Play", function(player)
+    if Object.IsValid(EQUIPMENT) and EQUIPMENT.owner == player then
+        EQUIPMENT:Unequip()
     end
 end)
 

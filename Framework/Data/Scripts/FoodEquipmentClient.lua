@@ -66,7 +66,7 @@ end
 
 
 function OnActionPressed(player, action)
-	if player ~= EQUIPMENT.owner then return end
+	if not Object.IsValid(EQUIPMENT) or player ~= EQUIPMENT.owner then return end
 	if EQUIPMENT:GetCustomProperty("usesRemaining") <= 0 then return end
 	
 	if action == BINDING then
