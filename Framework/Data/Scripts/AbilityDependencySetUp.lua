@@ -1,4 +1,4 @@
-local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment'))
+local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment')) --Table reference
 local API = {}
 
 function API.GetEntry(name)
