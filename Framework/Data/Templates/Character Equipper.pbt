@@ -77,7 +77,7 @@ Assets {
       }
       Objects {
         Id: 17196313300345861269
-        Name: "Equpper_Server"
+        Name: "Equipper_Server"
         Transform {
           Location {
           }
@@ -90,6 +90,14 @@ Assets {
           }
         }
         ParentId: 648906731283760812
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:EquipmentContainer"
+            AssetReference {
+              Id: 136401786372049287
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -155,7 +163,7 @@ Assets {
       }
       Objects {
         Id: 6739930995374666924
-        Name: "Equpper_Client"
+        Name: "Equipper_Client"
         Transform {
           Location {
           }

@@ -18,7 +18,7 @@ Objects {
   ChildIds: 9970684983361868256
   ChildIds: 5984199028671989143
   ChildIds: 7475499298705237626
-  ChildIds: 11299696855387386535
+  ChildIds: 15075137245449532246
   ChildIds: 16194698060440896494
   ChildIds: 4246661819917374883
   ChildIds: 4244745184024888751
@@ -180,7 +180,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11299696855387386535
+  Id: 15075137245449532246
   Name: "Other Components"
   Transform {
     Location {
@@ -194,38 +194,33 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 4594542242463950141
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Other Components"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 5338087018861399484
-    }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Other Components"
+  }
+  InstanceHistory {
+    SelfId: 15075137245449532246
+    SubobjectId: 4594542242463950141
+    InstanceId: 11299696855387386535
+    TemplateId: 5338087018861399484
+    WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 7475499298705237626
