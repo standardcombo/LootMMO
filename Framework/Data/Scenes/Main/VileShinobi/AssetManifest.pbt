@@ -197,6 +197,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6488609383494304708
+  Name: "Fantasy Frame 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Frame_003"
+  }
+}
+Assets {
   Id: 5451279072121498940
   Name: "Bell - Soft 01"
   PlatformAssetType: 1

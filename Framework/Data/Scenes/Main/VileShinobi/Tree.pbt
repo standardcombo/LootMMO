@@ -17,6 +17,8 @@ Objects {
   ParentId: 10671278793063807372
   ChildIds: 9196876552743480372
   ChildIds: 40042484848467641
+  ChildIds: 13347159628991828701
+  ChildIds: 12367323923389280920
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -31,6 +33,219 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 12367323923389280920
+  Name: "Talking Heads"
+  Transform {
+    Location {
+      X: 350.099609
+      Y: 145.250809
+      Z: -3.81469727e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3035041294554889352
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:InCurve"
+      SimpleCurve {
+        Keys {
+          Interpolation {
+            Value: "mc:erichcurveinterpmode:rcim_cubic"
+          }
+          TangentMode {
+            Value: "mc:erichcurvetangentmode:rctm_user"
+          }
+          ArriveTangent: 5.449
+          LeaveTangent: 5.44941473
+        }
+        Keys {
+          Interpolation {
+            Value: "mc:erichcurveinterpmode:rcim_cubic"
+          }
+          TangentMode {
+            Value: "mc:erichcurvetangentmode:rctm_user"
+          }
+          Time: 1
+          Value: 1
+          ArriveTangent: 0.187505588
+          LeaveTangent: 0.187505588
+        }
+        PreExtrapolation {
+          Value: "mc:erichcurveextrapolation:rcce_constant"
+        }
+        PostExtrapolation {
+          Value: "mc:erichcurveextrapolation:rcce_constant"
+        }
+        DefaultValue: 3.40282347e+38
+      }
+    }
+    Overrides {
+      Name: "cs:OutCurve"
+      SimpleCurve {
+        Keys {
+          Interpolation {
+            Value: "mc:erichcurveinterpmode:rcim_cubic"
+          }
+          TangentMode {
+            Value: "mc:erichcurvetangentmode:rctm_user"
+          }
+          ArriveTangent: -0.188
+          LeaveTangent: -0.188
+        }
+        Keys {
+          Interpolation {
+            Value: "mc:erichcurveinterpmode:rcim_cubic"
+          }
+          TangentMode {
+            Value: "mc:erichcurvetangentmode:rctm_user"
+          }
+          Time: 1
+          Value: 1
+          ArriveTangent: 5.449
+          LeaveTangent: 5.449
+        }
+        PreExtrapolation {
+          Value: "mc:erichcurveextrapolation:rcce_constant"
+        }
+        PostExtrapolation {
+          Value: "mc:erichcurveextrapolation:rcce_constant"
+        }
+        DefaultValue: 3.40282347e+38
+      }
+    }
+    Overrides {
+      Name: "cs:InDuration"
+      Float: 0.6
+    }
+    Overrides {
+      Name: "cs:OutDuration"
+      Float: 0.4
+    }
+    Overrides {
+      Name: "cs:WriteText"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:CanSkipWriting"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:TextSpeed"
+      Float: 0.02
+    }
+    Overrides {
+      Name: "cs:BackgroundColor"
+      Color {
+        G: 0.0777145252
+        B: 0.306000113
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:LightIntensity"
+      Float: 23.355402
+    }
+    Overrides {
+      Name: "cs:InCurve:tooltip"
+      String: "The curve for the in animation of the panel."
+    }
+    Overrides {
+      Name: "cs:OutCurve:tooltip"
+      String: "The curve of the out animation of the panel."
+    }
+    Overrides {
+      Name: "cs:InDuration:tooltip"
+      String: "The duration of the in animation."
+    }
+    Overrides {
+      Name: "cs:OutDuration:tooltip"
+      String: "The duration of the out animation."
+    }
+    Overrides {
+      Name: "cs:WriteText:tooltip"
+      String: "If enabled, the text will be printed out 1 character at a time."
+    }
+    Overrides {
+      Name: "cs:TextSpeed:tooltip"
+      String: "The writing speed of the text animation."
+    }
+    Overrides {
+      Name: "cs:BackgroundColor:tooltip"
+      String: "The background color of the background behind the actor."
+    }
+    Overrides {
+      Name: "cs:LightIntensity:tooltip"
+      String: "The light intensity of the point light behind the actor."
+    }
+    Overrides {
+      Name: "cs:CanSkipWriting:tooltip"
+      String: "If enabled, the player can press the left mouse button to skip the writing effect."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Talking Heads"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13347159628991828701
+  Name: "TalkingHeadsResponse"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3035041294554889352
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "TalkingHeadsResponse"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -152095,8 +152310,7 @@ Objects {
     }
   }
   ParentId: 10671278793063807372
-  ChildIds: 12367323923389280920
-  ChildIds: 13347159628991828701
+  ChildIds: 6477066897767917468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -152118,10 +152332,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13347159628991828701
-  Name: "TalkingHeadsResponse"
+  Id: 6477066897767917468
+  Name: "DungeonEntranceSystem"
   Transform {
     Location {
+      X: -2600.33228
+      Y: -3506.52319
+      Z: 3326.52197
     }
     Rotation {
     }
@@ -152132,6 +152349,10 @@ Objects {
     }
   }
   ParentId: 6386077687221545343
+  ChildIds: 15131182834275769840
+  ChildIds: 13124045646947731111
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -152145,8 +152366,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Folder {
-    IsFilePartition: true
-    FilePartitionName: "TalkingHeadsResponse"
+    IsGroup: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -152154,13 +152374,10 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12367323923389280920
-  Name: "Talking Heads"
+  Id: 13124045646947731111
+  Name: "DungeonMenuUI"
   Transform {
     Location {
-      X: 350.099609
-      Y: 145.250809
-      Z: -3.81469727e-06
     }
     Rotation {
     }
@@ -152170,143 +152387,541 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6386077687221545343
+  ParentId: 6477066897767917468
+  ChildIds: 3364106132022228236
+  ChildIds: 14870014279282991952
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14870014279282991952
+  Name: "DungeonSelectionContainer"
+  Transform {
+    Location {
+      X: 2600.33228
+      Y: 3506.52319
+      Z: -3326.52197
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13124045646947731111
+  ChildIds: 7274009370479312550
   UnregisteredParameters {
     Overrides {
-      Name: "cs:InCurve"
-      SimpleCurve {
-        Keys {
-          Interpolation {
-            Value: "mc:erichcurveinterpmode:rcim_cubic"
-          }
-          TangentMode {
-            Value: "mc:erichcurvetangentmode:rctm_user"
-          }
-          ArriveTangent: 5.449
-          LeaveTangent: 5.44941473
-        }
-        Keys {
-          Interpolation {
-            Value: "mc:erichcurveinterpmode:rcim_cubic"
-          }
-          TangentMode {
-            Value: "mc:erichcurvetangentmode:rctm_user"
-          }
-          Time: 1
-          Value: 1
-          ArriveTangent: 0.187505588
-          LeaveTangent: 0.187505588
-        }
-        PreExtrapolation {
-          Value: "mc:erichcurveextrapolation:rcce_constant"
-        }
-        PostExtrapolation {
-          Value: "mc:erichcurveextrapolation:rcce_constant"
-        }
-        DefaultValue: 3.40282347e+38
+      Name: "cs:VisibilityToggle"
+      ObjectReference {
+        SelfId: 7274009370479312550
       }
     }
     Overrides {
-      Name: "cs:OutCurve"
-      SimpleCurve {
-        Keys {
-          Interpolation {
-            Value: "mc:erichcurveinterpmode:rcim_cubic"
-          }
-          TangentMode {
-            Value: "mc:erichcurvetangentmode:rctm_user"
-          }
-          ArriveTangent: -0.188
-          LeaveTangent: -0.188
-        }
-        Keys {
-          Interpolation {
-            Value: "mc:erichcurveinterpmode:rcim_cubic"
-          }
-          TangentMode {
-            Value: "mc:erichcurvetangentmode:rctm_user"
-          }
-          Time: 1
-          Value: 1
-          ArriveTangent: 5.449
-          LeaveTangent: 5.449
-        }
-        PreExtrapolation {
-          Value: "mc:erichcurveextrapolation:rcce_constant"
-        }
-        PostExtrapolation {
-          Value: "mc:erichcurveextrapolation:rcce_constant"
-        }
-        DefaultValue: 3.40282347e+38
+      Name: "cs:ButtonControlWindow"
+      ObjectReference {
+        SelfId: 4948291743210551690
       }
     }
-    Overrides {
-      Name: "cs:InDuration"
-      Float: 0.6
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
     }
-    Overrides {
-      Name: "cs:OutDuration"
-      Float: 0.4
+    Canvas {
+      ContentType {
+        Value: "mc:ecanvascontenttype:dynamic"
+      }
+      Opacity: 1
+      IsHUD: true
+      CanvasWorldSize {
+        X: 1024
+        Y: 1024
+      }
+      RedrawTime: 30
+      UseSafeZoneAdjustment: true
     }
-    Overrides {
-      Name: "cs:WriteText"
-      Bool: true
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
     }
-    Overrides {
-      Name: "cs:CanSkipWriting"
-      Bool: true
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7274009370479312550
+  Name: "DungeonPanelSizeControl"
+  Transform {
+    Location {
     }
-    Overrides {
-      Name: "cs:TextSpeed"
-      Float: 0.02
+    Rotation {
     }
-    Overrides {
-      Name: "cs:BackgroundColor"
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14870014279282991952
+  ChildIds: 14731244408230049989
+  ChildIds: 2787626586029669179
+  ChildIds: 10374337849878893830
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 500
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentHeight: true
+    Panel {
+      Opacity: 1
+      OpacityMaskBrush {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 10374337849878893830
+  Name: "UIScrollWindow"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7274009370479312550
+  ChildIds: 4948291743210551690
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 470
+    Height: 500
+    UIY: 140.477814
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    IsHittable: true
+    ScrollPanel {
+      Orientation {
+        Value: "mc:eorientation:orient_vertical"
+      }
+      IsInteractable: true
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4948291743210551690
+  Name: "ScrollWindowlSizeControl"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10374337849878893830
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Height: 700
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    Panel {
+      IsClipping: true
+      Opacity: 1
+      OpacityMaskBrush {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2787626586029669179
+  Name: "FRAME"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7274009370479312550
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 10
+    Height: 10
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 6488609383494304708
+      }
       Color {
-        G: 0.0777145252
-        B: 0.306000113
+        R: 1
+        G: 1
+        B: 1
         A: 1
       }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14731244408230049989
+  Name: "BGIShade"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7274009370479312550
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 200
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+      }
+      Color {
+        A: 0.483
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3364106132022228236
+  Name: "DungeonMenuControl"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13124045646947731111
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ContainerROOT"
+      ObjectReference {
+        SelfId: 14870014279282991952
+      }
     }
     Overrides {
-      Name: "cs:LightIntensity"
-      Float: 23.355402
+      Name: "cs:DungeonButtonTemplate"
+      AssetReference {
+        Id: 15477855929599357788
+      }
     }
     Overrides {
-      Name: "cs:InCurve:tooltip"
-      String: "The curve for the in animation of the panel."
+      Name: "cs:DungeonDataBase"
+      AssetReference {
+        Id: 16913896364350306156
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7767157969909582355
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15131182834275769840
+  Name: "SewerDungeonEntrance"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6477066897767917468
+  ChildIds: 7049879829761427347
+  ChildIds: 8934321490733886127
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Active"
+      Bool: true
     }
     Overrides {
-      Name: "cs:OutCurve:tooltip"
-      String: "The curve of the out animation of the panel."
+      Name: "cs:TriggerEntrance"
+      ObjectReference {
+        SelfId: 8934321490733886127
+      }
     }
     Overrides {
-      Name: "cs:InDuration:tooltip"
-      String: "The duration of the in animation."
+      Name: "cs:DungeonName"
+      String: "Sewer Dungeon"
     }
     Overrides {
-      Name: "cs:OutDuration:tooltip"
-      String: "The duration of the out animation."
+      Name: "cs:Active:isrep"
+      Bool: false
     }
     Overrides {
-      Name: "cs:WriteText:tooltip"
-      String: "If enabled, the text will be printed out 1 character at a time."
+      Name: "cs:Active:ml"
+      Bool: false
     }
     Overrides {
-      Name: "cs:TextSpeed:tooltip"
-      String: "The writing speed of the text animation."
+      Name: "cs:TriggerEntrance:isrep"
+      Bool: false
     }
     Overrides {
-      Name: "cs:BackgroundColor:tooltip"
-      String: "The background color of the background behind the actor."
+      Name: "cs:TriggerEntrance:ml"
+      Bool: false
     }
     Overrides {
-      Name: "cs:LightIntensity:tooltip"
-      String: "The light intensity of the point light behind the actor."
+      Name: "cs:DungeonName:isrep"
+      Bool: false
     }
     Overrides {
-      Name: "cs:CanSkipWriting:tooltip"
-      String: "If enabled, the player can press the left mouse button to skip the writing effect."
+      Name: "cs:DungeonName:ml"
+      Bool: false
     }
   }
   Collidable_v2 {
@@ -152322,8 +152937,111 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Folder {
-    IsFilePartition: true
-    FilePartitionName: "Talking Heads"
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8934321490733886127
+  Name: "EntranceTrigger"
+  Transform {
+    Location {
+      X: -77.1152344
+      Y: -106.177979
+      Z: 114.994141
+    }
+    Rotation {
+      Yaw: -24.8323021
+    }
+    Scale {
+      X: 4.93718
+      Y: 0.999994397
+      Z: 4.72039032
+    }
+  }
+  ParentId: 15131182834275769840
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Enter sewer dungeon"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+    InteractionTemplate {
+      Id: 841534158063459245
+    }
+    BreadcrumbTemplate {
+      Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7049879829761427347
+  Name: "dungeonEntranceScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15131182834275769840
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ROOT"
+      ObjectReference {
+        SelfId: 15131182834275769840
+      }
+    }
+    Overrides {
+      Name: "cs:DungeonDataBase"
+      AssetReference {
+        Id: 16913896364350306156
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7842516509044088605
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
