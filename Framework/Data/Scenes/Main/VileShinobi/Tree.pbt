@@ -152349,7 +152349,8 @@ Objects {
     }
   }
   ParentId: 6386077687221545343
-  ChildIds: 15131182834275769840
+  ChildIds: 7049879829761427347
+  ChildIds: 3268856572169169383
   ChildIds: 13124045646947731111
   UnregisteredParameters {
   }
@@ -152868,8 +152869,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15131182834275769840
-  Name: "SewerDungeonEntrance"
+  Id: 3268856572169169383
+  Name: "DungeonEntrances"
   Transform {
     Location {
     }
@@ -152882,7 +152883,45 @@ Objects {
     }
   }
   ParentId: 6477066897767917468
-  ChildIds: 7049879829761427347
+  ChildIds: 2859049154598330436
+  ChildIds: 15131182834275769840
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15131182834275769840
+  Name: "CryptDungeonEntrance"
+  Transform {
+    Location {
+      X: 1249.51526
+      Y: -387.970215
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3268856572169169383
   ChildIds: 8934321490733886127
   UnregisteredParameters {
     Overrides {
@@ -152897,7 +152936,7 @@ Objects {
     }
     Overrides {
       Name: "cs:DungeonName"
-      String: "Sewer Dungeon"
+      String: "Crypt"
     }
     Overrides {
       Name: "cs:Active:isrep"
@@ -152954,7 +152993,7 @@ Objects {
       Z: 114.994141
     }
     Rotation {
-      Yaw: -24.8323021
+      Yaw: -24.8323059
     }
     Scale {
       X: 4.93718
@@ -152963,6 +153002,139 @@ Objects {
     }
   }
   ParentId: 15131182834275769840
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Enter Crypt"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+    InteractionTemplate {
+      Id: 841534158063459245
+    }
+    BreadcrumbTemplate {
+      Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2859049154598330436
+  Name: "SewerDungeonEntrance"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3268856572169169383
+  ChildIds: 6092261261961281673
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Active"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:TriggerEntrance"
+      ObjectReference {
+        SelfId: 6092261261961281673
+      }
+    }
+    Overrides {
+      Name: "cs:DungeonName"
+      String: "Sewer Dungeon"
+    }
+    Overrides {
+      Name: "cs:Active:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:Active:ml"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:TriggerEntrance:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:TriggerEntrance:ml"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:DungeonName:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:DungeonName:ml"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6092261261961281673
+  Name: "EntranceTrigger"
+  Transform {
+    Location {
+      X: -77.1152344
+      Y: -106.177979
+      Z: 114.994141
+    }
+    Rotation {
+      Yaw: -24.8323021
+    }
+    Scale {
+      X: 4.93718
+      Y: 0.999994397
+      Z: 4.72039032
+    }
+  }
+  ParentId: 2859049154598330436
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
   }
@@ -153002,6 +153174,8 @@ Objects {
   Name: "dungeonEntranceScript"
   Transform {
     Location {
+      X: 1249.51526
+      Y: -387.970215
     }
     Rotation {
     }
@@ -153011,12 +153185,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15131182834275769840
+  ParentId: 6477066897767917468
   UnregisteredParameters {
     Overrides {
-      Name: "cs:ROOT"
+      Name: "cs:DungeonsGroup"
       ObjectReference {
-        SelfId: 15131182834275769840
+        SelfId: 3268856572169169383
       }
     }
     Overrides {

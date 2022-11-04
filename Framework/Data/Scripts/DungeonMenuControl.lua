@@ -35,7 +35,8 @@ local function OpenDungeonSelectionMenu(dungeon)
     print("opening dungeon selection menu for:", dungeon)
     VisibilityToggle.visibility = Visibility.FORCE_ON
     SelectionsActive = true
-    local ButtonLength = 3
+    local Row = DDB[dungeon]
+    local ButtonLength = #Row.Stages
     for i= 1, ButtonLength do 
         SpawnedButtons[i] = World.SpawnAsset(DungeonButtonTemplate, {parent = ButtonControlWindow})
         local NameText = SpawnedButtons[i]:FindChildByName("DUNGEONNAME") -- headline text
