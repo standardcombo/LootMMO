@@ -523,8 +523,9 @@ function DropGatherable(player, entry)
                 resourceType = "XP",
                 resourceAmount = 1,
             }
-            lootDropFactory.Drop(params)
-            
+            if entry.lootID then
+                lootDropFactory.Drop(params)
+            end
             return
         end
     end
