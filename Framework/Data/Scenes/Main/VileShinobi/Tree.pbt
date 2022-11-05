@@ -151916,9 +151916,9 @@ Objects {
     }
   }
   ParentId: 9196876552743480372
-  ChildIds: 3501045531168325163
-  ChildIds: 9344391569059636255
-  ChildIds: 15197333366365604255
+  ChildIds: 10848598726660604502
+  ChildIds: 6335150730578126259
+  ChildIds: 937162381064649790
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -151940,15 +151940,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15197333366365604255
+  Id: 937162381064649790
   Name: "3"
   Transform {
     Location {
       X: -3082.3042
       Y: 1496.84326
-      Z: -1570.04297
+      Z: -1531.57422
     }
     Rotation {
+      Yaw: -170.050278
     }
     Scale {
       X: 1
@@ -151957,8 +151958,8 @@ Objects {
     }
   }
   ParentId: 15337694730650390766
-  ChildIds: 17048537225450498108
   ChildIds: 2148249884447697824
+  ChildIds: 17048537225450498108
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -151969,13 +151970,85 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
+    Value: "mc:eindicatorvisibility:alwaysvisible"
   }
-  Folder {
-    IsGroup: true
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17048537225450498108
+  Name: "Sphere"
+  Transform {
+    Location {
+      Z: -38.46875
+    }
+    Rotation {
+      Yaw: 170.050247
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 937162381064649790
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.330000043
+        G: 1.57356283e-07
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7363477334452929865
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:medium"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -151984,8 +152057,10 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
+      Z: -38.46875
     }
     Rotation {
+      Yaw: 170.050247
     }
     Scale {
       X: 1
@@ -151993,7 +152068,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15197333366365604255
+  ParentId: 937162381064649790
   ChildIds: 7655557026696145878
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
@@ -152065,58 +152140,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17048537225450498108
-  Name: "Sphere"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15197333366365604255
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7363477334452929865
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 9344391569059636255
+  Id: 6335150730578126259
   Name: "2"
   Transform {
     Location {
@@ -152125,6 +152149,7 @@ Objects {
       Z: 59723.2109
     }
     Rotation {
+      Yaw: 104.274475
     }
     Scale {
       X: 1
@@ -152133,7 +152158,6 @@ Objects {
     }
   }
   ParentId: 15337694730650390766
-  ChildIds: 5486610517925818463
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -152144,10 +152168,16 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
+    Value: "mc:eindicatorvisibility:alwaysvisible"
   }
-  Folder {
-    IsGroup: true
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnKey: "VS2"
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -152155,66 +152185,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5486610517925818463
-  Name: "Sphere"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9344391569059636255
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7363477334452929865
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3501045531168325163
+  Id: 10848598726660604502
   Name: "1"
   Transform {
     Location {
       X: -11577.5449
       Y: 41547.4844
-      Z: 59723.2109
+      Z: 59747.3203
     }
     Rotation {
+      Yaw: -91.8363647
     }
     Scale {
       X: 1
@@ -152223,7 +152203,6 @@ Objects {
     }
   }
   ParentId: 15337694730650390766
-  ChildIds: 2800490421877474058
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -152234,61 +152213,16 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
+    Value: "mc:eindicatorvisibility:alwaysvisible"
   }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2800490421877474058
-  Name: "Sphere"
-  Transform {
-    Location {
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnKey: "VS1"
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
     }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3501045531168325163
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7363477334452929865
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    ShouldDecrowdPlayers: true
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

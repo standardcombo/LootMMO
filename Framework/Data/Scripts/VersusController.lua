@@ -2,9 +2,9 @@ _G.VersusRegistered = {}
 _G.VersusPlayers = {}
 local VSpawns = script:GetCustomProperty("VersusSpawns"):WaitForObject()
 local SpawnPoints = {
-    [1] = VSpawns:FindChildByName("1"):GetWorldPosition(), -- p1 spawn
-    [2] = VSpawns:FindChildByName("2"):GetWorldPosition(), -- p2 spawn
-    [3] = VSpawns:FindChildByName("3"):GetWorldPosition(), -- return spawn
+    [1] = VSpawns:FindChildByName("1"), -- p1 spawn
+    [2] = VSpawns:FindChildByName("2"), -- p2 spawn
+    [3] = VSpawns:FindChildByName("3"), -- return spawn
 }
 local Started = false
 local Winner
@@ -69,19 +69,19 @@ local function TelePortPlayers(p1,p2,state)
         table.insert(_G.VersusPlayers, p2)
         
         if Object.IsValid(p1) then
-            p1:Spawn({position = SpawnPoints[1]})
+            p1:Spawn({position = SpawnPoints[1]:GetWorldPosition(),rotation = SpawnPoints[1]:GetWorldRotation()})
             p1Events = p1.diedEvent:Connect(DeathEvent)
             p1.team = 2
         end
         if Object.IsValid(p2) then
-            p2:Spawn({position = SpawnPoints[2]})
+            p2:Spawn({position = SpawnPoints[2]:GetWorldPosition(),rotation = SpawnPoints[2]:GetWorldRotation()})
             p2Events =p2.diedEvent:Connect(DeathEvent)
             p2.team=3
         end
     else
         for  k,v in pairs(_G.VersusPlayers) do
             if Object.IsValid(v) and v.isDead == false and v.isSpawned == true then
-                v:Spawn({position = SpawnPoints[3]})
+                v:Spawn({position = SpawnPoints[3]:GetWorldPosition(), rotation = SpawnPoints[3]:GetWorldRotation()})
                 v.team = 1
             end
         end
