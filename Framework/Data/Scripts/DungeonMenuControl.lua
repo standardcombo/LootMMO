@@ -26,13 +26,13 @@ local function CleanUpSpawns()
 end
 
 local function SelectionMade(button)
-    print("dungeon selection made", button.name)
+    --print("dungeon selection made", button.name)
     Events.BroadcastToServer("CloseMenuSelection",button.name)
     CleanUpSpawns()
 end
 
 local function OpenDungeonSelectionMenu(dungeon)
-    print("opening dungeon selection menu for:", dungeon)
+    --print("opening dungeon selection menu for:", dungeon)
     VisibilityToggle.visibility = Visibility.FORCE_ON
     SelectionsActive = true
     local Row = DDB[dungeon]

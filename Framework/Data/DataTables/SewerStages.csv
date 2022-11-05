@@ -1,5 +1,6 @@
-"SpawnTarget[Core Object Reference]","TestColumn[String]"
-"0BADBADBADBADBAD","You found the stuff you need"
-"0000000000000000","You found the stuff you need"
-"0000000000000000","You found the stuff you need"
-"0000000000000000","You found the stuff you need"
+"SpawnKey[String]","FinalBossName[String]","FinalBoss[Asset Reference]","BasicEnemy[Asset Reference]","MedEnemy[Asset Reference]","HardEnemy[Asset Reference]","TestColumn[String]"
+"Sewer Dungeon1","I'm not sure if we want a string, or asset reference
+ for final enemies. databases, are placeholder.","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","Just a test string"
+"Sewer Dungeon2","Same with regular enemies.","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","to find out."
+"Sewer Dungeon3","","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","if i connected the database"
+"Sewer Dungeon4","","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","0BADBADBADBADBAD","correctly or not"
