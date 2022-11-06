@@ -66,7 +66,7 @@ local ItemDetail    = Get(SelectedPanel, "ItemDetails")
 local DefaultSelectIcon = SelectedIcon:GetImage()
 
 local Tabs = {
-	--[Get(Get(tabpanel, "craft"), "Button")]   = states.crafting,
+	[Get(Get(tabpanel, "craft"), "Button")]   = states.crafting,
 	[Get(Get(tabpanel, "Scrap"), "Button")]   = states.scrapping,
 	[Get(Get(tabpanel, "upgrade"), "Button")] = states.upgrading,
 }
@@ -530,15 +530,14 @@ for key, value in pairs(Tabs) do
 	end)
 end
 
---[[
-
-	Get(ViewPanels[states.crafting], "Button").pressedEvent:Connect(function()
-		if selectedRecipe and currentState == states.crafting then
-			Events.Broadcast(events.CcraftItem, selectedRecipe.itemid)
-			Refresh()
-		end
-	end)
-	]]
+-- This was commented out
+Get(ViewPanels[states.crafting], "Button").pressedEvent:Connect(function()
+	if selectedRecipe and currentState == states.crafting then
+		Events.Broadcast(events.CcraftItem, selectedRecipe.itemid)
+		Refresh()
+	end
+end)
+-- to here
 Get(ViewPanels[states.upgrading], "Button").pressedEvent:Connect(function()
 	if selectedRecipe and currentState == states.upgrading then
 		if selectedRecipe.NFT then

@@ -5,8 +5,8 @@ local PLACEABLES = require(script:GetCustomProperty("APIPlaceables"))
 local EQUIPMENT = require(script:GetCustomProperty("APIEquipment"))
 ---@type APIDatabase
 local DATABASE = require(script:GetCustomProperty("APIDatabase"))
----@type APIInventory
-local INVENTORY = require(script:GetCustomProperty("APIInventory"))
+-- ---@type APIInventory
+-- local INVENTORY = require(script:GetCustomProperty("APIInventory"))
 ---@type APICurrency
 local CURRENCY = require(script:GetCustomProperty("APICurrency"))
 ---@type APIItemPickups
@@ -110,7 +110,7 @@ function GetPlaceableData()
     return DATABASE.Placeables[runtimeState.placeableId]
 end
 
-function TryEquipmentInteract(player, target, toolType, equipmentSettings, doInteract)
+function TryEquipmentInteract(player, target, toolType, equipmentSettings, doInteract) --EDIT HERE
     local errorMessage
     if target == COMPONENT_ROOT then
         -- Check Buff
@@ -218,7 +218,7 @@ function BuffPlaceableWithTool(toolType, equipmentSettings)
     REPLICATOR.ModifyInstance(instance)
 end
 
-function CanRemovePlaceable(player, toolType, equipmentSettings)
+function CanRemovePlaceable(player, toolType, equipmentSettings) -- EDIT HERE
     local placeableData = GetPlaceableData()
     if placeableData then
         if not EQUIPMENT.IsValidToolType(placeableData.ValidRemoveToolTypes, toolType, equipmentSettings)  then
@@ -268,7 +268,7 @@ function CanRemovePlaceable(player, toolType, equipmentSettings)
     return false
 end
 
-function RemovePlaceable(player)
+function RemovePlaceable(player) -- EDIT HERE
     local placeableId = instance.placeableId
     local placeableData = GetPlaceableData()
     if placeableData then
