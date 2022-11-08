@@ -15,8 +15,6 @@ local function CheckPoints(points, progression)
 	if potentialTotalPoints > totalPoints then
 		local difference = potentialTotalPoints - totalPoints
 		points:AddPoint(difference)
-	elseif potentialTotalPoints == totalPoints then
-		warn("Player Has more then the total Points")
 	end
 end
 
