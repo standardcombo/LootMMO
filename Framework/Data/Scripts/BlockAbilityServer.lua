@@ -57,7 +57,7 @@ function OnAbilityCast(ability)
 	released = false
 
 	owner.animationStance = ABILITY_ANIMATION_STANCE
-    releasedHandle = owner.bindingReleasedEvent:Connect(OnShieldReleased)
+    releasedHandle = Input.actionReleasedEvent:Connect(OnShieldReleased)
     goingToTakeDamageListener = _G.CombatEvents.goingToTakeDamageEvent:Connect(OnGoingToTakeDamage)
 end
 
@@ -83,8 +83,8 @@ function OnAbilityTick(ability, deltaTime)
 end
 
 -- nil OnShieldReleased(Player, string)
-function OnShieldReleased(player, binding)
-    if player == ABILITY.owner and binding == ABILITY.actionBinding then
+function OnShieldReleased(player, action)
+    if player == ABILITY.owner and action == ABILITY.actionName then
         released = true
     end
 end
