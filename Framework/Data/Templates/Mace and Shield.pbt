@@ -566,6 +566,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:secondaryaction"
           }
+          KeyBinding_v3: "Block"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"
