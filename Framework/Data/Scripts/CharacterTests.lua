@@ -1,6 +1,6 @@
 --[[
 	Character Cheats 
-	v1.0.4 - 2022/10/29
+	v1.0.5 - 2022/11/01
 	by: blaking707, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
@@ -80,9 +80,10 @@
 		more locations in the Teleport Locations group inside the Cheats script in
 		the Hierarchy.
 
-		Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs
+		Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs, Bar, Spawn
 
 		Example: /teleport Chairs
+		Example: /tp Spawn
 --]]
 
 local TELEPORT_LOCATIONS = script:GetCustomProperty("TeleportLocations"):WaitForObject()
