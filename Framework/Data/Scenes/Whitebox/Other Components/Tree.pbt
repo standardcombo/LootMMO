@@ -2464,6 +2464,28 @@ Objects {
   ParentId: 15075137245449532246
   TemplateInstance {
     ParameterOverrideMap {
+      key: 639145614736337590
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 1341025885078226558
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 1444427707565180380
       value {
         Overrides {
@@ -2503,6 +2525,17 @@ Objects {
           Name: "cs:Root"
           ObjectReference {
             SelfId: 5192074342337134283
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4823262051513693734
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
           }
         }
       }
@@ -2552,6 +2585,28 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8629833581084560537
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8794815456556081185
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 9772568298220129666
       value {
         Overrides {
@@ -2569,6 +2624,17 @@ Objects {
           Name: "cs:Root"
           ObjectReference {
             SelfId: 5192074342337134283
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11492442871873358065
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
           }
         }
       }
@@ -2604,6 +2670,17 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 13748381348948319552
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 15222719815576799386
       value {
         Overrides {
@@ -2626,12 +2703,34 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 16453852467445646535
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 16603944617201725989
       value {
         Overrides {
           Name: "cs:Root"
           ObjectReference {
             SelfId: 5192074342337134283
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16968338267252879273
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
           }
         }
       }
