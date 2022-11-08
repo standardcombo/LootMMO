@@ -1111,6 +1111,7 @@ Objects {
   ChildIds: 11074498457756434708
   ChildIds: 10204661014810725095
   ChildIds: 10331268394402092089
+  ChildIds: 7888366020183073273
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1134,6 +1135,46 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7888366020183073273
+  Name: "Spawn"
+  Transform {
+    Location {
+      X: -9511.31
+      Y: -4394.56934
+      Z: -50839.8594
+    }
+    Rotation {
+      Yaw: 180
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11351672478064088828
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2462,13 +2503,128 @@ Objects {
     }
   }
   ParentId: 12785624939370825655
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 1444427707565180380
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 1513312752592023585
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2388979232575831907
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3414383541020173308
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 6859339733035855025
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7646476141355800078
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7716428950690620403
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8500983996909451899
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 9772568298220129666
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11056600761755669514
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11750702439217547223
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 12245008530248017421
       value {
@@ -2488,12 +2644,56 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 15222719815576799386
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 15926134889519535109
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16603944617201725989
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17980970909854539344
+      value {
+        Overrides {
+          Name: "cs:Root"
+          ObjectReference {
+            SelfId: 2907068384698550826
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 13074073657660917058
     }
   }
   InstanceHistory {
-    SelfId: 16359575722388426609
+    SelfId: 15033503792655519756
     SubobjectId: 7900543579759898107
     InstanceId: 13620541732778982903
     TemplateId: 5338087018861399484
