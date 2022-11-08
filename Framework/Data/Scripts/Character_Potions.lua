@@ -26,7 +26,6 @@ end
 
 function component:SetUnequipped(slot)
 	if slot > self.slotCount or slot < 1 then return end
-	if self:GetEquipped(slot) == nil then return end
 
 	self.equippedPotions[slot] = nil
 	self.TriggerEvent(self.potionChangedEvent, self, slot)
