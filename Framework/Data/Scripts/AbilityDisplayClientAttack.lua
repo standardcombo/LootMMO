@@ -24,7 +24,7 @@ local cooldownDuration = 0.0
 -- Checks for changes to the players abiltiies, or icons on those abilities
 function Tick(deltaTime)
     for key, ability in ipairs(LOCAL_PLAYER:GetAbilities()) do
-        if ability.actionName == 'Shoot' then
+        if ability.actionName == 'Attack' or ability.actionName == 'Shoot' then
             currentAbility = ability
             break
         end
