@@ -23,7 +23,46 @@ local recoveryDuration = 0.0
 local cooldownDuration = 0.0
 
 local ExecuteEvent = nil
+local CooldownEvent = nil
+local EquipmentContainer = nil
 
+function OnChildAdded(_, child)
+	if not Object.IsValid(currentAbility) and child:GetCustomProperty("AbilityBinding") == PANEL.name then
+		SetEquipment(child)
+		PANEL.visibility = Visibility.INHERIT
+		local potion_data = _G['Potions.Equipment'].FindByAssetIdName(currentAbility.name)
+
+		if potion_data ~= nil then
+			NAME_TEXT.text = potion_data.name
+		else
+			NAME_TEXT.text = currentAbility.name
+		end
+	end
+end
+
+function OnChildRemoved(_,child)
+	if not Object.IsValid(currentAbility) then
+		PANEL.visibility = Visibility.FORCE_OFF
+		Unequip()
+	end
+end
+
+Task.Spawn(function()
+	while not EquipmentContainer do
+		for _, object in ipairs(LOCAL_PLAYER:GetAttachedObjects()) do --Look for the Equipment Container in the player's attached objects
+			if object.name == "Equipment Container" then
+				EquipmentContainer = object
+				break
+			end
+		end
+		Task.Wait()
+	end
+	for _, equipment in ipairs(EquipmentContainer:GetChildren()) do --Initial check for equipment
+		OnChildAdded(_, equipment)
+	end
+	EquipmentContainer.childAddedEvent:Connect(OnChildAdded)
+	EquipmentContainer.childRemovedEvent:Connect(OnChildRemoved)
+end)
 
 function SetIcon(Icon)
 	if Icon then
@@ -52,27 +91,72 @@ function Unequip()
 		ExecuteEvent:Disconnect()
 		ExecuteEvent = nil
 	end
+	if CooldownEvent then
+		CooldownEvent:Disconnect()
+		CooldownEvent = nil
+	end
 end
 
 function CalculateCoolDown()
 	cooldownDuration = root.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
 end
 
+local cooldownRemaining
+function OnCooldown()
+	local cd = cooldownDuration
+	PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+	Task.Spawn(function()
+		while Object.IsValid(currentAbility) do
+			local currentPhase = currentAbility:GetCurrentPhase()
+			local phaseTimeRemaining = currentAbility:GetPhaseTimeRemaining()
+			local phaseTimeElapsed = currentAbility.cooldownPhaseSettings.duration - phaseTimeRemaining
+
+			-- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
+
+			if currentPhase == AbilityPhase.COOLDOWN then
+				local elapsedPhaseTime = phaseTimeElapsed
+				cooldownRemaining = cd - elapsedPhaseTime
+			elseif currentPhase == AbilityPhase.EXECUTE then
+				cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
+			else -- Recovery
+				cooldownRemaining = cd
+			end
+			if cooldownRemaining < 0 then
+				cooldownRemaining = 0
+				PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
+				break
+			end
+
+			local totalCooldown = executeDuration + cd
+			COUNTDOWN_TEXT.text = string.format('%.1f', cooldownRemaining)
+
+			-- Update the shadow
+			if totalCooldown > 0.3 then
+				local shadowAngle = CoreMath.Clamp(1.0 - cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
+
+				if shadowAngle <= 180.0 then
+					LEFT_SHADOW.rotationAngle = 0.0
+					RIGHT_SHADOW.visibility = Visibility.INHERIT
+					RIGHT_SHADOW.rotationAngle = shadowAngle
+				else
+					LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
+					RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
+				end
+			end
+			Task.Wait()
+		end
+	end)
+end
+
 function SetEquipment(equipment)
-	if not Object.IsValid(equipment) then
-		return
-	end
-	if not equipment:IsA('Equipment') then
-		return
-	end
+	if not Object.IsValid(equipment) then return end
+	if not equipment:IsA('Equipment') then return end
 	while not equipment.clientUserData.calculateModifier do
 		Task.Wait()
-		if not Object.IsValid(equipment) then
-			return
-		end
+		if not Object.IsValid(equipment) then return end
 	end
 
-	for key, value in pairs(connections) do
+	for _, value in pairs(connections) do
 		value(equipment)
 	end
 
@@ -82,86 +166,13 @@ function SetEquipment(equipment)
 		return
 	end
 	ExecuteEvent = currentAbility.executeEvent:Connect(CalculateCoolDown)
+	CooldownEvent = currentAbility.cooldownEvent:Connect(OnCooldown)
 	executeDuration = currentAbility.executePhaseSettings.duration
 	recoveryDuration = currentAbility.recoveryPhaseSettings.duration
 	cooldownDuration =
 	equipment.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
 	DURATION_BAR.progress = 0
 
-end
-
--- nil Tick(float)
--- Checks for changes to the players abiltiies, or icons on those abilities
-function Tick(deltaTime)
-	if not Object.IsValid(currentAbility) then
-		local equipment = LOCAL_PLAYER:GetEquipment()
-		for index, value in ipairs(equipment) do
-			if value:GetCustomProperty("AbilityBinding") == PANEL.name then
-				SetEquipment(equipment)
-				return
-			end
-		end
-		Unequip()
-	end
-	if not (currentAbility and currentAbility.owner and Object.IsValid(currentAbility.owner)) then
-		PANEL.visibility = Visibility.FORCE_OFF
-		return
-	end
-	local ability = currentAbility
-	local currentPhase = ability:GetCurrentPhase()
-
-	PANEL.visibility = Visibility.INHERIT
-	
-	local potion_data = _G['Potions.Equipment'].FindByAssetIdName(currentAbility.name)
-
-	if potion_data ~= nil then
-		NAME_TEXT.text = potion_data.name
-	else
-		NAME_TEXT.text = currentAbility.name
-	end
-
-	if not (currentPhase == AbilityPhase.COOLDOWN) then
-		PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
-	else
-		local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
-		local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
-		PROGRESS_INDICATOR.visibility = Visibility.INHERIT
-
-		local cd = cooldownDuration
-
-		-- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
-		local cooldownRemaining
-
-		if currentPhase == AbilityPhase.COOLDOWN then
-			local elapsedPhaseTime = phaseTimeElapsed
-			cooldownRemaining = cd - elapsedPhaseTime
-		elseif currentPhase == AbilityPhase.EXECUTE then
-			cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
-		else -- Recovery
-			cooldownRemaining = cd
-		end
-
-		if cooldownRemaining < 0 then
-			cooldownRemaining = 0
-		end
-
-		local totalCooldown = executeDuration + cd
-		COUNTDOWN_TEXT.text = string.format('%.1f', cooldownRemaining)
-
-		-- Update the shadow
-		if totalCooldown > 0.3 then
-			local shadowAngle = CoreMath.Clamp(1.0 - cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
-
-			if shadowAngle <= 180.0 then
-				LEFT_SHADOW.rotationAngle = 0.0
-				RIGHT_SHADOW.visibility = Visibility.INHERIT
-				RIGHT_SHADOW.rotationAngle = shadowAngle
-			else
-				LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
-				RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
-			end
-		end
-	end
 end
 
 function ConnectEquipment(func)
