@@ -35,15 +35,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8578995028087510781
-  Name: "UI Gradient Circular 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Basic_Shape_001"
-  }
-}
-Assets {
   Id: 8031754533012253259
   Name: "Crosshair 021"
   PlatformAssetType: 9
@@ -80,12 +71,12 @@ Assets {
   }
 }
 Assets {
-  Id: 487025218183620144
-  Name: "Center Arrow 002 Wedge"
+  Id: 170077129283861343
+  Name: "Potion"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterArrow_002Wedge"
+    AssetId: "UI_Fantasy_Icon_Potion"
   }
 }
 Assets {
@@ -104,14 +95,5 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Basic_Shape_002"
-  }
-}
-Assets {
-  Id: 26986594793006901
-  Name: "Icon Diamond"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Diamond"
   }
 }
