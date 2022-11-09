@@ -27,7 +27,7 @@ end
 function component:SetUnequipped(slot)
 	if slot > self.slotCount or slot < 1 then return end
 
-	self.equippedPotions[slot] = nil
+	self.equippedPotions[slot] = false
 	self.TriggerEvent(self.potionChangedEvent, self, slot)
 end
 
@@ -46,6 +46,12 @@ end
 
 function component:Deserialize(data)
 	if not data then return end
+
+	for i = 1, self.slotCount do
+		self.equippedPotions[i] = false
+		self.TriggerEvent(self.potionChangedEvent, self, i)
+	end
+
 	for index, value in pairs(data) do
 		self:SetEquipped(value, index)
 	end

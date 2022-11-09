@@ -1,132 +1,183 @@
 --[[
 	Cauldron UI
-	v1.0.1 - 2022/10/25
-	by: blaking707, CommanderFoo
+	v1.1.0 - 2022/10/25
+	by: Blaking, CommanderFoo
 ]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]
-local Root = script.parent
+local ROOT = script.parent
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local POTION_MICRO_SLOT = script:GetCustomProperty("PotionMicroSlot")
+local DEFAULT_ICON = script:GetCustomProperty("DefaultIcon")
 
-local isDragging = false
-
+---Fetch a child from the panel by name.
+---@param panel CoreObject
+---@param child string
+---@return CoreObject
 local function Get(panel, child)
 	local newChild = panel:FindChildByName(child) or panel:FindDescendantByName(child)
 	assert(newChild, child .. " Not Found")
 	return newChild
 end
 
-local dragpanel = Get(Root, "DragImage")
-local PotionStorage = Get(Root, "Potion Storage")
-local PotionSlots = Get(Root, 'Slots')
+local DRAG_PANEL = Get(ROOT, "DragImage")
+local POTION_STORAGE = Get(ROOT, "Potion Storage")
+local POTION_SLOTS = Get(ROOT, 'Slots'):GetChildren()
 
+local isDragging = false
+local potionSlotLookup = {}
+
+---Resets the panel being dragged around.
+---If the panel is dropped on a valid potion slot, a broadcast is done
+--- to EquipPotion that will equip it for the character.
 local function Release()
 	isDragging = false
-	dragpanel.visibility = Visibility.FORCE_OFF
-	for index, slot in ipairs(PotionSlots:GetChildren()) do
-		if slot.isEnabled then
+	DRAG_PANEL.visibility = Visibility.FORCE_OFF
+	for index, slot in ipairs(POTION_SLOTS) do
+		if potionSlotLookup[slot].unlocked then
 			local position   = slot:GetAbsolutePosition()
 			local mousePos   = Input.GetCursorPosition()
 			local halfwidth  = slot.width / 2
 			local halfheight = slot.height / 2
 			if mousePos.x >= position.x - halfwidth and mousePos.x <= position.x + halfwidth then
 				if mousePos.y >= position.y - halfheight and mousePos.y <= position.y + halfheight then
-					Events.Broadcast('EquipPotion', index, dragpanel.clientUserData.potion)
+					Events.Broadcast('EquipPotion', index, DRAG_PANEL.clientUserData.potion)
 					break
 				end
 			end
 		end
 	end
-	dragpanel.clientUserData.potion = nil
+	DRAG_PANEL.clientUserData.potion = nil
 end
 
-local function Drag(point)
-
+---Handle dragging around the panel that contains the potion pressed on.
+local function Drag(button, point)
 	local potion = point.clientUserData.potion
-	dragpanel.clientUserData.potion = potion
-	dragpanel:SetImage(PotionsAPI.GetIcon(potion))
+	DRAG_PANEL.clientUserData.potion = potion
+	DRAG_PANEL:SetImage(PotionsAPI.GetIcon(potion))
 	local dragpos = point:GetAbsolutePosition()
-	dragpanel.x = dragpos.x
-	dragpanel.y = dragpos.y
-	dragpanel.visibility = Visibility.INHERIT
+	DRAG_PANEL.x = dragpos.x
+	DRAG_PANEL.y = dragpos.y
+	DRAG_PANEL.visibility = Visibility.INHERIT
 	isDragging = true
-
 end
 
-function StartUp()
-	dragpanel.visibility = Visibility.FORCE_OFF
-
-	local y = 70
+---Adds all the potions to the scroll panel that a player can drag onto
+---a potion slot.
+local function CreatePotions()
+	local offsetY = 70
+	local spacing = 15
 	local count = 0
-	for key, value in pairs(PotionsAPI.GetTable()) do
-		local potionPoint = World.SpawnAsset(POTION_MICRO_SLOT)
-		potionPoint.parent = PotionStorage
-		potionPoint.clientUserData.potion = key
+	local potionTable = PotionsAPI.GetTable()
+
+	for key, value in pairs(potionTable) do
+		local potionPoint = World.SpawnAsset(POTION_MICRO_SLOT, { parent = POTION_STORAGE })
 		local potionIcon = Get(potionPoint, "PotionIcon")
 		local potionName = Get(potionPoint, "PotionName")
-		local Button = Get(potionPoint, "Drag")
+		local button = Get(potionPoint, "Drag")
+		local panelWidth = potionPoint.width + spacing
 
-		Button.pressedEvent:Connect(function()
-			Drag(potionPoint)
-		end)
-		Button.releasedEvent:Connect(function()
-			Release()
-		end)
+		potionPoint.clientUserData.potion = key
 		potionName.text = PotionsAPI.GetName(key)
 		potionIcon:SetImage(PotionsAPI.GetIcon(key))
-		potionPoint.y = y
-		potionPoint.x = -120 + (count % 3) * 120
+		potionPoint.y = offsetY
+		potionPoint.x = -panelWidth + (count % 3) * panelWidth
 		count = count + 1
-		if (count % 3) == 0 then y = y + 150 end
-	end
 
-	for key, value in pairs(PotionSlots:GetChildren()) do
-		local potionIcon = Get(value, "PotionIcon")
-		local arrow = Get(value, "Arrow")
-		potionIcon.visibility = Visibility.FORCE_OFF
-		arrow.visibility = Visibility.INHERIT
+		if(count % 3) == 0 then
+			offsetY = offsetY + potionPoint.height
+		end
+
+		button.pressedEvent:Connect(Drag, potionPoint)
+		button.releasedEvent:Connect(Release)
 	end
 end
 
-StartUp()
+---First function that runs to do some setup and cache the slots.
+local function StartUp()
+	DRAG_PANEL.visibility = Visibility.FORCE_OFF
 
-local function EmptySlots()
-	for key, value in pairs(PotionSlots:GetChildren()) do
+	CreatePotions()
+
+	---Fetch potion slots and cache them for later use.
+	for key, value in pairs(POTION_SLOTS) do
 		local potionIcon = Get(value, "PotionIcon")
-		local arrow = Get(value, "Arrow")
-		potionIcon.visibility = Visibility.FORCE_OFF
-		arrow.visibility = Visibility.INHERIT
+		
+		potionIcon:SetColor(Color.New(0, 0, 0, .3))
+
+		potionSlotLookup[value] = {
+		
+			potionIcon = potionIcon,
+			arrow = Get(value, "Arrow"),
+			potionName = Get(value, "PotionName"),
+			slotName = Get(value, "SlotName"),
+			unlocked = false
+
+		}
+	end
+end
+
+---If a loot bag change is done, then the slots need to be emptied.
+local function EmptySlots()
+	for key, value in pairs(POTION_SLOTS) do
+		potionSlotLookup[value].potionIcon:SetColor(Color.New(0, 0, 0, .3))
+		potionSlotLookup[value].arrow.visibility = Visibility.FORCE_OFF
+		potionSlotLookup[value].potionName.visibility = Visibility.FORCE_OFF
+		potionSlotLookup[value].potionIcon:SetImage(DEFAULT_ICON)
+		potionSlotLookup[value].unlocked = false
+		potionSlotLookup[value].potionName.text = ""
 	end
 end
 
 local function UpdateSlots(character)
 	local potions = character:GetComponent("Potions")
-	for index, value in ipairs(PotionSlots:GetChildren()) do
+	local progression = character:GetComponent("Progression")
 
-		local potionIcon = Get(value, "PotionIcon")
-		local potiontext = Get(value, "potionName")
-		local arrow = Get(value, "Arrow")
-
+	for index, value in ipairs(POTION_SLOTS) do
+		local potionIcon = potionSlotLookup[value].potionIcon
+		local arrow = potionSlotLookup[value].arrow
 		local potion = potions:GetEquipped(index)
-		if potion then
-			potionIcon:SetImage(PotionsAPI.GetIcon(potion))
-			potiontext.text = PotionsAPI.GetName(potion)
-			potionIcon.visibility = Visibility.INHERIT
-			arrow.visibility = Visibility.FORCE_OFF
+		local potionName = potionSlotLookup[value].potionName
+		local potionProgression = progression:GetProgressionKey("PotionSlot" .. index)
+
+		potionSlotLookup[value].unlocked = potionProgression
+
+		if potionProgression then
+			if potion then
+				potionIcon:SetImage(PotionsAPI.GetIcon(potion))
+				potionIcon:SetColor(Color.WHITE)
+				potionName.text = PotionsAPI.GetName(potion)
+				potionName.visibility = Visibility.INHERIT
+				arrow.visibility = Visibility.FORCE_OFF
+			end
 		else
-			potionIcon.visibility = Visibility.FORCE_OFF
-			arrow.visibility = Visibility.INHERIT
+			potionIcon:SetColor(Color.New(0, 0, 0, .3))
+
+			if potionSlotLookup[value].unlocked then
+				arrow.visibility = Visibility.INHERIT
+				potionName.visibility = Visibility.FORCE_OFF
+			else
+				potionIcon:SetImage(DEFAULT_ICON)
+				potionName.visibility = Visibility.FORCE_OFF
+				arrow.visibility = Visibility.FORCE_OFF
+				potionName.text = ""
+			end
 		end
 	end
 end
 
 local function UpdatePotionSlots(progression)
-	for index, value in ipairs(PotionSlots:GetChildren()) do
+	for index, value in ipairs(POTION_SLOTS) do
 		if progression:GetProgressionKey("PotionSlot" .. index) then
-			value.isEnabled = true
+			potionSlotLookup[value].unlocked = true
+			potionSlotLookup[value].arrow.visibility = Visibility.INHERIT
+			potionSlotLookup[value].potionName.visibility = Visibility.INHERIT
 		else
-			value.isEnabled = false
+			potionSlotLookup[value].unlocked = false
+			potionSlotLookup[value].arrow.visibility = Visibility.FORCE_OFF
+			potionSlotLookup[value].potionName.visibility = Visibility.FORCE_OFF
+			potionSlotLookup[value].potionIcon:SetImage(DEFAULT_ICON)
+			potionSlotLookup[value].potionIcon:SetColor(Color.New(0, 0, 0, .3))
 		end
 	end
 end
@@ -139,36 +190,43 @@ local function CheckSlots(character)
 	end
 end
 
-EquipAPI.playerEquippedEvent:Connect(function(character, player)
+local function OnUnequipped(character, player)
 	if player ~= LOCAL_PLAYER then
 		return
 	end
+
+	CheckSlots()
+end
+
+local function OnEquipped(character, player)
+	if player ~= LOCAL_PLAYER then
+		return
+	end
+
 	local progression = character:GetComponent("Progression")
 	local potions = character:GetComponent("Potions")
-	potions.potionChangedEvent:Connect(function()
+
+	potions.potionChangedEvent:Connect(function(_, slot)
 		CheckSlots(character)
 	end)
 	progression.progressionUpdatedEvent:Connect(function(self, _, element)
 		UpdatePotionSlots(progression)
 	end)
+
 	UpdatePotionSlots(progression)
 	CheckSlots(character)
-end)
+end
 
-
-EquipAPI.playerUnequippedEvent:Connect(function(character, player)
-	if player ~= LOCAL_PLAYER then
-		return
-	end
-	CheckSlots()
-end)
-
-
-function Tick(dt)
+function Tick()
 	if isDragging then
 		local MouseLocation = Input.GetCursorPosition()
-		local absPos        = dragpanel:GetAbsolutePosition()
-		dragpanel.x         = CoreMath.Lerp(absPos.x, MouseLocation.x, .2)
-		dragpanel.y         = CoreMath.Lerp(absPos.y, MouseLocation.y, .2)
+		local absPos = DRAG_PANEL:GetAbsolutePosition()
+		DRAG_PANEL.x = MouseLocation.x
+		DRAG_PANEL.y = MouseLocation.y
 	end
 end
+
+EquipAPI.playerUnequippedEvent:Connect(OnUnequipped)
+EquipAPI.playerEquippedEvent:Connect(OnEquipped)
+
+StartUp()
