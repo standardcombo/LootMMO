@@ -246,6 +246,7 @@ function Tick(deltaTime)
     --print("Current state:", currentState)
 
 	-- If Eagle has reached the maximum distance from the owner then telport to owner
+	if not Object.IsValid(ROOT) or not Object.IsValid(owner) then return end
 	local distanceFromOwner = GetDistanceBetween(ROOT:GetWorldPosition(), owner:GetWorldPosition())
 	if distanceFromOwner > MAX_DISTANCE_FROM_OWNER then
 		--print(distanceFromOwner,"Eagle too far from player")

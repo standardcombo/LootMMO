@@ -84,6 +84,7 @@ function Runner()
 		end
 		
 		for i = 1, RETRIES do
+			if not Object.IsValid(player) then return end
 			collection, resultCode, err = Blockchain.GetTokensForPlayer(player)
 			
 			if collection and resultCode == BlockchainTokenResultCode.SUCCESS then
