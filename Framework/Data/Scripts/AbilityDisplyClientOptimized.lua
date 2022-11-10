@@ -19,7 +19,7 @@ function OnChildAdded(_, equipment)
 				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = potion_data.name
 				PANELS[abilityBindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 				local icon = _G['Potions.Equipment'].GetIcon(potion_data.id)
-				SetIcon(icon, PANELS[abilityBindingName])
+				PANELS[abilityBindingName].clientUserData.SetIcon(icon, PANELS[abilityBindingName])
 			else
 				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = equipment.clientUserData.ability.name
 			end
