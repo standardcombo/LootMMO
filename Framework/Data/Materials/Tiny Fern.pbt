@@ -2,7 +2,7 @@ Assets {
   Id: 9215762452473007542
   Name: "Tiny Fern"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 9489573049012806309
     ParameterOverrides {

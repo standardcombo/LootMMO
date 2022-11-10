@@ -2,7 +2,7 @@ Assets {
   Id: 14939659665102535241
   Name: "BONE"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 10373577859092754191
     ParameterOverrides {

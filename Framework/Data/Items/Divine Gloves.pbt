@@ -2,7 +2,7 @@ Assets {
   Id: 1484368788310669587
   Name: "Divine Gloves"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

@@ -2,7 +2,7 @@ Assets {
   Id: 9691345171931353050
   Name: "Plated Belt"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

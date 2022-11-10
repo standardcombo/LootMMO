@@ -2,7 +2,7 @@ Assets {
   Id: 8374501267411192621
   Name: "Sash"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

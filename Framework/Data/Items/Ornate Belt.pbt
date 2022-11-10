@@ -2,7 +2,7 @@ Assets {
   Id: 128047747018701820
   Name: "Ornate Belt"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

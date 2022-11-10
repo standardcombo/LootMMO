@@ -2,7 +2,7 @@ Assets {
   Id: 10786320562395905767
   Name: "Heavy Boots"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

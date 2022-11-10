@@ -2,7 +2,7 @@ Assets {
   Id: 13510637552607883678
   Name: "Custom Composite Wood 9 Slice Frame Panel 04"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 1599972442891002288
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 8067572667813164525
   Name: "Dragonskin Armor"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

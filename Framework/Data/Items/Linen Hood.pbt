@@ -2,7 +2,7 @@ Assets {
   Id: 15393297218486505519
   Name: "Linen Hood"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

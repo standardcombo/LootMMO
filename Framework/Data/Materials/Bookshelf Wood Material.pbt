@@ -2,7 +2,7 @@ Assets {
   Id: 4992907771838413930
   Name: "Bookshelf Wood Material"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 15709407357727739761
     ParameterOverrides {

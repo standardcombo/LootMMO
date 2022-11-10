@@ -361,7 +361,7 @@ Assets {
       AssetId: "tm_fan_candle_grp_001_lit_01"
     }
   }
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Dungeon Tiles"
   VirtualFolderPath: "Creepy Crypt"
 }

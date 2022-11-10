@@ -2,7 +2,7 @@ Assets {
   Id: 1841257198260749820
   Name: "Studded Leather Gloves"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

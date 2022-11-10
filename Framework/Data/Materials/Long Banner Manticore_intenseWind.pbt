@@ -2,7 +2,7 @@ Assets {
   Id: 8262363692209817493
   Name: "Long Banner Manticore_intenseWind"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 6897193417206343100
     ParameterOverrides {

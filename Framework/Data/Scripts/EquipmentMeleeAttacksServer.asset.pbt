@@ -6,5 +6,5 @@ Assets {
     CustomParameters {
     }
   }
-  SerializationVersion: 119
+  SerializationVersion: 120
 }

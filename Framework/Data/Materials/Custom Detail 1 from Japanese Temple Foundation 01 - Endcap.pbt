@@ -2,7 +2,7 @@ Assets {
   Id: 5088339700456142849
   Name: "Custom Detail 1 from Japanese Temple Foundation 01 - Endcap"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 2902077383174840901
     ParameterOverrides {

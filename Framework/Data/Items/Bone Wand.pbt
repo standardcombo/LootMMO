@@ -2,7 +2,7 @@ Assets {
   Id: 9921316547362943727
   Name: "Bone Wand"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

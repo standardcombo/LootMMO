@@ -2,7 +2,7 @@ Assets {
   Id: 10388495764372049008
   Name: "Loot_Stats_Modifiables"
   PlatformAssetType: 31
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Stats"
   DataTableAsset {

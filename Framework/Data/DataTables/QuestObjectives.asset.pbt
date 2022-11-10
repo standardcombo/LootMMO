@@ -2,7 +2,7 @@ Assets {
   Id: 17153357731039904992
   Name: "QuestObjectives"
   PlatformAssetType: 31
-  SerializationVersion: 119
+  SerializationVersion: 120
   DataTableAsset {
   }
 }

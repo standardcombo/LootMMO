@@ -2,7 +2,7 @@ Assets {
   Id: 10832126590020727351
   Name: "CardCC_Drag"
   PlatformAssetType: 29
-  SerializationVersion: 119
+  SerializationVersion: 120
   BindingSetAsset {
     Bindings {
       BindingType {

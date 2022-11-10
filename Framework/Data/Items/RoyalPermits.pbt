@@ -2,7 +2,7 @@ Assets {
   Id: 9030047708125970617
   Name: "RoyalPermits"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"
