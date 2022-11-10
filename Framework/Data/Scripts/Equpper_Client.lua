@@ -10,7 +10,7 @@ local Potions = _G["Potions.Equipment"]
 local EquipmentTable = {}
 local EquipmentContainer = nil
 
-local LOCALPLAYER = Game.GetLocalPlayer()
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 Task.Wait()
 local PANELS = RENDER_ROOT:GetChildren()
@@ -18,11 +18,11 @@ local bindingsTable = {}
 
 for _, panel in pairs(PANELS) do
     bindingsTable[panel.name] = panel
-    panel.clientUserData.SetActionName(panel.name)
+    panel.clientUserData.SetActionName(panel)
 end
 
 while not EquipmentContainer do
-	for _, object in ipairs(LOCALPLAYER:GetAttachedObjects()) do --Look for the Equipment Container in the player's attached objects
+	for _, object in ipairs(LOCAL_PLAYER:GetAttachedObjects()) do --Look for the Equipment Container in the player's attached objects
 		if object.name == "Equipment Container" then
 			EquipmentContainer = object
 			break
@@ -35,7 +35,7 @@ local function WriteData(equipment, panel)
     Task.Wait()
     local icon = LOOT_ABILITY_EQUIPMENT.GetIcon(equipment.name) or Potions.GetIcon(equipment.name)
     if icon then
-        panel.clientUserData.SetIcon(icon)
+        panel.clientUserData.SetIcon(icon,panel)
     end
     panel.clientUserData.SetEquipment(equipment)
 end

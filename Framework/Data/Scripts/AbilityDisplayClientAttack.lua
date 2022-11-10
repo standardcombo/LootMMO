@@ -121,10 +121,10 @@ function SetIcon(Icon)
     end
 end
 
-function SetActionName(name)
-    if name then
+function SetActionName(panel)
+    if panel then
         for _, child in pairs(ACTION_NAME:GetChildren()) do
-            child.text = name
+            child.text = panel.name
         end
     end
 end

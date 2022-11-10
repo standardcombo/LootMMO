@@ -145,6 +145,7 @@ end
 -- Enables collision on player to make the hitbox collidable
 function OnEquipped()
 	Task.Wait(0.1)
+	if not Object.IsValid(EQUIPMENT) then return end
 	EQUIPMENT.collision = Collision.INHERIT
 end
 

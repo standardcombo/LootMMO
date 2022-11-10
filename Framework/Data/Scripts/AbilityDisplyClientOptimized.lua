@@ -1,49 +1,38 @@
--- Internal custom properties --
-local PANEL = script:GetCustomProperty('Panel'):WaitForObject()
-local ICON = script:GetCustomProperty('Icon'):WaitForObject()
-local COUNTDOWN_TEXT = script:GetCustomProperty('CountdownText'):WaitForObject()
-local NAME_TEXT = script:GetCustomProperty('NameText'):WaitForObject()
-local PROGRESS_INDICATOR = script:GetCustomProperty('ProgressIndicator'):WaitForObject()
-local RIGHT_SHADOW = script:GetCustomProperty('RightShadow'):WaitForObject()
-local LEFT_SHADOW = script:GetCustomProperty('LeftShadow'):WaitForObject()
-local DURATION_BAR = script:GetCustomProperty('DurationIndicator'):WaitForObject()
-local ACTION_NAME = script:GetCustomProperty('ActionName'):WaitForObject()
+local ABILITY_DISPLAY = script:GetCustomProperty("AbilityDisplay"):WaitForObject()
+
 -- Constants
 local LOCAL_PLAYER = Game.GetLocalPlayer()
-local DEFAULT_IMAGE = ICON:GetImage()
 
+local EquipmentContainer = nil
+local PANELS = {}
+local currentAbilities = {}
 local connections = {}
 
--- Variables
-local currentEquipment = nil
-local currentAbility = nil
-local root = nil
-local executeDuration = 0.0
-local recoveryDuration = 0.0
-local cooldownDuration = 0.0
+function OnChildAdded(_, equipment)
+	if equipment.owner == LOCAL_PLAYER then
+			SetEquipment(equipment)
+			local abilityBindingName = equipment:GetCustomProperty("AbilityBinding")
+			PANELS[abilityBindingName].visibility = Visibility.INHERIT
+			local potion_data = _G['Potions.Equipment'].FindByAssetIdName(equipment.clientUserData.ability.name)
 
-local ExecuteEvent = nil
-local CooldownEvent = nil
-local EquipmentContainer = nil
-
-function OnChildAdded(_, child)
-	if not Object.IsValid(currentAbility) and child:GetCustomProperty("AbilityBinding") == PANEL.name then
-		SetEquipment(child)
-		PANEL.visibility = Visibility.INHERIT
-		local potion_data = _G['Potions.Equipment'].FindByAssetIdName(currentAbility.name)
-
-		if potion_data ~= nil then
-			NAME_TEXT.text = potion_data.name
-		else
-			NAME_TEXT.text = currentAbility.name
-		end
+			if potion_data ~= nil then
+				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = potion_data.name
+				PANELS[abilityBindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
+				local icon = _G['Potions.Equipment'].GetIcon(potion_data.id)
+				SetIcon(icon, PANELS[abilityBindingName])
+			else
+				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = equipment.clientUserData.ability.name
+			end
 	end
 end
 
-function OnChildRemoved(_,child)
-	if not Object.IsValid(currentAbility) then
-		PANEL.visibility = Visibility.FORCE_OFF
-		Unequip()
+function OnChildRemoved(_,equipment)
+	if equipment.owner == LOCAL_PLAYER then
+		if not Object.IsValid(equipment.clientUserData.ability) then
+			local abilityBindingName = equipment:GetCustomProperty("AbilityBinding")
+			PANELS[abilityBindingName].visibility = Visibility.FORCE_OFF
+			Unequip(equipment)
+		end
 	end
 end
 
@@ -64,83 +53,70 @@ Task.Spawn(function()
 	EquipmentContainer.childRemovedEvent:Connect(OnChildRemoved)
 end)
 
-function SetIcon(Icon)
+function SetIcon(Icon,panel)
 	if Icon then
-		ICON:SetImage(Icon)
+		panel.clientUserData.ICON:SetImage(Icon)
 	else
-		ICON:SetImage(DEFAULT_IMAGE)
+		panel.clientUserData.ICON:SetImage(panel.clientUserData.DEFAULT_IMAGE)
 	end
 end
 
-function SetActionName(name)
-	if name then
-		for key, child in pairs(ACTION_NAME:GetChildren()) do
-			if name ~= "Shift" then
-				child.text = Input.GetActionInputLabel(name)
+function SetActionName(panel)
+	if panel then
+		for _, child in pairs(panel.clientUserData.ACTION_NAME:GetChildren()) do
+			if panel.name ~= "Shift" then
+				child.text = Input.GetActionInputLabel(panel.name)
 			else
-				child.text = name
+				child.text = panel.name
 			end
 		end
 	end
 end
 
-function Unequip()
-	currentEquipment = nil
-	currentAbility = nil
-	if ExecuteEvent then
-		ExecuteEvent:Disconnect()
-		ExecuteEvent = nil
-	end
-	if CooldownEvent then
-		CooldownEvent:Disconnect()
-		CooldownEvent = nil
-	end
+function Unequip(equipment)
+	equipment.clientUserData = {}
 end
 
-function CalculateCoolDown()
-	cooldownDuration = root.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
-end
-
-local cooldownRemaining
-function OnCooldown()
-	local cd = cooldownDuration
-	PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+function OnCooldown(ability)
 	Task.Spawn(function()
-		while Object.IsValid(currentAbility) do
-			local currentPhase = currentAbility:GetCurrentPhase()
-			local phaseTimeRemaining = currentAbility:GetPhaseTimeRemaining()
-			local phaseTimeElapsed = currentAbility.cooldownPhaseSettings.duration - phaseTimeRemaining
+		local cd = ability.clientUserData.cooldownDuration
+		local bindingName = ability.clientUserData.binding
+		PANELS[bindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+		while Object.IsValid(ability) do
+			local currentPhase = ability:GetCurrentPhase()
+			local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
+			local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
 
 			-- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
 
 			if currentPhase == AbilityPhase.COOLDOWN then
 				local elapsedPhaseTime = phaseTimeElapsed
-				cooldownRemaining = cd - elapsedPhaseTime
+				ability.clientUserData.cooldownRemaining = cd - elapsedPhaseTime
 			elseif currentPhase == AbilityPhase.EXECUTE then
-				cooldownRemaining = cd + recoveryDuration + phaseTimeRemaining
+				ability.clientUserData.cooldownRemaining = cd + ability.clientUserData.recoveryDuration + phaseTimeRemaining
 			else -- Recovery
-				cooldownRemaining = cd
+				ability.clientUserData.cooldownRemaining = cd
 			end
-			if cooldownRemaining < 0 then
-				cooldownRemaining = 0
-				PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
+			if ability.clientUserData.cooldownRemaining < 0.1 then
+				ability.clientUserData.cooldownRemaining = 0
+				PANELS[bindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 				break
 			end
 
-			local totalCooldown = executeDuration + cd
-			COUNTDOWN_TEXT.text = string.format('%.1f', cooldownRemaining)
+			local totalCooldown = ability.clientUserData.executeDuration + cd
+			PANELS[bindingName].clientUserData.COUNTDOWN_TEXT.text = string.format('%.1f', ability.clientUserData.cooldownRemaining)
 
 			-- Update the shadow
 			if totalCooldown > 0.3 then
-				local shadowAngle = CoreMath.Clamp(1.0 - cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
+				local shadowAngle = CoreMath.Clamp(1.0 - ability.clientUserData.cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
 
 				if shadowAngle <= 180.0 then
-					LEFT_SHADOW.rotationAngle = 0.0
-					RIGHT_SHADOW.visibility = Visibility.INHERIT
-					RIGHT_SHADOW.rotationAngle = shadowAngle
+					PANELS[bindingName].clientUserData.LEFT_SHADOW.rotationAngle = 0.0
+					PANELS[bindingName].clientUserData.RIGHT_SHADOW.visibility = Visibility.INHERIT
+					PANELS[bindingName].clientUserData.RIGHT_SHADOW.rotationAngle = shadowAngle
 				else
-					LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
-					RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
+					PANELS[bindingName].clientUserData.LEFT_SHADOW.rotationAngle = shadowAngle - 180.0
+					PANELS[bindingName].clientUserData.RIGHT_SHADOW.visibility = Visibility.FORCE_OFF
 				end
 			end
 			Task.Wait()
@@ -155,36 +131,52 @@ function SetEquipment(equipment)
 		Task.Wait()
 		if not Object.IsValid(equipment) then return end
 	end
-
-	for _, value in pairs(connections) do
-		value(equipment)
+	for _, func in pairs(connections) do
+		func(equipment)
 	end
 
-	root = equipment
-	currentAbility = equipment:FindChildByType('Ability')
-	if not currentAbility then
+	local ability = equipment:FindChildByType('Ability')
+	if not ability then
 		return
 	end
-	ExecuteEvent = currentAbility.executeEvent:Connect(CalculateCoolDown)
-	CooldownEvent = currentAbility.cooldownEvent:Connect(OnCooldown)
-	executeDuration = currentAbility.executePhaseSettings.duration
-	recoveryDuration = currentAbility.recoveryPhaseSettings.duration
-	cooldownDuration =
-	equipment.clientUserData.calculateModifier()['Cooldown'] or currentAbility.cooldownPhaseSettings.duration
-	DURATION_BAR.progress = 0
-
+	currentAbilities[ability] = ability
+	equipment.clientUserData.ability = ability
+	ability.clientUserData.binding = equipment:GetCustomProperty("AbilityBinding")
+	ability.clientUserData.CooldownEvent = currentAbilities[ability].cooldownEvent:Connect(OnCooldown, ability)
+	ability.clientUserData.executeDuration = currentAbilities[ability].executePhaseSettings.duration
+	ability.clientUserData.recoveryDuration = currentAbilities[ability].recoveryPhaseSettings.duration
+	ability.clientUserData.cooldownDuration = equipment.clientUserData.calculateModifier()['Cooldown'] or ability.cooldownPhaseSettings.duration
+	PANELS[equipment:GetCustomProperty("AbilityBinding")].clientUserData.DURATION_BAR.progress = 0
 end
 
 function ConnectEquipment(func)
-	table.insert(connections, func)
+	if not connections[func] then
+		connections[func] = func
+	end
 end
 
 function GetEquipment()
-	return currentEquipment
+	print("GetEquipment")
+	--return currentEquipment
 end
 
-PANEL.clientUserData.SetIcon = SetIcon
-PANEL.clientUserData.SetActionName = SetActionName
-PANEL.clientUserData.SetEquipment = SetEquipment
-PANEL.clientUserData.GetEquipment = GetEquipment
-PANEL.clientUserData.Connect = ConnectEquipment
+-- Loop through Children of ABILITY_DISPLAY except if name is Attack
+for _, PANEL in pairs(ABILITY_DISPLAY:GetChildren()) do
+	if PANEL.name ~= "Attack" then
+		PANELS[PANEL.name] = PANEL
+		PANEL.clientUserData.ICON = PANEL:GetCustomProperty('Icon'):WaitForObject()
+		PANEL.clientUserData.DEFAULT_IMAGE = PANEL.clientUserData.ICON:GetImage()
+		PANEL.clientUserData.COUNTDOWN_TEXT = PANEL:GetCustomProperty('CountdownText'):WaitForObject()
+		PANEL.clientUserData.NAME_TEXT = PANEL:GetCustomProperty('NameText'):WaitForObject()
+		PANEL.clientUserData.PROGRESS_INDICATOR = PANEL:GetCustomProperty('ProgressIndicator'):WaitForObject()
+		PANEL.clientUserData.RIGHT_SHADOW = PANEL:GetCustomProperty('RightShadow'):WaitForObject()
+		PANEL.clientUserData.LEFT_SHADOW = PANEL:GetCustomProperty('LeftShadow'):WaitForObject()
+		PANEL.clientUserData.DURATION_BAR = PANEL:GetCustomProperty('DurationIndicator'):WaitForObject()
+		PANEL.clientUserData.ACTION_NAME = PANEL:GetCustomProperty('ActionName'):WaitForObject()
+		PANEL.clientUserData.SetIcon = SetIcon
+		PANEL.clientUserData.SetActionName = SetActionName
+		PANEL.clientUserData.SetEquipment = SetEquipment
+		PANEL.clientUserData.GetEquipment = GetEquipment
+		PANEL.clientUserData.Connect = ConnectEquipment
+	end
+end

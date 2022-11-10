@@ -2452,9 +2452,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17398752180854480732
+  Id: 11749149520871255776
   Name: "Character Equipper"
   Transform {
+    Location {
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -2462,300 +2466,35 @@ Objects {
     }
   }
   ParentId: 15075137245449532246
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 639145614736337590
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1341025885078226558
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1444427707565180380
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1513312752592023585
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 2388979232575831907
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3414383541020173308
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4823262051513693734
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 6859339733035855025
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7646476141355800078
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 7716428950690620403
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8500983996909451899
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8629833581084560537
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8794815456556081185
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 9772568298220129666
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 11056600761755669514
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 11492442871873358065
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 11750702439217547223
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 12245008530248017421
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Character Equipper"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 13748381348948319552
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15222719815576799386
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15926134889519535109
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16453852467445646535
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16603944617201725989
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16968338267252879273
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 17980970909854539344
-      value {
-        Overrides {
-          Name: "cs:Root"
-          ObjectReference {
-            SelfId: 5192074342337134283
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13074073657660917058
-    }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Equpper"
   }
   InstanceHistory {
-    SelfId: 17398752180854480732
-    SubobjectId: 7900543579759898107
+    SelfId: 11749149520871255776
+    SubobjectId: 12245008530248017421
     InstanceId: 11299696855387386535
-    TemplateId: 5338087018861399484
+    TemplateId: 13074073657660917058
+    WasRoot: true
+    NestedInstanceIds: 7900543579759898107
+    OuterTemplateIds: 5338087018861399484
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14188511215112164356
