@@ -1,7 +1,6 @@
 local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment']
 local POTIONAPI = _G["Potions.Equipment"]
 local EquipApi = {}
-local equipmentContainer = nil
 
 local EQUIPMENT_CONTAINER = script:GetCustomProperty("EquipmentContainer")
 
@@ -12,11 +11,11 @@ function EquipApi.EquipEquipment(player, equipmentName, slot)
 		return
 	end
 	
-	if not equipmentContainer then
-		equipmentContainer = World.SpawnAsset(EQUIPMENT_CONTAINER, { networkContext = NetworkContextType.NETWORKED })
+	if not player:GetPrivateNetworkedData("equipmentContainer") then
+		player:SetPrivateNetworkedData("equipmentContainer", World.SpawnAsset(EQUIPMENT_CONTAINER, { networkContext = NetworkContextType.NETWORKED }))
 	end
-
-	equipmentContainer:AttachToPlayer(player, "root")
+	
+	player:GetPrivateNetworkedData("equipmentContainer"):AttachToPlayer(player, "root")
 	
 	local newEquipment = World.SpawnAsset(address, { networkContext = NetworkContextType.NETWORKED })
 	if not newEquipment then
@@ -27,11 +26,18 @@ function EquipApi.EquipEquipment(player, equipmentName, slot)
 	newEquipment:SetCustomProperty('AbilityBinding', slot)
 	newEquipment:Equip(player)
 
-	newEquipment.parent = equipmentContainer
+	newEquipment.parent = player:GetPrivateNetworkedData("equipmentContainer")
 	
 	return newEquipment
+end
+
+function OnPlayerLeft(player)
+	if player:GetPrivateNetworkedData("equipmentContainer") then
+		player:GetPrivateNetworkedData("equipmentContainer"):Destroy()
+	end
 end
 
 _G['Equipper'] = EquipApi
 
 Events.Connect('Equipper_Equip', EquipApi.EquipEquipment)
+Game.playerLeftEvent:Connect(OnPlayerLeft)

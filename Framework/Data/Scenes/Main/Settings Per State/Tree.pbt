@@ -427,6 +427,12 @@ Objects {
     }
   }
   ParentId: 2561084474995652434
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:LoadGearOnJoin"
+      Bool: true
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

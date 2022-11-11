@@ -3,26 +3,29 @@ local ABILITY_DISPLAY = script:GetCustomProperty("AbilityDisplay"):WaitForObject
 -- Constants
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
-local EquipmentContainer = nil
 local PANELS = {}
 local currentAbilities = {}
 local connections = {}
 
 function OnChildAdded(_, equipment)
 	if equipment.owner == LOCAL_PLAYER then
-			SetEquipment(equipment)
-			local abilityBindingName = equipment:GetCustomProperty("AbilityBinding")
-			PANELS[abilityBindingName].visibility = Visibility.INHERIT
-			local potion_data = _G['Potions.Equipment'].FindByAssetIdName(equipment.clientUserData.ability.name)
+		while not Object.IsValid(equipment) do
+			Task.Wait()
+		end
+		SetEquipment(equipment)
+		local abilityBindingName = equipment:GetCustomProperty("AbilityBinding")
+		PANELS[abilityBindingName].visibility = Visibility.INHERIT
 
-			if potion_data ~= nil then
-				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = potion_data.name
-				PANELS[abilityBindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
-				local icon = _G['Potions.Equipment'].GetIcon(potion_data.id)
-				PANELS[abilityBindingName].clientUserData.SetIcon(icon, PANELS[abilityBindingName])
-			else
-				PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = equipment.clientUserData.ability.name
-			end
+		local potion_data = _G['Potions.Equipment'].FindByAssetIdName(equipment.clientUserData.ability.name)
+
+		if potion_data ~= nil then
+			PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = potion_data.name
+			PANELS[abilityBindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
+			local icon = _G['Potions.Equipment'].GetIcon(potion_data.id)
+			PANELS[abilityBindingName].clientUserData.SetIcon(icon, PANELS[abilityBindingName])
+		else
+			PANELS[abilityBindingName].clientUserData.NAME_TEXT.text = equipment.clientUserData.ability.name
+		end
 	end
 end
 
@@ -30,6 +33,7 @@ function OnChildRemoved(_,equipment)
 	if equipment.owner == LOCAL_PLAYER then
 		if not Object.IsValid(equipment.clientUserData.ability) then
 			local abilityBindingName = equipment:GetCustomProperty("AbilityBinding")
+			PANELS[abilityBindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 			PANELS[abilityBindingName].visibility = Visibility.FORCE_OFF
 			Unequip(equipment)
 		end
@@ -37,20 +41,15 @@ function OnChildRemoved(_,equipment)
 end
 
 Task.Spawn(function()
-	while not EquipmentContainer do
-		for _, object in ipairs(LOCAL_PLAYER:GetAttachedObjects()) do --Look for the Equipment Container in the player's attached objects
-			if object.name == "Equipment Container" then
-				EquipmentContainer = object
-				break
-			end
-		end
+	while not LOCAL_PLAYER:GetPrivateNetworkedData("equipmentContainer") do
 		Task.Wait()
 	end
-	for _, equipment in ipairs(EquipmentContainer:GetChildren()) do --Initial check for equipment
+	local equipmentContainer = LOCAL_PLAYER:GetPrivateNetworkedData("equipmentContainer")
+	for _, equipment in ipairs(equipmentContainer:GetChildren()) do --Initial check for equipment
 		OnChildAdded(_, equipment)
 	end
-	EquipmentContainer.childAddedEvent:Connect(OnChildAdded)
-	EquipmentContainer.childRemovedEvent:Connect(OnChildRemoved)
+	equipmentContainer.childAddedEvent:Connect(OnChildAdded)
+	equipmentContainer.childRemovedEvent:Connect(OnChildRemoved)
 end)
 
 function SetIcon(Icon,panel)
@@ -125,19 +124,22 @@ function OnCooldown(ability)
 end
 
 function SetEquipment(equipment)
-	if not Object.IsValid(equipment) then return end
-	if not equipment:IsA('Equipment') then return end
+	while not Object.IsValid(equipment) do
+		Task.Wait()
+	end
+	if not equipment:IsA('Equipment') then print("not equipment") return end
 	while not equipment.clientUserData.calculateModifier do
 		Task.Wait()
-		if not Object.IsValid(equipment) then return end
 	end
 	for _, func in pairs(connections) do
 		func(equipment)
 	end
 
 	local ability = equipment:FindChildByType('Ability')
-	if not ability then
-		return
+	while not Object.IsValid(ability) do
+		Task.Wait()
+		ability = equipment:FindChildByType('Ability')
+
 	end
 	currentAbilities[ability] = ability
 	equipment.clientUserData.ability = ability
