@@ -1,7 +1,7 @@
 --[[
   ------------------
   Pirate Pinball - Server Game Controller
-  v1.0.1 - 2022/10/28
+  v1.0.2 - 2022/10/28
   by: varglbargl
   Modified by: Luapi
   ------------------
@@ -31,7 +31,9 @@ function handleInteracted(_, player)
 
   player:SetWorldRotation(Rotation.New(0, 0, 180) * PLAY_TRIGGER:GetWorldRotation())
   player.isMovementEnabled = false
-  player:SetMounted(false)
+  if player.isMounted then
+    player:SetMounted(false)
+  end
   player:SetWorldPosition(PLAY_TRIGGER:GetWorldPosition())
   LEFT_HAND_ANCHOR:Activate(player)
   RIGHT_HAND_ANCHOR:Activate(player)
