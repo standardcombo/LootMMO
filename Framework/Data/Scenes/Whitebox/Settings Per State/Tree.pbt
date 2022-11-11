@@ -396,7 +396,6 @@ Objects {
       }
       MountChannelingTime: 1
       FlipOnMultiJump: true
-      IsMountEnabled: true
       MaxHitpoints: 100
       PlayerMasterVolumeMultiplier: 1
       ComplexCollision: true

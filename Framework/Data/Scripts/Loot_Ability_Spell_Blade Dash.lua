@@ -75,7 +75,7 @@ end
 function Execute()
 	ToggleDash(true)
 	
-	Events.Broadcast("Ability.Used", player, "BladeDash")
+	Events.Broadcast("Ability.Used", ABILITY.owner, "BladeDash")
 end
 
 function OnInterrupted()
@@ -90,6 +90,7 @@ end
 
 function Recovery()
 	Task.Wait(1)--Task.Wait(mod["Range"])
+	if not Object.IsValid(ABILITY) then return end
 	STAB_ANIMATION:Activate()
 	local bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
 	-- Task.Spawn(function()
@@ -118,9 +119,7 @@ function Recovery()
 		}
 		COMBAT().ApplyDamage(attackData)
 	end
-	if not Object.IsValid(ABILITY) then
-		return
-	end
+	if not Object.IsValid(ABILITY) then return end
 	if ABILITY:GetCurrentPhase() == AbilityPhase.RECOVERY then
 		ABILITY:AdvancePhase()
 	end

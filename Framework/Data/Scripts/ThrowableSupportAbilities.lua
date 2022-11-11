@@ -45,7 +45,11 @@ Game.playerJoinedEvent:Connect(function(player)
 end)
 
 Game.playerLeftEvent:Connect(function(player)
-	player.serverUserData.throwAbility:Destroy()
-	player.serverUserData.pickupAbility:Destroy()
+	if Object.IsValid(player.serverUserData.throwAbility) then
+		player.serverUserData.throwAbility:Destroy()
+	end
+	if Object.IsValid(player.serverUserData.pickupAbility) then
+		player.serverUserData.pickupAbility:Destroy()
+	end
 end)
 
