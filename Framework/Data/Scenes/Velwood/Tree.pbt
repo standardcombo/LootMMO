@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ChildIds: 4476371869327922501
+  ChildIds: 12347626841062799156
   ChildIds: 3894388017159152588
   ChildIds: 5387736946797339937
   ChildIds: 9970684983361868256
@@ -1202,8 +1202,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4476371869327922501
-  Name: "Background_Terrain"
+  Id: 12347626841062799156
+  Name: "Terrain"
   Transform {
     Location {
       Z: -15389.915
@@ -1232,7 +1232,7 @@ Objects {
   }
   Terrain {
     Material {
-      Id: 3069543071943110028
+      Id: 2563461993334981296
     }
     VoxelSize: 700
     OctreeDepth: 5
