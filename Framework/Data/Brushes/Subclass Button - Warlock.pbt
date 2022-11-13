@@ -2,7 +2,7 @@ Assets {
   Id: 8355689295041053825
   Name: "Subclass Button - Warlock"
   PlatformAssetType: 34
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "1fd147e3ebd34726959598177d60faed"

@@ -2,7 +2,7 @@ Assets {
   Id: 7528756236054095518
   Name: "Ability"
   PlatformAssetType: 29
-  SerializationVersion: 119
+  SerializationVersion: 120
   BindingSetAsset {
     Bindings {
       BindingType {

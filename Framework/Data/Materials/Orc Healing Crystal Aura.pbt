@@ -2,7 +2,7 @@ Assets {
   Id: 7535229294616165836
   Name: "Orc Healing Crystal Aura"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 9857956488554860756
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 16486492520276879875
   Name: "Demon\'s Hands"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

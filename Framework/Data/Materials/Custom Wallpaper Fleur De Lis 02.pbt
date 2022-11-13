@@ -2,7 +2,7 @@ Assets {
   Id: 1488667178903867229
   Name: "Custom Wallpaper Fleur De Lis 02"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 5481905988843898688
     ParameterOverrides {

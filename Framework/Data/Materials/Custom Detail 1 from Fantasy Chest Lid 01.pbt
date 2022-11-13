@@ -2,7 +2,7 @@ Assets {
   Id: 6292751136247244633
   Name: "Treasure Lid Gem"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 8926821955383534010
     ParameterOverrides {

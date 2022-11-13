@@ -2,7 +2,7 @@ Assets {
   Id: 12799335253603312313
   Name: "BloodyBone"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 5512000712628422335
     ParameterOverrides {

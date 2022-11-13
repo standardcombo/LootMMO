@@ -2,7 +2,7 @@ Assets {
   Id: 15382885716599999495
   Name: "Subclass Button - Druid"
   PlatformAssetType: 34
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "ce0fc60ec65e409ab61c55285e2e4db8"

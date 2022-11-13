@@ -2,7 +2,7 @@ Assets {
   Id: 11759306457088888359
   Name: "Plate Mail"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

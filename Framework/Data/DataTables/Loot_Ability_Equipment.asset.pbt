@@ -2,7 +2,7 @@ Assets {
   Id: 14219804645328186316
   Name: "Loot_Ability_Equipment"
   PlatformAssetType: 31
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Equipment"
   DataTableAsset {

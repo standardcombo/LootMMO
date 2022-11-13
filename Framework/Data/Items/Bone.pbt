@@ -2,7 +2,7 @@ Assets {
   Id: 9021840856816351393
   Name: "Bone"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"

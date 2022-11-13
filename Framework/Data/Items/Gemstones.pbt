@@ -2,7 +2,7 @@ Assets {
   Id: 3487432137438939355
   Name: "Gemstones"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"

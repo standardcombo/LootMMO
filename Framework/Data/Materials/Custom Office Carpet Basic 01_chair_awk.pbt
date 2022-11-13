@@ -2,7 +2,7 @@ Assets {
   Id: 13222992314904275961
   Name: "Custom Office Carpet Basic 01_chair_awk"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 12806006220512102517
     ParameterOverrides {

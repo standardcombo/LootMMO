@@ -2,7 +2,7 @@ Assets {
   Id: 10386283110713640090
   Name: "Custom Composite Parallax Occlusion Mapping"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 120
   CustomMaterialAsset {
     BaseMaterialId: 12109271015351684801
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 2114320177721848098
   Name: "Ornate Gauntlets"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

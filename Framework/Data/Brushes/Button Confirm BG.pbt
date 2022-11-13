@@ -2,7 +2,7 @@ Assets {
   Id: 11777445260374698172
   Name: "Button Confirm BG"
   PlatformAssetType: 34
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "a3d72372fafa493d8bd91ea48caa279d"

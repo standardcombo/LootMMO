@@ -2,7 +2,7 @@ Assets {
   Id: 2923609738035901138
   Name: "Demonhide Belt"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

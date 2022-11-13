@@ -2,7 +2,7 @@ Assets {
   Id: 9154607877907426648
   Name: "Hard Leather Belt"
   PlatformAssetType: 33
-  SerializationVersion: 119
+  SerializationVersion: 120
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"
