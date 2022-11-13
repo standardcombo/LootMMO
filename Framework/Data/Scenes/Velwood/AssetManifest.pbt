@@ -1,4 +1,13 @@
 Assets {
+  Id: 18014941405078390650
+  Name: "Kelp Tall Bush 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_kelp_tall_bush_01"
+  }
+}
+Assets {
   Id: 17157977466683768474
   Name: "NFTUpgraded"
   PlatformAssetType: 23
@@ -48,6 +57,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 15963524160025858613
+  Name: "Branches Cluster Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_gen_branches_small_001"
   }
 }
 Assets {
@@ -350,6 +368,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8553298544017934648
+  Name: "Grass Tall"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_001"
+  }
+}
+Assets {
   Id: 8209956498192832287
   Name: "VIP Member"
   PlatformAssetType: 24
@@ -386,6 +413,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 6981536508008379085
+  Name: "Rock 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_rock_generic_003"
   }
 }
 Assets {
@@ -506,6 +542,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4044214825842439722
+  Name: "Grass Short"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_002"
+  }
+}
+Assets {
   Id: 3725870701821859093
   Name: "Gem Pack 3"
   PlatformAssetType: 24
@@ -542,6 +587,15 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
+  }
+}
+Assets {
+  Id: 1984553197323830660
+  Name: "Kelp Bush 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_kelp_bush_02"
   }
 }
 Assets {
