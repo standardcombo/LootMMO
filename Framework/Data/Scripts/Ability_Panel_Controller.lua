@@ -1,3 +1,8 @@
+--[[
+	v1.0.1 - 2022/11/14
+	by: blaking707, CommanderFoo
+--]]
+
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local UNLOCK_BACKGROUND = script:GetCustomProperty('UnlockBackGround'):WaitForObject()
 local ABILITY_POINTS = script:GetCustomProperty('AbilityPoints'):WaitForObject()
@@ -160,9 +165,7 @@ local function SetState(newState)
 			[STATES.closing] = function()
 				local time = 0
 				Events.Broadcast(PREPARE_TO_CLOSE)
-				while state == STATES.closing and time <= .65 do
-					time = time + Task.Wait()
-				end
+	
 				if state == STATES.closing then
 					SetState(STATES.closed)
 				end
