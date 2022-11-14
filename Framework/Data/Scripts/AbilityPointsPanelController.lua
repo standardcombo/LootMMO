@@ -1,3 +1,8 @@
+--[[
+	v1.0.1 - 2022/11/14
+	by: blaking707, CommanderFoo
+--]]
+
 local CLASSAPI = _G["Character.Classes"]
 local EquipAPI = _G["Character.EquipAPI"]
 local AbilityAPI = _G["Ability.Equipment"]
@@ -187,7 +192,6 @@ function BroadcastUpgrade()
 		return
 	end
 	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, slotMap[SelectedAbility])
-	Events.Broadcast("Ability_Upgrade", LOCAL_PLAYER, slotMap[SelectedAbility])
 	Task.Wait()
 	Update()
 end
