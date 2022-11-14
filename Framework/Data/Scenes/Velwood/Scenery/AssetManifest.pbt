@@ -485,15 +485,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15389810156675021425
-  Name: "Metal Door Hatch Slide 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_metal_door_hatch_slide_01a_Cue_ref"
-  }
-}
-Assets {
   Id: 15363129248056096219
   Name: "Urban - Damaged Iron Fence - Pillar Base 01"
   PlatformAssetType: 1
@@ -1817,15 +1808,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9479528947908647592
-  Name: "Metal Door & Hatch Close Shut Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_metal_doors_ref"
-  }
-}
-Assets {
   Id: 9377227685447941950
   Name: "2D Basic Shapes Decal"
   PlatformAssetType: 14
@@ -2969,15 +2951,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2919956752703671528
-  Name: "Metal Door Hatch Slide 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_metal_door_hatch_slide_01a_Cue_ref"
-  }
-}
-Assets {
   Id: 2723232960546970913
   Name: "Wood Floor Dark"
   PlatformAssetType: 2
@@ -3020,15 +2993,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_urb_st_post_lights_pole_001_base"
-  }
-}
-Assets {
-  Id: 2465921116214737910
-  Name: "Metal Door & Hatch Close Shut Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_metal_doors_ref"
   }
 }
 Assets {
