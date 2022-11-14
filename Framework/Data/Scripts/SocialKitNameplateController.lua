@@ -62,8 +62,13 @@ end
 -- nil OnPlayerLeft(Player)
 -- Destroy their nameplate
 function OnPlayerLeft(player)
-	nameplates[player].templateRoot:Destroy()
-	nameplates[player] = nil
+	if nameplates[player] ~= nil then
+		if Object.IsValid(nameplates[player].templateRoot) then
+			nameplates[player].templateRoot:Destroy()
+		end
+
+		nameplates[player] = nil
+	end
 end
 
 -- bool IsNameplateVisible(Player)
