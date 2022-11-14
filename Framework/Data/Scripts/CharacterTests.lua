@@ -1,6 +1,6 @@
 --[[
 	Character Cheats 
-	v1.0.5 - 2022/11/01
+	v1.0.6 - 2022/11/14
 	by: blaking707, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
@@ -44,6 +44,9 @@
 		Adds an item or material to the players inventory if there is space
 		in the stack. See the Loot Items and Loot Materials data tables for
 		the names of items that can be added.
+
+		Overflow isn't supported. Check existing inventory stack size and add
+		to that to make up to 99.
 
 		Example: /additem "Titanium Ring" 1
 		Example: /additem "Metal" 99
