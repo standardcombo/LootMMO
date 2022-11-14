@@ -1,16 +1,11 @@
 Task.Wait(1)
-local Itemdat   = _G["Items"]
-local materials = _G["Items.Materials"]
-local defultEquipment = "Quarterstaff"
 local hotKeys = {"Weapon", "AxeTool", "PickaxeTool"}
-
+local swapValue = 1
+local maxSwapValue = 3
 
 function AddJob(player, jobID)
-    local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
     _G.RewardsAdapter.AddItem(player, jobID)
 end
-
---InventoryUpdated(inv, i)
 
 function OnWeaponChange(player)
     RemoveTools(player, nil)
@@ -49,11 +44,10 @@ function GetWeaponName(player)
     local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
     local Inventory = char:GetComponent("Inventory")
     local item = Inventory:GetInventory():GetItem(1)
-    local name = defultEquipment
     if item then
-        name = item.name
+        local name = item.name
+        return name
     end
-    return name
 end
 
 function DoubleCheck(player, hotKey, weaponName)
@@ -72,6 +66,9 @@ end
 
 function RemoveTools(player, weaponName)
     local currentEquipment = player:GetEquipment()
+    if weaponName == nil then
+        weaponName = "Quarterstaff"
+    end
     for key, value in pairs(currentEquipment) do
         if string.find(value.name, "Tool")then
             value:Unequip()
@@ -85,43 +82,16 @@ function RemoveTools(player, weaponName)
     end
 end
 
-function CheckJobAbility(player)
-
-end
-
 function OnActionPressed(player, action, value)
-    if action == "MyAction" then
-        CheckJobAbility(player)
-    else
-        for key, hotKey in pairs(hotKeys) do
-            if action == tostring(key) then
-                EquipJobTool(player, hotKey)
-            end
+    if action == "Hotswap" then
+        if swapValue < maxSwapValue then
+            swapValue = swapValue + 1
+        else
+            swapValue = 1
         end
+        EquipJobTool(player, hotKeys[swapValue])
     end
 end
 
 Input.actionPressedEvent:Connect(OnActionPressed)
 Events.Connect("WeaponChanged", OnWeaponChange)
-
-
-
--- function GivePlayerInventory(player, itemID)
---     local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
---     _G.RewardsAdapter.AddItem(player, itemID)
---     Task.Wait(4)
---     if char then
---         local Inventory = char:GetComponent("Inventory")
---         local iteminfo = Itemdat.GetDefinition(itemID) or materials.GetDefinition(itemID)
---         if iteminfo then
---             print(Inventory:GetInventory():GetItemCount(itemID), " count of ", itemID)
---             --Inventory:GetInventory():RemoveItem(iteminfo["itemAsset"], { count = 1 })
---         end
---     end
--- end
-
--- local Weapons         = Itemdat.GetDefinitionsForCategory("weapon")
--- local KWeapons        = {}
--- for index, value in ipairs(Weapons) do
--- 	KWeapons[value.id] = value
--- end
