@@ -1,6 +1,45 @@
 Name: "xRae"
 RootId: 16116870671107651725
 Objects {
+  Id: 7555897418785953184
+  Name: "Craft Equipment"
+  Transform {
+    Location {
+      X: 1027.82446
+      Y: -5988.86
+      Z: 68.0171204
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16116870671107651725
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Craft Equipment"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 1487182588878629175
   Name: "Jobs"
   Transform {

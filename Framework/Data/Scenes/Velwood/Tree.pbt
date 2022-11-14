@@ -28,6 +28,7 @@ Objects {
   ChildIds: 6755168892615778018
   ChildIds: 16116870671107651725
   ChildIds: 3854015457754673156
+  ChildIds: 15940213973446538382
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -40,6 +41,54 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15940213973446538382
+  Name: "Callout Sparkle"
+  Transform {
+    Location {
+      X: 1030.14172
+      Y: -5952.75391
+      Z: 61.6486969
+    }
+    Rotation {
+    }
+    Scale {
+      X: 2.35559106
+      Y: 2.35559106
+      Z: 2.35559106
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 14231394991004806063
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
