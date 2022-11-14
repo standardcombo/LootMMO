@@ -332,6 +332,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16118682211110550421
+  Name: "Hill 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_hill_003"
+  }
+}
+Assets {
   Id: 15977747936357021178
   Name: "Ivy 03"
   PlatformAssetType: 1
@@ -455,6 +464,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_foliage_gen_flower_bell_001_ref"
+  }
+}
+Assets {
+  Id: 15402899459456575054
+  Name: "Japanese Chest Hinge 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_jpn_chest_med_hinge_001"
+  }
+}
+Assets {
+  Id: 15397242312920625506
+  Name: "Tree Sapling Bare 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_sapling_01_bare_ref"
   }
 }
 Assets {
@@ -590,6 +617,15 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_fire_volume_vfx"
+  }
+}
+Assets {
+  Id: 14852082883520467487
+  Name: "Urban - Damaged Iron Fence - Pillar Base 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_pillar_base_damaged_001_ref"
   }
 }
 Assets {
@@ -926,6 +962,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13660905754463547258
+  Name: "Fantasy Chain Circle 06"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_chain_circle_006_ref"
+  }
+}
+Assets {
   Id: 13642204757580273705
   Name: "Cube - Chamfered Small Polished"
   PlatformAssetType: 1
@@ -962,6 +1007,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13458796715891495506
+  Name: "Tree Sapling Bare 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_sapling_02_bare_ref"
+  }
+}
+Assets {
   Id: 13322205298195831282
   Name: "Nature Log 04"
   PlatformAssetType: 1
@@ -986,6 +1040,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_post_process_color_grading"
+  }
+}
+Assets {
+  Id: 13189107712478620022
+  Name: "Tree Small Bare 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_medium_short_02_bare_ref"
   }
 }
 Assets {
@@ -1187,6 +1250,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12209528205531445270
+  Name: "Urban Damaged Concrete Pillar - Top 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dest_concrete_pillar_top_01_ref"
+  }
+}
+Assets {
   Id: 12148720894562039167
   Name: "Fantasy Book Collection 04"
   PlatformAssetType: 1
@@ -1295,6 +1367,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11842864016842770105
+  Name: "Bone Human Pile Straight 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_pile_str_01_ref"
+  }
+}
+Assets {
   Id: 11761871474221141479
   Name: "Fantasy Castle Door 02"
   PlatformAssetType: 1
@@ -1349,6 +1430,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11542148047357685807
+  Name: "Bone Human Scattered 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_scatter_01_ref"
+  }
+}
+Assets {
   Id: 11521250418432815603
   Name: "Ivy 05"
   PlatformAssetType: 1
@@ -1391,6 +1481,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_foliage_gen_flower_bell_002_ref"
+  }
+}
+Assets {
+  Id: 11341733137979501056
+  Name: "Classical Music Score Set 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_ClassicalMusic_ref"
   }
 }
 Assets {
@@ -1463,6 +1562,15 @@ Assets {
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_ivy_001"
+  }
+}
+Assets {
+  Id: 10984415144127775715
+  Name: "Urban - Damaged Iron Fence - Pillar Mid 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_pillar_mid_damaged_002_ref"
   }
 }
 Assets {
@@ -1709,6 +1817,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9479528947908647592
+  Name: "Metal Door & Hatch Close Shut Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "sfxabp_metal_doors_ref"
+  }
+}
+Assets {
   Id: 9377227685447941950
   Name: "2D Basic Shapes Decal"
   PlatformAssetType: 14
@@ -1880,6 +1997,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8284634007729028981
+  Name: "Wispy Fog Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_fog_volume_vfx"
+  }
+}
+Assets {
   Id: 8283923648149654835
   Name: "Stone Wall End 6m"
   PlatformAssetType: 1
@@ -1943,6 +2069,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7836827177118451436
+  Name: "Urban - Damaged Iron Fence - Pillar Mid Top 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_pillar_mid_top_damaged_002_ref"
+  }
+}
+Assets {
   Id: 7831812092670386029
   Name: "Urban - Damaged Iron Gate 03"
   PlatformAssetType: 1
@@ -1985,6 +2120,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_stone-arch_6m_002"
+  }
+}
+Assets {
+  Id: 7559988236414083754
+  Name: "Iron Wrought Damaged Fence 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_hal_metal_iron_fence_damaged_001_uv_ref"
   }
 }
 Assets {
@@ -2060,6 +2204,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7202307395712524294
+  Name: "Decal Dirt Patch"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_dirt_patch_001"
+  }
+}
+Assets {
   Id: 7172224202760396484
   Name: "Urban - Damaged Iron Fence - Gate Top 03"
   PlatformAssetType: 1
@@ -2102,6 +2255,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_shield_006"
+  }
+}
+Assets {
+  Id: 7101462355860996461
+  Name: "Nature - Mushroom Cap 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_nat_fun_mushroom_cap_001_ref"
   }
 }
 Assets {
@@ -2258,6 +2420,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6289363088155023181
+  Name: "Decal Elven Symbols"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_elven_symbols_001"
+  }
+}
+Assets {
   Id: 6279993523772827179
   Name: "Generic Water"
   PlatformAssetType: 2
@@ -2285,6 +2456,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6193541426073199308
+  Name: "Urban Headstone 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_headstone_001_ref"
+  }
+}
+Assets {
   Id: 6136827371784165474
   Name: "Bark Oak Advanced 01"
   PlatformAssetType: 2
@@ -2303,12 +2483,30 @@ Assets {
   }
 }
 Assets {
+  Id: 6101779853543302374
+  Name: "Main Street Pillar 02 - Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dtn_mst_part_pillar_small_02_ref"
+  }
+}
+Assets {
   Id: 5905454634680141094
   Name: "Urban - Iron Fence - Pillar Mid Top 02"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "ts_urb_fences_iron_pillar_mid_top_002_ref"
+  }
+}
+Assets {
+  Id: 5685026719754291560
+  Name: "Bone Human Pile Straight 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_pile_str_02_ref"
   }
 }
 Assets {
@@ -2636,6 +2834,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4173687909770280434
+  Name: "Tree Small Bare 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_medium_short_01_bare_ref"
+  }
+}
+Assets {
   Id: 4044214825842439722
   Name: "Grass Short"
   PlatformAssetType: 1
@@ -2759,6 +2966,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_bottle_001"
+  }
+}
+Assets {
+  Id: 2919956752703671528
+  Name: "Metal Door Hatch Slide 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_metal_door_hatch_slide_01a_Cue_ref"
   }
 }
 Assets {
@@ -3065,6 +3281,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_candle_holder_table_001"
+  }
+}
+Assets {
+  Id: 988091216586047331
+  Name: "Metal Iron 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_iron_001"
   }
 }
 Assets {

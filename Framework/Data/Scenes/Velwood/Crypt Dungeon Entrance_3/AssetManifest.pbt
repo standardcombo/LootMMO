@@ -71,15 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14643090495247569259
-  Name: "Dirt 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "dirt_001"
-  }
-}
-Assets {
   Id: 13734388303926040827
   Name: "Fantasy Castle Bannister 01 - Post"
   PlatformAssetType: 1

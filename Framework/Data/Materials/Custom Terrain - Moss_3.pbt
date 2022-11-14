@@ -23,6 +23,15 @@ Assets {
         Name: "density"
         Float: 0
       }
+      Overrides {
+        Name: "color"
+        Color {
+          R: 0.604000032
+          G: 0.604000032
+          B: 0.604000032
+          A: 1
+        }
+      }
     }
     Assets {
       Id: 14789907036896094035

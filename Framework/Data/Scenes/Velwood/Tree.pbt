@@ -1083,7 +1083,7 @@ Objects {
       Materials {
         key: "Nature_Leaves"
         value {
-          Id: 841534158063459245
+          Id: 13049306395415917925
         }
       }
       LocalPositionOffset {
@@ -1132,7 +1132,7 @@ Objects {
       Materials {
         key: "Nature_Leaves"
         value {
-          Id: 841534158063459245
+          Id: 2152887979477253565
         }
       }
       LocalPositionOffset {
@@ -1180,7 +1180,7 @@ Objects {
       Materials {
         key: "Nature_Grass"
         value {
-          Id: 841534158063459245
+          Id: 537294124127399462
         }
       }
       LocalPositionOffset {

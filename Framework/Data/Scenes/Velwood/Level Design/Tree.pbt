@@ -123,7 +123,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -385,11 +385,12 @@ Objects {
   Name: "Portal to SocialHub"
   Transform {
     Location {
-      X: 1650
-      Y: 2314.35522
+      X: 4541.69727
+      Y: -6210.96973
+      Z: 6.10351562e-05
     }
     Rotation {
-      Yaw: 89.9999771
+      Yaw: 179.299332
     }
     Scale {
       X: 1
