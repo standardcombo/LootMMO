@@ -32,10 +32,14 @@ end
 local function CleanUpChoices()
     for k,v in ipairs(ButtonEvents) do
         v:Disconnect()
-        table.remove(ButtonEvents, k)
     end
     for k,v in ipairs(SpawnedButtons) do 
         v:Destroy()
+    end
+    for k,v in ipairs(ButtonEvents) do
+        table.remove(ButtonEvents, k)
+    end
+    for k,v in ipairs(SpawnedButtons) do 
         table.remove(SpawnedButtons, k)
     end
     ButtonEvents = {}
@@ -50,9 +54,8 @@ local function ResponseChosen(button)
     local BName = button.name
     print(BName, "This was the response chosen")
     if CleanUpChoices() then
-        print("I should Send out this info or something",BName)
-        Events.Broadcast("Talking.Heads", BName)
         Events.Broadcast("CloseHeads")
+        Events.Broadcast("Talking.Heads", BName)
     end
 end
 

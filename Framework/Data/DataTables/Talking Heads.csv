@@ -1,12 +1,12 @@
-"Key[String]","Name[String]","Message[String]","RandomMessages[Asset Reference]","Actor[Asset Reference]","PositionOffset[Vector3]","Stance[String]","Animation[String]","AnimationDelay[Float]","AnimationLoop[Bool]","Audio[Asset Reference]","DisplayDuration[Float]","PanelWidth[Float]","PanelHeight[Float]","GetResponse[Bool]","ResponseTable[Asset Reference]"
+"Key[String]","Name[String]","Message[String]","RandomMessages[Asset Reference]","Actor[Asset Reference]","PositionOffset[Vector3]","Stance[String]","Animation[String]","AnimationLoop[Bool]","Audio[Asset Reference]","DisplayDuration[Float]","ResponseTable[Asset Reference]"
 "Karl Laugh","Prince TEDATHOR","You think you can beat me {name}?
 
-I am too powerful for you. I can not be beat.","0BADBADBADBADBAD","A0A22BAD410CA3E1","0.000000,0.000000,0.000000","","unarmed_laugh","1.0","False","7815776ABEB067E8","7.0","0.0","0.0","False","0BADBADBADBADBAD"
-"Wolfy Growl","Wolfy","*Growl*","0BADBADBADBADBAD","69CD0B79BB288F8A","-124.625999,0.000000,38.657001","","unarmed_bite","0.5","False","0BADBADBADBADBAD","0.0","0.0","0.0","False","0BADBADBADBADBAD"
-"Welcome","Kamil","Welcome {name}, I hope you are having a wonderful day.","B4599676B610E1C5","2682FCB218410B9C","0.000000,0.000000,0.000000","","","0.0","False","0BADBADBADBADBAD","0.0","0.0","0.0","False","0BADBADBADBADBAD"
+I am too powerful for you. I can not be beat.","0BADBADBADBADBAD","A0A22BAD410CA3E1","0.000000,0.000000,0.000000","","unarmed_laugh","False","7815776ABEB067E8","7.0","0BADBADBADBADBAD"
+"Wolfy Growl","Wolfy","*Growl*","0BADBADBADBADBAD","69CD0B79BB288F8A","-124.625999,0.000000,38.657001","","unarmed_bite","False","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+"Welcome","Kamil","Welcome {name}, I hope you are having a wonderful day.","B4599676B610E1C5","2682FCB218410B9C","0.000000,0.000000,0.000000","","","False","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
 "DemonChat0","Evil Demon","Go away, {name}.
 
-Stop annoying me, Go back to the map and do a quest instead.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_laugh","0.5","False","78B6CCDA18631070","-1.0","0.0","0.0","True","C1F3330C644A1A4B"
-"DemonYes","Evil Demon","Yes.. yes go do that, and leave me be.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_point_forward","0.5","True","0BADBADBADBADBAD","0.0","0.0","0.0","False","0BADBADBADBADBAD"
-"DemonNo","Evil Demon","What.. well i don't care, go bother some one other than me.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","0.5","True","0BADBADBADBADBAD","0.0","0.0","0.0","False","0BADBADBADBADBAD"
-"DemonFlirt","Evil Demon","w... what? {name}, you're not my type, sorry.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","0.5","True","0BADBADBADBADBAD","0.0","0.0","0.0","False","0BADBADBADBADBAD"
+Stop annoying me, Go back to the map and do a quest instead.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_laugh","False","78B6CCDA18631070","-1.0","C1F3330C644A1A4B"
+"DemonYes","Evil Demon","Yes.. yes go do that, and leave me be.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_point_forward","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+"DemonNo","Evil Demon","What.. well i don't care, go bother some one other than me.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+"DemonFlirt","Evil Demon","w... what? {name}, you're not my type, sorry.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"

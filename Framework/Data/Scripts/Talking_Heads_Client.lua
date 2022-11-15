@@ -1,6 +1,3 @@
----@type Queue
-local Queue = require(script:GetCustomProperty("Queue"))
-
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
 local PANEL = script:GetCustomProperty("Panel"):WaitForObject()
@@ -29,11 +26,7 @@ local audio = nil
 local capture = nil
 local show = false
 local hide = false
-local elapsed = 0
-local queue = Queue:new()
-local has_item = false
 local skip_writing = false
-local panel_height = PANEL.height
 
 _G.Talking_Head = ""
 
@@ -125,58 +118,26 @@ local function play_talking_head(key, world_actor, world_delay)
 		_G.Talking_Head = row.Key
 		PANEL.visibility = Visibility.INHERIT
 
-		local delay = false
-		local animation = nil
-
 		if(string.len(row.Stance) > 0) then
-			Task.Spawn(function()
-				if(row.AnimationDelay > 0) then
-					Task.Wait(row.AnimationDelay)
-				end
-
-				actor.animationStance = row.Stance
-				play_audio(row.Audio)
-			end)
-
+			actor.animationStance = row.Stance
+			play_audio(row.Audio)
 			if(Object.IsValid(world_actor)) then
-				Task.Spawn(function()
-					world_actor.animationStance = row.Stance
-				end, world_delay)
+				world_actor.animationStance = row.Stance
 			end
 		elseif(string.len(row.Animation) > 0) then
-			Task.Spawn(function()
-				if(row.AnimationDelay > 0) then
-					Task.Wait(row.AnimationDelay)
-				end
-
-				actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
-
-				if(Object.IsValid(world_actor)) then
-					world_actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
-				end
-
-				play_audio(row.Audio)
-			end)
-
+			actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
 			if(Object.IsValid(world_actor)) then
-				Task.Spawn(function()
-					world_actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
-				end, world_delay)
+				world_actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
 			end
+			play_audio(row.Audio)
 		else
 			play_audio(row.Audio)
 		end
 
-		if(row.PanelHeight > 0) then
-			PANEL.height =  row.PanelHeight
-		end
-
-		if(row.PanelWidth > 0) then
-			PANEL.width =  row.PanelWidth
-		end
-		if(row.GetResponse) then
+		if(row.ResponseTable) then
 			Events.Broadcast("Talking.GetResponse",row.ResponseTable, row.DisplayDuration, row.Name,row.Message)
 		end
+
 		if (row.DisplayDuration > -1) then
 			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 4)
 			CloseHead()
@@ -191,11 +152,6 @@ local function on_action_pressed(player, action)
 end
 
 function Tick(dt)
-	if(not has_item and queue:length() > 0) then
-		has_item = true
-		queue:pop()()
-	end
-
 	if(capture) then
 		capture:Refresh()
 	end
@@ -208,23 +164,13 @@ function Tick(dt)
 	end
 end
 
-local function add_to_queue(key, actor, delay)
-	queue:push(function()
-		play_talking_head(key, actor, delay)
-	end)
-end
-
 function CloseHead()
-	Task.Spawn(function()
-		hide = true
-		PANEL.visibility = Visibility.FORCE_OFF
-		Task.Wait(.5)
-		has_item = false
-		Events.Broadcast("FlipInteraction")
-	end)
+	hide = true
+	PANEL.visibility = Visibility.FORCE_OFF
+	Events.Broadcast("FlipInteraction")
 end
 
-Events.Connect("Talking.Heads", add_to_queue)
+Events.Connect("Talking.Heads", play_talking_head)
 Events.Connect("CloseHeads", CloseHead)
 
 Input.actionPressedEvent:Connect(on_action_pressed)
