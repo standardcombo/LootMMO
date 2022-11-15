@@ -15,7 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14535405163594474313
+        ParentId: 15275268153432778675
+        ChildIds: 5333979592007711103
         ChildIds: 9332914361100053564
         ChildIds: 17885819069406097737
         ChildIds: 15181990736200622887
@@ -80,6 +81,59 @@ Assets {
         }
         Relevance {
           Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5333979592007711103
+        Name: "StanceSet"
+        Transform {
+          Location {
+            X: 172.270584
+            Y: -251.422028
+            Z: 680.996094
+          }
+          Rotation {
+            Yaw: 115.996765
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12254542788629805526
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:TargetCharacter"
+            ObjectReference {
+              SubObjectId: 12254542788629805526
+            }
+          }
+          Overrides {
+            Name: "cs:SetStance"
+            String: "unarmed_idle_relaxed"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 6924037017478332481
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

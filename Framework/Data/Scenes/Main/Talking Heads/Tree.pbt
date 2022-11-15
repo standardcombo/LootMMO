@@ -89,7 +89,7 @@ Objects {
   }
   ParentId: 12367323923389280920
   ChildIds: 18413133433763998306
-  ChildIds: 15562361613396520280
+  ChildIds: 10170646299964810563
   ChildIds: 7369615756474121113
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -515,7 +515,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15562361613396520280
+  Id: 10170646299964810563
   Name: "UI Container"
   Transform {
     Location {
@@ -529,7 +529,8 @@ Objects {
     }
   }
   ParentId: 8609419198753814813
-  ChildIds: 15494283212072289770
+  ChildIds: 10628471621559881358
+  ChildIds: 15504034881928084236
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -577,7 +578,49 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15494283212072289770
+  Id: 15504034881928084236
+  Name: "ResponseButton"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10170646299964810563
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5863568901587875051
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ResponseButton"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4178123486509633068
+    }
+  }
+}
+Objects {
+  Id: 10628471621559881358
   Name: "Talking Head Panel"
   Transform {
     Location {
@@ -590,12 +633,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15562361613396520280
-  ChildIds: 3310779124263958355
-  ChildIds: 8834525930669907791
-  ChildIds: 16590921788098192888
-  ChildIds: 14519513378789797352
-  ChildIds: 14511806017029382736
+  ParentId: 10170646299964810563
+  ChildIds: 14283225808586055568
+  ChildIds: 16382467773098070131
+  ChildIds: 12893822050805698017
+  ChildIds: 402550241198860198
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -612,7 +654,7 @@ Objects {
     Width: 600
     Height: 150
     UIX: 50
-    UIY: 200
+    UIY: -200
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -627,12 +669,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:middlecenter"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:middlecenter"
         }
       }
     }
@@ -640,7 +682,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14511806017029382736
+  Id: 402550241198860198
   Name: "Message"
   Transform {
     Location {
@@ -653,7 +695,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15494283212072289770
+  ParentId: 10628471621559881358
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -692,7 +734,7 @@ Objects {
       }
       AutoWrapText: true
       Font {
-        Id: 9389859618261061607
+        Id: 15165554833363844727
       }
       VerticalJustification {
         Value: "mc:everticaljustification:top"
@@ -722,7 +764,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14519513378789797352
+  Id: 12893822050805698017
   Name: "Name"
   Transform {
     Location {
@@ -735,7 +777,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15494283212072289770
+  ParentId: 10628471621559881358
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -769,7 +811,7 @@ Objects {
         Value: "mc:etextjustify:left"
       }
       Font {
-        Id: 9389859618261061607
+        Id: 15165554833363844727
       }
       VerticalJustification {
         Value: "mc:everticaljustification:center"
@@ -799,78 +841,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16590921788098192888
-  Name: "Frame"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15494283212072289770
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 16
-    Height: 16
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    AddSizeToParentIfUsingParentSize: true
-    UseParentWidth: true
-    UseParentHeight: true
-    Image {
-      Brush {
-        Id: 17866554501249590175
-      }
-      Color {
-        G: 0.0565715842
-        B: 0.162000179
-        A: 1
-      }
-      TeamSettings {
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      ScreenshotIndex: 1
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 8834525930669907791
+  Id: 16382467773098070131
   Name: "Image"
   Transform {
     Location {
@@ -883,8 +854,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15494283212072289770
-  ChildIds: 8268441160162176736
+  ParentId: 10628471621559881358
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -898,8 +868,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 150
-    Height: 150
+    Width: 144
+    Height: 144
+    UIX: 3
+    UIY: 3
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -939,78 +911,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8268441160162176736
-  Name: "Image Frame"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8834525930669907791
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 16
-    Height: 16
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    AddSizeToParentIfUsingParentSize: true
-    UseParentWidth: true
-    UseParentHeight: true
-    Image {
-      Brush {
-        Id: 17866554501249590175
-      }
-      Color {
-        G: 0.0565715842
-        B: 0.162000179
-        A: 1
-      }
-      TeamSettings {
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      ScreenshotIndex: 1
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3310779124263958355
+  Id: 14283225808586055568
   Name: "Background"
   Transform {
     Location {
@@ -1023,7 +924,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15494283212072289770
+  ParentId: 10628471621559881358
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1051,7 +952,7 @@ Objects {
         Id: 841534158063459245
       }
       Color {
-        A: 0.650000036
+        A: 0.8
       }
       TeamSettings {
       }
@@ -1102,25 +1003,25 @@ Objects {
     Overrides {
       Name: "cs:Panel"
       ObjectReference {
-        SelfId: 15494283212072289770
+        SelfId: 10628471621559881358
       }
     }
     Overrides {
       Name: "cs:Image"
       ObjectReference {
-        SelfId: 8834525930669907791
+        SelfId: 16382467773098070131
       }
     }
     Overrides {
       Name: "cs:Name"
       ObjectReference {
-        SelfId: 14519513378789797352
+        SelfId: 12893822050805698017
       }
     }
     Overrides {
       Name: "cs:Message"
       ObjectReference {
-        SelfId: 14511806017029382736
+        SelfId: 402550241198860198
       }
     }
     Overrides {

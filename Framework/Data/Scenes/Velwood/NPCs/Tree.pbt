@@ -176,13 +176,9 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9619515006731396318
+  Id: 7310799070998751848
   Name: "TalkingHeadsResponse"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -190,26 +186,20 @@ Objects {
     }
   }
   ParentId: 6804530064966610888
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15446655707859290587
+      value {
+        Overrides {
+          Name: "Name"
+          String: "TalkingHeadsResponse"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5680331693140989911
+    }
   }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "TalkingHeadsResponse"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 9858247834619470046

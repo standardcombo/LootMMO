@@ -5,7 +5,7 @@ local TRIGGER = script.parent
 
 function OnInteracted(trigger, other)
 	if other:IsA("Player") then
-		Events.Broadcast("Talking.Heads", "TestingStuff")
+		Events.Broadcast("Talking.Heads", "Demon0")
 	end
 end
 

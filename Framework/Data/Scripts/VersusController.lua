@@ -166,8 +166,8 @@ TaskSpawner()
 
 Events.Connect("StartVS",VersusStarted)
 Events.Connect("EndVs",VersusEnded)
-Events.Connect("VsJoin", AddVersusPlayer) -- VsJoinYes
-Events.Connect("Vsleave", RemoveVersusPlayer) -- VsleaveYes
+Events.Connect("VSJoin", AddVersusPlayer) -- VsJoinYes
+Events.Connect("VSLeave", RemoveVersusPlayer) -- VsleaveYes
 Events.ConnectForPlayer("VS+", AddVersusPlayer)
 Events.ConnectForPlayer("VS-", RemoveVersusPlayer)
 Game.playerLeftEvent:Connect(PlayerLeaveCheck)

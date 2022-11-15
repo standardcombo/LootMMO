@@ -1,13 +1,4 @@
 Assets {
-  Id: 17866554501249590175
-  Name: "Abstract Frame 09"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Core_UI_AbstractPackFrame_003"
-  }
-}
-Assets {
   Id: 15895911216899816748
   Name: "Dummy Object"
   PlatformAssetType: 6
@@ -17,21 +8,21 @@ Assets {
   }
 }
 Assets {
+  Id: 15165554833363844727
+  Name: "Amarante"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "AmaranteRegular_ref"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_002"
-  }
-}
-Assets {
-  Id: 9389859618261061607
-  Name: "Roboto Black"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "RobotoBlack_ref"
   }
 }
 Assets {

@@ -1,0 +1,3 @@
+"key[String]","Messages[String]","ChangeState[Int]"
+"VSJoin","Yes, I'd like to register.","0"
+"VSNo","No thank you","0"
