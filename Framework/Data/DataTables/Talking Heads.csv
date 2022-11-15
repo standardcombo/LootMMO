@@ -4,9 +4,10 @@
 I am too powerful for you. I can not be beat.","0BADBADBADBADBAD","A0A22BAD410CA3E1","0.000000,0.000000,0.000000","","unarmed_laugh","False","7815776ABEB067E8","7.0","0BADBADBADBADBAD"
 "Wolfy Growl","Wolfy","*Growl*","0BADBADBADBADBAD","69CD0B79BB288F8A","-124.625999,0.000000,38.657001","","unarmed_bite","False","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
 "Welcome","Kamil","Welcome {name}, I hope you are having a wonderful day.","B4599676B610E1C5","2682FCB218410B9C","0.000000,0.000000,0.000000","","","False","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
-"DemonChat0","Evil Demon","Go away, {name}.
+"Demon0","Demon","Go away, {name}.
 
-Stop annoying me, Go back to the map and do a quest instead.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_laugh","False","78B6CCDA18631070","-1.0","C1F3330C644A1A4B"
-"DemonYes","Evil Demon","Yes.. yes go do that, and leave me be.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_point_forward","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
-"DemonNo","Evil Demon","What.. well i don't care, go bother some one other than me.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
-"DemonFlirt","Evil Demon","w... what? {name}, you're not my type, sorry.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+Stop annoying me, Go back to the map and do a quest instead.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","False","0BADBADBADBADBAD","-1.0","C1F3330C644A1A4B"
+"Demon1","Demon","*Blushes* I have a quest for you","0BADBADBADBADBAD","0BADBADBADBADBAD","0.000000,0.000000,0.000000","","unarmed_laugh","False","78B6CCDA18631070","-1.0","D456AB5D0E8617F0"
+"DemonYes","Demon","Yes.. yes go do that, and leave me be.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_point_forward","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+"DemonNo","Demon","What.. well i don't care, go bother some one other than me.","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"
+"DemonFlirt","Demon","W... what? Are you serious {name}?","0BADBADBADBADBAD","B4C044B5CE370091","0.000000,0.000000,0.000000","","unarmed_no","True","0BADBADBADBADBAD","0.0","0BADBADBADBADBAD"

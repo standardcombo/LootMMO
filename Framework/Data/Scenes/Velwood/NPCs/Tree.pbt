@@ -140133,7 +140133,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:ChatID"
-      String: "DemonChat"
+      String: "Demon"
     }
   }
   Collidable_v2 {

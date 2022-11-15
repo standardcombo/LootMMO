@@ -1,0 +1,5 @@
+"key[String]","Messages[String]","ChangeState[Int]"
+"DemonYes","Okay","-1"
+"DemonNo","No thank you","-1"
+"DemonMaybe","U mad?","-1"
+"DemonFlirt","I like big horns","1"

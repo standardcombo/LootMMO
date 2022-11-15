@@ -481,6 +481,7 @@ Objects {
   }
   ParentId: 8255195638747259124
   ChildIds: 3912690427453401464
+  ChildIds: 15121780637947988256
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -526,6 +527,48 @@ Objects {
     }
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15121780637947988256
+  Name: "ResponseButton"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3670146623969914476
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5863568901587875051
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ResponseButton"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4178123486509633068
+    }
+  }
 }
 Objects {
   Id: 3912690427453401464

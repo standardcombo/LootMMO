@@ -15,8 +15,27 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7596976173276458614
+        ParentId: 3670146623969914476
         ChildIds: 17766556385030587482
+        ChildIds: 2517665088755004132
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SetChatState"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:ChatID"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:SetChatState:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:ChatID:isrep"
+            Bool: true
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -181,6 +200,43 @@ Assets {
               }
             }
           }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2517665088755004132
+        Name: "ClickResponseButton"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5863568901587875051
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13749430890301205876
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

@@ -135,13 +135,16 @@ local function play_talking_head(key, world_actor, world_delay)
 		end
 
 		if(row.ResponseTable) then
-			Events.Broadcast("Talking.GetResponse",row.ResponseTable, row.DisplayDuration, row.Name,row.Message)
+			Events.Broadcast("Talking.GetResponse", row.ResponseTable, row.DisplayDuration, key)
 		end
 
 		if (row.DisplayDuration > -1) then
 			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 4)
 			CloseHead()
 		end
+	else
+		print("No response set")
+		CloseHead()
 	end
 end
 
