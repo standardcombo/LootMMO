@@ -305,12 +305,7 @@ Objects {
     }
   }
   ParentId: 7512747515004839972
-  ChildIds: 5946279052010516152
-  ChildIds: 16333280045075631360
-  ChildIds: 14800144663302329725
-  ChildIds: 8438642171532948391
-  ChildIds: 16047400952564998476
-  ChildIds: 5172497961989762903
+  ChildIds: 10022617621506488744
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -329,16 +324,14 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5172497961989762903
-  Name: "\"Epic Dark Worlds\" Music Construction Kit (Sections) 01"
+  Id: 10022617621506488744
+  Name: "ClientContext"
   Transform {
     Location {
-      X: 16331.7295
-      Y: 14558.4326
-      Z: 969.244751
+      X: 2721.95508
+      Y: 2426.40527
     }
     Rotation {
-      Yaw: 110.391228
     }
     Scale {
       X: 1
@@ -347,6 +340,56 @@ Objects {
     }
   }
   ParentId: 15387330737449460358
+  ChildIds: 5946279052010516152
+  ChildIds: 16333280045075631360
+  ChildIds: 14800144663302329725
+  ChildIds: 8438642171532948391
+  ChildIds: 16047400952564998476
+  ChildIds: 5172497961989762903
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5172497961989762903
+  Name: "\"Epic Dark Worlds\" Music Construction Kit (Sections) 01"
+  Transform {
+    Location {
+      X: 13609.7754
+      Y: 12132.0264
+      Z: 969.244751
+    }
+    Rotation {
+      Yaw: 110.39122
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10022617621506488744
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -393,8 +436,8 @@ Objects {
   Name: "Cinematic Music Score Set 01"
   Transform {
     Location {
-      X: 3121.48218
-      Y: 1260.71924
+      X: 399.528
+      Y: -1165.68689
     }
     Rotation {
     }
@@ -404,7 +447,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15387330737449460358
+  ParentId: 10022617621506488744
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -446,8 +489,8 @@ Objects {
   Name: "Ambience Nature Summer Forest Kit 01 SFX"
   Transform {
     Location {
-      X: 1366.82947
-      Y: -3105.52295
+      X: -1355.12476
+      Y: -5531.9292
       Z: 307.489594
     }
     Rotation {
@@ -458,14 +501,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15387330737449460358
+  ParentId: 10022617621506488744
   ChildIds: 15575442109360633336
   ChildIds: 15196353852937260060
   ChildIds: 17082743458367771675
   ChildIds: 13413484098173206965
   UnregisteredParameters {
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -509,7 +551,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -564,7 +605,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -608,7 +648,6 @@ Objects {
     }
   }
   ParentId: 8438642171532948391
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -650,7 +689,6 @@ Objects {
     }
   }
   ParentId: 8438642171532948391
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -686,8 +724,8 @@ Objects {
   Name: "Ambience Nature Summer Forest Kit 01 SFX"
   Transform {
     Location {
-      X: -114.038757
-      Y: -6803.26709
+      X: -2835.99268
+      Y: -9229.67285
       Z: 307.489716
     }
     Rotation {
@@ -698,14 +736,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15387330737449460358
+  ParentId: 10022617621506488744
   ChildIds: 211943436744415665
   ChildIds: 17010294440058902544
   ChildIds: 12121744459285004783
   ChildIds: 7276057806079548957
   UnregisteredParameters {
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -749,7 +786,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -804,7 +840,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -848,7 +883,6 @@ Objects {
     }
   }
   ParentId: 14800144663302329725
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -890,7 +924,6 @@ Objects {
     }
   }
   ParentId: 14800144663302329725
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -926,8 +959,8 @@ Objects {
   Name: "Ambience Nature Summer Forest Kit 01 SFX"
   Transform {
     Location {
-      X: -1162.88501
-      Y: 9543.92578
+      X: -3884.83911
+      Y: 7117.51904
       Z: 307.489716
     }
     Rotation {
@@ -938,14 +971,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15387330737449460358
+  ParentId: 10022617621506488744
   ChildIds: 15740152703054391868
   ChildIds: 902165129475857427
   ChildIds: 2733274576700053793
   ChildIds: 5310175868618328869
   UnregisteredParameters {
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -989,7 +1021,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1044,7 +1075,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1088,7 +1118,6 @@ Objects {
     }
   }
   ParentId: 16333280045075631360
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1130,7 +1159,6 @@ Objects {
     }
   }
   ParentId: 16333280045075631360
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1166,8 +1194,8 @@ Objects {
   Name: "Ambience Nature Summer Forest Kit 01 SFX"
   Transform {
     Location {
-      X: -3211.38843
-      Y: -895.855
+      X: -5933.34277
+      Y: -3322.26099
       Z: 307.489716
     }
     Rotation {
@@ -1178,14 +1206,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15387330737449460358
+  ParentId: 10022617621506488744
   ChildIds: 13326382731883457328
   ChildIds: 12543372016185536803
   ChildIds: 1287642667312799840
   ChildIds: 9464580193059149100
   UnregisteredParameters {
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1229,7 +1256,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1284,7 +1310,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1328,7 +1353,6 @@ Objects {
     }
   }
   ParentId: 5946279052010516152
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1370,7 +1394,6 @@ Objects {
     }
   }
   ParentId: 5946279052010516152
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
