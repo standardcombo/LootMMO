@@ -10,6 +10,15 @@ local function SpawnPlayer(player, StageChoice)
     --we may need to fire off a dungeon check to see if one is running or something, 
     -- prior to spawning the player into it. depends if we are spawning dungeons , or if their static, etc.
     -- but this area is designed to initate that type of check
+    --[[ -- need to adapt this to me modular for dungeon choices. can add a column for Game ID, and check against gain id, to find out if 
+    -- its local or if we need to transfer to a new scene
+    if _G.QuestController.IsLocalGame(quest) then
+        -- Spawn player at the right place
+        SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
+    else
+        --player:TransferToScene(sceneName)
+    end
+    ]]
     SPAWN_UTILS.SpawnPlayerAt(player, StageChoice.SpawnKey)
     --this is assuming the dungeons end up in world
 end

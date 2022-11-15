@@ -12,6 +12,41 @@ local VersusTaskController
 local p1Events
 local p2Events
 
+local function CheckListForPlayer(player)
+    local BOOL = false
+    for k,v in pairs(_G.VersusRegistered) do
+        if v == player then 
+            BOOL = true
+        end
+    end
+    return BOOL
+end
+
+function AddVersusPlayer(player)
+    
+    if CheckListForPlayer(player) == false then
+        print("player entered into vs registration")
+        table.insert(_G.VersusRegistered, player)
+        player:SetPrivateNetworkedData("VSR", "+")
+        return
+    end
+    print("player already registered.")
+end
+
+function RemoveVersusPlayer(player)
+    local key
+    for k,v in ipairs(_G.VersusRegistered) do
+        print("searching for player registration",k,v)
+        if v == player then
+            key = k
+            break
+        end
+    end
+    if key ~= nil then
+        table.remove(_G.VersusRegistered, key)
+        player:SetPrivateNetworkedData("VSR", "-")
+    end
+end
 
 local function Disconnector()
     if p1Events then
@@ -26,32 +61,7 @@ local function DeathEvent(player)
     --print("player from versus died", player.name)
     if Object.IsValid(player) then player.team = 1 end
     Disconnector()
-    local key
-    for k,v in ipairs(_G.VersusRegistered) do
-        print("searching for player registration",k,v)
-        if v == player then
-            key = k
-            break
-        end
-    end
-    if key ~= nil then
-        --print("removing key")
-       -- _G.VersusRegistered[key] = nil
-        table.remove(_G.VersusRegistered, key)
-        --Events.BroadcastToPlayer(player,"ToggleCinematicMode",0,"UnRegister")
-        --[[ -- temp: this auto registered the player back into the tournament
-        Task.Spawn(function()
-            repeat
-                Task.Wait(1)
-            until player.isDead == false and player.isSpawned == true
-                print("finally alive and ready to rejoin queue",player.name)
-                Task.Spawn(function()
-                    Task.Wait(2)
-                    table.insert(_G.VersusRegistered, player)
-                 end)
-        end)
-        ]]
-    end
+    RemoveVersusPlayer(player)
     if Winner == nil then
         for k,v in pairs(_G.VersusPlayers) do
             if v ~= player then
@@ -108,6 +118,7 @@ local function VersusEnded(winner)
     print("Ending a Versus Match", winner)
     if winner ~= nil then
         print("I should reward the winner", winner.name)
+        winner:SetPrivateNetworkedData("VSR", "+")
         --we'll figure out a reward later
         --Events.BroadcastToAllPlayers('CreateNotification', winner.name.." Won the Vs-Match !", {theme = 'Success', width = 775})
         Winner= nil
@@ -122,11 +133,7 @@ local function VersusEnded(winner)
 
 end
 
-Events.Connect("StartVS",VersusStarted)
-Events.Connect("EndVs",VersusEnded)
-
 local function PlayerLeaveCheck(player)
-    local key
     for k,v in ipairs(_G.VersusPlayers) do
         if v == player then
 --          print("Player left during versus match")
@@ -134,16 +141,7 @@ local function PlayerLeaveCheck(player)
             break
         end
     end
-    for k,v in pairs(_G.VersusRegistered) do
-        if v == player then
---            print("player that left was registered for versus match")
-            key = k
-            break
-        end
-    end
-    if key ~= nil then
-        table.remove(_G.VersusRegistered,key)
-    end
+    RemoveVersusPlayer(player)
 end
 
 local function TaskSpawner()
@@ -166,4 +164,10 @@ end
 
 TaskSpawner()
 
+Events.Connect("StartVS",VersusStarted)
+Events.Connect("EndVs",VersusEnded)
+Events.Connect("VsJoin", AddVersusPlayer) -- VsJoinYes
+Events.Connect("Vsleave", RemoveVersusPlayer) -- VsleaveYes
+Events.ConnectForPlayer("VS+", AddVersusPlayer)
+Events.ConnectForPlayer("VS-", RemoveVersusPlayer)
 Game.playerLeftEvent:Connect(PlayerLeaveCheck)
