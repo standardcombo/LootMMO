@@ -36,7 +36,7 @@ end
 
 
 function API.SpawnPlayerAt(player, point)
-	Task.Wait(1)
+	Task.Wait(0.2)
 	local key
 	if type(point) == "string" then
 		key = point

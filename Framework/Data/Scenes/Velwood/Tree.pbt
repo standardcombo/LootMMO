@@ -29,6 +29,7 @@ Objects {
   ChildIds: 16116870671107651725
   ChildIds: 3854015457754673156
   ChildIds: 15940213973446538382
+  ChildIds: 9900866518685091428
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -41,6 +42,45 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9900866518685091428
+  Name: "MissingGates"
+  Transform {
+    Location {
+      X: 2799.06299
+      Y: -8909.48926
+      Z: 13.9395752
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "MissingGates"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

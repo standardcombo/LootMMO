@@ -1853,15 +1853,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9110189382580914613
-  Name: "Urban - Damaged Iron Gate 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_damaged_002_ref"
-  }
-}
-Assets {
   Id: 9002030425395266600
   Name: "Nature - Mushroom 01"
   PlatformAssetType: 1
@@ -2006,15 +1997,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8225332749088216016
-  Name: "Iron Wrought Fence 03"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_hal_metal_iron_fence_003_uv_ref"
-  }
-}
-Assets {
   Id: 8179760419682545374
   Name: "Waterfall Straight"
   PlatformAssetType: 1
@@ -2060,15 +2042,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7831812092670386029
-  Name: "Urban - Damaged Iron Gate 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_damaged_003_ref"
-  }
-}
-Assets {
   Id: 7754470856388882901
   Name: "Wood Raw"
   PlatformAssetType: 2
@@ -2102,15 +2075,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_stone-arch_6m_002"
-  }
-}
-Assets {
-  Id: 7559988236414083754
-  Name: "Iron Wrought Damaged Fence 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_hal_metal_iron_fence_damaged_001_uv_ref"
   }
 }
 Assets {
@@ -2192,15 +2156,6 @@ Assets {
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_dirt_patch_001"
-  }
-}
-Assets {
-  Id: 7172224202760396484
-  Name: "Urban - Damaged Iron Fence - Gate Top 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_top_damaged_003_ref"
   }
 }
 Assets {
@@ -2807,15 +2762,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4235739338052230523
-  Name: "Iron Wrought Damaged Fence 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_hal_metal_iron_fence_damaged_002_uv_ref"
-  }
-}
-Assets {
   Id: 4173687909770280434
   Name: "Tree Small Bare 01"
   PlatformAssetType: 1
@@ -3074,15 +3020,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_stairs_001_150cm_corner02"
-  }
-}
-Assets {
-  Id: 1839177848541372383
-  Name: "Urban - Damaged Iron Fence - Gate Top 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_top_damaged_002_ref"
   }
 }
 Assets {
@@ -3425,15 +3362,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_horn_001"
-  }
-}
-Assets {
-  Id: 95857941384247220
-  Name: "Urban - Damaged Iron Gate 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_damaged_001_ref"
   }
 }
 Assets {

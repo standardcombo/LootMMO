@@ -11,11 +11,6 @@ local CAMERA = script:GetCustomProperty("Camera"):WaitForObject()
 local TALKING_HEADS = require(script:GetCustomProperty("TalkingHeads"))
 local CONTAINER = script:GetCustomProperty("Container"):WaitForObject()
 
-local IN_CURVE = ROOT:GetCustomProperty("InCurve")
-local IN_DURATION = ROOT:GetCustomProperty("InDuration")
-local OUT_CURVE = ROOT:GetCustomProperty("OutCurve")
-local OUT_DURATION = ROOT:GetCustomProperty("OutDuration")
-
 local WRITE_TEXT = ROOT:GetCustomProperty("WriteText")
 local TEXT_SPEED = ROOT:GetCustomProperty("TextSpeed")
 local CAN_SKIP_WRITING = ROOT:GetCustomProperty("CanSkipWriting")
@@ -29,17 +24,11 @@ local POINT_LIGHT = script:GetCustomProperty("PointLight"):WaitForObject()
 POINT_LIGHT.intensity = LIGHT_INTENSITY
 BACKGROUND:SetColor(BACKGROUND_COLOR)
 
-local current_x = PANEL.x
-
-PANEL.x = -PANEL.width - 20
-
 local actor = nil
 local audio = nil
 local capture = nil
 local show = false
 local hide = false
-local start_x = PANEL.x
-local end_x = PANEL.x - current_x
 local elapsed = 0
 local queue = Queue:new()
 local has_item = false
@@ -104,6 +93,7 @@ local function play_audio(asset)
 end
 
 local function play_talking_head(key, world_actor, world_delay)
+	Events.Broadcast("FlipInteraction")
 	if(Object.IsValid(actor)) then
 		actor:Destroy()
 		capture:Release()
@@ -185,16 +175,12 @@ local function play_talking_head(key, world_actor, world_delay)
 			PANEL.width =  row.PanelWidth
 		end
 		if(row.GetResponse) then
-			Events.Broadcast("Talking.GetResponse",row.ResponseKey, row.DisplayDuration, row.Name,row.Message)
+			Events.Broadcast("Talking.GetResponse",row.ResponseTable, row.DisplayDuration, row.Name,row.Message)
 		end
-		Task.Spawn(function()
-			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 6)
-			hide = true
-			Task.Wait(OUT_DURATION)
-			PANEL.visibility = Visibility.FORCE_OFF
-			Task.Wait(.5)
-			has_item = false
-		end)
+		if (row.DisplayDuration > -1) then
+			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 4)
+			CloseHead()
+		end
 	end
 end
 
@@ -215,22 +201,10 @@ function Tick(dt)
 	end
 
 	if(show) then
-		if(elapsed < IN_DURATION) then
-			elapsed = elapsed + dt
-			PANEL.x = start_x + (math.abs(end_x) * IN_CURVE:GetValue(elapsed / IN_DURATION))
-		else
-			show = false
-			elapsed = 0
-		end
+		show = false
 	elseif(hide) then
-		if(elapsed < OUT_DURATION) then
-			elapsed = elapsed + dt
-			PANEL.x = current_x - (math.abs(start_x) * OUT_CURVE:GetValue(elapsed / OUT_DURATION))
-		else
-			hide = false
-			elapsed = 0
-			_G.Talking_Head = ""
-		end
+		hide = false
+		_G.Talking_Head = ""
 	end
 end
 
@@ -240,6 +214,17 @@ local function add_to_queue(key, actor, delay)
 	end)
 end
 
+function CloseHead()
+	Task.Spawn(function()
+		hide = true
+		PANEL.visibility = Visibility.FORCE_OFF
+		Task.Wait(.5)
+		has_item = false
+		Events.Broadcast("FlipInteraction")
+	end)
+end
+
 Events.Connect("Talking.Heads", add_to_queue)
+Events.Connect("CloseHeads", CloseHead)
 
 Input.actionPressedEvent:Connect(on_action_pressed)
