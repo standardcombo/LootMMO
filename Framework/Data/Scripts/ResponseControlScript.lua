@@ -32,9 +32,11 @@ end
 local function CleanUpChoices()
     for k,v in ipairs(ButtonEvents) do
         v:Disconnect()
+        table.remove(ButtonEvents, k)
     end
     for k,v in ipairs(SpawnedButtons) do 
         v:Destroy()
+        table.remove(SpawnedButtons, k)
     end
     ButtonEvents = {}
     SpawnedButtons = {}
