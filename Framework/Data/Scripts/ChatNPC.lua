@@ -5,7 +5,7 @@ local CHAT_ID = script:GetCustomProperty("ChatID")
 function OnInteracted(trigger, other)
 	if other:IsA("Player") then
         local state = tostring(other:GetResource(CHAT_ID))
-		Events.Broadcast("Talking.Heads", CHAT_ID..state)
+		Events.Broadcast("Talking.Heads", CHAT_ID, state)
 	end
 end
 

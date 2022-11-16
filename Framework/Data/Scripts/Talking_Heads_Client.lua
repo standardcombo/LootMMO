@@ -85,7 +85,15 @@ local function play_audio(asset)
 	audio:Play()
 end
 
-local function play_talking_head(key, world_actor, world_delay)
+local function play_talking_head(ID, state, name)
+	
+	local key
+	if name == nil then
+		key = ID..state
+	else
+		key = name
+	end
+
 	Events.Broadcast("FlipInteraction")
 	if(Object.IsValid(actor)) then
 		actor:Destroy()
@@ -121,21 +129,15 @@ local function play_talking_head(key, world_actor, world_delay)
 		if(string.len(row.Stance) > 0) then
 			actor.animationStance = row.Stance
 			play_audio(row.Audio)
-			if(Object.IsValid(world_actor)) then
-				world_actor.animationStance = row.Stance
-			end
 		elseif(string.len(row.Animation) > 0) then
 			actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
-			if(Object.IsValid(world_actor)) then
-				world_actor:PlayAnimation(row.Animation, { shouldLoop = row.AnimationLoop })
-			end
 			play_audio(row.Audio)
 		else
 			play_audio(row.Audio)
 		end
 
 		if(row.ResponseTable) then
-			Events.Broadcast("Talking.GetResponse", row.ResponseTable, row.DisplayDuration, key)
+			Events.Broadcast("Talking.GetResponse", row.ResponseTable, row.DisplayDuration, ID)
 		end
 		if(row.BroadcastToServer) == true then
 			Events.BroadcastToServer(_G.Talking_Head, LOCAL_PLAYER)

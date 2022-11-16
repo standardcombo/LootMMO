@@ -9,11 +9,12 @@ local function ResponseChosen(button)
     ResponsesActive = false
     UI.SetCursorVisible(false)
     UI.SetCanCursorInteractWithUI(false)
-    Events.Broadcast("CloseHeads")
-    Events.Broadcast("Talking.Heads", button.name)
     local chatState = button:GetCustomProperty("SetChatState")
     local chatID = button:GetCustomProperty("ChatID")
+    Events.Broadcast("CloseHeads")
+    Events.Broadcast("Talking.Heads", chatID, chatState, button.name)
     if chatState >= 0 then
+        Events.BroadcastToServer("ChangeChatState", chatID, chatState)
           --LOCAL_PLAYER:SetResource(chatID..chatState)
     end
 end
