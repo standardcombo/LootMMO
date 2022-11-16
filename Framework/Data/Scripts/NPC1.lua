@@ -8,7 +8,7 @@ end
 
 function OnInteracted(trigger, other)
 	if other:IsA("Player") then
-        Events.Broadcast("Talking.Heads", "Karl Laugh")
+        Events.Broadcast("Talking.Heads", "Welcome")
 	end
 end
 

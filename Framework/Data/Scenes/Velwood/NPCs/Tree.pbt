@@ -1,6 +1,51 @@
 Name: "NPCs"
 RootId: 6804530064966610888
 Objects {
+  Id: 391839035132011454
+  Name: "ChatStorage"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6804530064966610888
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TalkingHeads"
+      AssetReference {
+        Id: 10159611685153542937
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7966580671495656518
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 15708785284759483235
   Name: "Talking Heads"
   Transform {

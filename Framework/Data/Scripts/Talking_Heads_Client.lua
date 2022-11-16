@@ -88,8 +88,10 @@ end
 local function play_talking_head(ID, state, name)
 	
 	local key
-	if name == nil then
+	if name == nil and state ~= nil then
 		key = ID..state
+	elseif state == nil then
+		key = ID
 	else
 		key = name
 	end
@@ -143,7 +145,7 @@ local function play_talking_head(ID, state, name)
 			Events.BroadcastToServer(_G.Talking_Head, LOCAL_PLAYER)
 		end
 		if (row.DisplayDuration > -1) then
-			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 4)
+			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 6)
 			CloseHead()
 		end
 	else
