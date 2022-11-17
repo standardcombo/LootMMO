@@ -959,7 +959,7 @@ Objects {
       }
       ReceivesDecals: true
       GroundSlopeAngle {
-        Max: 90
+        Max: 45
       }
       Scaling {
         ScaleX {
@@ -1006,7 +1006,7 @@ Objects {
       }
       ReceivesDecals: true
       GroundSlopeAngle {
-        Max: 90
+        Max: 45
       }
       Scaling {
         ScaleX {
@@ -1233,6 +1233,55 @@ Objects {
       Height {
         Min: -102400
         Max: 102400
+      }
+    }
+    Foliage {
+      Asset {
+        Id: 8553298544017934648
+      }
+      DistanceBetweenInstances: 130
+      MaterialChannel: 4
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 45
+      }
+      Scaling {
+        Scaling: LockXY
+        ScaleX {
+          Min: 1.2
+          Max: 1.2
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 1.4
+          Max: 1.9
+        }
+      }
+      RandomYaw: true
+      RandomPitchAngle: 6
+      Materials {
+        key: "Nature_Grass"
+        value {
+          Id: 537294124127399462
+        }
+      }
+      LocalPositionOffset {
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+      }
+      Height {
+        Min: -10000
+        Max: -300
       }
     }
     MaxLOD: 32
