@@ -140215,13 +140215,13 @@ Objects {
   Transform {
     Location {
       X: -2874.9939
-      Y: -22225.6406
+      Y: -22257.3926
       Z: 2582.13428
     }
     Rotation {
       Pitch: 4.50795889
       Yaw: 169.997574
-      Roll: -6.01911211
+      Roll: -6.019104
     }
     Scale {
       X: 1
@@ -140254,7 +140254,7 @@ Objects {
 }
 Objects {
   Id: 4306925911175813128
-  Name: "AnnoyedDemon"
+  Name: "NPCgeo"
   Transform {
     Location {
     }
@@ -140297,10 +140297,12 @@ Objects {
 }
 Objects {
   Id: 17373180581747013269
-  Name: "NewFolder"
+  Name: "Signals"
   Transform {
     Location {
-      Z: 39.7752533
+      X: -0.53903991
+      Y: 0.957767189
+      Z: 48.1050835
     }
     Rotation {
       Yaw: 12.2446556
@@ -140326,7 +140328,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "NewFolder"
+    FilePartitionName: "Signals"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -140401,7 +140403,7 @@ Objects {
 }
 Objects {
   Id: 13781026987187032289
-  Name: "TestDemonQuestWithTalking"
+  Name: "LocalLogic"
   Transform {
     Location {
       X: -25.6984863
