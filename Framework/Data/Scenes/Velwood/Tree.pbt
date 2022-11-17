@@ -990,7 +990,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1037,7 +1037,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1085,7 +1085,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1134,7 +1134,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1222,54 +1222,6 @@ Objects {
         key: "Nature_Leaves"
         value {
           Id: 2152887979477253565
-        }
-      }
-      LocalPositionOffset {
-      }
-      LocalRotationOffset {
-      }
-      GlobalPositionOffset {
-      }
-      Height {
-        Min: -102400
-        Max: 102400
-      }
-    }
-    Foliage {
-      Asset {
-        Id: 8553298544017934648
-      }
-      DistanceBetweenInstances: 110
-      MaterialChannel: 4
-      SpawnDistance: 22400
-      CullDistance {
-        Min: 10000
-        Max: 20000
-      }
-      ReceivesDecals: true
-      GroundSlopeAngle {
-        Max: 90
-      }
-      Scaling {
-        ScaleX {
-          Min: 1
-          Max: 1
-        }
-        ScaleY {
-          Min: 1
-          Max: 1
-        }
-        ScaleZ {
-          Min: 1
-          Max: 1
-        }
-      }
-      RandomYaw: true
-      RandomPitchAngle: 6
-      Materials {
-        key: "Nature_Grass"
-        value {
-          Id: 537294124127399462
         }
       }
       LocalPositionOffset {
