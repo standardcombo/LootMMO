@@ -53,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15494817542660282536
+  Name: "Humanoid 1 Peasant Pants"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_gal_lower_fantasy_000_ref"
+  }
+}
+Assets {
   Id: 14297728717440588492
   Name: "Pipe - 45-Degree Short Thick"
   PlatformAssetType: 1
@@ -89,12 +98,30 @@ Assets {
   }
 }
 Assets {
+  Id: 12092204065995792596
+  Name: "Humanoid 1 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_gal_wireframe_001_ref"
+  }
+}
+Assets {
   Id: 11695249546191317188
   Name: "Basic Bean Thin Long"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prim_bean_thin_long_001_ref"
+  }
+}
+Assets {
+  Id: 11241465226241462039
+  Name: "Humanoid 1 Yasmine"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_gal_head_basic_007_ref"
   }
 }
 Assets {
@@ -230,6 +257,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_truncated_teardrop_001"
+  }
+}
+Assets {
+  Id: 3557954209464392513
+  Name: "Humanoid 1 Peasant Shirt"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_gal_upper_fantasy_000_ref"
   }
 }
 Assets {

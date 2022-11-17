@@ -255,9 +255,9 @@ Objects {
   Name: "Spawn Point - PortalReturn"
   Transform {
     Location {
-      X: 2780.7832
-      Y: -3041.25195
-      Z: 115
+      X: -5211.39746
+      Y: -22026.9844
+      Z: 2963.23071
     }
     Rotation {
     }
@@ -301,9 +301,9 @@ Objects {
   Name: "Spawn Point - Social"
   Transform {
     Location {
-      X: 2930.7832
-      Y: -3191.25195
-      Z: 115
+      X: -5061.39746
+      Y: -22176.9844
+      Z: 2963.23071
     }
     Rotation {
     }
