@@ -1,11 +1,11 @@
 local TRIGGER = script.parent
--- putting this in local so it fires the two events at the same time
--- 1 is client and will fire off the talking heads
--- 2nd is server, which will be an empty broadcast, but it will allow the quest system to listen for particular talking head events, possibly
+local CHAT_ID = script:GetCustomProperty("ChatID")
+
 
 function OnInteracted(trigger, other)
 	if other:IsA("Player") then
-		Events.Broadcast("Talking.Heads", "Demon0")
+        local state = tostring(other:GetResource(CHAT_ID))
+		Events.Broadcast("Talking.Heads", CHAT_ID, state)
 	end
 end
 
@@ -16,7 +16,7 @@ end
 
 TRIGGER.interactedEvent:Connect(OnInteracted)
 Events.Connect("FlipInteraction", FlipInteraction)
-
+TRIGGER.isInteractable = true
 -- if Environment.IsClient() then
 --     local CHARACTER = script:GetCustomProperty("NewSetUpCustomNPC"):WaitForObject()
 --     local RepeatingTask = Task.Spawn(function()

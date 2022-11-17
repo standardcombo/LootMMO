@@ -761,8 +761,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15307806378563129154
-  Name: "DemonQuest"
+  Id: 8384531805813392784
+  Name: "GotoVelwood"
   Transform {
     Location {
     }
@@ -789,7 +789,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "DemonQuest"
+    FilePartitionName: "GotoVelwood"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

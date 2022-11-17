@@ -177,12 +177,12 @@ Assets {
       }
     }
     Assets {
-      Id: 40318633574378902
-      Name: "Icon Scroll"
+      Id: 2149294885892500043
+      Name: "Icon Treasure Map"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Scroll"
+        AssetId: "Icon_MapTraesure"
       }
     }
   }
