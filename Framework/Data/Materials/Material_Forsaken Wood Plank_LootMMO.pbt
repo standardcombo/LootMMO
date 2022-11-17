@@ -22,6 +22,15 @@ Assets {
         Name: "b_invert_metallic"
         Bool: false
       }
+      Overrides {
+        Name: "color"
+        Color {
+          R: 0.577
+          G: 0.577
+          B: 0.577
+          A: 1
+        }
+      }
     }
     Assets {
       Id: 7754470856388882901
