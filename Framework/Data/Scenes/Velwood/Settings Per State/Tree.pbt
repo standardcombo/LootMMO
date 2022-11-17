@@ -291,8 +291,8 @@ Objects {
       LookAtCursorProjectionPlane {
         Value: "mc:eprojectionplane:xy"
       }
-      MountedMaxAcceleration: 2200
-      MountedWalkSpeed: 1400
+      MountedMaxAcceleration: 1800
+      MountedWalkSpeed: 960
       MountedJumpMaxCount: 1
       MountedJumpVelocity: 900
       HeadVisibleToSelf: true

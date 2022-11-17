@@ -176,5 +176,14 @@ Assets {
         AssetId: "UI_Fantasy_Icon_CrystalBall"
       }
     }
+    Assets {
+      Id: 2149294885892500043
+      Name: "Icon Treasure Map"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_MapTraesure"
+      }
+    }
   }
 }

@@ -26,7 +26,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ObjectID"
-      String: "TestingStuff"
+      String: "Demon0"
     }
     Overrides {
       Name: "cs:EventID"
