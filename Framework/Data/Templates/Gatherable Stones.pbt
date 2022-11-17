@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 11834958351407609676
         ChildIds: 9572204608989662689
         ChildIds: 2947611807335669788
         ChildIds: 6349748105440124287
@@ -486,6 +486,10 @@ Assets {
           Overrides {
             Name: "cs:SpawnTemplateOnLoad"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
           }
           Overrides {
             Name: "cs:RespawnSeconds"
@@ -1009,6 +1013,10 @@ Assets {
             Bool: true
           }
           Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
+          }
+          Overrides {
             Name: "cs:RespawnSeconds"
             Float: 0
           }
@@ -1530,6 +1538,10 @@ Assets {
             Bool: true
           }
           Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
+          }
+          Overrides {
             Name: "cs:RespawnSeconds"
             Float: 0
           }
@@ -2049,6 +2061,10 @@ Assets {
           Overrides {
             Name: "cs:SpawnTemplateOnLoad"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
           }
           Overrides {
             Name: "cs:RespawnSeconds"
@@ -2573,6 +2589,10 @@ Assets {
             Bool: true
           }
           Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
+          }
+          Overrides {
             Name: "cs:RespawnSeconds"
             Float: 0
           }
@@ -3093,6 +3113,10 @@ Assets {
           Overrides {
             Name: "cs:SpawnTemplateOnLoad"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:LootID"
+            String: "OreCommon"
           }
           Overrides {
             Name: "cs:RespawnSeconds"

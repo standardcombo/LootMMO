@@ -398,25 +398,10 @@ Objects {
         }
       }
     }
-    ParameterOverrideMap {
-      key: 16244529152849912169
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            Z: 50.0004883
-          }
-        }
-      }
-    }
     TemplateAsset {
       Id: 13009181929419590369
     }
   }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 13759334827943474409
@@ -454,6 +439,51 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3102414608617179520
+      value {
+        Overrides {
+          Name: "cs:LootID"
+          String: "TreeCommon"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 9781872353209197553
+      value {
+        Overrides {
+          Name: "cs:LootID"
+          String: "TreeCommon"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11088702440536384286
+      value {
+        Overrides {
+          Name: "cs:LootID"
+          String: "TreeCommon"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14917822495911916750
+      value {
+        Overrides {
+          Name: "cs:LootID"
+          String: "TreeCommon"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16277796482156414577
+      value {
+        Overrides {
+          Name: "cs:LootID"
+          String: "TreeCommon"
         }
       }
     }

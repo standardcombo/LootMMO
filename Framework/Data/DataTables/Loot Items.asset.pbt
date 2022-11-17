@@ -6,12 +6,12 @@ Assets {
   DataTableAsset {
     HasKeyColumn: true
     Assets {
-      Id: 1031800327856440791
-      Name: "Fantasy Hammer 005"
+      Id: 6313673757839584065
+      Name: "Fantasy Dagger 005"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Weapon_Hammer_005"
+        AssetId: "UI_Fantasy_Weapon_Dagger_005"
       }
     }
     Assets {
@@ -21,6 +21,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Weapon_Staff_028"
+      }
+    }
+    Assets {
+      Id: 1031800327856440791
+      Name: "Fantasy Hammer 005"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Weapon_Hammer_005"
       }
     }
     Assets {
@@ -84,15 +93,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Weapon_Sword_013"
-      }
-    }
-    Assets {
-      Id: 6313673757839584065
-      Name: "Fantasy Dagger 005"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Weapon_Dagger_005"
       }
     }
     Assets {

@@ -101,6 +101,7 @@ local function GetCraftRecipes(inventory)
 	if not items then return end
 	local recipes = {}
 	for key, value in pairs(items) do
+		print("crafting", key, value.Order)
 		local newrecipe = craftAPI.GetGreatnessValue(value.id, 5)
 		local newRecipe = {
 			item = nil,
@@ -109,7 +110,8 @@ local function GetCraftRecipes(inventory)
 			slot = 0,
 		}
 		if newrecipe then
-			table.insert(recipes, newRecipe)
+			recipes[value.Order] = newRecipe
+			--table.insert(recipes, value.Order - 1, newRecipe)
 		end
 	end
 	return recipes

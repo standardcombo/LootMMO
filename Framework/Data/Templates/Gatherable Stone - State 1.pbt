@@ -54,6 +54,7 @@ Assets {
           }
         }
         ParentId: 4375348249174955034
+        ChildIds: 10081860011109959015
         ChildIds: 11264567828727724526
         ChildIds: 18374053598292463433
         ChildIds: 10921461476718921347
@@ -71,6 +72,70 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10081860011109959015
+        Name: "Callout Sparkle"
+        Transform {
+          Location {
+            Z: 48.4427414
+          }
+          Rotation {
+          }
+          Scale {
+            X: 3.75534844
+            Y: 3.75534844
+            Z: 0.895599723
+          }
+        }
+        ParentId: 9428284527078832526
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 13.7145634
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 1.50404251
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Density"
+            Float: 2.11736083
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14231394991004806063
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -275,6 +340,15 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
+      }
+    }
+    Assets {
+      Id: 14231394991004806063
+      Name: "Callout Sparkle"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_sparkles_volume_vfx"
       }
     }
     Assets {

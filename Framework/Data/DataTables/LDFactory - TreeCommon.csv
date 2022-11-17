@@ -1,0 +1,4 @@
+"id[String]","incidence[Int]","rewards[String]"
+"Nothing","4",""
+"CoinsPlusWood","1","Material(Coins=RNG[1-3]), Wait(0.5), Ref(Wood)"
+"Wood","4","Material(Wood=RNG[1-2])"
