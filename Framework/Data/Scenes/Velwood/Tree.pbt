@@ -990,7 +990,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1037,7 +1037,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1085,7 +1085,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
@@ -1134,7 +1134,7 @@ Objects {
       GlobalPositionOffset {
       }
       Height {
-        Min: -102400
+        Min: -300
         Max: 102400
       }
     }
