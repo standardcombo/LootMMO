@@ -1,6 +1,6 @@
 --[[
 	Settings per Location - Server
-	by: standardcombo
+	by: standardcombo, Luapi
 	
 	Changes the player's settings depending on their current screen.
 	
@@ -15,11 +15,9 @@ local PLAYER_SETTINGS_BAG_SELECTION = script:GetCustomProperty("PlayerSettingsBa
 local PLAYER_SETTINGS_SOCIAL_SPACE = script:GetCustomProperty("PlayerSettingsSocialSpace"):WaitForObject()
 
 local STARTING_STATE = script:GetCustomProperty("StartingState")
-local STARTING_SPAWN = script:GetCustomProperty("StartingSpawnKey")
-
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
---	print("Settings per location AppState.Enter")
+	-- print("SettingsPerStateServer AppState.Enter", newState, ">", newState)
 	
 	if not Object.IsValid(player) then return end
 	
@@ -35,8 +33,7 @@ Events.Connect("AppState.Enter", function(player, newState, prevState)
 		
 		SPAWN_UTILS.SpawnPlayerAt(player, "Social")
 
-	elseif newState == _G.AppState.BagSelection
-	and prevState ~= _G.AppState.None then
+	elseif newState == _G.AppState.BagSelection	then
 		PLAYER_SETTINGS_BAG_SELECTION:ApplyToPlayer(player)
 		
 		SPAWN_UTILS.SpawnPlayerAt(player, "BagSelection")

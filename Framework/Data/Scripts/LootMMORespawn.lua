@@ -11,6 +11,7 @@
 local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
 
 local SAFE_RESPAWN_DELAY = script:GetCustomProperty("SafeRespawnDelay")
+local SAFE_SPAWN_KEY = script:GetCustomProperty("SafeSpawnKey")
 local COMBAT_RESPAWN_DELAY = script:GetCustomProperty("CombatRespawnDelay")
 local COMBAT_SPAWN_KEY = script:GetCustomProperty("CombatSpawnKey")
 
@@ -19,7 +20,7 @@ function SafeZoneRespawn(player)
 	Task.Wait(SAFE_RESPAWN_DELAY)
 	
 	if Object.IsValid(player) then
-		player:Spawn()
+		SPAWN_UTILS.SpawnPlayerAt(player, SAFE_SPAWN_KEY)
 	end
 end
 
@@ -57,8 +58,9 @@ function OnPlayerDied(player, dmg)
 	end
 end
 
-
-Game.playerJoinedEvent:Connect(function(player)
+function OnPlayerJoined(player)
 	player.diedEvent:Connect(OnPlayerDied)
-end)
+end
+
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
 

@@ -188,12 +188,6 @@ Objects {
   ParentId: 9970684983361868256
   ChildIds: 13121738759399816697
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:SpawnSettings"
-      ObjectReference {
-        SelfId: 13121738759399816697
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
