@@ -1,11 +1,11 @@
 --[[
 	LootMMO Respawn
 	v1.0.1 - 2022/10/22
-	by: standardcombo
+	by: standardcombo, Luapi
 	
 	Checks if a dying player is in a safe zone or not.
-	If in safe zone, then they respawn according to Spawn Settings object.
-	If they are in a combat zone, then they spawn at a given SpawnKey.
+	If in safe zone, then they respawn according to SafeSpawnKey
+	If they are in a combat zone, then they spawn at a given CombatSpawnKey.
 ]]
 
 local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
