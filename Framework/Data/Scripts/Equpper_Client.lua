@@ -20,10 +20,6 @@ for _, panel in pairs(PANELS) do
 	panel.clientUserData.SetActionName(panel)
 end
 
-while not LOCAL_PLAYER:GetPrivateNetworkedData("equipmentContainer") do
-	Task.Wait()
-end
-
 local function WriteData(equipment, panel)
     local icon = LOOT_ABILITY_EQUIPMENT.GetIcon(equipment.name) or Potions.GetIcon(equipment.name)
 	if icon then
