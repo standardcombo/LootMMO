@@ -29,6 +29,7 @@ Objects {
   ChildIds: 16116870671107651725
   ChildIds: 3854015457754673156
   ChildIds: 9900866518685091428
+  ChildIds: 18036706030811280089
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -46,6 +47,46 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18036706030811280089
+  Name: "FrankenZombie"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13885560919334846971
+      value {
+        Overrides {
+          Name: "Name"
+          String: "FrankenZombie"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -25270.3359
+            Y: -7791.15576
+            Z: 789.102051
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7570130108874215974
+    }
+  }
 }
 Objects {
   Id: 9900866518685091428

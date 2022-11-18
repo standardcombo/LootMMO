@@ -1,128 +1,6 @@
 Name: "xRae"
 RootId: 16116870671107651725
 Objects {
-  Id: 12323240751572531927
-  Name: "Humanoid 2 Rig"
-  Transform {
-    Location {
-      X: 3953.69482
-      Y: -25693.5957
-      Z: 1146.59729
-    }
-    Rotation {
-      Yaw: 123.584206
-    }
-    Scale {
-      X: 1.28117204
-      Y: 1.28117204
-      Z: 1.28117204
-    }
-  }
-  ParentId: 16116870671107651725
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:0:Shared_Detail2:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:0:Shared_Detail2:id"
-      AssetReference {
-        Id: 12143894629036006249
-      }
-    }
-    Overrides {
-      Name: "ma:1:Shared_Detail1:id"
-      AssetReference {
-        Id: 13510637552607883678
-      }
-    }
-    Overrides {
-      Name: "ma:1:Shared_Detail3:id"
-      AssetReference {
-        Id: 9156392880245197027
-      }
-    }
-    Overrides {
-      Name: "ma:1:Shared_Detail1:color"
-      Color {
-        R: 0.279
-        G: 0.13976571
-        B: 0.059706
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:1:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 15904841793697771346
-      }
-    }
-    Overrides {
-      Name: "ma:1:Shared_BaseMaterial:color"
-      Color {
-        R: 0.663000047
-        G: 0.558246
-        B: 0.558246
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 16912192915158960834
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-      SkinnedMeshes {
-        Id: 2576720865550339403
-      }
-      SkinnedMeshes {
-        Id: 17765362537956021931
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 3350559390665798169
   Name: "Scare"
   Transform {
@@ -140,11 +18,12 @@ Objects {
   }
   ParentId: 16116870671107651725
   ChildIds: 5540021067551384220
+  ChildIds: 5187937529120151426
+  ChildIds: 14492461253624427801
   ChildIds: 338153117551636677
+  ChildIds: 2544625050990324338
   ChildIds: 8402310416720602432
   ChildIds: 16913080066437432425
-  ChildIds: 2544625050990324338
-  ChildIds: 5187937529120151426
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -164,100 +43,6 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 5187937529120151426
-  Name: "Trigger2"
-  Transform {
-    Location {
-      X: -4135.95508
-      Y: -6255.35449
-      Z: 2358.43
-    }
-    Rotation {
-    }
-    Scale {
-      X: 345.487091
-      Y: 57.8046265
-      Z: 85.5630493
-    }
-  }
-  ParentId: 3350559390665798169
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-      Id: 841534158063459245
-    }
-    BreadcrumbTemplate {
-      Id: 841534158063459245
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2544625050990324338
-  Name: "Adult 02 Vocal Efforts Pain Breathing Out Of Breath 02 SFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3350559390665798169
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 10336788444696592155
-    }
-    Pitch: -2000
-    Volume: 4
-    Falloff: -1
-    Radius: -1
-    FadeOutTime: 0.3
-    IsSpatializationEnabled: true
-    StopTime: 1.6
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -325,12 +110,6 @@ Objects {
   ParentId: 3350559390665798169
   UnregisteredParameters {
     Overrides {
-      Name: "cs:Trigger1"
-      ObjectReference {
-        SelfId: 5540021067551384220
-      }
-    }
-    Overrides {
       Name: "cs:VoiceCharacterZombieSnarlAttack04SFX"
       ObjectReference {
         SelfId: 2544625050990324338
@@ -343,9 +122,21 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:Trigger1"
+      ObjectReference {
+        SelfId: 5540021067551384220
+      }
+    }
+    Overrides {
       Name: "cs:Trigger2"
       ObjectReference {
         SelfId: 5187937529120151426
+      }
+    }
+    Overrides {
+      Name: "cs:Trigger3"
+      ObjectReference {
+        SelfId: 14492461253624427801
       }
     }
   }
@@ -365,6 +156,50 @@ Objects {
     ScriptAsset {
       Id: 15373651705815554089
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2544625050990324338
+  Name: "Adult 02 Vocal Efforts Pain Breathing Out Of Breath 02 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3350559390665798169
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 10336788444696592155
+    }
+    Pitch: -2000
+    Volume: 4
+    Falloff: -1
+    Radius: -1
+    FadeOutTime: 0.3
+    IsSpatializationEnabled: true
+    StopTime: 1.6
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -406,8 +241,8 @@ Objects {
     AudioAsset {
       Id: 3683706403881711235
     }
-    Pitch: -1449.24829
-    Volume: 3.13585591
+    Pitch: -2400
+    Volume: 3
     Falloff: -1
     Radius: -1
     FadeInTime: 0.4
@@ -422,20 +257,20 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5540021067551384220
-  Name: "Trigger1"
+  Id: 14492461253624427801
+  Name: "Trigger3"
   Transform {
     Location {
-      X: -4290.72
-      Y: -6293.82129
-      Z: 2358.43
+      X: 3847.00488
+      Y: -1125.90137
+      Z: 799.074829
     }
     Rotation {
     }
     Scale {
-      X: 67.2067871
-      Y: 37.0744705
-      Z: 85.5630493
+      X: 34.7415085
+      Y: 34.7415085
+      Z: 34.7415085
     }
   }
   ParentId: 3350559390665798169
@@ -457,13 +292,159 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
+      Value: "mc:etriggershape:sphere"
     }
     InteractionTemplate {
       Id: 841534158063459245
     }
     BreadcrumbTemplate {
       Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5187937529120151426
+  Name: "Trigger2"
+  Transform {
+    Location {
+      X: 4898.48926
+      Y: -2150.42676
+      Z: 1266.71716
+    }
+    Rotation {
+    }
+    Scale {
+      X: 65.6863861
+      Y: 65.6863861
+      Z: 65.6863861
+    }
+  }
+  ParentId: 3350559390665798169
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+      Id: 841534158063459245
+    }
+    BreadcrumbTemplate {
+      Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5540021067551384220
+  Name: "Trigger1"
+  Transform {
+    Location {
+      X: 6411.83594
+      Y: -3982.53027
+      Z: 1266.71716
+    }
+    Rotation {
+      Yaw: -37.3181763
+    }
+    Scale {
+      X: 129.86525
+      Y: 129.86525
+      Z: 129.86525
+    }
+  }
+  ParentId: 3350559390665798169
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+      Id: 841534158063459245
+    }
+    BreadcrumbTemplate {
+      Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8225760367582177523
+  Name: "SpawnZombie"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16116870671107651725
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:FrankenZombie"
+      AssetReference {
+        Id: 7570130108874215974
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1647607208107245524
     }
   }
   NetworkRelevanceDistance {
@@ -650,11 +631,19 @@ Objects {
     }
   }
   ParentId: 16116870671107651725
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Volume Color"
+      Color {
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
