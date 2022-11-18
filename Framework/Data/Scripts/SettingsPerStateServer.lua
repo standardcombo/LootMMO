@@ -41,25 +41,20 @@ Events.Connect("AppState.Enter", function(player, newState, prevState)
 		
 		SPAWN_UTILS.SpawnPlayerAt(player, "BagSelection")
 	end
+
+	player.serverUserData.hasSpawned = true
 end)
 
 
 function OnPlayerJoined(player)
-	SPAWN_UTILS.SpawnPlayerAt(player, STARTING_SPAWN)
-	
-	Task.Wait()
-	Task.Wait()
-	if Object.IsValid(player) then
-		_G.AppState.SetStateForPlayer(player, STARTING_STATE)
-		player.serverUserData.hasSpawned = true
-	end
+	_G.AppState.SetStateForPlayer(player, STARTING_STATE)
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
-Events.ConnectForPlayer("ClientReady", function(player)
-	if _G.AppState and not player.serverUserData.hasSpawned then
-		_G.AppState.SetStateForPlayer(player, STARTING_STATE)
-	end
-end)
+-- Events.ConnectForPlayer("ClientReady", function(player)
+-- 	if _G.AppState and not player.serverUserData.hasSpawned then
+-- 		_G.AppState.SetStateForPlayer(player, STARTING_STATE)
+-- 	end
+-- end)
 
