@@ -20,7 +20,6 @@ Objects {
   ChildIds: 16163164332844640351
   ChildIds: 2739487736181212385
   ChildIds: 6359634882356309228
-  ChildIds: 7710640415170227205
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -40,56 +39,6 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
-}
-Objects {
-  Id: 7710640415170227205
-  Name: "Mounted Volume"
-  Transform {
-    Location {
-      X: -2789.23462
-      Y: -724.498535
-      Z: 110.563477
-    }
-    Rotation {
-    }
-    Scale {
-      X: 96.1004944
-      Y: 100.007309
-      Z: 21.5875664
-    }
-  }
-  ParentId: 16698996039252637075
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-    }
-    BreadcrumbTemplate {
-    }
-    MountedVolume {
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 6359634882356309228
