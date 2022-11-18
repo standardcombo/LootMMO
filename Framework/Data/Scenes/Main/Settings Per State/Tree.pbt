@@ -430,7 +430,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:LoadGearOnJoin"
-      Bool: true
+      Bool: false
     }
   }
   Collidable_v2 {

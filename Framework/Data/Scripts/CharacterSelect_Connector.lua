@@ -15,6 +15,14 @@ local NewCharacterEvent = 'NewCharacter'
 
 local PRE_TRAVEL_EVENT = "GoingToTravel"
 
+
+function OnPlayerJoined(player)
+	if LOAD_GEAR_ON_JOIN then
+		LoadGear(player)
+	end
+end
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
 -- Leaving the game
 Events.Connect(PRE_TRAVEL_EVENT, function(player)
 	SaveGear(player)
@@ -24,9 +32,7 @@ end)
 Events.Connect(
 	'AppState.Enter',
 	function(player, newState, prevPlayerState)
-		if (newState == appstate.BagSelection or newState == appstate.SocialHub) and prevPlayerState == appstate.None and LOAD_GEAR_ON_JOIN then
-			LoadGear(player)
-		elseif newState == appstate.SocialHub and prevPlayerState == appstate.BagSelection then
+		if newState == appstate.SocialHub and prevPlayerState == appstate.BagSelection then
 			local Csave = _G['Character.SaveApi']
 			local lastCharId = Csave.GetLastPlayedCharacterId(player)
 			--print("CharacterSelect_Connector, lastCharId = "..tostring(lastCharId))
@@ -67,20 +73,18 @@ function LoadGear(player)
 
 	if lastBagData then
 		player.serverUserData.currentBag = LOOT_BAG_PARSER.Parse(lastBagData)
-		Task.Spawn(function()
-			_G.AppState.SetStateForPlayer(player, _G.AppState.SocialHub)
-		end,1)
 	else
 		warn("No Loot bag selection found.")
 	end
 
-	-- if lastCharId then
-	-- 	if not Object.IsValid(player) then return end
-
-	-- 	SelectCharacter(player, lastCharId)
-	-- else
-	-- 	warn("No character data found.")
-	-- end
+	if lastCharId then
+		Task.Wait(1)
+		if not Object.IsValid(player) then return end
+		
+		local success = SelectCharacter(player, lastCharId)
+	else
+		warn("No character data found.")
+	end
 end
 
 function SelectCharacter(player, characterId)
@@ -108,9 +112,9 @@ function RequestNewCharacter(player)
 	Events.Broadcast(NewCharacterEvent .. "S", player)
 end
 
--- if waitCount > 0 then
--- 	for _,p in ipairs(Game.GetPlayers()) do
--- 		OnPlayerJoined(p)
--- 	end
--- end
+if waitCount > 0 then
+	for _,p in ipairs(Game.GetPlayers()) do
+		OnPlayerJoined(p)
+	end
+end
 
