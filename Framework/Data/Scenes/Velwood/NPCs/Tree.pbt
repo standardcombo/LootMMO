@@ -160,7 +160,7 @@ Objects {
     }
     Overrides {
       Name: "cs:LightIntensity"
-      Float: 23.355402
+      Float: 7
     }
     Overrides {
       Name: "cs:InCurve:tooltip"

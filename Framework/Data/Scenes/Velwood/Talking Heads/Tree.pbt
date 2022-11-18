@@ -336,7 +336,7 @@ Objects {
   Name: "Point Light"
   Transform {
     Location {
-      X: 409.06543
+      X: 312.143677
       Z: 149.013184
     }
     Rotation {
@@ -361,14 +361,13 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Light {
-    Intensity: 15
+    Intensity: 1
     Color {
       R: 0.313936591
       G: 0.68200016
       A: 1
     }
-    CastShadows: true
-    VolumetricIntensity: 5
+    VolumetricIntensity: 3
     TeamSettings {
     }
     Light {
@@ -376,8 +375,8 @@ Objects {
       LocalLight {
         AttenuationRadius: 1010.09937
         PointLight {
-          SourceRadius: 500
-          SoftSourceRadius: 183.94841
+          SourceRadius: 294.333649
+          SoftSourceRadius: 404.718872
           SourceLength: 500
           FallOffExponent: 8
           UseFallOffExponent: true
