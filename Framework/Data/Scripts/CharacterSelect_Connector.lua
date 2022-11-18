@@ -2,13 +2,6 @@
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local LOAD_GEAR_ON_JOIN = script:GetCustomProperty("LoadGearOnJoin")
 
-local waitCount = 0
-while not _G.AppState do
-	Task.Wait()
-	waitCount = waitCount + 1
-end
-
-local appstate = _G.AppState
 local DataKey = 'Cselect'
 local EAPI = _G['Character.EquipAPI']
 local NewCharacterEvent = 'NewCharacter'
@@ -17,11 +10,12 @@ local PRE_TRAVEL_EVENT = "GoingToTravel"
 
 
 function OnPlayerJoined(player)
-	if LOAD_GEAR_ON_JOIN then
+	player.serverUserData.transferData = player:GetJoinTransferData()
+	--print("CharacterSelect_Connector OnPlayerJoined",player.serverUserData.transferData.spawnKey)
+	if LOAD_GEAR_ON_JOIN or player:GetJoinTransferData().spawnKey then
 		LoadGear(player)
 	end
 end
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 -- Leaving the game
 Events.Connect(PRE_TRAVEL_EVENT, function(player)
@@ -32,14 +26,21 @@ end)
 Events.Connect(
 	'AppState.Enter',
 	function(player, newState, prevPlayerState)
-		if newState == appstate.SocialHub and prevPlayerState == appstate.BagSelection then
+		while not _G.AppState do
+			Task.Wait()
+		end
+		while not EAPI do
+			Task.Wait()
+			EAPI = _G['Character.EquipAPI']
+		end
+		if newState == _G.AppState.SocialHub and prevPlayerState == _G.AppState.BagSelection then
 			local Csave = _G['Character.SaveApi']
 			local lastCharId = Csave.GetLastPlayedCharacterId(player)
 			--print("CharacterSelect_Connector, lastCharId = "..tostring(lastCharId))
 			
 			SelectCharacter(player, lastCharId)
 		
-		elseif newState == appstate.BagSelection then
+		elseif newState == _G.AppState.BagSelection then
 			local character = EAPI.GetCurrentCharacter(player)
 			if character then
 				character:Destroy()
@@ -63,8 +64,9 @@ function SaveGear(player)
 	end
 end
 
+
+
 function LoadGear(player)
-	local data = Storage.GetPlayerData(player)
 
 	local CSave = _G['Character.SaveApi']
 	
@@ -80,8 +82,8 @@ function LoadGear(player)
 	if lastCharId then
 		Task.Wait(1)
 		if not Object.IsValid(player) then return end
-		
-		local success = SelectCharacter(player, lastCharId)
+		--print("Selecting character")
+		SelectCharacter(player, lastCharId)
 	else
 		warn("No character data found.")
 	end
@@ -112,9 +114,4 @@ function RequestNewCharacter(player)
 	Events.Broadcast(NewCharacterEvent .. "S", player)
 end
 
-if waitCount > 0 then
-	for _,p in ipairs(Game.GetPlayers()) do
-		OnPlayerJoined(p)
-	end
-end
-
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
