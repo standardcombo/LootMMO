@@ -41,13 +41,14 @@ Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 				else
 					local CurrentScene = Game.GetCurrentSceneName()
 					if CurrentScene ~= quest.sceneString then 
-						
+						Events.Broadcast("GoingToTravel", player)
 						player:TransferToScene(quest.sceneString,{spawnKey = quest.spawnKey})
 						return
 					end
 					SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
 				end
 			else
+				Events.Broadcast("GoingToTravel", player)
 				player:TransferToGame(quest.gameId)
 				--only transfer to scene, in a new game, is un accounted for.
 				-- need to consider a check like above for quest.sceneString.
