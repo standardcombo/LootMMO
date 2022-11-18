@@ -10,11 +10,9 @@ function SetAsDefault()
 	CAMERA:SetWorldPosition(player:GetWorldPosition() + DELTA_CAMERA_POS)
 end
 
-function OnPlayerJoined(player)
-	if player == Game.GetLocalPlayer() then
+Events.Connect("AppState.Enter", function(player, newState, prevState)
+	--print("BagSelectionCameraScript AppState.Enter", newState, ">", prevState)
+	if newState == _G.AppState.BagSelection then
 		SetAsDefault()
 	end
-end
-
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
-
+end)
