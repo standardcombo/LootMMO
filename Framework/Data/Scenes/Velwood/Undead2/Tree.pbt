@@ -3223,7 +3223,7 @@ Objects {
 }
 Objects {
   Id: 10811403412151853136
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: 2842.38184
@@ -3255,7 +3255,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3268,7 +3268,7 @@ Objects {
 }
 Objects {
   Id: 16840127169559396928
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: 2708.03027
@@ -3300,7 +3300,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3313,7 +3313,7 @@ Objects {
 }
 Objects {
   Id: 18008666228917327680
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: 2567.95215
@@ -3345,7 +3345,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3358,7 +3358,7 @@ Objects {
 }
 Objects {
   Id: 5392718095745050617
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: 2419.85254
@@ -3390,7 +3390,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3403,7 +3403,7 @@ Objects {
 }
 Objects {
   Id: 17046466016830065104
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: 2289.78711
@@ -3435,7 +3435,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3448,7 +3448,7 @@ Objects {
 }
 Objects {
   Id: 4881669061201713591
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: -6728.38135
@@ -3480,7 +3480,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3493,7 +3493,7 @@ Objects {
 }
 Objects {
   Id: 12577574890907086748
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: -6779.38135
@@ -3525,7 +3525,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3538,7 +3538,7 @@ Objects {
 }
 Objects {
   Id: 615603208860825582
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: -6832.55127
@@ -3570,7 +3570,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3583,7 +3583,7 @@ Objects {
 }
 Objects {
   Id: 12668170267845700584
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: -6888.76611
@@ -3615,7 +3615,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -3628,7 +3628,7 @@ Objects {
 }
 Objects {
   Id: 14241776649159612963
-  Name: "Spawn Point - Undead1"
+  Name: "Spawn Point - Undead2"
   Transform {
     Location {
       X: -6938.13818
@@ -3660,7 +3660,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead2"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }

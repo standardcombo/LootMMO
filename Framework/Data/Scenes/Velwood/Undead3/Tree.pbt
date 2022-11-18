@@ -218,17 +218,17 @@ Objects {
   Name: "Quest Area"
   Transform {
     Location {
-      X: 4998.13574
-      Y: 5634.08691
-      Z: -0.00183105469
+      X: 6951.70801
+      Y: 2006.48584
+      Z: -915.13269
     }
     Rotation {
       Yaw: -157.500031
     }
     Scale {
-      X: 178.697632
-      Y: 178.697632
-      Z: 178.697632
+      X: 72.2729568
+      Y: 72.2729568
+      Z: 72.2729568
     }
   }
   ParentId: 6695459024843634408
@@ -329,7 +329,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -374,7 +374,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -419,7 +419,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -464,7 +464,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -509,7 +509,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -554,7 +554,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -599,7 +599,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -644,7 +644,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -689,7 +689,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
@@ -734,7 +734,7 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
-    SpawnKey: "Undead1"
+    SpawnKey: "Undead3"
     SpawnEffectsTemplate {
       Id: 841534158063459245
     }
