@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17765362537956021931
+  Name: "Humanoid 2 Peasant Pants"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_lower_fantasy_000_ref"
+  }
+}
+Assets {
   Id: 17157977466683768474
   Name: "NFTUpgraded"
   PlatformAssetType: 23
@@ -18,6 +27,15 @@ Assets {
         Value: "mc:enetreferencetype:concurrentplayerpersistence"
       }
     }
+  }
+}
+Assets {
+  Id: 16912192915158960834
+  Name: "Humanoid 2 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_guy_wireframe_001_ref"
   }
 }
 Assets {
@@ -66,6 +84,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_gen_branches_small_001"
+  }
+}
+Assets {
+  Id: 15904841793697771346
+  Name: "Fabric Burlap Old 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_fan_fabric_burlap_001_uv"
   }
 }
 Assets {
@@ -221,6 +248,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11707371210948964647
+  Name: "Creature Beast Deep Low Breath 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_beast_deep_low_breath_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 11588052875130059778
   Name: "SELFXPBOOST"
   PlatformAssetType: 24
@@ -270,6 +306,15 @@ Assets {
         Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
+  }
+}
+Assets {
+  Id: 10336788444696592155
+  Name: "Adult 02 Vocal Efforts Pain Breathing Out Of Breath 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_efforts_female_adult_2_pain_breathing_out_of_breath_02a_Cue_ref"
   }
 }
 Assets {
@@ -573,6 +618,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3683706403881711235
+  Name: "Voice Character Zombie Snarl Attack 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_snarl_attack_04_Cue_ref"
+  }
+}
+Assets {
   Id: 3295690706030492699
   Name: "Character2"
   PlatformAssetType: 23
@@ -583,6 +637,15 @@ Assets {
         Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
+  }
+}
+Assets {
+  Id: 2576720865550339403
+  Name: "Humanoid 2 Zed"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_guy_head_basic_005_ref"
   }
 }
 Assets {

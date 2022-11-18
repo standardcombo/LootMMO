@@ -140268,7 +140268,7 @@ Objects {
     }
   }
   ParentId: 2450179119937356925
-  ChildIds: 4464870050830864738
+  ChildIds: 6806576216077729781
   ChildIds: 17373180581747013269
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -140318,7 +140318,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -140336,18 +140336,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4464870050830864738
-  Name: "Humanoid 1 Rig"
+  Id: 6806576216077729781
+  Name: "Greeter"
   Transform {
-    Location {
-    }
-    Rotation {
-      Yaw: 33.1591911
-    }
     Scale {
-      X: 0.347222209
-      Y: 0.347222209
-      Z: 0.347222209
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
   ParentId: 4306925911175813128
@@ -140357,49 +140352,33 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12092204065995792596
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-      SkinnedMeshes {
-        Id: 11241465226241462039
-      }
-      SkinnedMeshes {
-        Id: 3557954209464392513
-      }
-      SkinnedMeshes {
-        Id: 15494817542660282536
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5339325576282374243
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Greeter"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -1.93062115
+            Yaw: 32.9542046
+            Roll: -3.8177762
+          }
+        }
       }
     }
+    TemplateAsset {
+      Id: 6566379502194667695
+    }
   }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 13781026987187032289
@@ -140456,7 +140435,6 @@ Objects {
   }
   ParentId: 13781026987187032289
   ChildIds: 12835239215145585284
-  ChildIds: 16899008843363808512
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
   }
@@ -140471,7 +140449,7 @@ Objects {
   }
   Trigger {
     Interactable: true
-    InteractionLabel: "Annoy The Demon?"
+    InteractionLabel: "Chat"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
@@ -140484,48 +140462,6 @@ Objects {
     }
     BreadcrumbTemplate {
       Id: 841534158063459245
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16899008843363808512
-  Name: "ClientContext"
-  Transform {
-    Location {
-      X: -2.97661638
-      Y: 0.911052942
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8811408917068771163
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-    MinDetailLevel {
-      Value: "mc:edetaillevel:low"
-    }
-    MaxDetailLevel {
-      Value: "mc:edetaillevel:ultra"
     }
   }
   NetworkRelevanceDistance {
@@ -140552,7 +140488,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:ChatID"
-      String: "Demon"
+      String: "Greeter"
     }
   }
   Collidable_v2 {
