@@ -15,6 +15,7 @@ local PLAYER_SETTINGS_BAG_SELECTION = script:GetCustomProperty("PlayerSettingsBa
 local PLAYER_SETTINGS_SOCIAL_SPACE = script:GetCustomProperty("PlayerSettingsSocialSpace"):WaitForObject()
 
 local STARTING_STATE = script:GetCustomProperty("StartingState")
+local FROM_SCENE_TRANSFER_STATE = script:GetCustomProperty("FromSceneTransferState")
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
 	-- print("SettingsPerStateServer AppState.Enter", newState, ">", newState)
@@ -44,7 +45,11 @@ end)
 
 
 function OnPlayerJoined(player)
-	_G.AppState.SetStateForPlayer(player, STARTING_STATE)
+	if player:GetJoinTransferData().spawnKey then
+		_G.AppState.SetStateForPlayer(player, FROM_SCENE_TRANSFER_STATE)
+	else
+		_G.AppState.SetStateForPlayer(player, STARTING_STATE)
+	end
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)

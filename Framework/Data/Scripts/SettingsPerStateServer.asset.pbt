@@ -25,8 +25,8 @@ Assets {
         Int: 30
       }
       Overrides {
-        Name: "cs:StartingSpawnKey"
-        String: "BagSelection"
+        Name: "cs:FromSceneTransferState"
+        Int: 40
       }
     }
   }
