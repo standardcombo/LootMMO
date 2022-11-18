@@ -77,8 +77,12 @@ function OnPlayerEquippedEvent(char, player)
 end
 
 function OnPlayerUnequippedEvent(char, player)
-    player.serverUserData.inventoryChangedListener:Disconnect()
-    player.serverUserData.resourceChangedListener:Disconnect()
+    if player.serverUserData.inventoryChangedListener then
+        player.serverUserData.inventoryChangedListener:Disconnect()
+    end
+    if player.serverUserData.resourceChangedListener then
+        player.serverUserData.resourceChangedListener:Disconnect()
+    end
     player:SetResource(COINS, 0)
 end
 
