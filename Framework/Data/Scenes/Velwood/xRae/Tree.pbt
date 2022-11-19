@@ -1,6 +1,56 @@
 Name: "xRae"
 RootId: 16116870671107651725
 Objects {
+  Id: 8881124145295555622
+  Name: "Motion Blur Post Process"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16116870671107651725
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Intensity"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Max"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Per Object Amount"
+      Float: 0
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15946579520938017950
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 9014108780019463653
   Name: "Rock Flat 01"
   Transform {

@@ -968,6 +968,7 @@ Objects {
     }
   }
   ParentId: 3386585546984032671
+  ChildIds: 8854167649175229261
   ChildIds: 13357189002109678808
   ChildIds: 2203365929032075089
   Collidable_v2 {
@@ -1105,7 +1106,6 @@ Objects {
     }
   }
   ParentId: 11704651005323898238
-  ChildIds: 8854167649175229261
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1121,7 +1121,7 @@ Objects {
   Control {
     Width: 110
     Height: 60
-    UIX: -90.2554626
+    UIX: -25.0907516
     UIY: -75.4208069
     RenderTransformPivot {
       Anchor {
@@ -1185,7 +1185,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13357189002109678808
+  ParentId: 11704651005323898238
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1201,8 +1201,8 @@ Objects {
   Control {
     Width: 100
     Height: 80
-    UIX: 48.8438034
-    UIY: -18
+    UIX: -65.1244049
+    UIY: -48.4207764
     RotationAngle: 90
     RenderTransformPivot {
       Anchor {
