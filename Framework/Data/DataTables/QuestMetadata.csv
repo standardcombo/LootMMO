@@ -21,5 +21,5 @@
 "Poker","C25CC86E574C6FEF","0BADBADBADBADBAD","False","XP(100), Wait(1), Material(Coins=100)","","5cb37e/loot-mmo","Social",""
 "Potions","6AF3A9538613570F","0BADBADBADBADBAD","False","TODO","TODO","5cb37e/loot-mmo","Social",""
 "Relic","29B29737AB7E07B1","0BADBADBADBADBAD","False","Material(Gems=5)","","5cb37e/loot-mmo","Social",""
-"AnnoyTheDemon","04B14FD9D0C9CBF7","0BADBADBADBADBAD","False","Material(Coins=1)","GotoVelwood","5cb37e/loot-mmo","Social",""
+"AnnoyTheDemon","04B14FD9D0C9CBF7","0BADBADBADBADBAD","True","Material(Coins=1)","GotoVelwood","5cb37e/loot-mmo","Social",""
 "GotoVelwood","1DD3D44FAF2FAA4B","D9B2A5D7F40E45DD","True","","","5cb37e/loot-mmo","Social","Velwood"

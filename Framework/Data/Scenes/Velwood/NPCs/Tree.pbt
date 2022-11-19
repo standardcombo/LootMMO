@@ -140363,15 +140363,44 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
+            X: -18.0772438
+            Y: 4.87397242
+            Z: 3.09546471
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Pitch: -1.93062115
+            Pitch: -1.93063354
             Yaw: 32.9542046
-            Roll: -3.8177762
+            Roll: -3.81777954
           }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.360407203
+            Y: 0.360407203
+            Z: 0.360407203
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10287565876482648880
+      value {
+        Overrides {
+          Name: "Color"
+          Color {
+            R: 1
+            G: 0.314
+            B: 0.314
+            A: 1
+          }
+        }
+        Overrides {
+          Name: "Intensity"
+          Float: 11.3161497
         }
       }
     }

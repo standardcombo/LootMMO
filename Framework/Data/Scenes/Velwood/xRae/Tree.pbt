@@ -1,6 +1,74 @@
 Name: "xRae"
 RootId: 16116870671107651725
 Objects {
+  Id: 9014108780019463653
+  Name: "Rock Flat 01"
+  Transform {
+    Location {
+      X: 6580.52197
+      Y: -21790.2168
+      Z: 737.849609
+    }
+    Rotation {
+      Pitch: 1.01056743
+      Yaw: 108.950699
+      Roll: 0.346976161
+    }
+    Scale {
+      X: 3.80228424
+      Y: 2.92511749
+      Z: 6.8861208
+    }
+  }
+  ParentId: 16116870671107651725
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.292000026
+        G: 0.292000026
+        B: 0.292000026
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4842806961858489681
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 3350559390665798169
   Name: "Scare"
   Transform {

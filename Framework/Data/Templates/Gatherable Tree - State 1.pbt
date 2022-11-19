@@ -101,6 +101,24 @@ Assets {
               Id: 6136827371784165474
             }
           }
+          Overrides {
+            Name: "ma:Nature_Leaves:color"
+            Color {
+              R: 0.206000015
+              G: 0.0360500775
+              B: 0.0360499918
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:color"
+            Color {
+              R: 0.6
+              G: 0.6
+              B: 0.6
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

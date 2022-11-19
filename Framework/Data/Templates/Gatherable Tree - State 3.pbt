@@ -106,6 +106,15 @@ Assets {
             Name: "ma:Nature_Trunk:utile"
             Float: 0.568841934
           }
+          Overrides {
+            Name: "ma:Nature_Trunk:color"
+            Color {
+              R: 0.6
+              G: 0.6
+              B: 0.6
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

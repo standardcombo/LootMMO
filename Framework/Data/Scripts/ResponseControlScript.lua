@@ -22,7 +22,7 @@ end
 local function GetResponse(Responses, duration, chatID)
     Task.Spawn(function()
         if duration < 0 then
-            duration = 4
+            duration = 2
         end
         Task.Wait(duration/2) -- waits for the message to play out mostly before showing responses
         local posIndex = 0

@@ -58,6 +58,7 @@ Assets {
         ChildIds: 11264567828727724526
         ChildIds: 18374053598292463433
         ChildIds: 10921461476718921347
+        ChildIds: 17208755562200209746
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -341,6 +342,69 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 17208755562200209746
+        Name: "Rock Pile 002"
+        Transform {
+          Location {
+            X: -36.1542969
+            Y: -75.9003906
+            Z: 24.2520676
+          }
+          Rotation {
+            Yaw: 36.7148933
+          }
+          Scale {
+            X: 0.864949286
+            Y: 0.864949286
+            Z: 0.840284228
+          }
+        }
+        ParentId: 9428284527078832526
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 14212988502358508072
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14293176668765266901
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 14231394991004806063
@@ -376,6 +440,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_rocks_small_001"
+      }
+    }
+    Assets {
+      Id: 14212988502358508072
+      Name: "Metal Basic Steel"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "steel_001"
       }
     }
     PrimaryAssetId {

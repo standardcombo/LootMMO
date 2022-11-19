@@ -108,7 +108,6 @@ local function play_talking_head(ID, state, name)
 	end
 
 	local row = TALKING_HEADS[key]
-	print(row)
 	if(row ~= nil) then
 		local message = row.Message
 

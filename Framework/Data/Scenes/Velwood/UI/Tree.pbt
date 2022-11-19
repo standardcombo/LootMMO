@@ -1119,27 +1119,26 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 100
+    Width: 110
     Height: 60
-    UIX: 20
-    UIY: 10
+    UIX: -90.2554626
+    UIY: -75.4208069
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     Text {
-      Label: "TAB"
+      Label: "PRESS\r\nTAB KEY"
       Color {
         R: 0.568627477
         G: 0.247058839
         A: 1
       }
-      Size: 20
+      Size: 30
       Justification {
         Value: "mc:etextjustify:left"
       }
-      AutoWrapText: true
       Font {
         Id: 841534158063459245
       }
@@ -1200,9 +1199,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 20
-    Height: 20
-    UIX: -45
+    Width: 100
+    Height: 80
+    UIX: 48.8438034
     UIY: -18
     RotationAngle: 90
     RenderTransformPivot {

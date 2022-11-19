@@ -35,6 +35,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4842806961858489681
+  Name: "Rock Flat 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_rock_generic_004"
+  }
+}
+Assets {
   Id: 3683706403881711235
   Name: "Voice Character Zombie Snarl Attack 04 SFX"
   PlatformAssetType: 7

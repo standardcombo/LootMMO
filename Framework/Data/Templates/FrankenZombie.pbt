@@ -46,7 +46,7 @@ Assets {
           }
           Overrides {
             Name: "cs:AttackRange"
-            Float: 150
+            Float: 400
           }
           Overrides {
             Name: "cs:AttackMinAngle"
@@ -74,7 +74,7 @@ Assets {
           }
           Overrides {
             Name: "cs:MoveSpeed"
-            Float: 1300
+            Float: 1500
           }
           Overrides {
             Name: "cs:TurnSpeed"
@@ -82,7 +82,7 @@ Assets {
           }
           Overrides {
             Name: "cs:LogicalPeriod"
-            Float: 0
+            Float: 0.5
           }
           Overrides {
             Name: "cs:ReturnToSpawn"
