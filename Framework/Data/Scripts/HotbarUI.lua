@@ -7,22 +7,17 @@ local HIGHLIGHT = script:GetCustomProperty("Highlight")
 local local_player = Game.GetLocalPlayer()
 local currentTool = nil
 local ToolIcons = {WEAPON, AXE, PICKAXE, SHOVEL}
-local updateTime = 0
-local weaponErrorSwitch = true
 
 function Tick(deltaTime)
-    updateTime = updateTime + deltaTime
-    if updateTime > 2 then 
-        updateTime = 0
-        UpdateUI()
-    end
+    UpdateUI()
 end
 
 function UpdateUI()
-    Task.Wait(0.1)
     local usingTool = false
+    local weaponErrorSwitch = true
     for _, equipment in ipairs(local_player:GetEquipment()) do
 		if equipment:GetAttachedToSocketName() == "right_prop" then
+            weaponErrorSwitch = false
             usingTool = true
             local name = equipment.name
             if currentTool == name then return end
@@ -38,12 +33,11 @@ function UpdateUI()
                 HighlightUI(WEAPON)
             end
         end
-        weaponErrorSwitch = true
     end
     if usingTool == false and weaponErrorSwitch then
         RemoveHighlight()
         HighlightUI(WEAPON)
-        Events.Broadcast("Error", "No weapon equipped")
+        --Events.Broadcast("Error", "No weapon equipped")
         weaponErrorSwitch = false
     end
 end
@@ -61,11 +55,3 @@ function RemoveHighlight()
         frame.visibility = Visibility.FORCE_OFF
     end
 end
-
-function OnActionPressed(player, action, value)
-    if action == "Hotswap" then
-        UpdateUI()
-    end
-end
-
-Input.actionPressedEvent:Connect(OnActionPressed)

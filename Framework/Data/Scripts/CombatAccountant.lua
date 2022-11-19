@@ -79,6 +79,7 @@ function _Boilerplate(attackData)
 	local target = attackData.object
 	local source = attackData.source
 	
+	if Object.IsValid(source) == false then return end
 	if not source or not source.id then return end
 	
 	local id = target.id
