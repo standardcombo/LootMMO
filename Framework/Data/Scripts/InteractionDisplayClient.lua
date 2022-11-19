@@ -161,7 +161,7 @@ function UpdateUI()
     elseif currentInteractionType == "RemoveProducer" then
         ACTION_TEXT.text = string.format("Remove %s", GetNameForItem(currentTargetId))
     elseif currentInteractionType == "GatherFromGatherable" then
-        ACTION_TEXT.text = string.format("Gather from %s", currentTargetId)
+        ACTION_TEXT.text = string.format("Gather %s", currentTargetId)
     elseif currentInteractionType == "OpenPlaceableInventory" then
         ACTION_TEXT.text = string.format("Open %s", GetNameForItem(currentTargetId))
     elseif currentInteractionType == "NoInteraction" then

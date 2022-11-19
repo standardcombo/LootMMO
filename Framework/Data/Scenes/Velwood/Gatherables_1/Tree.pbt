@@ -273,6 +273,9 @@ Objects {
   ChildIds: 7965112662862415458
   ChildIds: 13414224241437720427
   ChildIds: 11727138777080055962
+  ChildIds: 5165211838444669233
+  ChildIds: 15996257375607924566
+  ChildIds: 9926821944218115071
   UnregisteredParameters {
     Overrides {
       Name: "cs:Respawn"
@@ -350,6 +353,1579 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 9926821944218115071
+  Name: "Gatherable Stone"
+  Transform {
+    Location {
+      X: 30737.209
+      Y: 5396.90625
+      Z: 154.905304
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4072927610158794628
+  ChildIds: 3728021858391819528
+  ChildIds: 14793797672058848328
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Name"
+      String: "Metal"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes"
+      String: "pickaxe"
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:InteractionError"
+      String: "Use a Pickaxe to break stones"
+    }
+    Overrides {
+      Name: "cs:GatherEffects"
+      AssetReference {
+        Id: 3913565970023041867
+      }
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset"
+      Vector {
+        Z: 30
+      }
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:LootID"
+      String: "OreCommon"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds"
+      Float: 120
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:RespawnEffects"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropEveryGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:DropMinDistance"
+      Float: 50
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance"
+      Float: 150
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds"
+      Float: 60
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate"
+      AssetReference {
+        Id: 8040246261067913342
+      }
+    }
+    Overrides {
+      Name: "cs:State1"
+      AssetReference {
+        Id: 16950761026157849342
+      }
+    }
+    Overrides {
+      Name: "cs:State2"
+      AssetReference {
+        Id: 13224038511399869920
+      }
+    }
+    Overrides {
+      Name: "cs:State3"
+      AssetReference {
+        Id: 15056888038516409453
+      }
+    }
+    Overrides {
+      Name: "cs:GatheredState"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather:tooltip"
+      String: "If true, gathered objects will drop their contents into the world. Otherwise they will be directly added to the highest priority Inventory."
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:tooltip"
+      String: "If true, gathered objects will drop on all clients if DropOnGather is also true."
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:tooltip"
+      String: "If true, gathered object drops will be destroyed on other clients when the first Player picks them up."
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:tooltip"
+      String: "If DropOnGather is true, the minimum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:State2:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State3:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes:tooltip"
+      String: "A comma separated list of tools that are allowed to gather this. An empty string means any tool will be able to gather this."
+    }
+    Overrides {
+      Name: "cs:GatherEffects:tooltip"
+      String: "This template will be spawned every time this is gathered. It is recommended to have a lifespan on this template. A default lifespan of 5 seconds will be used if it is set to 0."
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset:tooltip"
+      String: "This will move where the \"GatherEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, the gatherable will respawn after this amount of seconds has passed and it can be respawned."
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, this template will be spawned when the gatherable respawns."
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:tooltip"
+      String: "This will move where the \"RespawnEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:tooltip"
+      String: "If true, drops will be created every time this is gathered from. Otherwise, drops will only be created when the gatherable is fully gathered."
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:tooltip"
+      String: "The maximum number of Item Pickups to generate for a drop. The amount of dropped items will be split into multiple pickups up to this maximum."
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:tooltip"
+      String: "If DropOnGather is true, the maximum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:tooltip"
+      String: "If DropOnGather is true, the number of seconds the drop will exist in the world."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:tooltip"
+      String: "If DropOnGather is true, this Item Pickup template will be spawned in world to contain the drop."
+    }
+    Overrides {
+      Name: "cs:GatheredState:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:GatheredState:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State1:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:GatheredState:tooltip"
+      String: "If set, this state will be used when the Gatherable has been fully gathered. Useful for things that need to keep a visual presence even after being gathered from."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:State3:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:State3:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:tooltip"
+      String: "Waits this amount of seconds before destroying a Gatherable with a \"GatheredState\" to respawn other Gatherables."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:InteractionError:tooltip"
+      String: "An error that is broadcast if the Player tries to interact wth this Gatherable with the wrong Equipment."
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad:tooltip"
+      String: "If true, the first state template will be spawned in place of the existing object. This allows you to use simple proxy objects in your template to reduce object count."
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather:tooltip"
+      String: "The number of Tools that are removed from the Inventory each time this Gatherable is gathered."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14793797672058848328
+  Name: "Dummy Object"
+  Transform {
+    Location {
+      Z: 50.0004883
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9926821944218115071
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:0"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3728021858391819528
+  Name: "Drops"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9926821944218115071
+  ChildIds: 4208077480880059554
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8280669765240006703
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4208077480880059554
+  Name: "Stone (Custom Properties, Can Have Multiple)"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3728021858391819528
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ItemId"
+      String: "Stone"
+    }
+    Overrides {
+      Name: "cs:PercentChance"
+      Float: 100
+    }
+    Overrides {
+      Name: "cs:MaxAmount"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:MinAmount"
+      Int: 2
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6635439301500212790
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15996257375607924566
+  Name: "Gatherable Stone"
+  Transform {
+    Location {
+      X: 29059.75
+      Y: -11668.7471
+      Z: 262.714691
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4072927610158794628
+  ChildIds: 13949528098214830560
+  ChildIds: 18039334469550148295
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Name"
+      String: "Metal"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes"
+      String: "pickaxe"
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:InteractionError"
+      String: "Use a Pickaxe to break stones"
+    }
+    Overrides {
+      Name: "cs:GatherEffects"
+      AssetReference {
+        Id: 3913565970023041867
+      }
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset"
+      Vector {
+        Z: 30
+      }
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:LootID"
+      String: "OreCommon"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds"
+      Float: 120
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:RespawnEffects"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropEveryGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:DropMinDistance"
+      Float: 50
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance"
+      Float: 150
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds"
+      Float: 60
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate"
+      AssetReference {
+        Id: 8040246261067913342
+      }
+    }
+    Overrides {
+      Name: "cs:State1"
+      AssetReference {
+        Id: 16950761026157849342
+      }
+    }
+    Overrides {
+      Name: "cs:State2"
+      AssetReference {
+        Id: 13224038511399869920
+      }
+    }
+    Overrides {
+      Name: "cs:State3"
+      AssetReference {
+        Id: 15056888038516409453
+      }
+    }
+    Overrides {
+      Name: "cs:GatheredState"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather:tooltip"
+      String: "If true, gathered objects will drop their contents into the world. Otherwise they will be directly added to the highest priority Inventory."
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:tooltip"
+      String: "If true, gathered objects will drop on all clients if DropOnGather is also true."
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:tooltip"
+      String: "If true, gathered object drops will be destroyed on other clients when the first Player picks them up."
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:tooltip"
+      String: "If DropOnGather is true, the minimum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:State2:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State3:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes:tooltip"
+      String: "A comma separated list of tools that are allowed to gather this. An empty string means any tool will be able to gather this."
+    }
+    Overrides {
+      Name: "cs:GatherEffects:tooltip"
+      String: "This template will be spawned every time this is gathered. It is recommended to have a lifespan on this template. A default lifespan of 5 seconds will be used if it is set to 0."
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset:tooltip"
+      String: "This will move where the \"GatherEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, the gatherable will respawn after this amount of seconds has passed and it can be respawned."
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, this template will be spawned when the gatherable respawns."
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:tooltip"
+      String: "This will move where the \"RespawnEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:tooltip"
+      String: "If true, drops will be created every time this is gathered from. Otherwise, drops will only be created when the gatherable is fully gathered."
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:tooltip"
+      String: "The maximum number of Item Pickups to generate for a drop. The amount of dropped items will be split into multiple pickups up to this maximum."
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:tooltip"
+      String: "If DropOnGather is true, the maximum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:tooltip"
+      String: "If DropOnGather is true, the number of seconds the drop will exist in the world."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:tooltip"
+      String: "If DropOnGather is true, this Item Pickup template will be spawned in world to contain the drop."
+    }
+    Overrides {
+      Name: "cs:GatheredState:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:GatheredState:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State1:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:GatheredState:tooltip"
+      String: "If set, this state will be used when the Gatherable has been fully gathered. Useful for things that need to keep a visual presence even after being gathered from."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:State3:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:State3:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:tooltip"
+      String: "Waits this amount of seconds before destroying a Gatherable with a \"GatheredState\" to respawn other Gatherables."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:InteractionError:tooltip"
+      String: "An error that is broadcast if the Player tries to interact wth this Gatherable with the wrong Equipment."
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad:tooltip"
+      String: "If true, the first state template will be spawned in place of the existing object. This allows you to use simple proxy objects in your template to reduce object count."
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather:tooltip"
+      String: "The number of Tools that are removed from the Inventory each time this Gatherable is gathered."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18039334469550148295
+  Name: "Dummy Object"
+  Transform {
+    Location {
+      Z: 50.0004883
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15996257375607924566
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:0"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13949528098214830560
+  Name: "Drops"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15996257375607924566
+  ChildIds: 3781225162411821625
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8280669765240006703
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3781225162411821625
+  Name: "Stone (Custom Properties, Can Have Multiple)"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13949528098214830560
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ItemId"
+      String: "Stone"
+    }
+    Overrides {
+      Name: "cs:PercentChance"
+      Float: 100
+    }
+    Overrides {
+      Name: "cs:MaxAmount"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:MinAmount"
+      Int: 2
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6635439301500212790
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5165211838444669233
+  Name: "Gatherable Stone"
+  Transform {
+    Location {
+      X: 33566.6797
+      Y: -11076.1523
+      Z: 381.626465
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4072927610158794628
+  ChildIds: 5828900777247629070
+  ChildIds: 8176659616966079616
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Name"
+      String: "Metal"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes"
+      String: "pickaxe"
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:InteractionError"
+      String: "Use a Pickaxe to break stones"
+    }
+    Overrides {
+      Name: "cs:GatherEffects"
+      AssetReference {
+        Id: 3913565970023041867
+      }
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset"
+      Vector {
+        Z: 30
+      }
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:LootID"
+      String: "OreCommon"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds"
+      Float: 120
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:RespawnEffects"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropEveryGather"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:DropMinDistance"
+      Float: 50
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance"
+      Float: 150
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds"
+      Float: 60
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate"
+      AssetReference {
+        Id: 8040246261067913342
+      }
+    }
+    Overrides {
+      Name: "cs:State1"
+      AssetReference {
+        Id: 16950761026157849342
+      }
+    }
+    Overrides {
+      Name: "cs:State2"
+      AssetReference {
+        Id: 13224038511399869920
+      }
+    }
+    Overrides {
+      Name: "cs:State3"
+      AssetReference {
+        Id: 15056888038516409453
+      }
+    }
+    Overrides {
+      Name: "cs:GatheredState"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+    Overrides {
+      Name: "cs:DropOnGather:tooltip"
+      String: "If true, gathered objects will drop their contents into the world. Otherwise they will be directly added to the highest priority Inventory."
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:tooltip"
+      String: "If true, gathered objects will drop on all clients if DropOnGather is also true."
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:tooltip"
+      String: "If true, gathered object drops will be destroyed on other clients when the first Player picks them up."
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:tooltip"
+      String: "If DropOnGather is true, the minimum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:State2:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State3:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:ValidGatheringToolTypes:tooltip"
+      String: "A comma separated list of tools that are allowed to gather this. An empty string means any tool will be able to gather this."
+    }
+    Overrides {
+      Name: "cs:GatherEffects:tooltip"
+      String: "This template will be spawned every time this is gathered. It is recommended to have a lifespan on this template. A default lifespan of 5 seconds will be used if it is set to 0."
+    }
+    Overrides {
+      Name: "cs:GatherEffectsOffset:tooltip"
+      String: "This will move where the \"GatherEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, the gatherable will respawn after this amount of seconds has passed and it can be respawned."
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:tooltip"
+      String: "If \"Respawn\" is true on the parent Gatherables Group, this template will be spawned when the gatherable respawns."
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:tooltip"
+      String: "This will move where the \"RespawnEffects\" template spawns. It can be used to position the effect exactly where you need it."
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:tooltip"
+      String: "If true, drops will be created every time this is gathered from. Otherwise, drops will only be created when the gatherable is fully gathered."
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:tooltip"
+      String: "The maximum number of Item Pickups to generate for a drop. The amount of dropped items will be split into multiple pickups up to this maximum."
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:tooltip"
+      String: "If DropOnGather is true, the maximum distance from the gatherable the drop will appear."
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:tooltip"
+      String: "If DropOnGather is true, the number of seconds the drop will exist in the world."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:tooltip"
+      String: "If DropOnGather is true, this Item Pickup template will be spawned in world to contain the drop."
+    }
+    Overrides {
+      Name: "cs:GatheredState:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:GatheredState:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:State1:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State1:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:GatheredState:tooltip"
+      String: "If set, this state will be used when the Gatherable has been fully gathered. Useful for things that need to keep a visual presence even after being gathered from."
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropItemPickupTemplate:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropTimeoutSeconds:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMaxDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropMinDistance:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:MaxPickupsPerDrop:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:SinglePlayerDrops:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropForAllPlayers:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropEveryGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:DropOnGather:subcategory"
+      String: "Drops"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffectsOffset:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnEffects:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:category"
+      String: "Custom"
+    }
+    Overrides {
+      Name: "cs:RespawnSeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:State3:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:subcategory"
+      String: "States"
+    }
+    Overrides {
+      Name: "cs:State2:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:State3:tooltip"
+      String: "One of 32 potential state templates for this Gatherable. States will be displayed in order from 1 - 32 as gather interactions happen."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:tooltip"
+      String: "Waits this amount of seconds before destroying a Gatherable with a \"GatheredState\" to respawn other Gatherables."
+    }
+    Overrides {
+      Name: "cs:DestroyGatheredStateDelaySeconds:subcategory"
+      String: "Respawn"
+    }
+    Overrides {
+      Name: "cs:InteractionError:tooltip"
+      String: "An error that is broadcast if the Player tries to interact wth this Gatherable with the wrong Equipment."
+    }
+    Overrides {
+      Name: "cs:SpawnTemplateOnLoad:tooltip"
+      String: "If true, the first state template will be spawned in place of the existing object. This allows you to use simple proxy objects in your template to reduce object count."
+    }
+    Overrides {
+      Name: "cs:ToolsConsumedPerGather:tooltip"
+      String: "The number of Tools that are removed from the Inventory each time this Gatherable is gathered."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8176659616966079616
+  Name: "Dummy Object"
+  Transform {
+    Location {
+      Z: 74.4102478
+    }
+    Rotation {
+      Roll: 31.6684837
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5165211838444669233
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:0"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5828900777247629070
+  Name: "Drops"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5165211838444669233
+  ChildIds: 2348408614524862973
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8280669765240006703
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2348408614524862973
+  Name: "Stone (Custom Properties, Can Have Multiple)"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5828900777247629070
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ItemId"
+      String: "Stone"
+    }
+    Overrides {
+      Name: "cs:PercentChance"
+      Float: 100
+    }
+    Overrides {
+      Name: "cs:MaxAmount"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:MinAmount"
+      Int: 2
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6635439301500212790
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 11727138777080055962
   Name: "Gatherable Stone"
   Transform {
@@ -372,7 +1948,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -896,7 +2472,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -1420,7 +2996,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -1944,7 +3520,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -2468,7 +4044,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -2992,7 +4568,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -3516,7 +5092,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -4040,7 +5616,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -4564,7 +6140,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -5088,7 +6664,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -5612,7 +7188,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -6136,7 +7712,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -6660,7 +8236,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -7184,7 +8760,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -7708,7 +9284,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -8232,7 +9808,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -8756,7 +10332,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Stone"
+      String: "Metal"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -9800,7 +11376,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -10323,7 +11899,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -10846,7 +12422,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -11369,7 +12945,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -11892,7 +13468,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -12415,7 +13991,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -12938,7 +14514,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -13461,7 +15037,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -13984,7 +15560,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -14507,7 +16083,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -15030,7 +16606,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
@@ -15553,7 +17129,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Tree"
+      String: "Wood"
     }
     Overrides {
       Name: "cs:ValidGatheringToolTypes"
