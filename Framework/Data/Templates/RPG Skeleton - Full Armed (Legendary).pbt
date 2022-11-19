@@ -66,7 +66,7 @@ Assets {
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 60
+            Int: 30
           }
           Overrides {
             Name: "cs:DamageToNPCs"
@@ -130,7 +130,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Armor"
-            Float: 50
+            Float: 30
           }
           Overrides {
             Name: "cs:Level"
@@ -536,7 +536,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 4800
+            MaxHitpoints: 1500
             StartingHitpoints: 4800
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10

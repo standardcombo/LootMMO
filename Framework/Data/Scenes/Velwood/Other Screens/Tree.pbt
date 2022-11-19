@@ -112,6 +112,19 @@ Objects {
   ParentId: 16194698060440896494
   TemplateInstance {
     ParameterOverrideMap {
+      key: 9565067898745726202
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 451.492676
+            Y: -18596.832
+            Z: -392.800049
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 12879506879962929374
       value {
         Overrides {

@@ -3744,7 +3744,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:EnemyIDs"
-      String: "Skeleton, Skeleton2, Skeleton3, Skeleton4"
+      String: "Skeleton, Skeleton2"
     }
     Overrides {
       Name: "cs:MinPlayerLevel"
@@ -3764,7 +3764,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdditionalRadius"
-      Int: 11000
+      Int: 22000
     }
     Overrides {
       Name: "cs:CommonLootId"
@@ -3789,6 +3789,10 @@ Objects {
     Overrides {
       Name: "cs:ChanceRareEnemy"
       Float: 10
+    }
+    Overrides {
+      Name: "cs:DespawnDelay"
+      Float: 15
     }
   }
   Collidable_v2 {

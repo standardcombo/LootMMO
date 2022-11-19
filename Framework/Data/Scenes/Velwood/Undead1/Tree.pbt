@@ -1706,7 +1706,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdditionalRadius"
-      Int: 11000
+      Int: 22000
     }
     Overrides {
       Name: "cs:CommonLootId"
@@ -1731,6 +1731,10 @@ Objects {
     Overrides {
       Name: "cs:ChanceRareEnemy"
       Float: 0
+    }
+    Overrides {
+      Name: "cs:DespawnDelay"
+      Float: 15
     }
   }
   Collidable_v2 {

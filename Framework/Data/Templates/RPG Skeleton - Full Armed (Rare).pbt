@@ -66,7 +66,7 @@ Assets {
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 30
+            Int: 15
           }
           Overrides {
             Name: "cs:DamageToNPCs"
@@ -130,7 +130,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Armor"
-            Float: 50
+            Float: 20
           }
           Overrides {
             Name: "cs:Level"

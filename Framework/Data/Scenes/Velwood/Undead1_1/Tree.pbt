@@ -3041,7 +3041,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:EnemyIDs"
-      String: "Skeleton, Skeleton2, Skeleton3, Skeleton4"
+      String: "Skeleton, Skeleton2"
     }
     Overrides {
       Name: "cs:MinPlayerLevel"
@@ -3061,7 +3061,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdditionalRadius"
-      Int: 11000
+      Int: 22000
     }
     Overrides {
       Name: "cs:CommonLootId"
@@ -3083,6 +3083,10 @@ Objects {
       Name: "cs:MaxPlayerLevel"
       Int: 9999
     }
+    Overrides {
+      Name: "cs:DespawnDelay"
+      Float: 15
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3098,7 +3102,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 15156443327978326566
+      Id: 5101381884167888089
     }
   }
   NetworkRelevanceDistance {

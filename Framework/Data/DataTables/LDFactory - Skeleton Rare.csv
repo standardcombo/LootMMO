@@ -1,4 +1,7 @@
 "id[String]","incidence[Int]","rewards[String]"
+"Nothing","1",""
 "Coins","1","Material(Coins=RNG[10-30])"
 "BonesPlusCoins","2","Loop(RNG[5-8]=Bone1), Wait(0.5), Material(Coins=RNG[3-15])"
 "Bone1","0","Material(Bone=1), Wait(0.5)"
+"GLItemDrop","1","RandomItem(Greatness=RNG[1-8]), Wait(0.5), Material(Coins=RNG[5-30],Wait(0.5),Ref(XP)"
+"XP","1","XP(RNG[1-100])"

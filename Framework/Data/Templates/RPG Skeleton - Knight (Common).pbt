@@ -130,7 +130,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Armor"
-            Float: 50
+            Float: 25
           }
           Overrides {
             Name: "cs:Level"
@@ -536,7 +536,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 200
+            MaxHitpoints: 350
             StartingHitpoints: 500
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10

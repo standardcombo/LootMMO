@@ -259,6 +259,7 @@ function SpawnOne(pos, spawnData)
 	local randomIndex = rng:GetInteger(1, #ENEMY_IDS)
 	local enemyId = ENEMY_IDS[randomIndex]
 	local def = ENEMY_DEFINITIONS[enemyId]
+	local sType = 5
 	local template = def.commonTemplate
 	if ENEMY_COUNT == 1 or spawnData.remaining < ENEMY_COUNT then
 		if def.legendaryTemplate
@@ -266,18 +267,20 @@ function SpawnOne(pos, spawnData)
 		and rng:GetNumber() < CHANCE_LEGENDARY_ENEMY then
 			spawnData.legendaryCount = spawnData.legendaryCount + 1
 			template = def.legendaryTemplate
-			
+			sType = 0
 		elseif def.epicTemplate
 		and spawnData.epicCount < spawnData.maxEpics
 		and rng:GetNumber() < CHANCE_EPIC_ENEMY then
 			spawnData.epicCount = spawnData.epicCount + 1
 			template = def.epicTemplate
+			sType = 3
 			
 		elseif def.rareTemplate
 		and spawnData.rareCount < spawnData.maxRares
 		and rng:GetNumber() < CHANCE_RARE_ENEMY then
 			spawnData.rareCount = spawnData.rareCount + 1
 			template = def.rareTemplate
+			sType = 4
 		end
 	end
 	
@@ -285,7 +288,10 @@ function SpawnOne(pos, spawnData)
 	local npc = World.SpawnAsset(template, {position = pos, rotation = rot})
 	
 	if npc:IsCustomPropertyDynamic("Level") then
-		npc:SetCustomProperty("Level", spawnData.level)
+		local TempLvl = spawnData.level
+		TempLvl = CoreMath.Clamp((TempLvl - sType), 1,9999)
+		--print(TempLvl,spawnData.level, "The levels of the mob |Are, were|")
+		npc:SetCustomProperty("Level", TempLvl)
 	end
 	
 	table.insert(enemies, npc)

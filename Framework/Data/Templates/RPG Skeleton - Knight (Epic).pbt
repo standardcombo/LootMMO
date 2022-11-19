@@ -66,11 +66,11 @@ Assets {
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 45
+            Int: 35
           }
           Overrides {
             Name: "cs:DamageToNPCs"
-            Int: 45
+            Int: 35
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -130,7 +130,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Armor"
-            Float: 50
+            Float: 45
           }
           Overrides {
             Name: "cs:Level"
@@ -536,7 +536,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 1200
+            MaxHitpoints: 1000
             StartingHitpoints: 1200
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10

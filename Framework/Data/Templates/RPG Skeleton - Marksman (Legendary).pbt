@@ -54,11 +54,11 @@ Assets {
           }
           Overrides {
             Name: "cs:AttackCast"
-            Float: 0.5
+            Float: 0.75
           }
           Overrides {
             Name: "cs:AttackRecovery"
-            Float: 1
+            Float: 1.2
           }
           Overrides {
             Name: "cs:AttackCooldown"
@@ -66,7 +66,7 @@ Assets {
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 20
+            Int: 12
           }
           Overrides {
             Name: "cs:DamageToNPCs"
@@ -528,7 +528,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 2400
+            MaxHitpoints: 500
             StartingHitpoints: 2400
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
