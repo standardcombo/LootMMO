@@ -34,7 +34,7 @@ local function OnGoingToTakeDamage(attackData)
 			dmgamount = CoreMath.Round(stats:GetTempStat("AP"))
 		end
 	end
-	print("Player took", dmgamount)
+	--print("Player took", dmgamount)
 	damage.amount = CoreMath.Round(dmgamount)
 end
 

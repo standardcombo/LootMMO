@@ -1,6 +1,45 @@
 Name: "Quests"
 RootId: 4244745184024888751
 Objects {
+  Id: 9624353609936486314
+  Name: "Undead4A"
+  Transform {
+    Location {
+      X: 13706.1182
+      Y: 2415.26611
+      Z: 1081.19324
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4244745184024888751
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Undead1"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 17814947220888519377
   Name: "Undead4"
   Transform {
@@ -32,7 +71,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Undead1"
+    FilePartitionName: "Undead4"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -79,6 +118,45 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 1470351916044444538
+  Name: "Undead2A"
+  Transform {
+    Location {
+      X: 13706.1182
+      Y: 2415.26611
+      Z: 1081.19324
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4244745184024888751
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Undead2"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 8442829226891100985
   Name: "Undead2"
   Transform {
@@ -110,7 +188,46 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Undead2"
+    FilePartitionName: "Undead2_1"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3356067449214659157
+  Name: "Undead1A"
+  Transform {
+    Location {
+      X: 13706.1182
+      Y: 2415.26611
+      Z: 1081.19324
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4244745184024888751
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Undead1_1"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -149,7 +266,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Undead1_1"
+    FilePartitionName: "Undead1_2"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
