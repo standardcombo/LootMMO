@@ -1,22 +1,4 @@
 Assets {
-  Id: 17765362537956021931
-  Name: "Humanoid 2 Peasant Pants"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_lower_fantasy_000_ref"
-  }
-}
-Assets {
-  Id: 16912192915158960834
-  Name: "Humanoid 2 Rig"
-  PlatformAssetType: 25
-  PrimaryAsset {
-    AssetType: "SkeletonAssetRef"
-    AssetId: "npc_guy_wireframe_001_ref"
-  }
-}
-Assets {
   Id: 16525441747867590487
   Name: "Humanoid 1 Aparna"
   PlatformAssetType: 26
@@ -53,15 +35,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11241465226241462039
-  Name: "Humanoid 1 Yasmine"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_gal_head_basic_007_ref"
-  }
-}
-Assets {
   Id: 10809880937368283468
   Name: "Fantasy Table Mirror 01 - Stand 01"
   PlatformAssetType: 1
@@ -77,24 +50,6 @@ Assets {
   PrimaryAsset {
     AssetType: "SkinnedMeshAssetRef"
     AssetId: "npc_human_gal_upper_fantasy_000_ref"
-  }
-}
-Assets {
-  Id: 2304567902583507026
-  Name: "Humanoid 2 Peasant Shirt"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_upper_fantasy_000_ref_temp"
-  }
-}
-Assets {
-  Id: 2076237097047402472
-  Name: "Humanoid 2 Kamil"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_guy_head_basic_007_ref"
   }
 }
 Assets {

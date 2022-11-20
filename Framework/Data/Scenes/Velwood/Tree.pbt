@@ -29,6 +29,7 @@ Objects {
   ChildIds: 16116870671107651725
   ChildIds: 3854015457754673156
   ChildIds: 9900866518685091428
+  ChildIds: 13674148351687824775
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -46,6 +47,53 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13674148351687824775
+  Name: "RPG Beastbone Imp(Common)"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11768918577505591014
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Beastbone Imp(Common)"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 3126.80933
+            Y: -17135.8223
+            Z: 786.851501
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -164.402679
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7666269965937548146
+    }
+  }
 }
 Objects {
   Id: 9900866518685091428

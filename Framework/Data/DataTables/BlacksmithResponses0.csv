@@ -1,0 +1,4 @@
+"key[String]","Messages[String]","ChangeState[Int]"
+"BlacksmithBuy","I'd like to purchase gear","-1"
+"BlacksmithCraft","I'd like to craft and upgrade gear","-1"
+"BlacksmithBye","I have to go","-1"
