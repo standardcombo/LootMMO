@@ -21,25 +21,24 @@ Assets {
           Overrides {
             Name: "bp:Color"
             Color {
-              R: 0.52
-              B: 0.0619865954
+              R: 0.128761917
+              G: 0.338000059
               A: 1
             }
           }
           Overrides {
             Name: "bp:Secondary Color"
             Color {
-              R: 0.52
-              B: 0.0619865954
+              R: 0.086984694
+              G: 0.274000049
               A: 1
             }
           }
           Overrides {
             Name: "bp:Smoke Color"
             Color {
-              R: 1
-              G: 0.470000029
-              B: 0.817483187
+              R: 0.0920635834
+              G: 0.2900002
               A: 1
             }
           }

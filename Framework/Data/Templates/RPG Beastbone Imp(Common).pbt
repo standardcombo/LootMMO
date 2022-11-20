@@ -1405,6 +1405,15 @@ Assets {
               Id: 8181295577166702084
             }
           }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.642
+              G: 0.224313259
+              B: 0.255252898
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

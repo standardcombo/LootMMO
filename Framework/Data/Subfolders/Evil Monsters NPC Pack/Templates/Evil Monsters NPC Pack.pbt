@@ -55,16 +55,16 @@ Assets {
               Id: 9293738453356705110
             }
             ReferencedAssets {
-              Id: 11985700800136057052
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 10974927424572243417
+              Id: 841534158063459245
             }
             ReferencedAssets {
               Id: 4691758364305985291
             }
             ReferencedAssets {
-              Id: 16896039603882244010
+              Id: 841534158063459245
             }
           }
         }

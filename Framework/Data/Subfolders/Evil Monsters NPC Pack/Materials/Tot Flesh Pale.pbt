@@ -23,8 +23,8 @@ Assets {
       Overrides {
         Name: "embercolor"
         Color {
-          R: 0.409999967
-          B: 0.0325827636
+          R: 0.233285844
+          G: 0.852
           A: 1
         }
       }
