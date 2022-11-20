@@ -7,7 +7,7 @@ Assets {
       RootId: 14173877670388839020
       Objects {
         Id: 14173877670388839020
-        Name: "RPG Raptor (Common)"
+        Name: "RPG Beastbone Hound (Common)"
         Transform {
           Scale {
             X: 1
@@ -98,7 +98,7 @@ Assets {
           }
           Overrides {
             Name: "cs:VisionRadius"
-            Float: 2500
+            Float: 3000
           }
           Overrides {
             Name: "cs:HearingRadius"
@@ -106,15 +106,15 @@ Assets {
           }
           Overrides {
             Name: "cs:SearchDuration"
-            Float: 6
+            Float: 10
           }
           Overrides {
             Name: "cs:PossibilityRadius"
-            Float: 800
+            Float: 1000
           }
           Overrides {
             Name: "cs:ChaseRadius"
-            Float: 4000
+            Float: 5000
           }
           Overrides {
             Name: "cs:SearchBonusVision"

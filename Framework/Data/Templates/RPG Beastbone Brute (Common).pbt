@@ -7,7 +7,7 @@ Assets {
       RootId: 7109362184923568504
       Objects {
         Id: 7109362184923568504
-        Name: "RPG Skeleton - Swordsman (Common)"
+        Name: "RPG Beastbone Brute (Common)"
         Transform {
           Scale {
             X: 1
@@ -98,7 +98,7 @@ Assets {
           }
           Overrides {
             Name: "cs:VisionRadius"
-            Float: 2500
+            Float: 3000
           }
           Overrides {
             Name: "cs:HearingRadius"
@@ -110,15 +110,15 @@ Assets {
           }
           Overrides {
             Name: "cs:SearchDuration"
-            Float: 6
+            Float: 10
           }
           Overrides {
             Name: "cs:PossibilityRadius"
-            Float: 800
+            Float: 1000
           }
           Overrides {
             Name: "cs:ChaseRadius"
-            Float: 4000
+            Float: 5000
           }
           Overrides {
             Name: "cs:Team"

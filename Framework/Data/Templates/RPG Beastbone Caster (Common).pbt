@@ -7,7 +7,7 @@ Assets {
       RootId: 9192337093414135250
       Objects {
         Id: 9192337093414135250
-        Name: "RPG Skeleton - Marksman (Common)"
+        Name: "RPG Beastbone Caster (Common)"
         Transform {
           Scale {
             X: 1
@@ -98,7 +98,7 @@ Assets {
           }
           Overrides {
             Name: "cs:VisionRadius"
-            Float: 2500
+            Float: 3000
           }
           Overrides {
             Name: "cs:HearingRadius"
@@ -110,15 +110,15 @@ Assets {
           }
           Overrides {
             Name: "cs:SearchDuration"
-            Float: 6
+            Float: 10
           }
           Overrides {
             Name: "cs:PossibilityRadius"
-            Float: 800
+            Float: 1000
           }
           Overrides {
             Name: "cs:ChaseRadius"
-            Float: 4000
+            Float: 5000
           }
           Overrides {
             Name: "cs:Team"

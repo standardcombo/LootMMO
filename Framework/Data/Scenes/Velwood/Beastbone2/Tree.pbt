@@ -1,253 +1,12 @@
 Name: "Beastbone2"
 RootId: 938137775794850649
 Objects {
-  Id: 12315252045508091512
-  Name: "Waypoints"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 938137775794850649
-  ChildIds: 17870163265915642175
-  ChildIds: 9807728830051942563
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 9807728830051942563
-  Name: "NPC Waypoint - 1"
-  Transform {
-    Location {
-      X: -499.983643
-      Y: 107.266602
-      Z: -6.10351562e-05
-    }
-    Rotation {
-      Yaw: -60.7810669
-    }
-    Scale {
-      X: 15.1358566
-      Y: 5.09599686
-      Z: 4.65565157
-    }
-  }
-  ParentId: 12315252045508091512
-  ChildIds: 1235143378752129292
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:NPCWaypoint"
-      ObjectReference {
-        SelfId: 12315252045508091512
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0"
-      ObjectReference {
-        SelfId: 17870163265915642175
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint:ml"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-    }
-    BreadcrumbTemplate {
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1235143378752129292
-  Name: "NPCWaypoint"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.109479882
-      Y: 0.0892771408
-      Z: 0.214792699
-    }
-  }
-  ParentId: 9807728830051942563
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 12402776060914387729
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 17870163265915642175
-  Name: "NPC Waypoint - 0"
-  Transform {
-    Location {
-      X: 488.321777
-      Y: -64.4453125
-    }
-    Rotation {
-      Yaw: -60.7810669
-    }
-    Scale {
-      X: 15.1358566
-      Y: 5.09599686
-      Z: 4.65565157
-    }
-  }
-  ParentId: 12315252045508091512
-  ChildIds: 8439390535437845540
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:NPCWaypoint"
-      ObjectReference {
-        SelfId: 12315252045508091512
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1"
-      ObjectReference {
-        SelfId: 9807728830051942563
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint:ml"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-    InteractionTemplate {
-    }
-    BreadcrumbTemplate {
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 8439390535437845540
-  Name: "NPCWaypoint"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.109479882
-      Y: 0.0892771408
-      Z: 0.214792699
-    }
-  }
-  ParentId: 17870163265915642175
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 12402776060914387729
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 3319898056793361364
   Name: "Enemy Spawn"
   Transform {
     Location {
-      Z: -172.13237
+      Y: 127.075195
+      Z: -143.81897
     }
     Rotation {
       Yaw: 107.896622
@@ -320,9 +79,9 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 43.3540306
-      Y: 43.3540306
-      Z: 43.3540306
+      X: 61.9928398
+      Y: 61.9928398
+      Z: 61.9928398
     }
   }
   ParentId: 938137775794850649
@@ -482,7 +241,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdditionalRadius"
-      Int: 22000
+      Int: 10000
     }
     Overrides {
       Name: "cs:CommonLootId"
@@ -528,6 +287,352 @@ Objects {
   Script {
     ScriptAsset {
       Id: 5101381884167888089
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18292984034545998979
+  Name: "Waypoints"
+  Transform {
+    Location {
+      X: -1515.93201
+      Y: -1275.91064
+      Z: -36.9673
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 938137775794850649
+  ChildIds: 3929151942948642054
+  ChildIds: 16065331125516423584
+  ChildIds: 8406879459548988547
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8406879459548988547
+  Name: "NPC Waypoint - 1"
+  Transform {
+    Location {
+      X: 1744.16711
+      Y: 937.743164
+      Z: -158.68663
+    }
+    Rotation {
+      Yaw: -45.3571777
+    }
+    Scale {
+      X: 6
+      Y: 6
+      Z: 6
+    }
+  }
+  ParentId: 18292984034545998979
+  ChildIds: 7242846876447624868
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:NPCWaypoint0"
+      ObjectReference {
+        SelfId: 16065331125516423584
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint0:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint0:ml"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7242846876447624868
+  Name: "NPCWaypoint"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.109479882
+      Y: 0.0892771408
+      Z: 0.214792699
+    }
+  }
+  ParentId: 8406879459548988547
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 12402776060914387729
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16065331125516423584
+  Name: "NPC Waypoint - 0"
+  Transform {
+    Location {
+      X: 1357.03357
+      Y: 2369.51074
+      Z: -170.181686
+    }
+    Rotation {
+      Yaw: -45.3571472
+    }
+    Scale {
+      X: 6
+      Y: 6
+      Z: 6
+    }
+  }
+  ParentId: 18292984034545998979
+  ChildIds: 16042332347793280946
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:NPCWaypoint1"
+      ObjectReference {
+        SelfId: 8406879459548988547
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint1:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint1:ml"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16042332347793280946
+  Name: "NPCWaypoint"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.109479882
+      Y: 0.0892771408
+      Z: 0.214792699
+    }
+  }
+  ParentId: 16065331125516423584
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 12402776060914387729
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3929151942948642054
+  Name: "NPC Waypoint - Start"
+  Transform {
+    Location {
+      X: 1474.34753
+      Y: 1438.10156
+      Z: -170.181931
+    }
+    Rotation {
+      Yaw: -45.3572388
+    }
+    Scale {
+      X: 5.41391
+      Y: 5.41391
+      Z: 5.41391
+    }
+  }
+  ParentId: 18292984034545998979
+  ChildIds: 7005349296574166802
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:NPCWaypoint0"
+      ObjectReference {
+        SelfId: 16065331125516423584
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint1"
+      ObjectReference {
+        SelfId: 8406879459548988547
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint0:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint0:ml"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint1:isrep"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint1:ml"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7005349296574166802
+  Name: "NPCWaypoint"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.109479882
+      Y: 0.0892771408
+      Z: 0.214792699
+    }
+  }
+  ParentId: 3929151942948642054
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 12402776060914387729
     }
   }
   NetworkRelevanceDistance {

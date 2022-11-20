@@ -114,15 +114,15 @@ Assets {
           }
           Overrides {
             Name: "cs:SearchDuration"
-            Float: 6
+            Float: 10
           }
           Overrides {
             Name: "cs:PossibilityRadius"
-            Float: 800
+            Float: 1000
           }
           Overrides {
             Name: "cs:ChaseRadius"
-            Float: 4000
+            Float: 5000
           }
           Overrides {
             Name: "cs:Team"
