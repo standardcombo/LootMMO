@@ -35,6 +35,15 @@ Assets {
   }
 }
 Assets {
+  Id: 18077830167989200227
+  Name: "Tree Redwood Big Stump 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_001_stump_ref"
+  }
+}
+Assets {
   Id: 18071131356479908138
   Name: "Urban - Damaged Iron Fence - Fence Top 02"
   PlatformAssetType: 1
@@ -737,6 +746,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14343669241104407812
+  Name: "Clover Patch 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_clover_patch_002"
+  }
+}
+Assets {
   Id: 14319639523658202036
   Name: "Coral Spikes Big"
   PlatformAssetType: 1
@@ -1214,6 +1232,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12261882466034228650
+  Name: "Tree Redwood Big Bare Trunk 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_001_log_ref"
+  }
+}
+Assets {
   Id: 12209528205531445270
   Name: "Urban Damaged Concrete Pillar - Top 01"
   PlatformAssetType: 1
@@ -1364,6 +1391,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_diamond_hq_001"
+  }
+}
+Assets {
+  Id: 11692328678017490580
+  Name: "Nature - Stick 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_nat_stick_001_ref"
   }
 }
 Assets {
@@ -1826,6 +1862,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9110189382580914613
+  Name: "Urban - Damaged Iron Gate 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_gate_damaged_002_ref"
+  }
+}
+Assets {
   Id: 9002030425395266600
   Name: "Nature - Mushroom 01"
   PlatformAssetType: 1
@@ -2186,6 +2231,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6943385915008195113
+  Name: "Urban - Damaged Iron Fence - Fence Top 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_fence_top_damaged_003_ref"
+  }
+}
+Assets {
   Id: 6892861472875270100
   Name: "Simple Crate 150cm"
   PlatformAssetType: 1
@@ -2219,6 +2273,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_wall_002_win_01"
+  }
+}
+Assets {
+  Id: 6807430120156541305
+  Name: "Nature - Stick 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_nat_stick_002_ref"
   }
 }
 Assets {
@@ -3074,6 +3137,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "fxmi_burning_erode"
+  }
+}
+Assets {
+  Id: 1440054355723127400
+  Name: "Clover Patch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_clover_patch_001"
   }
 }
 Assets {

@@ -1,4 +1,13 @@
 Assets {
+  Id: 18287765217740807165
+  Name: "Fantasy Castle Wall 03 - Window 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_wall_003_win_02"
+  }
+}
+Assets {
   Id: 18243333251623460988
   Name: "Candle 01"
   PlatformAssetType: 1
@@ -215,6 +224,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15128280182623405640
+  Name: "Fern 04"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fern_generic_004"
+  }
+}
+Assets {
   Id: 15122811339479650577
   Name: "Floor Candle Holder 01"
   PlatformAssetType: 1
@@ -314,6 +332,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13800436588944964225
+  Name: "Bush 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bush_generic_002"
+  }
+}
+Assets {
   Id: 13707562474042671468
   Name: "Roof Square Shingles 01"
   PlatformAssetType: 2
@@ -365,6 +392,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fan_fridge_001_door_top_001_ref"
+  }
+}
+Assets {
+  Id: 12478223806335538230
+  Name: "Fern 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fern_generic_001"
   }
 }
 Assets {
@@ -755,6 +791,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7540056073807749771
+  Name: "Fantasy Book Pile 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_book_pile_001_ref"
+  }
+}
+Assets {
   Id: 7467570831701101845
   Name: "Metal Painted 01"
   PlatformAssetType: 2
@@ -779,6 +824,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_hemisphere_002"
+  }
+}
+Assets {
+  Id: 7113527945028033875
+  Name: "Shield 06"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_shield_006"
   }
 }
 Assets {
@@ -1052,6 +1106,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2614432385386572709
+  Name: "Fern 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fern_generic_002"
+  }
+}
+Assets {
   Id: 2224571462023946700
   Name: "Environment Fog Default VFX"
   PlatformAssetType: 6
@@ -1076,6 +1139,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_bottle_006"
+  }
+}
+Assets {
+  Id: 1731512974963119003
+  Name: "Candle Table Holder 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fantasy_candle_001"
   }
 }
 Assets {
