@@ -32,13 +32,10 @@ function HandleSales(player, Currency, GoldValue, itemSlot, itemID)
             message = "Success: Equipment Sold"
         })
         player:AddResource("Coins", GoldValue)
-        print("wtf", itemID)
         if itemID == "Short Sword" then
-            print("hi me too")
             local obj = _G.QuestController.GetQuestObjective("VelwoodSwords", 1)
             if obj then
                 if _G.QuestController.IsActive(player, obj) then
-                    print("hi its me")
                     _G.QuestController.AdvanceObjective(player, "VelwoodSwords", 1)
                 end
             end
