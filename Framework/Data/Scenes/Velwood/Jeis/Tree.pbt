@@ -1439,47 +1439,9 @@ Objects {
   ChildIds: 965276214384591978
   ChildIds: 687086332696706894
   ChildIds: 6802579461216401617
+  ChildIds: 4605243139053233071
   ChildIds: 4512854109015448551
   ChildIds: 2604898450639429853
-  ChildIds: 13768929257430505337
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13768929257430505337
-  Name: "Sky Early Morning 01"
-  Transform {
-    Location {
-      X: -3.66296387
-      Y: -1455.6582
-      Z: -693.715088
-    }
-    Rotation {
-      Yaw: -110.391258
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16925143238359138299
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -1656,6 +1618,200 @@ Objects {
   Blueprint {
     BlueprintAsset {
       Id: 1353607577508895962
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4605243139053233071
+  Name: "Clouds"
+  Transform {
+    Location {
+      X: -252.283844
+      Y: 257.590637
+      Z: 100
+    }
+    Rotation {
+      Yaw: -146.351624
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16925143238359138299
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Cloud Shape"
+      Int: 0
+    }
+    Overrides {
+      Name: "bp:Horizon Color"
+      Color {
+        R: 1
+        G: 0.93834424
+        B: 0.51
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Zenith Color"
+      Color {
+        A: 0.6
+      }
+    }
+    Overrides {
+      Name: "bp:Cloud Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Cloud Wisp Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Use Sun Color for Cloud Color"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Cloud Rim Brightness"
+      Float: 100
+    }
+    Overrides {
+      Name: "bp:Cloud Detail Brightness"
+      Float: 2
+    }
+    Overrides {
+      Name: "bp:Background Clouds"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Cloud Opacity"
+      Float: 1
+    }
+    Overrides {
+      Name: "bp:Cloud Lighting Brightness"
+      Float: 15
+    }
+    Overrides {
+      Name: "bp:Cloud Ambient Brightness"
+      Float: 6
+    }
+    Overrides {
+      Name: "bp:Cloud Ambient Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Cloud Wisp Opacity"
+      Float: 0.25
+    }
+    Overrides {
+      Name: "bp:Sky Influence On Clouds"
+      Float: 0.4
+    }
+    Overrides {
+      Name: "bp:High Cloud Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:High Cloud Opacity"
+      Float: 0.35
+    }
+    Overrides {
+      Name: "bp:Horizon Falloff"
+      Float: 3
+    }
+    Overrides {
+      Name: "bp:Haze Falloff"
+      Float: 11
+    }
+    Overrides {
+      Name: "bp:High Cloud Index"
+      Int: 2
+    }
+    Overrides {
+      Name: "bp:High Cloud Noise Scale"
+      Float: 0.2
+    }
+    Overrides {
+      Name: "bp:High Cloud Speed"
+      Float: 0.2
+    }
+    Overrides {
+      Name: "bp:Cloud Rim Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Cloud Wisp Speed"
+      Float: 0.2
+    }
+    Overrides {
+      Name: "bp:Cloud Sun Behind Transmission"
+      Float: 5
+    }
+    Overrides {
+      Name: "bp:High Cloud Brightness"
+      Float: 1
+    }
+    Overrides {
+      Name: "bp:Overall Tint"
+      Color {
+        R: 0.138000011
+        G: 0.138000011
+        B: 0.138000011
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Haze Color"
+      Color {
+        R: 0.577
+        G: 0.577
+        B: 0.577
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 7887238662729938253
     }
   }
   NetworkRelevanceDistance {

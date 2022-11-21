@@ -89,6 +89,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7887238662729938253
+  Name: "Sky Dome"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "CORESKY_Sky"
+  }
+}
+Assets {
   Id: 6885808430270046775
   Name: "Lensflare Post Process"
   PlatformAssetType: 20
