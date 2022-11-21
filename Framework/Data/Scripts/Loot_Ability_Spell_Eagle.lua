@@ -16,4 +16,18 @@ local function Summon()
     ABILITY.owner.serverUserData.Eagle.lifeSpan = mod['Duration'] or 10
 end
 
+function DestroyEagle(player)
+    if Object.IsValid(player.serverUserData.Eagle) then
+        player.serverUserData.Eagle:Destroy()
+    end
+end
+
+function OnPlayerLeft(player)
+    DestroyEagle(player)
+end
+
 ABILITY.executeEvent:Connect(Summon)
+Game.playerLeftEvent:Connect(OnPlayerLeft)
+script.destroyEvent:Connect(function()
+    DestroyEagle(ABILITY.owner)
+end)
