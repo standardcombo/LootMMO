@@ -629,15 +629,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15275463334341845517
-  Name: "Katana Handle"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_jpn_katana_handle_001"
-  }
-}
-Assets {
   Id: 15212185774203157141
   Name: "Fantasy Castle Floor 01 - Curved 4m "
   PlatformAssetType: 1
@@ -863,15 +854,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14577953825021911847
-  Name: "Fantasy Pommel 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_fan_pommel_001"
-  }
-}
-Assets {
   Id: 14564533948356698873
   Name: "Concrete Rough"
   PlatformAssetType: 2
@@ -986,15 +968,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_container_triangular_Thick_ref"
-  }
-}
-Assets {
-  Id: 14258568016121201232
-  Name: "Urban - Modern Axe 01 - Head 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_axe_mod_001_head_001_ref"
   }
 }
 Assets {
@@ -1916,15 +1889,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11019742060840546363
-  Name: "Katana Blade"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_jpn_katana_blade_001"
-  }
-}
-Assets {
   Id: 10984415144127775715
   Name: "Urban - Damaged Iron Fence - Pillar Mid 02"
   PlatformAssetType: 1
@@ -2393,15 +2357,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8324921788233151294
-  Name: "Horn Curled - Golden Ratio"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prim_horn_curled_golden_001_ref"
-  }
-}
-Assets {
   Id: 8318010931141529991
   Name: "Fantasy Castle Wall 01 - Doorway 02"
   PlatformAssetType: 1
@@ -2840,15 +2795,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_urb_dtn_mst_railing_001_post_ref"
-  }
-}
-Assets {
-  Id: 6631081666212622438
-  Name: "Camouflage - Splinter"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "camo_splinter_001"
   }
 }
 Assets {
@@ -3338,30 +3284,12 @@ Assets {
   }
 }
 Assets {
-  Id: 4393239833821238595
-  Name: "Animated Glowing Hex"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxma_hex_animated"
-  }
-}
-Assets {
   Id: 4371559941960540326
   Name: "Tree Birch Bare 02"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_tree_birch_004"
-  }
-}
-Assets {
-  Id: 4342756216088781504
-  Name: "Fantasy Sword Blade 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_fan_blade_sword_002"
   }
 }
 Assets {
@@ -3407,15 +3335,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_tree_medium_short_01_bare_ref"
-  }
-}
-Assets {
-  Id: 4135738224331083076
-  Name: "Carbon Fiber 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_carbon-fiber_001"
   }
 }
 Assets {
@@ -3518,15 +3437,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3642695097438974619
-  Name: "Katana Guard"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_jpn_katana_guard_001"
-  }
-}
-Assets {
   Id: 3584007417411989222
   Name: "Urban Plank Debris 01"
   PlatformAssetType: 1
@@ -3569,15 +3479,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_acc_roof_win_001"
-  }
-}
-Assets {
-  Id: 3323004215598028599
-  Name: "Wedge - Concave Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_wedge_curved_concave_hq_001"
   }
 }
 Assets {
@@ -3632,15 +3533,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_urb_dest_concrete_pillar_top_01_ref"
-  }
-}
-Assets {
-  Id: 2635330027741249494
-  Name: "Diamond - 6-Sided"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_diamond_6_sided_001"
   }
 }
 Assets {
@@ -3716,15 +3608,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2065994209664284924
-  Name: "Pyramid - 5-Sided Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pyramid_fivesided_hq_001"
-  }
-}
-Assets {
   Id: 2064017466518942736
   Name: "Cube - Chamfered Large"
   PlatformAssetType: 1
@@ -3776,15 +3659,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_bark_redwood_001_uv"
-  }
-}
-Assets {
-  Id: 1920010878601219178
-  Name: "Fantasy Sword Guard 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_fan_guard_sword_001"
   }
 }
 Assets {
@@ -4073,15 +3947,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_stone-edge_corner_2m_001"
-  }
-}
-Assets {
-  Id: 588881991680217981
-  Name: "Cone - Truncated Hollow Wide Thick"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cone_truncated_hollow_005"
   }
 }
 Assets {
