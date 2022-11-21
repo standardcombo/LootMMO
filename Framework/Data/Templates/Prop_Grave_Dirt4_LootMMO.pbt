@@ -7,7 +7,7 @@ Assets {
       RootId: 2576436827818920554
       Objects {
         Id: 2576436827818920554
-        Name: "Prop_Grave_Dirt1"
+        Name: "Prop_Grave_Dirt4_LootMMO"
         Transform {
           Scale {
             X: 1
@@ -16,11 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 17484702931900625869
-        ChildIds: 5839001473692990784
-        ChildIds: 14555165794252246508
-        ChildIds: 11973280284707011773
-        ChildIds: 9125259126245863119
+        ChildIds: 5781311512687566411
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -42,12 +38,58 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 5781311512687566411
+        Name: "MergedModel"
+        Transform {
+          Location {
+            X: 5.25097656
+            Y: 15.0541019
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2576436827818920554
+        ChildIds: 17484702931900625869
+        ChildIds: 5839001473692990784
+        ChildIds: 14555165794252246508
+        ChildIds: 11973280284707011773
+        ChildIds: 9125259126245863119
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 17484702931900625869
         Name: "Fantasy Chest Treasure Pile 01"
         Transform {
           Location {
-            X: 2.48339844
-            Y: 38.947998
+            X: -2.76757812
+            Y: 23.8945312
           }
           Rotation {
             Yaw: -92.0362549
@@ -58,7 +100,7 @@ Assets {
             Z: 2.19633
           }
         }
-        ParentId: 2576436827818920554
+        ParentId: 5781311512687566411
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -117,8 +159,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: -76.2441406
-            Y: 192.630127
+            X: -81.4951172
+            Y: 177.576172
             Z: 1.94139099
           }
           Rotation {
@@ -129,7 +171,7 @@ Assets {
             Z: 0.181037068
           }
         }
-        ParentId: 2576436827818920554
+        ParentId: 5781311512687566411
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -171,8 +213,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 74.0791
-            Y: 96.5180664
+            X: 68.828125
+            Y: 81.4643555
             Z: 1.94139099
           }
           Rotation {
@@ -184,7 +226,7 @@ Assets {
             Z: 0.208038226
           }
         }
-        ParentId: 2576436827818920554
+        ParentId: 5781311512687566411
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -226,13 +268,13 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 42.984375
-            Y: -151.430176
+            X: 37.7334
+            Y: -166.484375
             Z: 2.04212952
           }
           Rotation {
             Yaw: 120.958542
-            Roll: -44.9999924
+            Roll: -44.9999847
           }
           Scale {
             X: 0.0918268561
@@ -240,7 +282,7 @@ Assets {
             Z: 0.188235849
           }
         }
-        ParentId: 2576436827818920554
+        ParentId: 5781311512687566411
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -282,13 +324,14 @@ Assets {
         Name: "Urban Tombstone 03"
         Transform {
           Location {
-            X: -17.0478516
-            Y: -101.395508
+            X: -22.2988281
+            Y: -116.449219
             Z: 10.4841461
           }
           Rotation {
             Pitch: 13.4847326
-            Roll: -8.64968872
+            Yaw: -1.09747198e-07
+            Roll: -8.64969921
           }
           Scale {
             X: 1.19057941
@@ -296,7 +339,7 @@ Assets {
             Z: 1.19057941
           }
         }
-        ParentId: 2576436827818920554
+        ParentId: 5781311512687566411
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

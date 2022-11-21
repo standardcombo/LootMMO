@@ -7,7 +7,7 @@ Assets {
       RootId: 3216233124178854264
       Objects {
         Id: 3216233124178854264
-        Name: "Urban Tombstone 07"
+        Name: "Prop_Grave_Stone4_LootMMO"
         Transform {
           Scale {
             X: 1
@@ -16,11 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 4638278876808370074
-        ChildIds: 7259704935616802217
-        ChildIds: 12662972928972768879
-        ChildIds: 3378408276575703943
-        ChildIds: 11837486931885929755
+        ChildIds: 585983515801865506
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -58,16 +54,64 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 585983515801865506
+        Name: "MergedModel"
+        Transform {
+          Location {
+            X: -0.071093753
+            Y: 10.9099607
+            Z: 191.245728
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3216233124178854264
+        ChildIds: 4638278876808370074
+        ChildIds: 7259704935616802217
+        ChildIds: 12662972928972768879
+        ChildIds: 3378408276575703943
+        ChildIds: 11837486931885929755
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 4638278876808370074
         Name: "Fantasy Chain Circle 03"
         Transform {
           Location {
-            Z: 191.245728
+            X: 0.0712890625
+            Y: -10.9101562
           }
           Rotation {
-            Pitch: -6.8855896
-            Yaw: 36.1379433
-            Roll: 12.366148
+            Pitch: -6.88558865
+            Yaw: 36.1379395
+            Roll: 12.3661661
           }
           Scale {
             X: 0.90460819
@@ -75,7 +119,7 @@ Assets {
             Z: 0.90460819
           }
         }
-        ParentId: 3216233124178854264
+        ParentId: 585983515801865506
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -125,12 +169,14 @@ Assets {
         Name: "Fantasy Chain Circle 03"
         Transform {
           Location {
-            Z: 199.711472
+            X: 0.0712890625
+            Y: -10.9101562
+            Z: 8.46574402
           }
           Rotation {
             Pitch: 13.9969416
-            Yaw: -74.5704956
-            Roll: 14.7476501
+            Yaw: -74.5704803
+            Roll: 14.7476702
           }
           Scale {
             X: 0.90460819
@@ -138,7 +184,7 @@ Assets {
             Z: 0.90460819
           }
         }
-        ParentId: 3216233124178854264
+        ParentId: 585983515801865506
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -188,12 +234,13 @@ Assets {
         Name: "Fantasy Chain Circle 03"
         Transform {
           Location {
-            Z: 191.245728
+            X: 0.0712890625
+            Y: -10.9101562
           }
           Rotation {
             Pitch: 14.1216888
             Yaw: 143.72905
-            Roll: -11.0968628
+            Roll: -11.0968781
           }
           Scale {
             X: 0.90460819
@@ -201,7 +248,7 @@ Assets {
             Z: 0.90460819
           }
         }
-        ParentId: 3216233124178854264
+        ParentId: 585983515801865506
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -251,8 +298,9 @@ Assets {
         Name: "Rock Block 02"
         Transform {
           Location {
-            Y: 27.2749023
-            Z: 275.379883
+            X: 0.0712890625
+            Y: 16.3647461
+            Z: 84.1341553
           }
           Rotation {
           }
@@ -262,7 +310,7 @@ Assets {
             Z: 0.0635942519
           }
         }
-        ParentId: 3216233124178854264
+        ParentId: 585983515801865506
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -329,14 +377,14 @@ Assets {
         Name: "Rock Block 02"
         Transform {
           Location {
-            X: -0.35546875
-            Y: 27.2749023
-            Z: 262.733063
+            X: -0.284179688
+            Y: 16.3647461
+            Z: 71.4873352
           }
           Rotation {
-            Pitch: -87.0569458
-            Yaw: 78.868248
-            Roll: -74.3711548
+            Pitch: -87.0570145
+            Yaw: 78.8683395
+            Roll: -74.3712616
           }
           Scale {
             X: 0.238216087
@@ -344,7 +392,7 @@ Assets {
             Z: 0.0635928288
           }
         }
-        ParentId: 3216233124178854264
+        ParentId: 585983515801865506
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"

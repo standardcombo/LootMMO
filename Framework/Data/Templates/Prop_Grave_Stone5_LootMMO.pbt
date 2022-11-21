@@ -7,7 +7,7 @@ Assets {
       RootId: 7346716237909465828
       Objects {
         Id: 7346716237909465828
-        Name: "Urban Tombstone 06"
+        Name: "Prop_Grave_Stone5_LootMMO"
         Transform {
           Scale {
             X: 2.49314642
@@ -16,10 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 5899598636243084824
-        ChildIds: 7350971172324723763
-        ChildIds: 16100226214293610623
-        ChildIds: 2606346722917529852
+        ChildIds: 16061663931048460608
         ChildIds: 11152881000412268455
         ChildIds: 5328592912458946907
         Collidable_v2 {
@@ -59,12 +56,57 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 16061663931048460608
+        Name: "MergedModel"
+        Transform {
+          Location {
+            X: -4.91856289
+            Y: 72.0953522
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7346716237909465828
+        ChildIds: 5899598636243084824
+        ChildIds: 7350971172324723763
+        ChildIds: 16100226214293610623
+        ChildIds: 2606346722917529852
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 5899598636243084824
         Name: "Urban Gravestone 02"
         Transform {
           Location {
-            X: -43.6732445
-            Y: 95.4602356
+            X: -38.7546806
+            Y: 23.3648338
           }
           Rotation {
           }
@@ -74,7 +116,7 @@ Assets {
             Z: 0.401099592
           }
         }
-        ParentId: 7346716237909465828
+        ParentId: 16061663931048460608
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -116,8 +158,8 @@ Assets {
         Name: "Urban Gravestone 02"
         Transform {
           Location {
-            X: 45.0050201
-            Y: 95.4602356
+            X: 49.9235802
+            Y: 23.3648338
           }
           Rotation {
           }
@@ -127,7 +169,7 @@ Assets {
             Z: 0.401099592
           }
         }
-        ParentId: 7346716237909465828
+        ParentId: 16061663931048460608
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -169,8 +211,8 @@ Assets {
         Name: "Candle Group Melted 02"
         Transform {
           Location {
-            X: -60.1994095
-            Y: 47.5759354
+            X: -55.2808456
+            Y: -24.5191708
             Z: 44.4292908
           }
           Rotation {
@@ -181,7 +223,7 @@ Assets {
             Z: 0.401099592
           }
         }
-        ParentId: 7346716237909465828
+        ParentId: 16061663931048460608
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -223,8 +265,8 @@ Assets {
         Name: "Candle 03"
         Transform {
           Location {
-            X: 39.1933823
-            Y: 49.885
+            X: 44.1119461
+            Y: -22.2104988
             Z: 44.4292831
           }
           Rotation {
@@ -235,7 +277,7 @@ Assets {
             Z: 0.401099592
           }
         }
-        ParentId: 7346716237909465828
+        ParentId: 16061663931048460608
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

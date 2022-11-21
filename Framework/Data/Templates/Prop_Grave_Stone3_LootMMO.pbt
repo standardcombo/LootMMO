@@ -7,7 +7,7 @@ Assets {
       RootId: 8499576169113469554
       Objects {
         Id: 8499576169113469554
-        Name: "Urban Gravestone 01"
+        Name: "Prop_Grave_Stone3_LootMMO"
         Transform {
           Scale {
             X: 1
@@ -16,10 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 8792578084452833351
-        ChildIds: 16096986464682893049
-        ChildIds: 6737064056439028357
-        ChildIds: 9483379810198027419
+        ChildIds: 14653710895099077251
         ChildIds: 1098060614923844183
         UnregisteredParameters {
           Overrides {
@@ -66,11 +63,57 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 14653710895099077251
+        Name: "MergedModel"
+        Transform {
+          Location {
+            X: -0.164550781
+            Y: -231.743896
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8499576169113469554
+        ChildIds: 8792578084452833351
+        ChildIds: 16096986464682893049
+        ChildIds: 6737064056439028357
+        ChildIds: 9483379810198027419
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 8792578084452833351
         Name: "Fantasy Castle Bannister 01 - Post"
         Transform {
           Location {
-            Y: -264.298828
+            X: 0.1640625
+            Y: -32.5546875
           }
           Rotation {
           }
@@ -80,7 +123,7 @@ Assets {
             Z: 1.866557
           }
         }
-        ParentId: 8499576169113469554
+        ParentId: 14653710895099077251
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -136,8 +179,8 @@ Assets {
         Name: "Shield 02"
         Transform {
           Location {
-            X: 0.819335938
-            Y: -218.296387
+            X: 0.983398438
+            Y: 13.4472656
             Z: 287.622375
           }
           Rotation {
@@ -148,7 +191,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8499576169113469554
+        ParentId: 14653710895099077251
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -219,14 +262,14 @@ Assets {
         Name: "Fantasy Weapon - Sword 03 (Prop)"
         Transform {
           Location {
-            X: -41.9052734
-            Y: -223.152832
+            X: -41.7412109
+            Y: 8.59179688
             Z: 358.353271
           }
           Rotation {
-            Pitch: -133.955688
-            Yaw: 5.70422363
-            Roll: -3.07119751
+            Pitch: -46.0443115
+            Yaw: -174.295761
+            Roll: 176.928802
           }
           Scale {
             X: 1.12725794
@@ -234,7 +277,7 @@ Assets {
             Z: 1.12725794
           }
         }
-        ParentId: 8499576169113469554
+        ParentId: 14653710895099077251
         ChildIds: 4536318252838445855
         ChildIds: 981163789349273410
         ChildIds: 13628357040678977987
@@ -252,9 +295,9 @@ Assets {
           IsGroup: true
         }
         InstanceHistory {
-          SelfId: 16487435516238952638
+          SelfId: 193877197501378327
           SubobjectId: 1527880931670576009
-          InstanceId: 14827454401051573411
+          InstanceId: 1175268657929180628
           TemplateId: 15697252436825814724
           WasRoot: true
         }
@@ -318,9 +361,9 @@ Assets {
           }
         }
         InstanceHistory {
-          SelfId: 9747410571380334884
+          SelfId: 7005959666602210957
           SubobjectId: 8556556608107614739
-          InstanceId: 14827454401051573411
+          InstanceId: 1175268657929180628
           TemplateId: 15697252436825814724
         }
         Relevance {
@@ -389,9 +432,9 @@ Assets {
           }
         }
         InstanceHistory {
-          SelfId: 12982809461867347321
+          SelfId: 5932328249402338000
           SubobjectId: 5032500766865837646
-          InstanceId: 14827454401051573411
+          InstanceId: 1175268657929180628
           TemplateId: 15697252436825814724
         }
         Relevance {
@@ -451,9 +494,9 @@ Assets {
           }
         }
         InstanceHistory {
-          SelfId: 328861360858334200
+          SelfId: 16352483237653304401
           SubobjectId: 17684339453806883023
-          InstanceId: 14827454401051573411
+          InstanceId: 1175268657929180628
           TemplateId: 15697252436825814724
         }
         Relevance {
@@ -513,9 +556,9 @@ Assets {
           }
         }
         InstanceHistory {
-          SelfId: 12511993278152836616
+          SelfId: 5466366022743937441
           SubobjectId: 6654274314028037439
-          InstanceId: 14827454401051573411
+          InstanceId: 1175268657929180628
           TemplateId: 15697252436825814724
         }
         Relevance {
@@ -531,13 +574,13 @@ Assets {
         Name: "Fantasy Weapon - Sword 03 (Prop)"
         Transform {
           Location {
-            X: 40.4277344
-            Y: -221.227539
+            X: 40.5917969
+            Y: 10.5166016
             Z: 358.353271
           }
           Rotation {
-            Pitch: 44.780468
-            Yaw: -170.190018
+            Pitch: 44.7804565
+            Yaw: -170.19
             Roll: -174.461853
           }
           Scale {
@@ -546,7 +589,7 @@ Assets {
             Z: 1.12725794
           }
         }
-        ParentId: 8499576169113469554
+        ParentId: 14653710895099077251
         ChildIds: 11921268924465494531
         ChildIds: 8897161113936799545
         ChildIds: 2840938371689865362

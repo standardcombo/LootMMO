@@ -7,7 +7,7 @@ Assets {
       RootId: 11674432497220465236
       Objects {
         Id: 11674432497220465236
-        Name: "Prop_Grave_Dirt3"
+        Name: "Prop_Grave_Dirt3_LootMMO"
         Transform {
           Scale {
             X: 1
@@ -16,6 +16,44 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 4787482550396386356
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 4787482550396386356
+        Name: "MergedModel"
+        Transform {
+          Location {
+            X: 0.000751201937
+            Y: 0.000600961561
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11674432497220465236
         ChildIds: 4656721186984679588
         ChildIds: 16273969626338214981
         ChildIds: 12898045504848764008
@@ -42,7 +80,11 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Folder {
-          IsGroup: true
+          Model {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -54,8 +96,8 @@ Assets {
         Name: "Fantasy Chest Treasure Pile 01"
         Transform {
           Location {
-            X: 2.48339844
-            Y: 38.947998
+            X: 2.48242188
+            Y: 38.9472656
           }
           Rotation {
             Yaw: -92.0362549
@@ -66,7 +108,7 @@ Assets {
             Z: 2.19633
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -125,14 +167,14 @@ Assets {
         Name: "Nature Plank 03"
         Transform {
           Location {
-            X: -19.4189453
-            Y: -165.846191
+            X: -19.4199219
+            Y: -165.847656
             Z: 108.579773
           }
           Rotation {
-            Pitch: 77.0226
+            Pitch: 77.022522
             Yaw: -159.644318
-            Roll: 110.843765
+            Roll: 110.843681
           }
           Scale {
             X: 0.38621
@@ -140,7 +182,7 @@ Assets {
             Z: 0.571852624
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -199,14 +241,14 @@ Assets {
         Name: "Nature Plank 01"
         Transform {
           Location {
-            X: -17.5654297
-            Y: -165.81543
+            X: -17.5664062
+            Y: -165.816406
             Z: 78.1072693
           }
           Rotation {
             Pitch: 4.71954441
-            Yaw: -0.379180968
-            Roll: -94.5987473
+            Yaw: -0.379181176
+            Roll: -94.5987396
           }
           Scale {
             X: 1
@@ -214,7 +256,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -273,12 +315,12 @@ Assets {
         Name: "Fantasy Pommel 02"
         Transform {
           Location {
-            X: -20.8964844
-            Y: -176.04834
+            X: -20.8974609
+            Y: -176.048828
             Z: 112.201309
           }
           Rotation {
-            Roll: -89.9999924
+            Roll: -89.9999847
           }
           Scale {
             X: 1
@@ -286,7 +328,7 @@ Assets {
             Z: 1.69221282
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -340,13 +382,14 @@ Assets {
         Name: "Nature - Stick 05"
         Transform {
           Location {
-            X: 64.0673828
-            Y: 198.135986
+            X: 64.0664062
+            Y: 198.134766
             Z: 53.2135
           }
           Rotation {
-            Pitch: 61.0971298
-            Yaw: 54.9770584
+            Pitch: 61.0971184
+            Yaw: 54.9770393
+            Roll: -3.53290739e-06
           }
           Scale {
             X: 0.623414159
@@ -354,7 +397,7 @@ Assets {
             Z: 0.623414159
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -396,8 +439,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: -76.2441406
-            Y: 4.73339844
+            X: -76.2451172
+            Y: 4.73242188
             Z: 1.94139099
           }
           Rotation {
@@ -408,7 +451,7 @@ Assets {
             Z: 0.181037068
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -450,8 +493,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: -76.2441406
-            Y: 81.1469727
+            X: -76.2451172
+            Y: 81.1459961
             Z: 1.94139099
           }
           Rotation {
@@ -463,7 +506,7 @@ Assets {
             Z: 0.181037068
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -505,8 +548,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: -76.2441406
-            Y: 159.038086
+            X: -76.2451172
+            Y: 159.037109
             Z: 1.94139099
           }
           Rotation {
@@ -518,7 +561,7 @@ Assets {
             Z: 0.208038226
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -560,12 +603,12 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: -45.1494141
-            Y: 219.088623
+            X: -45.1503906
+            Y: 219.087891
             Z: 2.04212952
           }
           Rotation {
-            Yaw: -59.0414238
+            Yaw: -59.0414162
             Roll: -44.9999962
           }
           Scale {
@@ -574,7 +617,7 @@ Assets {
             Z: 0.188235849
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -616,12 +659,12 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 74.0791
-            Y: 62.925293
+            X: 74.078125
+            Y: 62.9243164
             Z: 1.94139099
           }
           Rotation {
-            Yaw: -179.999985
+            Yaw: -179.999969
           }
           Scale {
             X: 0.181037068
@@ -629,7 +672,7 @@ Assets {
             Z: 0.181037068
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -671,8 +714,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 74.0791
-            Y: -13.4890137
+            X: 74.078125
+            Y: -13.4902344
             Z: 1.94139099
           }
           Rotation {
@@ -684,7 +727,7 @@ Assets {
             Z: 0.181037068
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -726,8 +769,8 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 74.0791
-            Y: -91.3793945
+            X: 74.078125
+            Y: -91.3808594
             Z: 1.94139099
           }
           Rotation {
@@ -739,7 +782,7 @@ Assets {
             Z: 0.208038226
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -781,13 +824,13 @@ Assets {
         Name: "Rock 03"
         Transform {
           Location {
-            X: 42.984375
-            Y: -151.430176
+            X: 42.9834
+            Y: -151.431641
             Z: 2.04212952
           }
           Rotation {
             Yaw: 120.958542
-            Roll: -44.9999924
+            Roll: -44.9999847
           }
           Scale {
             X: 0.0918268561
@@ -795,7 +838,7 @@ Assets {
             Z: 0.188235849
           }
         }
-        ParentId: 11674432497220465236
+        ParentId: 4787482550396386356
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
