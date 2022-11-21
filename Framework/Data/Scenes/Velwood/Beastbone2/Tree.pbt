@@ -5,7 +5,8 @@ Objects {
   Name: "Enemy Spawn"
   Transform {
     Location {
-      Y: 127.075195
+      X: 16.5605469
+      Y: 387.842285
       Z: -143.81897
     }
     Rotation {
@@ -312,7 +313,7 @@ Objects {
     }
   }
   ParentId: 938137775794850649
-  ChildIds: 3929151942948642054
+  ChildIds: 10560550312039638472
   ChildIds: 16065331125516423584
   ChildIds: 8406879459548988547
   Collidable_v2 {
@@ -348,9 +349,9 @@ Objects {
       Yaw: -45.3571777
     }
     Scale {
-      X: 6
-      Y: 6
-      Z: 6
+      X: 3.22514391
+      Y: 3.22514391
+      Z: 3.22514391
     }
   }
   ParentId: 18292984034545998979
@@ -439,15 +440,15 @@ Objects {
     Location {
       X: 1357.03357
       Y: 2369.51074
-      Z: -170.181686
+      Z: -129.314133
     }
     Rotation {
       Yaw: -45.3571472
     }
     Scale {
-      X: 6
-      Y: 6
-      Z: 6
+      X: 2.58423162
+      Y: 2.58423162
+      Z: 2.58423162
     }
   }
   ParentId: 18292984034545998979
@@ -530,32 +531,26 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3929151942948642054
+  Id: 10560550312039638472
   Name: "NPC Waypoint - Start"
   Transform {
     Location {
-      X: 1474.34753
-      Y: 1438.10156
-      Z: -170.181931
+      X: 1659.44543
+      Y: 1767.49902
+      Z: -129.314102
     }
     Rotation {
-      Yaw: -45.3572388
+      Yaw: -73.9331055
     }
     Scale {
-      X: 5.41391
-      Y: 5.41391
-      Z: 5.41391
+      X: 24.1966591
+      Y: 11.409338
+      Z: 10.4375563
     }
   }
   ParentId: 18292984034545998979
-  ChildIds: 7005349296574166802
+  ChildIds: 8176365872575341336
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:NPCWaypoint0"
-      ObjectReference {
-        SelfId: 16065331125516423584
-      }
-    }
     Overrides {
       Name: "cs:NPCWaypoint1"
       ObjectReference {
@@ -563,12 +558,10 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:NPCWaypoint0:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0:ml"
-      Bool: false
+      Name: "cs:NPCWaypoint0"
+      ObjectReference {
+        SelfId: 16065331125516423584
+      }
     }
     Overrides {
       Name: "cs:NPCWaypoint1:isrep"
@@ -594,7 +587,7 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     TriggerShape_v2 {
-      Value: "mc:etriggershape:sphere"
+      Value: "mc:etriggershape:box"
     }
     InteractionTemplate {
     }
@@ -607,7 +600,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7005349296574166802
+  Id: 8176365872575341336
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -620,7 +613,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 3929151942948642054
+  ParentId: 10560550312039638472
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

@@ -1,13 +1,13 @@
-Name: "Beastbone1"
-RootId: 8582341886694200393
+Name: "Undead1"
+RootId: 4288614763271675729
 Objects {
-  Id: 17825933916611105975
+  Id: 12896819376864300468
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: 823.809448
-      Y: 824.981445
-      Z: -110.224533
+      X: -1917.29297
+      Y: 1188.06165
+      Z: -157.54541
     }
     Rotation {
       Yaw: 107.896622
@@ -18,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -72,13 +72,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16167517995918407850
+  Id: 10270360556061504227
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -1288.59558
-      Y: 1545.14551
-      Z: -127.364548
+      X: -1291.03125
+      Y: -286.094604
+      Z: -157.545166
     }
     Rotation {
       Yaw: 107.896622
@@ -89,7 +89,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -143,13 +143,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9050638010619642501
+  Id: 7048388726695050083
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -444.651611
-      Y: 663.242188
-      Z: -110.223923
+      X: 266.94043
+      Y: 78.4366455
+      Z: -157.545166
     }
     Rotation {
       Yaw: 107.896622
@@ -160,7 +160,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -214,13 +214,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1794445369434329174
+  Id: 9547882573175194775
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -2499.08203
-      Y: 104.737305
-      Z: -124.695297
+      X: -104.763672
+      Y: 1964.04944
+      Z: -157.545166
     }
     Rotation {
       Yaw: 107.896622
@@ -231,7 +231,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -285,13 +285,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11593198444010110503
+  Id: 17030429924302625622
   Name: "Enemy Spawn"
   Transform {
     Location {
-      X: -868.324341
-      Y: -520.958496
-      Z: -143.818954
+      X: -1180.2959
+      Y: 2331.19238
+      Z: -157.545166
     }
     Rotation {
       Yaw: 107.896622
@@ -302,7 +302,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -356,22 +356,236 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15563885271742730982
+  Id: 16162107534283770302
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: -1973.77734
+      Y: 191.210815
+      Z: -157.544922
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4288614763271675729
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6580148000312678910
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: 541.663086
+      Y: 1321.00427
+      Z: -157.545166
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4288614763271675729
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 12386529953454037608
+  Name: "Enemy Spawn"
+  Transform {
+    Location {
+      X: -481.75
+      Y: -632.573242
+      Z: -157.544922
+    }
+    Rotation {
+      Yaw: 107.896622
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4288614763271675729
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Y Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:X Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Z Scale"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:evolumetype:1"
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Absolute Scale"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15895911216899816748
+    }
+    TeamSettings {
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7902782419506337434
   Name: "Quest Area"
   Transform {
     Location {
-      X: -168.256836
-      Y: 508.310059
+      X: -762.634766
+      Y: 803.24353
+      Z: -223.418335
     }
     Rotation {
     }
     Scale {
-      X: 46.2170753
-      Y: 46.2170753
-      Z: 46.2170753
+      X: 37.758461
+      Y: 37.758461
+      Z: 37.758461
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "bp:Y Scale"
@@ -436,7 +650,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16917563927452919541
+  Id: 3242532977114363954
   Name: "ObjectiveEventListener"
   Transform {
     Location {
@@ -449,7 +663,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
@@ -491,7 +705,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3141559192745470728
+  Id: 2247299163844508307
   Name: "ObjectiveEncounterSpawn - VileVersion"
   Transform {
     Location {
@@ -504,11 +718,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
+  ParentId: 4288614763271675729
   UnregisteredParameters {
     Overrides {
       Name: "cs:EnemyIDs"
-      String: "Beastbone1, Beastbone2"
+      String: "Skeleton, Skeleton3"
     }
     Overrides {
       Name: "cs:MinPlayerLevel"
@@ -516,15 +730,15 @@ Objects {
     }
     Overrides {
       Name: "cs:EnemyCount"
-      Int: 5
+      Int: 7
     }
     Overrides {
       Name: "cs:ChanceEpicEnemy"
-      Float: 0
+      Float: 0.05
     }
     Overrides {
       Name: "cs:ChanceLegendaryEnemy"
-      Float: 0
+      Float: 0.025
     }
     Overrides {
       Name: "cs:AdditionalRadius"
@@ -552,7 +766,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ChanceRareEnemy"
-      Float: 0
+      Float: 0.1
     }
     Overrides {
       Name: "cs:DespawnDelay"
@@ -582,7 +796,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2658445675958412098
+  Id: 11318365957577986052
   Name: "Waypoints"
   Transform {
     Location {
@@ -595,12 +809,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8582341886694200393
-  ChildIds: 518264549654386220
-  ChildIds: 7582720873398172851
-  ChildIds: 6609142971335403623
-  ChildIds: 15173513583513516770
-  ChildIds: 17033546928943651057
+  ParentId: 4288614763271675729
+  ChildIds: 6268014263326308375
+  ChildIds: 16767331413120907914
+  ChildIds: 13903810688767655411
+  ChildIds: 15287615533456037087
+  ChildIds: 14054439812181582825
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -622,42 +836,30 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17033546928943651057
+  Id: 14054439812181582825
   Name: "NPC Waypoint - 3"
   Transform {
     Location {
-      X: -2514.27197
-      Y: 122.378418
-      Z: -170.181992
+      X: 369.073242
+      Y: -11.8446045
+      Z: -170.181946
     }
     Rotation {
       Yaw: -45.3572388
     }
     Scale {
-      X: 3.32873964
-      Y: 3.32873964
-      Z: 3.32873964
+      X: 2.58355498
+      Y: 2.58355498
+      Z: 2.58355498
     }
   }
-  ParentId: 2658445675958412098
-  ChildIds: 2069721394805343440
+  ParentId: 11318365957577986052
+  ChildIds: 13643933373488107300
   UnregisteredParameters {
     Overrides {
       Name: "cs:NPCWaypoint0"
       ObjectReference {
-        SelfId: 7582720873398172851
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1"
-      ObjectReference {
-        SelfId: 6609142971335403623
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint2"
-      ObjectReference {
-        SelfId: 15173513583513516770
+        SelfId: 16767331413120907914
       }
     }
     Overrides {
@@ -666,14 +868,6 @@ Objects {
     }
     Overrides {
       Name: "cs:NPCWaypoint0:ml"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1:ml"
       Bool: false
     }
   }
@@ -705,7 +899,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2069721394805343440
+  Id: 13643933373488107300
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -718,7 +912,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 17033546928943651057
+  ParentId: 14054439812181582825
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -739,59 +933,31 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15173513583513516770
+  Id: 15287615533456037087
   Name: "NPC Waypoint - 2"
   Transform {
     Location {
-      X: -846.848877
-      Y: -519.945801
-      Z: -170.181992
+      X: -1339.22168
+      Y: -377.990601
+      Z: -170.182251
     }
     Rotation {
       Yaw: -45.3572083
     }
     Scale {
-      X: 3.32873964
-      Y: 3.32873964
-      Z: 3.32873964
+      X: 2.58355498
+      Y: 2.58355498
+      Z: 2.58355498
     }
   }
-  ParentId: 2658445675958412098
-  ChildIds: 9387553831552934047
+  ParentId: 11318365957577986052
+  ChildIds: 9212982090544639104
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:NPCWaypoint0"
-      ObjectReference {
-        SelfId: 7582720873398172851
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1"
-      ObjectReference {
-        SelfId: 6609142971335403623
-      }
-    }
     Overrides {
       Name: "cs:NPCWaypoint3"
       ObjectReference {
-        SelfId: 17033546928943651057
+        SelfId: 14054439812181582825
       }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0:ml"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint1:ml"
-      Bool: false
     }
   }
   Collidable_v2 {
@@ -822,7 +988,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9387553831552934047
+  Id: 9212982090544639104
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -835,7 +1001,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 15173513583513516770
+  ParentId: 15287615533456037087
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -856,51 +1022,31 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6609142971335403623
+  Id: 13903810688767655411
   Name: "NPC Waypoint - 1"
   Transform {
     Location {
-      X: -1272.96411
-      Y: 1532.92822
-      Z: -170.181992
+      X: -2060.44922
+      Y: 1192.65637
+      Z: -170.182
     }
     Rotation {
       Yaw: -45.3571777
     }
     Scale {
-      X: 3.32873964
-      Y: 3.32873964
-      Z: 3.32873964
+      X: 2.58355498
+      Y: 2.58355498
+      Z: 2.58355498
     }
   }
-  ParentId: 2658445675958412098
-  ChildIds: 1764292569913107494
+  ParentId: 11318365957577986052
+  ChildIds: 13887881803410530476
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:NPCWaypoint0"
-      ObjectReference {
-        SelfId: 7582720873398172851
-      }
-    }
     Overrides {
       Name: "cs:NPCWaypoint2"
       ObjectReference {
-        SelfId: 15173513583513516770
+        SelfId: 15287615533456037087
       }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint3"
-      ObjectReference {
-        SelfId: 17033546928943651057
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint0:ml"
-      Bool: false
     }
   }
   Collidable_v2 {
@@ -931,7 +1077,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1764292569913107494
+  Id: 13887881803410530476
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -944,7 +1090,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 6609142971335403623
+  ParentId: 13903810688767655411
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -965,42 +1111,30 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7582720873398172851
+  Id: 16767331413120907914
   Name: "NPC Waypoint - 0"
   Transform {
     Location {
-      X: 818.537476
-      Y: 840.558105
-      Z: -170.181747
+      X: -42.1826172
+      Y: 2072.604
+      Z: -170.181763
     }
     Rotation {
       Yaw: -45.3571472
     }
     Scale {
-      X: 3.32873964
-      Y: 3.32873964
-      Z: 3.32873964
+      X: 2.58355498
+      Y: 2.58355498
+      Z: 2.58355498
     }
   }
-  ParentId: 2658445675958412098
-  ChildIds: 10369318366594989016
+  ParentId: 11318365957577986052
+  ChildIds: 1285283524098812331
   UnregisteredParameters {
     Overrides {
       Name: "cs:NPCWaypoint1"
       ObjectReference {
-        SelfId: 6609142971335403623
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint2"
-      ObjectReference {
-        SelfId: 15173513583513516770
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint3"
-      ObjectReference {
-        SelfId: 17033546928943651057
+        SelfId: 13903810688767655411
       }
     }
     Overrides {
@@ -1040,7 +1174,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10369318366594989016
+  Id: 1285283524098812331
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -1053,7 +1187,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 7582720873398172851
+  ParentId: 16767331413120907914
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1074,48 +1208,48 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 518264549654386220
+  Id: 6268014263326308375
   Name: "NPC Waypoint - Start"
   Transform {
     Location {
-      X: -980.683289
-      Y: 610.30957
-      Z: -170.181747
+      X: -738.384766
+      Y: 930.790161
+      Z: -170.181763
     }
     Rotation {
-      Yaw: -64.2323608
+      Yaw: -45.3571777
     }
     Scale {
-      X: 41.6865196
-      Y: 38.7230415
-      Z: 25.9876862
+      X: 52.3231506
+      Y: 52.3231506
+      Z: 52.3231506
     }
   }
-  ParentId: 2658445675958412098
-  ChildIds: 13663046413611485845
+  ParentId: 11318365957577986052
+  ChildIds: 15451070727114109740
   UnregisteredParameters {
     Overrides {
       Name: "cs:NPCWaypoint1"
       ObjectReference {
-        SelfId: 6609142971335403623
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint2"
-      ObjectReference {
-        SelfId: 15173513583513516770
-      }
-    }
-    Overrides {
-      Name: "cs:NPCWaypoint3"
-      ObjectReference {
-        SelfId: 17033546928943651057
+        SelfId: 13903810688767655411
       }
     }
     Overrides {
       Name: "cs:NPCWaypoint0"
       ObjectReference {
-        SelfId: 7582720873398172851
+        SelfId: 16767331413120907914
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint2"
+      ObjectReference {
+        SelfId: 15287615533456037087
+      }
+    }
+    Overrides {
+      Name: "cs:NPCWaypoint3"
+      ObjectReference {
+        SelfId: 14054439812181582825
       }
     }
     Overrides {
@@ -1142,7 +1276,7 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
+      Value: "mc:etriggershape:sphere"
     }
     InteractionTemplate {
     }
@@ -1155,7 +1289,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 13663046413611485845
+  Id: 15451070727114109740
   Name: "NPCWaypoint"
   Transform {
     Location {
@@ -1168,7 +1302,7 @@ Objects {
       Z: 0.214792699
     }
   }
-  ParentId: 518264549654386220
+  ParentId: 6268014263326308375
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
