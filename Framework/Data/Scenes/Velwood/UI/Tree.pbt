@@ -139,7 +139,7 @@ Objects {
   Control {
     Width: 120
     Height: 120
-    UIX: 225
+    UIX: 53.447876
     UIY: -35
     RenderTransformPivot {
       Anchor {
@@ -351,7 +351,7 @@ Objects {
   Control {
     Width: 120
     Height: 120
-    UIX: 75
+    UIX: -96.552124
     UIY: -35
     RenderTransformPivot {
       Anchor {
@@ -562,7 +562,7 @@ Objects {
   Control {
     Width: 120
     Height: 120
-    UIX: -75
+    UIX: -246.552124
     UIY: -35
     RenderTransformPivot {
       Anchor {
@@ -773,7 +773,7 @@ Objects {
   Control {
     Width: 120
     Height: 120
-    UIX: -225
+    UIX: -396.552124
     UIY: -35
     RenderTransformPivot {
       Anchor {
@@ -986,6 +986,7 @@ Objects {
   Control {
     Width: 800
     Height: 150
+    UIX: -171.552124
     UIY: -20
     RenderTransformPivot {
       Anchor {

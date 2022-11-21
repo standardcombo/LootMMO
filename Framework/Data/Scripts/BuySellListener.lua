@@ -37,6 +37,7 @@ function HandleSales(player, Currency, GoldValue, itemSlot, itemID)
             if obj then
                 if _G.QuestController.IsActive(player, obj) then
                     _G.QuestController.AdvanceObjective(player, "VelwoodSwords", 1)
+                    player:SetResource("Innkeeper", 2)
                 end
             end
         end
