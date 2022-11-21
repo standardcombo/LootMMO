@@ -103,19 +103,21 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      X: -3419.07153
-      Y: 8048.35303
+      X: 2064.68433
+      Y: -1006.94971
+      Z: 189.379272
     }
     Rotation {
     }
     Scale {
-      X: 1.00670719
-      Y: 1.00670719
-      Z: 1.00670719
+      X: 1.37413073
+      Y: 1.37413073
+      Z: 1.37413073
     }
   }
   ParentId: 14076180516256583380
-  ChildIds: 11749963537430264602
+  ChildIds: 8576333311670828647
+  ChildIds: 10428146018894263344
   ChildIds: 3067549103019311182
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
@@ -182,7 +184,7 @@ Objects {
     }
     Overrides {
       Name: "cs:GoldValue"
-      Int: 10
+      Int: 25
     }
     Overrides {
       Name: "cs:Currency"
@@ -230,29 +232,303 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11749963537430264602
-  Name: "deleteLater"
+  Id: 10428146018894263344
+  Name: "Fantasy Weapon - Sword 01 (Prop)"
   Transform {
     Location {
+      X: 19.6207142
+      Y: 6.72015715
+      Z: 25.8631401
+    }
+    Rotation {
+      Pitch: 2.50336671
+      Yaw: -54.8037109
+      Roll: -112.056946
+    }
+    Scale {
+      X: 0.983228803
+      Y: 0.983228803
+      Z: 0.983228803
+    }
+  }
+  ParentId: 4706928590545930143
+  ChildIds: 17238277475625392522
+  ChildIds: 1628738791667579778
+  ChildIds: 9428805964395860717
+  ChildIds: 7012448020576564736
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7012448020576564736
+  Name: "Fantasy Sword Blade 02"
+  Transform {
+    Location {
+      Z: 15
     }
     Rotation {
     }
     Scale {
-      X: 0.993337452
-      Y: 0.993337452
-      Z: 0.993337452
+      X: 1
+      Y: 0.999999642
+      Z: 0.829003394
     }
   }
-  ParentId: 4706928590545930143
+  ParentId: 10428146018894263344
   UnregisteredParameters {
     Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 6.06533146
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 6.68096
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13888119501670323283
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9428805964395860717
+  Name: "Fantasy Sword Guard 01"
+  Transform {
+    Location {
+      X: -3.81469727e-06
+      Y: -3.81469727e-06
+      Z: 9.81582165
+    }
+    Rotation {
+      Pitch: 1.36603776e-05
+      Yaw: 4.88999249e-05
+      Roll: 6.50695155e-13
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10428146018894263344
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Trim:color"
       Color {
-        R: 0.909999967
+        R: 0.406929
+        G: 0.423965
+        B: 0.4375
         A: 1
       }
     }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 5.77912569
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 12.5238266
+    }
   }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9544913535066953067
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1628738791667579778
+  Name: "Fantasy Pommel 01"
+  Transform {
+    Location {
+      Z: -18
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.740114748
+    }
+  }
+  ParentId: 10428146018894263344
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 15.1951818
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 22.3688374
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3714921206180385266
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17238277475625392522
+  Name: "Fantasy Sword Grip 01"
+  Transform {
+    Location {
+      Z: -18
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10428146018894263344
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3682206342183528038
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8576333311670828647
+  Name: "Small Open Crate"
+  Transform {
+    Location {
+      X: -18.2061119
+      Y: -25.7410603
+      Z: -11.8849211
+    }
+    Rotation {
+      Yaw: -59.9032822
+    }
+    Scale {
+      X: 0.501611412
+      Y: 0.501611412
+      Z: 0.501611412
+    }
+  }
+  ParentId: 4706928590545930143
+  ChildIds: 1708367056033205094
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -267,7 +543,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 7363477334452929865
+      Id: 12046203229753918105
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -281,14 +557,54 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 11749963537430264602
-    SubobjectId: 13533371047341912082
-    InstanceId: 10812099303556804822
-    TemplateId: 14289126712356475974
-  }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1708367056033205094
+  Name: "Callout Sparkle"
+  Transform {
+    Location {
+      Z: 49.7507629
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.45078993
+      Y: 1.45078993
+      Z: 0.984897
+    }
+  }
+  ParentId: 8576333311670828647
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 14231394991004806063
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -380,7 +696,7 @@ Objects {
     }
     Overrides {
       Name: "cs:GoldValue"
-      Int: 10
+      Int: 50
     }
     Overrides {
       Name: "cs:Currency"

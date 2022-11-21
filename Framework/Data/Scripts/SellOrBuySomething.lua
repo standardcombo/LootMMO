@@ -60,17 +60,20 @@ local function BuyingOrSelling(trigger, other)
         end
         if slot == 0 then return end
         if greatness > 0 then return end
-        Events.BroadcastToServer("HandleSellTransaction",COINS, GoldValue, slot)
+        Events.BroadcastToServer("HandleSellTransaction", COINS, GoldValue, slot, itemID)
     end
 
 
 end
 
 local BoSString
+local symbol
 if BoS then
     BoSString = "Buy"
+    symbol = " -"
 else
     BoSString = "Sell"
+    symbol = " +"
 end
 TRIGGER.interactedEvent:Connect(BuyingOrSelling)
-TRIGGER.interactionLabel = BoSString.." "..itemID..": "..GoldValue.." gold."
+TRIGGER.interactionLabel = BoSString.." "..itemID..symbol..GoldValue.." gold."
