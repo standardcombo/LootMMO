@@ -31,6 +31,11 @@ Objects {
   ChildIds: 9900866518685091428
   ChildIds: 6598345263254976532
   ChildIds: 10126950280362184086
+  ChildIds: 9646984501703641018
+  ChildIds: 6556233409281293101
+  ChildIds: 16945772518043352964
+  ChildIds: 1236515767994146372
+  ChildIds: 18149131909222255635
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -48,6 +53,176 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 18149131909222255635
+  Name: "BoardBarrier_0%"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9205307054432150512
+      value {
+        Overrides {
+          Name: "Name"
+          String: "BoardBarrier_0%"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 5520.16113
+            Y: -17647.084
+            Z: 1017.16931
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15911268012710518320
+    }
+  }
+}
+Objects {
+  Id: 1236515767994146372
+  Name: "BoardBarrier_25%"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15554457155816128224
+      value {
+        Overrides {
+          Name: "Name"
+          String: "BoardBarrier_25%"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 5520.16113
+            Y: -17647.084
+            Z: 1017.16931
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5348477374599785233
+    }
+  }
+}
+Objects {
+  Id: 16945772518043352964
+  Name: "BoardBarrier_50%"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7726188131214964704
+      value {
+        Overrides {
+          Name: "Name"
+          String: "BoardBarrier_50%"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 5520.16113
+            Y: -17647.084
+            Z: 1017.16931
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7834410909113978274
+    }
+  }
+}
+Objects {
+  Id: 6556233409281293101
+  Name: "BoardBarrier_75%"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17015703835893756993
+      value {
+        Overrides {
+          Name: "Name"
+          String: "BoardBarrier_75%"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 5520.16113
+            Y: -17647.084
+            Z: 1017.16931
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 14215589800112832114
+    }
+  }
+}
+Objects {
+  Id: 9646984501703641018
+  Name: "BoardBarrier_100%"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9973249537179228242
+      value {
+        Overrides {
+          Name: "Name"
+          String: "BoardBarrier_100%"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 5520.16113
+            Y: -17647.084
+            Z: 1017.16931
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9079970123431302065
+    }
+  }
 }
 Objects {
   Id: 10126950280362184086

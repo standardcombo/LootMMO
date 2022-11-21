@@ -21035,18 +21035,16 @@ Objects {
   Name: "Fantasy Castle Door 02"
   Transform {
     Location {
-      X: -174.549774
-      Y: -1.52587891e-05
+      X: -180.22287
+      Y: -3.64401245
     }
     Rotation {
-      Pitch: -2.73207552e-05
-      Yaw: 134.925873
-      Roll: -8.63910554e-06
+      Yaw: 39.2685776
     }
     Scale {
-      X: 0.881898403
-      Y: 0.881898403
-      Z: 0.881898403
+      X: 1.0052501
+      Y: 1.0052501
+      Z: 1.0052501
     }
   }
   ParentId: 17928497993046379998
@@ -21078,6 +21076,7 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    DisableReceiveDecals: true
     StaticMesh {
       Physics {
         Mass: 100
@@ -21105,19 +21104,17 @@ Objects {
   Name: "Fantasy Castle Door 02"
   Transform {
     Location {
-      X: 174.549774
-      Y: 1.52587891e-05
+      X: 174.549194
+      Y: -0.000778198242
       Z: 5.74945068
     }
     Rotation {
-      Pitch: -1.36603776e-05
-      Yaw: 55.4929924
-      Roll: 2.59459266e-05
+      Yaw: 108.907127
     }
     Scale {
-      X: 0.881898403
-      Y: 0.881898403
-      Z: 0.881898403
+      X: 0.967557132
+      Y: 0.967557132
+      Z: 0.967557132
     }
   }
   ParentId: 17928497993046379998
@@ -21149,6 +21146,7 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    DisableReceiveDecals: true
     StaticMesh {
       Physics {
         Mass: 100
@@ -21217,7 +21215,6 @@ Objects {
   ChildIds: 671451852703307427
   ChildIds: 15247464862030917882
   ChildIds: 17273266790899681795
-  ChildIds: 15890074406351118457
   ChildIds: 16290646984447508257
   ChildIds: 3768704609841465380
   ChildIds: 15469248948081236610
@@ -31470,86 +31467,6 @@ Objects {
   InstanceHistory {
     SelfId: 16290646984447508257
     SubobjectId: 7797681814856055229
-    InstanceId: 1967095144211738453
-    TemplateId: 4702212325407871223
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 15890074406351118457
-  Name: "Stone Arch (doorway) 001"
-  Transform {
-    Location {
-      X: 12.8828125
-      Y: -1024.46277
-      Z: -108.616272
-    }
-    Rotation {
-      Pitch: -2.73207552e-05
-      Yaw: 89.999939
-      Roll: 1.36603776e-05
-    }
-    Scale {
-      X: 0.923074841
-      Y: 1.42066169
-      Z: 1.25523448
-    }
-  }
-  ParentId: 13995585835360090084
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 4298367287035211518
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:utile"
-      Float: 2
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:vtile"
-      Float: 2
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 14146941956844593476
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  InstanceHistory {
-    SelfId: 15890074406351118457
-    SubobjectId: 5955462051254576869
     InstanceId: 1967095144211738453
     TemplateId: 4702212325407871223
   }
@@ -41872,7 +41789,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_TrimOuter:id"
       AssetReference {
-        Id: 4298367287035211518
+        Id: 14937973355870707994
       }
     }
     Overrides {
@@ -41904,8 +41821,21 @@ Objects {
     Overrides {
       Name: "ma:Shared_TrimInner:id"
       AssetReference {
-        Id: 4298367287035211518
+        Id: 14937973355870707994
       }
+    }
+    Overrides {
+      Name: "ma:Shared_TrimOuter:color"
+      Color {
+        R: 0.316
+        G: 0.302651227
+        B: 0.255104274
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_TrimOuter:smart"
+      Bool: true
     }
   }
   Collidable_v2 {

@@ -296,15 +296,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14146941956844593476
-  Name: "Stone Arch (doorway) 001"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_stone_doorway_001"
-  }
-}
-Assets {
   Id: 14089497421580664888
   Name: "Stone Block Small Broken"
   PlatformAssetType: 1
