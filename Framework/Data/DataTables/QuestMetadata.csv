@@ -23,4 +23,5 @@
 "Relic","29B29737AB7E07B1","0BADBADBADBADBAD","False","Material(Gems=5)","","5cb37e/loot-mmo","Social",""
 "AnnoyTheDemon","04B14FD9D0C9CBF7","0BADBADBADBADBAD","False","Material(Coins=1)","GotoVelwood","5cb37e/loot-mmo","Social",""
 "GotoVelwood","1DD3D44FAF2FAA4B","D9B2A5D7F40E45DD","False","XP(100)","","5cb37e/loot-mmo","Social","Velwood"
-"VelwoodInnkeeper","C15982D81728C923","0BADBADBADBADBAD","False","XP(100)","","5cb37e/loot-mmo","Social",""
+"VelwoodInnkeeper","C15982D81728C923","0BADBADBADBADBAD","False","XP(100)","VelwoodSwords","5cb37e/loot-mmo","Social",""
+"VelwoodSwords","D2F5A0978015B0B0","0BADBADBADBADBAD","False","XP(200)","","5cb37e/loot-mmo","Social",""

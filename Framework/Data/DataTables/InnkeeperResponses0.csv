@@ -1,0 +1,3 @@
+"key[String]","Messages[String]","ChangeState[Int]"
+"InnkeeperTrouble","What trouble does Velwood have?","-1"
+"InnkeeperBye","I have to go","-1"
