@@ -1,13 +1,4 @@
 Assets {
-  Id: 18020891506076657236
-  Name: "Urban - Damaged Iron Fence - Post 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_post_damaged_002_ref"
-  }
-}
-Assets {
   Id: 18014941405078390650
   Name: "Kelp Tall Bush 01"
   PlatformAssetType: 1
@@ -27,24 +18,6 @@ Assets {
         Value: "mc:enetreferencetype:concurrentplayerpersistence"
       }
     }
-  }
-}
-Assets {
-  Id: 17008151791760840521
-  Name: "Cauldron"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_cauldron_001"
-  }
-}
-Assets {
-  Id: 16844107203508180063
-  Name: "Rubble Concrete 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_mil_rubble_002_uv_ref"
   }
 }
 Assets {
@@ -74,51 +47,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16422611587713144894
-  Name: "Nature - Mushroom 04"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_nat_fun_mushroom_004_ref"
-  }
-}
-Assets {
-  Id: 16388825162191980240
-  Name: "Rock Pile 002"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_rocks_small_002"
-  }
-}
-Assets {
-  Id: 16231486702705834945
-  Name: "Wooden Bucket"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bucket_001"
-  }
-}
-Assets {
-  Id: 16118682211110550421
-  Name: "Hill 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_hill_003"
-  }
-}
-Assets {
-  Id: 15977747936357021178
-  Name: "Ivy 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ivy_generic_003"
-  }
-}
-Assets {
   Id: 15969669977645369301
   Name: "SERVERXPBOOST"
   PlatformAssetType: 24
@@ -141,15 +69,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15844588089312651302
-  Name: "Fantasy Basket 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fan_basket_003_ref"
-  }
-}
-Assets {
   Id: 15827781868427444608
   Name: "GoldPack4"
   PlatformAssetType: 24
@@ -160,42 +79,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 15580268599778054966
-  Name: "Fantasy Sack Open"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_sack_001_ref"
-  }
-}
-Assets {
-  Id: 15470868888157270451
-  Name: "Flower Bellflower 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_flower_bell_001_ref"
-  }
-}
-Assets {
-  Id: 15402899459456575054
-  Name: "Japanese Chest Hinge 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_jpn_chest_med_hinge_001"
-  }
-}
-Assets {
-  Id: 15397242312920625506
-  Name: "Tree Sapling Bare 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_tree_sapling_01_bare_ref"
   }
 }
 Assets {
@@ -225,15 +108,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15128280182623405640
-  Name: "Fern 04"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_fern_generic_004"
-  }
-}
-Assets {
   Id: 15115004373043497991
   Name: "Gold Pack 3"
   PlatformAssetType: 24
@@ -260,15 +134,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14852082883520467487
-  Name: "Urban - Damaged Iron Fence - Pillar Base 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_pillar_base_damaged_001_ref"
-  }
-}
-Assets {
   Id: 14795927479057744532
   Name: "Gold Pack 2"
   PlatformAssetType: 24
@@ -282,24 +147,6 @@ Assets {
   }
 }
 Assets {
-  Id: 14293176668765266901
-  Name: "Rock Pile 001"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_rocks_small_001"
-  }
-}
-Assets {
-  Id: 13800436588944964225
-  Name: "Bush 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bush_generic_002"
-  }
-}
-Assets {
   Id: 13420476618392182070
   Name: "Gem Pack 1"
   PlatformAssetType: 24
@@ -310,24 +157,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 13189107712478620022
-  Name: "Tree Small Bare 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_tree_medium_short_02_bare_ref"
-  }
-}
-Assets {
-  Id: 12997470107562757952
-  Name: "Bush Leafy Tall 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_bush_001"
   }
 }
 Assets {
@@ -357,15 +186,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12565879920591753650
-  Name: "Wooden Barrel"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_barrel_001"
-  }
-}
-Assets {
   Id: 12553964030818308958
   Name: "Gold 3"
   PlatformAssetType: 24
@@ -376,24 +196,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 12478223806335538230
-  Name: "Fern 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_fern_generic_001"
-  }
-}
-Assets {
-  Id: 12046203229753918105
-  Name: "Small Open Crate"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_crate_narrow_open_simple_160cm_001"
   }
 }
 Assets {
@@ -436,15 +238,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11343781392449978746
-  Name: "Flower Bellflower 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_flower_bell_002_ref"
-  }
-}
-Assets {
   Id: 11232852364461677985
   Name: "JewelPack3"
   PlatformAssetType: 24
@@ -455,42 +248,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 11228299035028749551
-  Name: "Leafy Patch 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_groundcover_002"
-  }
-}
-Assets {
-  Id: 11197174145088590549
-  Name: "Nature - Mushroom 08"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_nat_fun_mushroom_008_ref"
-  }
-}
-Assets {
-  Id: 10984415144127775715
-  Name: "Urban - Damaged Iron Fence - Pillar Mid 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_pillar_mid_damaged_002_ref"
-  }
-}
-Assets {
-  Id: 10476498428552114137
-  Name: "Leafy Patch 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_groundcover_001"
   }
 }
 Assets {
@@ -520,15 +277,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9958768627789527741
-  Name: "Fantasy Clay Pot 02 Damaged 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_clay_pot_broken_002_ref"
-  }
-}
-Assets {
   Id: 9889076190420846548
   Name: "VIP Member"
   PlatformAssetType: 24
@@ -539,33 +287,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 9584582269407341655
-  Name: "Fantasy Sack Tied"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_sack_002_ref"
-  }
-}
-Assets {
-  Id: 9479528947908647592
-  Name: "Metal Door & Hatch Close Shut Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_metal_doors_ref"
-  }
-}
-Assets {
-  Id: 9364533443650044160
-  Name: "Fantasy Book Collection 05"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fan_book_collection_004_ref"
   }
 }
 Assets {
@@ -608,15 +329,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9241339813623090261
-  Name: "Ivy 04"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ivy_generic_004"
-  }
-}
-Assets {
   Id: 9003723600529713560
   Name: "Character1"
   PlatformAssetType: 23
@@ -656,30 +368,12 @@ Assets {
   }
 }
 Assets {
-  Id: 8777307662385110705
-  Name: "Fern 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_fern_generic_003"
-  }
-}
-Assets {
   Id: 8553298544017934648
   Name: "Grass Tall"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_grass_generic_001"
-  }
-}
-Assets {
-  Id: 8225332749088216016
-  Name: "Iron Wrought Fence 03"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_hal_metal_iron_fence_003_uv_ref"
   }
 }
 Assets {
@@ -696,33 +390,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8021476752120115971
-  Name: "Rock 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_rock_generic_001"
-  }
-}
-Assets {
-  Id: 7836827177118451436
-  Name: "Urban - Damaged Iron Fence - Pillar Mid Top 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_pillar_mid_top_damaged_002_ref"
-  }
-}
-Assets {
-  Id: 7831812092670386029
-  Name: "Urban - Damaged Iron Gate 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_gate_damaged_003_ref"
-  }
-}
-Assets {
   Id: 7683608552441739235
   Name: "JewelPack2"
   PlatformAssetType: 24
@@ -733,15 +400,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 7202307395712524294
-  Name: "Decal Dirt Patch"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_dirt_patch_001"
   }
 }
 Assets {
@@ -767,24 +425,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6892861472875270100
-  Name: "Simple Crate 150cm"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_crate_simple_150cm_001"
-  }
-}
-Assets {
-  Id: 6616607038129274534
-  Name: "Reinforced Crate 150cm"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_crate_reinforced_150cm_001"
-  }
-}
-Assets {
   Id: 6413593786046088799
   Name: "Self XP"
   PlatformAssetType: 24
@@ -795,15 +435,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 6358034599651012933
-  Name: "Fantasy Book Collection 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fan_book_collection_002_ref"
   }
 }
 Assets {
@@ -872,15 +503,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4967840503725397158
-  Name: "Nature - Mushroom 07"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_nat_fun_mushroom_007_ref"
-  }
-}
-Assets {
   Id: 4860066908479684099
   Name: "Premium 3"
   PlatformAssetType: 24
@@ -891,42 +513,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 4670029623152493838
-  Name: "Urban - Damaged Iron Fence - Post Top 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_post_damaged_001_ref"
-  }
-}
-Assets {
-  Id: 4621329596024896350
-  Name: "Ivy 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ivy_generic_002"
-  }
-}
-Assets {
-  Id: 4545713430863939559
-  Name: "Ivy 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ivy_generic_001"
-  }
-}
-Assets {
-  Id: 4486409086589361040
-  Name: "Urban - Damaged Iron Fence - Fence Top 05"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_fence_top_damaged_005_ref"
   }
 }
 Assets {
@@ -953,15 +539,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 4173687909770280434
-  Name: "Tree Small Bare 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_tree_medium_short_01_bare_ref"
   }
 }
 Assets {
@@ -1000,24 +577,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2919956752703671528
-  Name: "Metal Door Hatch Slide 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_metal_door_hatch_slide_01a_Cue_ref"
-  }
-}
-Assets {
-  Id: 2614432385386572709
-  Name: "Fern 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_fern_generic_002"
-  }
-}
-Assets {
   Id: 2175052947894896062
   Name: "Gold Pack 4"
   PlatformAssetType: 24
@@ -1040,24 +599,6 @@ Assets {
   }
 }
 Assets {
-  Id: 1731512974963119003
-  Name: "Candle Table Holder 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_candle_001"
-  }
-}
-Assets {
-  Id: 1335095186755900180
-  Name: "Urban - Damaged Iron Fence - Pillar Cap 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "ts_urb_fences_iron_pillar_cap_damaged_001_ref"
-  }
-}
-Assets {
   Id: 1082298521074732115
   Name: "SERVERGOLDBOOST"
   PlatformAssetType: 24
@@ -1068,24 +609,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 988091216586047331
-  Name: "Metal Iron 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_iron_001"
-  }
-}
-Assets {
-  Id: 901541979513849367
-  Name: "Bush 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bush_generic_001"
   }
 }
 Assets {
@@ -1125,23 +648,5 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 465042140033211911
-  Name: "Fantasy Sack Laying"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_sack_003_ref"
-  }
-}
-Assets {
-  Id: 84254442598276906
-  Name: "Bush Leafy Low 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_bush_002"
   }
 }

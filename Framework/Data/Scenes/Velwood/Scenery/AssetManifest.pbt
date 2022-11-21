@@ -161,6 +161,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17008151791760840521
+  Name: "Cauldron"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fantasy_cauldron_001"
+  }
+}
+Assets {
   Id: 16999338032983966440
   Name: "Star - Rounded"
   PlatformAssetType: 1
@@ -1574,6 +1583,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10476498428552114137
+  Name: "Leafy Patch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_leafy_groundcover_001"
+  }
+}
+Assets {
   Id: 10464565878493338643
   Name: "Fantasy Castle Wall 01 - Window 01"
   PlatformAssetType: 1
@@ -1952,6 +1970,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8225332749088216016
+  Name: "Iron Wrought Fence 03"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_hal_metal_iron_fence_003_uv_ref"
+  }
+}
+Assets {
   Id: 8179760419682545374
   Name: "Waterfall Straight"
   PlatformAssetType: 1
@@ -1994,6 +2021,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "ts_urb_fences_iron_pillar_mid_top_damaged_002_ref"
+  }
+}
+Assets {
+  Id: 7831812092670386029
+  Name: "Urban - Damaged Iron Gate 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_gate_damaged_003_ref"
   }
 }
 Assets {
@@ -2276,6 +2312,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6358034599651012933
+  Name: "Fantasy Book Collection 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_book_collection_002_ref"
+  }
+}
+Assets {
   Id: 6357345563865435834
   Name: "Urban Damaged Rebar - Twisted Ends 02"
   PlatformAssetType: 1
@@ -2507,6 +2552,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pyramid_8_sided_truncated_hollow_001"
+  }
+}
+Assets {
+  Id: 4967840503725397158
+  Name: "Nature - Mushroom 07"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_nat_fun_mushroom_007_ref"
   }
 }
 Assets {
