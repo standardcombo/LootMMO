@@ -111,12 +111,9 @@ Objects {
   ParentId: 16116870671107651725
   UnregisteredParameters {
     Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.292000026
-        G: 0.292000026
-        B: 0.292000026
-        A: 1
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16892834015818122812
       }
     }
   }
