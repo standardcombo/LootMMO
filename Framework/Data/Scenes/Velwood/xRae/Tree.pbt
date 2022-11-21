@@ -850,3 +850,43 @@ Objects {
   }
   IsReplicationEnabledByDefault: true
 }
+Objects {
+  Id: 420597144824181085
+  Name: "Map"
+  Transform {
+    Location {
+      X: 5746.55176
+      Y: -7109.20264
+      Z: 162.212036
+    }
+    Rotation {
+      Yaw: -62.7086
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16116870671107651725
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Map"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}

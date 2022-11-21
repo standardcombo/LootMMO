@@ -1,6 +1,89 @@
 Name: "Visuals"
 RootId: 16977825626768299085
 Objects {
+  Id: 13507637846821985384
+  Name: "Fantasy Candle Lit - Group 01 (Prop)"
+  Transform {
+    Location {
+      X: 3959.27417
+      Y: -7295.29785
+      Z: 207.11409
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16977825626768299085
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7344829205077251158
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.234375
+            Z: 18.4958191
+          }
+        }
+        Overrides {
+          Name: "AttenuationRadius"
+          Float: 347.015778
+        }
+        Overrides {
+          Name: "Color"
+          Color {
+            R: 0.708
+            G: 0.936174572
+            B: 0.878
+            A: 1
+          }
+        }
+        Overrides {
+          Name: "Intensity"
+          Float: 1.96005762
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8002813443656422609
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Fantasy Candle Lit - Group 01 (Prop)"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 2542.96094
+            Y: -1863.43018
+            Z: 285.738708
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6981646900444312674
+    }
+  }
+}
+Objects {
   Id: 14394536461050661801
   Name: "Export"
   Transform {
