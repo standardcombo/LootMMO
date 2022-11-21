@@ -397,7 +397,7 @@ Objects {
     Overrides {
       Name: "bp:Type"
       Enum {
-        Value: "mc:emx_classicalmusic:37"
+        Value: "mc:emx_classicalmusic:38"
       }
     }
   }
@@ -422,7 +422,7 @@ Objects {
     AudioBP {
       AutoPlay: true
       Pitch: -2400
-      Volume: 1
+      Volume: 0.5
       Falloff: 3000
       Radius: 12000
       IsSpatializationEnabled: true
@@ -482,7 +482,7 @@ Objects {
     AudioBP {
       AutoPlay: true
       Pitch: -2400
-      Volume: 1
+      Volume: 0.5
       Falloff: 5000
       Radius: 1000
       IsSpatializationEnabled: true
@@ -542,7 +542,7 @@ Objects {
     AudioBP {
       AutoPlay: true
       Pitch: -2400
-      Volume: 1
+      Volume: 0.5
       Falloff: 3000
       Radius: 12000
       IsSpatializationEnabled: true
@@ -603,6 +603,7 @@ Objects {
       AutoPlay: true
       Pitch: -2400
       Volume: 0.5
+      Falloff: 1000
       Radius: 12000
       FadeInTime: 5
       FadeOutTime: 5
