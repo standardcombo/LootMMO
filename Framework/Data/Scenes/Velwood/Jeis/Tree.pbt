@@ -346,6 +346,9 @@ Objects {
   ChildIds: 8438642171532948391
   ChildIds: 16047400952564998476
   ChildIds: 5172497961989762903
+  ChildIds: 6217820546261029111
+  ChildIds: 16670443879239076993
+  ChildIds: 690001047843380898
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -364,6 +367,186 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 690001047843380898
+  Name: "Classical Music Score Set 01"
+  Transform {
+    Location {
+      X: -8762.78125
+      Y: 23474.8398
+      Z: -6.69311523
+    }
+    Rotation {
+      Yaw: 2.04905664e-05
+    }
+    Scale {
+      X: 2.36040163
+      Y: 2.36040163
+      Z: 2.36040163
+    }
+  }
+  ParentId: 10022617621506488744
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:emx_classicalmusic:37"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 11341733137979501056
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Pitch: -2400
+      Volume: 1
+      Falloff: 3000
+      Radius: 12000
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16670443879239076993
+  Name: "Classical Music Score Set 01"
+  Transform {
+    Location {
+      X: 3295.80273
+      Y: -1459.1731
+      Z: 408.4552
+    }
+    Rotation {
+      Yaw: 2.04905664e-05
+    }
+    Scale {
+      X: 2.36040163
+      Y: 2.36040163
+      Z: 2.36040163
+    }
+  }
+  ParentId: 10022617621506488744
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:emx_classicalmusic:39"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 11341733137979501056
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Pitch: -2400
+      Volume: 1
+      Falloff: 5000
+      Radius: 1000
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6217820546261029111
+  Name: "Classical Music Score Set 01"
+  Transform {
+    Location {
+      X: 18787.8672
+      Y: 9547.04199
+      Z: -6.69311523
+    }
+    Rotation {
+      Yaw: 2.04905664e-05
+    }
+    Scale {
+      X: 2.36040163
+      Y: 2.36040163
+      Z: 2.36040163
+    }
+  }
+  ParentId: 10022617621506488744
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:emx_classicalmusic:37"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 11341733137979501056
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Pitch: -2400
+      Volume: 1
+      Falloff: 3000
+      Radius: 12000
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
     }
   }
   NetworkRelevanceDistance {
@@ -436,8 +619,8 @@ Objects {
   Name: "Cinematic Music Score Set 01"
   Transform {
     Location {
-      X: 399.528
-      Y: -1165.68689
+      X: -18550.043
+      Y: -2892.43066
     }
     Rotation {
     }
@@ -474,9 +657,11 @@ Objects {
     AudioBP {
       AutoPlay: true
       Pitch: -200
-      Falloff: 3600
-      Radius: 400
+      Volume: 1
+      Falloff: 3000
+      Radius: 12000
       IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
     }
   }
   NetworkRelevanceDistance {

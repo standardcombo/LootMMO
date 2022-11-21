@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11341733137979501056
+  Name: "Classical Music Score Set 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_ClassicalMusic_ref"
+  }
+}
+Assets {
   Id: 8807644094999718874
   Name: "Bloom Post Process"
   PlatformAssetType: 20

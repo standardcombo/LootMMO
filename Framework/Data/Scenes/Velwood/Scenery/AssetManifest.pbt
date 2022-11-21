@@ -1799,15 +1799,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11341733137979501056
-  Name: "Classical Music Score Set 01"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "abp_ClassicalMusic_ref"
-  }
-}
-Assets {
   Id: 11267528446476164903
   Name: "Main Street Pillar 02 Base"
   PlatformAssetType: 1
@@ -2102,6 +2093,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fan_cabinet_kitch_001_drawers_stand_001_ref"
+  }
+}
+Assets {
+  Id: 9699049599207137526
+  Name: "Urban Gravestone 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_gravestone_001_ref"
   }
 }
 Assets {
