@@ -1754,6 +1754,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9479528947908647592
+  Name: "Metal Door & Hatch Close Shut Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "sfxabp_metal_doors_ref"
+  }
+}
+Assets {
   Id: 9377227685447941950
   Name: "2D Basic Shapes Decal"
   PlatformAssetType: 14
@@ -2672,6 +2681,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4235739338052230523
+  Name: "Iron Wrought Damaged Fence 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_hal_metal_iron_fence_damaged_002_uv_ref"
+  }
+}
+Assets {
   Id: 4173687909770280434
   Name: "Tree Small Bare 01"
   PlatformAssetType: 1
@@ -2696,6 +2714,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_arch_fancy_ogive_2m_001"
+  }
+}
+Assets {
+  Id: 3954460808835832726
+  Name: "Fantasy Basket 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fan_basket_002_ref"
   }
 }
 Assets {
@@ -2795,6 +2822,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_urb_sub_craftsman_roof_001_cornerIn"
+  }
+}
+Assets {
+  Id: 2919956752703671528
+  Name: "Metal Door Hatch Slide 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_metal_door_hatch_slide_01a_Cue_ref"
   }
 }
 Assets {
@@ -3254,6 +3290,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_horn_001"
+  }
+}
+Assets {
+  Id: 95857941384247220
+  Name: "Urban - Damaged Iron Gate 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "ts_urb_fences_iron_gate_damaged_001_ref"
   }
 }
 Assets {

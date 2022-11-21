@@ -81381,3 +81381,49 @@ Objects {
   }
   IsReplicationEnabledByDefault: true
 }
+Objects {
+  Id: 6119977663628629229
+  Name: "Mailbox"
+  Transform {
+    Location {
+      X: 3411.41138
+      Y: -6544.23389
+      Z: -3.02311707
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3854015457754673156
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Mailbox"
+  }
+  InstanceHistory {
+    SelfId: 6119977663628629229
+    SubobjectId: 4059933362038332110
+    InstanceId: 8207122178751676579
+    TemplateId: 8503353974293622136
+    WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
