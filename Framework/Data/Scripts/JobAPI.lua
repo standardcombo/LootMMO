@@ -2,6 +2,8 @@ Task.Wait(1)
 local hotKeys = {"Weapon", "AxeTool", "PickaxeTool"}
 local swapValue = 1
 local maxSwapValue = 3
+local Weapons = _G.Items.GetDefinitionsForCategory('weapon')
+local equipmentStack = _G.EquipmentStack
 
 function AddJob(player, jobID)
     _G.RewardsAdapter.AddItem(player, jobID)
@@ -22,6 +24,7 @@ function EquipJobTool(player, hotKey)
             Inventory:GetInventory():MoveFromSlot(1,54)
         end
         Inventory:GetInventory():MoveFromSlot(54,1)
+        Swap(player, 'equipmentHollow', 'equipment')
     elseif hotKey ~= "Weapon" then
         local tool = World.SpawnAsset(script:GetCustomProperty(hotKey), { networkContext = NetworkContextType.NETWORKED })
         tool:Equip(player)
@@ -90,6 +93,33 @@ function OnActionPressed(player, action, value)
             swapValue = 1
         end
         EquipJobTool(player, hotKeys[swapValue])
+    end
+end
+
+function Swap(player, oldId, newId)
+    print("hi", oldId, newId)
+    for _, equipment in ipairs(player:GetEquipment()) do
+        for _, Item in ipairs(Weapons) do
+            local templateSplit = CoreString.Split(Item[oldId] or '', ':')
+            if equipment.sourceTemplateId == templateSplit then
+                if Item[newId] then
+                    local socket = equipment.socket
+                    local newWeapon = World.SpawnAsset(Item[newId], {networkContext = NetworkContextType.NETWORKED})
+                    for key, stackdex in pairs(equipmentStack.GetStackPlayer(player, socket)) do
+                        if stackdex.value == equipment then
+                            stackdex.value = newWeapon
+                        end
+                    end
+                    equipment:Destroy()
+                    if newWeapon then
+                        newWeapon:Equip(player)
+                    end
+                    equipmentStack.UpdateStack(player, socket)
+                end
+
+                return
+            end
+        end
     end
 end
 
