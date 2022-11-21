@@ -16,27 +16,33 @@ end
 
 function HandleBuys(player, Currency,GoldValue, itemID)
     local currencyId = CURRENCY.GetCurrencyIdFromKey(Currency)
-    print(player.name, "buy handler", GoldValue, itemID)
+    --print(player.name, "buy handler", GoldValue, itemID)
     player:RemoveResource("Coins", GoldValue)
-    --CURRENCY.RemoveCurrencyAmount(player, currencyId, GoldValue, true)
-    --maybe im ignorant, but the currency api, isnt working for me, maybe im not using the right thing
     _G.RewardsAdapter.AddItem(player, itemID)
+        --CURRENCY.RemoveCurrencyAmount(player, currencyId, GoldValue, true)
 end
 
-function HandleSales(player, Currency, GoldValue, itemID)
+function HandleSales(player, Currency, GoldValue, itemSlot, itemID)
     local inventory = GetInventory(player)
-    local itemToSell = itemID
     local currencyId = CURRENCY.GetCurrencyIdFromKey(Currency)
-    if itemToSell then 
-        inventory:RemoveFromSlot(itemToSell)
-    
+    if itemSlot then
+        inventory:RemoveFromSlot(itemSlot)
         Events.BroadcastToPlayer(player, "RewardToast", {
             icon = icon,
             message = "Success: Equipment Sold"
         })
         player:AddResource("Coins", GoldValue)
-        --CURRENCY.AddCurrencyAmount(player, currencyId, GoldValue, true)
-        --maybe im ignorant, but the currency api, isnt working for me, maybe im not using the right thing
+        print("wtf", itemID)
+        if itemID == "Short Sword" then
+            print("hi me too")
+            local obj = _G.QuestController.GetQuestObjective("VelwoodSwords", 1)
+            if obj then
+                if _G.QuestController.IsActive(player, obj) then
+                    print("hi its me")
+                    _G.QuestController.AdvanceObjective(player, "VelwoodSwords", 1)
+                end
+            end
+        end
     end
 end
 

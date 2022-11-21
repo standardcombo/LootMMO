@@ -1,0 +1,4 @@
+"key[String]","Messages[String]","ChangeState[Int]"
+"InnkeeperSwords","Where can I find short swords?","-1"
+"InnkeeperCamp","Where is the militia camp?","-1"
+"InnkeeperBye","I'll get you those short swords!","-1"

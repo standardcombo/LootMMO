@@ -26,21 +26,21 @@ Assets {
   }
 }
 Assets {
+  Id: 12046203229753918105
+  Name: "Small Open Crate"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_crate_narrow_open_simple_160cm_001"
+  }
+}
+Assets {
   Id: 9544913535066953067
   Name: "Fantasy Sword Guard 02"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_guard_sword_002"
-  }
-}
-Assets {
-  Id: 7363477334452929865
-  Name: "Sphere"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_002"
   }
 }
 Assets {
