@@ -49,14 +49,17 @@ local function BuyingOrSelling(trigger, other)
         --player sells
         local inventory = GetInventory(other)
         local slot = 0
+        local greatness 
         for index, value in pairs(inventory:GetItems()) do
             if string.match(tostring(value), tostring(itemID)) then
                 print("Item found in inventory", index, tostring(value), tostring(itemID))
+                greatness = value:GetCustomProperty("Greatness")
                 slot = index
                 break
             end
         end
         if slot == 0 then return end
+        if greatness > 0 then return end
         Events.BroadcastToServer("HandleSellTransaction",COINS, GoldValue, slot)
     end
 

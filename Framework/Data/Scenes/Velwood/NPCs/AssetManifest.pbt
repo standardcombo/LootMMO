@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16525441747867590487
+  Name: "Humanoid 1 Aparna"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_gal_head_basic_008_ref"
+  }
+}
+Assets {
   Id: 16388825162191980240
   Name: "Rock Pile 002"
   PlatformAssetType: 1

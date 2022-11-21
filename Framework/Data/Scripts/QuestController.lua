@@ -343,6 +343,7 @@ function API.ActivateForPlayer(player, questId)
 	table.insert(playerData.active, {id = questId, n = 1})
 	
 	SetPlayerData(player, playerData)
+	API.SavePlayerData(player)
 end
 
 
@@ -589,8 +590,8 @@ function OnCharacterEquipped(character, player)
 	--print("QuestController::CharacterEquipped", character.id)
 	LoadPlayerData(player)
 	
-	if not API.HasCompleted(player, "Welcome") then
-		API.ActivateForPlayer(player, "Welcome")
+	if not API.HasCompleted(player, "GotoVelwood") then
+		API.ActivateForPlayer(player, "GotoVelwood")
 	end
 end
 function OnCharacterUnequipped(character, player)
@@ -633,7 +634,7 @@ function API.ResetQuestsForPlayer(player)
 	
 	LoadPlayerData(player)
 	
-	API.ActivateForPlayer(player, "Welcome")
+	API.ActivateForPlayer(player, "GotoVelwood")
 end
 if Environment.IsClient() then
 	Events.Connect("Quest.ResetForPlayer", function()

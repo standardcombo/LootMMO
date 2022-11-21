@@ -147,6 +147,9 @@ local function play_talking_head(ID, state, name)
 			Task.Wait(row.DisplayDuration > 0 and row.DisplayDuration or 6)
 			CloseHead()
 		end
+		if (row.QuestID) then 
+			Events.BroadcastToServer("ChatToQuest", row.QuestID, row.Start)
+		end
 	else
 		print("No response set")
 		CloseHead()

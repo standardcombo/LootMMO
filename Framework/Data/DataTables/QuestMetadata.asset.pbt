@@ -185,5 +185,14 @@ Assets {
         AssetId: "Icon_MapTraesure"
       }
     }
+    Assets {
+      Id: 13932310786860435747
+      Name: "Icon Chatting"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Chatting"
+      }
+    }
   }
 }

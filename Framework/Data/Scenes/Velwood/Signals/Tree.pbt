@@ -1,7 +1,7 @@
 Name: "Signals"
-RootId: 13863239342207112463
+RootId: 5375701635192052657
 Objects {
-  Id: 6369272676108578610
+  Id: 13383631056854194841
   Name: "End"
   Transform {
     Location {
@@ -18,7 +18,7 @@ Objects {
       Z: 0.166261718
     }
   }
-  ParentId: 13863239342207112463
+  ParentId: 5375701635192052657
   UnregisteredParameters {
     Overrides {
       Name: "ma:Font.Bevel:id"
@@ -137,7 +137,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16917551706760134993
+  Id: 8920649449250450135
   Name: "Start"
   Transform {
     Location {
@@ -154,7 +154,7 @@ Objects {
       Z: 0.166261718
     }
   }
-  ParentId: 13863239342207112463
+  ParentId: 5375701635192052657
   UnregisteredParameters {
     Overrides {
       Name: "ma:Font.Bevel:id"
@@ -273,7 +273,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16614632202335015221
+  Id: 7259211418038937469
   Name: "LookAtPlayer"
   Transform {
     Location {
@@ -287,7 +287,7 @@ Objects {
       Z: 0.333333313
     }
   }
-  ParentId: 13863239342207112463
+  ParentId: 5375701635192052657
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

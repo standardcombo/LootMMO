@@ -1,13 +1,4 @@
 Assets {
-  Id: 14182953942275204608
-  Name: "Sign Font 1: !"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "CollegeInset_01_Text_037_ref"
-  }
-}
-Assets {
   Id: 10184847056121543272
   Name: "Basic Material"
   PlatformAssetType: 2

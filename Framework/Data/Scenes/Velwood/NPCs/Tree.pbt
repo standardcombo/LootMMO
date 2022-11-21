@@ -1,6 +1,343 @@
 Name: "NPCs"
 RootId: 6804530064966610888
 Objects {
+  Id: 3117172980986521706
+  Name: "Innkeeper"
+  Transform {
+    Location {
+      X: -1624.54211
+      Y: 2818.85376
+      Z: 95.2952118
+    }
+    Rotation {
+      Yaw: 3.83954573
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6804530064966610888
+  ChildIds: 15941756972351517659
+  ChildIds: 14702635809258366585
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14702635809258366585
+  Name: "NPCgeo"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -66.2981
+    }
+    Scale {
+      X: 2.88
+      Y: 2.88
+      Z: 2.88
+    }
+  }
+  ParentId: 3117172980986521706
+  ChildIds: 6755175956961292150
+  ChildIds: 16875791933692004697
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16875791933692004697
+  Name: "Innkeeper"
+  Transform {
+    Location {
+      X: 3845.81494
+      Y: 108.171753
+      Z: 61.6676788
+    }
+    Rotation {
+      Yaw: -45.9863815
+    }
+    Scale {
+      X: 0.347222209
+      Y: 0.347222209
+      Z: 0.347222209
+    }
+  }
+  ParentId: 14702635809258366585
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12092204065995792596
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    AnimatedMesh {
+      AnimationStance: "unarmed_idle_relaxed"
+      AnimationStancePlaybackRate: 1
+      AnimationStanceShouldLoop: true
+      AnimationPlaybackRateMultiplier: 1
+      PlayOnStartAnimation {
+        Animation: "unarmed_sit_chair_upright"
+        StartPosition: 0.30394429
+      }
+      SkinnedMeshes {
+        Id: 16525441747867590487
+      }
+      SkinnedMeshes {
+        Id: 15494817542660282536
+      }
+      SkinnedMeshes {
+        Id: 3557954209464392513
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 16875791933692004697
+    SubobjectId: 2781052765207172263
+    InstanceId: 5537138353300476827
+    TemplateId: 5031088733215740614
+    WasRoot: true
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6755175956961292150
+  Name: "Signals"
+  Transform {
+    Location {
+      X: 3834.6084
+      Y: 120.732964
+      Z: 89.5910873
+    }
+    Rotation {
+      Yaw: -45.9863892
+    }
+    Scale {
+      X: 1.04166651
+      Y: 1.04166651
+      Z: 1.04166651
+    }
+  }
+  ParentId: 14702635809258366585
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Signals_1"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15941756972351517659
+  Name: "LocalLogic"
+  Transform {
+    Location {
+      X: -25.6984863
+      Y: -19.3632812
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3117172980986521706
+  ChildIds: 1853331088814272569
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: Local
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1853331088814272569
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 4763.24316
+      Y: -9997.09
+      Z: 177.602921
+    }
+    Rotation {
+      Yaw: -54.0534897
+    }
+    Scale {
+      X: 3
+      Y: 3.22036529
+      Z: 3
+    }
+  }
+  ParentId: 15941756972351517659
+  ChildIds: 6861582553610682416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Chat"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:sphere"
+    }
+    InteractionTemplate {
+      Id: 841534158063459245
+    }
+    BreadcrumbTemplate {
+      Id: 841534158063459245
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6861582553610682416
+  Name: "ChatNPC"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: 3.4150944e-06
+    }
+    Scale {
+      X: 0.333333343
+      Y: 0.333333343
+      Z: 0.333333343
+    }
+  }
+  ParentId: 1853331088814272569
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ChatID"
+      String: "Innkeeper"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8180739351578799712
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 6633574829989932321
   Name: "Militia"
   Transform {
@@ -117,7 +454,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Signals_1"
+    FilePartitionName: "Signals"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -410,7 +747,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Signals"
+    FilePartitionName: "Signals_2"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -932,7 +1269,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Signals_2"
+    FilePartitionName: "Signals_3"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1790,7 +2127,7 @@ Objects {
   }
   ParentId: 2450179119937356925
   ChildIds: 4464870050830864738
-  ChildIds: 17373180581747013269
+  ChildIds: 12236697035021248844
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1817,21 +2154,20 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17373180581747013269
+  Id: 12236697035021248844
   Name: "Signals"
   Transform {
     Location {
-      X: -0.53903991
-      Y: 0.957767189
-      Z: 48.1050835
+      X: -16.1642094
+      Y: 3.98405242
+      Z: 46.7465134
     }
     Rotation {
-      Yaw: 12.2446556
     }
     Scale {
-      X: 1.04166663
-      Y: 1.04166663
-      Z: 1.04166663
+      X: 1.04166651
+      Y: 1.04166651
+      Z: 1.04166651
     }
   }
   ParentId: 4306925911175813128
@@ -1839,7 +2175,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1849,7 +2185,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Signals_3"
+    FilePartitionName: "Signals_4"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2017,14 +2353,14 @@ Objects {
           Name: "Color"
           Color {
             R: 1
-            G: 0.314
-            B: 0.314
+            G: 0.470412672
+            B: 0.122000039
             A: 1
           }
         }
         Overrides {
           Name: "AttenuationRadius"
-          Float: 3641.78345
+          Float: 406.963776
         }
         Overrides {
           Name: "SourceRadius"
@@ -2048,7 +2384,7 @@ Objects {
         }
         Overrides {
           Name: "Intensity"
-          Float: 11.3161497
+          Float: 4.96733
         }
       }
     }
