@@ -379,9 +379,9 @@ Objects {
   Name: "Classical Music Score Set 01"
   Transform {
     Location {
-      X: -8762.78125
-      Y: 23474.8398
-      Z: -6.69311523
+      X: -1758.31555
+      Y: 20765.5039
+      Z: -6.69287109
     }
     Rotation {
       Yaw: 2.04905664e-05
@@ -619,8 +619,8 @@ Objects {
   Name: "Cinematic Music Score Set 01"
   Transform {
     Location {
-      X: -18550.043
-      Y: -2892.43066
+      X: -15271.6943
+      Y: -4147.06885
     }
     Rotation {
     }
@@ -657,7 +657,7 @@ Objects {
     AudioBP {
       AutoPlay: true
       Pitch: -200
-      Volume: 1
+      Volume: 0.25
       Falloff: 3000
       Radius: 12000
       IsSpatializationEnabled: true
