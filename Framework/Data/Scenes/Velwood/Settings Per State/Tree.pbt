@@ -291,8 +291,8 @@ Objects {
       LookAtCursorProjectionPlane {
         Value: "mc:eprojectionplane:xy"
       }
-      MountedMaxAcceleration: 3000
-      MountedWalkSpeed: 1600
+      MountedMaxAcceleration: 5000
+      MountedWalkSpeed: 700
       MountedJumpMaxCount: 1
       MountedJumpVelocity: 900
       HeadVisibleToSelf: true
@@ -306,7 +306,7 @@ Objects {
       AbilityAimMode {
         Value: "mc:eabilityaimmode:viewrelative"
       }
-      MountChannelingTime: 0.5
+      MountChannelingTime: 1
       FlipOnMultiJump: true
       CanMoveUp: true
       CanMoveDown: true

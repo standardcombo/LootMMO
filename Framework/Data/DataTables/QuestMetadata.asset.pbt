@@ -203,5 +203,14 @@ Assets {
         AssetId: "Icon_WeaponSword"
       }
     }
+    Assets {
+      Id: 18431249977254189273
+      Name: "Grave"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Grave"
+      }
+    }
   }
 }

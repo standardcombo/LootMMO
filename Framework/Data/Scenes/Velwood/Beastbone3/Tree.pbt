@@ -524,14 +524,6 @@ Objects {
   ParentId: 4495285950960551854
   UnregisteredParameters {
     Overrides {
-      Name: "cs:QuestID"
-      String: "Beastbone1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
       Name: "cs:EventID"
       String: "Quest.NPCDied"
     }

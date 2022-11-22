@@ -150,152 +150,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6318908110235169623
-  Name: "ObjectiveEventListener"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 938137775794850649
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:QuestID"
-      String: "Beastbone1"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:EventID"
-      String: "Quest.NPCDied"
-    }
-    Overrides {
-      Name: "cs:ObjectID"
-      String: "Beastbone"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9246345034586664616
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16823912948044366634
-  Name: "ObjectiveEncounterSpawn - VileVersion"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 938137775794850649
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:EnemyIDs"
-      String: "Beastbone4"
-    }
-    Overrides {
-      Name: "cs:MinPlayerLevel"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:EnemyCount"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:ChanceEpicEnemy"
-      Float: 0
-    }
-    Overrides {
-      Name: "cs:ChanceLegendaryEnemy"
-      Float: 100
-    }
-    Overrides {
-      Name: "cs:AdditionalRadius"
-      Int: 10000
-    }
-    Overrides {
-      Name: "cs:CommonLootId"
-      String: "SkeletonCommon"
-    }
-    Overrides {
-      Name: "cs:RareLootId"
-      String: "SkeletonRare"
-    }
-    Overrides {
-      Name: "cs:EpicLootId"
-      String: "SkeletonEpic"
-    }
-    Overrides {
-      Name: "cs:LegendaryLootId"
-      String: "SkeletonLegendary"
-    }
-    Overrides {
-      Name: "cs:MaxPlayerLevel"
-      Int: 9999
-    }
-    Overrides {
-      Name: "cs:ChanceRareEnemy"
-      Float: 0
-    }
-    Overrides {
-      Name: "cs:DespawnDelay"
-      Float: 15
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 5101381884167888089
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 18292984034545998979
   Name: "Waypoints"
   Transform {
@@ -626,6 +480,152 @@ Objects {
   Script {
     ScriptAsset {
       Id: 12402776060914387729
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6318908110235169623
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 938137775794850649
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Beastbone1"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Quest.NPCDied"
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "Leader"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16823912948044366634
+  Name: "ObjectiveEncounterSpawn - VileVersion"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 938137775794850649
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:EnemyIDs"
+      String: "Beastbone4"
+    }
+    Overrides {
+      Name: "cs:MinPlayerLevel"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:EnemyCount"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:ChanceEpicEnemy"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:ChanceLegendaryEnemy"
+      Float: 100
+    }
+    Overrides {
+      Name: "cs:AdditionalRadius"
+      Int: 10000
+    }
+    Overrides {
+      Name: "cs:CommonLootId"
+      String: "SkeletonCommon"
+    }
+    Overrides {
+      Name: "cs:RareLootId"
+      String: "SkeletonRare"
+    }
+    Overrides {
+      Name: "cs:EpicLootId"
+      String: "SkeletonEpic"
+    }
+    Overrides {
+      Name: "cs:LegendaryLootId"
+      String: "SkeletonLegendary"
+    }
+    Overrides {
+      Name: "cs:MaxPlayerLevel"
+      Int: 9999
+    }
+    Overrides {
+      Name: "cs:ChanceRareEnemy"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:DespawnDelay"
+      Float: 15
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 5101381884167888089
     }
   }
   NetworkRelevanceDistance {

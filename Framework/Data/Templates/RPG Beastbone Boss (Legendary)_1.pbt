@@ -20,7 +20,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Tag_1"
-            String: "Undead"
+            String: "Leader"
           }
           Overrides {
             Name: "cs:Tag_2"

@@ -11150,7 +11150,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:QuestID"
-      String: "Map"
+      String: "InkeeperEnd"
     }
     Overrides {
       Name: "cs:Object"

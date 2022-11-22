@@ -2,7 +2,7 @@ Name: "Quests"
 RootId: 4244745184024888751
 Objects {
   Id: 12667119472957786421
-  Name: "Undead2"
+  Name: "Cemetary2"
   Transform {
     Location {
       X: 17896.543
@@ -32,7 +32,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Undead2"
+    FilePartitionName: "Cemetary2"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -41,7 +41,7 @@ Objects {
 }
 Objects {
   Id: 4288614763271675729
-  Name: "Undead1"
+  Name: "Cemetary1"
   Transform {
     Location {
       X: 14592.0439
@@ -71,7 +71,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Undead1"
+    FilePartitionName: "Cemetary1"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
