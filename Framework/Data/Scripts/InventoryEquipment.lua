@@ -2,7 +2,7 @@ local EquipApi        = _G["Character.EquipAPI"]
 local equipmentSlots  = _G['Equipment.Slots']
 local items           = _G.Items
 local equipmentStack  = _G.EquipmentStack
-local defultEquipment = items.GetDefinition("Quarterstaff")
+local defaultEquipment = items.GetDefinition("Quarterstaff")
 local Weapons         = items.GetDefinitionsForCategory("weapon")
 local KWeapons        = {}
 for index, value in ipairs(Weapons) do
@@ -63,10 +63,10 @@ local function InventoryUpdated(inv, i)
 			end
 		end
 	else
-		if defultEquipment then
+		if defaultEquipment then
 			local newItem =
-			World.SpawnAsset(defultEquipment[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
-			assert(newItem, defultEquipment.id .. " should of spawned")
+			World.SpawnAsset(defaultEquipment[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
+			assert(newItem, defaultEquipment.id .. " should of spawned")
 			newItem:Equip(owner)
 			if stackindex then
 				stackindex.value = newItem

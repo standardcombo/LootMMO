@@ -1,9 +1,12 @@
 local inventory = _G["Inventory.Constructor"]
 local slotTypes = _G["Equipment.Slots"]
+local resourceSlotTypes = _G["Resource.Slots"]
 local Materials = _G["Items.Materials"]
 local Items = _G.Items
 local Equipment = slotTypes.GetSlots()
 local Equipmentkeys = slotTypes.GetKeySlots()
+local Resource = resourceSlotTypes.GetSlots()
+local Resourcekeys = resourceSlotTypes.GetKeySlots()
 
 local lootmmoInv = {}
 local Slot = {}
@@ -43,7 +46,7 @@ local function FindItemFromAssetId(assetid)
 	end
 end
 
-function Slot:isAcceptingType(type)
+function Slot:isAcceptingType(type,name)
 	type = type or ""
 	if not self then
 		return true
@@ -51,10 +54,15 @@ function Slot:isAcceptingType(type)
 	if self.type == ("any") or not self.type then
 		return true
 	end
-
 	local acceptingTypes = slotTypes.GetAcceptingSlots(self.type)
 	for index, value in ipairs(acceptingTypes) do
 		if value == type then
+			return true
+		end
+	end
+	acceptingTypes = resourceSlotTypes.GetAcceptingSlots(self.type)
+	for index, value in ipairs(acceptingTypes) do
+		if value == name then
 			return true
 		end
 	end
@@ -64,9 +72,10 @@ end
 function Slot:CanAddItem(item)
 	if not item then return true end
 	local itemdata = FindItemFromAssetId(item)
+
 	if not itemdata then return Slot.isAcceptingType(self, nil) end
 	local category = GetCategoryFromItemData(itemdata)
-	return Slot.isAcceptingType(self, category)
+	return Slot.isAcceptingType(self, category, itemdata.name)
 end
 
 local function FindFreeSlot(inventory, item)
@@ -84,10 +93,10 @@ function lootmmoInv:MoveFromSlot(fromSlot, toSlot, parameters)
 	
 	local fromSlotItem = self:GetItem(fromSlot) or {}
 	local toSlotItem = self:GetItem(toSlot) or {}
-	
+
 	local toSlotAccept = Slot.CanAddItem(self.slotData[toSlot] or {}, fromSlotItem.itemAssetId)
 	local fromSlotAccept = Slot.CanAddItem(self.slotData[fromSlot] or {}, toSlotItem.itemAssetId)
-	
+
 	if fromSlotAccept and toSlotAccept then
 		if Environment.IsClient() then
 			Events.BroadcastToServer('inventory.move', fromSlot, toSlot)
@@ -133,6 +142,17 @@ end
 
 function lootmmoInv:SetSlotType(slot, type)
 	if not Equipmentkeys[type] then
+		self.slotData[slot] = self.slotData[slot] or {}
+		self.slotData[slot].type = nil
+		return
+	end
+	if not type or not slot then return end
+	self.slotData[slot] = self.slotData[slot] or {}
+	self.slotData[slot].type = type
+end
+
+function lootmmoInv:SetResourceSlotType(slot, type)
+	if not Resourcekeys[type] then
 		self.slotData[slot] = self.slotData[slot] or {}
 		self.slotData[slot].type = nil
 		return

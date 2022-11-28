@@ -11,6 +11,12 @@ Objects {
     }
   }
   ParentId: 16937607096047638534
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 8067326117451680903
@@ -19,24 +25,14 @@ Objects {
           Name: "Name"
           String: "Class, Abilities, Inventory & Shop"
         }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10029502995319538580
-      value {
         Overrides {
-          Name: "Width"
-          Int: 1700
+          Name: "Position"
+          Vector {
+          }
         }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16553177687411290700
-      value {
         Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
+          Name: "Rotation"
+          Rotator {
           }
         }
       }

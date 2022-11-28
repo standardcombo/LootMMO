@@ -2,11 +2,24 @@ local EquipAPI = _G["Character.EquipAPI"]
 local MATERIALS = _G["Items.Materials"]
 local ITEMS = _G.Items
 
-local SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
+local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
+local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
+local RESOURCE_SLOTS = script:GetCustomProperty("ResourceSlots"):WaitForObject():GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local STAT_DISPLAY = script:GetCustomProperty("StatDisplay"):WaitForObject()
+
+local SLOTS = {}
+for _, slot in ipairs(EQUIPMENT_SLOTS) do
+	table.insert(SLOTS, slot)
+end
+for _, slot in ipairs(INVENTORY_SLOTS) do
+	table.insert(SLOTS, slot)
+end
+for _, slot in ipairs(RESOURCE_SLOTS) do
+	table.insert(SLOTS, slot)
+end
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
@@ -71,12 +84,12 @@ local function RealeaseEvent(slot)
 	--Check if hovering over a slot
 	for index, panel in ipairs(SLOTS) do
 		local minwidth = panel.width
-		local minheight = panel.width
+		local minheight = panel.height
 		local abspo = panel:GetAbsolutePosition()
 		--check width
-		if dropPos.x <= abspo.x + minwidth and dropPos.x >= abspo.x then
+		if dropPos.x >= abspo.x and dropPos.x <= abspo.x + minwidth then
 			--check height
-			if dropPos.y <= abspo.y + minheight and dropPos.y >= abspo.y then
+			if dropPos.y >= abspo.y and dropPos.y <= abspo.y + minheight then
 				--swap slots if true
 				currentInventory:MoveFromSlot(isDraging.slot, index)
 				isDraging = nil
@@ -332,13 +345,13 @@ function Tick(dt)
 	end
 end
 
-local function RecieviedOpen(id)
+local function ReceivedOpen(id)
 	if id == ROOT then
 		UpdateValues()
 	end
 end
 
-Events.Connect('Ability_OpenPanel', RecieviedOpen)
+Events.Connect('Ability_OpenPanel', ReceivedOpen)
 CharacterEquipped(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER), LOCAL_PLAYER)
 EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)

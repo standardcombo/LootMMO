@@ -2,6 +2,7 @@ local COMPONET_DATATYPE = require(script:GetCustomProperty("ComponetDatatype"))
 local LOOTMMOINV = _G["Inventory.LootMMO"]
 local InventoryConstructor = _G["Inventory.Constructor"]
 local Equipment = _G["Equipment.Slots"].GetSlots()
+local Resource = _G["Resource.Slots"].GetSlots()
 
 local itemconstruct = _G["Item.Constructor"]
 local component =
@@ -22,7 +23,7 @@ setmetatable(
 	{ __index = COMPONET_DATATYPE }
 )
 component.id = "Inventory"
-component.inventorySize = 45 + 8
+component.inventorySize = 45 + 8 + 14 -- 45 items, 8 equipment, 14 resources
 
 local function setupInv(self, inventory)
 	self._inventory = LOOTMMOINV.NewInventory(inventory)
@@ -30,6 +31,9 @@ local function setupInv(self, inventory)
 
 	for i = 1, #Equipment, 1 do
 		self._inventory:SetSlotType(i, Equipment[i])
+	end
+	for i = 1, #Resource, 1 do
+		self._inventory:SetResourceSlotType(i+53, Resource[i])
 	end
 end
 
