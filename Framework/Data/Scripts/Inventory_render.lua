@@ -26,7 +26,8 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 HOVERDATA = {
 	icon = HOVER_PANEL:FindDescendantByName("Icon"),
 	name = HOVER_PANEL:FindDescendantByName("Name"),
-	stats = HOVER_PANEL:FindDescendantByName("Stats")
+	stats = HOVER_PANEL:FindDescendantByName("Stats"),
+	hovering = false
 }
 DragData = {
 	icon = DRAG_PANEL:FindChildByName("Icon")
@@ -122,6 +123,8 @@ local function DragSlot(slot)
 end
 
 local function UnhoverSlot(slot)
+	HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	HOVERDATA.hovering = false
 	if not currentInventory then
 		return
 	end
@@ -137,6 +140,7 @@ local function HoverSlot(slot)
 	if isDraging then
 		return
 	end
+	HOVERDATA.hovering = true
 	local item = currentInventory:GetItem(slot.index)
 	if item then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
@@ -204,6 +208,7 @@ local function HoverSlot(slot)
 			HOVERDATA.name.text = item.name
 			childstats.text = itemdata.description
 		end
+		HOVER_PANEL.visibility = Visibility.INHERIT
 	end
 end
 
@@ -343,6 +348,12 @@ function Tick(dt)
 		DRAG_PANEL.x = CoreMath.Lerp(DRAG_PANEL.x, mpos.x, dt * 20)
 		DRAG_PANEL.y = CoreMath.Lerp(DRAG_PANEL.y, mpos.y, dt * 20)
 	end
+
+	if not HOVERDATA.hovering then return end
+	local position = Vector2.New(Input.GetCursorPosition().x, Input.GetCursorPosition().y)
+	position.y = position.y - HOVER_PANEL.height/1.25
+	position.x = position.x + 40
+	HOVER_PANEL:SetAbsolutePosition(position)
 end
 
 local function ReceivedOpen(id)
