@@ -12,10 +12,10 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Duration'].calString = "1 + (5 - 1) * WIS / 172"
+modifiers['Duration'].calString = "2 + (7 - 2) * WIS / 172"
 modifiers['Duration'].calculation = function(stats)
-    local min = 0.5
-    local max = 2
+    local min = 2
+    local max = 7
     return min + (max - min) * stats.W / 172
 end
 
