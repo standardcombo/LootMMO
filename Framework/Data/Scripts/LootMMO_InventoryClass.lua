@@ -70,7 +70,7 @@ function Slot:isAcceptingType(type,name)
 	return false
 end
 
-function Slot:CanAddItem(item)
+function Slot:CanAddItem(item) --Need to add a check if slot already contains max amount of items
 	if not item then return true end
 	local itemdata = FindItemFromAssetId(item)
 	if not itemdata then return Slot.isAcceptingType(self, nil) end
@@ -97,7 +97,7 @@ local function FindFreeMaterialSlot(inventory,item)
 	for i = offset, inventory.slotCount, 1 do
 		local data = inventory.slotData[i] or {}
 		data.index = i
-		if Slot.CanAddItem(data, split) then
+		if Slot.CanAddItem(data, split) and inventory._inventory:CanAddItem(item, { slot = i }) then
 			return i
 		end
 	end
