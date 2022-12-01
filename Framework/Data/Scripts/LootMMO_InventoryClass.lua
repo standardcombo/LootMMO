@@ -54,15 +54,16 @@ function Slot:isAcceptingType(type,name)
 	if self.type == ("any") or not self.type then
 		return true
 	end
-	local acceptingTypes = slotTypes.GetAcceptingSlots(self.type)
-	for index, value in ipairs(acceptingTypes) do
-		if value == type then
-			return true
-		end
-	end
+	local acceptingTypes
 	acceptingTypes = resourceSlotTypes.GetAcceptingSlots(self.type)
 	for index, value in ipairs(acceptingTypes) do
 		if value == name then
+			return true
+		end
+	end
+	acceptingTypes = slotTypes.GetAcceptingSlots(self.type)
+	for index, value in ipairs(acceptingTypes) do
+		if value == type then
 			return true
 		end
 	end
@@ -72,7 +73,6 @@ end
 function Slot:CanAddItem(item)
 	if not item then return true end
 	local itemdata = FindItemFromAssetId(item)
-
 	if not itemdata then return Slot.isAcceptingType(self, nil) end
 	local category = GetCategoryFromItemData(itemdata)
 	return Slot.isAcceptingType(self, category, itemdata.name)
@@ -83,6 +83,21 @@ local function FindFreeSlot(inventory, item)
 		local data = inventory.slotData[i] or {}
 		data.index = i
 		if Slot.CanAddItem(data, item) and inventory._inventory:CanAddItem(item, { slot = i }) then
+			return i
+		end
+	end
+end
+
+local function FindFreeMaterialSlot(inventory,item)
+	local split = CoreString.Split(item, ':')
+	local itemdata = FindItemFromAssetId(split)
+	local category = GetCategoryFromItemData(itemdata)
+	if category ~= "material" then return end
+	local offset = 54
+	for i = offset, inventory.slotCount, 1 do
+		local data = inventory.slotData[i] or {}
+		data.index = i
+		if Slot.CanAddItem(data, split) then
 			return i
 		end
 	end
@@ -119,9 +134,9 @@ end
 function lootmmoInv:AddItem(item, properties)
 	if not item then return false end
 	properties = properties or {}
-	properties.slot = properties.slot or FindFreeSlot(self, item)
-	local canAdd = Slot.CanAddItem(self.slotData[properties.slot] or {}, item) and
-		self._inventory:CanAddItem(item, properties)
+	properties.slot = properties.slot or FindFreeMaterialSlot(self, item) or FindFreeSlot(self, item)
+	local split = CoreString.Split(item, ':')
+	local canAdd = Slot.CanAddItem(self.slotData[properties.slot] or {}, split) and self._inventory:CanAddItem(split, properties)
 	if canAdd then
 		return self._inventory:AddItem(item, properties)
 	else
