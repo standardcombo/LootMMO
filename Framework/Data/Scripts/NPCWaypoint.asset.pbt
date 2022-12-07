@@ -6,6 +6,6 @@ Assets {
     CustomParameters {
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "NPC Kit"
 }

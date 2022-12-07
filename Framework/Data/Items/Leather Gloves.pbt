@@ -2,7 +2,7 @@ Assets {
   Id: 1452247406849460575
   Name: "Leather Gloves"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

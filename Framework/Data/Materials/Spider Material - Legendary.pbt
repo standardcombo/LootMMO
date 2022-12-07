@@ -2,7 +2,7 @@ Assets {
   Id: 6388889565777883878
   Name: "Spider Material - Legendary"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 12330145819569370663
     ParameterOverrides {

@@ -6,7 +6,7 @@ Assets {
     CustomParameters {
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
 }

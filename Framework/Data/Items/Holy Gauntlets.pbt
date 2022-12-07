@@ -2,7 +2,7 @@ Assets {
   Id: 6446812818820662616
   Name: "Holy Gauntlets"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

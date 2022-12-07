@@ -2,7 +2,7 @@ Assets {
   Id: 9156392880245197027
   Name: "Custom Detail 2 from Bottle 06_potionred_NANI"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 2232027125091471667
     ParameterOverrides {

@@ -22,7 +22,7 @@ Assets {
       }
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Ability"
   VirtualFolderPath: "AbilityTemplates"

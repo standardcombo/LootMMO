@@ -2,7 +2,7 @@ Assets {
   Id: 6038649274192364465
   Name: "SandbagMaterial"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 10664111598138112565
     ParameterOverrides {

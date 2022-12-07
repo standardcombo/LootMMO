@@ -2,7 +2,7 @@ Assets {
   Id: 14640334029989976587
   Name: "Silk Slippers"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

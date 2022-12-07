@@ -2,7 +2,7 @@ Assets {
   Id: 16514074662506477010
   Name: "Subclass Button - Shaman"
   PlatformAssetType: 34
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "5efbb3a97cbe4294ae5c84819008be4e"

@@ -231,7 +231,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:low"
+          Value: "mc:edistancerelevance:low"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -271,5 +271,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 121
 }

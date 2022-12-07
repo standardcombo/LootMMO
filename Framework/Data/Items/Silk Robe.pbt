@@ -2,7 +2,7 @@ Assets {
   Id: 2720231827205945830
   Name: "Silk Robe"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

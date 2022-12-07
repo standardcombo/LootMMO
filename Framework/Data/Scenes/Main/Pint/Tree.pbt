@@ -155,7 +155,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -227,7 +227,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -442,7 +442,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -514,7 +514,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -756,7 +756,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
@@ -819,7 +819,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
@@ -883,7 +883,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
@@ -988,7 +988,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
@@ -1052,7 +1052,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
@@ -1116,7 +1116,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"

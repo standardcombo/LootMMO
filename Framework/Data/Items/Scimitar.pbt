@@ -2,7 +2,7 @@ Assets {
   Id: 14136109355109842499
   Name: "Scimitar"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

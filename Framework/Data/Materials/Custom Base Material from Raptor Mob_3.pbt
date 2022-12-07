@@ -2,7 +2,7 @@ Assets {
   Id: 10177837637419358532
   Name: "Raptor Material (Rare)"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 6530174169967151099
     ParameterOverrides {

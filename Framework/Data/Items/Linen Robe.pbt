@@ -2,7 +2,7 @@ Assets {
   Id: 4692091949951145947
   Name: "Linen Robe"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

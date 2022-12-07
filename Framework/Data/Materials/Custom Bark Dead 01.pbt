@@ -2,7 +2,7 @@ Assets {
   Id: 93328804870534166
   Name: "Custom Bark Dead 01"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 5512000712628422335
     ParameterOverrides {

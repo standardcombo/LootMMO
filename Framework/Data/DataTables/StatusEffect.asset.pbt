@@ -2,7 +2,7 @@ Assets {
   Id: 3523155340957547356
   Name: "StatusEffect"
   PlatformAssetType: 31
-  SerializationVersion: 120
+  SerializationVersion: 121
   DataTableAsset {
     HasKeyColumn: true
     Assets {

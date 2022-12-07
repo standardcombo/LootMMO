@@ -2,7 +2,7 @@ Assets {
   Id: 8101175506116731886
   Name: "Platinum Ring"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

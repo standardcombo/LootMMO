@@ -314,46 +314,6 @@ Objects {
         MediumDistance: 7000
         HighDistance: 9000
       }
-      RelevanceSettings {
-        key: "decal"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      RelevanceSettings {
-        key: "light"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "mergedmesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      RelevanceSettings {
-        key: "mesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      RelevanceSettings {
-        key: "vfx"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
       VoiceChatSettings {
         VoiceChatMode {
           Value: "mc:evoicechatmode:all"
@@ -392,41 +352,91 @@ Objects {
       }
       EnableConcurrentPlayerStorage: true
       EnableNetworkedEventsQueuing: true
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "decal"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "light"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "mergedmesh"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "mesh"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "vfx"
         value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "decal"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "vfx"
+        value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000

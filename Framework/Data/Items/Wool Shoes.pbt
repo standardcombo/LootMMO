@@ -2,7 +2,7 @@ Assets {
   Id: 17769695154995013652
   Name: "Wool Shoes"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 121
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

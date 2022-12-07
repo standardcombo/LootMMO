@@ -2,7 +2,7 @@ Assets {
   Id: 5019062407752867817
   Name: "Raptor Material (Epic)"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 3169661351917430096
     ParameterOverrides {
