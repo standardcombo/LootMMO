@@ -1,6 +1,6 @@
 --[[
 	Equipper Client
-	v1.0.2 - 2022/11/02
+	v1.1.0 - 2022/11/11
 	by: blaking707, Luapi, CommanderFoo
 ]]
 

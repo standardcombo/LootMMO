@@ -1,3 +1,9 @@
+--[[
+	Equipper Client
+	v1.1.0 - 2022/11/11
+	by: blaking707, Luapi, CommanderFoo
+]]
+
 local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment']
 local POTIONAPI = _G["Potions.Equipment"]
 local EquipApi = {}

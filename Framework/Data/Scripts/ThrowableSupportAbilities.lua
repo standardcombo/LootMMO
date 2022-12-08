@@ -1,6 +1,6 @@
 --[[
 	Throwable Support Abilities
-	v1.1 - 2022/10/26
+	v1.1 - 2022/11/11
 	by: standardcombo, Luapi
 	
 	Spawns throw and pickup abilities for each player, as they join.

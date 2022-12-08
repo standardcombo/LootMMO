@@ -1,5 +1,6 @@
 --[[
-	Settings per Location - Server
+	Settings per State - Server
+	v1.1.0 - 2022/11/18
 	by: standardcombo, Luapi
 	
 	Changes the player's settings depending on their current screen.

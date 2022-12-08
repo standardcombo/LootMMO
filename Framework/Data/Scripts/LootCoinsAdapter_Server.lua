@@ -1,7 +1,7 @@
 --[[
     =======================
     LootCoinsAdapter_Server
-    V1.0
+    V1.0.1
     Created by: Luapi
     =======================
     Unifies inventory coins with resource coins.

@@ -1,6 +1,6 @@
 --[[
 	LootMMO Respawn
-	v1.0.1 - 2022/10/22
+	v1.1.0 - 2022/11/18
 	by: standardcombo, Luapi
 	
 	Checks if a dying player is in a safe zone or not.
