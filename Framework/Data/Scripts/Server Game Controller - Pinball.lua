@@ -1,7 +1,7 @@
 --[[
   ------------------
   Pirate Pinball - Server Game Controller
-  v1.0.2 - 2022/10/28
+  v1.0.3 - 2022/10/28
   by: varglbargl
   Modified by: Luapi
   ------------------
@@ -48,7 +48,7 @@ function handleInteracted(_, player)
   end
 
   for _, ability in ipairs(player:GetAbilities()) do --Disable all abilities during pinball
-    player.serverUserData[ability] = ability.isEnabled
+    player.serverUserData[ability] = ability.isEnabled --Store the original state of the ability
     ability.isEnabled = false
   end
 
@@ -78,8 +78,9 @@ function handleQuit(machineId, player)
     end
 
     for _, ability in ipairs(player:GetAbilities()) do --Re-enable all abilities
-      ability.isEnabled = player.serverUserData[ability]
-      player.serverUserData[ability] = nil
+      if player.serverUserData[ability] then
+        ability.isEnabled = player.serverUserData[ability] -- Restore the original state of the ability
+      end
     end
 
     player.serverUserData.isInvulnerable = false
