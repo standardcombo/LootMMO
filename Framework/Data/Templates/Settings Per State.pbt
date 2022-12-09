@@ -111,6 +111,12 @@ Assets {
           }
         }
         ParentId: 11056115110144583225
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:LoadGearOnJoin"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -203,7 +209,6 @@ Assets {
             }
             MountChannelingTime: 1
             FlipOnMultiJump: true
-            IsMountEnabled: true
             MaxHitpoints: 100
             PlayerMasterVolumeMultiplier: 1
             ComplexCollision: true

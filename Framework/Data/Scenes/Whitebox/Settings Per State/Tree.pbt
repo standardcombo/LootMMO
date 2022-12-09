@@ -493,10 +493,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:StartingSpawnKey"
-      String: "Social"
-    }
-    Overrides {
       Name: "cs:StartingState"
       Int: 40
     }
