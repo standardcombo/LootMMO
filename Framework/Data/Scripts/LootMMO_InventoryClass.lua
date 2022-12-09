@@ -75,7 +75,7 @@ function Slot:CanAddItem(item) --Need to add a check if slot already contains ma
 	local itemdata = FindItemFromAssetId(item)
 	if not itemdata then return Slot.isAcceptingType(self, nil) end
 	local category = GetCategoryFromItemData(itemdata)
-	return Slot.isAcceptingType(self, category, itemdata.name)
+	return Slot.isAcceptingType(self, category, itemdata.id)
 end
 
 local function FindFreeSlot(inventory, item)
