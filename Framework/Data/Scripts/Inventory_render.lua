@@ -156,7 +156,7 @@ local function HoverSlot(slot)
 			HOVERDATA.name.text =
 			string.format(
 				"%s %s | Greatness %d",
-				item.name,
+				itemdata.name,
 				item:GetCustomProperty("Order"),
 				item:GetCustomProperty("Greatness")
 			)
@@ -205,7 +205,7 @@ local function HoverSlot(slot)
 				childstats.text = ""
 			end
 		else
-			HOVERDATA.name.text = item.name
+			HOVERDATA.name.text = itemdata.name
 			childstats.text = itemdata.description
 		end
 		HOVER_PANEL.visibility = Visibility.INHERIT
