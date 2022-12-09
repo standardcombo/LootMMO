@@ -1,6 +1,6 @@
 --[[
   Pirate Pinball - Client Game Controller
-  v1.3 - 2022/10/28
+  v1.2 - 2022/10/28
   by: Varglbargl
   Modified by: Luapi
 ]]

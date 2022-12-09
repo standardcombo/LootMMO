@@ -1,6 +1,7 @@
 --[[
 	Settings per Location - Client
 	by: standardcombo
+	v1.1
 	
 	Changes the player's settings depending on their current screen.
 	

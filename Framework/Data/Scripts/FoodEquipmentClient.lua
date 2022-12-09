@@ -2,7 +2,7 @@
 	Food Equipment - Client
 	by: standardcombo
 	modified by: Luapi
-	v1.1.2
+	v1.2.0
 --]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")

@@ -1,7 +1,7 @@
 --[[
 	Social Kit Nameplate Controller
 	by: standardcombo
-	v1.0
+	v1.0.1
 	
 	Custom nameplates for the Social Kit.
 --]]

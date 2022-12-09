@@ -1,6 +1,6 @@
 --[[
 	EagleAI - Server
-	v1.0.1
+	v1.0.2
 	original script: standardcombo
 	modified by: Ooccoo, Luapi
 	contributions: DarkDev, WaveParadigm
