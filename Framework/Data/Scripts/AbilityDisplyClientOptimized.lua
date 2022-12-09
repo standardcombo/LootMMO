@@ -124,23 +124,16 @@ function OnCooldown(ability)
 end
 
 function SetEquipment(equipment)
-	while not Object.IsValid(equipment) do
-		Task.Wait()
-	end
-	if not equipment:IsA('Equipment') then print("not equipment") return end
-	while not equipment.clientUserData.calculateModifier do
-		Task.Wait()
-	end
+	Task.Wait() -- Wait for the equipment to load
+	if not equipment:IsA('Equipment') then error(equipment.name .. "is not equipment") return end
+	Task.Wait() -- Wait for the calculateModifier to load
+	if not equipment.clientUserData.calculateModifier then error("Calculate Modifier is not set up (or didn't load) for " .. equipment.name) return end
 	for _, func in pairs(connections) do
 		func(equipment)
 	end
-
+	Task.Wait() -- Wait for the ability to load
 	local ability = equipment:FindChildByType('Ability')
-	while not Object.IsValid(ability) do
-		Task.Wait()
-		ability = equipment:FindChildByType('Ability')
-
-	end
+	if not ability then error(equipment.name .. " is missing its ability.") return end
 	currentAbilities[ability] = ability
 	equipment.clientUserData.ability = ability
 	ability.clientUserData.binding = equipment:GetCustomProperty("AbilityBinding")
