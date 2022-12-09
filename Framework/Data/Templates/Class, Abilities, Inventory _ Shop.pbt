@@ -76051,7 +76051,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Text {
-            Label: "RESOURCES"
+            Label: "MATERIALS"
             Color {
               R: 1
               G: 0.456411034
