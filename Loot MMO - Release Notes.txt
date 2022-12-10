@@ -1,4 +1,45 @@
 
+**Version 1.2.0**
+Changes
+- Players can now mount inside the tavern. This was changed to avoid a Core bug related to the playerJoinedEvent not firing.
+- Players killed inside the tavern now respawn in the hallway instead of in-place.
+- Redesigned layout for the cup dispenser behind the bar.
+- Any Pint being carried is now removed when you press [Play] on the Map of Adventures.
+- Framework: Added 'name' column to the Loot items data table.
+
+Balance
+- Animorph Potion effect duration changed from [0.5 -> 2] to [2 -> 7] seconds.
+
+Improvements
+- New map quest: Ruffians.
+- Updated descriptions on most of the abilities.
+- Inventory screen reworked: Materials are grouped at the bottom, added hover card and better handling for different screen sizes.
+- Improved performance and roboustness of equipment system.
+- Improvements to cheats. Added /tp to abbreviate /teleport. Removed /progress.
+- Updated some deprecated API related to old player bindings.
+- Updated all weapons to use the Input Action system, instead of player bindings.
+- Optimized ability HUD performance.
+- Polished and improved performance of the Cauldron UI.
+- Cleaned up unnecessary files.
+
+Bugs
+- The Eagle now unspawns correctly when switching characters or leaving the game.
+- Inventory item details now shows the display name for items instead of their ID.
+- Fixed a bug where portalling between scenes in preview mode could get stuck in a bad state.
+- Fixed a bug in Poker where winning would not advance the quest.
+- Fixed an issue with throwable chairs where they would not respawn if thrown off the world.
+- Fixed interactions between the Pinball game and character abilities.
+- Fixed cursor visibility issues related to Pinball.
+- Fixed a bug where the door to crafting room could remain permanently open.
+- Fixed the "Door Locked" message that could sometimes appear when the door was open.
+- Fixed a bug where your potions would persist if changing characters.
+- Fixed a bug where ability upgrade points were subtracting by 2 instead of by 1.
+- Fixed a bug in the ability HUD where it could show the wrong star rating for abilities.
+- Fixed a visual issue with ability cooldowns when switching characters.
+- Fixed mesh-merge warning and smart materials in the Mace/Shield equipment.
+- Cleaned up warnings related to attempts to un-mount when sitting down or playing Pinball.
+
+
 **Version 1.1.0**
 Improvements
 - Polished Cauldron UI
@@ -20,14 +61,17 @@ Other
 - Fixed various warnings related to deprecated API.
 - Core Update changed Material Bark Redwood 01 to Bark Redwood Avanced 01.
 
+
 **Version 1.0.4**
 - Fixed an error if a player left the game while throwing a chair.
 - Ability key labels now dynamically update based on action names.
 - The Eagle now teleports with the player when they travel to/from an adventure.
 - Fixed an error in the Quest UI when completing a quest while another quest was selected.
 
+
 **Version 1.0.3**
 - Fixed a framework usability issue where the Map of Adventures would not transfer players outdoors until quest data was reconfigured.
+
 
 **Version 1.0.2**
 - Blade Dash ability now displays correctly in the HUD.
@@ -37,8 +81,10 @@ Other
 - Fixed a bug in poker where the HUD could disappear completely after a player was booted from the table (when running out of money).
 - Fixed an error in LootMMORespawn.lua if the game didn't have any safe zones.
 
+
 **Version 1.0.1**
 Too many changes to mention. This is the first public release of the framework, with full game loop, quest system, NPCs, portals, abilities, character progression, etc.
+
 
 **Version 0.3**
 General Improvements
