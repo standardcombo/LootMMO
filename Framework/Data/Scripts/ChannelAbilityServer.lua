@@ -18,7 +18,7 @@ if not _G.ChannelAbility then
 	
 	function API.CanChannel(player)
 		local channel = player.serverUserData.channelAbility
-		if Object.IsValid(channel) then
+		if Object.IsValid(channel) and not player.isDead then
 			return channel:GetCurrentPhase() == AbilityPhase.READY
 		end
 		return false
