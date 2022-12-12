@@ -1,6 +1,6 @@
 --[[
 	Player Damage Override
-	v1.0.2 - 2022/10/25
+	v1.0.2
 	by: Luapi
 ]]
 
