@@ -1,6 +1,6 @@
 --[[
 	Player Damage Override
-	v1.0.1 - 2022/10/25
+	v1.0.2 - 2022/10/25
 	by: Luapi
 ]]
 
@@ -15,11 +15,19 @@ local function OnGoingToTakeDamage(attackData)
 	local damage = attackData.damage
 	local dmgamout = damage.amount
 	if dmgamout <= 0 then return end
-	
+	local hitResult = attackData.damage:GetHitResult()
+
 	local source = attackData.source
 	if not Object.IsValid(source) then return end
-	if not source:IsA("Player") then return end
-	
+	if not source:IsA("Player") then return	end
+
+	--Disable PVP
+	if hitResult.other:IsA("Player") then
+		--print("PVP Disabled")
+		damage.amount = 0
+		return
+	end
+
 	local headshot = attackData.tags.Headshot
 
 	--overrideDamage
