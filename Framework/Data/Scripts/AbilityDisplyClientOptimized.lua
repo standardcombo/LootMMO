@@ -84,7 +84,7 @@ function OnCooldown(ability)
 		while Object.IsValid(ability) do
 			local currentPhase = ability:GetCurrentPhase()
 			local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
-			local phaseTimeElapsed = ability.cooldownPhaseSettings.duration - phaseTimeRemaining
+			local phaseTimeElapsed = cd - phaseTimeRemaining
 
 			-- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
 
