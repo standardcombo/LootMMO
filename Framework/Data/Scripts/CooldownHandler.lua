@@ -21,7 +21,7 @@ function CoolDown()
         if not Object.IsValid(ABILITY) then
             return
         end
-        if time() > endTime then
+        if time() > endTime and ABILITY:GetCurrentPhase() ~= AbilityPhase.READY then
             ABILITY:AdvancePhase()
         end
     end
