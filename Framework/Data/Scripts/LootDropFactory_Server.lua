@@ -1,7 +1,7 @@
 --[[
 	Loot Drop Factory - Server
-	v3.0 - 2022/10/20
-	by: standardcombo
+	v3.1 - 2022/10/20
+	by: standardcombo, Luapi
 	
 	Setup
 	=====
@@ -86,6 +86,7 @@ function API.Drop(eventData)
 	-- Figure out the players who will see the drop
 	local players = {}
 	local target = eventData.object
+	local encounterId
 	if target and _G.CombatAccountant then
 		local report = _G.CombatAccountant.GetReportForTarget(target)
 		
@@ -139,8 +140,18 @@ function API.Drop(eventData)
 	
 	-- Check if this NPC is part of a larger encounter
 	if target then
-		local encounterId = target.serverUserData.LDFactoryEncounterId
+		encounterId = target.serverUserData.LDFactoryEncounterId
 		local encounterNpcs = activeEncounters[encounterId]
+
+		if not activeEncounters[encounterId].players then
+			activeEncounters[encounterId].players = {}
+		end
+		for _, player in ipairs(players) do
+			if player then
+				activeEncounters[encounterId].players[player] = player
+			end
+		end
+
 		if encounterNpcs then
 			-- Remove this NPC from the encounter
 			for i,npc in ipairs(encounterNpcs) do
@@ -198,7 +209,7 @@ function API.Drop(eventData)
 	
 	-- There's a chance nothing dropped
 	if rewards == nil or rewards == "" then
-		print("Nothing dropped.")
+		--print("Nothing dropped.")
 		return
 	end
 	
@@ -213,11 +224,10 @@ function API.Drop(eventData)
 	eventData.killer = nil
 	eventData.resourceType = nil
 	eventData.resourceAmount = nil
-	
 	-- Loot drops
-	for _,player in ipairs(players) do
+	for _,player in pairs(activeEncounters[encounterId].players) do
 		Events.BroadcastToPlayer(player, DROP_EVENT_ID, eventData)
-		
+		--print(player.name .. " should receive loot drop")
 		if not player.serverUserData.lootDrops then
 			player.serverUserData.lootDrops = {}
 		end
