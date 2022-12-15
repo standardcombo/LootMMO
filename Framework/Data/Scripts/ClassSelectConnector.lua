@@ -1,7 +1,10 @@
-local EAPI         = _G["Character.EquipAPI"]
-local Classes      = _G['Character.Classes']
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 function ClassSelectionRecieved(player, class)
+	local EAPI         = _G["Character.EquipAPI"]
+	local Classes      = _G['Character.Classes']
+
 	local Classdata = Classes.GetClass(class)
 	if not (Classdata) then
 		return
