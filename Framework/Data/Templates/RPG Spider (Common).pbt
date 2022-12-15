@@ -682,8 +682,8 @@ Assets {
         Name: "NPCAttackServer"
         Transform {
           Location {
-            X: 90
-            Z: -19
+            X: 110
+            Z: -18.9999962
           }
           Rotation {
             Pitch: 6.10298538
