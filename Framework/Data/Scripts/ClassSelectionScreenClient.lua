@@ -6,6 +6,10 @@ local OPEN_EVENT = "Ability_OpenPanel"
 local classAPI = _G["Character.Classes"]
 local EquipApi = _G["Character.EquipAPI"]
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
+local EASE_DURATION_SHOW = 0.4
+local EASE_DURATION_HIDE = 0.3
+local EASE_DURATION_DETAILS = 0.25
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local CLASS_IMAGES = require(script:GetCustomProperty("ClassImages"))
@@ -114,55 +118,54 @@ end
 local function ViewClass(class)
 	viewingClass = class
 	if Object.IsValid(currentViewingPanel) then
-		EASE_UI.EaseY(currentViewingPanel, -UI.GetScreenSize().y, .2)
-		EASE_UI.EaseOpacity(currentViewingPanel, 0, .2)
-
+		EASE_UI.EaseY(currentViewingPanel, -UI.GetScreenSize().y, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(currentViewingPanel, 0, EASE_DURATION_DETAILS)
 	end
 
 	currentViewingPanel = detailPanels[class]
+	
 	if Object.IsValid(currentViewingPanel) then
-		EASE_UI.EaseY(currentViewingPanel, 0, .2)
-		EASE_UI.EaseOpacity(currentViewingPanel, 1, .2)
+		EASE_UI.EaseY(currentViewingPanel, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(currentViewingPanel, 1, EASE_DURATION_DETAILS)
 		if currentSelectedClass ~= class then
 			swappingPanelBackGround:SetImage(CLASS_IMAGES[class]["image"])
-			EASE_UI.EaseOpacity(swappingPanel, 1, .2)
-			EASE_UI.EaseOpacity(ClassSelectionPanel, 0, .2)
+			EASE_UI.EaseOpacity(swappingPanel, 1, EASE_DURATION_DETAILS)
+			EASE_UI.EaseOpacity(ClassSelectionPanel, 0, EASE_DURATION_DETAILS)
 
 		else
-			EASE_UI.EaseOpacity(swappingPanel, 0, .2)
-			EASE_UI.EaseOpacity(ClassSelectionPanel, 1, .2)
+			EASE_UI.EaseOpacity(swappingPanel, 0, EASE_DURATION_DETAILS)
+			EASE_UI.EaseOpacity(ClassSelectionPanel, 1, EASE_DURATION_DETAILS)
 		end
 	end
-
 end
 
 local function OpenPanel(panel)
 	local funcMap = {
 		[ClassSelectionPanels["W"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["A"], -UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["A"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
 
 		end,
 		[ClassSelectionPanels["A"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
 		end,
 		[ClassSelectionPanels["V"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["A"], UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["A"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
 		end,
 	}
 
 	if funcMap[panel] then
 		funcMap[panel]()
-		EASE_UI.EaseWidth(panel, 5000, .2)
-		EASE_UI.EaseHeight(panel, 5000, .2)
-		EASE_UI.EaseOpacity(background, 1, .2)
-		EASE_UI.EaseOpacity(chooseYourClassPanel, 0, .2)
-		EASE_UI.EaseY(classSelectionData[BackMap[panel]].background, -105, .2)
-		EASE_UI.EaseY(classSelectionData[BackMap[panel]].highlight, UI.GetScreenSize().y, .2)
-		EASE_UI.EaseX(classSelectionData[BackMap[panel]].background, 0, .2)
-		EASE_UI.EaseX(panel, 0, .2)
+		EASE_UI.EaseWidth(panel, 5000, EASE_DURATION_DETAILS)
+		EASE_UI.EaseHeight(panel, 5000, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(background, 1, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(chooseYourClassPanel, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(classSelectionData[BackMap[panel]].background, -105, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(classSelectionData[BackMap[panel]].highlight, UI.GetScreenSize().y, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(classSelectionData[BackMap[panel]].background, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(panel, 0, EASE_DURATION_DETAILS)
 		ViewClass(classSelectionData[BackMap[panel]].class)
 	end
 end
@@ -170,17 +173,17 @@ end
 local function BackToFront()
 	ViewClass(nil)
 
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, .4)
-	EASE_UI.EaseOpacity(background, defaultOpacity, .4)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(background, defaultOpacity, EASE_DURATION_SHOW)
 
 	for key, value in pairs(ClassSelectionPanels) do
 		local data = classSelectionData[key]
-		EASE_UI.EaseWidth(value, data.originalwidth, .2)
-		EASE_UI.EaseHeight(value, data.originalheight, .2)
-		EASE_UI.EaseY(data.background, data.backgroundy, .2)
-		EASE_UI.EaseY(data.highlight, data.highlighty, .2)
-		EASE_UI.EaseX(data.background, data.backgroundx, .2)
-		EASE_UI.EaseX(value, data.originalx, .2)
+		EASE_UI.EaseWidth(value, data.originalwidth, EASE_DURATION_DETAILS)
+		EASE_UI.EaseHeight(value, data.originalheight, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(data.background, data.backgroundy, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(data.highlight, data.highlighty, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(data.background, data.backgroundx, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(value, data.originalx, EASE_DURATION_DETAILS)
 
 		data.button.visibility = Visibility.FORCE_OFF
 	end
@@ -274,10 +277,10 @@ local function Show(panel)
 	if not Character then return end
 	SetState(states.open)
 
-	EASE_UI.EaseY(ClassSelectionPanel, 45, .4)
-	EASE_UI.EaseOpacity(background, defaultOpacity, .4)
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, .4)
-	EASE_UI.EaseOpacity(ROOT, 1, .4)
+	EASE_UI.EaseY(ClassSelectionPanel, 45, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(background, defaultOpacity, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(ROOT, 1, EASE_DURATION_SHOW)
 	local class = Character:GetComponent("Class")
 	SetUpPanels(class)
 
@@ -292,10 +295,10 @@ end
 local function Hide()
 	if currentState == states.closing then return end
 	SetState(states.closing)
-	EASE_UI.EaseY(ClassSelectionPanel, UI.GetScreenSize().y, .3)
-	EASE_UI.EaseOpacity(background, 0, .3)
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 0, .3)
-	EASE_UI.EaseOpacity(ROOT, 0, .3)
+	EASE_UI.EaseY(ClassSelectionPanel, UI.GetScreenSize().y, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(background, 0, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 0, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(ROOT, 0, EASE_DURATION_HIDE)
 end
 
 local function Back()
