@@ -1,6 +1,9 @@
 local appstate = _G.AppState
+
 local NEWAPPSTATE = script:GetCustomProperty('appstate')
-local EVENT = script:GetCustomProperty('Event') 
+local EVENT = script:GetCustomProperty('Event')
+local MIN_LEVEL = script:GetCustomProperty('MinLevel')
+
 local acceptingVisibilities = {}
 if not appstate[NEWAPPSTATE] then
     return
@@ -16,12 +19,24 @@ function CanChange(newState)
 end
 
 function EventTriggered()
+	-- Check if current state is a valid transition
     if not appstate[NEWAPPSTATE] then
         return
     end
-    if CanChange(appstate.GetLocalState()) then
-        appstate.SetLocalState(appstate[NEWAPPSTATE])
+    if not CanChange(appstate.GetLocalState()) then
+    	return
     end
+    -- Check player level requirement
+    local player = Game.GetLocalPlayer()
+    local char = _G["Character.EquipAPI"].GetCurrentCharacter(player)
+	if char then
+		local level = char:GetComponent("Level"):GetLevel()
+    	if level < MIN_LEVEL then
+    		return
+    	end
+    end
+    -- Change the app state
+    appstate.SetLocalState(appstate[NEWAPPSTATE])
 end
 
 if EVENT ~= '' then

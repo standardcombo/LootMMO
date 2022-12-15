@@ -13,6 +13,10 @@ Assets {
         String: ""
       }
       Overrides {
+        Name: "cs:MinLevel"
+        Int: 1
+      }
+      Overrides {
         Name: "cs:None"
         Bool: false
       }

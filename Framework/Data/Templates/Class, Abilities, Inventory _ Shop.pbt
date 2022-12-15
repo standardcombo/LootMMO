@@ -74851,6 +74851,10 @@ Assets {
             Name: "cs:Ability"
             Bool: true
           }
+          Overrides {
+            Name: "cs:MinLevel"
+            Int: 2
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
