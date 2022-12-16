@@ -45,17 +45,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 650554861623099170
-      value {
-        Overrides {
-          Name: "cs:Loot_Resource_Slots"
-          AssetReference {
-            Id: 8873509499863922419
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 8486202377734904388
       value {
         Overrides {
@@ -70,17 +59,6 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 14944636231864111665
-      value {
-        Overrides {
-          Name: "cs:Loot_Resource_Slots"
-          AssetReference {
-            Id: 8873509499863922419
           }
         }
       }
