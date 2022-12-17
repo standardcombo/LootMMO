@@ -1,7 +1,10 @@
--- Call this event to show the UI. Bool param: canSelectSubclass?
+-- Call this event to show the UI
+local EVENT_SHOW_CLASS_SELECT = "ClassSelection.Show"
+-- Called by this script when a class is selected. String param: Class name
+local EVENT_CLASS_SELECTED = "ClassSelection.Selected"
 local CLOSE_EVENT = "Ability_Close"
 local PREPARE_TO_CLOSE = "Ability_Prepare"
-local OPEN_EVENT = "Ability_OpenPanel"
+--local SHOW_ABILITIES_EVENT = "Ability_OpenPanel"
 
 local classAPI = _G["Character.Classes"]
 local EquipApi = _G["Character.EquipAPI"]
@@ -14,9 +17,6 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local CLASS_IMAGES = require(script:GetCustomProperty("ClassImages"))
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
-
--- Called by this script when a class is selected. String param: Class name
-local EVENT_CLASS_SELECTED = "ClassSelection.Class"
 
 
 local function Get(panel, desendant)
@@ -113,6 +113,9 @@ end
 
 local function SelectClass(class)
 	Events.Broadcast(EVENT_CLASS_SELECTED, class)
+	
+	Task.Wait(1.5)
+	ROOT.visibility = Visibility.FORCE_OFF
 end
 
 local function ViewClass(class)
@@ -273,17 +276,19 @@ end
 local function Show(panel)
 	if not panel == ROOT then return end
 	if currentState ~= states.closed then return end
+
 	local Character = EquipApi.GetCurrentCharacter(LOCAL_PLAYER)
 	if not Character then return end
 	SetState(states.open)
 
-	EASE_UI.EaseY(ClassSelectionPanel, 45, EASE_DURATION_SHOW)
+	EASE_UI.EaseY(ClassSelectionPanel, 45, 0.6, EASE_UI.EasingDirection.INOUT)
 	EASE_UI.EaseOpacity(background, defaultOpacity, EASE_DURATION_SHOW)
 	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, EASE_DURATION_SHOW)
 	EASE_UI.EaseOpacity(ROOT, 1, EASE_DURATION_SHOW)
 	local class = Character:GetComponent("Class")
 	SetUpPanels(class)
 
+	ROOT.visibility = Visibility.INHERIT
 end
 
 local function Close()
@@ -299,6 +304,8 @@ local function Hide()
 	EASE_UI.EaseOpacity(background, 0, EASE_DURATION_HIDE)
 	EASE_UI.EaseOpacity(chooseYourClassPanel, 0, EASE_DURATION_HIDE)
 	EASE_UI.EaseOpacity(ROOT, 0, EASE_DURATION_HIDE)
+
+	ROOT.visibility = Visibility.FORCE_OFF
 end
 
 local function Back()
@@ -384,6 +391,6 @@ SetData()
 Close()
 
 
-Events.Connect(OPEN_EVENT, Show)
+Events.Connect(EVENT_SHOW_CLASS_SELECT, Show)
 Events.Connect(PREPARE_TO_CLOSE, Hide)
 Events.Connect(CLOSE_EVENT, Close)

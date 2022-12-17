@@ -1,4 +1,6 @@
 
+local EVENT_CLASS_SELECTED = "ClassSelection.Selected"
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 function ClassSelectionRecieved(player, class)
@@ -33,15 +35,14 @@ function ClassSelectionRecieved(player, class)
 	end
 end
 
-Events.Connect("ClassSelection.Class", function(classChoice)
+Events.Connect(EVENT_CLASS_SELECTED, function(classChoice)
 	ClassSelectionRecieved(LOCAL_PLAYER, classChoice)
-	Task.Wait()
-	Events.Broadcast("Ability_PanelRefresh")
 end)
 
-
+--[[
 Events.Connect("ClassSelection.Subclass", function(subclassChoice)
 	ClassSelectionRecieved(LOCAL_PLAYER, subclassChoice)
 	Task.Wait()
 	Events.Broadcast("Ability_PanelRefresh")
 end)
+]]

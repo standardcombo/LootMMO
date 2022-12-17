@@ -8,13 +8,21 @@ end
 function API.GetEquipment(name)
     local ability = API.GetEntry(name)
     if ability then
-        return ability['equipment']
+        return ability.equipment
     end
 end
+
+function API.GetDescription(name)
+    local ability = API.GetEntry(name)
+    if ability then
+        return ability.description
+    end
+end
+
 function API.GetIcon(name)
     local ability = API.GetEntry(name)
     if ability then
-        return ability['icon']
+        return ability.icon
     end
 end
 

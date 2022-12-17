@@ -1,46 +1,43 @@
 --[[
-	v1.0.1 - 2022/11/14
-	by: blaking707, CommanderFoo
+	v2.0 - 2022/12/17
+	by: blaking707, CommanderFoo, standardcombo
 --]]
-
+--[[
 local CLASSAPI = _G["Character.Classes"]
 local EquipAPI = _G["Character.EquipAPI"]
 local AbilityAPI = _G["Ability.Equipment"]
 local Star_Ratings = _G["Star_Rating"]
 
-local LOCAL_PLAYER = Game.GetLocalPlayer()
-local ABILITY_POINTS = script:GetCustomProperty("AbilityPoints"):WaitForObject()
-local ABILITY_RENDER = script:GetCustomProperty("AbilityRender"):WaitForObject()
+local ROOT = script:GetCustomProperty("Root"):WaitForObject()
+local UNLOCK_ANIMATION = script:GetCustomProperty("UnlockAnimationScript"):WaitForObject()
+
+local LEFT_PANEL = script:GetCustomProperty("LeftPanel"):WaitForObject()
+local MAIN_ICON = script:GetCustomProperty("MainAbilityIcon"):WaitForObject()
+local STARS = script:GetCustomProperty("Stars"):WaitForObject()
+
+local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
 local ABILITY_NAME = script:GetCustomProperty("AbilityName"):WaitForObject()
 local ABILITY_DESCRIPTION = script:GetCustomProperty("AbilityDescription"):WaitForObject()
 local ABILITY_PROPERTIES = script:GetCustomProperty("AbilityProperties"):WaitForObject()
-local ABILITIESPANEL = script:GetCustomProperty("Abilities"):WaitForObject()
 
-local STARS = script:GetCustomProperty("Stars"):WaitForObject()
 local ABILITY_SLOTS = script:GetCustomProperty("AbilitySlots"):WaitForObject():GetChildren()
-local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
-local LEFT_PANEL = script:GetCustomProperty("Left_Panel"):WaitForObject()
+local POTION_SLOTS = script:GetCustomProperty("PotionSlots"):WaitForObject():GetChildren()
+
 local UPGRADE_BUTTON = script:GetCustomProperty("UpgradeButton"):WaitForObject()
 local LOOT_ICON = script:GetCustomProperty("LootIcon")
 local POINT_COUNT = script:GetCustomProperty("PointCount"):WaitForObject()
 
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 local lastState = Visibility.FORCE_OFF
 local SelectedAbility = nil
 
-local map = {
-	["Shift"] = "Ability1",
-	["1"] = "Ability2",
-	["2"] = "Ability3",
-	["3"] = "Ability4",
-	["4"] = "Ability5"
-}
-
 local slotMap = {
-	["Shift"] = 1,
-	["1"] = 2,
-	["2"] = 3,
-	["3"] = 4,
-	["4"] = 5,
+	["Ability1"] = 1,
+	["Ability2"] = 2,
+	["Ability3"] = 3,
+	["Ability4"] = 4,
+	["Ability5"] = 5,
 }
 function GetStar(stat, index)
 	return Star_Ratings[math.floor((stat - index) / 3) + 2]
@@ -50,7 +47,7 @@ function UpdateStars(character)
 	local stats      = character:GetComponent("Stats")
 	local class      = character:GetComponent("Class")
 	local classTable = class:GetClassTable()
-	local ability    = classTable[map[SelectedAbility]]
+	local ability    = classTable[SelectedAbility]
 	if not ability then
 		for index, value in ipairs(STARS:GetChildren()) do
 			local starimg = Star_Ratings[1]
@@ -76,17 +73,16 @@ end
 
 function UpdateIcons(classtable, progression)
 	local function Map(panel)
-		local mapped = map[panel.name]
-		if mapped then
-			if classtable[mapped] then
+		local abilityName = panel.name
+		if abilityName then
+			if classtable[abilityName] then
 				local image = panel:GetCustomProperty("Icon"):WaitForObject()
-				local newIcon = AbilityAPI.GetIcon(classtable[mapped])
+				local newIcon = AbilityAPI.GetIcon(classtable[abilityName])
 				if newIcon then
 					image:SetImage(newIcon)
 				end
 			end
 		end
-
 	end
 
 	for index, panel in ipairs(ABILITY_SLOTS) do
@@ -101,9 +97,9 @@ function UpdateIcons(classtable, progression)
 	for index, panel in ipairs(ABILITY_SLOTS) do
 		Map(panel)
 	end
-	for index, panel in ipairs(ABILITIESPANEL:GetChildren()) do
-		Map(panel)
-	end
+	--for index, panel in ipairs(POTION_SLOTS) do
+	--	Map(panel)
+	--end
 end
 
 function Update()
@@ -121,11 +117,10 @@ function Update()
 	UpdateStars(Character)
 	UpdatePoints(Character)
 
-	local altname = map[SelectedAbility]
-	local selection = classtable[altname]
+	local selection = classtable[SelectedAbility]
 
 	if not class:HasClass() then
-		ABILITY_RENDER:SetImage(LOOT_ICON)
+		MAIN_ICON:SetImage(LOOT_ICON)
 		ABILITY_NAME.text = "No class found!"
 		ABILITY_DESCRIPTION.text = "Level up and pick a class to upgrade abilities."
 		ABILITY_PROPERTIES.text = ""
@@ -133,8 +128,8 @@ function Update()
 		return
 	end
 
-	if not selection or selection == "" or not SelectedAbility or not map[SelectedAbility] then
-		ABILITY_RENDER:SetImage(LOOT_ICON)
+	if not selection or selection == "" or not SelectedAbility then
+		MAIN_ICON:SetImage(LOOT_ICON)
 		ABILITY_NAME.text = "No ability selected!"
 		ABILITY_DESCRIPTION.text = "Select an ability from the bottom right hand corner."
 		ABILITY_PROPERTIES.text = ""
@@ -148,7 +143,7 @@ function Update()
 	local desc = AbilityAPI.GetEntry(selection)["description"]
 	ABILITY_NAME.text = selection or ""
 	ABILITY_DESCRIPTION.text = desc or ""
-	ABILITY_RENDER:SetImage(icon)
+	MAIN_ICON:SetImage(icon)
 
 	if _G["Modifiers.CalculationString"][selection] then
 		local calculations = _G["Modifiers.CalculationString"][selection]
@@ -181,9 +176,9 @@ function Toggle(newState)
 end
 
 function Tick()
-	if lastState ~= ABILITY_POINTS.visibility then
-		lastState = ABILITY_POINTS.visibility
-		Toggle(ABILITY_POINTS.visibility)
+	if lastState ~= ROOT.visibility then
+		lastState = ROOT.visibility
+		Toggle(ROOT.visibility)
 	end
 end
 
@@ -207,3 +202,4 @@ EquipAPI.playerEquippedEvent:Connect(function(character, player)
 		stats.statsUpdatedEvent:Connect(Update)
 	end
 end)
+--]]

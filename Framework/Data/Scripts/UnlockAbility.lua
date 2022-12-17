@@ -1,3 +1,4 @@
+--[[
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local CONFIRM = script:GetCustomProperty("Confirm"):WaitForObject()
 
@@ -247,3 +248,4 @@ end
 Events.Connect(PREPARE_TO_CLOSE, PreptoClose)
 Events.Connect('Ability_OpenPanel', RecieviedOpen)
 Events.Connect("Ability_Close", RecieveClosed)
+--]]

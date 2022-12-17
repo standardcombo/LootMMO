@@ -1,7 +1,6 @@
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local InputAtlas = {
-    ['OpenAbility'] = 'OpenAbilities',
     ['OpenInventory'] = 'OpenInventory',
     ['OpenShop'] = 'OpenShop'
 }
