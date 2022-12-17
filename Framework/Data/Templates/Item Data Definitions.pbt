@@ -1476,6 +1476,8 @@ Assets {
           }
         }
         ParentId: 334120954248338845
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1549,6 +1551,8 @@ Assets {
           }
         }
         ParentId: 17664499275893175279
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
