@@ -4,8 +4,13 @@ local ITEMS = _G.Items
 
 local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
-local RESOURCE_SLOTS = script:GetCustomProperty("ResourceSlots"):WaitForObject():GetChildren()
+local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
+local RESOURCE_SLOTS = MATERIALS_BAR:FindDescendantByName("ResourceSlots"):GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
+HOVER_PANEL.clientUserData.topLeftArrow = HOVER_PANEL:FindDescendantByName("Top Left Arrow")
+HOVER_PANEL.clientUserData.topRightArrow = HOVER_PANEL:FindDescendantByName("Top Right Arrow")
+HOVER_PANEL.clientUserData.bottomLeftArrow = HOVER_PANEL:FindDescendantByName("Bottom Left Arrow")
+HOVER_PANEL.clientUserData.bottomRightArrow = HOVER_PANEL:FindDescendantByName("Bottom Right Arrow")
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local STAT_DISPLAY = script:GetCustomProperty("StatDisplay"):WaitForObject()
@@ -34,6 +39,7 @@ DragData = {
 }
 
 DRAG_PANEL.visibility = Visibility.FORCE_OFF
+MATERIALS_BAR.visibility = Visibility.FORCE_OFF
 
 local events = nil
 local currentInventory = nil
@@ -124,6 +130,10 @@ end
 
 local function UnhoverSlot(slot)
 	HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
 	HOVERDATA.hovering = false
 	if not currentInventory then
 		return
@@ -131,6 +141,13 @@ local function UnhoverSlot(slot)
 	if isDraging then
 		return
 	end
+end
+
+local function HideArrows()
+	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
 end
 
 local function HoverSlot(slot)
@@ -141,6 +158,7 @@ local function HoverSlot(slot)
 		return
 	end
 	HOVERDATA.hovering = true
+	HideArrows()
 	local item = currentInventory:GetItem(slot.index)
 	if item then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
@@ -208,6 +226,67 @@ local function HoverSlot(slot)
 			HOVERDATA.name.text = itemdata.name
 			childstats.text = itemdata.description
 		end
+		
+		--Separate the screen width into 2 sections, the screen height into 4, then determine which section the hovered item is in
+		local SCREEN_SIZE = UI.GetScreenSize() --Get the screen size every time, in case the player resizes the window
+		local screenwidth = SCREEN_SIZE.x
+		local screenheight = SCREEN_SIZE.y
+
+		local sectionwidth = screenwidth / 2
+		local sectionheight = screenheight / 4
+		local section = Vector2.New(0,0)
+
+		local slotPosition = slot.Button:GetAbsolutePosition()
+
+		--Set section on screen based on slot position
+		if slotPosition.x < sectionwidth then
+			section.x = 1
+		else
+			section.x = 2
+		end
+		if slotPosition.y < sectionheight then
+			section.y = 1
+		elseif slotPosition.y < sectionheight * 2 then
+			section.y = 2
+		elseif slotPosition.y < sectionheight * 3 then
+			section.y = 3
+		else
+			section.y = 4
+		end
+
+		--print("section",section.x, section.y)
+
+		HOVER_PANEL.x = slotPosition.x
+		HOVER_PANEL.y = slotPosition.y
+
+		--Show arrow visibility based on which section the hovered item is in and set the position of the hover panel
+		if section.x == 1 then
+			if section.y == 1 then
+				HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.INHERIT
+			elseif section.y == 2 then
+				HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.INHERIT
+			elseif section.y == 3 then
+				HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			elseif section.y == 4 then
+				HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			end
+		else
+			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width
+			if section.y == 1 then
+				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
+			elseif section.y == 2 then
+				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
+			elseif section.y == 3 then
+				HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			elseif section.y == 4 then
+				HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			end
+		end
+
 		HOVER_PANEL.visibility = Visibility.INHERIT
 	end
 end
@@ -348,12 +427,6 @@ function Tick(dt)
 		DRAG_PANEL.x = CoreMath.Lerp(DRAG_PANEL.x, mpos.x, dt * 20)
 		DRAG_PANEL.y = CoreMath.Lerp(DRAG_PANEL.y, mpos.y, dt * 20)
 	end
-
-	if not HOVERDATA.hovering then return end
-	local position = Vector2.New(Input.GetCursorPosition().x, Input.GetCursorPosition().y)
-	position.y = position.y - HOVER_PANEL.height/1.25
-	position.x = position.x + 40
-	HOVER_PANEL:SetAbsolutePosition(position)
 end
 
 local function ReceivedOpen(id)

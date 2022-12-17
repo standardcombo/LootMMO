@@ -4,12 +4,6 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
-      Overrides {
-        Name: "cs:Loot_Resource_Slots"
-        AssetReference {
-          Id: 8873509499863922419
-        }
-      }
     }
   }
   SerializationVersion: 121
