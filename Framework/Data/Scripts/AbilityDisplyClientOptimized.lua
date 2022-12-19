@@ -1,7 +1,7 @@
 --[[
 	Ability Display Client Optimized
 	Responsible for showing the HUD abilities information, including cooldowns, icons, and names.
-	By: blaking, Luapi
+	By: CommanderFoo, standardcombo, Luapi
 	Version: 2.0.1
 ]]
 local ABILITY_DISPLAY = script:GetCustomProperty("AbilityDisplay"):WaitForObject()
