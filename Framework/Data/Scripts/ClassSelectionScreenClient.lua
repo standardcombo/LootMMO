@@ -2,8 +2,8 @@
 local EVENT_SHOW_CLASS_SELECT = "ClassSelection.Show"
 -- Called by this script when a class is selected. String param: Class name
 local EVENT_CLASS_SELECTED = "ClassSelection.Selected"
-local CLOSE_EVENT = "Ability_Close"
-local PREPARE_TO_CLOSE = "Ability_Prepare"
+--local CLOSE_EVENT = "Ability_Close"
+--local PREPARE_TO_CLOSE = "Ability_Prepare"
 --local SHOW_ABILITIES_EVENT = "Ability_OpenPanel"
 
 local classAPI = _G["Character.Classes"]
@@ -115,7 +115,8 @@ local function SelectClass(class)
 	Events.Broadcast(EVENT_CLASS_SELECTED, class)
 	
 	Task.Wait(1.5)
-	ROOT.visibility = Visibility.FORCE_OFF
+	
+	Close()
 end
 
 local function ViewClass(class)
@@ -299,12 +300,12 @@ local function Show(panel)
 	ROOT.visibility = Visibility.INHERIT
 end
 
-local function Close()
+function Close()
 	if currentState == states.closed then return end
 	SetState(states.closed)
 	Reset()
 end
-
+--[[
 local function Hide()
 	if currentState == states.closing then return end
 	SetState(states.closing)
@@ -315,7 +316,7 @@ local function Hide()
 
 	ROOT.visibility = Visibility.FORCE_OFF
 end
-
+]]
 local function Back()
 	if currentSelectedClass ~= viewingClass then
 		BackToMain()
@@ -400,5 +401,5 @@ Close()
 
 
 Events.Connect(EVENT_SHOW_CLASS_SELECT, Show)
-Events.Connect(PREPARE_TO_CLOSE, Hide)
-Events.Connect(CLOSE_EVENT, Close)
+--Events.Connect(PREPARE_TO_CLOSE, Hide)
+--Events.Connect(CLOSE_EVENT, Close)
