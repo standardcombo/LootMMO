@@ -288,6 +288,14 @@ Objects {
         MediumDistance: 7000
         HighDistance: 9000
       }
+      RelevanceSettings {
+        key: "smartobject"
+        value {
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
       VoiceChatSettings {
         VoiceChatMode {
           Value: "mc:evoicechatmode:all"

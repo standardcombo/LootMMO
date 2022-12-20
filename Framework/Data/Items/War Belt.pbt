@@ -2,7 +2,7 @@ Assets {
   Id: 1234422538303292075
   Name: "War Belt"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

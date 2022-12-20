@@ -2,7 +2,7 @@ Assets {
   Id: 9335042743501698493
   Name: "Linen Gloves"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

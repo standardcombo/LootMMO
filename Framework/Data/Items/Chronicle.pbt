@@ -2,7 +2,7 @@ Assets {
   Id: 6099369119342475124
   Name: "Chronicle"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

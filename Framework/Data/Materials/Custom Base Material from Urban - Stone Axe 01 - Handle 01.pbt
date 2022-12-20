@@ -2,7 +2,7 @@ Assets {
   Id: 13125283898653935109
   Name: "Club Wood Material"
   PlatformAssetType: 13
-  SerializationVersion: 121
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 11302303361689615554
     ParameterOverrides {

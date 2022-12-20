@@ -2,7 +2,7 @@ Assets {
   Id: 8920556440996179174
   Name: "Heavy Belt"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

@@ -2,7 +2,7 @@ Assets {
   Id: 10691604191043358091
   Name: "More Items"
   PlatformAssetType: 31
-  SerializationVersion: 121
+  SerializationVersion: 123
   DataTableAsset {
     HasKeyColumn: true
     Assets {

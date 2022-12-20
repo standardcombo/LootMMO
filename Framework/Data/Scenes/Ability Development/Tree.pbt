@@ -4660,6 +4660,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -4702,6 +4705,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -4754,6 +4760,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -4795,6 +4804,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -4845,6 +4857,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -4980,6 +4995,9 @@ Objects {
       Id: 16910278292812118833
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -5065,6 +5083,9 @@ Objects {
     BlueprintAsset {
       Id: 11515840070784317904
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
