@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14002637459053075183
+  Name: "4 Point Star"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_SciFI_Icon_020"
+  }
+}
+Assets {
   Id: 13835327457650939377
   Name: "UI Gradient Rectangular 002"
   PlatformAssetType: 9
