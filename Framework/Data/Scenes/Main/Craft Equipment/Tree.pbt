@@ -1191,7 +1191,7 @@ Objects {
 }
 Objects {
   Id: 10783654281462050784
-  Name: "Slot"
+  Name: "Slot 3"
   Transform {
     Location {
       X: -21503.5195
@@ -2108,7 +2108,7 @@ Objects {
 }
 Objects {
   Id: 16230161921800795766
-  Name: "Slot"
+  Name: "Slot 2"
   Transform {
     Location {
       X: -21503.5
@@ -3024,7 +3024,7 @@ Objects {
 }
 Objects {
   Id: 2511126740937383924
-  Name: "Slot"
+  Name: "Slot 1"
   Transform {
     Location {
       X: -21503.5
@@ -19005,6 +19005,10 @@ Objects {
       Name: "cs:OnReleased"
       Bool: true
     }
+    Overrides {
+      Name: "cs:toServer"
+      Bool: false
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -20013,6 +20017,10 @@ Objects {
         SelfId: 18109032945600144047
       }
     }
+    Overrides {
+      Name: "cs:ShowCursor"
+      Bool: false
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -20240,13 +20248,13 @@ Objects {
     Overrides {
       Name: "cs:MainPanel"
       ObjectReference {
-        SelfId: 841534158063459245
+        SelfId: 1041003350170882752
       }
     }
     Overrides {
       Name: "cs:CloseButton"
       ObjectReference {
-        SelfId: 841534158063459245
+        SelfId: 18109032945600144047
       }
     }
     Overrides {
