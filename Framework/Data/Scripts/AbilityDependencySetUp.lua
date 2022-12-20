@@ -1,8 +1,17 @@
 local LOOT_ABILITY_EQUIPMENT = require(script:GetCustomProperty('Loot_Ability_Equipment')) --Table reference
+
 local API = {}
+_G['Ability.Equipment'] = API
 
 function API.GetEntry(name)
     return LOOT_ABILITY_EQUIPMENT[name]
+end
+
+function API.GetName(id)
+	local ability = API.GetEntry(id)
+	if ability then
+		return ability.name
+	end
 end
 
 function API.GetEquipment(name)
@@ -29,4 +38,3 @@ end
 function API.GetTable()
     return LOOT_ABILITY_EQUIPMENT
 end
-_G['Ability.Equipment'] = API

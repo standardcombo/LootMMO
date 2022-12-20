@@ -7,6 +7,7 @@ local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
 local CLASSAPI = _G["Character.Classes"]
 local EquipAPI = _G["Character.EquipAPI"]
 local AbilityAPI = _G["Ability.Equipment"]
+local PotionAPI = _G["Potions.Equipment"]
 local Star_Ratings = _G["Star_Rating"]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
@@ -45,8 +46,7 @@ local function Show()
 	ROOT.opacity = 0
 	EASE_UI.EaseOpacity(ROOT, 1, .4)
 
-	character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-
+	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	local Progression = character:GetComponent("Progression")
 	local class = character:GetComponent("Class"):GetClassTable()
 
@@ -84,6 +84,20 @@ local function Show()
 		slot.visibility = Visibility.FORCE_OFF
 
 		if Progression:GetProgressionKey("PotionSlot" .. i) then
+			local potions = character:GetComponent("Potions")
+			local potionId = potions:GetEquipped(i)
+			if not potionId then
+				if i == 1 then
+					potionId = "Health" --FTUE. First slot unlocked
+				else
+					potionId = "Empty"
+				end
+			end
+			slot.clientUserData.potionId = potionId
+			-- Set slot icon
+			local iconAsset = PotionAPI.GetIcon(potionId)
+			local iconImage = slot.clientUserData.icon
+			iconImage:SetImage(iconAsset)
 
 			if Progression:GetProgressionKey("AcceptPotion" .. i) then
 				slot.visibility = Visibility.INHERIT
@@ -91,6 +105,11 @@ local function Show()
 			elseif not slotToUnlock then
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
+				
+				UpdateContents(PotionAPI, potionId)
+
+				Events.BroadcastToServer("AcceptPotion", i)
+				Progression:SetProgression("AcceptPotion" .. i, true)
 			end
 		end
 	end
