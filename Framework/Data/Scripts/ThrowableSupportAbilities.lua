@@ -1,6 +1,6 @@
 --[[
 	Throwable Support Abilities
-	v1.1.1 - 2022/11/11
+	v1.1.2 - 2022/12/19
 	by: standardcombo, Luapi
 	
 	Spawns throw and pickup abilities for each player, as they join.
@@ -20,28 +20,37 @@ local PICKUP_ABILITY_TEMPLATE = script:GetCustomProperty("PickupAbilityTemplate"
 
 
 function API.EnableThrow(player)
-	player.serverUserData.throwAbility.isEnabled = true
-	return player.serverUserData.throwAbility
+	local throwAbility = player.serverUserData.throwAbility
+	if Object.IsValid(throwAbility) then
+		throwAbility.isEnabled = true
+	end
+	return throwAbility
 end
 
 
 function API.DisableThrow(player)
-	player.serverUserData.throwAbility.isEnabled = false
-	return player.serverUserData.throwAbility
+	local throwAbility = player.serverUserData.throwAbility
+	if Object.IsValid(throwAbility) then
+		throwAbility.isEnabled = false
+	end
+	return throwAbility
 end
 
 
 Game.playerJoinedEvent:Connect(function(player)
-	local throwAbility = World.SpawnAsset(THROW_ABILITY_TEMPLATE)
-	throwAbility.owner = player
-	throwAbility:AttachToPlayer(player, "root")
-	player.serverUserData.throwAbility = throwAbility
-	throwAbility.isEnabled = false
-	
-	local pickupAbility = World.SpawnAsset(PICKUP_ABILITY_TEMPLATE)
-	pickupAbility.owner = player
-	pickupAbility:AttachToPlayer(player, "root")
-	player.serverUserData.pickupAbility = pickupAbility
+	if THROW_ABILITY_TEMPLATE then
+		local throwAbility = World.SpawnAsset(THROW_ABILITY_TEMPLATE)
+		throwAbility.owner = player
+		throwAbility:AttachToPlayer(player, "root")
+		player.serverUserData.throwAbility = throwAbility
+		throwAbility.isEnabled = false
+	end
+	if PICKUP_ABILITY_TEMPLATE then
+		local pickupAbility = World.SpawnAsset(PICKUP_ABILITY_TEMPLATE)
+		pickupAbility.owner = player
+		pickupAbility:AttachToPlayer(player, "root")
+		player.serverUserData.pickupAbility = pickupAbility
+	end
 end)
 
 Game.playerLeftEvent:Connect(function(player)
