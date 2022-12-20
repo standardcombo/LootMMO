@@ -65,6 +65,16 @@ SELECTED_OBJECT_SLOT.clientUserData.isBag = Get(SELECTED_OBJECT_SLOT, "IsBag")
 local SCRAP_BUTTON = Get(UPGRADE_PANEL, "Scrap Button")
 local UPGRADE_BUTTON = Get(UPGRADE_PANEL, "Upgrade Button")
 
+local UPGRADE_PREVIEW_SLOT = {
+	Get(UPGRADE_PANEL, "Slot 1"),
+	Get(UPGRADE_PANEL, "Slot 2"),
+	Get(UPGRADE_PANEL, "Slot 3")
+}
+for _, previewSlot in ipairs(UPGRADE_PREVIEW_SLOT) do
+	previewSlot.clientUserData.icon = Get(previewSlot, "icon")
+	previewSlot.clientUserData.count = Get(previewSlot, "count")
+end
+
 --Setup Scrap Confirmation Panel references
 local OBJECT_TO_SCRAP_SLOT = Get(SCRAP_CONFIRMATION_PANEL, "Object To Scrap Slot")
 OBJECT_TO_SCRAP_SLOT.clientUserData.name = Get(OBJECT_TO_SCRAP_SLOT, "Selected Object Name")
@@ -79,13 +89,10 @@ local SCRAP_PREVIEW_SLOT = {
 	Get(SCRAP_CONFIRMATION_PANEL, "Slot 2"),
 	Get(SCRAP_CONFIRMATION_PANEL, "Slot 3")
 }
-
-SCRAP_PREVIEW_SLOT[1].clientUserData.icon = Get(SCRAP_PREVIEW_SLOT[1], "icon")
-SCRAP_PREVIEW_SLOT[1].clientUserData.count = Get(SCRAP_PREVIEW_SLOT[1], "count")
-SCRAP_PREVIEW_SLOT[2].clientUserData.icon = Get(SCRAP_PREVIEW_SLOT[2], "icon")
-SCRAP_PREVIEW_SLOT[2].clientUserData.count = Get(SCRAP_PREVIEW_SLOT[2], "count")
-SCRAP_PREVIEW_SLOT[3].clientUserData.icon = Get(SCRAP_PREVIEW_SLOT[3], "icon")
-SCRAP_PREVIEW_SLOT[3].clientUserData.count = Get(SCRAP_PREVIEW_SLOT[3], "count")
+for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
+	previewSlot.clientUserData.icon = Get(previewSlot, "icon")
+	previewSlot.clientUserData.count = Get(previewSlot, "count")
+end
 
 local function GetScrapRecipe(item)
 	if not item then return end
@@ -98,20 +105,33 @@ local function GetScrapRecipe(item)
 	return newrecipe
 end
 
+local function GetUpgradeRecipe(item)
+	if not item then return end
+	local greatness = item:GetCustomProperty("Greatness")
+	local newrecipe = nil
+	if greatness then
+		greatness = math.max(1, greatness)
+		newrecipe = craftAPI.GetRecipe(item.name)
+	end
+	return newrecipe
+end
+
 
 local function UpgradeItem()
 	if selectedRecipe then
-		print("UpgradeItem")
+		print("Upgrade Item")
 	end
 end
 
-local function RefreshUpgradePanelDetails(slot, item)
+local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade panel to show upgrade details for the selected item
 	local itemdata = ITEMS.GetDefinition(item.name, true)
-	if not itemdata then
-		return
-	end
+	if not itemdata then return	end
+
 	local icon = itemdata["icon"]
+
 	local greatness = tostring(item:GetCustomProperty("Greatness"))
+	if item:GetCustomProperty("Greatness") >= 20 then return end
+
 	if slot.isBag then
 		if item:GetCustomProperty("IsBag") then
 			SELECTED_OBJECT_SLOT.clientUserData.isBag.visibility = Visibility.INHERIT
@@ -132,6 +152,29 @@ local function RefreshUpgradePanelDetails(slot, item)
 	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.INHERIT
+
+	--For each item in the upgradeRecipe populate the preview slots with the item icon and quantity
+	local upgradeRecipe = GetUpgradeRecipe(selectedRecipe.item)
+	if not upgradeRecipe then return end
+	local count = 0
+	for itemName, quantity in pairs(upgradeRecipe) do
+		if type(quantity) == "number" and quantity > 0 then
+			count = count + 1
+			print(itemName, quantity)
+			local materialData = MATERIALS.GetDefinition(itemName, true)
+			if not materialData then
+				warn("No item data for " .. itemName)
+				return
+			end
+			local previewIcon = materialData["icon"]
+
+			--Set the icon and quantity for the item on the SLOT UI
+			UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
+			UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
+			UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
+			UPGRADE_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
+		end
+	end
 end
 
 local function SetImage(panel, icon, itemdata)
@@ -145,8 +188,7 @@ local function SelectRecipe(item, slot)
 		item = item,
 		slot = slot
 	}
-	print(selectedRecipe.item,selectedRecipe.slot)
-	RefreshUpgradePanelDetails(slot, item)
+	RefreshUpgradePanelDetails(item, item)
 end
 
 local function ClearUpgradePanelDetails()
@@ -171,18 +213,21 @@ local function ClickedSlot(slot)
 end
 
 local function ScrapItem(button)
-	function HideScrapConfirmationWindow()
-		SCRAP_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
-		DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
-		for index, _ in ipairs(SCRAP_PREVIEW_SLOT) do
-			SCRAP_PREVIEW_SLOT[index].clientUserData.icon.visibility = Visibility.FORCE_OFF
-			SCRAP_PREVIEW_SLOT[index].clientUserData.count.visibility = Visibility.FORCE_OFF
-		end
-	end
 	if selectedRecipe then
+		if selectedRecipe.item:GetCustomProperty("IsBag") then return end
+		function HideScrapConfirmationWindow()
+			SCRAP_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
+			DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
+			for index, _ in ipairs(SCRAP_PREVIEW_SLOT) do
+				SCRAP_PREVIEW_SLOT[index].clientUserData.icon.visibility = Visibility.FORCE_OFF
+				SCRAP_PREVIEW_SLOT[index].clientUserData.count.visibility = Visibility.FORCE_OFF
+			end
+		end
+
 		local scrapRecipe = GetScrapRecipe(selectedRecipe.item) --Table of items to give to player if they choose to scrap the item
-		--Populate confirmation window with the items and quantities that will be given to the player if they choose to scrap the item
-		if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
+				if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
+		
+		--For each item in the scrapRecipe populate the preview slots with the item icon and quantity
 		local count = 0
 		for itemName, quantity in pairs(scrapRecipe) do
 			count = count + 1
@@ -198,7 +243,8 @@ local function ScrapItem(button)
 			SCRAP_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
 			SCRAP_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
 		end
-		--Popup confirmation window
+
+		--Popup scrap confirmation window
 		SCRAP_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
 		DIMMER_BACKGROUND.visibility = Visibility.INHERIT
 		if button == SCRAP_CANCEL_BUTTON then
