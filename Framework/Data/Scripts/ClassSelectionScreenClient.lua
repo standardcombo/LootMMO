@@ -40,7 +40,7 @@ end
 
 local UnselectableClasses = {
 	["Healer"] = true,
-	["ShadowMancer"] = true,
+	["Shadowmancer"] = true,
 	["Rogue"] = true,
 	["Druid"] = true,
 	["Shaman"] = true,
@@ -48,7 +48,7 @@ local UnselectableClasses = {
 }
 
 local subClass = {
-	["Mage"] = { "Sorcerer", "Healer", "ShadowMancer" },
+	["Mage"] = { "Sorcerer", "Healer", "Shadowmancer" },
 	["Hunter"] = { "Ranger", "Rogue", "Druid" },
 	["Warrior"] = { "Fighter", "Shaman", "Paladin" },
 	["None"] = { "Mage", "Hunter", "Warrior" },
@@ -61,7 +61,7 @@ local detailPanels = {
 	["Paladin"]      = Get(detailPanelsContainer, "DetailsPanel - Paladin"),
 	["Mage"]         = Get(detailPanelsContainer, "DetailsPanel - Mage"),
 	["Sorcerer"]     = Get(detailPanelsContainer, "DetailsPanel - Sorcerer"),
-	["ShadowMancer"] = Get(detailPanelsContainer, "DetailsPanel - Warlock"),
+	["Shadowmancer"] = Get(detailPanelsContainer, "DetailsPanel - Warlock"),
 	["Healer"]       = Get(detailPanelsContainer, "DetailsPanel - Healer"),
 	["Hunter"]       = Get(detailPanelsContainer, "DetailsPanel - Hunter"),
 	["Druid"]        = Get(detailPanelsContainer, "DetailsPanel - Druid"),
@@ -234,11 +234,17 @@ local function Reset()
 	ROOT.opacity = 0
 end
 
+local function SetTitle(value)
+	chooseYourClassPanel:GetChildren()[1].text = value
+end
+
 local function SetUpPanels(class)
 	if not class:HasClass() then
 		Events.Broadcast("ClassSelect.Open", LOCAL_PLAYER, "BaseClass")
+		SetTitle("Choose Your Class")
 	else
 		Events.Broadcast("ClassSelect.Open", LOCAL_PLAYER, "SubClass")
+		SetTitle("Choose a Subclass")
 	end
 	local myclass = class:GetClass()
 
@@ -247,9 +253,11 @@ local function SetUpPanels(class)
 			for index, value in ipairs(subClass[myclass]) do
 				local childClass = classAPI.GetClass(value)
 				if childClass and childClass["Stat"] == key then
-					local image = CLASS_IMAGES[childClass["ClassIdentifier"]]["image"]
+					local image = CLASS_IMAGES[childClass["ClassIdentifier"]].image
+					local color = CLASS_IMAGES[childClass["ClassIdentifier"]].highlightColor
 					if image then
 						data.background:SetImage(image)
+						data.highlight:SetColor(color)
 					end
 					data.name.text = childClass["ClassIdentifier"]
 					data.class = childClass["ClassIdentifier"]
