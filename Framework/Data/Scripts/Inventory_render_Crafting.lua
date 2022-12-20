@@ -8,15 +8,15 @@ local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject
 local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
 local RESOURCE_SLOTS = MATERIALS_BAR:FindDescendantByName("ResourceSlots"):GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
-local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
 local UPGRADE_PANEL = script:GetCustomProperty("UpgradePanel"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local DIMMER_BACKGROUND = script:GetCustomProperty("DimmerBackground"):WaitForObject()
 local SCRAP_CONFIRMATION_PANEL = script:GetCustomProperty("ScrapConfirmationPanel"):WaitForObject()
+local UPGRADE_CONFIRMATION_PANEL = script:GetCustomProperty("UpgradeConfirmationPanel"):WaitForObject()
+local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 
 DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
 MATERIALS_BAR.visibility = Visibility.FORCE_OFF
-DRAG_PANEL.visibility = Visibility.FORCE_OFF
 
 local SLOTS = {}
 for _, slot in ipairs(EQUIPMENT_SLOTS) do
@@ -37,11 +37,8 @@ HOVERDATA = {
 	stats = HOVER_PANEL:FindDescendantByName("Stats"),
 	hovering = false
 }
-DragData = {
-	icon = DRAG_PANEL:FindChildByName("Icon")
-}
 
-local events, currentInventory, isDragging, selectedRecipe
+local events, currentInventory, selectedRecipe, currentState
 local slots = {}
 
 local craftingEvents = {
@@ -51,9 +48,33 @@ local craftingEvents = {
 	CcraftItem  = "Crafting.Craft.client",
 }
 
+local states = {
+	crafting  = 1,
+	upgrading = 2,
+	scrapping = 3,
+	closed    = 4,
+}
+
 local function Get(panel, child)
 	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
 end
+
+local function SetState(newState)
+	if currentState == newState then return end
+	currentState = newState
+	--print("SetState to " .. newState)
+	if currentState ~= states.crafting then
+		CLOSE_BUTTON.isInteractable = false
+	else
+		CLOSE_BUTTON.isInteractable = true
+	end
+end
+
+SetState(states.closed)
+
+--Setup Upgrade Panel references
+UPGRADE_CANCEL_BUTTON = Get(UPGRADE_CONFIRMATION_PANEL, "Cancel Upgrade Button")
+UPGRADE_CONFIRM_BUTTON = Get(UPGRADE_CONFIRMATION_PANEL, "Confirm Upgrade Button")
 
 --Setup Selected Object Slot references
 local SELECTED_OBJECT_SLOT = Get(UPGRADE_PANEL, "Selected Object Slot")
@@ -116,10 +137,28 @@ local function GetUpgradeRecipe(item)
 	return newrecipe
 end
 
-
-local function UpgradeItem()
+local function UpgradeItem(button)
+	function HideUpgradeConfirmationPanel()
+		DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
+		UPGRADE_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
+	end
 	if selectedRecipe then
-		print("Upgrade Item")
+		if currentState == states.crafting then
+			SetState(states.upgrading)
+		end
+		if currentState == states.upgrading then
+			DIMMER_BACKGROUND.visibility = Visibility.INHERIT
+			UPGRADE_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
+			if button == UPGRADE_CANCEL_BUTTON then
+				HideUpgradeConfirmationPanel()
+				SetState(states.crafting)
+			elseif button == UPGRADE_CONFIRM_BUTTON then
+				--Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe)
+				print("Upgrade Item")
+				HideUpgradeConfirmationPanel()
+				SetState(states.crafting)
+			end
+		end
 	end
 end
 
@@ -187,6 +226,7 @@ local function SetImage(panel, icon, itemdata)
 end
 
 local function SelectRecipe(item, slot)
+	if currentState ~= states.crafting then return end
 	selectedRecipe = {
 		item = item,
 		slot = slot
@@ -207,9 +247,9 @@ local function ClearUpgradePanelDetails()
 end
 
 local function ClickedSlot(slot)
-	if not currentInventory then
-		return
-	end
+	if not currentInventory then return	end
+	if currentState ~= states.crafting then return end
+
 	local item = currentInventory:GetItem(slot.index)
 	if not item then
 		ClearUpgradePanelDetails()
@@ -221,48 +261,55 @@ end
 
 local function ScrapItem(button)
 	if selectedRecipe then
-		if selectedRecipe.item:GetCustomProperty("IsBag") then return end
-		function HideScrapConfirmationWindow()
-			SCRAP_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
-			DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
-			for index, _ in ipairs(SCRAP_PREVIEW_SLOT) do
-				SCRAP_PREVIEW_SLOT[index].clientUserData.icon.visibility = Visibility.FORCE_OFF
-				SCRAP_PREVIEW_SLOT[index].clientUserData.count.visibility = Visibility.FORCE_OFF
-			end
+		if currentState == states.crafting then
+			SetState(states.scrapping)
 		end
-
-		local scrapRecipe = GetScrapRecipe(selectedRecipe.item) --Table of items to give to player if they choose to scrap the item
-				if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
-		
-		--For each item in the scrapRecipe populate the preview slots with the item icon and quantity
-		local count = 0
-		for itemName, quantity in pairs(scrapRecipe) do
-			count = count + 1
-			local itemdata = MATERIALS.GetDefinition(itemName, true)
-			if not itemdata then
-				warn("No item data for " .. itemName)
-				return
+		if currentState == states.scrapping then
+			if selectedRecipe.item:GetCustomProperty("IsBag") then return end
+			function HideScrapConfirmationWindow()
+				SCRAP_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
+				DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
+				for index, _ in ipairs(SCRAP_PREVIEW_SLOT) do
+					SCRAP_PREVIEW_SLOT[index].clientUserData.icon.visibility = Visibility.FORCE_OFF
+					SCRAP_PREVIEW_SLOT[index].clientUserData.count.visibility = Visibility.FORCE_OFF
+				end
 			end
-			local icon = itemdata["icon"]
-			--Set the icon and quantity for the item on the SLOT UI
-			SCRAP_PREVIEW_SLOT[count].clientUserData.icon:SetImage(icon)
-			SCRAP_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
-			SCRAP_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
-			SCRAP_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
-		end
 
-		--Popup scrap confirmation window
-		SCRAP_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
-		DIMMER_BACKGROUND.visibility = Visibility.INHERIT
-		if button == SCRAP_CANCEL_BUTTON then
-			HideScrapConfirmationWindow()
-		elseif button == SCRAP_CONFIRMATION_BUTTON then
-			--Destroy the item
-			--Give the player the items in the scrapRecipe table
-			Events.Broadcast(craftingEvents.Cscrap, selectedRecipe.slot.index)
-			selectedRecipe = {}
-			HideScrapConfirmationWindow()
-			ClearUpgradePanelDetails()
+			local scrapRecipe = GetScrapRecipe(selectedRecipe.item) --Table of items to give to player if they choose to scrap the item
+					if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
+			
+			--For each item in the scrapRecipe populate the preview slots with the item icon and quantity
+			local count = 0
+			for itemName, quantity in pairs(scrapRecipe) do
+				count = count + 1
+				local itemdata = MATERIALS.GetDefinition(itemName, true)
+				if not itemdata then
+					warn("No item data for " .. itemName)
+					return
+				end
+				local icon = itemdata["icon"]
+				--Set the icon and quantity for the item on the SLOT UI
+				SCRAP_PREVIEW_SLOT[count].clientUserData.icon:SetImage(icon)
+				SCRAP_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
+				SCRAP_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
+				SCRAP_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
+			end
+
+			--Popup scrap confirmation window
+			SCRAP_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
+			DIMMER_BACKGROUND.visibility = Visibility.INHERIT
+			if button == SCRAP_CANCEL_BUTTON then
+				HideScrapConfirmationWindow()
+				SetState(states.crafting)
+			elseif button == SCRAP_CONFIRMATION_BUTTON then
+				--Destroy the item
+				--Give the player the items in the scrapRecipe table
+				Events.Broadcast(craftingEvents.Cscrap, selectedRecipe.slot.index)
+				selectedRecipe = {}
+				SetState(states.crafting)
+				HideScrapConfirmationWindow()
+				ClearUpgradePanelDetails()
+			end
 		end
 	end
 end
@@ -280,18 +327,12 @@ local function UnhoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDragging then
-		return
-	end
 end
 
 local function HoverSlot(slot)
-	if not currentInventory then
-		return
-	end
-	if isDragging then
-		return
-	end
+	if not currentInventory then return	end
+	if currentState ~= states.crafting then return end
+
 	if SCRAP_CONFIRMATION_PANEL.visibility == Visibility.INHERIT then return end --Don't show the hover panel if the scrap confirmation panel is open
 	HOVERDATA.hovering = true
 	HideArrows()
@@ -555,11 +596,9 @@ local function CharacterUnequip(character, player)
 end
 
 function Tick(dt)
-	local mpos = Input.GetCursorPosition()
-
-	if DRAG_PANEL.visibility ~= Visibility.FORCE_OFF then
-		DRAG_PANEL.x = CoreMath.Lerp(DRAG_PANEL.x, mpos.x, dt * 20)
-		DRAG_PANEL.y = CoreMath.Lerp(DRAG_PANEL.y, mpos.y, dt * 20)
+	if currentState == states.crafting then return end
+	if ROOT.visibility ~= Visibility.FORCE_OFF and currentState == states.closed then
+		SetState(states.crafting)
 	end
 end
 
@@ -570,3 +609,8 @@ SCRAP_BUTTON.clickedEvent:Connect(ScrapItem)
 UPGRADE_BUTTON.clickedEvent:Connect(UpgradeItem)
 SCRAP_CONFIRMATION_BUTTON.clickedEvent:Connect(ScrapItem)
 SCRAP_CANCEL_BUTTON.clickedEvent:Connect(ScrapItem)
+UPGRADE_CANCEL_BUTTON.clickedEvent:Connect(UpgradeItem)
+UPGRADE_CONFIRM_BUTTON.clickedEvent:Connect(UpgradeItem)
+CLOSE_BUTTON.clickedEvent:Connect(function()
+	SetState(states.closed)
+end)
