@@ -163,7 +163,6 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	for itemName, quantity in pairs(upgradeRecipe) do
 		if type(quantity) == "number" and quantity > 0 then
 			count = count + 1
-			print(itemName, quantity)
 			local materialData = MATERIALS.GetDefinition(itemName, true)
 			if not materialData then
 				warn("No item data for " .. itemName)
@@ -192,7 +191,7 @@ local function SelectRecipe(item, slot)
 		item = item,
 		slot = slot
 	}
-	RefreshUpgradePanelDetails(item, item)
+	RefreshUpgradePanelDetails(item, slot)
 end
 
 local function ClearUpgradePanelDetails()
@@ -201,6 +200,10 @@ local function ClearUpgradePanelDetails()
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.FORCE_OFF
 	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.FORCE_OFF
 	SELECTED_OBJECT_SLOT.clientUserData.isBag.visibility = Visibility.FORCE_OFF
+	for _, previewSlot in ipairs(UPGRADE_PREVIEW_SLOT) do
+		previewSlot.clientUserData.icon.visibility = Visibility.FORCE_OFF
+		previewSlot.clientUserData.count.visibility = Visibility.FORCE_OFF
+	end
 end
 
 local function ClickedSlot(slot)
@@ -264,6 +267,13 @@ local function ScrapItem(button)
 	end
 end
 
+local function HideArrows()
+	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
+end
+
 local function UnhoverSlot(slot)
 	HOVER_PANEL.visibility = Visibility.FORCE_OFF
 	HOVERDATA.hovering = false
@@ -284,6 +294,7 @@ local function HoverSlot(slot)
 	end
 	if SCRAP_CONFIRMATION_PANEL.visibility == Visibility.INHERIT then return end --Don't show the hover panel if the scrap confirmation panel is open
 	HOVERDATA.hovering = true
+	HideArrows()
 	local item = currentInventory:GetItem(slot.index)
 	if item then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
