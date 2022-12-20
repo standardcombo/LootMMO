@@ -122,6 +122,12 @@ Assets {
           }
         }
         ParentId: 16648679857669058489
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
         TemplateInstance {
           ParameterOverrideMap {
             key: 10075780642854712533
@@ -144,12 +150,43 @@ Assets {
                   Yaw: 157.500031
                 }
               }
+            }
+          }
+          ParameterOverrideMap {
+            key: 11485888425182018448
+            value {
               Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
+                Name: "HoveredColor"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 0.2
+                }
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 13192944649928894444
+            value {
+              Overrides {
+                Name: "Visible"
+                Enum {
+                  Value: "mc:evisibilitysetting:forceoff"
+                }
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 13607689966869900797
+            value {
+              Overrides {
+                Name: "HoveredColor"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 0.2
                 }
               }
             }
