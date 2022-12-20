@@ -33,13 +33,6 @@ local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
--- Cache references
-for _,slot in ipairs(ABILITY_SLOTS) do
-	slot.clientUserData.icon = slot:GetCustomProperty("Icon"):WaitForObject()
-	slot.clientUserData.actionText = slot:GetCustomProperty("ActionText"):WaitForObject()
-	slot.clientUserData.outline = slot:GetCustomProperty("Outline"):WaitForObject()
-end
-
 
 local function Hide()
 	EASE_UI.EaseOpacity(ROOT, 0, .4)
@@ -64,14 +57,12 @@ local function Show()
 		slot.visibility = Visibility.FORCE_OFF
 
 		if Progression:GetProgressionKey("AbilitySlot" .. i) then
-			local abilityName = class["Ability" .. i]
+			local abilityId = class["Ability" .. i]
+			slot.clientUserData.abilityId = abilityId
 			-- Set slot icon
-			local iconAsset = AbilityAPI.GetIcon(abilityName)
+			local iconAsset = AbilityAPI.GetIcon(abilityId)
 			local iconImage = slot.clientUserData.icon
 			iconImage:SetImage(iconAsset)
-			-- Set slot outline color
-			--local color = AbilityAPI.GetColor(abilityName)
-			--slot.clientUserData.outline:SetColor(color)
 
 			if Progression:GetProgressionKey("AcceptSlot" .. i) then
 				slot.visibility = Visibility.INHERIT
@@ -80,7 +71,7 @@ local function Show()
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
 				
-				UpdateContents(abilityName)
+				UpdateContents(AbilityAPI, abilityId)
 
 				Events.BroadcastToServer("AcceptSlot", i)
 				Progression:SetProgression("AcceptSlot" .. i, true)
@@ -142,12 +133,53 @@ function PlayUnlockAnimation(slot)
 	end)
 end
 
-function UpdateContents(abilityName)
-	local iconAsset = AbilityAPI.GetIcon(abilityName)
+function UpdateContents(_api, entryId)
+	local iconAsset = _api.GetIcon(entryId)
 	MAIN_ICON:SetImage(iconAsset)
-	ABILITY_NAME.text = abilityName
-	ABILITY_DESCRIPTION.text = AbilityAPI.GetDescription(abilityName)
+	ABILITY_NAME.text = _api.GetName(entryId)
+	ABILITY_DESCRIPTION.text = _api.GetDescription(entryId)
 end
+
+local function OnSlotPressed(btn)
+	local slot = btn.clientUserData.slot
+
+	-- Move the selection indicator
+	SELECTION_INDICATOR.x = slot.x
+	SELECTION_INDICATOR.y = slot.y
+	SELECTION_INDICATOR.width = slot.width + 10
+	SELECTION_INDICATOR.height = slot.height + 10
+	EASE_UI.EaseWidth(SELECTION_INDICATOR, slot.width, 0.2)
+	EASE_UI.EaseHeight(SELECTION_INDICATOR, slot.height, 0.2)
+
+	-- Update central info about the selected ability
+	if slot.clientUserData.isAbility then
+		UpdateContents(AbilityAPI, slot.clientUserData.abilityId)
+	elseif slot.clientUserData.isPotion then
+		UpdateContents(PotionAPI, slot.clientUserData.potionId)
+	end
+end
+
+local function CacheSlotReferences()
+	local _CacheSlot = function(slot)
+		slot.clientUserData.icon = slot:GetCustomProperty("Icon"):WaitForObject()
+		slot.clientUserData.actionText = slot:GetCustomProperty("ActionText"):WaitForObject()
+		local btn = slot:GetCustomProperty("Button"):WaitForObject()
+		btn.clickedEvent:Connect(OnSlotPressed)
+		btn.clientUserData.slot = slot
+		slot.clientUserData.button = btn
+	end
+	-- Ability slots
+	for _,slot in ipairs(ABILITY_SLOTS) do
+		slot.clientUserData.isAbility = true
+		_CacheSlot(slot)
+	end
+	-- Potion slots
+	for _,slot in ipairs(POTION_SLOTS) do
+		slot.clientUserData.isPotion = true
+		_CacheSlot(slot)
+	end
+end
+CacheSlotReferences()
 
 
 Events.Connect(EVENT_SHOW_ABILITIES, Show)

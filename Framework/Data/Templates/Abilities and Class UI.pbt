@@ -45887,8 +45887,8 @@ Assets {
         Control {
           Width: 50
           Height: 50
-          UIX: -50
-          UIY: 50
+          UIX: -100
+          UIY: 100
           RotationAngle: 45
           RenderTransformPivot {
             Anchor {
@@ -49357,13 +49357,16 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 170
-          Height: 170
+          Width: 70
+          Height: 70
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
           Image {
             Brush {
               Id: 8578995028087510781
@@ -49430,13 +49433,16 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 113
-          Height: 113
+          Width: 13
+          Height: 13
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
           Image {
             Brush {
               Id: 1170023131880546749
