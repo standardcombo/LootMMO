@@ -4645,9 +4645,9 @@ Objects {
   }
   ParentId: 15851175281833595220
   ChildIds: 12915496345788745808
-  ChildIds: 8841206449661026873
-  ChildIds: 3702518013944684649
-  ChildIds: 14458065893190481688
+  ChildIds: 13596205608591135504
+  ChildIds: 10057419751084370716
+  ChildIds: 4272629843670951901
   UnregisteredParameters {
     Overrides {
       Name: "cs:Spinner"
@@ -4705,7 +4705,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 14458065893190481688
+  Id: 4272629843670951901
   Name: "Label"
   Transform {
     Location {
@@ -4729,10 +4729,8 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 200
+    Width: 342
     Height: 37
-    UIX: 3.0748291
-    UIY: -2.96514893
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -4742,8 +4740,7 @@ Objects {
       Label: "CANCEL"
       Color {
         R: 1
-        G: 0.946291447
-        B: 0.188999951
+        G: 0.456411064
         A: 1
       }
       Size: 27
@@ -4781,7 +4778,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3702518013944684649
+  Id: 10057419751084370716
   Name: "CONFIRM_BUTTON_HOVER"
   Transform {
     Location {
@@ -4795,9 +4792,9 @@ Objects {
     }
   }
   ParentId: 15484994156513645817
-  ChildIds: 1450871015252240934
-  ChildIds: 2542297334514557935
-  ChildIds: 1592294653760277327
+  ChildIds: 9006862799062309199
+  ChildIds: 3766917018646654188
+  ChildIds: 16702842940374455699
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4815,7 +4812,6 @@ Objects {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    UseParentWidth: true
     Panel {
       Opacity: 1
       OpacityMaskBrush {
@@ -4840,7 +4836,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1592294653760277327
+  Id: 16702842940374455699
   Name: "FRAME_BRIGHT"
   Transform {
     Location {
@@ -4853,7 +4849,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3702518013944684649
+  ParentId: 10057419751084370716
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4864,7 +4860,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 22
+    Width: -90
     Height: 57
     UIY: 2
     RenderTransformPivot {
@@ -4879,8 +4875,8 @@ Objects {
         Id: 7615847344375253670
       }
       Color {
-        R: 0.393333256
-        G: 1
+        R: 1
+        G: 0.911920369
         B: 0.3
         A: 0.520000041
       }
@@ -4906,7 +4902,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 2542297334514557935
+  Id: 3766917018646654188
   Name: "FRAME_BRIGHT"
   Transform {
     Location {
@@ -4919,7 +4915,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3702518013944684649
+  ParentId: 10057419751084370716
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4930,7 +4926,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 33
+    Width: -140
     Height: 57
     UIY: 2
     RenderTransformPivot {
@@ -4969,7 +4965,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1450871015252240934
+  Id: 9006862799062309199
   Name: "FADE"
   Transform {
     Location {
@@ -4982,7 +4978,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3702518013944684649
+  ParentId: 10057419751084370716
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5007,8 +5003,8 @@ Objects {
         Id: 48307754774318265
       }
       Color {
-        G: 0.252
-        B: 0.00840005185
+        R: 0.252
+        G: 0.0851125568
         A: 1
       }
       TeamSettings {
@@ -5033,7 +5029,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8841206449661026873
+  Id: 13596205608591135504
   Name: "CONFIRM_BUTTON"
   Transform {
     Location {
@@ -5047,8 +5043,8 @@ Objects {
     }
   }
   ParentId: 15484994156513645817
-  ChildIds: 6688957675877416836
-  ChildIds: 6439189092864212125
+  ChildIds: 4234737293112818875
+  ChildIds: 16840489193656107304
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5090,7 +5086,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6439189092864212125
+  Id: 16840489193656107304
   Name: "FRAME_BRIGHT"
   Transform {
     Location {
@@ -5103,7 +5099,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8841206449661026873
+  ParentId: 13596205608591135504
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5114,7 +5110,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 10
+    Width: -90
     Height: 57
     UIY: 2
     RenderTransformPivot {
@@ -5129,9 +5125,9 @@ Objects {
         Id: 7615847344375253670
       }
       Color {
-        R: 0.3
-        G: 1
-        B: 0.323333502
+        R: 1
+        G: 0.911920369
+        B: 0.3
         A: 0.520000041
       }
       TeamSettings {
@@ -5156,7 +5152,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 6688957675877416836
+  Id: 4234737293112818875
   Name: "FADE"
   Transform {
     Location {
@@ -5169,7 +5165,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8841206449661026873
+  ParentId: 13596205608591135504
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5194,7 +5190,8 @@ Objects {
         Id: 48307754774318265
       }
       Color {
-        G: 0.252
+        R: 0.252
+        G: 0.0851125568
         A: 0.509
       }
       TeamSettings {
@@ -5260,13 +5257,13 @@ Objects {
       }
       FontSize: 20
       ButtonColor {
-        R: 0.0659485236
-        G: 0.439657241
+        R: 0.439657241
+        G: 0.201556295
         A: 1
       }
       HoveredColor {
-        R: 0.151616618
-        G: 0.827
+        R: 0.723055363
+        G: 0.428690553
         A: 1
       }
       PressedColor {
@@ -8391,7 +8388,7 @@ Objects {
 }
 Objects {
   Id: 13270664458026478022
-  Name: "Slot"
+  Name: "Slot 3"
   Transform {
     Location {
       X: -21503.2891
@@ -9307,7 +9304,7 @@ Objects {
 }
 Objects {
   Id: 7972996134468661834
-  Name: "Slot"
+  Name: "Slot 2"
   Transform {
     Location {
       X: -21503.2695
@@ -10222,7 +10219,7 @@ Objects {
 }
 Objects {
   Id: 15277407784765326367
-  Name: "Slot"
+  Name: "Slot 1"
   Transform {
     Location {
       X: -21503.2695
