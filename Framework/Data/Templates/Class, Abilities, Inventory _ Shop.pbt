@@ -152,45 +152,6 @@ Assets {
               }
             }
           }
-          ParameterOverrideMap {
-            key: 11485888425182018448
-            value {
-              Overrides {
-                Name: "HoveredColor"
-                Color {
-                  R: 1
-                  G: 1
-                  B: 1
-                  A: 0.2
-                }
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 13192944649928894444
-            value {
-              Overrides {
-                Name: "Visible"
-                Enum {
-                  Value: "mc:evisibilitysetting:forceoff"
-                }
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 13607689966869900797
-            value {
-              Overrides {
-                Name: "HoveredColor"
-                Color {
-                  R: 1
-                  G: 1
-                  B: 1
-                  A: 0.2
-                }
-              }
-            }
-          }
           TemplateAsset {
             Id: 13661131819183159129
           }

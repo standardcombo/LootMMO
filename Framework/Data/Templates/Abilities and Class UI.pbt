@@ -45096,6 +45096,7 @@ Assets {
         ChildIds: 4712586897910866749
         ChildIds: 3052098309912118867
         ChildIds: 11612397121135294089
+        ChildIds: 5959645430569466393
         ChildIds: 16511046541071761264
         ChildIds: 13628648149494387319
         ChildIds: 1769486669779111570
@@ -45162,7 +45163,13 @@ Assets {
         ParentId: 13192944649928894444
         UnregisteredParameters {
           Overrides {
-            Name: "cs:AbilityUnlockAnimation"
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 13192944649928894444
+            }
+          }
+          Overrides {
+            Name: "cs:UnlockAnimationScript"
             ObjectReference {
               SubObjectId: 14546134160714896542
             }
@@ -45180,24 +45187,6 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:CenterPanel"
-            ObjectReference {
-              SubObjectId: 3052098309912118867
-            }
-          }
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13192944649928894444
-            }
-          }
-          Overrides {
-            Name: "cs:UnlockAnimationScript"
-            ObjectReference {
-              SubObjectId: 14546134160714896542
-            }
-          }
-          Overrides {
             Name: "cs:MainAbilityIcon"
             ObjectReference {
               SubObjectId: 14235505782615228524
@@ -45210,6 +45199,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:CenterPanel"
+            ObjectReference {
+              SubObjectId: 3052098309912118867
+            }
+          }
+          Overrides {
             Name: "cs:AbilityName"
             ObjectReference {
               SubObjectId: 12611772766970814114
@@ -45219,12 +45214,6 @@ Assets {
             Name: "cs:AbilityDescription"
             ObjectReference {
               SubObjectId: 10846534887957406504
-            }
-          }
-          Overrides {
-            Name: "cs:UpgradeButton"
-            ObjectReference {
-              SubObjectId: 1658839675723635303
             }
           }
           Overrides {
@@ -45246,9 +45235,21 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:UpgradeButton"
+            ObjectReference {
+              SubObjectId: 1658839675723635303
+            }
+          }
+          Overrides {
             Name: "cs:PointCount"
             ObjectReference {
               SubObjectId: 10688061735674432584
+            }
+          }
+          Overrides {
+            Name: "cs:SelectionIndicator"
+            ObjectReference {
+              SubObjectId: 5959645430569466393
             }
           }
           Overrides {
@@ -49261,6 +49262,220 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 5959645430569466393
+        Name: "Selection Indicator"
+        Transform {
+          Location {
+            X: 30597.418
+            Y: -24395.1387
+            Z: 52211.4688
+          }
+          Rotation {
+            Yaw: -57.8849068
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13192944649928894444
+        ChildIds: 17230365119201350158
+        ChildIds: 15888558661678940105
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 100
+          Height: 100
+          UIX: -425
+          UIY: -150
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomright"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17230365119201350158
+        Name: "Emissive Glow"
+        Transform {
+          Location {
+            X: -37856.5117
+            Y: -10494.4805
+            Z: -51828.625
+          }
+          Rotation {
+            Yaw: 53.9784203
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5959645430569466393
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 170
+          Height: 170
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 8578995028087510781
+            }
+            Color {
+              R: 0.29328
+              G: 0.918442309
+              B: 0.940000057
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15888558661678940105
+        Name: "Ring"
+        Transform {
+          Location {
+            X: -37856.5273
+            Y: -10494.4883
+            Z: -51828.625
+          }
+          Rotation {
+            Yaw: 53.9784431
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5959645430569466393
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 113
+          Height: 113
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 1170023131880546749
+            }
+            Color {
+              R: 0.251
+              G: 0.625499487
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              G: 0.00899999216
+              B: 0.0600000024
+              A: 1
+            }
+            ShadowOffset {
+              X: -2
+              Y: 2
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 16511046541071761264
         Name: "AbilitySlots"
         Transform {
@@ -49337,6 +49552,20 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: 112.499893
+                }
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 14483255760824849178
+            value {
+              Overrides {
+                Name: "HoveredColor"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 0.2
                 }
               }
             }
@@ -49669,6 +49898,20 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: 112.499763
+                }
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 6393385538658277511
+            value {
+              Overrides {
+                Name: "HoveredColor"
+                Color {
+                  R: 1
+                  G: 1
+                  B: 1
+                  A: 0.2
                 }
               }
             }

@@ -11,8 +11,8 @@ local Star_Ratings = _G["Star_Rating"]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local UNLOCK_ANIMATION = script:GetCustomProperty("UnlockAnimationScript"):WaitForObject()
-
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+
 local LEFT_PANEL = script:GetCustomProperty("LeftPanel"):WaitForObject()
 local MAIN_ICON = script:GetCustomProperty("MainAbilityIcon"):WaitForObject()
 local STARS = script:GetCustomProperty("Stars"):WaitForObject()
@@ -26,8 +26,8 @@ local ABILITY_SLOTS = script:GetCustomProperty("AbilitySlots"):WaitForObject():G
 local POTION_SLOTS = script:GetCustomProperty("PotionSlots"):WaitForObject():GetChildren()
 
 local UPGRADE_BUTTON = script:GetCustomProperty("UpgradeButton"):WaitForObject()
-local LOOT_ICON = script:GetCustomProperty("LootIcon")
 local POINT_COUNT = script:GetCustomProperty("PointCount"):WaitForObject()
+local SELECTION_INDICATOR = script:GetCustomProperty("SelectionIndicator"):WaitForObject()
 
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
@@ -107,6 +107,8 @@ local function Show()
 		CENTER_PANEL.visibility = Visibility.FORCE_OFF
 		CLOSE_BUTTON.visibility = Visibility.FORCE_OFF
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+		SELECTION_INDICATOR.visibility = Visibility.FORCE_OFF
+		SELECTION_INDICATOR.opacity = 0
 
 		Task.Wait(2.5)
 		local x, h
@@ -123,6 +125,11 @@ local function Show()
 		h = CENTER_PANEL.height
 		CENTER_PANEL.height = 0
 		EASE_UI.EaseHeight(CENTER_PANEL, h, 3)
+
+		SELECTION_INDICATOR.visibility = Visibility.INHERIT
+		SELECTION_INDICATOR.x = slotToUnlock.x
+		SELECTION_INDICATOR.y = slotToUnlock.y
+		EASE_UI.EaseOpacity(SELECTION_INDICATOR, 1, .7)
 	end
 end
 
