@@ -81,6 +81,9 @@ local function Show()
 				PlayUnlockAnimation(slot)
 				
 				UpdateContents(abilityName)
+
+				Events.BroadcastToServer("AcceptSlot", i)
+				Progression:SetProgression("AcceptSlot" .. i, true)
 			end
 		end
 	end
