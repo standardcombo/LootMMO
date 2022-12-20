@@ -129,7 +129,10 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 
 	local icon = itemdata["icon"]
 
-	local greatness = tostring(item:GetCustomProperty("Greatness"))
+	local greatness = item:GetCustomProperty("Greatness")
+	if greatness then
+		greatness = math.max(1, greatness)
+	end
 	if item:GetCustomProperty("Greatness") >= 20 then return end
 
 	if slot.isBag then
@@ -143,11 +146,11 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	end
 	OBJECT_TO_SCRAP_SLOT.clientUserData.name.text = itemdata.name
 	OBJECT_TO_SCRAP_SLOT.clientUserData.icon:SetImage(icon)
-	OBJECT_TO_SCRAP_SLOT.clientUserData.levelText.text = greatness
+	OBJECT_TO_SCRAP_SLOT.clientUserData.levelText.text = tostring(greatness)
 	OBJECT_TO_SCRAP_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.name.text = itemdata.name
 	SELECTED_OBJECT_SLOT.clientUserData.icon:SetImage(icon)
-	SELECTED_OBJECT_SLOT.clientUserData.levelText.text = greatness
+	SELECTED_OBJECT_SLOT.clientUserData.levelText.text = tostring(greatness)
 	SELECTED_OBJECT_SLOT.clientUserData.name.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
@@ -167,6 +170,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 				return
 			end
 			local previewIcon = materialData["icon"]
+			quantity = math.ceil(quantity * greatness) --Update quantity to reflect the greatness of the item
 
 			--Set the icon and quantity for the item on the SLOT UI
 			UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
