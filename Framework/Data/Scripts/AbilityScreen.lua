@@ -4,7 +4,7 @@
 local EVENT_SHOW_ABILITIES = "Abilities.Show"
 local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
 
-local CLASSAPI = _G["Character.Classes"]
+local ClassAPI = _G["Character.Classes"]
 local EquipAPI = _G["Character.EquipAPI"]
 local AbilityAPI = _G["Ability.Equipment"]
 local PotionAPI = _G["Potions.Equipment"]
@@ -35,6 +35,7 @@ local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
+local selectedAbilityIndex = 1
 local selectedSlot = nil
 
 
@@ -74,6 +75,7 @@ local function Show()
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
 				
+				selectedAbilityIndex = i
 				UpdateContents(AbilityAPI, abilityId)
 
 				Events.BroadcastToServer("AcceptSlot", i)
@@ -188,6 +190,25 @@ function UpdateContents(_api, entryId)
 		POINTS_PANEL.visibility = Visibility.FORCE_OFF
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	end
+
+	if _api == AbilityAPI then
+		local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
+		local class = character:GetComponent("Class")
+		local classname = class:GetClass()
+		local classData = ClassAPI.GetClass(classname)
+		local selection = classData["Ability"..selectedAbilityIndex]
+		local propertyCalculations = _G["Modifiers.CalculationString"][selection]
+		if propertyCalculations then
+			local newString = ""
+			for key, value in pairs(propertyCalculations) do
+				newString = string.format("%s%s : %s \n", newString, key, value)
+			end
+			ABILITY_PROPERTIES.text = newString
+		end
+		ABILITY_PROPERTIES.visibility = Visibility.INHERIT
+	else
+		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
+	end
 end
 
 local function OnSlotPressed(btn)
@@ -196,6 +217,14 @@ end
 
 function SelectSlot(slot)
 	selectedSlot = slot
+
+	selectedAbilityIndex = 1
+	for i,_s in ipairs(ABILITY_SLOTS) do
+		if _s == slot then
+			selectedAbilityIndex = i
+			break
+		end
+	end
 
 	-- Move the selection indicator
 	SELECTION_INDICATOR.x = slot.x
