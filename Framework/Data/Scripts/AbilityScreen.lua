@@ -35,6 +35,19 @@ local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
+local ABILITY_INPUTS = {
+	"Shift",
+	"1",
+	"2",
+	"3",
+	"4",
+}
+local POTION_INPUTS = {
+	"z",
+	"x",
+	"c",
+}
+
 local selectedAbilityIndex = 1
 local selectedSlot = nil
 
@@ -67,10 +80,15 @@ local function Show()
 			local iconAsset = AbilityAPI.GetIcon(abilityId)
 			local iconImage = slot.clientUserData.icon
 			iconImage:SetImage(iconAsset)
+			-- Set slot input label
+			local inputLabel = Input.GetActionInputLabel(ABILITY_INPUTS[i])
+			slot.clientUserData.actionText.text = inputLabel
 
+			-- Simply enable abilities that have already been accepted by the player
 			if Progression:GetProgressionKey("AcceptSlot" .. i) then
 				slot.visibility = Visibility.INHERIT
 
+			-- The first non-accepted ability goes into the unlock sequence
 			elseif not slotToUnlock then
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
@@ -107,10 +125,15 @@ local function Show()
 			local iconAsset = PotionAPI.GetIcon(potionId)
 			local iconImage = slot.clientUserData.icon
 			iconImage:SetImage(iconAsset)
+			-- Set slot input label
+			local inputLabel = Input.GetActionInputLabel(POTION_INPUTS[i])
+			slot.clientUserData.actionText.text = inputLabel
 
+			-- Simply enable potions that have already been accepted by the player
 			if Progression:GetProgressionKey("AcceptPotion" .. i) then
 				slot.visibility = Visibility.INHERIT
 
+			-- The first non-accepted potion goes into the unlock sequence
 			elseif not slotToUnlock then
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
