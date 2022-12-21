@@ -29,13 +29,13 @@ local function CanUpgrade(progression, points, ability)
 	return true
 end
 
-function UpgradeAbility(player, slot)
-	slot = tonumber(slot)
+function UpgradeAbility(player, slotIndex)
+	slotIndex = tonumber(slotIndex)
 	if not CheckPlayer(player) then
 		return
 	end
 	local Character = EquipAPI.GetCurrentCharacter(player)
-	if not map[slot] then return end
+	if not map[slotIndex] then return end
 	if not Character then return end
 	local points      = Character:GetComponent("Points")
 	local progression = Character:GetComponent("Progression")
@@ -43,7 +43,7 @@ function UpgradeAbility(player, slot)
 	local classtable  = class:GetClassTable()
 	if not classtable then return end
 
-	local Ability = classtable[map[slot]]
+	local Ability = classtable[map[slotIndex]]
 	if not Ability then return end
 
 	if CanUpgrade(progression, points, Ability) then

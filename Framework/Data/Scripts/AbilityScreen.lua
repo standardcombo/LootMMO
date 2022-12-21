@@ -64,8 +64,8 @@ local function Show()
 	EASE_UI.EaseOpacity(ROOT, 1, .4)
 
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-	local Progression = character:GetComponent("Progression")
-	local class = character:GetComponent("Class"):GetClassTable()
+	local progression = character:GetComponent("Progression")
+	local classTable = character:GetComponent("Class"):GetClassTable()
 
 	local slotToUnlock = nil
 
@@ -73,8 +73,8 @@ local function Show()
 		local slot = ABILITY_SLOTS[i]
 		slot.visibility = Visibility.FORCE_OFF
 
-		if Progression:GetProgressionKey("AbilitySlot" .. i) then
-			local abilityId = class["Ability" .. i]
+		if progression:GetProgressionKey("AbilitySlot" .. i) then
+			local abilityId = classTable["Ability" .. i]
 			slot.clientUserData.abilityId = abilityId
 			-- Set slot icon
 			local iconAsset = AbilityAPI.GetIcon(abilityId)
@@ -85,7 +85,7 @@ local function Show()
 			slot.clientUserData.actionText.text = inputLabel
 
 			-- Simply enable abilities that have already been accepted by the player
-			if Progression:GetProgressionKey("AcceptSlot" .. i) then
+			if progression:GetProgressionKey("AcceptSlot" .. i) then
 				slot.visibility = Visibility.INHERIT
 
 			-- The first non-accepted ability goes into the unlock sequence
@@ -97,7 +97,7 @@ local function Show()
 				UpdateContents(AbilityAPI, abilityId)
 
 				Events.BroadcastToServer("AcceptSlot", i)
-				Progression:SetProgression("AcceptSlot" .. i, true)
+				progression:SetProgression("AcceptSlot" .. i, true)
 			end
 		end
 		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
@@ -110,7 +110,7 @@ local function Show()
 		local slot = POTION_SLOTS[i]
 		slot.visibility = Visibility.FORCE_OFF
 
-		if Progression:GetProgressionKey("PotionSlot" .. i) then
+		if progression:GetProgressionKey("PotionSlot" .. i) then
 			local potions = character:GetComponent("Potions")
 			local potionId = potions:GetEquipped(i)
 			if not potionId then
@@ -130,7 +130,7 @@ local function Show()
 			slot.clientUserData.actionText.text = inputLabel
 
 			-- Simply enable potions that have already been accepted by the player
-			if Progression:GetProgressionKey("AcceptPotion" .. i) then
+			if progression:GetProgressionKey("AcceptPotion" .. i) then
 				slot.visibility = Visibility.INHERIT
 
 			-- The first non-accepted potion goes into the unlock sequence
@@ -141,7 +141,7 @@ local function Show()
 				UpdateContents(PotionAPI, potionId)
 
 				Events.BroadcastToServer("AcceptPotion", i)
-				Progression:SetProgression("AcceptPotion" .. i, true)
+				progression:SetProgression("AcceptPotion" .. i, true)
 			end
 		end
 		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
@@ -196,15 +196,17 @@ function PlayUnlockAnimation(slot)
 end
 
 function UpdateContents(_api, entryId)
+	-- Icon
 	local iconAsset = _api.GetIcon(entryId)
 	MAIN_ICON:SetImage(iconAsset)
+	-- Name and description
 	ABILITY_NAME.text = _api.GetName(entryId)
 	ABILITY_DESCRIPTION.text = _api.GetDescription(entryId)
 
+	-- Upgrade points and upgrade button
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	local points = character:GetComponent("Points")
 	local pointCount = points:GetUnspentPoints()
-
 	if pointCount > 0 then
 		POINT_COUNT.text = tostring(pointCount)
 		POINTS_PANEL.visibility = Visibility.INHERIT
@@ -213,9 +215,9 @@ function UpdateContents(_api, entryId)
 		POINTS_PANEL.visibility = Visibility.FORCE_OFF
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	end
-
+	
+	-- Ability properties, such as radius, critical chance, cooldown, etc
 	if _api == AbilityAPI and _G["Modifiers.CalculationString"] then
-		local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 		local class = character:GetComponent("Class")
 		local classname = class:GetClass()
 		local classData = ClassAPI.GetClass(classname)
