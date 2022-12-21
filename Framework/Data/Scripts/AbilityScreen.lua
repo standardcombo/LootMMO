@@ -214,7 +214,7 @@ function UpdateContents(_api, entryId)
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	end
 
-	if _api == AbilityAPI then
+	if _api == AbilityAPI and _G["Modifiers.CalculationString"] then
 		local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 		local class = character:GetComponent("Class")
 		local classname = class:GetClass()
@@ -227,8 +227,10 @@ function UpdateContents(_api, entryId)
 				newString = string.format("%s%s : %s \n", newString, key, value)
 			end
 			ABILITY_PROPERTIES.text = newString
+			ABILITY_PROPERTIES.visibility = Visibility.INHERIT
+		else
+			ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 		end
-		ABILITY_PROPERTIES.visibility = Visibility.INHERIT
 	else
 		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 	end
