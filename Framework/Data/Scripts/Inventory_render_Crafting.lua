@@ -3,6 +3,9 @@ local MATERIALS = _G["Items.Materials"]
 local craftAPI = _G["Crafting.CraftingAPI"]
 local ITEMS = _G.Items
 
+local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
+local AsyncBC         = require(script:GetCustomProperty("AsyncBlockchain_FullWalletSearch"))
+
 local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
 local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
@@ -14,6 +17,11 @@ local DIMMER_BACKGROUND = script:GetCustomProperty("DimmerBackground"):WaitForOb
 local SCRAP_CONFIRMATION_PANEL = script:GetCustomProperty("ScrapConfirmationPanel"):WaitForObject()
 local UPGRADE_CONFIRMATION_PANEL = script:GetCustomProperty("UpgradeConfirmationPanel"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+
+local COLLECTIONS = {}
+for index, value in pairs(LOOT_BAG_PARSER.Collection) do
+	table.insert(COLLECTIONS, value)
+end
 
 DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
 MATERIALS_BAR.visibility = Visibility.FORCE_OFF
@@ -49,10 +57,10 @@ local craftingEvents = {
 }
 
 local states = {
-	crafting  = 1,
-	upgrading = 2,
-	scrapping = 3,
-	closed    = 4,
+	crafting  = "crafting",
+	upgrading = "upgrading",
+	scrapping = "scrapping",
+	closed    = "closed",
 }
 
 local function Get(panel, child)
@@ -62,7 +70,7 @@ end
 local function SetState(newState)
 	if currentState == newState then return end
 	currentState = newState
-	--print("SetState to " .. newState)
+	print("SetState to " .. newState)
 	if currentState ~= states.crafting then
 		CLOSE_BUTTON.isInteractable = false
 	else
@@ -131,7 +139,6 @@ local function GetUpgradeRecipe(item)
 	local greatness = item:GetCustomProperty("Greatness")
 	local newrecipe = nil
 	if greatness then
-		greatness = math.max(1, greatness)
 		newrecipe = craftAPI.GetRecipe(item.name)
 	end
 	return newrecipe
@@ -153,7 +160,14 @@ local function UpgradeItem(button)
 				HideUpgradeConfirmationPanel()
 				SetState(states.crafting)
 			elseif button == UPGRADE_CONFIRM_BUTTON then
-				--Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe)
+				if selectedRecipe.NFT then
+					print("IS NFT")
+					local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
+					Events.Broadcast(events.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
+				else
+					print("IS NOT NFT")
+					Events.Broadcast(events.Cupgrade, selectedRecipe.slot)
+				end
 				print("Upgrade Item")
 				HideUpgradeConfirmationPanel()
 				SetState(states.crafting)
@@ -256,16 +270,24 @@ local function ClickedSlot(slot)
 		selectedRecipe = {}
 		return
 	end
+	local greatness = item:GetCustomProperty("Greatness")
+	if greatness then
+		greatness = math.max(1, greatness)
+		if greatness >= 20 then return end --If the clicked item is already max greatness, do not select it
+	end
 	SelectRecipe(item,slot)
 end
 
 local function ScrapItem(button)
 	if selectedRecipe then
 		if currentState == states.crafting then
+			if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then you cannot scrap it
+				warn("Cannot scrap NFTs")
+				return
+			end
 			SetState(states.scrapping)
 		end
 		if currentState == states.scrapping then
-			if selectedRecipe.item:GetCustomProperty("IsBag") then return end
 			function HideScrapConfirmationWindow()
 				SCRAP_CONFIRMATION_PANEL.visibility = Visibility.FORCE_OFF
 				DIMMER_BACKGROUND.visibility = Visibility.FORCE_OFF
