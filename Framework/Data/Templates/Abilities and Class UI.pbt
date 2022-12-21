@@ -5399,7 +5399,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 7494676458495629711
+              Id: 9815799220478962354
             }
             Color {
               R: 1
@@ -10510,7 +10510,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 202360450294152261
+              Id: 1152330124052003017
             }
             Color {
               R: 1
@@ -13270,7 +13270,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 7494676458495629711
+              Id: 9815799220478962354
             }
             Color {
               R: 1
@@ -16982,7 +16982,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 7494676458495629711
+              Id: 9815799220478962354
             }
             Color {
               R: 1
@@ -17452,7 +17452,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12707166629963791990
+              Id: 1958896540757858186
             }
             Color {
               R: 1
@@ -17921,7 +17921,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 2486107982593657747
+              Id: 1221213810114228531
             }
             Color {
               R: 1
@@ -18391,7 +18391,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 4990637989068521051
+              Id: 4051655398668448529
             }
             Color {
               R: 1
@@ -18861,7 +18861,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 1781466024055278323
+              Id: 4990637989068521051
             }
             Color {
               R: 1
@@ -20697,7 +20697,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 7494676458495629711
+              Id: 9815799220478962354
             }
             Color {
               R: 1
@@ -28595,7 +28595,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 13141977356100001493
+              Id: 1004023313208396778
             }
             Color {
               R: 1
@@ -29064,7 +29064,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 1004023313208396778
+              Id: 13141977356100001493
             }
             Color {
               R: 1
@@ -30004,7 +30004,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 14806072637514890048
+              Id: 3214066658617782848
             }
             Color {
               R: 1
@@ -35554,7 +35554,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 202360450294152261
+              Id: 1152330124052003017
             }
             Color {
               R: 1
@@ -39258,7 +39258,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 202360450294152261
+              Id: 1152330124052003017
             }
             Color {
               R: 1
@@ -39728,7 +39728,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 5577214413368822822
+              Id: 8975273285240916744
             }
             Color {
               R: 1
@@ -40197,7 +40197,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 5751567816530114738
+              Id: 17752702521577453302
             }
             Color {
               R: 1
@@ -40667,7 +40667,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 2117690284510589350
+              Id: 17370828256945431127
             }
             Color {
               R: 1
@@ -41137,7 +41137,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12193421660254454342
+              Id: 5751567816530114738
             }
             Color {
               R: 1
@@ -42973,7 +42973,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 202360450294152261
+              Id: 1152330124052003017
             }
             Color {
               R: 1
@@ -63513,12 +63513,12 @@ Assets {
       }
     }
     Assets {
-      Id: 7494676458495629711
-      Name: "Fantasy Ability Blue 029"
+      Id: 9815799220478962354
+      Name: "Fantasy Ability Blue 014"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_029"
+        AssetId: "UI_Fantasy_Ability_Blue_014"
       }
     }
     Assets {
@@ -63540,15 +63540,6 @@ Assets {
       }
     }
     Assets {
-      Id: 202360450294152261
-      Name: "Fantasy Ability Red 002"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_002"
-      }
-    }
-    Assets {
       Id: 12017066556531936775
       Name: "Frame Outline Thin 002"
       PlatformAssetType: 9
@@ -63567,21 +63558,30 @@ Assets {
       }
     }
     Assets {
-      Id: 12707166629963791990
-      Name: "Fantasy Spell Potion 019"
+      Id: 1958896540757858186
+      Name: "Japanese Ability Wind Bending"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Potion_019"
+        AssetId: "IllustratedIcons_Japan_Abilities_WindBending"
       }
     }
     Assets {
-      Id: 2486107982593657747
-      Name: "Fantasy Ability Blue 022"
+      Id: 1221213810114228531
+      Name: "Fantasy Ability Yellow 023"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_022"
+        AssetId: "UI_Fantasy_Ability_Yellow_023"
+      }
+    }
+    Assets {
+      Id: 4051655398668448529
+      Name: "Fantasy Ability Blue 004"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Ability_Blue_004"
       }
     }
     Assets {
@@ -63594,12 +63594,12 @@ Assets {
       }
     }
     Assets {
-      Id: 1781466024055278323
-      Name: "Fantasy Ability Teal 007"
+      Id: 1004023313208396778
+      Name: "Fantasy Ability Teal 011"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Teal_007"
+        AssetId: "UI_Fantasy_Ability_Teal_011"
       }
     }
     Assets {
@@ -63612,15 +63612,6 @@ Assets {
       }
     }
     Assets {
-      Id: 1004023313208396778
-      Name: "Fantasy Ability Teal 011"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Teal_011"
-      }
-    }
-    Assets {
       Id: 2453109304991346687
       Name: "Fantasy Ability Green 014"
       PlatformAssetType: 9
@@ -63630,21 +63621,30 @@ Assets {
       }
     }
     Assets {
-      Id: 14806072637514890048
-      Name: "Fantasy Ability Teal 026"
+      Id: 8975273285240916744
+      Name: "Fantasy Ability Yellow 004"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Teal_026"
+        AssetId: "UI_Fantasy_Ability_Yellow_004"
       }
     }
     Assets {
-      Id: 5577214413368822822
-      Name: "Fantasy Ability Red 040"
+      Id: 17752702521577453302
+      Name: "Fantasy Ability Yellow 027"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_040"
+        AssetId: "UI_Fantasy_Ability_Yellow_027"
+      }
+    }
+    Assets {
+      Id: 17370828256945431127
+      Name: "Fantasy Ability Yellow 026"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Ability_Yellow_026"
       }
     }
     Assets {
@@ -63654,24 +63654,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Ability_Red_029"
-      }
-    }
-    Assets {
-      Id: 2117690284510589350
-      Name: "Fantasy Ability Red 008"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_008"
-      }
-    }
-    Assets {
-      Id: 12193421660254454342
-      Name: "Fantasy Ability Red 043"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_043"
       }
     }
     Assets {
@@ -63825,15 +63807,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Potion_004"
-      }
-    }
-    Assets {
-      Id: 17752702521577453302
-      Name: "Fantasy Ability Yellow 027"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_027"
       }
     }
     Assets {
