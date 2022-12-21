@@ -196,6 +196,18 @@ function PlayUnlockAnimation(slot)
 end
 
 function UpdateContents(_api, entryId)
+	-- entryId is optional. Defaults to selected slot
+	if not entryId then
+		if selectedSlot then
+			if selectedSlot.clientUserData.abilityId then
+				entryId = selectedSlot.clientUserData.abilityId
+			elseif selectedSlot.clientUserData.potionId then
+				entryId = selectedSlot.clientUserData.potionId
+			end
+		end
+	end
+	if not entryId then return end
+	
 	-- Icon
 	local iconAsset = _api.GetIcon(entryId)
 	MAIN_ICON:SetImage(iconAsset)
@@ -210,10 +222,8 @@ function UpdateContents(_api, entryId)
 	if pointCount > 0 then
 		POINT_COUNT.text = tostring(pointCount)
 		POINTS_PANEL.visibility = Visibility.INHERIT
-		UPGRADE_BUTTON.visibility = Visibility.INHERIT
 	else
 		POINTS_PANEL.visibility = Visibility.FORCE_OFF
-		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	end
 	
 	-- Ability properties, such as radius, critical chance, cooldown, etc
@@ -236,6 +246,31 @@ function UpdateContents(_api, entryId)
 	else
 		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 	end
+
+	UpdateStars(character)
+end
+
+function UpdateStars(character)
+	local stats      = character:GetComponent("Stats")
+	local class      = character:GetComponent("Class")
+	local classTable = class:GetClassTable()
+	local ability    = classTable["Ability"..selectedAbilityIndex]
+	
+	for index, uiImage in ipairs(STARS:GetChildren()) do
+		local starimg
+		if ability then
+			starimg = GetStar(stats:GetStat(ability), index)
+		else
+			starimg = Star_Ratings[1]
+		end
+
+		if starimg and starimg["Art"] then
+			uiImage:SetImage(starimg["Art"])
+		end
+	end
+end
+function GetStar(stat, index)
+	return Star_Ratings[math.floor((stat - index) / 3) + 2]
 end
 
 local function OnSlotPressed(btn)
@@ -267,7 +302,38 @@ function SelectSlot(slot)
 	elseif slot.clientUserData.isPotion then
 		UpdateContents(PotionAPI, slot.clientUserData.potionId)
 	end
+
+	-- Visibility of [Upgrade] button
+	if POINTS_PANEL.visibility == Visibility.INHERIT and slot.clientUserData.abilityId then
+		UPGRADE_BUTTON.visibility = Visibility.INHERIT
+	else
+		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+	end
 end
+
+
+function BroadcastUpgrade()
+	if not selectedSlot then
+		return
+	end
+	if selectedSlot.clientUserData.isPotion then
+		return
+	end
+	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, selectedAbilityIndex)
+	Task.Wait()
+	UpdateContents(AbilityAPI)
+end
+UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
+
+EquipAPI.playerEquippedEvent:Connect(function(character, player)
+	if player == LOCAL_PLAYER then
+		local stats = character:GetComponent("Stats")
+		stats.statsUpdatedEvent:Connect(function()
+			UpdateContents(AbilityAPI)
+		end)
+	end
+end)
+
 
 local function CacheSlotReferences()
 	local _CacheSlot = function(slot)
