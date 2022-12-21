@@ -1,3 +1,9 @@
+--[[
+	Ability Display Client Optimized
+	Responsible for showing the HUD abilities information, including cooldowns, icons, and names.
+	By: blaking, Luapi
+	Version: 2.0.1
+]]
 local ABILITY_DISPLAY = script:GetCustomProperty("AbilityDisplay"):WaitForObject()
 
 -- Constants
@@ -124,10 +130,19 @@ function OnCooldown(ability)
 end
 
 function SetEquipment(equipment)
-	Task.Wait() -- Wait for the equipment to load
-	if not equipment:IsA('Equipment') then error(equipment.name .. "is not equipment") return end
-	Task.Wait() -- Wait for the calculateModifier to load
-	if not equipment.clientUserData.calculateModifier then error("Calculate Modifier is not set up (or didn't load) for " .. equipment.name) return end
+	local checkLoopCount = 0
+    local maxTries = 4
+    -- Check if the equipment is valid, if cacluateModifier is set up, and if the ability is valid
+    while checkLoopCount < maxTries do
+        checkLoopCount = checkLoopCount + 1
+        if equipment:IsA('Equipment') and equipment.clientUserData.calculateModifier then
+            break
+        end
+        if checkLoopCount > maxTries then
+            error("Equipment is not valid, calculateModifier is not set up, or ability is not valid")
+            return
+        end
+    end
 	for _, func in pairs(connections) do
 		func(equipment)
 	end
