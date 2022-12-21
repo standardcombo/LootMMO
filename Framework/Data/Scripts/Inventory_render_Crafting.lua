@@ -150,7 +150,7 @@ local function GetScrapRecipe(item)
 	local newrecipe = nil
 	if greatness then
 		greatness = math.max(1, greatness)
-		newrecipe = craftAPI.GetScrap(item.name, greatness)
+		newrecipe = craftAPI.GetGreatnessValue(item.name, greatness)
 	end
 	return newrecipe
 end
@@ -182,14 +182,13 @@ local function UpgradeItem(button)
 				SetState(states.crafting)
 			elseif button == UPGRADE_CONFIRM_BUTTON then
 				if selectedRecipe.NFT then
-					print("IS NFT")
+					--print("IS NFT")
 					local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
 					Events.Broadcast(craftingEvents.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
 				else
-					print("IS NOT NFT")
+					--print("IS NOT NFT")
 					Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe.slot.index)
 				end
-				print("Upgrade Item")
 				HideUpgradeConfirmationPanel()
 				ClearUpgradePanelDetails()
 				SetState(states.crafting)
@@ -207,6 +206,40 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	local greatness = item:GetCustomProperty("Greatness")
 	if greatness then
 		greatness = math.max(1, greatness)
+	end
+
+	local inv = GetInventory(LOCAL_PLAYER)
+	local upgradeRecipe = GetUpgradeRecipe(item)
+	if upgradeRecipe and greatness < 20 then
+		UPGRADE_BUTTON.isInteractable = true
+		--For each item in the upgradeRecipe populate the preview slots with the item icon and quantity
+		if not upgradeRecipe then return end
+		local count = 0
+		for itemName, quantity in pairs(upgradeRecipe) do
+			if type(quantity) == "number" and quantity > 0 then
+				count = count + 1
+				local materialData = MATERIALS.GetDefinition(itemName, true)
+				if not materialData then
+					warn("No item data for " .. itemName)
+					return
+				end
+				local previewIcon = materialData["icon"]
+				quantity = math.ceil(quantity * greatness) --Update quantity to reflect the greatness of the item
+
+				--Set the icon and quantity for the item on the SLOT UI
+				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
+				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
+				UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
+				UPGRADE_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
+			end
+		end
+		if inv and not inv:HasRequiredItems(upgradeRecipe) then
+			warn("Not enough materials to upgrade " .. item.name)
+			UPGRADE_BUTTON.isInteractable = false
+		end
+	else
+		UPGRADE_BUTTON.isInteractable = false
+		warn("No upgrade recipe for " .. item.name)
 	end
 
 	if slot.isBag then
@@ -229,29 +262,6 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.INHERIT
-
-	--For each item in the upgradeRecipe populate the preview slots with the item icon and quantity
-	local upgradeRecipe = GetUpgradeRecipe(selectedRecipe.item)
-	if not upgradeRecipe then return end
-	local count = 0
-	for itemName, quantity in pairs(upgradeRecipe) do
-		if type(quantity) == "number" and quantity > 0 then
-			count = count + 1
-			local materialData = MATERIALS.GetDefinition(itemName, true)
-			if not materialData then
-				warn("No item data for " .. itemName)
-				return
-			end
-			local previewIcon = materialData["icon"]
-			quantity = math.ceil(quantity * greatness) --Update quantity to reflect the greatness of the item
-
-			--Set the icon and quantity for the item on the SLOT UI
-			UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
-			UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
-			UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
-			UPGRADE_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
-		end
-	end
 end
 
 local function SetImage(panel, icon, itemdata)
@@ -266,20 +276,14 @@ local function SelectRecipe(item, slot)
 		item = item,
 		slot = slot
 	}
+
 	if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
 		SCRAP_BUTTON.isInteractable = false
 		warn("Cannot scrap NFT")
 	else
 		SCRAP_BUTTON.isInteractable = true
 	end
-	--Check to ensure the player has enough materials to upgrade the item. If not, disable the upgrade button.
-	local inv = GetInventory(LOCAL_PLAYER)
-	if inv and inv:HasRequiredItems(GetUpgradeRecipe(item)) then
-		UPGRADE_BUTTON.isInteractable = true
-	else
-		UPGRADE_BUTTON.isInteractable = false
-		warn("Not enough materials to upgrade item")
-	end
+
 	RefreshUpgradePanelDetails(item, slot)
 end
 
@@ -296,10 +300,6 @@ local function ClickedSlot(slot)
 	local greatness = item:GetCustomProperty("Greatness")
 	if greatness then --Greatness is required for upgrading
 		greatness = math.max(1, greatness)
-		if greatness >= 20 then --If the clicked item is already max greatness, do not select it
-			warn("Item is already max greatness")
-			return
-		end
 		SelectRecipe(item,slot)
 	end
 end
@@ -320,7 +320,7 @@ local function ScrapItem(button)
 			end
 
 			local scrapRecipe = GetScrapRecipe(selectedRecipe.item) --Table of items to give to player if they choose to scrap the item
-					if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
+			if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
 			
 			--For each item in the scrapRecipe populate the preview slots with the item icon and quantity
 			local count = 0
