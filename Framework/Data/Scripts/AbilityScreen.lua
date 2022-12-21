@@ -34,6 +34,8 @@ local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
+local selectedSlot = nil
+
 
 local function Hide()
 	EASE_UI.EaseOpacity(ROOT, 0, .4)
@@ -77,6 +79,10 @@ local function Show()
 				Progression:SetProgression("AcceptSlot" .. i, true)
 			end
 		end
+		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
+		if slot == selectedSlot and slot.visibility == Visibility.FORCE_OFF then
+			selectedSlot = nil
+		end
 	end
 
 	for i = 1, 3 do
@@ -112,10 +118,14 @@ local function Show()
 				Progression:SetProgression("AcceptPotion" .. i, true)
 			end
 		end
+		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
+		if slot == selectedSlot and slot.visibility == Visibility.FORCE_OFF then
+			selectedSlot = nil
+		end
 	end
 
-	-- Hide content
 	if slotToUnlock ~= nil then
+		-- Hide content
 		LEFT_PANEL.visibility = Visibility.FORCE_OFF
 		CENTER_PANEL.visibility = Visibility.FORCE_OFF
 		CLOSE_BUTTON.visibility = Visibility.FORCE_OFF
@@ -126,6 +136,7 @@ local function Show()
 		Task.Wait(2.5)
 		local x, h
 
+		-- Animate the left panel
 		LEFT_PANEL.visibility = Visibility.INHERIT
 		x = LEFT_PANEL.x
 		LEFT_PANEL.x = -800
@@ -133,16 +144,22 @@ local function Show()
 
 		Task.Wait(0.5)
 
+		-- Animate the center panel
 		CENTER_PANEL.visibility = Visibility.INHERIT
 		CLOSE_BUTTON.visibility = Visibility.INHERIT
 		h = CENTER_PANEL.height
 		CENTER_PANEL.height = 0
 		EASE_UI.EaseHeight(CENTER_PANEL, h, 3)
 
+		-- Animate the selection indicator to the ability being unlocked
 		SELECTION_INDICATOR.visibility = Visibility.INHERIT
 		SELECTION_INDICATOR.x = slotToUnlock.x
 		SELECTION_INDICATOR.y = slotToUnlock.y
 		EASE_UI.EaseOpacity(SELECTION_INDICATOR, 1, .7)
+	else
+		if selectedSlot == nil then
+			SelectSlot(ABILITY_SLOTS[1])
+		end
 	end
 end
 
@@ -160,7 +177,11 @@ function UpdateContents(_api, entryId)
 end
 
 local function OnSlotPressed(btn)
-	local slot = btn.clientUserData.slot
+	SelectSlot(btn.clientUserData.slot)
+end
+
+function SelectSlot(slot)
+	selectedSlot = slot
 
 	-- Move the selection indicator
 	SELECTION_INDICATOR.x = slot.x
