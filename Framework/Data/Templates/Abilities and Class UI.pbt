@@ -19083,7 +19083,7 @@ Assets {
       }
       Objects {
         Id: 14713107968268849607
-        Name: "DetailsPanel - Warlock"
+        Name: "DetailsPanel - Shadowmancer"
         Transform {
           Location {
             X: 21559.9941

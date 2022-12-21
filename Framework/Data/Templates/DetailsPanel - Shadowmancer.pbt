@@ -1,13 +1,13 @@
 Assets {
   Id: 16984363365245043363
-  Name: "DetailsPanel - Warlock"
+  Name: "DetailsPanel - Shadowmancer"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 16107958606438946431
       Objects {
         Id: 16107958606438946431
-        Name: "DetailsPanel - Warlock"
+        Name: "DetailsPanel - Shadowmancer"
         Transform {
           Scale {
             X: 1

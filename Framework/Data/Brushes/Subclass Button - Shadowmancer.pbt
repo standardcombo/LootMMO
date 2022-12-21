@@ -1,6 +1,6 @@
 Assets {
   Id: 8355689295041053825
-  Name: "Subclass Button - Warlock"
+  Name: "Subclass Button - Shadowmancer"
   PlatformAssetType: 34
   SerializationVersion: 123
   VirtualFolderPath: "ClassSelectionScreen"

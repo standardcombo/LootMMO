@@ -1,13 +1,13 @@
 Assets {
   Id: 7621794215023298697
-  Name: "Subclass BG - Warlock"
+  Name: "Subclass BG - Shadowmancer"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 17474179606194559345
       Objects {
         Id: 17474179606194559345
-        Name: "Subclass BG - Warlock"
+        Name: "Subclass BG - Shadowmancer"
         Transform {
           Scale {
             X: 1
@@ -63,7 +63,7 @@ Assets {
       }
       Objects {
         Id: 12075903617840176349
-        Name: "Subclass BG - Warlock"
+        Name: "Subclass BG - Shadowmancer"
         Transform {
           Location {
           }

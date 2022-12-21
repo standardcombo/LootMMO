@@ -1,6 +1,6 @@
 Assets {
   Id: 356173156161878323
-  Name: "Class BG - Warlock"
+  Name: "Class BG - Shadowmancer"
   PlatformAssetType: 34
   SerializationVersion: 123
   VirtualFolderPath: "ClassSelectionScreen"
