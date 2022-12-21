@@ -7,7 +7,7 @@ Assets {
       RootId: 6058923225552440098
       Objects {
         Id: 6058923225552440098
-        Name: "Ability1"
+        Name: "Ability Slot - Level Up Flow"
         Transform {
           Scale {
             X: 1
@@ -1233,7 +1233,7 @@ Assets {
               R: 1
               G: 1
               B: 1
-              A: 0.35
+              A: 0.2
             }
             PressedColor {
               A: 0.35
