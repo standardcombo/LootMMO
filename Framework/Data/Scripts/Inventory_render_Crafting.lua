@@ -70,7 +70,7 @@ end
 local function SetState(newState)
 	if currentState == newState then return end
 	currentState = newState
-	print("SetState to " .. newState)
+	--print("SetState to " .. newState)
 	if currentState ~= states.crafting then
 		CLOSE_BUTTON.isInteractable = false
 	else
@@ -123,6 +123,27 @@ for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 	previewSlot.clientUserData.count = Get(previewSlot, "count")
 end
 
+local function GetInventory(player)
+	local Character = EquipAPI.GetCurrentCharacter(player)
+	if not Character then return end
+	local inventory = Character:GetComponent("Inventory")
+	local CoreInv = inventory:GetInventory()
+	return CoreInv
+end
+
+local function ClearUpgradePanelDetails()
+	SELECTED_OBJECT_SLOT.clientUserData.name.visibility = Visibility.FORCE_OFF
+	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.FORCE_OFF
+	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.FORCE_OFF
+	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.FORCE_OFF
+	SELECTED_OBJECT_SLOT.clientUserData.isBag.visibility = Visibility.FORCE_OFF
+	for _, previewSlot in ipairs(UPGRADE_PREVIEW_SLOT) do
+		previewSlot.clientUserData.icon.visibility = Visibility.FORCE_OFF
+		previewSlot.clientUserData.count.visibility = Visibility.FORCE_OFF
+	end
+	selectedRecipe = {}
+end
+
 local function GetScrapRecipe(item)
 	if not item then return end
 	local greatness = item:GetCustomProperty("Greatness")
@@ -139,7 +160,7 @@ local function GetUpgradeRecipe(item)
 	local greatness = item:GetCustomProperty("Greatness")
 	local newrecipe = nil
 	if greatness then
-		newrecipe = craftAPI.GetRecipe(item.name)
+		newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
 	end
 	return newrecipe
 end
@@ -163,13 +184,14 @@ local function UpgradeItem(button)
 				if selectedRecipe.NFT then
 					print("IS NFT")
 					local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
-					Events.Broadcast(events.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
+					Events.Broadcast(craftingEvents.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
 				else
 					print("IS NOT NFT")
-					Events.Broadcast(events.Cupgrade, selectedRecipe.slot)
+					Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe.slot.index)
 				end
 				print("Upgrade Item")
 				HideUpgradeConfirmationPanel()
+				ClearUpgradePanelDetails()
 				SetState(states.crafting)
 			end
 		end
@@ -186,7 +208,6 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	if greatness then
 		greatness = math.max(1, greatness)
 	end
-	if item:GetCustomProperty("Greatness") >= 20 then return end
 
 	if slot.isBag then
 		if item:GetCustomProperty("IsBag") then
@@ -245,20 +266,23 @@ local function SelectRecipe(item, slot)
 		item = item,
 		slot = slot
 	}
+	if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
+		SCRAP_BUTTON.isInteractable = false
+		warn("Cannot scrap NFT")
+	else
+		SCRAP_BUTTON.isInteractable = true
+	end
+	--Check to ensure the player has enough materials to upgrade the item. If not, disable the upgrade button.
+	local inv = GetInventory(LOCAL_PLAYER)
+	if inv and inv:HasRequiredItems(GetUpgradeRecipe(item)) then
+		UPGRADE_BUTTON.isInteractable = true
+	else
+		UPGRADE_BUTTON.isInteractable = false
+		warn("Not enough materials to upgrade item")
+	end
 	RefreshUpgradePanelDetails(item, slot)
 end
 
-local function ClearUpgradePanelDetails()
-	SELECTED_OBJECT_SLOT.clientUserData.name.visibility = Visibility.FORCE_OFF
-	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.FORCE_OFF
-	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.FORCE_OFF
-	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.FORCE_OFF
-	SELECTED_OBJECT_SLOT.clientUserData.isBag.visibility = Visibility.FORCE_OFF
-	for _, previewSlot in ipairs(UPGRADE_PREVIEW_SLOT) do
-		previewSlot.clientUserData.icon.visibility = Visibility.FORCE_OFF
-		previewSlot.clientUserData.count.visibility = Visibility.FORCE_OFF
-	end
-end
 
 local function ClickedSlot(slot)
 	if not currentInventory then return	end
@@ -267,24 +291,22 @@ local function ClickedSlot(slot)
 	local item = currentInventory:GetItem(slot.index)
 	if not item then
 		ClearUpgradePanelDetails()
-		selectedRecipe = {}
 		return
 	end
 	local greatness = item:GetCustomProperty("Greatness")
-	if greatness then
+	if greatness then --Greatness is required for upgrading
 		greatness = math.max(1, greatness)
-		if greatness >= 20 then return end --If the clicked item is already max greatness, do not select it
+		if greatness >= 20 then --If the clicked item is already max greatness, do not select it
+			warn("Item is already max greatness")
+			return
+		end
+		SelectRecipe(item,slot)
 	end
-	SelectRecipe(item,slot)
 end
 
 local function ScrapItem(button)
 	if selectedRecipe then
 		if currentState == states.crafting then
-			if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then you cannot scrap it
-				warn("Cannot scrap NFTs")
-				return
-			end
 			SetState(states.scrapping)
 		end
 		if currentState == states.scrapping then
@@ -327,7 +349,6 @@ local function ScrapItem(button)
 				--Destroy the item
 				--Give the player the items in the scrapRecipe table
 				Events.Broadcast(craftingEvents.Cscrap, selectedRecipe.slot.index)
-				selectedRecipe = {}
 				SetState(states.crafting)
 				HideScrapConfirmationWindow()
 				ClearUpgradePanelDetails()
