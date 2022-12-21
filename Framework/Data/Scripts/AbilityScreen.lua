@@ -27,6 +27,7 @@ local ABILITY_SLOTS = script:GetCustomProperty("AbilitySlots"):WaitForObject():G
 local POTION_SLOTS = script:GetCustomProperty("PotionSlots"):WaitForObject():GetChildren()
 
 local UPGRADE_BUTTON = script:GetCustomProperty("UpgradeButton"):WaitForObject()
+local POINTS_PANEL = script:GetCustomProperty("PointsPanel"):WaitForObject()
 local POINT_COUNT = script:GetCustomProperty("PointCount"):WaitForObject()
 local SELECTION_INDICATOR = script:GetCustomProperty("SelectionIndicator"):WaitForObject()
 
@@ -174,6 +175,19 @@ function UpdateContents(_api, entryId)
 	MAIN_ICON:SetImage(iconAsset)
 	ABILITY_NAME.text = _api.GetName(entryId)
 	ABILITY_DESCRIPTION.text = _api.GetDescription(entryId)
+
+	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
+	local points = character:GetComponent("Points")
+	local pointCount = points:GetUnspentPoints()
+
+	if pointCount > 0 then
+		POINT_COUNT.text = tostring(pointCount)
+		POINTS_PANEL.visibility = Visibility.INHERIT
+		UPGRADE_BUTTON.visibility = Visibility.INHERIT
+	else
+		POINTS_PANEL.visibility = Visibility.FORCE_OFF
+		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+	end
 end
 
 local function OnSlotPressed(btn)
