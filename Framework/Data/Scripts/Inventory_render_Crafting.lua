@@ -163,25 +163,36 @@ local function GetUpgradeRecipe(item)
 	local newrecipe, greatness
 	greatness = item:GetCustomProperty("Greatness")
 	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
-	for _, Collection in ipairs(COLLECTIONS) do
-		AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-			for _, token in pairs(tokens) do
-				local parsedBag = LOOT_BAG_PARSER.Parse(token)
-				local items = parsedBag.items
-				local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-				for _, itemdata in pairs(items) do
-					if item:GetCustomProperty("IsBag") and itemdata.name == item.name then
-						--print("IS NFT", itemdata.name)
-						greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
-						selectedRecipe.NFT = tokenString
-						break
+	local playerOwnsItem = false
+	if item:GetCustomProperty("IsBag") then -- check if player owns the item in the bag
+		for _, Collection in ipairs(COLLECTIONS) do
+			if playerOwnsItem then break end
+			AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
+				for _, token in pairs(tokens) do
+					local parsedBag = LOOT_BAG_PARSER.Parse(token)
+					local items = parsedBag.items
+					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+					for _, itemdata in pairs(items) do
+						if itemdata.name == item.name then
+							greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+							if greatness < 20 then
+								selectedRecipe.NFT = tokenString
+								playerOwnsItem = true
+								newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+								break
+							end
+						end
 					end
 				end
-			end
-		end)
-	end
-	if greatness then
-		newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+			end)
+		end
+		if not playerOwnsItem then -- player does not own the item in the bag
+			ClearUpgradePanelDetails()
+		end
+	else -- can the non NFT item be upgraded?
+		if greatness then
+			newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+		end
 	end
 	return newrecipe
 end
@@ -258,7 +269,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 		end
 	else
 		UPGRADE_BUTTON.isInteractable = false
-		warn("No upgrade recipe for " .. item.name)
+		warn("Cannot upgrade " .. item.name .. " already max greatness, or no recipe.")
 	end
 
 	if slot.isBag then
