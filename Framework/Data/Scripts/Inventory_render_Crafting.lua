@@ -224,7 +224,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 					return
 				end
 				local previewIcon = materialData["icon"]
-				quantity = math.ceil(quantity * greatness) --Update quantity to reflect the greatness of the item
+				quantity = math.ceil(quantity) --Update quantity to reflect the greatness of the item
 
 				--Set the icon and quantity for the item on the SLOT UI
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
