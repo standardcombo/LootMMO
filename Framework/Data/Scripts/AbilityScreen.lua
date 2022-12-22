@@ -1,5 +1,7 @@
 --[[
-
+	Ability Screen
+	v1.0
+	by: standardcombo
 ]]
 local EVENT_SHOW_ABILITIES = "Abilities.Show"
 local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
@@ -34,6 +36,7 @@ local POINTS_PANEL = script:GetCustomProperty("PointsPanel"):WaitForObject()
 local POINT_COUNT = script:GetCustomProperty("PointCount"):WaitForObject()
 local SELECTION_INDICATOR = script:GetCustomProperty("SelectionIndicator"):WaitForObject()
 local UPGRADE_FTUE = script:GetCustomProperty("UpgradeFTUE"):WaitForObject()
+local MAX_STARS_MESSAGE = script:GetCustomProperty("MaxStarsMessage"):WaitForObject()
 
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
@@ -278,12 +281,12 @@ function UpdateStars(character)
 	local stats      = character:GetComponent("Stats")
 	local class      = character:GetComponent("Class")
 	local classTable = class:GetClassTable()
-	local ability    = classTable["Ability"..selectedAbilityIndex]
+	local abilityId    = classTable["Ability"..selectedAbilityIndex]
 	
 	for index, uiImage in ipairs(STARS:GetChildren()) do
 		local starimg
-		if ability then
-			starimg = GetStar(stats:GetStat(ability), index)
+		if abilityId then
+			starimg = GetStar(stats:GetStat(abilityId), index)
 		else
 			starimg = Star_Ratings[1]
 		end
@@ -298,6 +301,25 @@ function GetStar(stat, index)
 end
 
 
+local function CanUpgrade(character, points)
+	local progression = character:GetComponent("Progression")
+	local class       = character:GetComponent("Class")
+	local classTable  = class:GetClassTable()
+	local abilityId   = classTable["Ability"..selectedAbilityIndex]
+
+	local abilityPoints = points:GetSpentPoints(abilityId)
+	if abilityPoints >= 11 then return false end
+	
+	local abilityStudyLevel = progression:GetProgressionKey(abilityId)
+	if type(abilityStudyLevel) ~= "number" then
+		abilityStudyLevel = 0
+	end
+	if abilityPoints >= 3 * (abilityStudyLevel + 1) then
+		return false
+	end
+	return true
+end
+
 function UpdateUpgradeState()
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	local points = character:GetComponent("Points")
@@ -308,11 +330,21 @@ function UpdateUpgradeState()
 		POINTS_PANEL.visibility = Visibility.INHERIT
 
 		if selectedSlot and selectedSlot.clientUserData.isAbility then
-			UPGRADE_BUTTON.visibility = Visibility.INHERIT
-			UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
+			if CanUpgrade(character, points) then
+				UPGRADE_BUTTON.visibility = Visibility.INHERIT
+				UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
+			else
+				local abilityName = AbilityAPI.GetName(selectedSlot.clientUserData.abilityId)
+				MAX_STARS_MESSAGE.text = string.format("(%s has the maximum star amount)", abilityName)
+				MAX_STARS_MESSAGE.visibility = Visibility.INHERIT
+
+				UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+				UPGRADE_FTUE.visibility = Visibility.INHERIT
+			end
 		else
 			UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 			UPGRADE_FTUE.visibility = Visibility.INHERIT
+			MAX_STARS_MESSAGE.visibility = Visibility.FORCE_OFF
 		end
 	else
 		POINTS_PANEL.visibility = Visibility.FORCE_OFF

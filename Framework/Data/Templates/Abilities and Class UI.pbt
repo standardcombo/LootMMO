@@ -45267,6 +45267,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:MaxStarsMessage"
+            ObjectReference {
+              SubObjectId: 14991751894572294440
+            }
+          }
+          Overrides {
             Name: "cs:EaseUI"
             AssetReference {
               Id: 14902373637656864644
@@ -50151,6 +50157,7 @@ Assets {
         ParentId: 13192944649928894444
         ChildIds: 6666867689400210358
         ChildIds: 9107493388227027806
+        ChildIds: 14991751894572294440
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -50339,6 +50346,88 @@ Assets {
             SelfAnchor {
               Anchor {
                 Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14991751894572294440
+        Name: "Max Stars Message"
+        Transform {
+          Location {
+            X: -76121.0156
+            Y: 17706.4043
+            Z: -128064.312
+          }
+          Rotation {
+            Yaw: 10.1440363
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6135181925349021902
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 700
+          Height: 79
+          UIY: 65.423439
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "(Roll has the maximum star amount)"
+            Color {
+              R: 0.65
+              G: 0.245364264
+              A: 1
+            }
+            Size: 21
+            Justification {
+              Value: "mc:etextjustify:right"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:top"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            OutlineColor {
+              A: 1
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
               }
             }
             TargetAnchor {
