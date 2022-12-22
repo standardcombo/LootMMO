@@ -21847,6 +21847,18 @@ Objects {
         SelfId: 18109032945600144047
       }
     }
+    Overrides {
+      Name: "cs:LootBagParser"
+      AssetReference {
+        Id: 18201773013207943147
+      }
+    }
+    Overrides {
+      Name: "cs:AsyncBlockchain_FullWalletSearch"
+      AssetReference {
+        Id: 13871701490137551148
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
