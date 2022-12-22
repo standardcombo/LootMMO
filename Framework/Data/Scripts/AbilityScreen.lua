@@ -420,8 +420,13 @@ UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
 EquipAPI.playerEquippedEvent:Connect(function(character, player)
 	if player == LOCAL_PLAYER then
 		local stats = character:GetComponent("Stats")
-		stats.statsUpdatedEvent:Connect(function()
-			UpdateAbilityDetails(AbilityAPI)
+		stats.statsUpdatedEvent:Connect(
+		function()
+			if ROOT.visibility == Visibility.INHERIT
+			and selectedSlot and selectedSlot.clientUserData.isAbility
+			then
+				UpdateAbilityDetails(AbilityAPI)
+			end
 		end)
 	end
 end)
