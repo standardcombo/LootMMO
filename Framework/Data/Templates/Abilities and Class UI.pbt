@@ -45987,7 +45987,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:BroadcastString"
-            String: "Abilities.Closed"
+            String: ""
           }
           Overrides {
             Name: "cs:PressedSound"

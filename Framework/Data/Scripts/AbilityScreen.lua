@@ -48,6 +48,7 @@ local POTION_INPUTS = {
 	"c",
 }
 
+local hasMoreUnlocks = false
 local selectedAbilityIndex = 1
 local selectedSlot = nil
 
@@ -63,11 +64,15 @@ local function Show()
 	ROOT.opacity = 0
 	EASE_UI.EaseOpacity(ROOT, 1, .4)
 
+	_PrepareState()
+end
+function _PrepareState()
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	local progression = character:GetComponent("Progression")
 	local classTable = character:GetComponent("Class"):GetClassTable()
 
 	local slotToUnlock = nil
+	hasMoreUnlocks = false
 
 	for i = 1, 5 do
 		local slot = ABILITY_SLOTS[i]
@@ -75,6 +80,12 @@ local function Show()
 
 		if progression:GetProgressionKey("AbilitySlot" .. i) then
 			local abilityId = classTable["Ability" .. i]
+			
+			if abilityId == "" then
+				-- This can happen in case of many simultaneous unlocks, but no subclass chosen yet
+				goto continue
+			end
+			
 			slot.clientUserData.abilityId = abilityId
 			-- Set slot icon
 			local iconAsset = AbilityAPI.GetIcon(abilityId)
@@ -94,16 +105,19 @@ local function Show()
 				PlayUnlockAnimation(slot)
 				
 				selectedAbilityIndex = i
-				UpdateContents(AbilityAPI, abilityId)
+				UpdateAbilityDetails(AbilityAPI, abilityId)
 
 				Events.BroadcastToServer("AcceptSlot", i)
 				progression:SetProgression("AcceptSlot" .. i, true)
+			else
+				hasMoreUnlocks = true
 			end
 		end
 		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
 		if slot == selectedSlot and slot.visibility == Visibility.FORCE_OFF then
 			selectedSlot = nil
 		end
+		:: continue ::
 	end
 
 	for i = 1, 3 do
@@ -138,10 +152,12 @@ local function Show()
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
 				
-				UpdateContents(PotionAPI, potionId)
+				UpdateAbilityDetails(PotionAPI, potionId)
 
 				Events.BroadcastToServer("AcceptPotion", i)
 				progression:SetProgression("AcceptPotion" .. i, true)
+			else
+				hasMoreUnlocks = true
 			end
 		end
 		-- Reset slot selection in case the selected slot is no longer active (e.g. Character changed)
@@ -195,7 +211,7 @@ function PlayUnlockAnimation(slot)
 	end)
 end
 
-function UpdateContents(_api, entryId)
+function UpdateAbilityDetails(_api, entryId)
 	-- entryId is optional. Defaults to selected slot
 	if not entryId then
 		if selectedSlot then
@@ -298,9 +314,10 @@ function SelectSlot(slot)
 
 	-- Update central info about the selected ability
 	if slot.clientUserData.isAbility then
-		UpdateContents(AbilityAPI, slot.clientUserData.abilityId)
+		UpdateAbilityDetails(AbilityAPI, slot.clientUserData.abilityId)
+
 	elseif slot.clientUserData.isPotion then
-		UpdateContents(PotionAPI, slot.clientUserData.potionId)
+		UpdateAbilityDetails(PotionAPI, slot.clientUserData.potionId)
 	end
 
 	-- Visibility of [Upgrade] button
@@ -321,7 +338,7 @@ function BroadcastUpgrade()
 	end
 	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, selectedAbilityIndex)
 	Task.Wait()
-	UpdateContents(AbilityAPI)
+	UpdateAbilityDetails(AbilityAPI)
 end
 UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
 
@@ -329,7 +346,7 @@ EquipAPI.playerEquippedEvent:Connect(function(character, player)
 	if player == LOCAL_PLAYER then
 		local stats = character:GetComponent("Stats")
 		stats.statsUpdatedEvent:Connect(function()
-			UpdateContents(AbilityAPI)
+			UpdateAbilityDetails(AbilityAPI)
 		end)
 	end
 end)
@@ -359,5 +376,13 @@ CacheSlotReferences()
 
 
 Events.Connect(EVENT_SHOW_ABILITIES, Show)
-Events.Connect(EVENT_ABILITIES_CLOSED, Hide)
+
+CLOSE_BUTTON.clickedEvent:Connect(function()
+	if hasMoreUnlocks then
+		_PrepareState()
+	else
+		Hide()
+		Events.Broadcast(EVENT_ABILITIES_CLOSED)
+	end
+end)
 
