@@ -159,8 +159,27 @@ end
 
 local function GetUpgradeRecipe(item)
 	if not item then return end
-	local greatness = item:GetCustomProperty("Greatness")
-	local newrecipe = nil
+
+	local newrecipe, greatness
+	greatness = item:GetCustomProperty("Greatness")
+	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
+	for _, Collection in ipairs(COLLECTIONS) do
+		AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
+			for _, token in pairs(tokens) do
+				local parsedBag = LOOT_BAG_PARSER.Parse(token)
+				local items = parsedBag.items
+				local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+				for _, itemdata in pairs(items) do
+					if item:GetCustomProperty("IsBag") and itemdata.name == item.name then
+						--print("IS NFT", itemdata.name)
+						greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+						selectedRecipe.NFT = tokenString
+						break
+					end
+				end
+			end
+		end)
+	end
 	if greatness then
 		newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
 	end
@@ -184,11 +203,9 @@ local function UpgradeItem(button)
 				SetState(states.crafting)
 			elseif button == UPGRADE_CONFIRM_BUTTON then
 				if selectedRecipe.NFT then
-					--print("IS NFT")
 					local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
-					Events.Broadcast(craftingEvents.CupgradeNFT, Collection, tokenid, selectedRecipe.itemid)
+					Events.Broadcast(craftingEvents.CupgradeNFT, Collection, tokenid, selectedRecipe.item.name)
 				else
-					--print("IS NOT NFT")
 					Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe.slot.index)
 				end
 				HideUpgradeConfirmationPanel()
@@ -281,7 +298,7 @@ local function SelectRecipe(item, slot)
 
 	if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
 		SCRAP_BUTTON.isInteractable = false
-		warn("Cannot scrap NFT")
+		--warn("Disabled Scrap button as you cannot scrap an NFT")
 	else
 		SCRAP_BUTTON.isInteractable = true
 	end

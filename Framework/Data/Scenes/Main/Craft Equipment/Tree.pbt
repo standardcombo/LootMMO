@@ -9807,7 +9807,6 @@ Objects {
       Brush {
         Id: 841534158063459245
       }
-      IsButtonEnabled: true
       ClickMode {
         Value: "mc:ebuttonclickmode:default"
       }
@@ -10493,7 +10492,6 @@ Objects {
       Brush {
         Id: 841534158063459245
       }
-      IsButtonEnabled: true
       ClickMode {
         Value: "mc:ebuttonclickmode:default"
       }
