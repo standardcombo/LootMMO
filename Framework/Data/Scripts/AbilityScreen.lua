@@ -306,7 +306,7 @@ function UpdateUpgradeState()
 		POINT_COUNT.text = tostring(upgradePointsAvailable)
 		POINTS_PANEL.visibility = Visibility.INHERIT
 
-		if selectedSlot then
+		if selectedSlot and selectedSlot.clientUserData.isAbility then
 			UPGRADE_BUTTON.visibility = Visibility.INHERIT
 			UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
 		else
