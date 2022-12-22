@@ -1397,6 +1397,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1467,6 +1470,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1539,6 +1545,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1609,6 +1618,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1681,6 +1693,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1751,6 +1766,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1823,6 +1841,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1893,6 +1914,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1965,6 +1989,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -2035,6 +2062,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2107,6 +2137,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -2177,6 +2210,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2259,6 +2295,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }

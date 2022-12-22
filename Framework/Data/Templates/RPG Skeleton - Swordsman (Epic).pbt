@@ -6237,6 +6237,9 @@ Assets {
           TeamSettings {
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -6854,6 +6857,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "NPC Templates"
 }

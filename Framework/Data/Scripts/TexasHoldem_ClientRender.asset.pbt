@@ -108,6 +108,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "TexasHoldem"
 }

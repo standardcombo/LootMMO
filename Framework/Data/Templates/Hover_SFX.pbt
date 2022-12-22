@@ -86,7 +86,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "UI Templates"
   VirtualFolderPath: "SFX"
 }

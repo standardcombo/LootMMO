@@ -2935,6 +2935,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {

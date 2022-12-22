@@ -2,7 +2,7 @@ Assets {
   Id: 3672157562576738267
   Name: "Skeleton Material - Epic"
   PlatformAssetType: 13
-  SerializationVersion: 121
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 12125245193133919026
     ParameterOverrides {
