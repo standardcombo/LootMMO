@@ -258,7 +258,11 @@ function OnReceiveMessage(player, params)
 	end
 	
 	if cheats[splitString[1]] then
-		cheats[splitString[1]].func(player, params.message, splitString)
+		Task.Spawn(function()
+			-- We need to put this inside a Task.Spawn because Hook listeners have certain limitations.
+			-- From the point of view of cheats, we can't predict other implementations or debugging.
+			cheats[splitString[1]].func(player, params.message, splitString)
+		end)
 		return
 	end
 	Chat.BroadcastMessage("No command found" .. splitString[1])
