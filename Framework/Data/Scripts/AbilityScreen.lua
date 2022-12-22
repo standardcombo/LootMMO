@@ -107,9 +107,6 @@ function _PrepareState()
 			elseif not slotToUnlock then
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
-				
-				selectedAbilityIndex = i
-				UpdateAbilityDetails(AbilityAPI, abilityId)
 
 				Events.BroadcastToServer("AcceptSlot", i)
 				progression:SetProgression("AcceptSlot" .. i, true)
@@ -155,8 +152,6 @@ function _PrepareState()
 			elseif not slotToUnlock then
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
-				
-				UpdateAbilityDetails(PotionAPI, potionId)
 
 				Events.BroadcastToServer("AcceptPotion", i)
 				progression:SetProgression("AcceptPotion" .. i, true)
@@ -171,12 +166,15 @@ function _PrepareState()
 	end
 
 	if slotToUnlock ~= nil then
-		-- Hide content
+		SelectSlot(slotToUnlock)
+
+		-- Hide all content
 		LEFT_PANEL.visibility = Visibility.FORCE_OFF
 		CENTER_PANEL.visibility = Visibility.FORCE_OFF
 		CLOSE_BUTTON.visibility = Visibility.FORCE_OFF
 		POINTS_PANEL.visibility = Visibility.FORCE_OFF
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+		UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
 		SELECTION_INDICATOR.visibility = Visibility.FORCE_OFF
 		SELECTION_INDICATOR.opacity = 0
 
@@ -188,9 +186,10 @@ function _PrepareState()
 		x = LEFT_PANEL.x
 		LEFT_PANEL.x = -800
 		EASE_UI.EaseX(LEFT_PANEL, x, 0.6, EASE_UI.EasingDirection.INOUT)
-		UpdateUpgradeState()
 
 		Task.Wait(0.5)
+
+		UpdateUpgradeState()
 
 		-- Animate the center panel
 		CENTER_PANEL.visibility = Visibility.INHERIT
@@ -201,8 +200,6 @@ function _PrepareState()
 
 		-- Animate the selection indicator to the ability being unlocked
 		SELECTION_INDICATOR.visibility = Visibility.INHERIT
-		SELECTION_INDICATOR.x = slotToUnlock.x
-		SELECTION_INDICATOR.y = slotToUnlock.y
 		EASE_UI.EaseOpacity(SELECTION_INDICATOR, 1, .7)
 	else
 		UpdateUpgradeState()
@@ -234,6 +231,7 @@ function UpdateAbilityDetails(_api, entryId)
 	end
 
 	if not entryId then
+		-- None of the slots are selected
 		LEFT_PANEL.visibility = Visibility.FORCE_OFF
 		CENTER_PANEL.visibility = Visibility.FORCE_OFF
 		return
