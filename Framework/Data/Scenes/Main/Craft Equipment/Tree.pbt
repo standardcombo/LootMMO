@@ -9266,7 +9266,7 @@ Objects {
       }
     }
     Text {
-      Label: "3) UPGRADE"
+      Label: "UPGRADE"
       Color {
         R: 1
         G: 0.946291447
@@ -9952,7 +9952,7 @@ Objects {
       }
     }
     Text {
-      Label: "3) SCRAP"
+      Label: "SCRAP"
       Color {
         R: 1
         G: 0.946291447
@@ -14608,7 +14608,7 @@ Objects {
     UseParentWidth: true
     UseParentHeight: true
     Text {
-      Label: "2) UPGRADE EQUIPMENT"
+      Label: "UPGRADE EQUIPMENT"
       Color {
         R: 1
         G: 0.456411034
@@ -20655,7 +20655,7 @@ Objects {
     UseParentWidth: true
     UseParentHeight: true
     Text {
-      Label: "1) CHOOSE EQUIPMENT TO UPGRADE OR SCRAP"
+      Label: "INVENTORY"
       Color {
         R: 1
         G: 0.456411034
