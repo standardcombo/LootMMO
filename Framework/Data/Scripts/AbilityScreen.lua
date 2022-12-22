@@ -21,7 +21,8 @@ local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 
 local LEFT_PANEL = script:GetCustomProperty("LeftPanel"):WaitForObject()
 local MAIN_ICON = script:GetCustomProperty("MainAbilityIcon"):WaitForObject()
-local STARS = script:GetCustomProperty("Stars"):WaitForObject()
+local STARS_ROOT = script:GetCustomProperty("StarsRoot"):WaitForObject()
+local STARS_PANEL = script:GetCustomProperty("Stars"):WaitForObject()
 
 local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
 local ABILITY_NAME = script:GetCustomProperty("AbilityName"):WaitForObject()
@@ -274,16 +275,29 @@ function UpdateAbilityDetails(_api, entryId)
 		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 	end
 
-	UpdateStars(character)
+	-- Update the stars that appear below the large ability image
+	if _api == PotionAPI then
+		-- Don't show stars for potions
+		STARS_ROOT.visibility = Visibility.FORCE_OFF
+	else
+		UpdateStars(character)
+	end
 end
 
 function UpdateStars(character)
+	local levelNumber = character:GetComponent("Level"):GetLevel()
+	if levelNumber < 6 then
+		STARS_ROOT.visibility = Visibility.FORCE_OFF
+		return
+	end
+	STARS_ROOT.visibility = Visibility.INHERIT
+
 	local stats      = character:GetComponent("Stats")
 	local class      = character:GetComponent("Class")
 	local classTable = class:GetClassTable()
 	local abilityId    = classTable["Ability"..selectedAbilityIndex]
 	
-	for index, uiImage in ipairs(STARS:GetChildren()) do
+	for index, uiImage in ipairs(STARS_PANEL:GetChildren()) do
 		local starimg
 		if abilityId then
 			starimg = GetStar(stats:GetStat(abilityId), index)

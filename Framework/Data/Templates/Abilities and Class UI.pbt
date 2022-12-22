@@ -45195,6 +45195,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:StarsRoot"
+            ObjectReference {
+              SubObjectId: 4671636274195169556
+            }
+          }
+          Overrides {
             Name: "cs:Stars"
             ObjectReference {
               SubObjectId: 17179176543179688151
@@ -46062,7 +46068,6 @@ Assets {
         }
         ParentId: 13192944649928894444
         ChildIds: 4671636274195169556
-        ChildIds: 17179176543179688151
         ChildIds: 5393274296451988515
         ChildIds: 14235505782615228524
         Collidable_v2 {
@@ -46109,7 +46114,7 @@ Assets {
       }
       Objects {
         Id: 4671636274195169556
-        Name: "UI Panel"
+        Name: "Stars Root"
         Transform {
           Location {
             X: 36589.1602
@@ -46129,6 +46134,7 @@ Assets {
         ChildIds: 16833678403218115261
         ChildIds: 13008822601828001369
         ChildIds: 9062385248150641022
+        ChildIds: 17179176543179688151
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -46405,7 +46411,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4712586897910866749
+        ParentId: 4671636274195169556
         ChildIds: 14325196683576050493
         ChildIds: 4723711118662648388
         ChildIds: 12582107699568445938
@@ -46424,7 +46430,6 @@ Assets {
         Control {
           Width: 250
           Height: 100
-          UIY: -50
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
