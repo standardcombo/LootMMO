@@ -30,6 +30,7 @@ local UPGRADE_BUTTON = script:GetCustomProperty("UpgradeButton"):WaitForObject()
 local POINTS_PANEL = script:GetCustomProperty("PointsPanel"):WaitForObject()
 local POINT_COUNT = script:GetCustomProperty("PointCount"):WaitForObject()
 local SELECTION_INDICATOR = script:GetCustomProperty("SelectionIndicator"):WaitForObject()
+local UPGRADE_FTUE = script:GetCustomProperty("UpgradeFTUE"):WaitForObject()
 
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
@@ -51,6 +52,7 @@ local POTION_INPUTS = {
 local hasMoreUnlocks = false
 local selectedAbilityIndex = 1
 local selectedSlot = nil
+local upgradePointsAvailable = 0
 
 
 local function Hide()
@@ -70,6 +72,8 @@ function _PrepareState()
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	local progression = character:GetComponent("Progression")
 	local classTable = character:GetComponent("Class"):GetClassTable()
+
+	UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
 
 	local slotToUnlock = nil
 	hasMoreUnlocks = false
@@ -171,6 +175,7 @@ function _PrepareState()
 		LEFT_PANEL.visibility = Visibility.FORCE_OFF
 		CENTER_PANEL.visibility = Visibility.FORCE_OFF
 		CLOSE_BUTTON.visibility = Visibility.FORCE_OFF
+		POINTS_PANEL.visibility = Visibility.FORCE_OFF
 		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 		SELECTION_INDICATOR.visibility = Visibility.FORCE_OFF
 		SELECTION_INDICATOR.opacity = 0
@@ -183,6 +188,7 @@ function _PrepareState()
 		x = LEFT_PANEL.x
 		LEFT_PANEL.x = -800
 		EASE_UI.EaseX(LEFT_PANEL, x, 0.6, EASE_UI.EasingDirection.INOUT)
+		UpdateUpgradeState()
 
 		Task.Wait(0.5)
 
@@ -199,7 +205,11 @@ function _PrepareState()
 		SELECTION_INDICATOR.y = slotToUnlock.y
 		EASE_UI.EaseOpacity(SELECTION_INDICATOR, 1, .7)
 	else
-		if selectedSlot == nil then
+		UpdateUpgradeState()
+		if upgradePointsAvailable > 0 then
+			SelectSlot(nil)
+
+		elseif selectedSlot == nil then
 			SelectSlot(ABILITY_SLOTS[1])
 		end
 	end
@@ -222,7 +232,14 @@ function UpdateAbilityDetails(_api, entryId)
 			end
 		end
 	end
-	if not entryId then return end
+
+	if not entryId then
+		LEFT_PANEL.visibility = Visibility.FORCE_OFF
+		CENTER_PANEL.visibility = Visibility.FORCE_OFF
+		return
+	end
+	LEFT_PANEL.visibility = Visibility.INHERIT
+	CENTER_PANEL.visibility = Visibility.INHERIT
 	
 	-- Icon
 	local iconAsset = _api.GetIcon(entryId)
@@ -230,19 +247,9 @@ function UpdateAbilityDetails(_api, entryId)
 	-- Name and description
 	ABILITY_NAME.text = _api.GetName(entryId)
 	ABILITY_DESCRIPTION.text = _api.GetDescription(entryId)
-
-	-- Upgrade points and upgrade button
-	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-	local points = character:GetComponent("Points")
-	local pointCount = points:GetUnspentPoints()
-	if pointCount > 0 then
-		POINT_COUNT.text = tostring(pointCount)
-		POINTS_PANEL.visibility = Visibility.INHERIT
-	else
-		POINTS_PANEL.visibility = Visibility.FORCE_OFF
-	end
 	
 	-- Ability properties, such as radius, critical chance, cooldown, etc
+	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
 	if _api == AbilityAPI and _G["Modifiers.CalculationString"] then
 		local class = character:GetComponent("Class")
 		local classname = class:GetClass()
@@ -289,6 +296,31 @@ function GetStar(stat, index)
 	return Star_Ratings[math.floor((stat - index) / 3) + 2]
 end
 
+
+function UpdateUpgradeState()
+	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
+	local points = character:GetComponent("Points")
+	upgradePointsAvailable = points:GetUnspentPoints()
+
+	if upgradePointsAvailable > 0 then
+		POINT_COUNT.text = tostring(upgradePointsAvailable)
+		POINTS_PANEL.visibility = Visibility.INHERIT
+
+		if selectedSlot then
+			UPGRADE_BUTTON.visibility = Visibility.INHERIT
+			UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
+		else
+			UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+			UPGRADE_FTUE.visibility = Visibility.INHERIT
+		end
+	else
+		POINTS_PANEL.visibility = Visibility.FORCE_OFF
+		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
+		UPGRADE_FTUE.visibility = Visibility.FORCE_OFF
+	end
+end
+
+
 local function OnSlotPressed(btn)
 	SelectSlot(btn.clientUserData.slot)
 end
@@ -296,6 +328,16 @@ end
 function SelectSlot(slot)
 	selectedSlot = slot
 
+	if slot == nil then
+		SELECTION_INDICATOR.visibility = Visibility.FORCE_OFF
+		UpdateAbilityDetails()
+		UpdateUpgradeState()
+		return
+	else
+		SELECTION_INDICATOR.visibility = Visibility.INHERIT
+	end
+
+	-- Update the index value
 	selectedAbilityIndex = 1
 	for i,_s in ipairs(ABILITY_SLOTS) do
 		if _s == slot then
@@ -320,12 +362,8 @@ function SelectSlot(slot)
 		UpdateAbilityDetails(PotionAPI, slot.clientUserData.potionId)
 	end
 
-	-- Visibility of [Upgrade] button
-	if POINTS_PANEL.visibility == Visibility.INHERIT and slot.clientUserData.abilityId then
-		UPGRADE_BUTTON.visibility = Visibility.INHERIT
-	else
-		UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
-	end
+	-- Visibility of [Upgrade] button and FTUE
+	UpdateUpgradeState()
 end
 
 
@@ -337,8 +375,12 @@ function BroadcastUpgrade()
 		return
 	end
 	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, selectedAbilityIndex)
+	-- Disable the button temporarily to avoid double clicks
+	UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	Task.Wait()
 	UpdateAbilityDetails(AbilityAPI)
+	Task.Wait(0.4)
+	UpdateUpgradeState()
 end
 UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
 

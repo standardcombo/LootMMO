@@ -45099,6 +45099,8 @@ Assets {
         ChildIds: 5959645430569466393
         ChildIds: 16511046541071761264
         ChildIds: 13628648149494387319
+        ChildIds: 1658839675723635303
+        ChildIds: 6135181925349021902
         ChildIds: 1769486669779111570
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -45256,6 +45258,12 @@ Assets {
             Name: "cs:SelectionIndicator"
             ObjectReference {
               SubObjectId: 5959645430569466393
+            }
+          }
+          Overrides {
+            Name: "cs:UpgradeFTUE"
+            ObjectReference {
+              SubObjectId: 6135181925349021902
             }
           }
           Overrides {
@@ -47133,7 +47141,6 @@ Assets {
         ChildIds: 12611772766970814114
         ChildIds: 10846534887957406504
         ChildIds: 11682653779931538475
-        ChildIds: 1658839675723635303
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -47513,182 +47520,6 @@ Assets {
               }
             }
           }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1658839675723635303
-        Name: "Upgrade"
-        Transform {
-          Location {
-            X: -26470.5664
-            Y: 3678.86914
-            Z: -20864.3086
-          }
-          Rotation {
-            Yaw: -12.3560171
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3052098309912118867
-        ChildIds: 14125964302810899862
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: 300
-          Height: 80
-          UIY: 940
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          IsHittable: true
-          Button {
-            Label: "Upgrade"
-            FontColor {
-              A: 1
-            }
-            FontSize: 37
-            ButtonColor {
-              R: 0.947306514
-              G: 0.423267663
-              B: 0.0497065671
-              A: 1
-            }
-            HoveredColor {
-              R: 1
-              G: 0.526333332
-              B: 0.0199999809
-              A: 1
-            }
-            PressedColor {
-              R: 0.776
-              G: 0.18636933
-              B: 0.023279978
-              A: 1
-            }
-            DisabledColor {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-            Brush {
-              Id: 841534158063459245
-            }
-            IsButtonEnabled: true
-            ClickMode {
-              Value: "mc:ebuttonclickmode:default"
-            }
-            Font {
-              Id: 11336346532215892341
-            }
-            Justification {
-              Value: "mc:etextjustify:center"
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:center"
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:topcenter"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:topcenter"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 14125964302810899862
-        Name: "GenericButtonScript"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1658839675723635303
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HoverSound"
-            AssetReference {
-              Id: 5485819788848077082
-            }
-          }
-          Overrides {
-            Name: "cs:BroadcastString"
-            String: ""
-          }
-          Overrides {
-            Name: "cs:toServer"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:OnReleased"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:IncludedVariables"
-            String: ""
-          }
-          Overrides {
-            Name: "cs:PressedSound"
-            AssetReference {
-              Id: 1988019442596915822
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 7641244062269779132
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -50122,6 +49953,402 @@ Assets {
             Id: 5663505152973176942
           }
         }
+      }
+      Objects {
+        Id: 1658839675723635303
+        Name: "Upgrade"
+        Transform {
+          Location {
+            X: -26470.5664
+            Y: 3678.86914
+            Z: -20864.3086
+          }
+          Rotation {
+            Yaw: -12.3560171
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13192944649928894444
+        ChildIds: 14125964302810899862
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 300
+          Height: 80
+          UIY: -115
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          IsHittable: true
+          Button {
+            Label: "Upgrade"
+            FontColor {
+              A: 1
+            }
+            FontSize: 37
+            ButtonColor {
+              R: 0.947306514
+              G: 0.423267663
+              B: 0.0497065671
+              A: 1
+            }
+            HoveredColor {
+              R: 1
+              G: 0.526333332
+              B: 0.0199999809
+              A: 1
+            }
+            PressedColor {
+              R: 0.776
+              G: 0.18636933
+              B: 0.023279978
+              A: 1
+            }
+            DisabledColor {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Brush {
+              Id: 841534158063459245
+            }
+            IsButtonEnabled: true
+            ClickMode {
+              Value: "mc:ebuttonclickmode:default"
+            }
+            Font {
+              Id: 11336346532215892341
+            }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14125964302810899862
+        Name: "GenericButtonScript"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1658839675723635303
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HoverSound"
+            AssetReference {
+              Id: 5485819788848077082
+            }
+          }
+          Overrides {
+            Name: "cs:BroadcastString"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:toServer"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:OnReleased"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:IncludedVariables"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:PressedSound"
+            AssetReference {
+              Id: 1988019442596915822
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7641244062269779132
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6135181925349021902
+        Name: "Upgrade FTUE"
+        Transform {
+          Location {
+            X: -2064.41602
+            Y: -21097.2012
+            Z: 12525.2266
+          }
+          Rotation {
+            Yaw: 44.9999504
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13192944649928894444
+        ChildIds: 6666867689400210358
+        ChildIds: 9107493388227027806
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 700
+          Height: 191
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomright"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6666867689400210358
+        Name: "Ability Description"
+        Transform {
+          Location {
+            X: -76121.0156
+            Y: 17706.4062
+            Z: -128064.312
+          }
+          Rotation {
+            Yaw: 10.144002
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6135181925349021902
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 700
+          Height: 79
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "Choose a skill to upgrade"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Size: 36
+            Justification {
+              Value: "mc:etextjustify:right"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:top"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            OutlineColor {
+              A: 1
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 9107493388227027806
+        Name: "UI Image"
+        Transform {
+          Location {
+            X: 59921.1953
+            Y: 4502.96924
+            Z: 64032.1562
+          }
+          Rotation {
+            Yaw: -5.07200432
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6135181925349021902
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 80
+          Height: 163
+          UIX: 30
+          UIY: 30
+          RotationAngle: 90
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 2551421680455501385
+            }
+            Color {
+              R: 1
+              G: 0.00999999
+              B: 0.00999999
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1769486669779111570
@@ -63780,6 +64007,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "BackgroundHighlighted_020"
+      }
+    }
+    Assets {
+      Id: 2551421680455501385
+      Name: "Icon Arrow Up"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_ArrowUp"
       }
     }
     Assets {
