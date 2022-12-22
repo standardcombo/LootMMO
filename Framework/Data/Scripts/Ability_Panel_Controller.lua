@@ -5,7 +5,10 @@
 local EVENT_SHOW_CLASS_SELECT = "ClassSelection.Show"
 local EVENT_CLASS_SELECTED = "ClassSelection.Selected"
 local EVENT_SHOW_ABILITIES = "Abilities.Show"
+local EVENT_HIDE_ABILITIES = "Abilities.Hide"
 local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
+local EVENT_OPEN_ABILITIES = "OpenAbilities" --EventAppstateConnect
+
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local ABILITIES = script:GetCustomProperty("Abilities"):WaitForObject()
@@ -114,10 +117,11 @@ Input.actionPressedEvent:Connect(function(player, action)
     if action == "OpenAbility" then
 		if currentState == STATES.abilities and CLOSE_BUTTON.visibility == Visibility.INHERIT then
 			-- We're in a normal ability screen, with no unlocking or upgrade animation active
-			Events.Broadcast(EVENT_ABILITIES_CLOSED)
+			Hide() --Changes app state
+			Events.Broadcast(EVENT_HIDE_ABILITIES) --Tell the Abilities screen to hide itself too
 		else
 			-- Let the `EventAppstateConnect` component decide if we should change app state or not
-        	Events.Broadcast("OpenAbilities")
+        	Events.Broadcast(EVENT_OPEN_ABILITIES)
 		end
     end
 end)

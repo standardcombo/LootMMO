@@ -4,6 +4,7 @@
 	by: standardcombo
 ]]
 local EVENT_SHOW_ABILITIES = "Abilities.Show"
+local EVENT_HIDE_ABILITIES = "Abilities.Hide"
 local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
 local EVENT_ACCEPT_SLOT = "AcceptSlot"
 local EVENT_ACCEPT_POTION = "AcceptPotion"
@@ -486,6 +487,7 @@ CacheSlotReferences()
 
 
 Events.Connect(EVENT_SHOW_ABILITIES, Show)
+Events.Connect(EVENT_HIDE_ABILITIES, Hide)
 
 CLOSE_BUTTON.clickedEvent:Connect(function()
 	if hasMoreUnlocks then
