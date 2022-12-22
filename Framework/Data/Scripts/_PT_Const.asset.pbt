@@ -6,6 +6,6 @@ Assets {
     CustomParameters {
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "PartyTime"
 }

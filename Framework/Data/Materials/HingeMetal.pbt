@@ -2,7 +2,7 @@ Assets {
   Id: 2944854612818163096
   Name: "HingeMetal"
   PlatformAssetType: 13
-  SerializationVersion: 121
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 6512063792317085098
     ParameterOverrides {

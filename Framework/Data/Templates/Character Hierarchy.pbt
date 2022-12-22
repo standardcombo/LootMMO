@@ -901,6 +901,9 @@ Assets {
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -946,6 +949,9 @@ Assets {
           SubobjectId: 5775567437232286313
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -993,6 +999,9 @@ Assets {
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -1038,6 +1047,9 @@ Assets {
           SubobjectId: 1899688081797355022
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1085,6 +1097,9 @@ Assets {
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -1130,6 +1145,9 @@ Assets {
           SubobjectId: 230388195682412653
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1177,6 +1195,9 @@ Assets {
           InstanceId: 13620541732778982903
           TemplateId: 5338087018861399484
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -1217,6 +1238,9 @@ Assets {
           TeamSettings {
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
     }
@@ -1234,6 +1258,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Hierarchy"
 }

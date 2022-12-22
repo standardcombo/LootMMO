@@ -2,7 +2,7 @@ Assets {
   Id: 12734966450880122012
   Name: "Dragonskin Belt"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

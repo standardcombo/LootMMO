@@ -2,7 +2,7 @@ Assets {
   Id: 15372055695161763459
   Name: "Horn Material 3"
   PlatformAssetType: 13
-  SerializationVersion: 121
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 6891716641358995367
     ParameterOverrides {

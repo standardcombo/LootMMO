@@ -2,7 +2,7 @@ Assets {
   Id: 17966929401730190481
   Name: "Divine Hood"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

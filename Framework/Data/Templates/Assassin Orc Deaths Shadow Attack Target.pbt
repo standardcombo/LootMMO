@@ -338,7 +338,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Ability"
   VirtualFolderPath: "Assets"

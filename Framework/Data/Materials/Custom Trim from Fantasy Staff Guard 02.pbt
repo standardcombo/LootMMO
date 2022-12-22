@@ -2,7 +2,7 @@ Assets {
   Id: 14953270205001059627
   Name: "Plain Wand Gold Trim"
   PlatformAssetType: 13
-  SerializationVersion: 121
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 10765743143636939323
     ParameterOverrides {

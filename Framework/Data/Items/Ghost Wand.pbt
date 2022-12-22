@@ -2,7 +2,7 @@ Assets {
   Id: 13722710934424887448
   Name: "Ghost Wand"
   PlatformAssetType: 33
-  SerializationVersion: 121
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"
