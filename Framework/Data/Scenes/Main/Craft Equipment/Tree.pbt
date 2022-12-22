@@ -2442,7 +2442,7 @@ Objects {
   Control {
     Width: 29
     Height: 29
-    UIX: -15
+    UIX: 15
     UIY: -14
     RenderTransformPivot {
       Anchor {
@@ -2477,7 +2477,7 @@ Objects {
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomright"
+          Value: "mc:euianchor:bottomleft"
         }
       }
     }
@@ -9201,7 +9201,7 @@ Objects {
   Control {
     Width: 181
     Height: 65
-    UIX: 110
+    UIX: -110
     UIY: -10
     RenderTransformPivot {
       Anchor {
@@ -9886,7 +9886,7 @@ Objects {
   Control {
     Width: 181
     Height: 65
-    UIX: -110
+    UIX: 110
     UIY: -10
     RenderTransformPivot {
       Anchor {
@@ -10561,9 +10561,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 96
-    Height: 96
-    UIX: 106
+    Width: 140
+    Height: 140
+    UIX: 146
+    UIY: -10
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -11477,8 +11478,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 96
-    Height: 96
+    Width: 140
+    Height: 140
+    UIY: -10
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -12392,9 +12394,10 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 96
-    Height: 96
-    UIX: -106
+    Width: 140
+    Height: 140
+    UIX: -146
+    UIY: -10
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -13694,7 +13697,7 @@ Objects {
   Control {
     Width: 29
     Height: 29
-    UIX: -15
+    UIX: 15
     UIY: -14
     RenderTransformPivot {
       Anchor {
@@ -13729,7 +13732,7 @@ Objects {
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomright"
+          Value: "mc:euianchor:bottomleft"
         }
       }
     }
