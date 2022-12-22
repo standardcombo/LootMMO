@@ -141,6 +141,8 @@ local function ClearUpgradePanelDetails()
 		previewSlot.clientUserData.icon.visibility = Visibility.FORCE_OFF
 		previewSlot.clientUserData.count.visibility = Visibility.FORCE_OFF
 	end
+	UPGRADE_BUTTON.isInteractable = false
+	SCRAP_BUTTON.isInteractable = false
 	selectedRecipe = {}
 end
 
