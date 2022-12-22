@@ -16,6 +16,7 @@ local PotionAPI = _G["Potions.Equipment"]
 local Star_Ratings = _G["Star_Rating"]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
+local ABILITY_SELECT_SFX = script:GetCustomProperty("AbilitySelectSFX"):WaitForObject()
 local UNLOCK_ANIMATION = script:GetCustomProperty("UnlockAnimationScript"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 
@@ -369,6 +370,8 @@ end
 
 
 local function OnSlotPressed(btn)
+	ABILITY_SELECT_SFX:Play()
+	
 	SelectSlot(btn.clientUserData.slot)
 end
 
@@ -429,7 +432,7 @@ function BroadcastUpgrade()
 	Task.Wait(0.4)
 	UpdateUpgradeState()
 end
-UPGRADE_BUTTON.releasedEvent:Connect(BroadcastUpgrade)
+UPGRADE_BUTTON.clickedEvent:Connect(BroadcastUpgrade)
 
 EquipAPI.playerEquippedEvent:Connect(function(character, player)
 	if player == LOCAL_PLAYER then

@@ -45088,7 +45088,6 @@ Assets {
         }
         ParentId: 10075780642854712533
         ChildIds: 15494705048420202944
-        ChildIds: 2408808260496673042
         ChildIds: 14546134160714896542
         ChildIds: 14562754378342830512
         ChildIds: 5455291273605858803
@@ -45100,6 +45099,7 @@ Assets {
         ChildIds: 16511046541071761264
         ChildIds: 13628648149494387319
         ChildIds: 1658839675723635303
+        ChildIds: 7553302416366088538
         ChildIds: 6135181925349021902
         ChildIds: 1769486669779111570
         Collidable_v2 {
@@ -45150,8 +45150,6 @@ Assets {
         Name: "AbilityScreen"
         Transform {
           Location {
-            X: -0.054665871
-            Y: -0.00182135531
           }
           Rotation {
             Yaw: 1.37137367e-05
@@ -45163,11 +45161,18 @@ Assets {
           }
         }
         ParentId: 13192944649928894444
+        ChildIds: 7947649232312761738
         UnregisteredParameters {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 13192944649928894444
+            }
+          }
+          Overrides {
+            Name: "cs:AbilitySelectSFX"
+            ObjectReference {
+              SubObjectId: 7947649232312761738
             }
           }
           Overrides {
@@ -45245,7 +45250,7 @@ Assets {
           Overrides {
             Name: "cs:UpgradeButton"
             ObjectReference {
-              SubObjectId: 1658839675723635303
+              SubObjectId: 7553302416366088538
             }
           }
           Overrides {
@@ -45412,12 +45417,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2408808260496673042
-        Name: "AbilityPointsPanelController"
+        Id: 7947649232312761738
+        Name: "Analog Click 02 SFX"
         Transform {
           Location {
           }
           Rotation {
+            Yaw: 1.70754683e-05
           }
           Scale {
             X: 1
@@ -45425,93 +45431,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13192944649928894444
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13192944649928894444
-            }
-          }
-          Overrides {
-            Name: "cs:UnlockAnimationScript"
-            ObjectReference {
-              SubObjectId: 14546134160714896542
-            }
-          }
-          Overrides {
-            Name: "cs:LeftPanel"
-            ObjectReference {
-              SubObjectId: 4712586897910866749
-            }
-          }
-          Overrides {
-            Name: "cs:MainAbilityIcon"
-            ObjectReference {
-              SubObjectId: 14235505782615228524
-            }
-          }
-          Overrides {
-            Name: "cs:Stars"
-            ObjectReference {
-              SubObjectId: 17179176543179688151
-            }
-          }
-          Overrides {
-            Name: "cs:CenterPanel"
-            ObjectReference {
-              SubObjectId: 3052098309912118867
-            }
-          }
-          Overrides {
-            Name: "cs:AbilityName"
-            ObjectReference {
-              SubObjectId: 12611772766970814114
-            }
-          }
-          Overrides {
-            Name: "cs:AbilityDescription"
-            ObjectReference {
-              SubObjectId: 10846534887957406504
-            }
-          }
-          Overrides {
-            Name: "cs:UpgradeButton"
-            ObjectReference {
-              SubObjectId: 1658839675723635303
-            }
-          }
-          Overrides {
-            Name: "cs:AbilityProperties"
-            ObjectReference {
-              SubObjectId: 9732331884680976247
-            }
-          }
-          Overrides {
-            Name: "cs:AbilitySlots"
-            ObjectReference {
-              SubObjectId: 16511046541071761264
-            }
-          }
-          Overrides {
-            Name: "cs:PotionSlots"
-            ObjectReference {
-              SubObjectId: 13628648149494387319
-            }
-          }
-          Overrides {
-            Name: "cs:PointCount"
-            ObjectReference {
-              SubObjectId: 10688061735674432584
-            }
-          }
-          Overrides {
-            Name: "cs:LootIcon"
-            AssetReference {
-              Id: 14691838562437761112
-            }
-          }
-        }
+        ParentId: 15494705048420202944
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -45524,10 +45444,13 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Script {
-          ScriptAsset {
-            Id: 1941531310692901146
+        AudioInstance {
+          AudioAsset {
+            Id: 2541639822947132444
           }
+          Volume: 0.2
+          Falloff: -1
+          Radius: -1
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -49984,12 +49907,11 @@ Assets {
           }
         }
         ParentId: 13192944649928894444
-        ChildIds: 14125964302810899862
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -50075,6 +49997,101 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 7553302416366088538
+        Name: "Upgrade Button"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13192944649928894444
+        ChildIds: 14125964302810899862
+        ChildIds: 1124447047507054540
+        ChildIds: 11227401679696187800
+        ChildIds: 2659326298722193249
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 307
+          Height: 54
+          UIY: -115
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          IsHittable: true
+          Button {
+            FontColor {
+              A: 1
+            }
+            FontSize: 20
+            ButtonColor {
+              R: 0.439657241
+              G: 0.201556295
+              A: 1
+            }
+            HoveredColor {
+              R: 0.723055363
+              G: 0.428690553
+              A: 1
+            }
+            PressedColor {
+              R: 1
+              G: 1
+              B: 1
+            }
+            DisabledColor {
+              A: 1
+            }
+            Brush {
+              Id: 841534158063459245
+            }
+            IsButtonEnabled: true
+            ClickMode {
+              Value: "mc:ebuttonclickmode:default"
+            }
+            Font {
+            }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 14125964302810899862
         Name: "GenericButtonScript"
         Transform {
@@ -50088,7 +50105,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1658839675723635303
+        ParentId: 7553302416366088538
         UnregisteredParameters {
           Overrides {
             Name: "cs:HoverSound"
@@ -50134,6 +50151,525 @@ Assets {
         Script {
           ScriptAsset {
             Id: 7641244062269779132
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1124447047507054540
+        Name: "CONFIRM_BUTTON"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7553302416366088538
+        ChildIds: 1168757400847530737
+        ChildIds: 6887135533599121553
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 520
+          Height: 70
+          UIY: 5.42773438
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1168757400847530737
+        Name: "FADE"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1124447047507054540
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 162
+          Height: 55
+          UIY: 2.42358398
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              R: 0.252
+              G: 0.0851125568
+              A: 0.509
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6887135533599121553
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1124447047507054540
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -90
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 7615847344375253670
+            }
+            Color {
+              R: 1
+              G: 0.911920369
+              B: 0.3
+              A: 0.520000041
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11227401679696187800
+        Name: "CONFIRM_BUTTON_HOVER"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7553302416366088538
+        ChildIds: 1305229127644053789
+        ChildIds: 15751889389351877265
+        ChildIds: 10321313469175548767
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 300
+          Height: 70
+          UIY: 5.42773438
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1305229127644053789
+        Name: "FADE"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11227401679696187800
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 162
+          Height: 55
+          UIY: 2.42358398
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              R: 0.252
+              G: 0.0851125568
+              A: 1
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15751889389351877265
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11227401679696187800
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -140
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 48307754774318265
+            }
+            Color {
+              A: 0.232000008
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10321313469175548767
+        Name: "FRAME_BRIGHT"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11227401679696187800
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: -90
+          Height: 57
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Image {
+            Brush {
+              Id: 7615847344375253670
+            }
+            Color {
+              R: 1
+              G: 0.911920369
+              B: 0.3
+              A: 0.520000041
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2659326298722193249
+        Name: "Label"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7553302416366088538
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 342
+          Height: 37
+          UIX: 3.0748291
+          UIY: -3.03741455
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "Upgrade"
+            Color {
+              R: 1
+              G: 0.456411064
+              A: 1
+            }
+            Size: 27
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 11336346532215892341
+            }
+            ShadowColor {
+              A: 0.577
+            }
+            ShadowOffset {
+              X: -2
+              Y: 2
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
           }
         }
         NetworkRelevanceDistance {
@@ -63978,6 +64514,15 @@ Assets {
       }
     }
     Assets {
+      Id: 2541639822947132444
+      Name: "Analog Click 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_ui_analog_click_02_Cue_ref"
+      }
+    }
+    Assets {
       Id: 10473643727642352568
       Name: "Button Page Slide Core 01 SFX"
       PlatformAssetType: 7
@@ -64104,6 +64649,15 @@ Assets {
       }
     }
     Assets {
+      Id: 48307754774318265
+      Name: "UI Gradient Rectangular 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Shape_002"
+      }
+    }
+    Assets {
       Id: 2551421680455501385
       Name: "Icon Arrow Up"
       PlatformAssetType: 9
@@ -64119,15 +64673,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Basic_Shape_Square"
-      }
-    }
-    Assets {
-      Id: 48307754774318265
-      Name: "UI Gradient Rectangular 001"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Basic_Shape_002"
       }
     }
     Assets {
