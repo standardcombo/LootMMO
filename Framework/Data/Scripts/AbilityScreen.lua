@@ -296,12 +296,21 @@ function UpdateStars(character)
 	local stats      = character:GetComponent("Stats")
 	local class      = character:GetComponent("Class")
 	local classTable = class:GetClassTable()
-	local abilityId    = classTable["Ability"..selectedAbilityIndex]
+	local abilityId  = classTable["Ability"..selectedAbilityIndex]
+	local points = character:GetComponent("Points")
+	local abilityPoints = points:GetSpentPoints(abilityId)
+	--local abilityStat = stats:GetStat(abilityId)
 	
+	local progression = character:GetComponent("Progression")
+	local abilityStudyLevel = progression:GetProgressionKey(abilityId)
+	if type(abilityStudyLevel) ~= "number" then
+		abilityStudyLevel = 0
+	end
+
 	for index, uiImage in ipairs(STARS_PANEL:GetChildren()) do
 		local starimg
 		if abilityId then
-			starimg = GetStar(stats:GetStat(abilityId), index)
+			starimg = GetStarImage(abilityPoints, abilityStudyLevel, index)
 		else
 			starimg = Star_Ratings[1]
 		end
@@ -311,8 +320,12 @@ function UpdateStars(character)
 		end
 	end
 end
-function GetStar(stat, index)
-	return Star_Ratings[math.floor((stat - index) / 3) + 2]
+function GetStarImage(points, studyLevel, index)
+	local lookupIndex = math.floor(((points % 4) - index) / 3) + 2
+	if lookupIndex > 1 then
+		lookupIndex = lookupIndex + studyLevel
+	end
+	return Star_Ratings[lookupIndex]
 end
 
 
