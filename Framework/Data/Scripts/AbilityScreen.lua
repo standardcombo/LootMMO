@@ -3,6 +3,9 @@
 ]]
 local EVENT_SHOW_ABILITIES = "Abilities.Show"
 local EVENT_ABILITIES_CLOSED = "Abilities.Closed"
+local EVENT_ACCEPT_SLOT = "AcceptSlot"
+local EVENT_ACCEPT_POTION = "AcceptPotion"
+local EVENT_ABILITY_UPGRADE = "Ability_Upgrade"
 
 local ClassAPI = _G["Character.Classes"]
 local EquipAPI = _G["Character.EquipAPI"]
@@ -108,7 +111,7 @@ function _PrepareState()
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
 
-				Events.BroadcastToServer("AcceptSlot", i)
+				Events.BroadcastToServer(EVENT_ACCEPT_SLOT, i)
 				progression:SetProgression("AcceptSlot" .. i, true)
 			else
 				hasMoreUnlocks = true
@@ -153,7 +156,7 @@ function _PrepareState()
 				slotToUnlock = slot
 				PlayUnlockAnimation(slot)
 
-				Events.BroadcastToServer("AcceptPotion", i)
+				Events.BroadcastToServer(EVENT_ACCEPT_POTION, i)
 				progression:SetProgression("AcceptPotion" .. i, true)
 			else
 				hasMoreUnlocks = true
@@ -372,7 +375,7 @@ function BroadcastUpgrade()
 	if selectedSlot.clientUserData.isPotion then
 		return
 	end
-	Events.BroadcastToServer("Ability_Upgrade", LOCAL_PLAYER, selectedAbilityIndex)
+	Events.BroadcastToServer(EVENT_ABILITY_UPGRADE, LOCAL_PLAYER, selectedAbilityIndex)
 	-- Disable the button temporarily to avoid double clicks
 	UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
 	Task.Wait()
