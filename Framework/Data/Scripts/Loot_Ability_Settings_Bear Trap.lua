@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Bear Trap'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -13,14 +15,14 @@ local modifiers =
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "20 + (200 - 20) * SP / 156"
+modifiers['Damage'].calString = "20 + 180 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 20
     local max = 200
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local VIT = stats.V
-    local starRating = stats['Bear Trap']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= VIT/172 then
@@ -47,13 +49,13 @@ end
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 12
-    local starRating = stats['Bear Trap']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Bleed'].calString = "10 + (50 - 10) * SP / 156"
+modifiers['Bleed'].calString = "10 + 40 * SP / 156"
 modifiers['Bleed'].calculation = function(stats)
     local min = 20
     local max = 250
@@ -69,7 +71,7 @@ modifiers['BleedDuration'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * AGI / 156
-modifiers['StunDuration'].calString = "0.5 + (3 - 0.5) * SP / 156"
+modifiers['StunDuration'].calString = "0.5 + 2.5 * SP / 156"
 modifiers['StunDuration'].calculation = function(stats)
     local min = 0.5
     local max = 3

@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Iceberg'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,7 +14,7 @@ local modifiers =
     }
 )
 
-modifiers['Damage'].calString = "50 + (400 - 50) * SP / 156"
+modifiers['Damage'].calString = "50 + 350 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 50
     local max = 400
@@ -52,7 +54,7 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Duration'].calString = "3 + (10 - 3) * WIS / 172"
+modifiers['Duration'].calString = "3 + 7 * WIS / 172"
 modifiers['Duration'].calculation = function(stats)
     local min = 3
     local max = 10
@@ -60,7 +62,7 @@ modifiers['Duration'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Heal'].calString = "20 + (80 - 20) * VIT / 172"
+modifiers['Heal'].calString = "20 + 60 * VIT / 172"
 modifiers['Heal'].calculation = function(stats)
     local min = 20
     local max = 80

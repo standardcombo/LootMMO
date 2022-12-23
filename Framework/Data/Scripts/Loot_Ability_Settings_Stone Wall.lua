@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Stone Wall'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -10,7 +12,7 @@ local modifiers =
     }
 )
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Duration'].calString = "2 + (5 - 2) * VIT / 172"
+modifiers['Duration'].calString = "2 + 3 * VIT / 172"
 modifiers['Duration'].calculation = function(stats)
     local min = 2
     local max = 5
@@ -23,7 +25,7 @@ end
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 12
-    local starRating = stats['Stone Wall']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end

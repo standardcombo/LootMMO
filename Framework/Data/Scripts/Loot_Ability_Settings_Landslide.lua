@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Landslide'
+
 --Modifiables that will be Accessed and read.  Must have a Modifiers assigned
 local modifiers =
 MODIFIERAPI.SetupMultipleNewModifiers(
@@ -14,14 +16,14 @@ MODIFIERAPI.SetupMultipleNewModifiers(
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "100 + (500 - 100) * SP / 156"
+modifiers['Damage'].calString = "100 + 400 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 100
     local max = 500
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
-    local starRating = stats['Landslide']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= AGI/172 then
@@ -48,13 +50,13 @@ end
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 10
-    local starRating = stats['Landslide']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['BashRadius'].calString = "5 + (20 - 5) * VIT / 172"
+modifiers['BashRadius'].calString = "5 + 15 * VIT / 172"
 modifiers['BashRadius'].calculation = function(stats)
 	local min = 5
 	local max = 20

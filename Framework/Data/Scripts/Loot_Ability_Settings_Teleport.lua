@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Teleport'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,14 +14,14 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "150 + (1000 - 150) * SP / 156"
+modifiers['Damage'].calString = "150 + 850 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 150
     local max = 1000
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local WIS = stats.W
-    local starRating = stats['Blade Dash']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= WIS/172 then
@@ -46,12 +48,12 @@ modifiers['Cooldown'].calString = "20 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     --Formula: Min - Star Rating * Base Modifier
     local min = 20
-    local starRating = stats['Teleport']
+    local starRating = stats[ABILITY_ID]
     local BaseModifier = 0.5
     return min - starRating * BaseModifier
 end
 
-modifiers['Range'].calString = "2000 + (3000 - 2000) * WIS / 172"
+modifiers['Range'].calString = "2000 + 1000 * WIS / 172"
 modifiers['Range'].calculation = function(stats)
     local min = 2000
     local max = 3000

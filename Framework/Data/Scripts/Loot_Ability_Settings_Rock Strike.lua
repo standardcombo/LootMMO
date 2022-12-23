@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Rock Strike'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,14 +14,14 @@ local modifiers =
     }
 )
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "150 + (1000 - 150) * SP / 156"
+modifiers['Damage'].calString = "150 + 850 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 150
     local max = 1000
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
-    local starRating = stats['Rock Strike']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= AGI/172 then
@@ -46,13 +48,13 @@ end
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 12
-    local starRating = stats['Rock Strike']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Radius'].calString = "200 + (800 - 200) * VIT / 172"
+modifiers['Radius'].calString = "200 + 600 * VIT / 172"
 modifiers['Radius'].calculation = function(stats)
     local min = 200
     local max = 800
@@ -60,7 +62,7 @@ modifiers['Radius'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['StunDuration'].calString = "0.5 + (3 - 0.5) * VIT / 172"
+modifiers['StunDuration'].calString = "0.5 + 2.5 * VIT / 172"
 modifiers['StunDuration'].calculation = function(stats)
     local min = 0.5
     local max = 3

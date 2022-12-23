@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Pyroblast'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,14 +14,14 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "200 + (1700 - 200) * SP / 156"
+modifiers['Damage'].calString = "200 + 1500 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 200
     local max = 1700
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local AGI = stats.A
-    local starRating = stats['Rock Strike']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= AGI/172 then
@@ -46,13 +48,13 @@ end
 modifiers['Cooldown'].calString = "10 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 10
-    local starRating = stats['Pyroblast']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Radius'].calString = "400 + (1000 - 200) * WIS / 172"
+modifiers['Radius'].calString = "400 + 600 * WIS / 172"
 modifiers['Radius'].calculation = function(stats)
     local min = 400
     local max = 1000

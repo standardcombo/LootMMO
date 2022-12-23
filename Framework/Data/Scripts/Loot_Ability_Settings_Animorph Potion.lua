@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Animorph Potion'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,7 +14,7 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Duration'].calString = "2 + (7 - 2) * WIS / 172"
+modifiers['Duration'].calString = "2 + 5 * WIS / 172"
 modifiers['Duration'].calculation = function(stats)
     local min = 2
     local max = 7
@@ -23,13 +25,13 @@ end
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 12
-    local starRating = stats['Animorph Potion']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Radius'].calString = "100 + (400 - 100) * WIS / 172"
+modifiers['Radius'].calString = "100 + 300 * WIS / 172"
 modifiers['Radius'].calculation = function(stats)
     local min = 400
     local max = 400

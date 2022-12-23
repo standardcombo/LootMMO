@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Rain of Arrows'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -12,14 +14,14 @@ local modifiers =
 )
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "150 + (1000 - 150) * SP / 156"
+modifiers['Damage'].calString = "150 + 850 * SP / 156"
 modifiers['Damage'].calculation = function(stats)
     local min = 150
     local max = 1000
     local SP = stats.SP
     local dmg = min + (max - min) * SP / 156
     local VIT = stats.V
-    local starRating = stats['Rock Strike']
+    local starRating = stats[ABILITY_ID]
     -- Check for crit
     function IsCrit()
         if math.random() <= VIT/172 then
@@ -46,7 +48,7 @@ end
 modifiers['Cooldown'].calString = "20 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 20
-    local starRating = stats['Rain Of Arrows']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.75
     return min - starRating * baseModifier
 end

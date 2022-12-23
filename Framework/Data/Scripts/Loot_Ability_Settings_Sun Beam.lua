@@ -2,6 +2,8 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Sun Beam'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {

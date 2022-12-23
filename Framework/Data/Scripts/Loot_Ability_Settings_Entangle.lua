@@ -2,6 +2,8 @@ local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_A
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
+local ABILITY_ID = 'Entangle'
+
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
     {
@@ -16,13 +18,13 @@ local modifiers =
 modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
 modifiers['Cooldown'].calculation = function(stats)
     local min = 12
-    local starRating = stats['Entangle']
+    local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Bleed'].calString = "60 + (60 - 10) * SP / 156"
+modifiers['Bleed'].calString = "60 + 50 * SP / 156"
 modifiers['Bleed'].calculation = function(stats)
     local min = 10
     local max = 60
@@ -31,7 +33,7 @@ modifiers['Bleed'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Slow'].calString = "0.2 + (0.8 - 0.2) * AGI / 172"
+modifiers['Slow'].calString = "0.2 + 0.6 * AGI / 172"
 modifiers['Slow'].calculation = function(stats)
     local min = 0.2
     local max = 0.8
