@@ -71,6 +71,8 @@ local function CreatePotions()
 	local potionTable = PotionsAPI.GetTable()
 
 	for key, value in pairs(potionTable) do
+		if key == "Empty" then goto continue end
+
 		local potionPoint = World.SpawnAsset(POTION_MICRO_SLOT, { parent = POTION_STORAGE })
 		local potionIcon = Get(potionPoint, "PotionIcon")
 		local potionName = Get(potionPoint, "PotionName")
@@ -90,6 +92,8 @@ local function CreatePotions()
 
 		button.pressedEvent:Connect(Drag, potionPoint)
 		button.releasedEvent:Connect(Release)
+
+		:: continue ::
 	end
 end
 
