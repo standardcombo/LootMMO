@@ -54,3 +54,13 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+
+--Formula: Min + (Max - Min) * AGI / 156
+modifiers['Radius'].calString = "300 + 700 * AGI / 172"
+modifiers['Radius'].calculation = function(stats)
+    local min = 300
+    local max = 1000
+    return min + (max - min) * stats.A / 172
+end
+
+ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)

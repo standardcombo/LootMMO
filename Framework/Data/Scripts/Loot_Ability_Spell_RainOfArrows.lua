@@ -7,14 +7,14 @@ end
 local placementTemplate = script:GetCustomProperty('HunterOrcRainOfArrowsPlacementBasic')
 
 function Execute()
-    local mod = ROOT.serverUserData.calculateModifier()
+    local mods = ROOT.serverUserData.calculateModifier()
     local SpecialAbility = ABILITY
     local targetData = SpecialAbility:GetTargetData()
     local position = targetData:GetHitPosition()
     local v = targetData:GetAimPosition()
     local rotation = Rotation.New(v.x, v.y, v.z)
 
-    local radius = 300
+    local radius = mods["Radius"]
     local vfxScale = Vector3.New(CoreMath.Round(radius / 650, 3))
 
     World.SpawnAsset(
@@ -36,12 +36,12 @@ function Execute()
     for _, enemy in pairs(nearbyEnemies) do 
         local dmg = Damage.New()
         local player = ABILITY.owner
-        dmg.amount = mod ["Damage"][1]
+        dmg.amount = mods["Damage"][1]
         dmg.reason = DamageReason.COMBAT
         dmg.sourcePlayer = player
         dmg.sourceAbility = SpecialAbility
         
-        local IsCrit = mod ["Damage"][2]
+        local IsCrit = mods["Damage"][2]
         local attackData = {
             object = enemy,
             damage = dmg,
