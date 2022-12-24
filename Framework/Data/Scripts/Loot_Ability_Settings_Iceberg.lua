@@ -9,7 +9,7 @@ local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddVitalityScale(modifiers, 'Heal', 20, 80)
 ModAPI.AddWisdomScale(modifiers, 'Duration', 3, 10)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 20, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 20, 0.5)
 
 
 local mod

@@ -10,7 +10,7 @@ ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddSkillPowerScale(modifiers, 'Bleed', 20, 250)
 ModAPI.AddConstantValue(modifiers, 'BleedDuration', 6)
 ModAPI.AddAgilityScale(modifiers, 'StunDuration', 0.5, 3)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 12, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 12, 0.5)
 
 
 local mod

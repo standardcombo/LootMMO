@@ -8,7 +8,7 @@ local ABILITY_ID = 'Pyroblast'
 local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddWisdomScale(modifiers, 'Radius', 400, 1000)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 10, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 10, 0.5)
 
 
 local mod

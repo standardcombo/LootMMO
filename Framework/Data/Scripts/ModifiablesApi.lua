@@ -36,8 +36,8 @@ function API.Add(modifiersTable, modId)
 	return mod
 end
 
-function API.AddCooldown(modifiersTable, abilityId, min, perStar)
-	local mod = API.Add(modifiersTable, 'Cooldown')
+function API.AddStarRatingScale(modifiersTable, modId, abilityId, min, perStar)
+	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s - Star Rating * %s", min, perStar)
 	mod.calculation = function(stats)

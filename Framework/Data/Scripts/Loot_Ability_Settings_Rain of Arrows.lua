@@ -8,7 +8,7 @@ local ABILITY_ID = 'Rain of Arrows'
 local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddAgilityScale(modifiers, 'Radius', 300, 1000)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 20, 0.75)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 20, 0.75)
 
 
 local mod

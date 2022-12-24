@@ -8,7 +8,7 @@ local ABILITY_ID = 'Boulder Throw'
 local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddVitalityScale(modifiers, 'Radius', 1, 5)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 25, 0.75)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 25, 0.75)
 
 
 local mod

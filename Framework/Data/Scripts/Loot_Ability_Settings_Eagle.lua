@@ -8,7 +8,7 @@ local ABILITY_ID = 'Eagle'
 local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddAgilityScale(modifiers, 'Duration', 60, 120)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 18, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 18, 0.5)
 
 
 local mod

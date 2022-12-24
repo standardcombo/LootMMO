@@ -8,7 +8,7 @@ local ABILITY_ID = 'Teleport'
 local modifiers = {}
 ModAPI.Add(modifiers, 'Damage')
 ModAPI.AddWisdomScale(modifiers, 'Range', 2000, 3000)
-ModAPI.AddCooldown(modifiers, ABILITY_ID, 20, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 20, 0.5)
 
 
 local mod
