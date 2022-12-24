@@ -1,4 +1,6 @@
 local LOOT_STATS_MODIFIABLES = require(script:GetCustomProperty('Loot_Stats_Modifiables'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
+
 local API = {}
 _G['Ability.Modifiers'] = API
 
