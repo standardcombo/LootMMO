@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -11,9 +11,12 @@ local modifiers =
         'Cooldown'
     }
 )
+local mod
+
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Duration'].calString = "2 + 3 * VIT / 172"
-modifiers['Duration'].calculation = function(stats)
+mod = modifiers['Duration']
+mod.calString = "2 + 3 * VIT / 172"
+mod.calculation = function(stats)
     local min = 2
     local max = 5
     local VIT = stats.V
@@ -22,12 +25,14 @@ modifiers['Duration'].calculation = function(stats)
 end
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "12 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 12
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

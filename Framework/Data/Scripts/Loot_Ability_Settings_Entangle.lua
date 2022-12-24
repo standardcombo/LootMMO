@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -13,10 +13,12 @@ local modifiers =
         'Duration',
     }
 )
+local mod
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "12 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 12
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
@@ -24,8 +26,9 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Bleed'].calString = "60 + 50 * SP / 156"
-modifiers['Bleed'].calculation = function(stats)
+mod = modifiers['Bleed']
+mod.calString = "60 + 50 * SP / 156"
+mod.calculation = function(stats)
     local min = 10
     local max = 60
     local SP = stats.SP
@@ -33,8 +36,9 @@ modifiers['Bleed'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Slow'].calString = "0.2 + 0.6 * AGI / 172"
-modifiers['Slow'].calculation = function(stats)
+mod = modifiers['Slow']
+mod.calString = "0.2 + 0.6 * AGI / 172"
+mod.calculation = function(stats)
     local min = 0.2
     local max = 0.8
     local VIT = stats.V
@@ -42,8 +46,9 @@ modifiers['Slow'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * AGI / 172
-modifiers['Duration'].calString = "5 + (15 - 5) * AGI / 172"
-modifiers['Duration'].calculation = function(stats)
+mod = modifiers['Duration']
+mod.calString = "5 + (15 - 5) * AGI / 172"
+mod.calculation = function(stats)
     local min = 5
     local max = 15
     local AGI = stats.A
@@ -51,4 +56,5 @@ modifiers['Duration'].calculation = function(stats)
     return result
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

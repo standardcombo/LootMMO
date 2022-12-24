@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -14,9 +14,12 @@ local modifiers =
         'BleedDuration'
     }
 )
+local mod
+
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "20 + 180 * SP / 156"
-modifiers['Damage'].calculation = function(stats)
+mod = modifiers['Damage']
+mod.calString = "20 + 180 * SP / 156"
+mod.calculation = function(stats)
     local min = 20
     local max = 200
     local SP = stats.SP
@@ -46,8 +49,9 @@ modifiers['Damage'].calculation = function(stats)
 end
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "12 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 12
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
@@ -55,8 +59,9 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Bleed'].calString = "10 + 40 * SP / 156"
-modifiers['Bleed'].calculation = function(stats)
+mod = modifiers['Bleed']
+mod.calString = "10 + 40 * SP / 156"
+mod.calculation = function(stats)
     local min = 20
     local max = 250
     local SP = stats.SP
@@ -64,19 +69,22 @@ modifiers['Bleed'].calculation = function(stats)
 end
 
 --Formula: min
-modifiers['BleedDuration'].calString = "6"
-modifiers['BleedDuration'].calculation = function(stats)
+mod = modifiers['BleedDuration']
+mod.calString = "6"
+mod.calculation = function(stats)
     local min = 6
     return min
 end
 
 --Formula: Min + (Max - Min) * AGI / 156
-modifiers['StunDuration'].calString = "0.5 + 2.5 * SP / 156"
-modifiers['StunDuration'].calculation = function(stats)
+mod = modifiers['StunDuration']
+mod.calString = "0.5 + 2.5 * SP / 156"
+mod.calculation = function(stats)
     local min = 0.5
     local max = 3
     local AGI = stats.A
     return min + (max - min) * AGI / 156
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

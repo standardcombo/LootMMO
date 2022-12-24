@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -14,20 +14,32 @@ local modifiers =
         'Radius'
     }
 )
-modifiers['Heal'].calculation = function(stats)
+local mod
+
+mod = modifiers['Heal']
+mod.calculation = function(stats)
     return 1000
 end
-modifiers['Cooldown'].calculation = function(stats)
+
+mod = modifiers['Cooldown']
+mod.calculation = function(stats)
     return 50 - stats.V * .01
 end
-modifiers['Damage'].calculation = function(stats)
+
+mod = modifiers['Damage']
+mod.calculation = function(stats)
     return 200 + (stats.W * 0.2)
 end
-modifiers['Stun'].calculation = function(stats)
+
+mod = modifiers['Stun']
+mod.calculation = function(stats)
     return 10 + (stats.W + stats.V / 2) * .02
 end
-modifiers['Radius'].calculation = function(stats)
+
+mod = modifiers['Radius']
+mod.calculation = function(stats)
     return 900 + stats.W
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

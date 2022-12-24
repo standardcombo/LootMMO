@@ -1,5 +1,5 @@
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
 local MODIFIERAPI = _G['Ability.Modifiers']
 
 local ABILITY_ID = 'Blade Dash'
@@ -11,10 +11,12 @@ local modifiers =
         'Cooldown',
     }
 )
+local mod
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "150 + 850 * SP / 156"
-modifiers['Damage'].calculation = function(stats)
+mod = modifiers['Damage']
+mod.calString = "150 + 850 * SP / 156"
+mod.calculation = function(stats)
     local min = 150
     local max = 1000
     local SP = stats.SP
@@ -44,12 +46,14 @@ modifiers['Damage'].calculation = function(stats)
 end
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "12 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 12
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
     return min - starRating * baseModifier
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

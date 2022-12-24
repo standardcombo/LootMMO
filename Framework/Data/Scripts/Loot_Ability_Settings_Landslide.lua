@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -14,10 +14,12 @@ MODIFIERAPI.SetupMultipleNewModifiers(
 		'Range'
 	}
 )
+local mod
 
 --Formula: Min + (Max - Min) * SP / 156
-modifiers['Damage'].calString = "100 + 400 * SP / 156"
-modifiers['Damage'].calculation = function(stats)
+mod = modifiers['Damage']
+mod.calString = "100 + 400 * SP / 156"
+mod.calculation = function(stats)
     local min = 100
     local max = 500
     local SP = stats.SP
@@ -47,8 +49,9 @@ modifiers['Damage'].calculation = function(stats)
 end
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "12 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "12 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 10
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.5
@@ -56,8 +59,9 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['BashRadius'].calString = "5 + 15 * VIT / 172"
-modifiers['BashRadius'].calculation = function(stats)
+mod = modifiers['BashRadius']
+mod.calString = "5 + 15 * VIT / 172"
+mod.calculation = function(stats)
 	local min = 5
 	local max = 20
 	local VIT = stats.V
@@ -65,9 +69,12 @@ modifiers['BashRadius'].calculation = function(stats)
 	return radius
 end
 
-modifiers['Range'].calString = "0.8"
-modifiers['Range'].calculation = function(stats)
+--Formula: base value
+mod = modifiers['Range']
+mod.calString = "0.8"
+mod.calculation = function(stats)
 	return 0.8
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

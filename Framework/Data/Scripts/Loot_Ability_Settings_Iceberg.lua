@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -13,9 +13,12 @@ local modifiers =
         'Heal'
     }
 )
+local mod
 
-modifiers['Damage'].calString = "50 + 350 * SP / 156"
-modifiers['Damage'].calculation = function(stats)
+--Formula: Min + (Max - Min) * SP / 156
+mod = modifiers['Damage']
+mod.calString = "50 + 350 * SP / 156"
+mod.calculation = function(stats)
     local min = 50
     local max = 400
     local SP = stats.SP
@@ -45,8 +48,9 @@ modifiers['Damage'].calculation = function(stats)
 end
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = "20 - Star Rating * 0.5"
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = "20 - Star Rating * 0.5"
+mod.calculation = function(stats)
     local min = 20
     local starRating = stats['Iceberg']
     local baseModifier = 0.5
@@ -54,19 +58,22 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
-modifiers['Duration'].calString = "3 + 7 * WIS / 172"
-modifiers['Duration'].calculation = function(stats)
+mod = modifiers['Duration']
+mod.calString = "3 + 7 * WIS / 172"
+mod.calculation = function(stats)
     local min = 3
     local max = 10
     return min + (max - min) * stats.W / 172
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
-modifiers['Heal'].calString = "20 + 60 * VIT / 172"
-modifiers['Heal'].calculation = function(stats)
+mod = modifiers['Heal']
+mod.calString = "20 + 60 * VIT / 172"
+mod.calculation = function(stats)
     local min = 20
     local max = 80
     return min + (max - min) * stats.V / 172
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

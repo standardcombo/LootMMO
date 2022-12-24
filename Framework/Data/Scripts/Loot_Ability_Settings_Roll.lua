@@ -1,4 +1,4 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
 
@@ -11,10 +11,12 @@ local modifiers =
         'EvasionChance'
     }
 )
+local mod
 
 --Formula: Min - Star Rating * Base Modifier
-modifiers['Cooldown'].calString = '8 - StarRating * 0.25'
-modifiers['Cooldown'].calculation = function(stats)
+mod = modifiers['Cooldown']
+mod.calString = '8 - StarRating * 0.25'
+mod.calculation = function(stats)
     local min = 8
     local starRating = stats[ABILITY_ID]
     local baseModifier = 0.25
@@ -22,7 +24,9 @@ modifiers['Cooldown'].calculation = function(stats)
 end
 
 --Formula: VIT / 172
-modifiers['EvasionChance'].calculation = function(stats)
+mod = modifiers['EvasionChance']
+mod.calString = "VIT / 172"
+mod.calculation = function(stats)
     local VIT = stats.V
     function IsEvade()
         if math.random() <= VIT/172 then
@@ -34,4 +38,5 @@ modifiers['EvasionChance'].calculation = function(stats)
     return IsEvade()
 end
 
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+
