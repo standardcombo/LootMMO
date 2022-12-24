@@ -1,17 +1,16 @@
 local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local MODIFIERAPI = _G['Ability.Modifiers']
+local ModAPI = _G['Ability.Modifiers']
 
 local ABILITY_ID = 'Pyroblast'
 
-local modifiers =
-    MODIFIERAPI.SetupMultipleNewModifiers(
-    {
-        'Damage',
-        'Cooldown',
-        'Radius'
-    }
-)
+
+local modifiers = {}
+ModAPI.Add(modifiers, 'Damage')
+ModAPI.AddWisdomScale(modifiers, 'Radius', 400, 1000)
+ModAPI.AddCooldown(modifiers, ABILITY_ID, 10, 0.5)
+
+
 local mod
 
 --Formula: Min + (Max - Min) * SP / 156
@@ -44,29 +43,6 @@ do
 		else
 			return {CoreMath.Round(dmg), false}
 		end
-	end
-end
-
---Formula: Min - Star Rating * Base Modifier
-mod = modifiers['Cooldown']
-do
-	local min = 10
-	local base = 0.5
-	mod.calString = string.format("10 - Star Rating * 0.5")
-	mod.calculation = function(stats)
-		local starRating = stats[ABILITY_ID]
-		return min - starRating * base
-	end
-end
-
---Formula: Min + (Max - Min) * WIS / 172
-mod = modifiers['Radius']
-do
-	local min = 400
-	local max = 1000
-	mod.calString = string.format("400 + 600 * WIS / 172")
-	mod.calculation = function(stats)
-		return min + (max - min) * stats.W / CalcAPI.MAX_WIS
 	end
 end
 

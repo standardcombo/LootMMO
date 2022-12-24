@@ -1,17 +1,16 @@
 local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local MODIFIERAPI = _G['Ability.Modifiers']
+local ModAPI = _G['Ability.Modifiers']
 
 local ABILITY_ID = 'Eagle'
 
-local modifiers =
-    MODIFIERAPI.SetupMultipleNewModifiers(
-    {
-        'Damage',
-        'Cooldown',
-        'Duration'
-    }
-)
+
+local modifiers = {}
+ModAPI.Add(modifiers, 'Damage')
+ModAPI.AddAgilityScale(modifiers, 'Duration', 60, 120)
+ModAPI.AddCooldown(modifiers, ABILITY_ID, 18, 0.5)
+
+
 local mod
 
 --Formula: Min + (Max - Min) * SP / 156
@@ -44,30 +43,6 @@ do
 		else
 			return {CoreMath.Round(dmg), false}
 		end
-	end
-end
-
---Formula: Min - Star Rating * Base Modifier
-mod = modifiers['Cooldown']
-do
-	local min = 18
-	local base = 0.5
-	mod.calString = string.format("12 - Star Rating * 0.5")
-	mod.calculation = function(stats)
-		local starRating = stats[ABILITY_ID]
-		return min - starRating * base
-	end
-end
-
---Formula: Min + (Max - Min) * AGI / 172
-mod = modifiers['Duration']
-do
-	local min = 60
-	local max = 120
-	mod.calString = string.format("60 + 60 * AGI / 172")
-	mod.calculation = function(stats)
-		local result = min + (max - min) * stats.A / CalcAPI.MAX_AGI
-		return result
 	end
 end
 

@@ -1,11 +1,17 @@
 local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
-local MODIFIERAPI = _G['Ability.Modifiers']
+local ModAPI = _G['Ability.Modifiers']
 
 local ABILITY_ID = 'Roll'
 
+
+local modifiers = {}
+ModAPI.Add(modifiers, 'EvasionChance')
+ModAPI.AddCooldown(modifiers, ABILITY_ID, 8, 0.25)
+
+
 local modifiers =
-    MODIFIERAPI.SetupMultipleNewModifiers(
+    ModAPI.SetupMultipleNewModifiers(
     {
         'Cooldown',
         'EvasionChance'
@@ -13,17 +19,6 @@ local modifiers =
 )
 local mod
 
---Formula: Min - Star Rating * Base Modifier
-mod = modifiers['Cooldown']
-do
-	local min = 8
-	local base = 0.25
-	mod.calString = string.format("8 - StarRating * 0.25")
-	mod.calculation = function(stats)
-		local starRating = stats[ABILITY_ID]
-		return min - starRating * base
-	end
-end
 
 --Formula: VIT / 172
 mod = modifiers['EvasionChance']
