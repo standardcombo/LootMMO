@@ -16,54 +16,59 @@ local mod
 
 --Formula: Min + (Max - Min) * SP / 156
 mod = modifiers['Damage']
-mod.calString = "300 + 1200 * SP / 156"
-mod.calculation = function(stats)
-    local min = 300
-    local max = 1500
-    local SP = stats.SP
-    local dmg = min + (max - min) * SP / 156
-    local AGI = stats.A
-    local starRating = stats[ABILITY_ID]
-    -- Check for crit
-    function IsCrit()
-        if math.random() <= AGI/172 then
-            return true
-        else
-            return false
-        end
-    end
-    -- Get crit multiplier
-    function GetMultiplier()
-        --Min + Star Rating * Base Modifier
-        local min = 1.7
-        local baseModifier = 0.1
-        return min + starRating * baseModifier
-    end
-    if IsCrit() then
-        return {CoreMath.Round(GetMultiplier() * dmg), true}
-    else
-        return {CoreMath.Round(dmg), false}
-    end
+do
+	local min = 300
+	local max = 1500
+	mod.calString = string.format("300 + 1200 * SP / 156")
+	mod.calculation = function(stats)
+		local SP = stats.SP
+		local dmg = min + (max - min) * SP / CalcAPI.MAX_SP
+		local AGI = stats.A
+		local starRating = stats[ABILITY_ID]
+		-- Check for crit
+		function IsCrit()
+			if math.random() <= AGI / CalcAPI.MAX_AGI then
+				return true
+			else
+				return false
+			end
+		end
+		-- Get crit multiplier
+		function GetMultiplier()
+			--Min + Star Rating * Base Modifier
+			local min = 1.7
+			local baseModifier = 0.1
+			return min + starRating * baseModifier
+		end
+		if IsCrit() then
+			return {CoreMath.Round(GetMultiplier() * dmg), true}
+		else
+			return {CoreMath.Round(dmg), false}
+		end
+	end
 end
 
 --Formula: Min - Star Rating * Base Modifier
 mod = modifiers['Cooldown']
-mod.calString = "25 - Star Rating * 0.5"
-mod.calculation = function(stats)
-    local min = 25
-    local starRating = stats[ABILITY_ID]
-    local baseModifier = 0.75
-    return min - starRating * baseModifier
+do
+	local min = 25
+	local base = 0.75
+	mod.calString = string.format("25 - Star Rating * 0.5")
+	mod.calculation = function(stats)
+		local starRating = stats[ABILITY_ID]
+		return min - starRating * base
+	end
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
 mod = modifiers['Radius']
-mod.calString = "1 + 4 * VIT / 172"
-mod.calculation = function(stats)
-    local min = 1
-    local max = 5
-    local VIT = stats.V
-    return min + (max - min) * VIT / 172
+do
+	local min = 1
+	local max = 5
+	mod.calString = string.format("1 + 4 * VIT / 172")
+	mod.calculation = function(stats)
+		return min + (max - min) * stats.V / CalcAPI.MAX_VIT
+	end
 end
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)

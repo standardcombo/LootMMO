@@ -15,23 +15,26 @@ local mod
 
 --Formula: Min + (Max - Min) * VIT / 172
 mod = modifiers['Duration']
-mod.calString = "2 + 3 * VIT / 172"
-mod.calculation = function(stats)
-    local min = 2
-    local max = 5
-    local VIT = stats.V
-    local result = min + (max - min) * VIT / 172
-    return result
+do
+	local min = 2
+	local max = 5
+	mod.calString = string.format("2 + 3 * VIT / 172")
+	mod.calculation = function(stats)
+		local result = min + (max - min) * stats.V / CalcAPI.MAX_VIT
+		return result
+	end
 end
 
 --Formula: Min - Star Rating * Base Modifier
 mod = modifiers['Cooldown']
-mod.calString = "12 - Star Rating * 0.5"
-mod.calculation = function(stats)
-    local min = 12
-    local starRating = stats[ABILITY_ID]
-    local baseModifier = 0.5
-    return min - starRating * baseModifier
+do
+	local min = 12
+	local base = 0.5
+	mod.calString = string.format("12 - Star Rating * 0.5")
+	mod.calculation = function(stats)
+		local starRating = stats[ABILITY_ID]
+		return min - starRating * base
+	end
 end
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)

@@ -17,43 +17,48 @@ local mod
 
 --Formula: Min - Star Rating * Base Modifier
 mod = modifiers['Cooldown']
-mod.calString = "12 - Star Rating * 0.5"
-mod.calculation = function(stats)
-    local min = 12
-    local starRating = stats[ABILITY_ID]
-    local baseModifier = 0.5
-    return min - starRating * baseModifier
+do
+	local min = 12
+	local base = 0.5
+	mod.calString = string.format("12 - Star Rating * 0.5")
+	mod.calculation = function(stats)
+		local starRating = stats[ABILITY_ID]
+		return min - starRating * base
+	end
 end
 
 --Formula: Min + (Max - Min) * SP / 156
 mod = modifiers['Bleed']
-mod.calString = "60 + 50 * SP / 156"
-mod.calculation = function(stats)
-    local min = 10
-    local max = 60
-    local SP = stats.SP
-    return CoreMath.Round(min + (max - min) * SP / 156)
+do
+	local min = 10
+	local max = 60
+	mod.calString = string.format("60 + 50 * SP / 156")
+	mod.calculation = function(stats)
+		return CoreMath.Round(min + (max - min) * stats.SP / CalcAPI.MAX_SP)
+	end
 end
 
 --Formula: Min + (Max - Min) * VIT / 172
 mod = modifiers['Slow']
-mod.calString = "0.2 + 0.6 * AGI / 172"
-mod.calculation = function(stats)
-    local min = 0.2
-    local max = 0.8
-    local VIT = stats.V
-    return min + (max - min) * VIT / 172
+do
+	local min = 0.2
+	local max = 0.8
+	mod.calString = string.format("0.2 + 0.6 * AGI / 172")
+	mod.calculation = function(stats)
+		return min + (max - min) * stats.V / CalcAPI.MAX_VIT
+	end
 end
 
 --Formula: Min + (Max - Min) * AGI / 172
 mod = modifiers['Duration']
-mod.calString = "5 + (15 - 5) * AGI / 172"
-mod.calculation = function(stats)
-    local min = 5
-    local max = 15
-    local AGI = stats.A
-    local result = min + (max - min) * AGI / 172
-    return result
+do
+	local min = 5
+	local max = 15
+	mod.calString = string.format("5 + (15 - 5) * AGI / 172")
+	mod.calculation = function(stats)
+		local result = min + (max - min) * stats.A / CalcAPI.MAX_AGI
+		return result
+	end
 end
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)

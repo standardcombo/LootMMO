@@ -18,51 +18,60 @@ local mod
 
 --Formula: Min + (Max - Min) * SP / 156
 mod = modifiers['DOT']
-mod.calString = "10 + 50 * SP / 156"
-mod.calculation = function(stats)
-    local min = 10
-    local max = 60
-    local SP = stats.SP
-    local dmg = min + (max - min) * SP / 156
-    return CoreMath.Round(dmg)
+do
+	local min = 10
+	local max = 60
+	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), CalcAPI.MAX_SP)
+	mod.calculation = function(stats)
+		local dmg = min + (max - min) * stats.SP / CalcAPI.MAX_SP
+		return CoreMath.Round(dmg)
+	end
 end
 
 --Formula: Min - Star Rating * Base Modifier
 mod = modifiers['Cooldown']
-mod.calString = "20 - Star Rating * 0.5"
-mod.calculation = function(stats)
-    local min = 20
-    local starRating = stats[ABILITY_ID]
-    local baseModifier = 0.5
-    return min - starRating * baseModifier
+do
+	local min = 20
+	local base = 0.5
+	mod.calString = string.format("%s - Star Rating * %s", min, base)
+	mod.calculation = function(stats)
+		local starRating = stats[ABILITY_ID]
+		return c_min - starRating * c_base
+	end
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
 mod = modifiers['Radius']
-mod.calString = "200 + 600 * WIS / 172"
-mod.calculation = function(stats)
-    local min = 200
-    local max = 800
-    return min + (max - min) * stats.W / 172
+do
+	local min = 200
+	local max = 800
+	mod.calString = string.format("%s + %s * WIS / %s", min, (max - min), CalcAPI.MAX_WIS)
+	mod.calculation = function(stats)
+		return min + (max - min) * stats.W / CalcAPI.MAX_WIS
+	end
 end
 
 --Formula: Min + (Max - Min) * WIS / 172
 mod = modifiers['Duration']
-mod.calString = "5 + 5 * WIS / 172"
-mod.calculation = function(stats)
-    local min = 5
-    local max = 10
-    return min + (max - min) * stats.W / 172
+do
+	local min = 5
+	local max = 10
+	mod.calString = string.format("%s + %s * WIS / %s", min, (max - min), CalcAPI.MAX_WIS)
+	mod.calculation = function(stats)
+		return min + (max - min) * stats.W / CalcAPI.MAX_WIS
+	end
 end
 
 --Formula: Min + (Max - Min) * AGI / 172
 mod = modifiers['Slow']
-mod.calString = "0.4 + 0.45 * AGI / 172"
-mod.calculation = function(stats)
-    local min = 0.4
-    local max = 0.85
-    local AGI = stats.A
-    return min + (max - min) * AGI / 172
+do
+	local min = 0.4
+	local max = 0.85
+	mod.calString = string.format("%s + %s * AGI / %s", min, (max - min), CalcAPI.MAX_WIS)
+	mod.calculation = function(stats)
+		local AGI = stats.A
+		return min + (max - min) * AGI / CalcAPI.MAX_WIS
+	end
 end
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)
