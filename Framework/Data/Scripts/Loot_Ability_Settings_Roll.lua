@@ -7,7 +7,7 @@ local ABILITY_ID = 'Roll'
 
 local modifiers = {}
 ModAPI.AddVitalityRNG(modifiers, 'EvasionChance')
-ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 8, 0.25)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 8, -0.25)
 
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)

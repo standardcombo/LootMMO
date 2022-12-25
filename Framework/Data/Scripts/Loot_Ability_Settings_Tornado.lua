@@ -10,7 +10,7 @@ ModAPI.AddSkillPowerScale(modifiers, 'DOT', 10, 60)
 ModAPI.AddWisdomScale(modifiers, 'Radius', 200, 800)
 ModAPI.AddAgilityScale(modifiers, 'Slow', 0.4, 0.85)
 ModAPI.AddWisdomScale(modifiers, 'Duration', 5, 10)
-ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 20, 0.5)
+ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 20, -0.5)
 
 
 CalcAPI.RegisterCalculation(ROOT, modifiers)

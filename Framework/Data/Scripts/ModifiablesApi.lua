@@ -42,7 +42,10 @@ function API.AddStarRatingScale(modifiersTable, modId, abilityId, min, perStar)
 	mod.calString = string.format("%s - Star Rating * %s", min, perStar)
 	mod.calculation = function(stats)
 		local starRating = stats[abilityId]
-		return min - starRating * perStar
+		if starRating then
+			return min + starRating * perStar
+		end
+		return min
 	end
 end
 
