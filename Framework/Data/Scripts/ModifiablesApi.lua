@@ -1,8 +1,12 @@
 local LOOT_STATS_MODIFIABLES = require(script:GetCustomProperty('Loot_Stats_Modifiables'))
-local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 
 local API = {}
 _G['Ability.Modifiers'] = API
+
+API.MAX_WIS = 172
+API.MAX_AGI = 172
+API.MAX_VIT = 172
+API.MAX_SP = 156
 
 function API.GetModifiable(name)
     return LOOT_STATS_MODIFIABLES[name]
@@ -52,52 +56,52 @@ end
 function API.AddWisdomScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s + %s * WIS / %s", min, (max - min), CalcAPI.MAX_WIS)
+	mod.calString = string.format("%s + %s * WIS / %s", min, (max - min), API.MAX_WIS)
 	mod.calculation = function(stats)
-		return min + (max - min) * stats.W / CalcAPI.MAX_WIS
+		return min + (max - min) * stats.W / API.MAX_WIS
 	end
 end
 
 function API.AddAgilityScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s + %s * AGI / %s", min, (max - min), CalcAPI.MAX_AGI)
+	mod.calString = string.format("%s + %s * AGI / %s", min, (max - min), API.MAX_AGI)
 	mod.calculation = function(stats)
-		return min + (max - min) * stats.A / CalcAPI.MAX_AGI
+		return min + (max - min) * stats.A / API.MAX_AGI
 	end
 end
 
 function API.AddVitalityScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s + %s * VIT / %s", min, (max - min), CalcAPI.MAX_VIT)
+	mod.calString = string.format("%s + %s * VIT / %s", min, (max - min), API.MAX_VIT)
 	mod.calculation = function(stats)
-		return min + (max - min) * stats.V / CalcAPI.MAX_VIT
+		return min + (max - min) * stats.V / API.MAX_VIT
 	end
 end
 
 function API.AddSkillPowerScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), CalcAPI.MAX_SP)
+	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), API.MAX_SP)
 	mod.calculation = function(stats)
-		return min + (max - min) * stats.SP / CalcAPI.MAX_SP
+		return min + (max - min) * stats.SP / API.MAX_SP
 	end
 end
 
 function API.AddSkillPowerWithCrit(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), CalcAPI.MAX_SP)
+	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), API.MAX_SP)
 	mod.calculation = function(stats)
-		local result = min + (max - min) * stats.SP / CalcAPI.MAX_SP
+		local result = min + (max - min) * stats.SP / API.MAX_SP
 		
 		local critChanceMod = modifiersTable['CritChance']
 		local critMultMod = modifiersTable['CritMult']
 		
 		if critChanceMod and critMultMod then
-			local isCrit = critChanceMod.calculation(stats)
-			if isCrit then
+			local critRNG = critChanceMod.calculation(stats)
+			if math.random() < critRNG then
 				local mult = critMultMod.calculation(stats)
 				return {CoreMath.Round(result * mult), true}
 			end
@@ -118,39 +122,27 @@ end
 function API.AddWisdomRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("WIS / %s", CalcAPI.MAX_WIS)
+	mod.calString = string.format("WIS / %s", API.MAX_WIS)
 	mod.calculation = function(stats)
-		if math.random() <= stats.W / CalcAPI.MAX_WIS then
-			return true
-		else
-			return false
-		end
+		return stats.W / API.MAX_WIS
 	end
 end
 
 function API.AddAgilityRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("AGI / %s", CalcAPI.MAX_AGI)
+	mod.calString = string.format("AGI / %s", API.MAX_AGI)
 	mod.calculation = function(stats)
-		if math.random() <= stats.A / CalcAPI.MAX_AGI then
-			return true
-		else
-			return false
-		end
+		return stats.A / API.MAX_AGI
 	end
 end
 
 function API.AddVitalityRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("VIT / %s", CalcAPI.MAX_VIT)
+	mod.calString = string.format("VIT / %s", API.MAX_VIT)
 	mod.calculation = function(stats)
-		if math.random() <= stats.V / CalcAPI.MAX_VIT then
-			return true
-		else
-			return false
-		end
+		return stats.V / API.MAX_VIT
 	end
 end
 

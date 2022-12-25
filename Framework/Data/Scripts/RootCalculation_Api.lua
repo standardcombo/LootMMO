@@ -2,11 +2,6 @@ local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
 _G["Modifiers.CalculationString"] = {}
 local Api = {}
 
-Api.MAX_WIS = 172
-Api.MAX_AGI = 172
-Api.MAX_VIT = 172
-Api.MAX_SP = 156
-
 local function UserDataBypass()
 	if Environment.IsClient() then
 		return 'clientUserData'
