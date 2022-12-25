@@ -28,9 +28,16 @@ end
 
 function Api.RegisterCalculation(Root, modifiers)
 	local rootUserData = Root[UserDataBypass()]
+	rootUserData.modifiers = modifiers
+	
+	local associativeTable = {}
+	for _,mod in ipairs(modifiers) do
+		associativeTable[mod.id] = mod
+	end
+	
 	rootUserData.CalculateModifier = function(modId)
 		local stats = STATS_CONNECTOR.GetStats(Root.owner)
-		local mod = modifiers[modId]
+		local mod = associativeTable[modId]
 		if mod then
 			return mod.calculation(stats)
 		end
@@ -38,7 +45,7 @@ function Api.RegisterCalculation(Root, modifiers)
 	end
 	rootUserData.CalculateAllModifiers = function()
 		local stats = STATS_CONNECTOR.GetStats(Root.owner)
-		return CalculateStats(modifiers, stats)
+		return CalculateStats(associativeTable, stats)
 	end
 end
 

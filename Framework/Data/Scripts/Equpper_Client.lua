@@ -4,12 +4,19 @@
 	by: blaking707, Luapi, CommanderFoo
 ]]
 
+local API = {}
+_G['EquipperClient'] = API
+
 local RENDER_ROOT = script:GetCustomProperty('RenderRoot'):WaitForObject() -- Reference to container with all ability panels
 local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment'] -- API to get information from abilities table
-local Potions = _G["Potions.Equipment"]
+local Potions = _G['Potions.Equipment']
 local EquipmentTable = {}
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
+
+function API.GetEquipment()
+	return EquipmentTable
+end
 
 Task.Wait()
 local PANELS = RENDER_ROOT:GetChildren()

@@ -19,6 +19,7 @@ local Star_Ratings = _G["Star_Rating"]
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local ABILITY_SELECT_SFX = script:GetCustomProperty("AbilitySelectSFX"):WaitForObject()
 local UNLOCK_ANIMATION = script:GetCustomProperty("UnlockAnimationScript"):WaitForObject()
+local MODIFIERS_PANEL = script:GetCustomProperty("ModifiersPanelScript"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 
 local LEFT_PANEL = script:GetCustomProperty("LeftPanel"):WaitForObject()
@@ -257,22 +258,31 @@ function UpdateAbilityDetails(_api, entryId)
 	
 	-- Ability properties, such as radius, critical chance, cooldown, etc
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
-	if _api == AbilityAPI and _G["Modifiers.CalculationString"] then
+	if _api == AbilityAPI then
 		local class = character:GetComponent("Class")
 		local classname = class:GetClass()
 		local classData = ClassAPI.GetClass(classname)
-		local selection = classData["Ability"..selectedAbilityIndex]
-		local propertyCalculations = _G["Modifiers.CalculationString"][selection]
-		if propertyCalculations then
-			local newString = ""
-			for key, value in pairs(propertyCalculations) do
-				newString = string.format("%s%s : %s \n", newString, key, value)
+		local abilityId = classData["Ability"..selectedAbilityIndex]
+		
+		-- Find the ability modifiers for the selected slot
+		local equipment = _G['EquipperClient'].GetEquipment()
+		local inputKey
+		for i = 1, 5 do
+			if selectedSlot == ABILITY_SLOTS[i] then
+				inputKey = ABILITY_INPUTS[i]
+				break
 			end
-			ABILITY_PROPERTIES.text = newString
-			ABILITY_PROPERTIES.visibility = Visibility.INHERIT
-		else
-			ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 		end
+		local abilityMods
+		for e,key in pairs(equipment) do
+			if key == inputKey then
+				abilityMods = e.clientUserData.modifiers
+				break
+			end
+		end
+		-- Update the contents based on the modifiers and the player's current stats
+		local stats = _G['Loot.Stats'].GetStats(LOCAL_PLAYER)
+		MODIFIERS_PANEL.context.SetAbilityData(abilityMods, stats)
 	else
 		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
 	end

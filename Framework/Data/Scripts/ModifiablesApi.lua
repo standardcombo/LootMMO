@@ -12,38 +12,40 @@ function API.GetModifiable(name)
     return LOOT_STATS_MODIFIABLES[name]
 end
 
-function API.SetupNewModifier(modifier)
-    local modifierTable = API.GetModifiable(modifier)
+function API.SetupNewModifier(modId)
+    local modifierTable = API.GetModifiable(modId)
     if not modifierTable then
-        warn(modifier .. ' not found')
+        warn(modId .. ' not found')
         return
     end
-    return setmetatable({}, {__index = modifierTable})
+    local newMod = setmetatable({}, {__index = modifierTable})
+	newMod.id = modId
+	return newMod
 end
 
 function API.SetupMultipleNewModifiers(modifiers)
-    local ReturnTable = {}
+    local returnTable = {}
     for key, value in pairs(modifiers) do
         local newModifier = API.SetupNewModifier(value)
         if newModifier then
-            ReturnTable[value] = newModifier
+            table.insert(returnTable, newModifier)
         end
     end
-    return ReturnTable
+    return returnTable
 end
 
 -- Components
 
 function API.Add(modifiersTable, modId)
 	local mod = API.SetupNewModifier(modId)
-	modifiersTable[modId] = mod
+	table.insert(modifiersTable, mod)
 	return mod
 end
 
 function API.AddStarRatingScale(modifiersTable, modId, abilityId, min, perStar)
 	local mod = API.Add(modifiersTable, modId)
 	
-	mod.calString = string.format("%s - Star Rating * %s", min, perStar)
+	mod.calString = string.format("%s + Star Rating * %s", min, perStar)
 	mod.calculation = function(stats)
 		local starRating = stats[abilityId]
 		if starRating then
@@ -93,13 +95,13 @@ function API.AddSkillPowerWithCrit(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), API.MAX_SP)
-	mod.calculation = function(stats)
+	mod.calculation = function(stats, params)
 		local result = min + (max - min) * stats.SP / API.MAX_SP
 		
 		local critChanceMod = modifiersTable['CritChance']
 		local critMultMod = modifiersTable['CritMult']
 		
-		if critChanceMod and critMultMod then
+		if critChanceMod and critMultMod and not(params and params.ignoreCrit) then
 			local critRNG = critChanceMod.calculation(stats)
 			if math.random() < critRNG then
 				local mult = critMultMod.calculation(stats)

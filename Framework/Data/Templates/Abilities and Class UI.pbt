@@ -45087,6 +45087,7 @@ Assets {
         }
         ParentId: 10075780642854712533
         ChildIds: 15494705048420202944
+        ChildIds: 5174022596009334435
         ChildIds: 14546134160714896542
         ChildIds: 14562754378342830512
         ChildIds: 5455291273605858803
@@ -45181,6 +45182,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:ModifiersPanelScript"
+            ObjectReference {
+              SubObjectId: 5174022596009334435
+            }
+          }
+          Overrides {
             Name: "cs:CloseButton"
             ObjectReference {
               SubObjectId: 8278135626424930630
@@ -45231,7 +45238,7 @@ Assets {
           Overrides {
             Name: "cs:AbilityProperties"
             ObjectReference {
-              SubObjectId: 9732331884680976247
+              SubObjectId: 13544609120536117952
             }
           }
           Overrides {
@@ -45450,6 +45457,57 @@ Assets {
           Volume: 0.2
           Falloff: -1
           Radius: -1
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5174022596009334435
+        Name: "AbilityModifiersPanel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13192944649928894444
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ModifiersPanel"
+            ObjectReference {
+              SubObjectId: 15730005821420058935
+            }
+          }
+          Overrides {
+            Name: "cs:PrototypeRow"
+            ObjectReference {
+              SubObjectId: 98720519828163896
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5052315624337587652
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -47219,7 +47277,8 @@ Assets {
           }
         }
         ParentId: 3052098309912118867
-        ChildIds: 9732331884680976247
+        ChildIds: 14660281440101415034
+        ChildIds: 15730005821420058935
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -47287,16 +47346,16 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9732331884680976247
-        Name: "Ability Properties"
+        Id: 14660281440101415034
+        Name: "Separator"
         Transform {
           Location {
-            X: -37668.4141
-            Y: 10538.9297
-            Z: -64032.1562
+            X: 28165.5723
+            Y: -25476.832
+            Z: 126807.156
           }
           Rotation {
-            Yaw: 5.07199192
+            Yaw: 84.9279633
           }
           Scale {
             X: 1
@@ -47319,7 +47378,7 @@ Assets {
         }
         Control {
           Width: 200
-          Height: 200
+          Height: 4
           UIY: 30
           RenderTransformPivot {
             Anchor {
@@ -47327,48 +47386,142 @@ Assets {
             }
           }
           UseParentWidth: true
-          Text {
-            Label: "Cooldown 30 Seconds "
+          Image {
+            Brush {
+              Id: 8578995028087510781
+            }
             Color {
               R: 1
               G: 1
               B: 1
               A: 1
             }
-            Size: 24
-            Justification {
-              Value: "mc:etextjustify:left"
-            }
-            AutoWrapText: true
-            Font {
-              Id: 11336346532215892341
-            }
-            VerticalJustification {
-              Value: "mc:everticaljustification:top"
+            TeamSettings {
             }
             ShadowColor {
               A: 1
             }
             ShadowOffset {
             }
-            OutlineColor {
-              A: 1
-            }
+            ScreenshotIndex: 1
           }
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:topcenter"
+                Value: "mc:euianchor:topleft"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomcenter"
+                Value: "mc:euianchor:bottomleft"
               }
             }
           }
         }
         IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15730005821420058935
+        Name: "Modifiers Panel"
+        Transform {
+          Location {
+            X: 62392.1
+            Y: -41694.9531
+            Z: 190839.312
+          }
+          Rotation {
+            Yaw: 79.8559723
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10846534887957406504
+        ChildIds: 15748716899642074601
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 100
+          Height: 340
+          UIY: 50
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomleft"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15748716899642074601
+        Name: "Ability Modifiers Row"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15730005821420058935
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 8504445518383473580
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Ability Modifiers Row"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: 9936.4707
+                  Y: 36547.7773
+                  Z: -64032.1562
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: 5.07205915
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 15189401435418775948
+          }
+        }
       }
       Objects {
         Id: 11682653779931538475
