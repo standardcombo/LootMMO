@@ -25,9 +25,8 @@ function OnPickupCast(thisAbility)
 end
 
 function OnPickupExecute(thisAbility)
-	local mods = ROOT.serverUserData.calculateModifier()
-	lastScale = mods['Radius']
-	lastDamage = mods['Damage']
+	lastScale = ROOT.serverUserData.CalculateModifier('Radius')
+	lastDamage = ROOT.serverUserData.CalculateModifier('Damage')
 	if thisAbility:GetCurrentPhase() ~= AbilityPhase.EXECUTE then
 		return
 	end
@@ -51,7 +50,6 @@ function OnPickupCooldown()
 end
 
 function OnStunBeginOverlap(thisTrigger, other)
-	local mod = ROOT.serverUserData.calculateModifier()
 	if not Object.IsValid(other) or not Object.IsValid(ABILITY) or not ABILITY.owner or
 		not Object.IsValid(ABILITY.owner) or
 		not other:IsA('Player') or
@@ -62,13 +60,12 @@ function OnStunBeginOverlap(thisTrigger, other)
 		return
 	end
 	API_SE.ApplyStatusEffect(other, "Stun", {
-		duration = mod["StunDuration"],
+		duration = ROOT.serverUserData.CalculateModifier('StunDuration'),
 		sourcePlayer = ABILITY.owner,
 	})
 end
 
 function OnBoulderBeginOverlap(thisTrigger, other)
-	local mods = ROOT.serverUserData.calculateModifier()
 	if not Object.IsValid(ABILITY) or other == ABILITY.owner then
 		return
 	end
@@ -89,9 +86,10 @@ function OnBoulderBeginOverlap(thisTrigger, other)
 		Events.BroadcastToPlayer(other, 'Camera Shake', 2, 90, 5)
 	end
 
-	local crit = mods["Damage"][2]
+	local dmgMod = ROOT.serverUserData.CalculateModifier('Damage')
+	local crit = dmgMod[2]
 	local dmg = Damage.New()
-	dmg.amount = mods["Damage"][1]
+	dmg.amount = dmgMod[1]
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY

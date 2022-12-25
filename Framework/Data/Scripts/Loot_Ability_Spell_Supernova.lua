@@ -10,7 +10,7 @@ local chargeUpVFX = script:GetCustomProperty('HealerOrcSupernovaChargeBasic')
 local endingVFX = script:GetCustomProperty('HealerOrcSupernovaEndingBasic')
 
 function Execute()
-    local mods = ROOT.serverUserData.calculateModifier()
+    local mods = ROOT.serverUserData.CalculateAllModifiers()
     local player = ABILITY.owner
 
     if not Object.IsValid(player) then

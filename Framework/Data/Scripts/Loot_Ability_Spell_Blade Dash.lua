@@ -8,7 +8,6 @@ local ENDING_FXBASIC = script:GetCustomProperty("AssassinOrcBladeDashEndingFXBas
 local BLADE_DASH_VFXBASIC = script:GetCustomProperty("BladeDashVFXBasic")
 local STAB_ANIMATION = script:GetCustomProperty("StabAnimation"):WaitForObject()
 
-local mods = {}
 local DashImpulseVector = nil
 local originalPlayerSettings = {}
 local isDashing = false
@@ -100,14 +99,14 @@ function Recovery()
 	-- 	end
 	-- end)
 	bashTemplate:AttachToPlayer(ABILITY.owner, 'lower_spine')
-	mods = ROOT.serverUserData.calculateModifier()
+	local dmgMod = ROOT.serverUserData.CalculateModifier('Damage')
 	local nearbyEnemies = COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
 	local dmg = Damage.New()
-	dmg.amount = mods['Damage'][1]
+	dmg.amount = dmgMod[1]
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY
-	local isCrit = mods['Damage'][2]
+	local isCrit = dmgMod[2]
 	for i, enemy in pairs(nearbyEnemies) do
 		local attackData = {
 			object = enemy,

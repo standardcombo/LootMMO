@@ -41,7 +41,7 @@ function Execute()
         return
     end
     PlayerSettings = {}
-    mods = ROOT.serverUserData.calculateModifier()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
 
     PlayerSettings.movementControlMode = owner.movementControlMode
     PlayerSettings.maxJumpCount = owner.maxJumpCount

@@ -66,7 +66,7 @@ function Cast()
     end
 end
 function Execute()
-    mods = ROOT.serverUserData.calculateModifier()
+    mods = ROOT.serverUserData.ClculateAllModifiers()
     local currentAbility = ABILITY
     if
         currentAbility:GetCurrentPhase() == AbilityPhase.READY or not currentAbility.owner or
@@ -111,7 +111,7 @@ function Execute()
         {position = spawnPosition, networkContext = NetworkContextType.NETWORKED}
     )
 
-    local ProjectileRange = mods[ "Radius"]
+    local ProjectileRange = mods['Radius']
     local MoveDuration = CoreMath.Round(ProjectileRange / ProjectileSpeed, 3)
     local LifeSpan = MoveDuration + 5
 

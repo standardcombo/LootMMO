@@ -13,8 +13,7 @@ local projectileSpeed = 1000
 local projectileGravity = 1.5
 
 function OnProjectileImpacted(projectile, other, hitResult, self)
-	local mod = ROOT.serverUserData.calculateModifier()
-	if not other then
+	if not ROOT.serverUserData.CalculateModifier then
 		return
 	end
 	--Play ImpactFX
@@ -30,7 +29,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY
 
-	local radius = mod["Radius"]
+	local radius = ROOT.serverUserData.CalculateModifier('Radius')
 	local enemiesInRange = COMBAT().FindInSphere(projectilePos, radius,
 		{ ignoreDead = true, ignoreTeams = ABILITY.owner.team })
 
@@ -53,7 +52,7 @@ function OnProjectileImpacted(projectile, other, hitResult, self)
 
 
 			API_SE.ApplyStatusEffect(enemy, "Animorph", {
-				duration = mod["Duration"],
+				duration = ROOT.serverUserData.CalculateModifier('Duration'),
 				multiplier = 0,
 				source = ABILITY.owner,
 			})

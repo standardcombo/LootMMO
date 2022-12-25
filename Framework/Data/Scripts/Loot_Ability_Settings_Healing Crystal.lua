@@ -11,7 +11,7 @@ local modifiers =
         'Cooldown',
         'Duration',
         'Heal',
-        'Range'
+        'Radius'
     }
 )
 local mod
@@ -36,7 +36,7 @@ mod.calculation = function(stats)
     return 25 + stats.W * 0.01
 end
 
-mod = modifiers['Range']
+mod = modifiers['Radius']
 mod.calculation = function(stats)
     return 500 + stats.V * 0.5
 end

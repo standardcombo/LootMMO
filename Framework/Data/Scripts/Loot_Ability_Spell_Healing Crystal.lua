@@ -12,7 +12,6 @@ function Execute()
     if not Object.IsValid(player) then
         return
     end
-    local mod = ROOT.serverUserData.calculateModifier()
 
     local thisAbility = ABILITY
     local targetData = thisAbility:GetTargetData()
@@ -25,10 +24,10 @@ function Execute()
         healingCrystal,
         {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
     )
-    local radius = mod[ "Range"]
+    local radius = ROOT.serverUserData.CalculateModifier('Radius')
     newObject:SetWorldScale(Vector3.New(CoreMath.Round(radius / DEFAULT_Radius, 3)))
-    newObject:SetCustomProperty('Heal', mod['Heal'])
+    newObject:SetCustomProperty('Heal', ROOT.serverUserData.CalculateModifier('Heal'))
     newObject:SetCustomProperty('Ability', ABILITY)
-    newObject.lifeSpan = mod["Duration"]
+    newObject.lifeSpan = ROOT.serverUserData.CalculateModifier('Duration')
 end
 ABILITY.executeEvent:Connect(Execute)

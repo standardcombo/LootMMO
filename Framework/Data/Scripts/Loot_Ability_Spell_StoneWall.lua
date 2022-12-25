@@ -4,7 +4,6 @@ local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
 local SpawnVfx = script:GetCustomProperty('WarriorStoneWallPlacementBasic')
 function Execute()
-    local mods = ROOT.serverUserData.calculateModifier()
     local thisAbility = ABILITY
     local player = ABILITY
 
@@ -22,7 +21,7 @@ function Execute()
         SpawnVfx,
         {position = position, rotation = rotation, networkContext = NetworkContextType.NETWORKED}
     )
-    local newLifeSpan = mods["Duration"]
+    local newLifeSpan = ROOT.serverUserData.CalculateModifier('Duration')
     newObject.lifeSpan = newLifeSpan
     newObject:SetCustomProperty('lifeSpan', newLifeSpan)
 end

@@ -15,7 +15,7 @@ function CoolDown()
         return
     end
     startTime = time()
-    endTime = startTime + (ROOT.clientUserData.calculateModifier()['Cooldown'] or DEFAULT_COOLDOWN)
+    endTime = startTime + (ROOT.clientUserData.CalculateModifier('Cooldown') or DEFAULT_COOLDOWN)
     while ABILITY:GetCurrentPhase() == AbilityPhase.COOLDOWN do
         Task.Wait()
         if not Object.IsValid(ABILITY) then

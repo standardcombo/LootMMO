@@ -78,7 +78,7 @@ local function NewProjectile()
 end
 
 local function Execute()
-    mods = ROOT.serverUserData.calculateModifier()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
     NewProjectile()
 end
 

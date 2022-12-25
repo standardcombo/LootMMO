@@ -21,14 +21,14 @@ function Execute()
 	if ABILITY:GetCurrentPhase() == AbilityPhase.READY then
 		return
 	end
-	local mod = ROOT.serverUserData.calculateModifier()
+
 	local newObject =
 	World.SpawnAsset(
 		activateVFX,
 		{ position = ABILITY.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED }
 	)
 
-	local StunRadius = mod["Radius"]
+	local StunRadius = ROOT.serverUserData.CalculateModifier('Radius')
 	local nearbyEnemies =
 	COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), StunRadius, { ignoreTeams = ABILITY.owner.team })
 
@@ -37,11 +37,11 @@ function Execute()
 	local statusEffects = {}
 	local status = statusEffects.BLIND
 	local speedStatus = statusEffects.SPEED
-	local healAmmount = mod['Heal']
+	local healAmmount = ROOT.serverUserData.CalculateModifier('Heal')
 
 	API_SE.ApplyStatusEffect(ABILITY.owner, "SpeedBoost", {
 		source = ABILITY.owner,
-		duration = mod["duration"]
+		duration = ROOT.serverUserData.CalculateModifier('Duration')
 	})
 
 	ABILITY.owner.hitPoints = CoreMath.Clamp(ABILITY.owner.hitPoints + healAmmount, ABILITY.owner.maxHitPoints)
@@ -49,7 +49,7 @@ function Execute()
 	for _, enemy in pairs(nearbyEnemies) do
 		API_SE.ApplyStatusEffect(enemy, "Blind", {
 			source = ABILITY.owner,
-			duration = mod["Duration"]
+			duration = ROOT.serverUserData.CalculateModifier('Duration')
 		})
 		AddImpulseToPlayer(ABILITY, enemy)
 	end

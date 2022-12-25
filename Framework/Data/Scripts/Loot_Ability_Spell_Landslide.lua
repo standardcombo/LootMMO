@@ -117,7 +117,7 @@ function Cast()
 end
 
 function Execute()
-	mod = ROOT.serverUserData.calculateModifier()
+	mod = ROOT.serverUserData.CalculateAllModifiers()
 	Trigger:SetWorldScale(Vector3.New(mod["BashRadius"]))
 	ToggleDash(true)
 end

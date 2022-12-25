@@ -135,7 +135,7 @@ function SetEquipment(equipment)
     -- Check if the equipment is valid, if cacluateModifier is set up, and if the ability is valid
     while checkLoopCount < maxTries do
         checkLoopCount = checkLoopCount + 1
-        if equipment:IsA('Equipment') and equipment.clientUserData.calculateModifier then
+        if equipment:IsA('Equipment') and equipment.clientUserData.CalculateModifier then
             break
         end
         if checkLoopCount > maxTries then
@@ -155,7 +155,7 @@ function SetEquipment(equipment)
 	ability.clientUserData.CooldownEvent = currentAbilities[ability].cooldownEvent:Connect(OnCooldown, ability)
 	ability.clientUserData.executeDuration = currentAbilities[ability].executePhaseSettings.duration
 	ability.clientUserData.recoveryDuration = currentAbilities[ability].recoveryPhaseSettings.duration
-	ability.clientUserData.cooldownDuration = equipment.clientUserData.calculateModifier()['Cooldown'] or ability.cooldownPhaseSettings.duration
+	ability.clientUserData.cooldownDuration = equipment.clientUserData.CalculateModifier('Cooldown') or ability.cooldownPhaseSettings.duration
 	PANELS[equipment:GetCustomProperty("AbilityBinding")].clientUserData.DURATION_BAR.progress = 0
 end
 
