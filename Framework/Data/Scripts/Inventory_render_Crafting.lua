@@ -261,7 +261,11 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 				--Set the icon and quantity for the item on the SLOT UI
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
-				UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
+				local numberOnHand
+				if inv then
+					numberOnHand = inv:GetItemCount(itemName)
+					UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(numberOnHand) .. "/" .. tostring(quantity)
+				end
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
 			end
 		end
