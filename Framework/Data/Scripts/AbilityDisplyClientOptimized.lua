@@ -135,7 +135,7 @@ function SetEquipment(equipment)
             break
         end
         if checkLoopCount > maxTries then
-            error("Equipment is not valid, calculateModifier is not set up, or ability is not valid")
+            error("Equipment is not valid, CalculateModifier is not set up, or ability is not valid")
             return
         end
     end

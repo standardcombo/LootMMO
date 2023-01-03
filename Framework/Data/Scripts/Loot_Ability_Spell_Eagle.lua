@@ -4,7 +4,7 @@ local LOOT_ABILITY_EAGLE_SUMMON = script:GetCustomProperty("Loot_Ability_EagleSu
 
 local function Summon()
     local Owner = ABILITY.owner
-    local mod = ROOT.serverUserData.calculateModifier()
+    local mod = ROOT.serverUserData.CalculateAllModifiers()
     if Object.IsValid(ABILITY.owner.serverUserData.Eagle) then
         ABILITY.owner.serverUserData.Eagle:Destroy()
     end
