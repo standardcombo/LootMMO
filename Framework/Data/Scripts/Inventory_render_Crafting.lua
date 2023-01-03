@@ -83,6 +83,7 @@ SetState(states.closed)
 --Setup Upgrade Panel references
 UPGRADE_CANCEL_BUTTON = Get(UPGRADE_CONFIRMATION_PANEL, "Cancel Upgrade Button")
 UPGRADE_CONFIRM_BUTTON = Get(UPGRADE_CONFIRMATION_PANEL, "Confirm Upgrade Button")
+UPGRADE_CONFIRMATION_TEXT = Get(UPGRADE_CONFIRMATION_PANEL, "UpgradeText")
 
 --Setup Selected Object Slot references
 local SELECTED_OBJECT_SLOT = Get(UPGRADE_PANEL, "Selected Object Slot")
@@ -209,6 +210,7 @@ local function UpgradeItem(button)
 		if currentState == states.upgrading then
 			DIMMER_BACKGROUND.visibility = Visibility.INHERIT
 			UPGRADE_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
+			UPGRADE_CONFIRMATION_TEXT.text = string.upper("CONFIRM UPGRADE OF " .. selectedRecipe.item.name .. " TO GREATNESS " .. tostring(selectedRecipe.greatness + 1) .. "?")
 			if button == UPGRADE_CANCEL_BUTTON then
 				HideUpgradeConfirmationPanel()
 				SetState(states.crafting)
@@ -302,8 +304,10 @@ end
 
 local function SelectRecipe(item, slot)
 	if currentState ~= states.crafting then return end
+	local greatness = item:GetCustomProperty("Greatness")
 	selectedRecipe = {
 		item = item,
+		greatness = greatness,
 		slot = slot
 	}
 
