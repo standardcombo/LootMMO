@@ -2,7 +2,7 @@
 	Ability Display Client Optimized
 	Responsible for showing the HUD abilities information, including cooldowns, icons, and names.
 	By: CommanderFoo, standardcombo, Luapi
-	Version: 2.0.1
+	Version: 2.0.2
 ]]
 local ABILITY_DISPLAY = script:GetCustomProperty("AbilityDisplay"):WaitForObject()
 
@@ -83,37 +83,33 @@ function Unequip(equipment)
 end
 
 function OnCooldown(ability)
+	local cd = ability.clientUserData.cooldownDuration
+	local bindingName = ability.clientUserData.binding
+	local abilityName = ability.name
+	PANELS[bindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+
+	-- local abilityPhases = {"READY","CAST","EXECUTE","RECOVERY","COOLDOWN"}
+	-- print(abilityName, abilityPhases[ability:GetCurrentPhase() + 1],ability:GetCurrentPhase() + 1)
+
 	Task.Spawn(function()
-		local cd = ability.clientUserData.cooldownDuration
-		local bindingName = ability.clientUserData.binding
-		PANELS[bindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.INHERIT
+		local startTime = time()
 		while Object.IsValid(ability) do
-			local currentPhase = ability:GetCurrentPhase()
-			local phaseTimeRemaining = ability:GetPhaseTimeRemaining()
+			local currentTime = time()
+			local phaseTimeRemaining = cd - (currentTime - startTime)
 			local phaseTimeElapsed = cd - phaseTimeRemaining
 
-			-- For a player, execute, recovery and cooldown are together displayed as the ability's cooldown
-
-			if currentPhase == AbilityPhase.COOLDOWN then
-				local elapsedPhaseTime = phaseTimeElapsed
-				ability.clientUserData.cooldownRemaining = cd - elapsedPhaseTime
-			elseif currentPhase == AbilityPhase.EXECUTE then
-				ability.clientUserData.cooldownRemaining = cd + ability.clientUserData.recoveryDuration + phaseTimeRemaining
-			else -- Recovery
-				ability.clientUserData.cooldownRemaining = cd
-			end
+			ability.clientUserData.cooldownRemaining = cd - phaseTimeElapsed
 			if ability.clientUserData.cooldownRemaining < 0.1 then
 				ability.clientUserData.cooldownRemaining = 0
 				PANELS[bindingName].clientUserData.PROGRESS_INDICATOR.visibility = Visibility.FORCE_OFF
 				break
 			end
 
-			local totalCooldown = ability.clientUserData.executeDuration + cd
 			PANELS[bindingName].clientUserData.COUNTDOWN_TEXT.text = string.format('%.1f', ability.clientUserData.cooldownRemaining)
 
 			-- Update the shadow
-			if totalCooldown > 0.3 then
-				local shadowAngle = CoreMath.Clamp(1.0 - ability.clientUserData.cooldownRemaining / totalCooldown, 0.0, 1.0) * 360.0
+			if cd > 0.3 then
+				local shadowAngle = CoreMath.Clamp(1.0 - ability.clientUserData.cooldownRemaining / cd, 0.0, 1.0) * 360.0
 
 				if shadowAngle <= 180.0 then
 					PANELS[bindingName].clientUserData.LEFT_SHADOW.rotationAngle = 0.0
