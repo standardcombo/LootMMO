@@ -626,20 +626,22 @@ local function InventoryChanged(inv, slot)
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
-				for _, Collection in ipairs(COLLECTIONS) do
-					AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-						for _, token in pairs(tokens) do
-							local parsedBag = LOOT_BAG_PARSER.Parse(token)
-							local items = parsedBag.items
-							local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-							for _, itemdata in pairs(items) do
-								if itemdata.name == item.name then
-									greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
-								end
-							end
-						end
-					end)
-				end
+				-- Uncomment the following section to show the greatness of the owned NFTs
+				-- Displays proper greatness for upgraded NFTs
+				-- for _, Collection in ipairs(COLLECTIONS) do
+				-- 	AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
+				-- 		for _, token in pairs(tokens) do
+				-- 			local parsedBag = LOOT_BAG_PARSER.Parse(token)
+				-- 			local items = parsedBag.items
+				-- 			local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+				-- 			for _, itemdata in pairs(items) do
+				-- 				if itemdata.name == item.name then
+				-- 					greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+				-- 				end
+				-- 			end
+				-- 		end
+				-- 	end)
+				-- end
 			else
 				isBag.visibility = Visibility.FORCE_OFF
 			end
