@@ -152,15 +152,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6488609383494304708
-  Name: "Fantasy Frame 003"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Frame_003"
-  }
-}
-Assets {
   Id: 4106662450040501179
   Name: "Fantasy Jewelry 029"
   PlatformAssetType: 9

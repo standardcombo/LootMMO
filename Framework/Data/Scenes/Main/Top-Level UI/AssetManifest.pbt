@@ -53,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6488609383494304708
+  Name: "Fantasy Frame 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Frame_003"
+  }
+}
+Assets {
   Id: 2539011265476877653
   Name: "Fantasy Sack 011"
   PlatformAssetType: 9
