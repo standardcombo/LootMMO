@@ -621,9 +621,25 @@ local function InventoryChanged(inv, slot)
 		if not itemdata then
 			return
 		end
+		local greatness = item:GetCustomProperty("Greatness")
+		local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
+				for _, Collection in ipairs(COLLECTIONS) do
+					AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
+						for _, token in pairs(tokens) do
+							local parsedBag = LOOT_BAG_PARSER.Parse(token)
+							local items = parsedBag.items
+							local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+							for _, itemdata in pairs(items) do
+								if itemdata.name == item.name then
+									greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+								end
+							end
+						end
+					end)
+				end
 			else
 				isBag.visibility = Visibility.FORCE_OFF
 			end
@@ -640,7 +656,6 @@ local function InventoryChanged(inv, slot)
 		else
 			childCount.text = ""
 		end
-		local greatness = item:GetCustomProperty("Greatness")
 		if greatness then
 			levelFrame.visibility = Visibility.INHERIT
 			slots[slot].levelText.text = tostring(greatness)
