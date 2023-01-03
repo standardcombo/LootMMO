@@ -127,8 +127,8 @@ end
 
 function SetEquipment(equipment)
 	local checkLoopCount = 0
-    local maxTries = 4
-    -- Check if the equipment is valid, if cacluateModifier is set up, and if the ability is valid
+    local maxTries = 10
+    -- Check if the equipment is valid, if CalculateModifier is set up, and if the ability is valid
     while checkLoopCount < maxTries do
         checkLoopCount = checkLoopCount + 1
         if equipment:IsA('Equipment') and equipment.clientUserData.CalculateModifier then
