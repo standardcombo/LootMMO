@@ -2,6 +2,9 @@ local EquipAPI = _G["Character.EquipAPI"]
 local MATERIALS = _G["Items.Materials"]
 local ITEMS = _G.Items
 
+local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
+local AsyncBC         = require(script:GetCustomProperty("AsyncBlockchain_FullWalletSearch"))
+
 local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
 local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
@@ -14,6 +17,11 @@ HOVER_PANEL.clientUserData.bottomRightArrow = HOVER_PANEL:FindDescendantByName("
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local STAT_DISPLAY = script:GetCustomProperty("StatDisplay"):WaitForObject()
+
+local COLLECTIONS = {}
+for index, value in pairs(LOOT_BAG_PARSER.Collection) do
+	table.insert(COLLECTIONS, value)
+end
 
 local SLOTS = {}
 for _, slot in ipairs(EQUIPMENT_SLOTS) do
@@ -341,9 +349,25 @@ local function InventoryChanged(inv, slot)
 		if not itemdata then
 			return
 		end
+		local greatness = item:GetCustomProperty("Greatness")
+		local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
+				for _, Collection in ipairs(COLLECTIONS) do
+					AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
+						for _, token in pairs(tokens) do
+							local parsedBag = LOOT_BAG_PARSER.Parse(token)
+							local items = parsedBag.items
+							local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+							for _, itemdata in pairs(items) do
+								if itemdata.name == item.name then
+									greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
+								end
+							end
+						end
+					end)
+				end
 			else
 				isBag.visibility = Visibility.FORCE_OFF
 			end
@@ -360,7 +384,7 @@ local function InventoryChanged(inv, slot)
 		else
 			childCount.text = ""
 		end
-		local greatness = item:GetCustomProperty("Greatness")
+
 		if greatness then
 			levelFrame.visibility = Visibility.INHERIT
 			slots[slot].levelText.text = tostring(greatness)
