@@ -124,6 +124,18 @@ for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 	previewSlot.clientUserData.count = Get(previewSlot, "count")
 end
 
+local function ShowScrapBtn(shouldShow)
+	if shouldShow then
+		SCRAP_BUTTON.parent.visibility = Visibility.INHERIT
+		SCRAP_BUTTON.isInteractable = true
+		UPGRADE_BUTTON.parent.x = -110
+	else
+		UPGRADE_BUTTON.parent.x = 0
+		SCRAP_BUTTON.parent.visibility = Visibility.FORCE_OFF
+		SCRAP_BUTTON.isInteractable = false
+	end
+end
+
 local function GetInventory(player)
 	local Character = EquipAPI.GetCurrentCharacter(player)
 	if not Character then return end
@@ -143,7 +155,7 @@ local function ClearUpgradePanelDetails()
 		previewSlot.clientUserData.count.visibility = Visibility.FORCE_OFF
 	end
 	UPGRADE_BUTTON.isInteractable = false
-	SCRAP_BUTTON.isInteractable = false
+	ShowScrapBtn(false)
 	selectedRecipe = {}
 end
 
@@ -210,7 +222,7 @@ local function UpgradeItem(button)
 		if currentState == states.upgrading then
 			DIMMER_BACKGROUND.visibility = Visibility.INHERIT
 			UPGRADE_CONFIRMATION_PANEL.visibility = Visibility.INHERIT
-			UPGRADE_CONFIRMATION_TEXT.text = string.upper("CONFIRM UPGRADE OF " .. selectedRecipe.item.name .. " TO GREATNESS " .. tostring(selectedRecipe.greatness + 1) .. "?")
+			UPGRADE_CONFIRMATION_TEXT.text = string.upper("UPGRADE \"" .. selectedRecipe.item.name .. "\" TO\r GREATNESS LEVEL " .. tostring(selectedRecipe.greatness + 1) .. "?")
 			if button == UPGRADE_CANCEL_BUTTON then
 				HideUpgradeConfirmationPanel()
 				SetState(states.crafting)
@@ -316,10 +328,16 @@ local function SelectRecipe(item, slot)
 	}
 
 	if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
-		SCRAP_BUTTON.isInteractable = false
-		--warn("Disabled Scrap button as you cannot scrap an NFT")
+		ShowScrapBtn(false)
 	else
-		SCRAP_BUTTON.isInteractable = true
+		ShowScrapBtn(true)
+	end
+
+	local scrapRecipe = GetScrapRecipe(selectedRecipe.item)
+	if scrapRecipe then
+		ShowScrapBtn(true)
+	else
+		ShowScrapBtn(false)
 	end
 
 	RefreshUpgradePanelDetails(item, slot)
@@ -339,6 +357,11 @@ local function ClickedSlot(slot)
 	if greatness then --Greatness is required for upgrading
 		greatness = math.max(1, greatness)
 		SelectRecipe(item,slot)
+	else
+		ShowScrapBtn(false)
+	end
+	if item:GetCustomProperty("IsBag") then
+		ShowScrapBtn(false)
 	end
 end
 
