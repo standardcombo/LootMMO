@@ -241,6 +241,12 @@ local function UpgradeItem(button)
 	end
 end
 
+local function SetImage(panel, icon, itemdata)
+	panel.isFlippedHorizontal = itemdata["flipIconH"] or false
+	panel.isFlippedVertical = itemdata["flipIconV"] or false
+	panel:SetImage(icon)
+end
+
 local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade panel to show upgrade details for the selected item
 	local itemdata = ITEMS.GetDefinition(item.name, true)
 	if not itemdata then return	end
@@ -271,7 +277,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 				quantity = math.ceil(quantity) --Update quantity to reflect the greatness of the item
 
 				--Set the icon and quantity for the item on the SLOT UI
-				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon:SetImage(previewIcon)
+				SetImage(UPGRADE_PREVIEW_SLOT[count].clientUserData.icon, previewIcon, materialData)
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
 				local numberOnHand
 				if inv then
@@ -300,22 +306,16 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 		end
 	end
 	OBJECT_TO_SCRAP_SLOT.clientUserData.name.text = itemdata.name
-	OBJECT_TO_SCRAP_SLOT.clientUserData.icon:SetImage(icon)
+	SetImage(OBJECT_TO_SCRAP_SLOT.clientUserData.icon, icon, itemdata)
 	OBJECT_TO_SCRAP_SLOT.clientUserData.levelText.text = tostring(greatness)
 	OBJECT_TO_SCRAP_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.name.text = itemdata.name
-	SELECTED_OBJECT_SLOT.clientUserData.icon:SetImage(icon)
+	SetImage(SELECTED_OBJECT_SLOT.clientUserData.icon, icon, itemdata)
 	SELECTED_OBJECT_SLOT.clientUserData.levelText.text = tostring(greatness)
 	SELECTED_OBJECT_SLOT.clientUserData.name.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.INHERIT
 	SELECTED_OBJECT_SLOT.clientUserData.levelText.visibility = Visibility.INHERIT
-end
-
-local function SetImage(panel, icon, itemdata)
-	panel.isFlippedHorizontal = itemdata["flipIconH"] or false
-	panel.isFlippedVertical = itemdata["flipIconV"] or false
-	panel:SetImage(icon)
 end
 
 local function SelectRecipe(item, slot)
@@ -394,7 +394,7 @@ local function ScrapItem(button)
 				end
 				local icon = itemdata["icon"]
 				--Set the icon and quantity for the item on the SLOT UI
-				SCRAP_PREVIEW_SLOT[count].clientUserData.icon:SetImage(icon)
+				SetImage(SCRAP_PREVIEW_SLOT[count].clientUserData.icon, icon, itemdata)
 				SCRAP_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
 				SCRAP_PREVIEW_SLOT[count].clientUserData.count.text = tostring(quantity)
 				SCRAP_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
