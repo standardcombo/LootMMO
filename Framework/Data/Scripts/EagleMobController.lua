@@ -85,5 +85,7 @@ EagleRoot.destroyEvent:Connect(OnRootDestroyed)
 EagleRoot.customPropertyChangedEvent:Connect(OnNetworkPropertyChanged)
 
 function Tick()
-    AnimatedMesh:RotateTo(EagleRoot:GetWorldRotation(), 0.1)
+    if Object.IsValid(AnimatedMesh) then
+        AnimatedMesh:RotateTo(EagleRoot:GetWorldRotation(), 0.1)
+    end
 end
