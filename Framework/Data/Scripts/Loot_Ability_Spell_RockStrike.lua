@@ -66,7 +66,7 @@ function Cast()
     end
 end
 function Execute()
-    mods = ROOT.serverUserData.ClculateAllModifiers()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
     local currentAbility = ABILITY
     if
         currentAbility:GetCurrentPhase() == AbilityPhase.READY or not currentAbility.owner or
