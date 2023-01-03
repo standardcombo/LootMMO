@@ -36,7 +36,7 @@ Assets {
           }
           Overrides {
             Name: "cs:damage"
-            Int: 0
+            Float: 0
           }
           Overrides {
             Name: "cs:lifeSpan:isrep"
