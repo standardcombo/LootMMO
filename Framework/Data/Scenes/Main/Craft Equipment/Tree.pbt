@@ -1553,7 +1553,7 @@ Objects {
 }
 Objects {
   Id: 13273419735621677436
-  Name: "Text"
+  Name: "UpgradeText"
   Transform {
     Location {
       X: -27180.8086
@@ -1593,7 +1593,7 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "ARE YOU SURE YOU WANT TO UPGRADE?"
+      Label: "UPGRADE"
       Color {
         R: 0.799102962
         G: 0.693872035
