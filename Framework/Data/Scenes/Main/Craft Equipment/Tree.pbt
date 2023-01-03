@@ -8951,7 +8951,6 @@ Objects {
   ChildIds: 8825397450023909596
   ChildIds: 16202851665037480691
   ChildIds: 2782654748780984433
-  ChildIds: 18329995889663057675
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -8977,90 +8976,6 @@ Objects {
       Opacity: 1
       OpacityMaskBrush {
         Id: 841534158063459245
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:bottomcenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 18329995889663057675
-  Name: "UI Text Box"
-  Transform {
-    Location {
-      X: 30596.6074
-      Y: -12827.8477
-      Z: 46601.6484
-    }
-    Rotation {
-      Yaw: -54.6294479
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1979952555532386031
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 20
-    Height: 65
-    UIY: -10
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Text {
-      Label: "OR"
-      Color {
-        R: 1
-        G: 0.456411034
-        A: 1
-      }
-      Size: 43
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      Font {
-        Id: 11336346532215892341
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 0.817000031
-      }
-      ShadowOffset {
-        X: 1
-        Y: 2
-      }
-      ScaleToFit: true
-      OutlineColor {
-        A: 1
       }
     }
     AnchorLayout {
