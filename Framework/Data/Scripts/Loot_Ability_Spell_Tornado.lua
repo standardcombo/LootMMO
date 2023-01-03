@@ -1,15 +1,17 @@
  
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local mods = {}
 
 local MAGE_ORC_TORNADO_PLACEMENT_BASIC = script:GetCustomProperty('MageOrcTornadoPlacementBasic')
 
 function Execute()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
     local SpecialAbility = ABILITY
     local targetData = SpecialAbility:GetTargetData()
     local position = targetData:GetHitPosition()
 
-    local radius = mod[ "Radius"]
+    local radius = mods[ "Radius"]
     local vfxScale = CoreMath.Round(radius / 125, 3)
 
     local CurrentTornado =
