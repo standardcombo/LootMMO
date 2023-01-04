@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16937607096047638534
+        ParentId: 16194698060440896494
         ChildIds: 16648679857669058489
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -168,6 +168,12 @@ Assets {
           }
         }
         ParentId: 16648679857669058489
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
         TemplateInstance {
           ParameterOverrideMap {
             key: 13278664966407104232
