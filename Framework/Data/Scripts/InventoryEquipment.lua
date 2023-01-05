@@ -2,7 +2,7 @@ local EquipApi        = _G["Character.EquipAPI"]
 local equipmentSlots  = _G['Equipment.Slots']
 local items           = _G.Items
 local equipmentStack  = _G.EquipmentStack
-local defaultEquipment = items.GetDefinition("Quarterstaff")
+local defaultEquipment = items.GetDefinition("Punch")
 local Weapons         = items.GetDefinitionsForCategory("weapon")
 local KWeapons        = {}
 for index, value in ipairs(Weapons) do
