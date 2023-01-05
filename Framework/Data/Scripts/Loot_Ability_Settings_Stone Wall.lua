@@ -6,7 +6,7 @@ local ABILITY_ID = 'Stone Wall'
 
 
 local modifiers = {}
-ModAPI.AddVitalityScale(modifiers, 'Duration', 2, 5)
+ModAPI.AddVitalityScale(modifiers, 'Duration', 3, 8)
 ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 12, -0.5)
 
 
