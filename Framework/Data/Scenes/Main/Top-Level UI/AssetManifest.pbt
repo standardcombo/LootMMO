@@ -1,4 +1,40 @@
 Assets {
+  Id: 18323122694435778062
+  Name: "Fantasy Craft Bar 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Bar_005"
+  }
+}
+Assets {
+  Id: 17076346528381293842
+  Name: "Survival Craft Bones 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Survival_Crafting_Bones_002"
+  }
+}
+Assets {
+  Id: 15463597562545228630
+  Name: "Fantasy Coins 009"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Coins_009"
+  }
+}
+Assets {
+  Id: 14844297992112835757
+  Name: "Fantasy Spell Ingredient 046"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ingredient_046"
+  }
+}
+Assets {
   Id: 14060330023043759337
   Name: "BG Flat 001"
   PlatformAssetType: 9
@@ -17,6 +53,24 @@ Assets {
   }
 }
 Assets {
+  Id: 13197343736452556466
+  Name: "Fantasy Rune 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Rune_003"
+  }
+}
+Assets {
+  Id: 12382512821972705322
+  Name: "Fantasy Craft Crystal 022"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Crystal_022"
+  }
+}
+Assets {
   Id: 11336346532215892341
   Name: "Germania One"
   PlatformAssetType: 28
@@ -26,12 +80,57 @@ Assets {
   }
 }
 Assets {
+  Id: 10624409509036383721
+  Name: "Survival Craft Rag 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Survival_Crafting_Printer_001"
+  }
+}
+Assets {
+  Id: 9863944456523339614
+  Name: "Fantasy Wood 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Wood_003"
+  }
+}
+Assets {
+  Id: 9835077147919884986
+  Name: "Fantasy Cloth 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Cloth_006"
+  }
+}
+Assets {
   Id: 9736987041818260224
   Name: "Fantasy Sack 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Equip_Sack_002"
+  }
+}
+Assets {
+  Id: 8924471197267563495
+  Name: "Fantasy Scroll 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Scroll_006"
+  }
+}
+Assets {
+  Id: 8690668184388483512
+  Name: "Fantasy Spell Ingredient 020"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ingredient_020"
   }
 }
 Assets {
@@ -53,12 +152,30 @@ Assets {
   }
 }
 Assets {
+  Id: 6813927932063124016
+  Name: "Fantasy Cloth 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Cloth_001"
+  }
+}
+Assets {
   Id: 6488609383494304708
   Name: "Fantasy Frame 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Frame_003"
+  }
+}
+Assets {
+  Id: 4313480228237984356
+  Name: "Fantasy Cloth 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Cloth_004"
   }
 }
 Assets {
@@ -71,21 +188,21 @@ Assets {
   }
 }
 Assets {
-  Id: 2209571276009564471
-  Name: "Icon Crate"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Crate"
-  }
-}
-Assets {
   Id: 1941777917013843020
   Name: "Avalanche"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Urban_Icon_078"
+  }
+}
+Assets {
+  Id: 1655136442498469286
+  Name: "Fantasy Spell Ingredient 019"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Ingredient_019"
   }
 }
 Assets {
