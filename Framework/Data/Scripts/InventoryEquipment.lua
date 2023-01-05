@@ -83,11 +83,13 @@ end
 local function playerEquipped(character, player)
 	local inventory = character:GetComponent("Inventory")
 	local stats = character:GetComponent("Stats")
-
 	local _inventory = inventory:GetInventory()
 	_inventory.changedEvent:Connect(
 		function(inv, i)
-			if i == 1 then
+			if not player.serverUserData.properWeaponEquipped then
+				InventoryUpdated(inv, 1) -- Ensures the player's weapon is correct
+				player.serverUserData.properWeaponEquipped = true
+			elseif i == 1 then
 				InventoryUpdated(inv, i)
 			end
 			if i <= #equipmentSlots.GetSlots() then
