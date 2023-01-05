@@ -7,7 +7,7 @@ local ABILITY_ID = 'Blade Dash'
 
 local modifiers = {}
 ModAPI.AddSkillPowerWithCrit(modifiers, 'Damage', 150, 1000)
-ModAPI.AddVitalityRNG(modifiers, 'CritChance')
+ModAPI.AddAgilityRNG(modifiers, 'CritChance')
 ModAPI.AddStarRatingScale(modifiers, 'CritMult', ABILITY_ID, 1.7, 0.1)
 ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 12, -0.5)
 

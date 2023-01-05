@@ -7,7 +7,7 @@ local ABILITY_ID = 'Animorph Potion'
 
 local modifiers = {}
 ModAPI.AddWisdomScale(modifiers, 'Duration', 2, 7)
-ModAPI.AddWisdomScale(modifiers, 'Radius', 100, 400)
+ModAPI.AddAgilityScale(modifiers, 'Radius', 100, 400)
 ModAPI.AddStarRatingScale(modifiers, 'Cooldown', ABILITY_ID, 12, -0.5)
 
 
