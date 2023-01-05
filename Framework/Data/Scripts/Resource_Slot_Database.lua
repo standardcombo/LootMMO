@@ -1,7 +1,7 @@
 local api = {}
 _G['Resource.Slots'] = api
 
-local MATERIALS_ORDER = {"Coins", "Wood", "Metal", "Bone", "Demondhide", "Dragonskin", "Leather", "Silk", "Cotton", "Linen", "RoyalPermits", "Encantations", "Gemstones", "Incense"}
+local MATERIALS_ORDER = {"Coins", "Wood", "Metal", "Bone", "Demonhide", "Dragonskin", "Leather", "Silk", "Cotton", "Linen", "RoyalPermits", "Encantations", "Gemstones", "Incense"}
 
 function api.GetSlots()
 	local types = {}
