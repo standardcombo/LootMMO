@@ -46,12 +46,12 @@ function API.AddStarRatingScale(modifiersTable, modId, abilityId, min, perStar)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + Star Rating * %s", min, perStar)
-	mod.calculation = function(stats)
-		local starRating = stats[abilityId]
-		if starRating then
-			return min + starRating * perStar
+	mod.calculation = function(stats, params)
+		local starRating = stats[abilityId] or 0
+		if params and params.upgradeStarRating then
+			starRating = starRating + 1
 		end
-		return min
+		return min + starRating * perStar
 	end
 end
 
@@ -59,7 +59,7 @@ function API.AddWisdomScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + %s * WIS / %s", min, (max - min), API.MAX_WIS)
-	mod.calculation = function(stats)
+	mod.calculation = function(stats, params)
 		return min + (max - min) * stats.W / API.MAX_WIS
 	end
 end
@@ -68,7 +68,7 @@ function API.AddAgilityScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + %s * AGI / %s", min, (max - min), API.MAX_AGI)
-	mod.calculation = function(stats)
+	mod.calculation = function(stats, params)
 		return min + (max - min) * stats.A / API.MAX_AGI
 	end
 end
@@ -77,7 +77,7 @@ function API.AddVitalityScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + %s * VIT / %s", min, (max - min), API.MAX_VIT)
-	mod.calculation = function(stats)
+	mod.calculation = function(stats, params)
 		return min + (max - min) * stats.V / API.MAX_VIT
 	end
 end
@@ -86,7 +86,7 @@ function API.AddSkillPowerScale(modifiersTable, modId, min, max)
 	local mod = API.Add(modifiersTable, modId)
 	
 	mod.calString = string.format("%s + %s * SP / %s", min, (max - min), API.MAX_SP)
-	mod.calculation = function(stats)
+	mod.calculation = function(stats, params)
 		return min + (max - min) * stats.SP / API.MAX_SP
 	end
 end
@@ -124,6 +124,7 @@ end
 function API.AddWisdomRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
+	mod.isPercent = true
 	mod.calString = string.format("WIS / %s", API.MAX_WIS)
 	mod.calculation = function(stats)
 		return stats.W / API.MAX_WIS
@@ -133,6 +134,7 @@ end
 function API.AddAgilityRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
+	mod.isPercent = true
 	mod.calString = string.format("AGI / %s", API.MAX_AGI)
 	mod.calculation = function(stats)
 		return stats.A / API.MAX_AGI
@@ -142,6 +144,7 @@ end
 function API.AddVitalityRNG(modifiersTable, modId)
 	local mod = API.Add(modifiersTable, modId)
 	
+	mod.isPercent = true
 	mod.calString = string.format("VIT / %s", API.MAX_VIT)
 	mod.calculation = function(stats)
 		return stats.V / API.MAX_VIT

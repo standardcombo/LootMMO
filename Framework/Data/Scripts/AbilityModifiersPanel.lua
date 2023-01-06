@@ -8,24 +8,60 @@ local rowPool = {PROTOTYPE_ROW}
 PROTOTYPE_ROW.visibility = Visibility.FORCE_OFF
 
 
-local function UpdateRow(row, abilityModifier, stats)
+local function UpdateRow(row, abilityModifier, stats, showUpgradeDelta)
 	local rowElements = row.clientUserData
 	
+	local FormatValue = function(value, isPercent)
+		if isPercent then
+			return string.format("%.0f", value * 100)
+			
+		elseif value < 10 then
+			return string.format("%.2g", value)
+		else
+			local str = string.format("%.2f", value)
+			local length = string.len(str)
+			local lastGlyph = string.sub(str, length, length)
+			if lastGlyph == "0" then
+				str = string.sub(str, 1, length - 1)
+			end
+			local whole, fraction = CoreString.Split(str, ".")
+			if fraction == "0" then
+				return whole
+			end
+			return str
+		end
+	end
+	
+	-- Get the numeric value for this modifier
 	local modValue = abilityModifier.calculation(stats, {ignoreCrit = true})
 	if type(modValue) == "table" then
 		modValue = modValue[1]
 	end
-	if modValue < 1 then
-		modValue = string.format("%.2f%%", modValue)
-	elseif modValue < 10 then
-		modValue = string.format("%.1f", modValue)
-	else
-		modValue = string.format("%.0f", modValue)
+	-- Convert into a string
+	local modStr = FormatValue(modValue, abilityModifier.isPercent)
+	if abilityModifier.isPercent then
+		modStr = modStr .."%"
+	end
+	-- In case of upgrade, show the improvement (if any)
+	rowElements.upgrade.text = ""
+	if showUpgradeDelta then
+		local upgradedValue = abilityModifier.calculation(stats, {ignoreCrit = true, upgradeStarRating = true})
+		if type(upgradedValue) == "table" then
+			upgradedValue = upgradedValue[1]
+		end
+		local deltaValue = upgradedValue - modValue
+		if deltaValue ~= 0 then
+			-- Convert into a string
+			local deltaStr = FormatValue(deltaValue, abilityModifier.isPercent)
+			if deltaValue > 0 then
+				deltaStr = "+".. deltaStr
+			end
+			rowElements.upgrade.text = deltaStr
+		end
 	end
 	
 	rowElements.name.text = abilityModifier.name ..":"
-	rowElements.value.text = modValue
-	rowElements.upgrade.text = ""
+	rowElements.value.text = modStr
 	rowElements.formula.text = "(".. abilityModifier.calString ..")"
 end
 
@@ -66,11 +102,15 @@ local function RecycleAllRows()
 	rows = {}
 end
 
-function SetAbilityData(abilityMods, stats)
+function Clear()
+	RecycleAllRows()
+end
+
+function SetAbilityData(abilityMods, stats, showUpgradeDelta)
 	RecycleAllRows()
 
 	for _,mod in ipairs(abilityMods) do
-		UpdateRow(AddRow(), mod, stats)
+		UpdateRow(AddRow(), mod, stats, showUpgradeDelta)
 	end
 end
 

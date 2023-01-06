@@ -30,7 +30,6 @@ local STARS_PANEL = script:GetCustomProperty("Stars"):WaitForObject()
 local CENTER_PANEL = script:GetCustomProperty("CenterPanel"):WaitForObject()
 local ABILITY_NAME = script:GetCustomProperty("AbilityName"):WaitForObject()
 local ABILITY_DESCRIPTION = script:GetCustomProperty("AbilityDescription"):WaitForObject()
-local ABILITY_PROPERTIES = script:GetCustomProperty("AbilityProperties"):WaitForObject()
 
 local ABILITY_SLOTS = script:GetCustomProperty("AbilitySlots"):WaitForObject():GetChildren()
 local POTION_SLOTS = script:GetCustomProperty("PotionSlots"):WaitForObject():GetChildren()
@@ -282,9 +281,10 @@ function UpdateAbilityDetails(_api, entryId)
 		end
 		-- Update the contents based on the modifiers and the player's current stats
 		local stats = _G['Loot.Stats'].GetStats(LOCAL_PLAYER)
-		MODIFIERS_PANEL.context.SetAbilityData(abilityMods, stats)
+		local showUpgradeDelta = (upgradePointsAvailable > 0)
+		MODIFIERS_PANEL.context.SetAbilityData(abilityMods, stats, showUpgradeDelta)
 	else
-		ABILITY_PROPERTIES.visibility = Visibility.FORCE_OFF
+		MODIFIERS_PANEL.context.Clear()
 	end
 
 	-- Update the stars that appear below the large ability image
@@ -404,8 +404,8 @@ function SelectSlot(slot)
 
 	if slot == nil then
 		SELECTION_INDICATOR.visibility = Visibility.FORCE_OFF
-		UpdateAbilityDetails()
 		UpdateUpgradeState()
+		UpdateAbilityDetails()
 		return
 	else
 		SELECTION_INDICATOR.visibility = Visibility.INHERIT
@@ -428,6 +428,9 @@ function SelectSlot(slot)
 	EASE_UI.EaseWidth(SELECTION_INDICATOR, slot.width, 0.2)
 	EASE_UI.EaseHeight(SELECTION_INDICATOR, slot.height, 0.2)
 
+	-- Visibility of [Upgrade] button and FTUE
+	UpdateUpgradeState()
+
 	-- Update central info about the selected ability
 	if slot.clientUserData.isAbility then
 		UpdateAbilityDetails(AbilityAPI, slot.clientUserData.abilityId)
@@ -435,9 +438,6 @@ function SelectSlot(slot)
 	elseif slot.clientUserData.isPotion then
 		UpdateAbilityDetails(PotionAPI, slot.clientUserData.potionId)
 	end
-
-	-- Visibility of [Upgrade] button and FTUE
-	UpdateUpgradeState()
 end
 
 
@@ -451,10 +451,9 @@ function BroadcastUpgrade()
 	Events.BroadcastToServer(EVENT_ABILITY_UPGRADE, LOCAL_PLAYER, selectedAbilityIndex)
 	-- Disable the button temporarily to avoid double clicks
 	UPGRADE_BUTTON.visibility = Visibility.FORCE_OFF
-	Task.Wait()
-	UpdateAbilityDetails(AbilityAPI)
 	Task.Wait(0.4)
 	UpdateUpgradeState()
+	UpdateAbilityDetails(AbilityAPI)
 end
 UPGRADE_BUTTON.clickedEvent:Connect(BroadcastUpgrade)
 
