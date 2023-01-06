@@ -1,6 +1,8 @@
+local EaseUI = require(script:GetCustomProperty("EaseUI"))
 local EquipAPI = _G["Character.EquipAPI"]
 local MATERIALS = _G["Items.Materials"]
 local craftAPI = _G["Crafting.CraftingAPI"]
+
 local ITEMS = _G.Items
 
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
@@ -17,6 +19,9 @@ local DIMMER_BACKGROUND = script:GetCustomProperty("DimmerBackground"):WaitForOb
 local SCRAP_CONFIRMATION_PANEL = script:GetCustomProperty("ScrapConfirmationPanel"):WaitForObject()
 local UPGRADE_CONFIRMATION_PANEL = script:GetCustomProperty("UpgradeConfirmationPanel"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+local THICK_FRAME = script:GetCustomProperty("Frame Outlined Thick 002")
+
+local flashAnimationTasks = {}
 
 local COLLECTIONS = {}
 for index, value in pairs(LOOT_BAG_PARSER.Collection) do
@@ -122,6 +127,19 @@ local SCRAP_PREVIEW_SLOT = {
 for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 	previewSlot.clientUserData.icon = Get(previewSlot, "icon")
 	previewSlot.clientUserData.count = Get(previewSlot, "count")
+end
+
+local function CancelAnimationTasks()
+	if #flashAnimationTasks > 0 then
+		for i = 1, #flashAnimationTasks, 1 do
+			flashAnimationTasks[i].task:Cancel()
+			flashAnimationTasks[i].slot.frame:SetImage(flashAnimationTasks[i].originalBorderIMG)
+			flashAnimationTasks[i].slot.frame:SetColor(flashAnimationTasks[i].originalColor)
+			local frameRef = flashAnimationTasks[i].slot.frame.parent
+			EaseUI.EaseOpacity(frameRef, 1, 0)
+		end
+		flashAnimationTasks = {}
+	end
 end
 
 local function ShowScrapBtn(shouldShow)
@@ -247,6 +265,41 @@ local function SetImage(panel, icon, itemdata)
 	panel:SetImage(icon)
 end
 
+local function BeginFlashAnimation(inv,upgradeRecipe)
+				--Flash the material slot's frame to indicate that the player does not have enough materials
+				local offset = 54
+				for materialRequired, _ in pairs(upgradeRecipe) do
+					for i = offset, inv.slotCount, 1 do
+						if inv:GetSlotType(i) == materialRequired then
+							local originalColor = slots[i].frame:GetColor()
+							local originalBorderIMG = slots[i].frame:GetImage()
+							local animationTime = 0.5
+							slots[i].frame:SetColor(Color.RED)
+							slots[i].frame:SetImage(THICK_FRAME)
+							flashAnimationTasks[#flashAnimationTasks+1] = {
+								slot = slots[i],
+								originalColor = originalColor,
+								originalBorderIMG = originalBorderIMG,
+								task = Task.Spawn(function()
+									if MATERIALS_BAR.visibility == Visibility.INHERIT then
+										if slots[i].frame.parent.opacity > 0 then
+											EaseUI.EaseOpacity(slots[i].frame.parent, 0, animationTime)
+										else
+											EaseUI.EaseOpacity(slots[i].frame.parent, 1, animationTime)
+										end
+									else
+										CancelAnimationTasks()
+									end
+								end)
+							}
+							flashAnimationTasks[#flashAnimationTasks].task.repeatCount = -1
+							flashAnimationTasks[#flashAnimationTasks].task.repeatInterval = animationTime
+							break
+						end
+					end
+				end
+end
+
 local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade panel to show upgrade details for the selected item
 	local itemdata = ITEMS.GetDefinition(item.name, true)
 	if not itemdata then return	end
@@ -259,6 +312,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 	end
 
 	local inv = GetInventory(LOCAL_PLAYER)
+
 	local upgradeRecipe = GetUpgradeRecipe(item)
 	if upgradeRecipe and greatness < 20 then
 		UPGRADE_BUTTON.isInteractable = true
@@ -290,6 +344,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 		if inv and not inv:HasRequiredItems(upgradeRecipe) then
 			warn("Not enough materials to upgrade " .. item.name)
 			UPGRADE_BUTTON.isInteractable = false
+			BeginFlashAnimation(inv,upgradeRecipe)
 		end
 	else
 		UPGRADE_BUTTON.isInteractable = false
@@ -343,11 +398,10 @@ local function SelectRecipe(item, slot)
 	RefreshUpgradePanelDetails(item, slot)
 end
 
-
 local function ClickedSlot(slot)
+	CancelAnimationTasks()
 	if not currentInventory then return	end
 	if currentState ~= states.crafting then return end
-
 	local item = currentInventory:GetItem(slot.index)
 	if not item then
 		ClearUpgradePanelDetails()
@@ -598,6 +652,7 @@ end
 for index, value in ipairs(SLOTS) do
 	slots[index] = {}
 	slots[index].index = index
+	slots[index].frame = value:FindDescendantByName("frame")
 	slots[index].icon = value:FindChildByName("icon")
 	slots[index].bg = value:FindChildByName("bg")
 	slots[index].count = value:FindChildByName("count")

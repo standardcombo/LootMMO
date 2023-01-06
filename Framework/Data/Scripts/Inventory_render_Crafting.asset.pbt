@@ -4,6 +4,12 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:EaseUI"
+        AssetReference {
+          Id: 14902373637656864644
+        }
+      }
     }
   }
   SerializationVersion: 123

@@ -152,6 +152,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7300437649651217375
+  Name: "Frame Outlined Thick 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_019"
+  }
+}
+Assets {
   Id: 4106662450040501179
   Name: "Fantasy Jewelry 029"
   PlatformAssetType: 9
