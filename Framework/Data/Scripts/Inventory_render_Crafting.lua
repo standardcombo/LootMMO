@@ -2,6 +2,8 @@ local EaseUI = require(script:GetCustomProperty("EaseUI"))
 local EquipAPI = _G["Character.EquipAPI"]
 local MATERIALS = _G["Items.Materials"]
 local craftAPI = _G["Crafting.CraftingAPI"]
+Task.Wait()
+local MessagePopup = _G['MessagePopup']
 
 local ITEMS = _G.Items
 
@@ -24,7 +26,7 @@ local THICK_FRAME = script:GetCustomProperty("Frame Outlined Thick 002")
 local flashAnimationTasks = {}
 
 local COLLECTIONS = {}
-for index, value in pairs(LOOT_BAG_PARSER.Collection) do
+for _, value in pairs(LOOT_BAG_PARSER.Collection) do
 	table.insert(COLLECTIONS, value)
 end
 
@@ -342,13 +344,16 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 			end
 		end
 		if inv and not inv:HasRequiredItems(upgradeRecipe) then
-			warn("Not enough materials to upgrade " .. item.name)
+			MessagePopup.ShowMessage("Not enough materials to upgrade " .. item.name)
 			UPGRADE_BUTTON.isInteractable = false
 			BeginFlashAnimation(inv,upgradeRecipe)
 		end
+	elseif greatness >= 20 then
+		UPGRADE_BUTTON.isInteractable = false
+		MessagePopup.ShowMessage(item.name .. " is already at max greatness.")
 	else
 		UPGRADE_BUTTON.isInteractable = false
-		warn("Cannot upgrade " .. item.name .. " already max greatness, or no recipe.")
+		MessagePopup.ShowMessage(item.name .. " cannot be upgraded.")
 	end
 
 	if slot.isBag then
@@ -399,14 +404,12 @@ local function SelectRecipe(item, slot)
 end
 
 local function ClickedSlot(slot)
+	ClearUpgradePanelDetails()
 	CancelAnimationTasks()
 	if not currentInventory then return	end
 	if currentState ~= states.crafting then return end
 	local item = currentInventory:GetItem(slot.index)
-	if not item then
-		ClearUpgradePanelDetails()
-		return
-	end
+	if not item then return end
 	local greatness = item:GetCustomProperty("Greatness")
 	if greatness then --Greatness is required for upgrading
 		greatness = math.max(1, greatness)
@@ -435,7 +438,10 @@ local function ScrapItem(button)
 			end
 
 			local scrapRecipe = GetScrapRecipe(selectedRecipe.item) --Table of items to give to player if they choose to scrap the item
-			if not scrapRecipe then warn("No scrapping recipe for" .. selectedRecipe.item) return end
+			if not scrapRecipe then
+				MessagePopup:ShowMessage("No scrapping recipe for" .. selectedRecipe.item)
+				return
+			end
 			
 			--For each item in the scrapRecipe populate the preview slots with the item icon and quantity
 			local count = 0
