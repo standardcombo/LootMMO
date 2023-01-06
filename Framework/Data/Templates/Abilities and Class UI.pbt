@@ -45236,12 +45236,6 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:AbilityProperties"
-            ObjectReference {
-              SubObjectId: 13544609120536117952
-            }
-          }
-          Overrides {
             Name: "cs:AbilitySlots"
             ObjectReference {
               SubObjectId: 16511046541071761264
@@ -45365,14 +45359,6 @@ Assets {
           }
           Overrides {
             Name: "cs:UpgradeButton:ml"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:AbilityProperties:isrep"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:AbilityProperties:ml"
             Bool: false
           }
           Overrides {
@@ -47494,6 +47480,12 @@ Assets {
           }
         }
         ParentId: 15730005821420058935
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
         TemplateInstance {
           ParameterOverrideMap {
             key: 8504445518383473580

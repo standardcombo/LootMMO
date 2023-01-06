@@ -58,6 +58,10 @@ local function UpdateRow(row, abilityModifier, stats, showUpgradeDelta)
 			end
 			rowElements.upgrade.text = deltaStr
 		end
+		Task.Spawn(function()
+			local textSize = rowElements.value:ComputeApproximateSize()
+			rowElements.value.width = textSize.x
+		end)
 	end
 	
 	rowElements.name.text = abilityModifier.name ..":"

@@ -15,8 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 2432516294700515738
         ChildIds: 14745765748049505364
+        ChildIds: 12736712916509053991
+        ChildIds: 264584740035558893
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
@@ -104,7 +106,6 @@ Assets {
           }
         }
         ParentId: 8504445518383473580
-        ChildIds: 12736712916509053991
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -186,7 +187,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14745765748049505364
+        ParentId: 8504445518383473580
         ChildIds: 12079326007659885070
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -203,6 +204,7 @@ Assets {
         Control {
           Width: 40
           Height: 200
+          UIX: 158
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -244,7 +246,7 @@ Assets {
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:topright"
+                Value: "mc:euianchor:topleft"
               }
             }
           }
@@ -270,7 +272,6 @@ Assets {
           }
         }
         ParentId: 12736712916509053991
-        ChildIds: 264584740035558893
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -286,6 +287,7 @@ Assets {
         Control {
           Width: 66
           Height: 200
+          UIX: 4
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -351,7 +353,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12079326007659885070
+        ParentId: 8504445518383473580
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -367,7 +369,7 @@ Assets {
         Control {
           Width: 500
           Height: 200
-          UIX: 5
+          UIX: 300
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -409,7 +411,7 @@ Assets {
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:topright"
+                Value: "mc:euianchor:topleft"
               }
             }
           }
