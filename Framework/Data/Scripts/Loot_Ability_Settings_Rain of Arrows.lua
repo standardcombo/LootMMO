@@ -2,7 +2,7 @@ local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ModAPI = _G['Ability.Modifiers']
 
-local ABILITY_ID = 'Rain of Arrows'
+local ABILITY_ID = 'Rain Of Arrows'
 
 
 local modifiers = {}
