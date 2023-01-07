@@ -38,13 +38,14 @@ function API.ShowMessage(message, timeUntilFade, fadeTime)
     if showingMessageTask then
         showingMessageTask:Cancel()
         MESSAGE_PANEL.visibility = Visibility.FORCE_OFF
+        --EaseUI.EaseOpacity(MESSAGE_PANEL, 0, 0)
         MESSAGE_PANEL.opacity = 1
+        showingMessageTask = nil
     end
+    MESSAGE_TEXT.text = message
+    MESSAGE_PANEL.visibility = Visibility.INHERIT
+    MESSAGE_PANEL.opacity = 1
     showingMessageTask = Task.Spawn(function()
-        MESSAGE_TEXT.text = message
-        MESSAGE_PANEL.visibility = Visibility.INHERIT
-        MESSAGE_PANEL.opacity = 1
-        Task.Wait(timeUntilFade or 0)
         EaseUI.EaseOpacity(MESSAGE_PANEL, 0, fadeTime)
-    end)
+    end, timeUntilFade or 0)
 end
