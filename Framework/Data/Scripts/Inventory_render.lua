@@ -85,6 +85,37 @@ local function UpdateValues()
 	end
 end
 
+local function GetNFTSaveInfo(item)
+	local greatness = nil
+	if not item:GetCustomProperty("IsBag") then
+		return item:GetCustomProperty("Greatness")
+	end
+	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
+	local playerOwnsItem = false
+	for _, Collection in ipairs(COLLECTIONS) do
+		if playerOwnsItem then break end
+		AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
+			for _, token in pairs(tokens) do
+				local parsedBag = LOOT_BAG_PARSER.Parse(token)
+				local items = parsedBag.items
+				local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+				for _, itemdata in pairs(items) do
+					if itemdata.name == item.name then
+						playerOwnsItem = true
+						greatness = nftSaves[tokenString][itemdata.name] or item:GetCustomProperty("Greatness")
+						break
+					end
+				end
+			end
+		end)
+	end
+	if playerOwnsItem then
+		return greatness, playerOwnsItem
+	else
+		return item:GetCustomProperty("Greatness"), playerOwnsItem
+	end
+end
+
 local function RealeaseEvent(slot)
 	if not currentInventory then
 		return
@@ -179,12 +210,13 @@ local function HoverSlot(slot)
 		SetImage(childIcon, icon, itemdata)
 
 		if item:GetCustomProperty("Greatness") then
+			local greatness = GetNFTSaveInfo(item)
 			HOVERDATA.name.text =
 			string.format(
 				"%s %s | Greatness %d",
 				itemdata.name,
 				item:GetCustomProperty("Order"),
-				item:GetCustomProperty("Greatness")
+				greatness
 			)
 
 			local itemClass =
@@ -192,7 +224,7 @@ local function HoverSlot(slot)
 				{
 					item = item.name,
 					order = item:GetCustomProperty("Order"),
-					greatness = item:GetCustomProperty("Greatness")
+					greatness = greatness
 				}
 			)
 
@@ -349,29 +381,13 @@ local function InventoryChanged(inv, slot)
 		if not itemdata then
 			return
 		end
-		local greatness = item:GetCustomProperty("Greatness")
-		local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
+		local greatness = nil
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
-				-- Uncomment the following section to show the greatness of the owned NFTs
-				-- Displays proper greatness for upgraded NFTs
-				for _, Collection in ipairs(COLLECTIONS) do
-					AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-						Task.Wait()
-						for _, token in pairs(tokens) do
-							local parsedBag = LOOT_BAG_PARSER.Parse(token)
-							local items = parsedBag.items
-							local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-							for _, itemdata in pairs(items) do
-								if itemdata.name == item.name then
-									greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
-								end
-							end
-						end
-					end)
-				end
+				greatness = GetNFTSaveInfo(item)
 			else
+				greatness = item:GetCustomProperty("Greatness")
 				isBag.visibility = Visibility.FORCE_OFF
 			end
 		end
@@ -387,7 +403,6 @@ local function InventoryChanged(inv, slot)
 		else
 			childCount.text = ""
 		end
-
 		if greatness then
 			levelFrame.visibility = Visibility.INHERIT
 			slots[slot].levelText.text = tostring(greatness)
