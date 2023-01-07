@@ -1,6 +1,6 @@
 --[[
 	Tag Getter
-	v1.1
+	v1.2
 	by: standardcombo
 	
 	Utility functions for operating on combat tags, such as retrieving tags
@@ -33,25 +33,25 @@
 	The script should have a reference to the ModuleManager script.
 --]]
 
-local API = {} 
+local API = {}
 _G["standardcombo.Combat.Tags"] = API
 
 -- Gathers the tags on an object and returns the table
 function API.GetTags(obj)
 	if not Object.IsValid(obj) then return {} end
-	
+
 	if obj.serverUserData and obj.serverUserData.combatTags then
 		return obj.serverUserData.combatTags
 	end
-	
+
 	if type(obj) == "table" then
 		return obj
 	end
-	
+
 	if not obj.GetCustomProperties then
 		return {}
 	end
-	
+
 	local tags = {}
 	for k,v in pairs(obj:GetCustomProperties()) do
 		if string.sub(k,1,4) == "Tag_" then

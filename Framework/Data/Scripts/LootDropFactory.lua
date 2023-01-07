@@ -1,6 +1,6 @@
 --[[
 	Loot Drop Factory
-	v2.0
+	v2.1
 	by: standardcombo
 	
 	Spawns random loot drops from a customizable data set.
@@ -73,7 +73,10 @@ function API.Drop(id, position)
 	-- Spawn loot
 	local rewardTemplate = GetLootTemplate(id)
 	if rewardTemplate then
-		local lootReward = World.SpawnAsset(rewardTemplate, {position = position})
+		local lootReward = World.SpawnAsset(rewardTemplate, {
+			position = position,
+			networkContext = NetworkContextType.NETWORKED
+		})
 		if not lootReward then return end
 		
 		-- Drop to ground

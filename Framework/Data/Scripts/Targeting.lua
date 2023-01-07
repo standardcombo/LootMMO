@@ -1,6 +1,16 @@
+--[[
+	Targeting System - Client
+	v1.0
+	by: blaking, standardcombo
+	
+	Allows players to focus on nearby enemies.
+--]]
 
 local TARGETING_API = require(script:GetCustomProperty('Targeting_API'))
-local TARGERT_RENDER = script:GetCustomProperty('TargertRender'):WaitForObject()
+local UI_CONTAINER = script:GetCustomProperty('UIContainer'):WaitForObject()
+local UI_IMAGE = script:GetCustomProperty('UIImage'):WaitForObject()
+local LOOK_SPEED = script:GetCustomProperty('LookSpeed')
+local ROTATION_SPEED = script:GetCustomProperty('RotationSpeed')
 
 -- 34 meters
 local MAX_RANGE = 3400 ^ 2
@@ -30,12 +40,21 @@ function Tick(dt)
 		local Slerpy = Quaternion.Slerp(Start, End, dt * 4)
 
 		LOCAL_PLAYER:SetLookWorldRotation(Rotation.New(Slerpy))
-		TARGERT_RENDER.visibility = Visibility.FORCE_OFF
+		UI_CONTAINER.visibility = Visibility.FORCE_OFF
 		return
 	end
-	TARGERT_RENDER.visibility = Visibility.INHERIT
-	TARGERT_RENDER:SetWorldPosition(CurrentTarget:GetWorldPosition())
 	
+	-- Update UI Container
+	UI_CONTAINER.visibility = Visibility.INHERIT
+	-- Position
+	UI_CONTAINER:SetWorldPosition(CurrentTarget:GetWorldPosition())
+	-- Billboard
+	UI_CONTAINER:SetWorldRotation(
+		Rotation.New(Quaternion.New(LOCAL_PLAYER:GetViewWorldRotation()) * Quaternion.New(Vector3.UP, 0)))
+	-- Rotate
+	UI_IMAGE.rotationAngle = UI_IMAGE.rotationAngle + dt * ROTATION_SPEED
+	
+	-- Update Camera
 	local LookPos = LOCAL_PLAYER:GetViewWorldPosition() + Vector3.UP
 	local viewVector = CurrentTarget:GetWorldPosition() - LookPos
 	local viewDist = viewVector.sizeSquared
@@ -49,7 +68,7 @@ function Tick(dt)
 	end
 	local Start = Quaternion.New(LOCAL_PLAYER:GetLookWorldRotation())
 	local End = Quaternion.New(Rotation.New(viewVector:GetNormalized(), Vector3.UP))
-	local Slerpy = Quaternion.Slerp(Start, End, dt * 4)
+	local Slerpy = Quaternion.Slerp(Start, End, dt * LOOK_SPEED)
 
 	LOCAL_PLAYER:SetLookWorldRotation(Rotation.New(Slerpy))
 end

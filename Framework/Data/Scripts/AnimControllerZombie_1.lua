@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Zombie
-	v1.2.0
+	v1.2
 	by: standardcombo
 	
 	Controls the animations for a humanoid NPC with Animated Mesh.

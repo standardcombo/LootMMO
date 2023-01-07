@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Dragon
-	v1.2.0
+	v1.2
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Dragon Animated Mesh.

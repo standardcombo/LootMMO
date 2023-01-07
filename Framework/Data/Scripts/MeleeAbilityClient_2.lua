@@ -1,6 +1,6 @@
 --[[
 	Melee Ability - Client
-	v1.3.0
+	v1.3.1
 	by: standardcombo
 	
 	Handles spawning of VFX for a melee ability.

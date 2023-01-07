@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - Player
-	v0.15.0
+	v1.0.0
 	by: standardcombo
 	
 	Provides an interface of combat functions that operate on a Player object.
@@ -16,14 +16,14 @@
 	- IsHeadshot()
 	- IsValidObject()
 	- AddImpulse()
-	- FindInSphere() 
+	- FindInSphere()
 	- GetMaxWalkSpeed()
 	- SetMaxWalkSpeed()
 --]]
 
 local wrapper = {}
 
-
+	
 -- GetName()
 function wrapper.GetName(player)
 	return player.name
@@ -71,7 +71,7 @@ function wrapper.IsHeadshot(player, hitResult, position)
 	end
 	local playerPos = player:GetWorldPosition()
 	local playerScale = player:GetWorldScale()
-
+	
 	local headMinZ = 65
 	if player.isCrouching then
 		headMinZ = 30
