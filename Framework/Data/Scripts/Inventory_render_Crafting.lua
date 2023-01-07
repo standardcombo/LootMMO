@@ -131,6 +131,39 @@ for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 	previewSlot.clientUserData.count = Get(previewSlot, "count")
 end
 
+
+local function GetNFTSaveInfo(item)
+	local greatness = nil
+	if not item:GetCustomProperty("IsBag") then
+		return item:GetCustomProperty("Greatness")
+	end
+	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
+	local playerOwnsItem = false
+	for _, Collection in ipairs(COLLECTIONS) do
+		if playerOwnsItem then break end
+		AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
+			for _, token in pairs(tokens) do
+				local parsedBag = LOOT_BAG_PARSER.Parse(token)
+				local items = parsedBag.items
+				local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
+				for _, itemdata in pairs(items) do
+					if itemdata.name == item.name then
+						playerOwnsItem = true
+						greatness = nftSaves[tokenString][itemdata.name] or item:GetCustomProperty("Greatness")
+						break
+					end
+				end
+			end
+		end)
+	end
+	if playerOwnsItem then
+		return greatness, playerOwnsItem
+	else
+		return item:GetCustomProperty("Greatness"), playerOwnsItem
+	end
+end
+
+
 local function CancelAnimationTasks()
 	if #flashAnimationTasks > 0 then
 		for i = 1, #flashAnimationTasks, 1 do
@@ -181,7 +214,7 @@ end
 
 local function GetScrapRecipe(item)
 	if not item then return end
-	local greatness = item:GetCustomProperty("Greatness")
+	local greatness = GetNFTSaveInfo(item)
 	local newrecipe = nil
 	if greatness then
 		greatness = math.max(1, greatness)
@@ -193,33 +226,12 @@ end
 local function GetUpgradeRecipe(item)
 	if not item then return end
 
-	local newrecipe, greatness
-	greatness = item:GetCustomProperty("Greatness")
-	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
-	local playerOwnsItem = false
+	local newrecipe, greatness, playerOwnsItem
 	if item:GetCustomProperty("IsBag") then -- check if player owns the item in the bag
-		for _, Collection in ipairs(COLLECTIONS) do
-			if playerOwnsItem then break end
-			AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-				for _, token in pairs(tokens) do
-					local parsedBag = LOOT_BAG_PARSER.Parse(token)
-					local items = parsedBag.items
-					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-					for _, itemdata in pairs(items) do
-						if itemdata.name == item.name then
-							greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
-							if greatness < 20 then
-								selectedRecipe.NFT = tokenString
-								playerOwnsItem = true
-								newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
-								break
-							end
-						end
-					end
-				end
-			end)
-		end
-		if not playerOwnsItem then -- player does not own the item in the bag
+		greatness, playerOwnsItem = GetNFTSaveInfo(item)
+		if playerOwnsItem and greatness < 20 then
+			newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+		else -- player does not own the item in the bag or greatness is maxed
 			ClearUpgradePanelDetails()
 		end
 	else -- can the non NFT item be upgraded?
@@ -308,7 +320,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 
 	local icon = itemdata["icon"]
 
-	local greatness = item:GetCustomProperty("Greatness")
+	local greatness = GetNFTSaveInfo(item)
 	if greatness then
 		greatness = math.max(1, greatness)
 	end
@@ -335,9 +347,8 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 				--Set the icon and quantity for the item on the SLOT UI
 				SetImage(UPGRADE_PREVIEW_SLOT[count].clientUserData.icon, previewIcon, materialData)
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.icon.visibility = Visibility.INHERIT
-				local numberOnHand
 				if inv then
-					numberOnHand = inv:GetItemCount(itemName)
+					local numberOnHand = inv:GetItemCount(itemName)
 					UPGRADE_PREVIEW_SLOT[count].clientUserData.count.text = tostring(numberOnHand) .. "/" .. tostring(quantity)
 				end
 				UPGRADE_PREVIEW_SLOT[count].clientUserData.count.visibility = Visibility.INHERIT
@@ -380,7 +391,7 @@ end
 
 local function SelectRecipe(item, slot)
 	if currentState ~= states.crafting then return end
-	local greatness = item:GetCustomProperty("Greatness")
+	local greatness = GetNFTSaveInfo(item)
 	selectedRecipe = {
 		item = item,
 		greatness = greatness,
@@ -412,7 +423,6 @@ local function ClickedSlot(slot)
 	if not item then return end
 	local greatness = item:GetCustomProperty("Greatness")
 	if greatness then --Greatness is required for upgrading
-		greatness = math.max(1, greatness)
 		SelectRecipe(item,slot)
 	else
 		ShowScrapBtn(false)
@@ -512,12 +522,14 @@ local function HoverSlot(slot)
 		SetImage(childIcon, icon, itemdata)
 
 		if item:GetCustomProperty("Greatness") then
+			local greatness = GetNFTSaveInfo(item)
+
 			HOVERDATA.name.text =
 			string.format(
 				"%s %s | Greatness %d",
 				itemdata.name,
 				item:GetCustomProperty("Order"),
-				item:GetCustomProperty("Greatness")
+				greatness
 			)
 
 			local itemClass =
@@ -525,7 +537,7 @@ local function HoverSlot(slot)
 				{
 					item = item.name,
 					order = item:GetCustomProperty("Order"),
-					greatness = item:GetCustomProperty("Greatness")
+					greatness = greatness
 				}
 			)
 
@@ -682,29 +694,13 @@ local function InventoryChanged(inv, slot)
 		if not itemdata then
 			return
 		end
-		local greatness = item:GetCustomProperty("Greatness")
-		local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS") or {}
+		local greatness = nil
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
-				-- Uncomment the following section to show the greatness of the owned NFTs
-				-- Displays proper greatness for upgraded NFTs
-				for _, Collection in ipairs(COLLECTIONS) do
-					AsyncBC.GetTokensForPlayer(Game.GetLocalPlayer(), { contractAddress = Collection }, function(tokens)
-						Task.Wait()
-						for _, token in pairs(tokens) do
-							local parsedBag = LOOT_BAG_PARSER.Parse(token)
-							local items = parsedBag.items
-							local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-							for _, itemdata in pairs(items) do
-								if itemdata.name == item.name then
-									greatness = (nftSaves[tokenString] or {})[itemdata.name] or itemdata.greatness
-								end
-							end
-						end
-					end)
-				end
+				greatness = GetNFTSaveInfo(item)
 			else
+				greatness = item:GetCustomProperty("Greatness")
 				isBag.visibility = Visibility.FORCE_OFF
 			end
 		end
