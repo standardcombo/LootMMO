@@ -100,7 +100,7 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 		end
 
 		local BagKey = CoreString.Join("|", token.contractAddress, token.tokenId)
-		local itemEntry = ItemApi.GetDefinition(itemid)
+		local itemEntry = ItemApi.GetDefinition(itemid, true)
 		local icon = nil
 		if itemEntry then
 			icon = itemEntry.icon
@@ -149,7 +149,7 @@ local function UpgradeItem(player, slot)
 			inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 		end
 		itemToUpgrade:SetCustomProperty("Greatness", value + 1)
-		local itemEntry = ItemApi.GetDefinition(itemToUpgrade.name)
+		local itemEntry = ItemApi.GetDefinition(itemToUpgrade.name, true)
 		local icon = nil
 		if itemEntry then
 			icon = itemEntry.icon
@@ -184,7 +184,7 @@ local function ScrapItem(player, slot)
 		local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 		inventory:AddItem(materialdata["itemAsset"], { count = value })
 	end
-	local itemEntry = ItemApi.GetDefinition(itemid)
+	local itemEntry = ItemApi.GetDefinition(itemid, true)
 	local icon = nil
 	if itemEntry then
 		icon = itemEntry.icon

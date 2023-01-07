@@ -206,6 +206,15 @@ Assets {
   }
 }
 Assets {
+  Id: 1328793714507056410
+  Name: "Tiled Asphalt 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_TiledBG_017"
+  }
+}
+Assets {
   Id: 1100030183663206451
   Name: "Center Arrow 003 Wedge"
   PlatformAssetType: 9
