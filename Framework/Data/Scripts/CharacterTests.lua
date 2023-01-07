@@ -168,7 +168,7 @@ cheats = {
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Inventory = newCharacter:GetComponent("Inventory")
 			local itemstring = { CoreString.Split(message, '"') }
-			local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+			local iteminfo = Itemdat.GetDefinition(itemstring[2], true) or materials.GetDefinition(itemstring[2], true)
 			if iteminfo then
 				Inventory:GetInventory():AddItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 			end
@@ -180,7 +180,7 @@ cheats = {
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Inventory = newCharacter:GetComponent("Inventory")
 			local itemstring = { CoreString.Split(message, '"') }
-			local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+			local iteminfo = Itemdat.GetDefinition(itemstring[2], true) or materials.GetDefinition(itemstring[2], true)
 			if iteminfo then
 				Inventory:GetInventory():RemoveItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 			end

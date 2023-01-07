@@ -123,7 +123,7 @@ local function GetUpgradeRecipes(inventory)
 			if value:GetCustomProperty("IsBag") == true then
 				goto continue
 			end
-			local itemdata = itemAPI.GetDefinition(value.name)
+			local itemdata = itemAPI.GetDefinition(value.name, true)
 			if itemdata and selectedFilter and itemdata["category"] ~= selectedFilter then
 				goto continue
 			end
@@ -187,7 +187,7 @@ local function GetUpgradeRecipes(inventory)
 
 	if selectedFilter then
 		for i = #recipes, 1, -1 do
-			local itemElements = itemAPI.GetDefinition(recipes[i].itemid)
+			local itemElements = itemAPI.GetDefinition(recipes[i].itemid, true)
 			if itemElements["category"] ~= selectedFilter then
 				table.remove(recipes, i)
 			end
@@ -207,7 +207,7 @@ local function GetScrapRecipes(inventory)
 			slot = index
 		}
 
-		local itemdata = itemAPI.GetDefinition(value.name)
+		local itemdata = itemAPI.GetDefinition(value.name, true)
 		if value:GetCustomProperty("IsBag") == true then
 			goto continue
 		end
@@ -238,7 +238,7 @@ local function ClearRecipes()
 end
 
 local function SetupItemCost(inventory, item, cost)
-	local itemdata       = Materials.GetDefinition(item) or itemAPI.GetDefinition(item)
+	local itemdata       = Materials.GetDefinition(item, true) or itemAPI.GetDefinition(item, true)
 	local newItemCost    = World.SpawnAsset(CRAFT_RECIPE_ITEM_COST)
 	local itemCostIcon   = Get(newItemCost, "Icon")
 	local itemCounttxt   = Get(newItemCost, "ItemCount")
@@ -416,7 +416,7 @@ local function UpdateSelectPanel()
 	else
 		SelectedTitle.text = selectedRecipe.itemid
 	end
-	local itemdata = itemAPI.GetDefinition(selectedRecipe.itemid)
+	local itemdata = itemAPI.GetDefinition(selectedRecipe.itemid, true)
 	if itemdata then
 		SelectedIcon:SetImage(itemdata.icon)
 	end
@@ -464,7 +464,7 @@ local function PopulateRecipes()
 			newRow.y = #recipePanels * 80
 			table.insert(recipePanels, newRow)
 			local Icon = Get(newRow, "Icon")
-			Icon:SetImage(itemAPI.GetDefinition(value.itemid).icon)
+			Icon:SetImage(itemAPI.GetDefinition(value.itemid, true).icon)
 			local newRowButton = Get(newRow, "Button")
 			newRowButton.pressedEvent:Connect(function()
 				SelectRecipe(value, newRow)

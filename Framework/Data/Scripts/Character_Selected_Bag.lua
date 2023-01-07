@@ -8,7 +8,7 @@ function BootUpPlayerBag(Character, player)
 		local inventory = Character:GetComponent('Inventory')
 		for key, Item in pairs(selectedbag.items) do
 			local name = Item.name
-			local entry = items.GetDefinition(name)
+			local entry = items.GetDefinition(name, true)
 			if entry then
 				local item = entry['itemAsset']
 				if item then

@@ -52,7 +52,7 @@ local function InventoryUpdated(inv, i)
 
 	local item = inv:GetItem(i)
 	if item and KWeapons[item.name] then
-		local equipItem = items.GetDefinition(item.name)
+		local equipItem = items.GetDefinition(item.name, true)
 		if equipItem then
 			local newItem =
 			World.SpawnAsset(equipItem[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
