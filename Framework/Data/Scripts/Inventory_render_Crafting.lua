@@ -226,9 +226,9 @@ end
 local function GetUpgradeRecipe(item)
 	if not item then return end
 
-	local newrecipe, greatness, playerOwnsItem
+	local newrecipe = nil
+	local greatness, playerOwnsItem = GetNFTSaveInfo(item)
 	if item:GetCustomProperty("IsBag") then -- check if player owns the item in the bag
-		greatness, playerOwnsItem = GetNFTSaveInfo(item)
 		if playerOwnsItem and greatness < 20 then
 			newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
 		else -- player does not own the item in the bag or greatness is maxed
@@ -424,10 +424,7 @@ local function ClickedSlot(slot)
 	local greatness = item:GetCustomProperty("Greatness")
 	if greatness then --Greatness is required for upgrading
 		SelectRecipe(item,slot)
-	else
-		ShowScrapBtn(false)
-	end
-	if item:GetCustomProperty("IsBag") then
+	elseif not greatness or item:GetCustomProperty("IsBag") then
 		ShowScrapBtn(false)
 	end
 end
