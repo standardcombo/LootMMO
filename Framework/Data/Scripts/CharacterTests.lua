@@ -90,11 +90,7 @@
 --]]
 
 local TELEPORT_LOCATIONS = script:GetCustomProperty("TeleportLocations"):WaitForObject()
-
-while not _G["Character.Constructor"] do
-	Task.Wait()
-end
-
+Task.Wait()
 --- Add/Remove player names to the table below that can use cheats.
 --- Note: Local preview mode doesn't need names added.
 local AdminList = {
