@@ -7,7 +7,7 @@ Assets {
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"
   ItemAsset {
-    MaximumStackCount: 99
+    MaximumStackCount: 999
     CustomParameters {
     }
   }
