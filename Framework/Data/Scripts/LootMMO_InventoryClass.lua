@@ -46,6 +46,23 @@ local function FindItemFromAssetId(assetid)
 	end
 end
 
+
+function lootmmoInv:GetItemCount(itemId)
+	local items
+	local itemAssetId = FindAssetIdFromId(itemId)
+	if itemAssetId then
+		items = self:GetItems({ itemAssetId = itemAssetId })
+	else
+		items = self:GetItems({ itemAssetId = itemId })
+	end
+	local count = 0
+	for key, value in pairs(items) do
+		count = count + value.count
+	end
+	return count
+end
+
+
 function Slot:isAcceptingType(type,name)
 	type = type or ""
 	if not self then
@@ -79,6 +96,10 @@ function Slot:CanAddItem(item) --Need to add a check if slot already contains ma
 end
 
 local function FindFreeSlot(inventory, item)
+	local split = CoreString.Split(item, ':')
+	local itemdata = FindItemFromAssetId(split)
+	local category = GetCategoryFromItemData(itemdata)
+	if category == "material" then return end
 	for i = 1, inventory.slotCount, 1 do
 		local data = inventory.slotData[i] or {}
 		data.index = i
@@ -133,9 +154,26 @@ end
 
 function lootmmoInv:AddItem(item, properties)
 	if not item then return false end
+	local qtyToAdd = properties.count
+	local split = CoreString.Split(item, ':')
+	local itemdata = FindItemFromAssetId(split)
+	if not itemdata then return false end
 	properties = properties or {}
 	properties.slot = properties.slot or FindFreeMaterialSlot(self, item) or FindFreeSlot(self, item)
-	local split = CoreString.Split(item, ':')
+	local category = GetCategoryFromItemData(itemdata)
+	if properties.slot then
+		if category == "material" then
+			if self:GetItemCount(itemdata.id) < itemdata.maxStackCount then -- If the number of items on hand is less than the max stack size
+				if (qtyToAdd + self:GetItemCount(itemdata.id)) > itemdata.maxStackCount then -- If the number of items to add is greater than the max stack size
+					properties.count = itemdata.maxStackCount - self:GetItemCount(itemdata.id) -- Change the amount to add to the remainder
+				end
+			else
+				return false
+			end
+		end
+	else
+		return false
+	end
 	local canAdd = Slot.CanAddItem(self.slotData[properties.slot] or {}, split) and self._inventory:CanAddItem(split, properties)
 	if canAdd then
 		return self._inventory:AddItem(item, properties)
@@ -180,21 +218,6 @@ end
 function lootmmoInv:GetSlotType(slot)
 	if not slot then return "any" end
 	return self.slotData[slot].type or "any"
-end
-
-function lootmmoInv:GetItemCount(itemId)
-	local items
-	local itemAssetId = FindAssetIdFromId(itemId)
-	if not itemAssetId then
-		items = self:GetItems({ itemAssetId = itemId })
-	else
-		items = self:GetItems({ itemAssetId = itemAssetId })
-	end
-	local count = 0
-	for key, value in pairs(items) do
-		count = count + value.count
-	end
-	return count
 end
 
 function lootmmoInv:CanAddItem(item, properties)
