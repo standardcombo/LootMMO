@@ -41,7 +41,7 @@ end
 
 
 function API.AddMaterial(player, materialId, amount)
-	local definition = _G["Items.Materials"].GetDefinition(materialId)
+	local definition = _G["Items.Materials"].GetDefinition(materialId, true)
 	if definition then
 		AddItem(player, definition, amount)
 	else

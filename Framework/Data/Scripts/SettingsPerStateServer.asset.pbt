@@ -21,6 +21,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:PlayerSettingsAdventure"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:StartingState"
         Int: 30
       }
