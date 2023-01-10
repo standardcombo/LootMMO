@@ -16,7 +16,7 @@ local STARTING_STATE = script:GetCustomProperty("StartingState")
 local FROM_SCENE_TRANSFER_STATE = script:GetCustomProperty("FromSceneTransferState")
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)
-	print("SettingsPerStateServer AppState.Enter", prevState, ">", newState)
+	--print("SettingsPerStateServer AppState.Enter", prevState, ">", newState)
 
 	if not Object.IsValid(player) then return end
 

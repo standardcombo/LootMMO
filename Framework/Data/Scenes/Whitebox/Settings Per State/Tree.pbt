@@ -237,6 +237,90 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 13385176380075091562
+  Name: "Player Settings - Adventure"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7475499298705237626
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Settings {
+    PlayerMovementSettings {
+      WalkSpeed: 640
+      MaxAcceleration: 1800
+      WalkableFloorAngle: 55
+      JumpMaxCount: 1
+      JumpVelocity: 900
+      GroundFriction: 8
+      GravityScale: 1.9
+      MaxSwimSpeed: 420
+      Buoyancy: 1
+      TouchForceFactor: 1
+      BrakingDecelerationFlying: 600
+      MaxFlightSpeed: 600
+      MovementControlMode {
+        Value: "mc:emovementcontrolmode:lookrelative"
+      }
+      LookControlMode {
+        Value: "mc:elookcontrolmode:relative"
+      }
+      FacingMode {
+        Value: "mc:efacingmode:facemovement"
+      }
+      DefaultRotationRate: 540
+      SlideRotationRate: 20
+      LookAtCursorProjectionPlane {
+        Value: "mc:eprojectionplane:xy"
+      }
+      MountedMaxAcceleration: 1800
+      MountedWalkSpeed: 960
+      MountedJumpMaxCount: 1
+      MountedJumpVelocity: 900
+      HeadVisibleToSelf: true
+      IsSlideEnabled: true
+      IsCrouchEnabled: true
+      IsJumpEnabled: true
+      CanMoveForward: true
+      CanMoveBackward: true
+      CanMoveLeft: true
+      CanMoveRight: true
+      AbilityAimMode {
+        Value: "mc:eabilityaimmode:viewrelative"
+      }
+      MountChannelingTime: 1
+      FlipOnMultiJump: true
+      CanMoveUp: true
+      CanMoveDown: true
+      IsMountEnabled: true
+      MaxHitpoints: 100
+      PlayerMasterVolumeMultiplier: 1
+      ComplexCollision: true
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 8620156611437105232
   Name: "Player Settings - Social Space"
   Transform {
@@ -309,7 +393,6 @@ Objects {
       FlipOnMultiJump: true
       CanMoveUp: true
       CanMoveDown: true
-      IsMountEnabled: true
       MaxHitpoints: 100
       PlayerMasterVolumeMultiplier: 1
       ComplexCollision: true
@@ -495,6 +578,12 @@ Objects {
     Overrides {
       Name: "cs:StartingState"
       Int: 40
+    }
+    Overrides {
+      Name: "cs:PlayerSettingsAdventure"
+      ObjectReference {
+        SelfId: 13385176380075091562
+      }
     }
   }
   Collidable_v2 {
