@@ -163,9 +163,10 @@ function lootmmoInv:AddItem(item, properties)
 	local category = GetCategoryFromItemData(itemdata)
 	if properties.slot then
 		if category == "material" then
-			if self:GetItemCount(itemdata.id) < itemdata.maxStackCount then -- If the number of items on hand is less than the max stack size
-				if (qtyToAdd + self:GetItemCount(itemdata.id)) > itemdata.maxStackCount then -- If the number of items to add is greater than the max stack size
-					properties.count = itemdata.maxStackCount - self:GetItemCount(itemdata.id) -- Change the amount to add to the remainder
+			local maxStackCount = itemdata.maxStackCount or 999
+			if self:GetItemCount(itemdata.id) < maxStackCount then -- If the number of items on hand is less than the max stack size
+				if (qtyToAdd + self:GetItemCount(itemdata.id)) > maxStackCount then -- If the number of items to add is greater than the max stack size
+					properties.count = maxStackCount - self:GetItemCount(itemdata.id) -- Change the amount to add to the remainder
 				end
 			else
 				return false
