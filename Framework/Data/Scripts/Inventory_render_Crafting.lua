@@ -142,6 +142,7 @@ local function GetNFTSaveInfo(item)
 	for _, Collection in ipairs(COLLECTIONS) do
 		if playerOwnsItem then break end
 		AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
+			Task.Wait()
 			for _, token in pairs(tokens) do
 				local parsedBag = LOOT_BAG_PARSER.Parse(token)
 				local items = parsedBag.items
