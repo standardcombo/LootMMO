@@ -22,6 +22,8 @@ local collectionsPerPlayer = {}
 local requestQueue = {}
 local activeTask = nil
 
+local botWalletSingleWarning = true
+
 
 function API.IsBusy()
 	return activeTask ~= nil or ASYNC_BLOCKCHAIN.IsBusy()
@@ -39,6 +41,17 @@ end
 
 -- Re-implemented as a full scan and sorting of wallet
 function API.GetTokensForPlayer(player, parameters, callbackFunction)
+	if Environment.IsMultiplayerPreview() and string.sub(player.name, 1, 3) == "Bot" then
+		if botWalletSingleWarning then
+			botWalletSingleWarning = false
+			warn("Call to GetTokensForPlayer() in multiplayer preview returns an empty table, as bots don't have wallets.")
+		end
+		if callbackFunction then
+			callbackFunction({}) -- Empty table result
+		end
+		return
+	end
+
 	local contractAddress = parameters.contractAddress
 	local forceRefreshCache = parameters.forceRefreshCache
 	
