@@ -1,3 +1,8 @@
+--[[
+	Spawn Utils
+	v1.1
+	by: standardcombo
+]]
 
 local API = {}
 
@@ -37,6 +42,10 @@ end
 
 function API.SpawnPlayerAt(player, point)
 	local key
+	if point == nil or point == "" then
+		API.SpawnInPlace(player)
+		return
+	end
 	if type(point) == "string" then
 		key = point
 		point = GetSpawnPointsWithKey(point)
@@ -56,6 +65,13 @@ function API.SpawnPlayerAt(player, point)
 		rotation = point:GetWorldRotation()
 	})
 	point.serverUserData.isTaken = true
+end
+
+
+function API.SpawnInPlace(player)
+	player:Spawn({
+		position = player:GetWorldPosition()
+	})
 end
 
 

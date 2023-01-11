@@ -12,18 +12,18 @@ Assets {
       }
       Overrides {
         Name: "cs:SafeRespawnDelay"
-        Float: 2
+        Float: 2.5
       }
       Overrides {
-        Name: "cs:SafeSpawnKey"
-        String: "Social"
+        Name: "cs:SafeRespawnKey"
+        String: ""
       }
       Overrides {
         Name: "cs:CombatRespawnDelay"
         Float: 5
       }
       Overrides {
-        Name: "cs:CombatSpawnKey"
+        Name: "cs:CombatRespawnKey"
         String: "Social"
       }
     }

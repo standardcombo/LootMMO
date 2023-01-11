@@ -1,6 +1,6 @@
 --[[
 	LootMMO Respawn
-	v1.1.0 - 2022/11/18
+	v1.2.0 - 2023/01/11
 	by: standardcombo, Luapi
 	
 	Checks if a dying player is in a safe zone or not.
@@ -11,16 +11,16 @@
 local SPAWN_UTILS = require( script:GetCustomProperty("SpawnUtils") )
 
 local SAFE_RESPAWN_DELAY = script:GetCustomProperty("SafeRespawnDelay")
-local SAFE_SPAWN_KEY = script:GetCustomProperty("SafeSpawnKey")
+local SAFE_RESPAWN_KEY = script:GetCustomProperty("SafeRespawnKey")
 local COMBAT_RESPAWN_DELAY = script:GetCustomProperty("CombatRespawnDelay")
-local COMBAT_SPAWN_KEY = script:GetCustomProperty("CombatSpawnKey")
+local COMBAT_RESPAWN_KEY = script:GetCustomProperty("CombatRespawnKey")
 
 
 function SafeZoneRespawn(player)
 	Task.Wait(SAFE_RESPAWN_DELAY)
 	
 	if Object.IsValid(player) then
-		SPAWN_UTILS.SpawnPlayerAt(player, SAFE_SPAWN_KEY)
+		SPAWN_UTILS.SpawnPlayerAt(player, SAFE_RESPAWN_KEY)
 	end
 end
 
@@ -36,7 +36,7 @@ function CombatRespawn(player)
 		if not Object.IsValid(player) then return end
 		
 		-- Respawn
-		SPAWN_UTILS.SpawnPlayerAt(player, COMBAT_SPAWN_KEY)
+		SPAWN_UTILS.SpawnPlayerAt(player, COMBAT_RESPAWN_KEY)
 		
 		-- Fade in
 		Task.Wait(0.5)
