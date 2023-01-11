@@ -78,6 +78,10 @@ local function SetState(newState)
 	if currentState == newState then return end
 	currentState = newState
 	--print("SetState to " .. newState)
+	if newState == states.closed then
+		HOVERDATA.hovering = false
+		HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	end
 	if currentState ~= states.crafting then
 		CLOSE_BUTTON.isInteractable = false
 	else

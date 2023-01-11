@@ -5,6 +5,7 @@ local ITEMS = _G.Items
 local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
 local AsyncBC         = require(script:GetCustomProperty("AsyncBlockchain_FullWalletSearch"))
 
+local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
 local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
@@ -482,7 +483,13 @@ local function ReceivedOpen(id)
 	end
 end
 
+function CloseClicked(button)
+	HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	HOVERDATA.hovering = false
+end
+
 Events.Connect('Ability_OpenPanel', ReceivedOpen)
 CharacterEquipped(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER), LOCAL_PLAYER)
 EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)
+CLOSE_BUTTON.clickedEvent:Connect(CloseClicked)

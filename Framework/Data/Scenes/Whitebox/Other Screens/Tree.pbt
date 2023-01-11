@@ -37,6 +37,29 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 10633024697977154914
+      value {
+        Overrides {
+          Name: "cs:dragPanel"
+          ObjectReference {
+            SelfId: 7766030862912006558
+          }
+        }
+        Overrides {
+          Name: "cs:HoverPanel"
+          ObjectReference {
+            SelfId: 13209850701844341350
+          }
+        }
+        Overrides {
+          Name: "cs:MaterialsBar"
+          ObjectReference {
+            SelfId: 12567454318801872352
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 15017071524491817913
     }

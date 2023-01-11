@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8032499979245792170
+        ParentId: 13804872117946282211
         ChildIds: 13218240688053510446
         ChildIds: 9268998823900043103
         ChildIds: 10038790954645104102
@@ -296,13 +296,13 @@ Assets {
           Overrides {
             Name: "cs:HoverPanel"
             ObjectReference {
-              SelfId: 13209850701844341350
+              SelfId: 1672793592632319691
             }
           }
           Overrides {
             Name: "cs:dragPanel"
             ObjectReference {
-              SelfId: 7766030862912006558
+              SelfId: 2527195991306419762
             }
           }
           Overrides {
@@ -320,7 +320,13 @@ Assets {
           Overrides {
             Name: "cs:MaterialsBar"
             ObjectReference {
-              SelfId: 12567454318801872352
+              SelfId: 14837606131599131035
+            }
+          }
+          Overrides {
+            Name: "cs:CloseButton"
+            ObjectReference {
+              SubObjectId: 13932270984313888758
             }
           }
         }
