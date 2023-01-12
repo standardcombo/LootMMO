@@ -527,6 +527,16 @@ function UpdateBadge(forceCountAll)
 end
 
 
+Events.Connect("Quest.ResetForPlayer", function()
+	selectedRow = nil
+	selectedObjective = nil
+	nextSelectedObjective = nil
+	nextSelectedRow = nil
+	CONTENT_SCRIPT.context.Clear()
+	SetState(STATE_COLLAPSED)
+end)
+
+
 function IsInActiveState()
 	if currentState == STATE_HIDDEN then
 		return false

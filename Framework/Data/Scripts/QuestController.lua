@@ -595,7 +595,6 @@ function OnCharacterEquipped(character, player)
 end
 function OnCharacterUnequipped(character, player)
 	--print("QuestController::CharacterUnequipped", character.id)
-	print("TODO: Need to clear selected objective", script)
 	Events.BroadcastToPlayer(player, "Quest.ResetForPlayer")
 end
 
