@@ -48,7 +48,7 @@ function HitObject(other)
                     duration = mods ["StunDuration"]
                 })
             end
-        end,0.1)
+        end,0.2)
     end
 end
 
