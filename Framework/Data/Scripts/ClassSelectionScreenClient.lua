@@ -233,6 +233,7 @@ local function Reset()
 	background.opacity = 0
 	chooseYourClassPanel.opacity = 0
 	ROOT.opacity = 0
+	ROOT.visibility = Visibility.FORCE_OFF
 end
 
 local function SetTitle(value)
