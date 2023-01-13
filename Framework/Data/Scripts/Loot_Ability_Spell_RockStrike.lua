@@ -7,7 +7,6 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local API_SE = _G["StatusEffects.API"]
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 local ProjectileVelocity = Vector3.ZERO
-local CurrentProjectile = nil
 local mods = {}
 local DEFAULT_ProjectileSpeed = 4000
 
@@ -26,10 +25,6 @@ function HitObject(other)
         if otherTeam and Teams.AreTeamsFriendly(otherTeam, owner.team) then
             return
         end
-        API_SE.ApplyStatusEffect(other, "Stun", {
-            source = ABILITY.owner,
-            duration = mods ["StunDuration"]
-	    })
         local crit = mods ["Damage"][2]
         local dmg = Damage.New()
         dmg.amount = mods ["Damage"][1]
@@ -46,18 +41,17 @@ function HitObject(other)
             tags = {id = 'Warrior_Q', Critical = crit}
         }
         COMBAT().ApplyDamage(attackData)
-
-        if not CurrentProjectile or not Object.IsValid(CurrentProjectile) then
-            return
-        end
-
-        local directionVector = CurrentProjectile:GetWorldRotation() * Vector3.FORWARD
-        directionVector = -directionVector
-        directionVector.z = 1
-        local impulseVector = directionVector * 1000
-        other:AddImpulse(impulseVector)
+        Task.Spawn(function()
+            if not COMBAT().IsDead(other) and Object.IsValid(other) and Object.IsValid(owner) then
+                API_SE.ApplyStatusEffect(other, "Stun", {
+                    source = ABILITY.owner,
+                    duration = mods ["StunDuration"]
+                })
+            end
+        end,0.2)
     end
 end
+
 function Cast()
     if Environment.IsServer() then
         if not ABILITY.owner.isGrounded then
