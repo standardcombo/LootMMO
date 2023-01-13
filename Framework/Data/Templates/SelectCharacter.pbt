@@ -706,7 +706,7 @@ Assets {
           Overrides {
             Name: "cs:HoverSound"
             AssetReference {
-              Id: 5485819788848077082
+              Id: 841534158063459245
             }
           }
         }
