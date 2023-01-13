@@ -27,21 +27,33 @@ function NewCharacter(data)
 	lastCharacter:SetOwner(LOCALPLAYER)
 end
 
+local count = 0
+
 function EquipedCharacterChanged(player, key)
 	if key ~= networkKey then
-		return
-	end
-	local characterData = player:GetPrivateNetworkedData(key)
-	if not characterData then
-		RemoveCharacter()
-		return
-	end
+            return
+        end
+    count = count + 1
+    local localCount = count
 
-	if not lastCharacter or characterData.id ~= lastCharacter.id then
-		NewCharacter(characterData)
-		return
-	end
-	UpdateCharacter(characterData)
+    Task.Spawn(function()
+        if localCount ~= count then
+            return
+        end
+
+        
+        local characterData = player:GetPrivateNetworkedData(key)
+        if not characterData then
+            RemoveCharacter()
+            return
+        end
+
+        if not lastCharacter or characterData.id ~= lastCharacter.id then
+            NewCharacter(characterData)
+            return
+        end
+        UpdateCharacter(characterData)
+    end, .25)
 end
 
 EquipedCharacterChanged(LOCALPLAYER, networkKey)
