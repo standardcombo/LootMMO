@@ -197,7 +197,6 @@ Assets {
             }
           }
           Text {
-            Label: "Temporty Art"
             Color {
               R: 1
               G: 1
