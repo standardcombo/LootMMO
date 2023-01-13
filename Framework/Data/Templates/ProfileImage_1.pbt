@@ -424,7 +424,7 @@ Assets {
       }
       Objects {
         Id: 8286540904785728888
-        Name: "UI Image"
+        Name: "Level Up Image"
         Transform {
           Location {
           }
@@ -438,7 +438,6 @@ Assets {
         }
         ParentId: 12725893298394790007
         ChildIds: 9681986632303093853
-        ChildIds: 12597899021690356825
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -564,51 +563,6 @@ Assets {
               }
             }
           }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 12597899021690356825
-        Name: "LevelUpIconDisplay"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 8286540904785728888
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:icon"
-            ObjectReference {
-              SubObjectId: 8286540904785728888
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 12826397192546141796
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2859,9 +2813,15 @@ Assets {
         ChildIds: 550539640962032595
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Notifier"
+            Name: "cs:BadgeRoot"
             ObjectReference {
               SubObjectId: 16100682337518782701
+            }
+          }
+          Overrides {
+            Name: "cs:BadgeText"
+            ObjectReference {
+              SubObjectId: 10987501359313334672
             }
           }
           Overrides {
@@ -2874,12 +2834,6 @@ Assets {
             Name: "cs:Sound"
             ObjectReference {
               SubObjectId: 550539640962032595
-            }
-          }
-          Overrides {
-            Name: "cs:NotificationCount"
-            ObjectReference {
-              SubObjectId: 10987501359313334672
             }
           }
         }

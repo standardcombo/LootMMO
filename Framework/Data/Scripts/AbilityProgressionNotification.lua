@@ -4,8 +4,8 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 local progressionChangedEvent
 
 
-local function SendNotification()
-	Events.Broadcast("PlayerNotification")
+local function SendNotification(amount)
+	Events.Broadcast("PlayerNotification", amount)
 end
 
 local function EquipProgressionCheck(character, progression)
@@ -13,34 +13,45 @@ local function EquipProgressionCheck(character, progression)
 	local points = character:GetComponent("Points")
 	local classname = class:GetClass()
 
-	if classname == "None" and progression:GetProgressionKey("ClassSelect") then
+	local amount = 0
+	
+	--[[if classname == "None" and progression:GetProgressionKey("ClassSelect") then
 		SendNotification()
 	end
-
 	if CHARACTERCLASSES.GetMainClass(classname) and classname ~= "None" then
 		SendNotification()
-	end
-
+	end]]
+	
+	-- Ability unlock points
 	for i = 1, 5 do
-		local slotCheck   = progression:GetProgressionKey("AbilitySlot" .. tostring(i))
-		local acceptCheck = progression:GetProgressionKey("AcceptSlot" .. tostring(i))
+		local slotCheck   = progression:GetProgressionKey("AbilitySlot" .. i)
+		local acceptCheck = progression:GetProgressionKey("AcceptSlot" .. i)
 		if slotCheck and not acceptCheck then
-			SendNotification()
+			amount = amount + 1
 		end
 	end
-
-
-	if points.unspentPoints > 0 then
-		SendNotification()
+	-- Potion unlock points
+	for i = 1, 3 do
+		local slotCheck   = progression:GetProgressionKey("PotionSlot" .. i)
+		local acceptCheck = progression:GetProgressionKey("AcceptPotion" .. i)
+		if slotCheck and not acceptCheck then
+			amount = amount + 1
+		end
 	end
-
+	-- Ability upgrade points
+	amount = amount + points.unspentPoints
+	
+	-- Send to UI
+	if amount > 0 then
+		SendNotification(amount)
+	end
 end
 
 local commonkeyTable = {
 	["AbilitySlot"] = true,
-	["ClassSelect"] = true,
+	--["ClassSelect"] = true,
 	["PotionSlot"] = true,
-	["SubClassSelect"] = true,
+	--["SubClassSelect"] = true,
 	["LevelUp"] = true,
 }
 
