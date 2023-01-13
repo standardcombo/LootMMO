@@ -65,7 +65,7 @@ local API = {}
 _G.LootDropFactory = API
 _G["standardcombo.NPCKit.LootDropFactory"] = API
 
-API.VERSION = 2.0
+API.VERSION = 3.1
 
 local LDF_DATA = require(script:GetCustomProperty("LDFactoryData"))
 local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
