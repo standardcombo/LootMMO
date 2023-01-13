@@ -185,7 +185,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Inventory"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:appstate"

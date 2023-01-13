@@ -194,7 +194,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Ability"
-            Bool: true
+            Bool: false
           }
         }
         Collidable_v2 {
