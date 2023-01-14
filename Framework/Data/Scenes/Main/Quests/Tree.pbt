@@ -1609,7 +1609,7 @@ Objects {
     }
   }
   ParentId: 12474563778109171242
-  ChildIds: 7266663514345710539
+  ChildIds: 11781243483235228230
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1656,6 +1656,68 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 11781243483235228230
+  Name: "UI Panel"
+  Transform {
+    Location {
+      X: -6242.91064
+      Y: -1304.63623
+      Z: 34939.6484
+    }
+    Rotation {
+      Yaw: 152.547302
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6292852409126697535
+  ChildIds: 7266663514345710539
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 100
+    Height: 1500
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    Panel {
+      Opacity: 1
+      OpacityMaskBrush {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 7266663514345710539
   Name: "Quest Objective Row"
   Transform {
@@ -1665,7 +1727,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6292852409126697535
+  ParentId: 11781243483235228230
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1683,15 +1745,23 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -10.3529186
-            Y: 11.3093281
-            Z: 56.25
+            X: -4924.04688
+            Y: -4041.06885
+            Z: -34883.4
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 0.230157
+            Yaw: -152.317139
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
       }
