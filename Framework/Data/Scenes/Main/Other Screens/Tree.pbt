@@ -134,6 +134,16 @@ Objects {
           Name: "Name"
           String: "Character Select Screen"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {

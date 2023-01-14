@@ -42,7 +42,7 @@ function HitObject(other)
         }
         COMBAT().ApplyDamage(attackData)
         Task.Spawn(function()
-            if not COMBAT().IsDead(other) and Object.IsValid(other) and Object.IsValid(owner) then
+            if Object.IsValid(other) and Object.IsValid(owner) and not COMBAT().IsDead(other) then
                 API_SE.ApplyStatusEffect(other, "Stun", {
                     source = ABILITY.owner,
                     duration = mods ["StunDuration"]
