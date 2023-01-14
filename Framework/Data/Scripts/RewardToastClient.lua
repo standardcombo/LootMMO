@@ -1,6 +1,6 @@
 --[[
 	Reward Toast - Client
-	v1.0
+	v1.1
 	by: standardcombo
 	
 	Pop animated UI cards showing rewards or other icon + text information.
