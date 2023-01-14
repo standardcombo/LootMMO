@@ -22,7 +22,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ObjectiveIndex"
-      Int: 3
+      Int: 2
     }
     Overrides {
       Name: "cs:EventID"
@@ -77,7 +77,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ObjectiveIndex"
-      Int: 3
+      Int: 2
     }
     Overrides {
       Name: "cs:EventID"
@@ -132,7 +132,7 @@ Objects {
     }
     Overrides {
       Name: "cs:ObjectiveIndex"
-      Int: 3
+      Int: 2
     }
     Overrides {
       Name: "cs:EventID"
@@ -141,61 +141,6 @@ Objects {
     Overrides {
       Name: "cs:ObjectID"
       String: "Roll"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9246345034586664616
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 2043710861551931062
-  Name: "ObjectiveEventListener"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14736710843410475497
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:QuestID"
-      String: "Lv2"
-    }
-    Overrides {
-      Name: "cs:ObjectiveIndex"
-      Int: 2
-    }
-    Overrides {
-      Name: "cs:EventID"
-      String: "ClassSelect.Chosen"
-    }
-    Overrides {
-      Name: "cs:ObjectID"
-      String: "BaseClass"
     }
   }
   Collidable_v2 {
@@ -246,11 +191,11 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "ClassSelect.Open"
+      String: "AppState.Exit"
     }
     Overrides {
       Name: "cs:ObjectID"
-      String: "BaseClass"
+      String: "170"
     }
   }
   Collidable_v2 {
