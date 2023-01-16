@@ -99,7 +99,6 @@ local function GetNFTSaveInfo(item)
 		for _, Collection in ipairs(COLLECTIONS) do
 			if playerOwnsItem then break end
 			AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
-				Task.Wait()
 				for _, token in pairs(tokens) do
 					local parsedBag = LOOT_BAG_PARSER.Parse(token)
 					local items = parsedBag.items
@@ -375,13 +374,14 @@ for index, value in ipairs(SLOTS) do
 end
 
 local function InventoryChanged(inv, slot)
-	UpdateValues()
 	local item = inv:GetItem(slot)
+
 	local childIcon = slots[slot].icon
 	local childCount = slots[slot].count
 	local childbg = slots[slot].bg
 	local isBag = slots[slot].isBag
 	local levelFrame = slots[slot].levelFrame
+	
 	if item ~= nil then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
@@ -415,6 +415,7 @@ local function InventoryChanged(inv, slot)
 		else
 			levelFrame.visibility = Visibility.FORCE_OFF
 		end
+		UpdateValues()
 	else
 		if isBag then
 			isBag.visibility = Visibility.FORCE_OFF
