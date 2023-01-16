@@ -26,6 +26,10 @@ component.id = "Inventory"
 component.inventorySize = 45 + 8 + 14 -- 45 items, 8 equipment, 14 resources
 
 local function setupInv(self, inventory)
+	if self._inventory then
+		return
+	end
+
 	self._inventory = LOOTMMOINV.NewInventory(inventory)
 	self.invId = self._inventory:GetId()
 

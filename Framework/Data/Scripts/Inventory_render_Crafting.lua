@@ -776,7 +776,11 @@ end
 local function CharacterUnequip(character, player)
 	if player == LOCAL_PLAYER then
 		currentInventory = nil
-		events:Disconnect()
+
+		if events then
+			events:Disconnect()
+			events = nil
+		end
 	end
 end
 
