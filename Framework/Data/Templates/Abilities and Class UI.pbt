@@ -10509,7 +10509,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 841534158063459245
+              Id: 508496432722697240
             }
             Color {
               R: 1
