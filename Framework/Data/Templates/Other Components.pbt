@@ -44,6 +44,7 @@ Assets {
         ChildIds: 17699998976495263131
         ChildIds: 5825506913699031339
         ChildIds: 6971558339717546766
+        ChildIds: 9689082977280130102
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -30350,6 +30351,32 @@ Assets {
           }
           TemplateAsset {
             Id: 13225073513533744256
+          }
+        }
+      }
+      Objects {
+        Id: 9689082977280130102
+        Name: "Craft Equipment"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4594542242463950141
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 1548523477508723765
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Craft Equipment"
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 13747379456843762537
           }
         }
       }
