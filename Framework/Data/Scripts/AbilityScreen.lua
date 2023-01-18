@@ -272,17 +272,27 @@ function UpdateAbilityDetails(_api, entryId)
 				break
 			end
 		end
+		-- When equipments spawn for the first time, there's a delay before clients have modifiers
 		local abilityMods
-		for e,key in pairs(equipment) do
-			if key == inputKey then
-				abilityMods = e.clientUserData.modifiers
-				break
+		local setModifiersTask = Task.Spawn(function()
+			for e,key in pairs(equipment) do
+				if key == inputKey then
+					abilityMods = e.clientUserData.modifiers
+					break
+				end
 			end
-		end
-		-- Update the contents based on the modifiers and the player's current stats
-		local stats = _G['Loot.Stats'].GetStats(LOCAL_PLAYER)
-		local showUpgradeDelta = (upgradePointsAvailable > 0)
-		MODIFIERS_PANEL.context.SetAbilityData(abilityMods, stats, showUpgradeDelta)
+			if not abilityMods then
+				return
+			end
+			-- Update the contents based on the modifiers and the player's current stats
+			local stats = _G['Loot.Stats'].GetStats(LOCAL_PLAYER)
+			local showUpgradeDelta = (upgradePointsAvailable > 0)
+			MODIFIERS_PANEL.context.SetAbilityData(abilityMods, stats, showUpgradeDelta)
+			-- Success. Stop looping
+			Task.GetCurrent():Cancel()
+		end)
+		setModifiersTask.repeatCount = 6
+		setModifiersTask.repeatInterval = 0.34
 	else
 		MODIFIERS_PANEL.context.Clear()
 	end
