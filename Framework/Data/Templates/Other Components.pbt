@@ -26630,8 +26630,6 @@ Assets {
         Control {
           Width: 343
           Height: 200
-          UIX: -2.5
-          UIY: -1.5
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -26641,11 +26639,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 14060330023043759337
+              Id: 841534158063459245
             }
             Color {
-              R: 0.651405811
-              G: 0.351532698
+              R: 0.026
+              G: 0.026
+              B: 0.026
               A: 1
             }
             TeamSettings {
@@ -26715,7 +26714,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 2293664526516803821
+              Id: 17239930915626961643
             }
             Color {
               R: 1
@@ -27200,7 +27199,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Control {
-          Width: 113
+          Width: 132
           Height: 27
           UIY: 10.7667046
           RenderTransformPivot {
@@ -30464,12 +30463,12 @@ Assets {
       }
     }
     Assets {
-      Id: 2293664526516803821
-      Name: "Military Ability Melee Attack"
+      Id: 17239930915626961643
+      Name: "Military Ability Punch"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Military_Ability_Blue_006"
+        AssetId: "Icon_Military_Ability_Yellow_011"
       }
     }
     PrimaryAssetId {

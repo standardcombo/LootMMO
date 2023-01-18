@@ -28,11 +28,10 @@ local function InventoryUpdated(inv, i)
 			for _, Item in ipairs(Weapons) do
 				local templateSplit = CoreString.Split(Item["equipmentHollow"] or "", ":")
 				local templateSplit2 = CoreString.Split(Item["equipment"] or "", ":")
-				if equipment.sourceTemplateId == templateSplit then
-					column = "equipmentHollow"
-				end
-
 				if equipment.sourceTemplateId == templateSplit2 then
+					column = "equipmentHollow"
+
+				elseif equipment.sourceTemplateId == templateSplit then
 					column = "equipment"
 				end
 

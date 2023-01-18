@@ -66,7 +66,7 @@ function OnCooldown()
 end
 
 function SetAbility()
-    CooldownEvent = currentAbility.cooldownEvent:Connect(OnCooldown)
+    --CooldownEvent = currentAbility.cooldownEvent:Connect(OnCooldown)
     executeDuration = currentAbility.executePhaseSettings.duration
     recoveryDuration = currentAbility.recoveryPhaseSettings.duration
     cooldownDuration = currentAbility.cooldownPhaseSettings.duration
@@ -74,6 +74,33 @@ function SetAbility()
 
     -- Update the level text for the ability
     NAME_TEXT.text = currentAbility.name
+end
+
+function UpdateWeaponIcon()
+    if not Object.IsValid(currentAbility) then return end
+    local equipment = currentAbility:FindAncestorByType("Equipment")
+    if not Object.IsValid(equipment) then return end
+    -- Find the correct data for this weapon
+    local weaponDefs = _G.Items.GetDefinitionsForCategory("weapon")
+    local selectedEntry = nil
+    for _, weaponEntry in ipairs(weaponDefs) do
+        local templateSplit = CoreString.Split(weaponEntry["equipment"] or "", ":")
+        if equipment.sourceTemplateId == templateSplit then
+        	selectedEntry = weaponEntry
+            break
+        end
+        templateSplit = CoreString.Split(weaponEntry["equipmentHollow"] or "", ":")
+        if equipment.sourceTemplateId == templateSplit then
+            selectedEntry = weaponEntry
+            break
+        end
+    end
+    -- Set the icon
+    if selectedEntry then
+        SetIcon(selectedEntry.icon)
+        ICON.isFlippedHorizontal = selectedEntry.flipIconH
+        ICON.isFlippedVertical = selectedEntry.flipIconV
+    end
 end
 
 function WaitForAbility()
@@ -92,6 +119,7 @@ function WaitForAbility()
         end
         waitForAbilityTask = nil
         SetAbility()
+        UpdateWeaponIcon()
     end)
 end
 
@@ -103,11 +131,12 @@ function Tick()
     if waitForAbilityTask then return end
     if not Object.IsValid(currentAbility) then
         currentAbility = nil
+    	SetIcon(nil)
         if CooldownEvent then
             CooldownEvent:Disconnect()
             CooldownEvent = nil
         end
-        PANEL.visibility = Visibility.FORCE_OFF
+        --PANEL.visibility = Visibility.FORCE_OFF
         WaitForAbility()
         return
     end
