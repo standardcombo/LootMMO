@@ -6476,6 +6476,10 @@ Assets {
                 Name: "Opacity"
                 Float: 0.809
               }
+              Overrides {
+                Name: "UIRotationAngle"
+                Float: 90
+              }
             }
           }
           TemplateAsset {
