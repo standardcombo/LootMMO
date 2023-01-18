@@ -70,12 +70,10 @@ Assets {
           IsEnabled: true
           KeyBinding: "ability_primary"
           CastPhaseSettings {
-            Duration: 0.3
+            Duration: 0.1
             CanMove: true
             CanJump: true
             CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
@@ -83,19 +81,13 @@ Assets {
           ExecutePhaseSettings {
             Duration: 0.25
             CanMove: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
           }
           RecoveryPhaseSettings {
-            Duration: 0.02
+            Duration: 0.15
             CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
@@ -105,8 +97,6 @@ Assets {
             CanMove: true
             CanJump: true
             CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
           }
           Animation: "unarmed_punch_right"
           CanBePrevented: true
@@ -148,25 +138,20 @@ Assets {
             CanMove: true
             CanJump: true
             CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
           }
           ExecutePhaseSettings {
-            Duration: 0.4
+            Duration: 0.25
             CanMove: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
           }
           RecoveryPhaseSettings {
-            Duration: 0.1
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
+            Duration: 0.15
+            CanMove: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
@@ -176,8 +161,6 @@ Assets {
             CanMove: true
             CanJump: true
             CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
           }
           Animation: "unarmed_punch_left"
           CanBePrevented: true
