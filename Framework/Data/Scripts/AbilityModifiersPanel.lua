@@ -64,7 +64,11 @@ local function UpdateRow(row, abilityModifier, stats, showUpgradeDelta)
 		end)
 	end
 	
-	rowElements.name.text = abilityModifier.name ..":"
+	local modName = abilityModifier.name
+	if modName == nil or modName == "" then
+		modName = abilityModifier.id
+	end
+	rowElements.name.text = modName ..":"
 	rowElements.value.text = modStr
 	rowElements.formula.text = "(".. abilityModifier.calString ..")"
 end
