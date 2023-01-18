@@ -8,8 +8,8 @@ API.MAX_AGI = 172
 API.MAX_VIT = 172
 API.MAX_SP = 156
 
-function API.GetModifiable(name)
-    return LOOT_STATS_MODIFIABLES[name]
+function API.GetModifiable(modId)
+    return LOOT_STATS_MODIFIABLES[modId]
 end
 
 function API.SetupNewModifier(modId)

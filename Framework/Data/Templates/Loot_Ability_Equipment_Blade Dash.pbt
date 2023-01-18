@@ -203,18 +203,6 @@ Assets {
         ParentId: 9928206527512488254
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Modifiers"
-            AssetReference {
-              Id: 10388495764372049008
-            }
-          }
-          Overrides {
-            Name: "cs:Stats_Connector"
-            AssetReference {
-              Id: 6750215763654185081
-            }
-          }
-          Overrides {
             Name: "cs:RootCalculation_Api"
             AssetReference {
               Id: 12522028985001556884
@@ -225,14 +213,6 @@ Assets {
             ObjectReference {
               SubObjectId: 4078315541762211252
             }
-          }
-          Overrides {
-            Name: "cs:Modifiers:isrep"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:Modifiers:ml"
-            Bool: false
           }
         }
         Collidable_v2 {
@@ -363,18 +343,6 @@ Assets {
         ParentId: 9878724366403596652
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Modifiers"
-            AssetReference {
-              Id: 10388495764372049008
-            }
-          }
-          Overrides {
-            Name: "cs:Stats_Connector"
-            AssetReference {
-              Id: 6750215763654185081
-            }
-          }
-          Overrides {
             Name: "cs:RootCalculation_Api"
             AssetReference {
               Id: 12522028985001556884
@@ -385,14 +353,6 @@ Assets {
             ObjectReference {
               SubObjectId: 4078315541762211252
             }
-          }
-          Overrides {
-            Name: "cs:Modifiers:isrep"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:Modifiers:ml"
-            Bool: false
           }
         }
         Collidable_v2 {
