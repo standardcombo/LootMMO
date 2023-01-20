@@ -350,15 +350,13 @@ function API.Parse(value)
 	if type(value) == "string" then
 		return ParseBag(value)
 	
-	elseif value:IsA("BlockchainToken") then
-		local parsed_token = cache[value.tokenId] or ParseFromToken(value)
-
-		if(not cache[value.tokenId]) then
-			cache[value.tokenId] = parsed_token
-		end
-
-		return parsed_token
-	end
+    elseif value:IsA("BlockchainToken") then
+        local tokenId = value.tokenId
+        if not cache[tokenId] then
+            cache[tokenId] = ParseFromToken(value)
+        end
+        return cache[tokenId]
+    end
 	error("LootBagParser failed to parse from value " .. tostring(value))
 end
 
