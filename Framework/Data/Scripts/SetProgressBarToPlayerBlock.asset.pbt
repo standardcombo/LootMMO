@@ -5,16 +5,7 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:UIProgressBar"
-        ObjectReference {
-        }
-      }
-      Overrides {
-        Name: "cs:UIProgressBar:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:UIProgressBar:ml"
+        Name: "cs:isInstant"
         Bool: false
       }
     }

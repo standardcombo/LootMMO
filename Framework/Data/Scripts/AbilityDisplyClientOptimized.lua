@@ -144,6 +144,14 @@ function SetEquipment(equipment)
 	end
 	Task.Wait() -- Wait for the ability to load
 	local ability = equipment:FindChildByType('Ability')
+	local reasonableWaitCount = 20
+	local currentWaitCount = 0
+	while not ability do
+		Task.Wait()
+		ability = equipment:FindChildByType('Ability')
+		currentWaitCount = currentWaitCount + 1
+		if currentWaitCount > reasonableWaitCount then break end
+	end
 	if not ability then error(equipment.name .. " is missing its ability.") return end
 	currentAbilities[ability] = ability
 	equipment.clientUserData.ability = ability

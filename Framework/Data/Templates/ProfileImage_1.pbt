@@ -121,7 +121,7 @@ Assets {
         ParentId: 12747003789844575660
         ChildIds: 12725893298394790007
         ChildIds: 17550528661947375800
-        ChildIds: 9083501205525247991
+        ChildIds: 16769318345177000626
         ChildIds: 16100682337518782701
         ChildIds: 13075968217596916827
         ChildIds: 17513817936175983326
@@ -1498,12 +1498,16 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9083501205525247991
-        Name: "UI Image"
+        Id: 16769318345177000626
+        Name: "ProgressBars Panel"
         Transform {
           Location {
+            X: -6218.13428
+            Y: -5163.7417
+            Z: 4001.58203
           }
           Rotation {
+            Yaw: -88.0004578
           }
           Scale {
             X: 1
@@ -1512,6 +1516,8 @@ Assets {
           }
         }
         ParentId: 9187517884730030482
+        ChildIds: 8260343088974319474
+        ChildIds: 256710435805808675
         ChildIds: 14784392229582859965
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1526,9 +1532,64 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 53
-          Height: 18
-          UIY: -3.39878845
+          Width: 150
+          Height: 20
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8260343088974319474
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 10
+          Height: 4
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1536,9 +1597,10 @@ Assets {
           }
           AddSizeToParentIfUsingParentSize: true
           UseParentWidth: true
+          UseParentHeight: true
           Image {
             Brush {
-              Id: 9043465979534313612
+              Id: 14060330023043759337
             }
             Color {
               R: 0.651405811
@@ -1557,12 +1619,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:topcenter"
+                Value: "mc:euianchor:middlecenter"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomcenter"
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }
@@ -1570,7 +1632,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14784392229582859965
+        Id: 256710435805808675
         Name: "UI Progress Bar"
         Transform {
           Location {
@@ -1583,9 +1645,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9083501205525247991
-        ChildIds: 2466812921643911333
-        ChildIds: 6087674014057380674
+        ParentId: 16769318345177000626
+        ChildIds: 15669161974654789696
+        ChildIds: 2565192565675259539
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1599,8 +1661,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: -1
-          Height: -1
+          Height: 16
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1608,16 +1669,17 @@ Assets {
           }
           AddSizeToParentIfUsingParentSize: true
           UseParentWidth: true
-          UseParentHeight: true
           StatBar {
             Color {
-              R: 0.690000057
+              R: 1
+              G: 1
+              B: 1
               A: 1
             }
             BackgroundColor {
               A: 1
             }
-            Percent: 1
+            Percent: 0.664060891
             FillBrush {
               Id: 841534158063459245
             }
@@ -1637,12 +1699,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:middlecenter"
+                Value: "mc:euianchor:topcenter"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:middlecenter"
+                Value: "mc:euianchor:topcenter"
               }
             }
           }
@@ -1650,8 +1712,251 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2466812921643911333
-        Name: "SerProgressBarToPlayerHealth"
+        Id: 15669161974654789696
+        Name: "SetProgressBarToPlayerHealth"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 256710435805808675
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:isInstant"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1847797240398441782
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2565192565675259539
+        Name: "UI Progress Bar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 256710435805808675
+        ChildIds: 1086505144155425592
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Height: 4
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            BackgroundColor {
+              A: 1
+            }
+            Percent: 0.841503322
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1086505144155425592
+        Name: "SetProgressBarToPlayerBlock"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2565192565675259539
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:isInstant"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 608982181455099417
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14784392229582859965
+        Name: "UI Progress Bar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        ChildIds: 11038162178407021818
+        ChildIds: 6087674014057380674
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 1
+          Height: 16
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 0.690000057
+              A: 1
+            }
+            BackgroundColor {
+            }
+            Percent: 0.569616079
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11038162178407021818
+        Name: "SetProgressBarToPlayerHealth"
         Transform {
           Location {
           }
@@ -1664,6 +1969,12 @@ Assets {
           }
         }
         ParentId: 14784392229582859965
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:isInstant"
+            Bool: true
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1701,7 +2012,7 @@ Assets {
           }
         }
         ParentId: 14784392229582859965
-        ChildIds: 14164461812999438253
+        ChildIds: 2735508728565056896
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1715,8 +2026,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Height: 3
-          UIX: -0.5
+          Width: 1
+          Height: 4
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -1731,9 +2042,8 @@ Assets {
               A: 1
             }
             BackgroundColor {
-              A: 1
             }
-            Percent: 1
+            Percent: 0.689818561
             FillBrush {
               Id: 841534158063459245
             }
@@ -1753,12 +2063,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomleft"
+                Value: "mc:euianchor:topcenter"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomleft"
+                Value: "mc:euianchor:bottomcenter"
               }
             }
           }
@@ -1766,7 +2076,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14164461812999438253
+        Id: 2735508728565056896
         Name: "SetProgressBarToPlayerBlock"
         Transform {
           Location {
@@ -1782,10 +2092,8 @@ Assets {
         ParentId: 6087674014057380674
         UnregisteredParameters {
           Overrides {
-            Name: "cs:UIProgressBar"
-            ObjectReference {
-              SubObjectId: 6087674014057380674
-            }
+            Name: "cs:isInstant"
+            Bool: true
           }
         }
         Collidable_v2 {

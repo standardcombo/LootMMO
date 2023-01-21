@@ -9,15 +9,22 @@ local POTIONAPI = _G["Potions.Equipment"]
 local EquipApi = {}
 
 local EQUIPMENT_CONTAINER = script:GetCustomProperty("EquipmentContainer")
+_G.PlayerEquipmentContainers = {}
 
 function OnPlayerJoined(player)
-	if not Object.IsValid(player:GetPrivateNetworkedData("equipmentContainer")) then
+	_G.PlayerEquipmentContainers[player] = World.SpawnAsset(EQUIPMENT_CONTAINER, { networkContext = NetworkContextType.NETWORKED })
+	while not Object.IsValid(_G.PlayerEquipmentContainers[player]) do
+		Task.Wait()
+	end
+	_G.PlayerEquipmentContainers[player]:AttachToPlayer(player, "root")
+	player:SetPrivateNetworkedData("equipmentContainer", _G.PlayerEquipmentContainers[player])
+	--[[if not Object.IsValid(player:GetPrivateNetworkedData("equipmentContainer")) then
 		player:SetPrivateNetworkedData("equipmentContainer", World.SpawnAsset(EQUIPMENT_CONTAINER, { networkContext = NetworkContextType.NETWORKED }))
 	end
 	while not Object.IsValid(player:GetPrivateNetworkedData("equipmentContainer")) do
 		Task.Wait()
 	end
-	player:GetPrivateNetworkedData("equipmentContainer"):AttachToPlayer(player, "root")
+	player:GetPrivateNetworkedData("equipmentContainer"):AttachToPlayer(player, "root")]]
 end
 
 function EquipApi.EquipEquipment(player, equipmentName, slot)
@@ -36,12 +43,13 @@ function EquipApi.EquipEquipment(player, equipmentName, slot)
 	newEquipment:SetCustomProperty('AbilityBinding', slot)
 	newEquipment:Equip(player)
 
-	newEquipment.parent = player:GetPrivateNetworkedData("equipmentContainer")
+	newEquipment.parent = _G.PlayerEquipmentContainers[player]
 	
 	return newEquipment
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
+Game.playerLeftEvent:Connect(function(player) _G.PlayerEquipmentContainers[player] = nil end)
 
 _G['Equipper'] = EquipApi
 
