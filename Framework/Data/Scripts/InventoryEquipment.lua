@@ -25,7 +25,8 @@ local function InventoryUpdated(inv, i)
 	local column
 	for _, equipment in ipairs(owner:GetEquipment()) do
 		if equipment.socket == "right_prop" then
-			for _, Item in ipairs(Weapons) do
+			--for _, Item in ipairs(Weapons) do
+				--[[
 				local templateSplit = CoreString.Split(Item["equipmentHollow"] or "", ":")
 				local templateSplit2 = CoreString.Split(Item["equipment"] or "", ":")
 				if equipment.sourceTemplateId == templateSplit2 then
@@ -34,18 +35,27 @@ local function InventoryUpdated(inv, i)
 				elseif equipment.sourceTemplateId == templateSplit then
 					--column = "equipment"
 					column = "equipmentHollow"
+				end]]
+
+				if owner.serverUserData
+				and owner.serverUserData.safeZoneCount
+				and owner.serverUserData.safeZoneCount > 0
+				then
+					column = "equipmentHollow"
+				else
+					column = "equipment"
 				end
 
-				if column then
+				--if column then
 					for key, stackdex in pairs(equipmentStack.GetStackPlayer(owner, socket)) do
 						if stackdex.value == equipment then
 							stackindex = stackdex
 						end
 					end
 					equipment:Destroy()
-					break
-				end
-			end
+					--break
+				--end
+			--end
 		end
 		if column then break end
 	end
