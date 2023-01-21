@@ -18,7 +18,7 @@ Events.Connect("AppState.Enter", function(player, newState, previousState)
 end)
 
 -- FTUE
-Events.Connect("Quest.ClaimReward", function(player, questId)
+Events.Connect("Quest.RewardClaimed", function(player, questId)
 	if questId == "Beasts1" then
 		UICONTAINER.visibility = Visibility.INHERIT
 	end

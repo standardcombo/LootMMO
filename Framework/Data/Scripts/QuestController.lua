@@ -107,7 +107,8 @@ end
 
 -- Client/Server
 function API.GetPlayerData(player)
-	return player:GetPrivateNetworkedData("quests")
+	local playerData = player:GetPrivateNetworkedData("quests")
+	return playerData
 end
 
 function SetPlayerData(player, playerData)
@@ -444,8 +445,7 @@ function API.ClaimReward(questId)
 	local obj = API.GetQuestObjective(questId, 1)
 	if obj.hasReward then
 		obj.hasReward = nil
-		Events.Broadcast("Quest.ClaimReward", player, questId)
-		Events.BroadcastToServer("Quest.ClaimReward", questId)
+		Events.BroadcastToServer("Quest.BeginClaimReward", questId)
 	else
 		error("QuestController::ClaimReward() ".. questId .." is not available to claim.")
 	end
@@ -492,6 +492,9 @@ function _ClaimReward(player, questId)
 	-- Clear this reward set
 	table.remove(playerData.rewards, questIndex)
 	SetPlayerData(player, playerData)
+	
+	Events.Broadcast("Quest.RewardClaimed", player, questId)
+	Events.BroadcastToPlayer(player, "Quest.RewardClaimed", player, questId)
 
 	-- Now that the quest is complete and claimed, unlock the next ones
 	ProcessQuestUnlocks(player, questId)
@@ -504,7 +507,7 @@ function _ClaimReward(player, questId)
 end
 
 if Environment.IsServer() then
-	Events.ConnectForPlayer("Quest.ClaimReward", _ClaimReward)
+	Events.ConnectForPlayer("Quest.BeginClaimReward", _ClaimReward)
 end
 
 
