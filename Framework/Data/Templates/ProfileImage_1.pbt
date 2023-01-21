@@ -62,7 +62,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1516,6 +1516,7 @@ Assets {
           }
         }
         ParentId: 9187517884730030482
+        ChildIds: 10866215677364370753
         ChildIds: 8260343088974319474
         ChildIds: 256710435805808675
         ChildIds: 14784392229582859965
@@ -1557,6 +1558,43 @@ Assets {
               }
             }
           }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10866215677364370753
+        Name: "EffectiveHealthAndBlockProgressBars"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11928676660250255589
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1633,7 +1671,7 @@ Assets {
       }
       Objects {
         Id: 256710435805808675
-        Name: "UI Progress Bar"
+        Name: "HealthDamageProgressBar"
         Transform {
           Location {
           }
@@ -1646,7 +1684,6 @@ Assets {
           }
         }
         ParentId: 16769318345177000626
-        ChildIds: 15669161974654789696
         ChildIds: 2565192565675259539
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1712,51 +1749,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15669161974654789696
-        Name: "SetProgressBarToPlayerHealth"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 256710435805808675
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:isInstant"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1847797240398441782
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 2565192565675259539
-        Name: "UI Progress Bar"
+        Name: "BlockDamageProgressBar"
         Transform {
           Location {
           }
@@ -1769,7 +1763,6 @@ Assets {
           }
         }
         ParentId: 256710435805808675
-        ChildIds: 1086505144155425592
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1834,51 +1827,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1086505144155425592
-        Name: "SetProgressBarToPlayerBlock"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 2565192565675259539
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:isInstant"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 608982181455099417
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 14784392229582859965
-        Name: "UI Progress Bar"
+        Name: "HealthValueProgressBar"
         Transform {
           Location {
           }
@@ -1891,7 +1841,6 @@ Assets {
           }
         }
         ParentId: 16769318345177000626
-        ChildIds: 11038162178407021818
         ChildIds: 6087674014057380674
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1906,7 +1855,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 1
+          Width: 2
           Height: 16
           RenderTransformPivot {
             Anchor {
@@ -1955,51 +1904,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11038162178407021818
-        Name: "SetProgressBarToPlayerHealth"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14784392229582859965
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:isInstant"
-            Bool: true
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1847797240398441782
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
         Id: 6087674014057380674
-        Name: "UI Progress Bar"
+        Name: "BlockValueProgressBar"
         Transform {
           Location {
           }
@@ -2012,7 +1918,6 @@ Assets {
           }
         }
         ParentId: 14784392229582859965
-        ChildIds: 2735508728565056896
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2072,49 +1977,6 @@ Assets {
               }
             }
           }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2735508728565056896
-        Name: "SetProgressBarToPlayerBlock"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6087674014057380674
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:isInstant"
-            Bool: true
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 608982181455099417
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
