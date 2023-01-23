@@ -590,6 +590,7 @@ local function HoverSlot(slot)
 		local SCREEN_SIZE = UI.GetScreenSize() --Get the screen size every time, in case the player resizes the window
 		local screenwidth = SCREEN_SIZE.x
 		local screenheight = SCREEN_SIZE.y
+		local offsetX = 50
 
 		local sectionwidth = screenwidth / 2
 		local sectionheight = screenheight / 4
@@ -615,7 +616,7 @@ local function HoverSlot(slot)
 
 		--print("section",section.x, section.y)
 
-		HOVER_PANEL.x = slotPosition.x
+		HOVER_PANEL.x = slotPosition.x + offsetX
 		HOVER_PANEL.y = slotPosition.y
 
 		--Show arrow visibility based on which section the hovered item is in and set the position of the hover panel
@@ -632,7 +633,7 @@ local function HoverSlot(slot)
 				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
 			end
 		else
-			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width
+			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width - offsetX
 			if section.y == 1 then
 				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
 			elseif section.y == 2 then

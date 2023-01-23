@@ -276,13 +276,14 @@ local function HoverSlot(slot)
 		local SCREEN_SIZE = UI.GetScreenSize() --Get the screen size every time, in case the player resizes the window
 		local screenwidth = SCREEN_SIZE.x
 		local screenheight = SCREEN_SIZE.y
+		local offsetX = 50
 
 		local sectionwidth = screenwidth / 2
 		local sectionheight = screenheight / 4
 		local section = Vector2.New(0,0)
-
+		
 		local slotPosition = slot.Button:GetAbsolutePosition()
-
+		
 		--Set section on screen based on slot position
 		if slotPosition.x < sectionwidth then
 			section.x = 1
@@ -299,9 +300,7 @@ local function HoverSlot(slot)
 			section.y = 4
 		end
 
-		--print("section",section.x, section.y)
-
-		HOVER_PANEL.x = slotPosition.x
+		HOVER_PANEL.x = slotPosition.x + offsetX
 		HOVER_PANEL.y = slotPosition.y
 
 		--Show arrow visibility based on which section the hovered item is in and set the position of the hover panel
@@ -318,7 +317,7 @@ local function HoverSlot(slot)
 				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
 			end
 		else
-			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width
+			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width - offsetX
 			if section.y == 1 then
 				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
 			elseif section.y == 2 then
@@ -331,8 +330,24 @@ local function HoverSlot(slot)
 				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
 			end
 		end
-
 		HOVER_PANEL.visibility = Visibility.INHERIT
+	end
+end
+
+local function ReleaseEvent(slot)
+	if not currentInventory then
+		return
+	end
+	local slotUnderCursor = GetSlotUnderCursor()
+	DRAG_PANEL.visibility = Visibility.FORCE_OFF
+	if slotUnderCursor and isDragging.slot ~= slotUnderCursor.index then
+		currentInventory:MoveFromSlot(isDragging.slot, slotUnderCursor.index)
+	end
+	isDragging = false
+	if slotUnderCursor then
+		Task.Spawn(function() --Necessary wait to allow the slot to update before hovering it
+			HoverSlot(slotUnderCursor)
+		end,0.5)
 	end
 end
 
@@ -344,17 +359,18 @@ local function HookUpButton(slot)
 	)
 	slot.Button.unhoveredEvent:Connect(
 		function()
-			UnhoverSlot(slot)
+			UnhoverSlot()
 		end
 	)
 	slot.Button.pressedEvent:Connect(
 		function()
+			UnhoverSlot()
 			DragSlot(slot)
 		end
 	)
 	slot.Button.releasedEvent:Connect(
 		function()
-			RealeaseEvent(slot)
+			ReleaseEvent(slot)
 		end
 	)
 end
