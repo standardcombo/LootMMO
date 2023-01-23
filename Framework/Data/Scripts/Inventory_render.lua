@@ -53,7 +53,7 @@ MATERIALS_BAR.visibility = Visibility.FORCE_OFF
 local events = nil
 local currentInventory = nil
 local slots = {}
-local isDraging = nil
+local isDragging = nil
 
 local function Get(panel, child)
 	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
@@ -121,34 +121,26 @@ local function GetNFTSaveInfo(item)
 	end
 end
 
-local function RealeaseEvent(slot)
-	if not currentInventory then
-		return
-	end
-	if not isDraging then
-		return
-	end
-	DRAG_PANEL.visibility = Visibility.FORCE_OFF
-
-	local dropPos = Input:GetCursorPosition()
-
+local function GetSlotUnderCursor()
+	local cursorPos = Input:GetCursorPosition()
+	local foundSlot = false
 	--Check if hovering over a slot
 	for index, panel in ipairs(SLOTS) do
 		local minwidth = panel.width
 		local minheight = panel.height
 		local abspo = panel:GetAbsolutePosition()
 		--check width
-		if dropPos.x >= abspo.x and dropPos.x <= abspo.x + minwidth then
+		if cursorPos.x >= abspo.x and cursorPos.x <= abspo.x + minwidth then
 			--check height
-			if dropPos.y >= abspo.y and dropPos.y <= abspo.y + minheight then
-				--swap slots if true
-				currentInventory:MoveFromSlot(isDraging.slot, index)
-				isDraging = nil
-				return
+			if cursorPos.y >= abspo.y and cursorPos.y <= abspo.y + minheight then
+				foundSlot = slots[index]
 			end
 		end
+		if foundSlot then
+			return foundSlot
+		end
 	end
-	isDraging = nil
+	return false
 end
 
 local function DragSlot(slot)
@@ -168,11 +160,11 @@ local function DragSlot(slot)
 		DRAG_PANEL.x = panelPos.x
 		DRAG_PANEL.y = panelPos.y
 		DRAG_PANEL.visibility = Visibility.INHERIT
-		isDraging = { slot = slot.index }
+		isDragging = { slot = slot.index }
 	end
 end
 
-local function UnhoverSlot(slot)
+local function UnhoverSlot()
 	HOVER_PANEL.visibility = Visibility.FORCE_OFF
 	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
 	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
@@ -182,7 +174,7 @@ local function UnhoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDraging then
+	if isDragging then
 		return
 	end
 end
@@ -198,7 +190,7 @@ local function HoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDraging then
+	if isDragging then
 		return
 	end
 	HOVERDATA.hovering = true
@@ -232,7 +224,7 @@ local function HoverSlot(slot)
 					greatness = greatness
 				}
 			)
-
+			
 			if itemClass then
 				local calculationStats = itemClass:CalculateStats()
 
