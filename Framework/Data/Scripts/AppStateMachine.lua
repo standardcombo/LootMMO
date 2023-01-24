@@ -41,7 +41,6 @@ API.LevelUp = 140
 API.Inventory = 150
 API.ItemFound = 160
 API.Ability = 170
-API.Adventure = 180
 
 -- Server/Client
 function API.GetStateForPlayer(player)
