@@ -155,7 +155,7 @@ local function GetNFTSaveInfo(item)
 					local items = parsedBag.items
 					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
 					for _, itemdata in pairs(items) do
-						if itemdata.name == item.name then
+						if itemdata.name == item.name and nftSaves[tokenString] ~= nil then
 							playerOwnsItem = true
 							greatness = nftSaves[tokenString][itemdata.name] or item:GetCustomProperty("Greatness")
 							break
