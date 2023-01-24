@@ -512,6 +512,7 @@ end
 local function HoverSlot(slot)
 	if not currentInventory then return	end
 	if currentState ~= states.crafting then return end
+	if not slot then return end
 
 	if SCRAP_CONFIRMATION_PANEL.visibility == Visibility.INHERIT then return end --Don't show the hover panel if the scrap confirmation panel is open
 	HOVERDATA.hovering = true

@@ -140,7 +140,6 @@ local function GetSlotUnderCursor()
 			return foundSlot
 		end
 	end
-	return false
 end
 
 local function DragSlot(slot)
@@ -188,6 +187,9 @@ end
 
 local function HoverSlot(slot)
 	if not currentInventory then
+		return
+	end
+	if not slot then
 		return
 	end
 	if isDragging then
@@ -336,11 +338,12 @@ local function ReleaseEvent(slot)
 		currentInventory:MoveFromSlot(isDragging.slot, slotUnderCursor.index)
 	end
 	isDragging = false
-	if slotUnderCursor then
-		Task.Spawn(function() --Necessary wait to allow the slot to update before hovering it
+	Task.Spawn(function() --Necessary wait to allow the slot to update before hovering it
+		slotUnderCursor = GetSlotUnderCursor()
+		if slotUnderCursor and (ROOT.visibility == Visibility.INHERIT or ROOT.visibility == Visibility.FORCE_ON) then
 			HoverSlot(slotUnderCursor)
-		end,0.5)
-	end
+		end
+	end,0.5)
 end
 
 local function HookUpButton(slot)
@@ -496,11 +499,11 @@ local function ReceivedOpen(id)
 end
 
 function CloseClicked(button)
-	HOVER_PANEL.visibility = Visibility.FORCE_OFF
-	HOVERDATA.hovering = false
+	UnhoverSlot()
 end
 
 Events.Connect('Ability_OpenPanel', ReceivedOpen)
+Events.Connect("OpenInventory", CloseClicked)
 CharacterEquipped(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER), LOCAL_PLAYER)
 EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)
