@@ -350,7 +350,7 @@ function API.Parse(value)
 	if type(value) == "string" then
 		return ParseBag(value)
 	
-    elseif value:IsA("BlockchainToken") then
+    else--if value:IsA("BlockchainToken") then
         local tokenId = value.tokenId
         if not cache[tokenId] then
             cache[tokenId] = ParseFromToken(value)
