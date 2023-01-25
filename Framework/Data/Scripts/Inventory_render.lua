@@ -87,7 +87,7 @@ local function UpdateValues()
 end
 
 local function GetNFTSaveInfo(item)
-	local greatness = nil
+	local greatness = item:GetCustomProperty("Greatness")
 	if not item:GetCustomProperty("IsBag") then
 		return item:GetCustomProperty("Greatness")
 	end
@@ -100,14 +100,16 @@ local function GetNFTSaveInfo(item)
 			if playerOwnsItem then break end
 			AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
 				for _, token in pairs(tokens) do
-					local parsedBag = LOOT_BAG_PARSER.Parse(token)
-					local items = parsedBag.items
 					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-					for _, itemdata in pairs(items) do
-						if itemdata.name == item.name then
-							playerOwnsItem = true
-							greatness = nftSaves[tokenString][itemdata.name] or item:GetCustomProperty("Greatness")
-							break
+					if nftSaves[tokenString] and nftSaves[tokenString][item.name] then
+						local parsedBag = LOOT_BAG_PARSER.Parse(token)
+						local items = parsedBag.items
+						for _, itemdata in pairs(items) do
+							if itemdata.name == item.name then
+								playerOwnsItem = true
+								greatness = nftSaves[tokenString][itemdata.name]
+								break
+							end
 						end
 					end
 				end
