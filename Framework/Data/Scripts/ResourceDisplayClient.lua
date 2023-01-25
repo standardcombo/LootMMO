@@ -101,7 +101,8 @@ end
 -- end
 
 function IsValidAppState()
-	return _G.AppState.GetLocalState() == _G.AppState.SocialHub	and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
+    local state = _G.AppState.GetLocalState()
+	return state == _G.AppState.SocialHub and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
 end
 
 -- Initialize
@@ -139,4 +140,14 @@ function OnResourceChanged(player, resourceName, value)
     end
 end
 
+function DisplayOrHideUI()
+    if IsValidAppState() then
+        PANEL.visibility = Visibility.INHERIT
+    else
+		PANEL.visibility = Visibility.FORCE_OFF
+	end
+end
+
+Events.Connect("AppState.Enter", DisplayOrHideUI)
+Events.Connect("Quest.Changed", DisplayOrHideUI)
 LOCAL_PLAYER.resourceChangedEvent:Connect(OnResourceChanged)
