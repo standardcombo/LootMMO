@@ -159,6 +159,7 @@ function SetEquipment(equipment)
 	ability.clientUserData.CooldownEvent = currentAbilities[ability].cooldownEvent:Connect(OnCooldown, ability)
 	ability.clientUserData.executeDuration = currentAbilities[ability].executePhaseSettings.duration
 	ability.clientUserData.recoveryDuration = currentAbilities[ability].recoveryPhaseSettings.duration
+	while equipment.clientUserData.CalculateModifier == nil do Task.Wait() end --wait for the case that RootCalculation_Api.lua is not done yet
 	ability.clientUserData.cooldownDuration = equipment.clientUserData.CalculateModifier('Cooldown') or ability.cooldownPhaseSettings.duration
 	PANELS[equipment:GetCustomProperty("AbilityBinding")].clientUserData.DURATION_BAR.progress = 0
 end

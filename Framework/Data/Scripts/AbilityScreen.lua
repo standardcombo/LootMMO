@@ -44,6 +44,8 @@ local MAX_STARS_MESSAGE = script:GetCustomProperty("MaxStarsMessage"):WaitForObj
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
+local DEF_HEIGHT_ABILITY_DESCRIPTION = ABILITY_DESCRIPTION.height
+local PADDING = 0
 
 local ABILITY_INPUTS = {
 	"Shift",
@@ -254,6 +256,16 @@ function UpdateAbilityDetails(_api, entryId)
 	-- Name and description
 	ABILITY_NAME.text = _api.GetName(entryId)
 	ABILITY_DESCRIPTION.text = _api.GetDescription(entryId)
+
+	--Dynamic height (min == default height as in editor)
+	local textSize = ABILITY_DESCRIPTION:ComputeApproximateSize()
+	if not textSize then
+		ABILITY_DESCRIPTION.height = DEF_HEIGHT_ABILITY_DESCRIPTION
+	else
+		--keep the description at least default height, for visual consistency
+		if textSize.y < DEF_HEIGHT_ABILITY_DESCRIPTION then textSize.y = DEF_HEIGHT_ABILITY_DESCRIPTION end
+		ABILITY_DESCRIPTION.height = textSize.y + PADDING
+	end
 	
 	-- Ability properties, such as radius, critical chance, cooldown, etc
 	local character = EquipAPI.GetCurrentCharacter(LOCAL_PLAYER)
