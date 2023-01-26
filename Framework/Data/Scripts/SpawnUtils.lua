@@ -69,8 +69,14 @@ end
 
 
 function API.SpawnInPlace(player)
+	local pos = player.serverUserData.lastDeathPosition
+	if not pos then
+		pos = player:GetWorldPosition()
+	end
+	pos = pos + Vector3.UP * 25
+
 	player:Spawn({
-		position = player.serverUserData.lastDeathPosition + Vector3.UP * 25,
+		position = pos,
 	})
 end
 
