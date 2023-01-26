@@ -48,6 +48,7 @@ end
 
 
 function OnPlayerDied(player, dmg)
+	player.serverUserData.lastDeathPosition = player:GetWorldPosition()
 	if player.serverUserData 
 	and player.serverUserData.safeZoneCount
 	and player.serverUserData.safeZoneCount > 0
