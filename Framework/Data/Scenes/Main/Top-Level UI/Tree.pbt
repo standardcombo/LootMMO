@@ -136,7 +136,7 @@ Objects {
   }
   Control {
     Width: 600
-    Height: 100
+    Height: 180
     UIY: 200
     RenderTransformPivot {
       Anchor {
@@ -193,8 +193,8 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: -220
-    Height: 70
+    Width: -140
+    Height: -40
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -202,8 +202,9 @@ Objects {
     }
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
+    UseParentHeight: true
     Text {
-      Label: "99 Coins"
+      Label: "An extremely long message like this will most no longer cause some problems."
       Color {
         R: 0.861999929
         G: 1
@@ -277,7 +278,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: -200
+    Width: -100
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -532,7 +533,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: -200
+    Width: -100
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
