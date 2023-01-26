@@ -86,41 +86,9 @@ local function UpdateValues()
 	end
 end
 
-local function GetNFTSaveInfo(item)
+local function GetItemGreatness(item)
 	local greatness = item:GetCustomProperty("Greatness")
-	if not item:GetCustomProperty("IsBag") then
-		return item:GetCustomProperty("Greatness")
-	end
-	local playerOwnsItem = false
-	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS")
-	if not nftSaves then
-		return item:GetCustomProperty("Greatness"), playerOwnsItem
-	else
-		for _, Collection in ipairs(COLLECTIONS) do
-			if playerOwnsItem then break end
-			AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
-				for _, token in pairs(tokens) do
-					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-					if nftSaves[tokenString] and nftSaves[tokenString][item.name] then
-						local parsedBag = LOOT_BAG_PARSER.Parse(token)
-						local items = parsedBag.items
-						for _, itemdata in pairs(items) do
-							if itemdata.name == item.name then
-								playerOwnsItem = true
-								greatness = nftSaves[tokenString][itemdata.name]
-								break
-							end
-						end
-					end
-				end
-			end)
-		end
-		if playerOwnsItem then
-			return greatness, playerOwnsItem
-		else
-			return item:GetCustomProperty("Greatness"), playerOwnsItem
-		end
-	end
+	return greatness
 end
 
 local function GetSlotUnderCursor()
@@ -172,12 +140,12 @@ local function UnhoverSlot()
 	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
 	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
 	HOVERDATA.hovering = false
-	if not currentInventory then
-		return
-	end
-	if isDragging then
-		return
-	end
+	--if not currentInventory then
+	--	return
+	--end
+	--if isDragging then
+	--	return
+	--end
 end
 
 local function HideArrows()
@@ -211,7 +179,7 @@ local function HoverSlot(slot)
 		SetImage(childIcon, icon, itemdata)
 
 		if item:GetCustomProperty("Greatness") then
-			local greatness = GetNFTSaveInfo(item)
+			local greatness = GetItemGreatness(item)
 			HOVERDATA.name.text =
 			string.format(
 				"%s %s | Greatness %d",
@@ -336,10 +304,10 @@ local function ReleaseEvent(slot)
 	end
 	local slotUnderCursor = GetSlotUnderCursor()
 	DRAG_PANEL.visibility = Visibility.FORCE_OFF
-	if slotUnderCursor and isDragging.slot ~= slotUnderCursor.index then
+	if slotUnderCursor and isDragging and isDragging.slot ~= slotUnderCursor.index then
 		currentInventory:MoveFromSlot(isDragging.slot, slotUnderCursor.index)
 	end
-	isDragging = false
+	isDragging = nil
 	Task.Spawn(function() --Necessary wait to allow the slot to update before hovering it
 		slotUnderCursor = GetSlotUnderCursor()
 		if slotUnderCursor and (ROOT.visibility == Visibility.INHERIT or ROOT.visibility == Visibility.FORCE_ON) then
@@ -404,7 +372,7 @@ local function InventoryChanged(inv, slot)
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
-				greatness = GetNFTSaveInfo(item)
+				greatness = GetItemGreatness(item)
 			else
 				greatness = item:GetCustomProperty("Greatness")
 				isBag.visibility = Visibility.FORCE_OFF

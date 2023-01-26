@@ -136,41 +136,10 @@ for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 end
 
 
-local function GetNFTSaveInfo(item)
+local function GetItemGreatness(item)
 	local greatness = item:GetCustomProperty("Greatness")
-	if not item:GetCustomProperty("IsBag") then
-		return item:GetCustomProperty("Greatness")
-	end
-	local playerOwnsItem = false
-	local nftSaves = LOCAL_PLAYER:GetPrivateNetworkedData("NFTS")
-	if not nftSaves then
-		return item:GetCustomProperty("Greatness"), playerOwnsItem
-	else
-		for _, Collection in ipairs(COLLECTIONS) do
-			if playerOwnsItem then break end
-			AsyncBC.GetTokensForPlayer(LOCAL_PLAYER, { contractAddress = Collection }, function(tokens)
-				for _, token in pairs(tokens) do
-					local tokenString = CoreString.Join("|", token.contractAddress, token.tokenId)
-					if nftSaves[tokenString] and nftSaves[tokenString][item.name] then
-						local parsedBag = LOOT_BAG_PARSER.Parse(token)
-						local items = parsedBag.items
-						for _, itemdata in pairs(items) do
-							if itemdata.name == item.name then
-								playerOwnsItem = true
-								greatness = nftSaves[tokenString][itemdata.name]
-								break
-							end
-						end
-					end
-				end
-			end)
-		end
-		if playerOwnsItem then
-			return greatness, playerOwnsItem
-		else
-			return item:GetCustomProperty("Greatness"), playerOwnsItem
-		end
-	end
+	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
+	return greatness, playerOwnsBag
 end
 
 
@@ -224,11 +193,11 @@ end
 
 local function GetScrapRecipe(item)
 	if not item then return end
-	local greatness = GetNFTSaveInfo(item)
+	local greatness = GetItemGreatness(item)
 	local newrecipe = nil
 	if greatness then
 		greatness = math.max(1, greatness)
-		newrecipe = craftAPI.GetGreatnessValue(item.name, greatness)
+		newrecipe = craftAPI.GetRecipeForGreatness(item.name, greatness)
 	end
 	return newrecipe
 end
@@ -237,16 +206,16 @@ local function GetUpgradeRecipe(item)
 	if not item then return end
 
 	local newrecipe = nil
-	local greatness, playerOwnsItem = GetNFTSaveInfo(item)
+	local greatness, playerOwnsBag = GetItemGreatness(item)
 	if item:GetCustomProperty("IsBag") then -- check if player owns the item in the bag
-		if playerOwnsItem and greatness < 20 then
-			newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+		if playerOwnsBag and greatness < 20 then
+			newrecipe = craftAPI.GetRecipeForGreatness(item.name, greatness + 1)
 		else -- player does not own the item in the bag or greatness is maxed
 			ClearUpgradePanelDetails()
 		end
 	else -- can the non NFT item be upgraded?
 		if greatness then
-			newrecipe = craftAPI.GetGreatnessValue(item.name, greatness + 1)
+			newrecipe = craftAPI.GetRecipeForGreatness(item.name, greatness + 1)
 		end
 	end
 	return newrecipe
@@ -269,9 +238,9 @@ local function UpgradeItem(button)
 				HideUpgradeConfirmationPanel()
 				SetState(states.crafting)
 			elseif button == UPGRADE_CONFIRM_BUTTON then
-				if selectedRecipe.NFT then
-					local Collection, tokenid = CoreString.Split(selectedRecipe.NFT, "|")
-					Events.Broadcast(craftingEvents.CupgradeNFT, Collection, tokenid, selectedRecipe.item.name)
+				if selectedRecipe.bagKey then
+					local collection, tokenid = CoreString.Split(selectedRecipe.bagKey, "|")
+					Events.Broadcast(craftingEvents.CupgradeNFT, collection, tokenid, selectedRecipe.item.name)
 				else
 					Events.Broadcast(craftingEvents.Cupgrade, selectedRecipe.slot.index)
 				end
@@ -330,7 +299,7 @@ local function RefreshUpgradePanelDetails(item, slot) -- Updates the upgrade pan
 
 	local icon = itemdata["icon"]
 
-	local greatness = GetNFTSaveInfo(item)
+	local greatness = GetItemGreatness(item)
 	if greatness then
 		greatness = math.max(1, greatness)
 	end
@@ -401,24 +370,24 @@ end
 
 local function SelectRecipe(item, slot)
 	if currentState ~= states.crafting then return end
-	local greatness = GetNFTSaveInfo(item)
+	local greatness = GetItemGreatness(item)
 	selectedRecipe = {
 		item = item,
 		greatness = greatness,
 		slot = slot
 	}
 
-	if selectedRecipe.item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
+	if item:GetCustomProperty("IsBag") then --If is an NFT then disable scrap button
 		ShowScrapBtn(false)
-	else
-		ShowScrapBtn(true)
-	end
 
-	local scrapRecipe = GetScrapRecipe(selectedRecipe.item)
-	if scrapRecipe then
-		ShowScrapBtn(true)
+		selectedRecipe.bagKey = item:GetCustomProperty("BagKey")
 	else
-		ShowScrapBtn(false)
+		local scrapRecipe = GetScrapRecipe(selectedRecipe.item)
+		if scrapRecipe then
+			ShowScrapBtn(true)
+		else
+			ShowScrapBtn(false)
+		end
 	end
 
 	RefreshUpgradePanelDetails(item, slot)
@@ -530,7 +499,7 @@ local function HoverSlot(slot)
 		SetImage(childIcon, icon, itemdata)
 
 		if item:GetCustomProperty("Greatness") then
-			local greatness = GetNFTSaveInfo(item)
+			local greatness = GetItemGreatness(item)
 
 			HOVERDATA.name.text =
 			string.format(
@@ -705,11 +674,10 @@ local function InventoryChanged(inv, slot)
 		end
 		local greatness = nil
 		if isBag then
+			greatness = GetItemGreatness(item)
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
-				greatness = GetNFTSaveInfo(item)
 			else
-				greatness = item:GetCustomProperty("Greatness")
 				isBag.visibility = Visibility.FORCE_OFF
 			end
 		end

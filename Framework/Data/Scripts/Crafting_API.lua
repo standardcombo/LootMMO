@@ -9,7 +9,7 @@ function api.GetRecipe(id)
 	return RecipesAPI.GetRecipe(id)
 end
 
-function api.GetGreatnessValue(item, greatness)
+function api.GetRecipeForGreatness(item, greatness)
 	greatness = math.max(1, greatness)
 	local recipe = api.GetRecipe(item)
 	if recipe then

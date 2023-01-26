@@ -579,7 +579,7 @@ Assets {
       }
       Objects {
         Id: 3870439791567290300
-        Name: "CrafingClient"
+        Name: "CraftClient"
         Transform {
           Location {
           }

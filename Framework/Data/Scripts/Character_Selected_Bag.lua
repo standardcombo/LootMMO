@@ -5,21 +5,30 @@ local items = _G.Items
 function BootUpPlayerBag(Character, player)
 	local selectedbag = player.serverUserData.currentBag
 	if Character and selectedbag then
-		local inventory = Character:GetComponent('Inventory')
+		local inventory = Character:GetComponent('Inventory'):GetInventory()
+		local bagKey = CoreString.Join("|", selectedbag.collection, selectedbag.tokenId)
+		local playerOwnsBag = (player.serverUserData.ownedBagKeys[bagKey] ~= nil)
+		local saveData = _G["Crafting.SaveNFT"].Load(player)
+
 		for key, Item in pairs(selectedbag.items) do
-			local name = Item.name
-			local entry = items.GetDefinition(name, true)
+			local itemId = Item.name
+			local entry = items.GetDefinition(itemId, true)
 			if entry then
-				local item = entry['itemAsset']
-				if item then
-					local newitem = World.SpawnAsset(item)
-					newitem:SetCustomProperty('IsBag', true)
-					newitem:SetCustomProperty('Greatness', Item.greatness)
-					newitem:SetCustomProperty('Order', Item.order or '')
-					newitem:SetCustomProperty('BagKey', CoreString.Join("|", selectedbag.collection, selectedbag.tokenId) or '')
-					inventory:GetInventory():PickUpItem(newitem)
+				local itemAsset = entry['itemAsset']
+				if itemAsset then
+					local greatness = Item.greatness
+					if saveData[bagKey] and saveData[bagKey][itemId] then
+						greatness = saveData[bagKey][itemId]
+					end
+					local newitem = World.SpawnAsset(itemAsset)
+					newitem:SetCustomProperty("IsBag", true)
+					newitem:SetCustomProperty("Greatness", greatness)
+					newitem:SetCustomProperty("PlayerOwnsBag", playerOwnsBag)
+					newitem:SetCustomProperty("Order", Item.order or '')
+					newitem:SetCustomProperty("BagKey", bagKey)
+					inventory:PickUpItem(newitem)
 				else
-					warn(item, ", No item found " .. Item.name)
+					warn(itemAsset, ", No item found " .. itemId)
 				end
 			end
 		end
