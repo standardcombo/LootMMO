@@ -186,6 +186,10 @@ function Module.Ease(uiElement, property, goal, easeDuration, easingEquation, ea
 	end)
 end
 
+function Module.ClearTask(uiElement, property)
+	clearFromTask(uiElement, property)
+end
+
 function Module.EaseX(uiElement, goal, easeDuration, easingEquation, easingDirection)
 	Module.Ease(uiElement, "x", goal, easeDuration, easingEquation, easingDirection)
 end

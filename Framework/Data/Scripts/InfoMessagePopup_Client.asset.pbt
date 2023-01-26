@@ -13,7 +13,6 @@ Assets {
       Overrides {
         Name: "cs:Message_TEXT"
         ObjectReference {
-          SelfId: 3567954453852721114
         }
       }
       Overrides {

@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16532880832873788683
+  Name: "BG Flat 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_019"
+  }
+}
+Assets {
   Id: 15463597562545228630
   Name: "Fantasy Coins 009"
   PlatformAssetType: 9
@@ -143,6 +152,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7615847344375253670
+  Name: "UI Basic Frame 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Frame_001"
+  }
+}
+Assets {
   Id: 7542904062235710665
   Name: "Frame Outline Thin 001"
   PlatformAssetType: 9
@@ -203,15 +221,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Ingredient_019"
-  }
-}
-Assets {
-  Id: 1328793714507056410
-  Name: "Tiled Asphalt 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_TiledBG_017"
   }
 }
 Assets {

@@ -119,9 +119,9 @@ Objects {
   }
   ParentId: 14868726129365109462
   ChildIds: 15988373964092598697
-  ChildIds: 16273329526220118781
-  ChildIds: 439878720970931884
-  ChildIds: 3567954453852721114
+  ChildIds: 17177170107843633640
+  ChildIds: 13085520490908394446
+  ChildIds: 6261527963616471498
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -135,15 +135,14 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: -100
-    Height: 60
+    Width: 600
+    Height: 100
+    UIY: 200
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    AddSizeToParentIfUsingParentSize: true
-    UseParentWidth: true
     Panel {
       Opacity: 1
       OpacityMaskBrush {
@@ -153,7 +152,7 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:middlecenter"
+          Value: "mc:euianchor:topcenter"
         }
       }
       TargetAnchor {
@@ -166,8 +165,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3567954453852721114
-  Name: "Message_TEXT"
+  Id: 6261527963616471498
+  Name: "Message"
   Transform {
     Location {
       X: -6291.92529
@@ -194,6 +193,8 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
+    Width: -220
+    Height: 70
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -201,18 +202,19 @@ Objects {
     }
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
-    UseParentHeight: true
     Text {
-      Label: "MESSAGE PLACEHOLDER"
+      Label: "99 Coins"
       Color {
-        R: 0.820000052
-        G: 0.798278213
+        R: 0.861999929
+        G: 1
+        B: 0.171999931
         A: 1
       }
       Size: 28
       Justification {
         Value: "mc:etextjustify:center"
       }
+      AutoWrapText: true
       Font {
         Id: 11336346532215892341
       }
@@ -223,10 +225,9 @@ Objects {
         A: 0.577
       }
       ShadowOffset {
-        X: 3
+        X: -2
         Y: 2
       }
-      ScaleToFit: true
     }
     AnchorLayout {
       SelfAnchor {
@@ -247,16 +248,269 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 439878720970931884
-  Name: "BG2"
+  Id: 13085520490908394446
+  Name: "Shading"
   Transform {
     Location {
-      X: -10533.9375
-      Y: -5401.32422
-      Z: -188.351562
+      X: 0.0185546875
+      Y: 0.01171875
     }
     Rotation {
-      Yaw: 147.86264
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14958583250234153308
+  ChildIds: 709592755444382853
+  ChildIds: 7855928153012636278
+  ChildIds: 2139874550721629733
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: -200
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Panel {
+      Opacity: 1
+      OpacityMaskBrush {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2139874550721629733
+  Name: "BRIGHT"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13085520490908394446
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: -90
+    Height: 2
+    UIX: 19.6624184
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 7615847344375253670
+      }
+      Color {
+        R: 1
+        A: 0.520000041
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 7855928153012636278
+  Name: "DARK"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13085520490908394446
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: -140
+    UIX: 41.4380074
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 48307754774318265
+      }
+      Color {
+        A: 0.232000008
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 709592755444382853
+  Name: "FADE"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13085520490908394446
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 162
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 48307754774318265
+      }
+      Color {
+        R: 0.153
+        A: 1
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17177170107843633640
+  Name: "BG"
+  Transform {
+    Location {
+      X: -6291.92529
+      Y: -3673.86768
+      Z: -50441.0938
+    }
+    Rotation {
+      Yaw: 158.985062
     }
     Scale {
       X: 1
@@ -278,21 +532,22 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
+    Width: -200
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
+    AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     UseParentHeight: true
     Image {
       Brush {
-        Id: 1328793714507056410
+        Id: 16532880832873788683
       }
       Color {
-        R: 0.0497065671
-        G: 0.0144438483
-        A: 0.4
+        R: 1
+        A: 1
       }
       TeamSettings {
       }
@@ -312,80 +567,6 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16273329526220118781
-  Name: "BG"
-  Transform {
-    Location {
-      X: -10533.9375
-      Y: -5401.32422
-      Z: -188.351562
-    }
-    Rotation {
-      Yaw: 147.86264
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14958583250234153308
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    UseParentWidth: true
-    UseParentHeight: true
-    Image {
-      Brush {
-        Id: 841534158063459245
-      }
-      Color {
-        R: 0.0497065671
-        G: 0.0144438483
-        A: 0.6
-      }
-      TeamSettings {
-      }
-      ShadowColor {
-        A: 0.802000046
-      }
-      ShadowOffset {
-        X: 1
-        Y: 2
-      }
-      ScreenshotIndex: 1
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:topcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:topcenter"
         }
       }
     }
@@ -411,6 +592,12 @@ Objects {
     Overrides {
       Name: "cs:TimeUntilFade"
       Float: 1.5
+    }
+    Overrides {
+      Name: "cs:Message_TEXT"
+      ObjectReference {
+        SelfId: 6261527963616471498
+      }
     }
   }
   Collidable_v2 {
@@ -19022,6 +19209,17 @@ Objects {
   }
   ParentId: 764194984864902660
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 1919578735665089931
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 10097200626876299952
       value {

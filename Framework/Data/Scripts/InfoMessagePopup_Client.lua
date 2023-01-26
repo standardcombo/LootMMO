@@ -36,10 +36,10 @@ function API.ShowMessage(message, timeUntilFade, fadeTime)
         timeUntilFade = TIME_UNTIL_FADE or 1
     end
     if showingMessageTask then
-        showingMessageTask:Cancel()
         MESSAGE_PANEL.visibility = Visibility.FORCE_OFF
-        --EaseUI.EaseOpacity(MESSAGE_PANEL, 0, 0)
         MESSAGE_PANEL.opacity = 1
+        EaseUI.ClearTask(MESSAGE_PANEL, "opacity")
+        showingMessageTask:Cancel()
         showingMessageTask = nil
     end
     MESSAGE_TEXT.text = message
