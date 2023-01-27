@@ -2,6 +2,7 @@ local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
 
 function OnActionPressed(player, action, value)
+    if Object.IsValid(ABILITY) ~= true then return end
     if not ABILITY.isEnabled then 
         return 
     end 
