@@ -53,7 +53,7 @@ HOVERDATA = {
 	hovering = false
 }
 
-local events, currentInventory, selectedRecipe, currentState
+local events, currentInventory, selectedRecipe
 local slots = {}
 
 local craftingEvents = {
@@ -69,6 +69,7 @@ local states = {
 	scrapping = "scrapping",
 	closed    = "closed",
 }
+local currentState = states.closed
 
 local function Get(panel, child)
 	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
@@ -77,10 +78,12 @@ end
 local function SetState(newState)
 	if currentState == newState then return end
 	currentState = newState
-	--print("SetState to " .. newState)
 	if newState == states.closed then
+		ClearUpgradePanelDetails()
 		HOVERDATA.hovering = false
 		HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	elseif newState == states.crafting then
+
 	end
 	if currentState ~= states.crafting then
 		CLOSE_BUTTON.isInteractable = false
@@ -88,8 +91,6 @@ local function SetState(newState)
 		CLOSE_BUTTON.isInteractable = true
 	end
 end
-
-SetState(states.closed)
 
 --Setup Upgrade Panel references
 UPGRADE_CANCEL_BUTTON = Get(UPGRADE_CONFIRMATION_PANEL, "Cancel Upgrade Button")
@@ -135,7 +136,6 @@ for _, previewSlot in ipairs(SCRAP_PREVIEW_SLOT) do
 	previewSlot.clientUserData.count = Get(previewSlot, "count")
 end
 
-
 local function GetItemGreatness(item)
 	local greatness = item:GetCustomProperty("Greatness")
 	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
@@ -168,15 +168,7 @@ local function ShowScrapBtn(shouldShow)
 	end
 end
 
-local function GetInventory(player)
-	local Character = EquipAPI.GetCurrentCharacter(player)
-	if not Character then return end
-	local inventory = Character:GetComponent("Inventory")
-	local CoreInv = inventory:GetInventory()
-	return CoreInv
-end
-
-local function ClearUpgradePanelDetails()
+function ClearUpgradePanelDetails()
 	SELECTED_OBJECT_SLOT.clientUserData.name.visibility = Visibility.FORCE_OFF
 	SELECTED_OBJECT_SLOT.clientUserData.icon.visibility = Visibility.FORCE_OFF
 	SELECTED_OBJECT_SLOT.clientUserData.levelFrame.visibility = Visibility.FORCE_OFF
@@ -189,6 +181,14 @@ local function ClearUpgradePanelDetails()
 	UPGRADE_BUTTON.isInteractable = false
 	ShowScrapBtn(false)
 	selectedRecipe = {}
+end
+
+local function GetInventory(player)
+	local Character = EquipAPI.GetCurrentCharacter(player)
+	if not Character then return end
+	local inventory = Character:GetComponent("Inventory")
+	local CoreInv = inventory:GetInventory()
+	return CoreInv
 end
 
 local function GetScrapRecipe(item)
