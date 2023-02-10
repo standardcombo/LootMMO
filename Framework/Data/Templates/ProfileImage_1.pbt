@@ -1576,6 +1576,32 @@ Assets {
           }
         }
         ParentId: 16769318345177000626
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HealthDamageProgressBar"
+            ObjectReference {
+              SubObjectId: 256710435805808675
+            }
+          }
+          Overrides {
+            Name: "cs:BlockDamageProgressBar"
+            ObjectReference {
+              SubObjectId: 2565192565675259539
+            }
+          }
+          Overrides {
+            Name: "cs:HealthValueProgressBar"
+            ObjectReference {
+              SubObjectId: 14784392229582859965
+            }
+          }
+          Overrides {
+            Name: "cs:BlockValueProgressBar"
+            ObjectReference {
+              SubObjectId: 6087674014057380674
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
