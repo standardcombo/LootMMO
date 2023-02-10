@@ -129,7 +129,7 @@ local function DragSlot(slot)
 		DRAG_PANEL.x = panelPos.x
 		DRAG_PANEL.y = panelPos.y
 		DRAG_PANEL.visibility = Visibility.INHERIT
-		isDragging = { slot = slot.index }
+		isDragging = { slot = slot.index , type = itemdata.category}
 	end
 end
 
@@ -154,6 +154,35 @@ local function HideArrows()
 	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
 	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
 end
+
+--equipment slots highlighting, if a valid item is being dragged
+local slotTypes = _G["Equipment.Slots"]
+
+local function SetSlotHighlight(slot,color)
+	if not color or not color:IsA("Color") then color = Color.New(0,0,0,.25) end
+	slot.gradient:SetColor(color)
+end
+
+local function HighlightValidSlot()
+	if not currentInventory then return end
+	if isDragging == nil then return end
+	for i=1,8 do
+		local isAccepting = slotTypes.GetAcceptingSlots(currentInventory:GetSlotType(i))
+		for _,accepts in pairs(isAccepting)do
+			if isDragging.type == accepts then
+				SetSlotHighlight(slots[i],Color.WHITE)
+				return
+			end
+		end
+	end
+end
+
+local function ResetHighlights()
+	for i=1,8 do
+		SetSlotHighlight(slots[i])
+	end
+end
+----------------------------------------------------------------
 
 local function HoverSlot(slot)
 	if not currentInventory then
@@ -331,11 +360,13 @@ local function HookUpButton(slot)
 		function()
 			UnhoverSlot()
 			DragSlot(slot)
+			HighlightValidSlot()
 		end
 	)
 	slot.Button.releasedEvent:Connect(
 		function()
 			ReleaseEvent(slot)
+			ResetHighlights()
 		end
 	)
 end
@@ -344,6 +375,7 @@ for index, value in ipairs(SLOTS) do
 	slots[index] = {}
 	slots[index].index = index
 	slots[index].icon = value:FindChildByName("icon")
+	slots[index].gradient = value:FindChildByName("Gradient")
 	slots[index].bg = value:FindChildByName("bg")
 	slots[index].count = value:FindChildByName("count")
 	slots[index].Button = value:FindChildByName("Button")
@@ -362,7 +394,7 @@ local function InventoryChanged(inv, slot)
 	local childbg = slots[slot].bg
 	local isBag = slots[slot].isBag
 	local levelFrame = slots[slot].levelFrame
-	
+
 	if item ~= nil then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
