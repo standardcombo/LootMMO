@@ -92,26 +92,3 @@ function OnTokensLoaded(freeChoiceTokens)
 end
 
 InitDailyFreeBags()
-
-
--- List of supported NFT collections, for character select
-local COLLECTIONS = {
-	LOOT_BAG_PARSER.Collection.Genesis,
-	LOOT_BAG_PARSER.Collection.Loot,
-	LOOT_BAG_PARSER.Collection.mLoot
-}
-local function OnPlayerJoined(player)
-    player.serverUserData.ownedBagKeys = {}
-    for _, id in ipairs(COLLECTIONS) do
-        ASYNC_BLOCKCHAIN.GetTokensForPlayer(player, { contractAddress = id }, function(tokens)
-            for _, t in ipairs(tokens) do
-                local bagKey = CoreString.Join("|", t.contractAddress, t.tokenId)
-                player.serverUserData.ownedBagKeys[bagKey] = true
-            end
-        end)
-    end
-end
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
-for _,p in ipairs(Game.GetPlayers()) do
-    OnPlayerJoined(p)
-end

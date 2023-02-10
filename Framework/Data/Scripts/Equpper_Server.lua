@@ -6,7 +6,9 @@
 
 local LOOT_ABILITY_EQUIPMENT = _G['Ability.Equipment']
 local POTIONAPI = _G["Potions.Equipment"]
+
 local EquipApi = {}
+_G['Equipper'] = EquipApi
 
 local EQUIPMENT_CONTAINER = script:GetCustomProperty("EquipmentContainer")
 _G.PlayerEquipmentContainers = {}
@@ -50,7 +52,5 @@ end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(function(player) _G.PlayerEquipmentContainers[player] = nil end)
-
-_G['Equipper'] = EquipApi
 
 Events.Connect('Equipper_Equip', EquipApi.EquipEquipment)
