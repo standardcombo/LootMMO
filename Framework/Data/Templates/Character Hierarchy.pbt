@@ -64,6 +64,7 @@ Assets {
         ChildIds: 9902958715081454671
         ChildIds: 15754108728776641353
         ChildIds: 9063130616257686735
+        ChildIds: 8160580869175399780
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -449,6 +450,43 @@ Assets {
         Script {
           ScriptAsset {
             Id: 13552875232596020869
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8160580869175399780
+        Name: "Craft-NFT_Saving"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1465933016331969141
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7637429431069973704
           }
         }
         NetworkRelevanceDistance {
