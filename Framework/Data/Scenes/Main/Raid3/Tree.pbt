@@ -26,7 +26,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest.ClaimReward"
+      String: "Quest.RewardClaimed"
     }
     Overrides {
       Name: "cs:ObjectID"

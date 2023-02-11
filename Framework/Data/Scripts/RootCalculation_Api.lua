@@ -1,18 +1,11 @@
 local STATS_CONNECTOR = require(script:GetCustomProperty('Stats_Connector'))
-_G["Modifiers.CalculationString"] = {}
+local Api = {}
+
 local function UserDataBypass()
 	if Environment.IsClient() then
 		return 'clientUserData'
 	end
 	return 'serverUserData'
-end
-
-local function CalculateString(Modifiers)
-	local newstats = {}
-	for key, value in pairs(Modifiers or {}) do
-		newstats[key] = value.calString or ""
-	end
-	return newstats
 end
 
 local function CalculateStats(Modifiers, stats)
@@ -33,31 +26,27 @@ local function CalculateStats(Modifiers, stats)
 	return newstats
 end
 
-local Api = {}
-
 function Api.RegisterCalculation(Root, modifiers)
-	local bypass = UserDataBypass()
-	Root[bypass].calculateModifier = function()
+	local rootUserData = Root[UserDataBypass()]
+	rootUserData.modifiers = modifiers
+	
+	local associativeTable = {}
+	for _,mod in ipairs(modifiers) do
+		associativeTable[mod.id] = mod
+	end
+	
+	rootUserData.CalculateModifier = function(modId)
 		local stats = STATS_CONNECTOR.GetStats(Root.owner)
-		return CalculateStats(modifiers, STATS_CONNECTOR.GetStats(Root.owner))
-	end
-	Root[bypass].calculateModifierFromStats = function(stats)
-		return CalculateStats(modifiers, stats)
-	end
-	Root[bypass].calculateString = function()
-		return CalculateString(modifiers)
-	end
-
-	Task.Spawn(function()
-		if not Object.IsValid(Root) then return end
-		if not _G["Modifiers.CalculationString"][Root.name] then
-			local newstats = {}
-			for key, value in pairs(modifiers or {}) do
-				newstats[key] = value.calString or ""
-			end
-			_G["Modifiers.CalculationString"][Root.name] = newstats
+		local mod = associativeTable[modId]
+		if mod then
+			return mod.calculation(stats)
 		end
-	end)
+		return nil
+	end
+	rootUserData.CalculateAllModifiers = function()
+		local stats = STATS_CONNECTOR.GetStats(Root.owner)
+		return CalculateStats(associativeTable, stats)
+	end
 end
 
 return Api

@@ -344,14 +344,19 @@ local ITEM_NAME_SETS = {
 local SVG_HEADER_len = string.len("data:application/json;base64,") + 1
 local SVG_IMAGE_HEADER_len = string.len("data:image/svg+xml;base64,") + 1
 
+local cache = {}
 
 function API.Parse(value)
 	if type(value) == "string" then
 		return ParseBag(value)
 	
-	elseif value:IsA("BlockchainToken") then
-		return ParseFromToken(value)
-	end
+    elseif value:IsA("BlockchainToken") then
+        local tokenId = value.tokenId
+        if not cache[tokenId] then
+            cache[tokenId] = ParseFromToken(value)
+        end
+        return cache[tokenId]
+    end
 	error("LootBagParser failed to parse from value " .. tostring(value))
 end
 

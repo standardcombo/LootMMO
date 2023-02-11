@@ -182,6 +182,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
           }
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"
@@ -355,7 +356,6 @@ Assets {
           }
         }
         ParentId: 3647014928682784410
-        ChildIds: 13175576264781756141
         ChildIds: 4339855998963457602
         UnregisteredParameters {
         }
@@ -374,60 +374,6 @@ Assets {
           }
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 13175576264781756141
-        Name: "SetAbilityIconClientOptimized"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17699307794141076392
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 413126257713324221
-            }
-          }
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12953151354139110850
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 10775690701242070163
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16479506016862580189
           }
         }
         NetworkRelevanceDistance {
@@ -657,15 +603,6 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
-      }
-    }
-    Assets {
-      Id: 10775690701242070163
-      Name: "Fantasy Ability Purple 033"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_033"
       }
     }
     Assets {

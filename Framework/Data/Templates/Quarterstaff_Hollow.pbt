@@ -117,6 +117,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
           }
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"
@@ -191,6 +192,7 @@ Assets {
           }
           Animation: "2hand_sword_slash_left"
           CanBePrevented: true
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"
@@ -265,6 +267,7 @@ Assets {
           }
           Animation: "2hand_sword_slash_spin"
           CanBePrevented: true
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"

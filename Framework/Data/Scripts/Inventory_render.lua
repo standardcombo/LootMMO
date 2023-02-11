@@ -2,29 +2,58 @@ local EquipAPI = _G["Character.EquipAPI"]
 local MATERIALS = _G["Items.Materials"]
 local ITEMS = _G.Items
 
-local SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
+local LOOT_BAG_PARSER = require(script:GetCustomProperty("LootBagParser"))
+local AsyncBC         = require(script:GetCustomProperty("AsyncBlockchain_FullWalletSearch"))
+
+local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+local INVENTORY_SLOTS = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
+local EQUIPMENT_SLOTS = script:GetCustomProperty("EquipmentSlots"):WaitForObject():GetChildren()
+local MATERIALS_BAR = script:GetCustomProperty("MaterialsBar"):WaitForObject()
+local RESOURCE_SLOTS = MATERIALS_BAR:FindDescendantByName("ResourceSlots"):GetChildren()
 local HOVER_PANEL = script:GetCustomProperty("HoverPanel"):WaitForObject()
+HOVER_PANEL.clientUserData.topLeftArrow = HOVER_PANEL:FindDescendantByName("Top Left Arrow")
+HOVER_PANEL.clientUserData.topRightArrow = HOVER_PANEL:FindDescendantByName("Top Right Arrow")
+HOVER_PANEL.clientUserData.bottomLeftArrow = HOVER_PANEL:FindDescendantByName("Bottom Left Arrow")
+HOVER_PANEL.clientUserData.bottomRightArrow = HOVER_PANEL:FindDescendantByName("Bottom Right Arrow")
 local DRAG_PANEL = script:GetCustomProperty("dragPanel"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local STAT_DISPLAY = script:GetCustomProperty("StatDisplay"):WaitForObject()
+
+local COLLECTIONS = {}
+for index, value in pairs(LOOT_BAG_PARSER.Collection) do
+	table.insert(COLLECTIONS, value)
+end
+
+local SLOTS = {}
+for _, slot in ipairs(EQUIPMENT_SLOTS) do
+	table.insert(SLOTS, slot)
+end
+for _, slot in ipairs(INVENTORY_SLOTS) do
+	table.insert(SLOTS, slot)
+end
+for _, slot in ipairs(RESOURCE_SLOTS) do
+	table.insert(SLOTS, slot)
+end
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 HOVERDATA = {
 	icon = HOVER_PANEL:FindDescendantByName("Icon"),
 	name = HOVER_PANEL:FindDescendantByName("Name"),
-	stats = HOVER_PANEL:FindDescendantByName("Stats")
+	stats = HOVER_PANEL:FindDescendantByName("Stats"),
+	hovering = false
 }
 DragData = {
 	icon = DRAG_PANEL:FindChildByName("Icon")
 }
 
 DRAG_PANEL.visibility = Visibility.FORCE_OFF
+MATERIALS_BAR.visibility = Visibility.FORCE_OFF
 
 local events = nil
 local currentInventory = nil
 local slots = {}
-local isDraging = nil
+local isDragging = nil
 
 local function Get(panel, child)
 	return panel:FindChildByName(child) or panel:FindDescendantByName(child)
@@ -57,34 +86,30 @@ local function UpdateValues()
 	end
 end
 
-local function RealeaseEvent(slot)
-	if not currentInventory then
-		return
-	end
-	if not isDraging then
-		return
-	end
-	DRAG_PANEL.visibility = Visibility.FORCE_OFF
+local function GetItemGreatness(item)
+	local greatness = item:GetCustomProperty("Greatness")
+	return greatness
+end
 
-	local dropPos = Input:GetCursorPosition()
-
+local function GetSlotUnderCursor()
+	local cursorPos = Input:GetCursorPosition()
+	local foundSlot = false
 	--Check if hovering over a slot
 	for index, panel in ipairs(SLOTS) do
 		local minwidth = panel.width
-		local minheight = panel.width
+		local minheight = panel.height
 		local abspo = panel:GetAbsolutePosition()
 		--check width
-		if dropPos.x <= abspo.x + minwidth and dropPos.x >= abspo.x then
+		if cursorPos.x >= abspo.x and cursorPos.x <= abspo.x + minwidth then
 			--check height
-			if dropPos.y <= abspo.y + minheight and dropPos.y >= abspo.y then
-				--swap slots if true
-				currentInventory:MoveFromSlot(isDraging.slot, index)
-				isDraging = nil
-				return
+			if cursorPos.y >= abspo.y and cursorPos.y <= abspo.y + minheight then
+				foundSlot = slots[index]
 			end
 		end
+		if foundSlot then
+			return foundSlot
+		end
 	end
-	isDraging = nil
 end
 
 local function DragSlot(slot)
@@ -104,26 +129,73 @@ local function DragSlot(slot)
 		DRAG_PANEL.x = panelPos.x
 		DRAG_PANEL.y = panelPos.y
 		DRAG_PANEL.visibility = Visibility.INHERIT
-		isDraging = { slot = slot.index }
+		isDragging = { slot = slot.index , type = itemdata.category}
 	end
 end
 
-local function UnhoverSlot(slot)
-	if not currentInventory then
-		return
-	end
-	if isDraging then
-		return
+local function UnhoverSlot()
+	HOVER_PANEL.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
+	HOVERDATA.hovering = false
+	--if not currentInventory then
+	--	return
+	--end
+	--if isDragging then
+	--	return
+	--end
+end
+
+local function HideArrows()
+	HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.FORCE_OFF
+	HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.FORCE_OFF
+end
+
+--equipment slots highlighting, if a valid item is being dragged
+local slotTypes = _G["Equipment.Slots"]
+
+local function SetSlotHighlight(slot,color)
+	if not color or not color:IsA("Color") then color = Color.New(0,0,0,.25) end
+	slot.gradient:SetColor(color)
+end
+
+local function HighlightValidSlot()
+	if not currentInventory then return end
+	if isDragging == nil then return end
+	for i=1,8 do
+		local isAccepting = slotTypes.GetAcceptingSlots(currentInventory:GetSlotType(i))
+		for _,accepts in pairs(isAccepting)do
+			if isDragging.type == accepts then
+				SetSlotHighlight(slots[i],Color.WHITE)
+				return
+			end
+		end
 	end
 end
+
+local function ResetHighlights()
+	for i=1,8 do
+		SetSlotHighlight(slots[i])
+	end
+end
+----------------------------------------------------------------
 
 local function HoverSlot(slot)
 	if not currentInventory then
 		return
 	end
-	if isDraging then
+	if not slot then
 		return
 	end
+	if isDragging then
+		return
+	end
+	HOVERDATA.hovering = true
+	HideArrows()
 	local item = currentInventory:GetItem(slot.index)
 	if item then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
@@ -136,12 +208,13 @@ local function HoverSlot(slot)
 		SetImage(childIcon, icon, itemdata)
 
 		if item:GetCustomProperty("Greatness") then
+			local greatness = GetItemGreatness(item)
 			HOVERDATA.name.text =
 			string.format(
 				"%s %s | Greatness %d",
-				item.name,
+				itemdata.name,
 				item:GetCustomProperty("Order"),
-				item:GetCustomProperty("Greatness")
+				greatness
 			)
 
 			local itemClass =
@@ -149,10 +222,10 @@ local function HoverSlot(slot)
 				{
 					item = item.name,
 					order = item:GetCustomProperty("Order"),
-					greatness = item:GetCustomProperty("Greatness")
+					greatness = greatness
 				}
 			)
-
+			
 			if itemClass then
 				local calculationStats = itemClass:CalculateStats()
 
@@ -188,10 +261,88 @@ local function HoverSlot(slot)
 				childstats.text = ""
 			end
 		else
-			HOVERDATA.name.text = item.name
+			HOVERDATA.name.text = itemdata.name
 			childstats.text = itemdata.description
 		end
+		
+		--Separate the screen width into 2 sections, the screen height into 4, then determine which section the hovered item is in
+		local SCREEN_SIZE = UI.GetScreenSize() --Get the screen size every time, in case the player resizes the window
+		local screenwidth = SCREEN_SIZE.x
+		local screenheight = SCREEN_SIZE.y
+		local offsetX = 50
+
+		local sectionwidth = screenwidth / 2
+		local sectionheight = screenheight / 4
+		local section = Vector2.New(0,0)
+		
+		local slotPosition = slot.Button:GetAbsolutePosition()
+		
+		--Set section on screen based on slot position
+		if slotPosition.x < sectionwidth then
+			section.x = 1
+		else
+			section.x = 2
+		end
+		if slotPosition.y < sectionheight then
+			section.y = 1
+		elseif slotPosition.y < sectionheight * 2 then
+			section.y = 2
+		elseif slotPosition.y < sectionheight * 3 then
+			section.y = 3
+		else
+			section.y = 4
+		end
+
+		HOVER_PANEL.x = slotPosition.x + offsetX
+		HOVER_PANEL.y = slotPosition.y
+
+		--Show arrow visibility based on which section the hovered item is in and set the position of the hover panel
+		if section.x == 1 then
+			if section.y == 1 then
+				HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.INHERIT
+			elseif section.y == 2 then
+				HOVER_PANEL.clientUserData.topLeftArrow.visibility = Visibility.INHERIT
+			elseif section.y == 3 then
+				HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			elseif section.y == 4 then
+				HOVER_PANEL.clientUserData.bottomLeftArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			end
+		else
+			HOVER_PANEL.x = slotPosition.x - HOVER_PANEL.width - offsetX
+			if section.y == 1 then
+				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
+			elseif section.y == 2 then
+				HOVER_PANEL.clientUserData.topRightArrow.visibility = Visibility.INHERIT
+			elseif section.y == 3 then
+				HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			elseif section.y == 4 then
+				HOVER_PANEL.clientUserData.bottomRightArrow.visibility = Visibility.INHERIT
+				HOVER_PANEL.y = slotPosition.y - HOVER_PANEL.height
+			end
+		end
+		HOVER_PANEL.visibility = Visibility.INHERIT
 	end
+end
+
+local function ReleaseEvent(slot)
+	if not currentInventory then
+		return
+	end
+	local slotUnderCursor = GetSlotUnderCursor()
+	DRAG_PANEL.visibility = Visibility.FORCE_OFF
+	if slotUnderCursor and isDragging and isDragging.slot ~= slotUnderCursor.index then
+		currentInventory:MoveFromSlot(isDragging.slot, slotUnderCursor.index)
+	end
+	isDragging = nil
+	Task.Spawn(function() --Necessary wait to allow the slot to update before hovering it
+		slotUnderCursor = GetSlotUnderCursor()
+		if slotUnderCursor and (ROOT.visibility == Visibility.INHERIT or ROOT.visibility == Visibility.FORCE_ON) then
+			HoverSlot(slotUnderCursor)
+		end
+	end,0.5)
 end
 
 local function HookUpButton(slot)
@@ -202,17 +353,20 @@ local function HookUpButton(slot)
 	)
 	slot.Button.unhoveredEvent:Connect(
 		function()
-			UnhoverSlot(slot)
+			UnhoverSlot()
 		end
 	)
 	slot.Button.pressedEvent:Connect(
 		function()
+			UnhoverSlot()
 			DragSlot(slot)
+			HighlightValidSlot()
 		end
 	)
 	slot.Button.releasedEvent:Connect(
 		function()
-			RealeaseEvent(slot)
+			ReleaseEvent(slot)
+			ResetHighlights()
 		end
 	)
 end
@@ -221,6 +375,7 @@ for index, value in ipairs(SLOTS) do
 	slots[index] = {}
 	slots[index].index = index
 	slots[index].icon = value:FindChildByName("icon")
+	slots[index].gradient = value:FindChildByName("Gradient")
 	slots[index].bg = value:FindChildByName("bg")
 	slots[index].count = value:FindChildByName("count")
 	slots[index].Button = value:FindChildByName("Button")
@@ -233,22 +388,26 @@ end
 
 local function InventoryChanged(inv, slot)
 	UpdateValues()
-	if slot == 54 then return end
 	local item = inv:GetItem(slot)
+
 	local childIcon = slots[slot].icon
 	local childCount = slots[slot].count
 	local childbg = slots[slot].bg
 	local isBag = slots[slot].isBag
 	local levelFrame = slots[slot].levelFrame
+
 	if item ~= nil then
 		local itemdata = ITEMS.GetDefinition(item.name, true) or MATERIALS.GetDefinition(item.name, true)
 		if not itemdata then
 			return
 		end
+		local greatness = nil
 		if isBag then
 			if item:GetCustomProperty("IsBag") then
 				isBag.visibility = Visibility.INHERIT
+				greatness = GetItemGreatness(item)
 			else
+				greatness = item:GetCustomProperty("Greatness")
 				isBag.visibility = Visibility.FORCE_OFF
 			end
 		end
@@ -264,13 +423,13 @@ local function InventoryChanged(inv, slot)
 		else
 			childCount.text = ""
 		end
-		local greatness = item:GetCustomProperty("Greatness")
 		if greatness then
 			levelFrame.visibility = Visibility.INHERIT
 			slots[slot].levelText.text = tostring(greatness)
 		else
 			levelFrame.visibility = Visibility.FORCE_OFF
 		end
+		UpdateValues()
 	else
 		if isBag then
 			isBag.visibility = Visibility.FORCE_OFF
@@ -319,7 +478,10 @@ end
 local function CharacterUnequip(character, player)
 	if player == LOCAL_PLAYER then
 		currentInventory = nil
-		events:Disconnect()
+		if events then
+			events:Disconnect()
+			events = nil
+		end
 	end
 end
 
@@ -333,13 +495,19 @@ function Tick(dt)
 	end
 end
 
-local function RecieviedOpen(id)
+local function ReceivedOpen(id)
 	if id == ROOT then
 		UpdateValues()
 	end
 end
 
-Events.Connect('Ability_OpenPanel', RecieviedOpen)
+function CloseClicked(button)
+	UnhoverSlot()
+end
+
+Events.Connect('Ability_OpenPanel', ReceivedOpen)
+Events.Connect("OpenInventory", CloseClicked)
 CharacterEquipped(EquipAPI.GetCurrentCharacter(LOCAL_PLAYER), LOCAL_PLAYER)
 EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
 EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)
+CLOSE_BUTTON.clickedEvent:Connect(CloseClicked)

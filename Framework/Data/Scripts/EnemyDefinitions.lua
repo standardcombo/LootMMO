@@ -1,3 +1,16 @@
+--[[
+	Enemy Definitions
+	v1.0
+	by: standardcombo
+	
+	Loads table of enemy templates into memory and grantes access to the data in global.
+	
+	API
+	===
+	GetDefinition(string enemyId)
+	GetDefinitionFromMUID(string templateId)
+	GetRarityFromMUID(string templateId)
+]]
 
 local API = {}
 _G.Enemies = API

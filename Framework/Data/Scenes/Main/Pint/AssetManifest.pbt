@@ -1,13 +1,4 @@
 Assets {
-  Id: 14017539756736382852
-  Name: "Cylinder - Bottom-Aligned"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_001"
-  }
-}
-Assets {
   Id: 13934907904162102494
   Name: "Hand Cast VFX"
   PlatformAssetType: 8

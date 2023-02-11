@@ -14,6 +14,9 @@ function OnEvent(player, objectId)
 			TryAdvanceObjectiveForPlayer(p, obj)
 		end
 	else
+		if type(objectId) == "number" then
+			objectId = tostring(objectId)
+		end
 		if OBJECT_ID ~= "" and objectId ~= OBJECT_ID then return end
 
 		local obj = _G.QuestController.GetQuestObjective(QUEST_ID, OBJECTIVE_INDEX)

@@ -21,7 +21,6 @@ function GetStar(stat)
 end
 
 function UpdateStars()
-
 	if not currentEquipment or not Object.IsValid(currentEquipment) then
 		return
 	end
@@ -39,8 +38,12 @@ function UpdateStars()
 end
 
 function UpdateEquipment(equipment)
-	currentEquipment = equipment
-	UpdateStars()
+	local AbilityBinding = equipment:GetCustomProperty("AbilityBinding")
+	if AbilityBinding == ROOT.name then
+		--print("UpdateEquipment", equipment.name, AbilityBinding, ROOT.name)
+		currentEquipment = equipment
+		UpdateStars()
+	end
 end
 
 local EquipEvent =

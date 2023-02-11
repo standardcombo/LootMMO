@@ -11,6 +11,12 @@ Objects {
     }
   }
   ParentId: 16194698060440896494
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 8067326117451680903
@@ -18,6 +24,39 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Class, Abilities, Inventory & Shop"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10633024697977154914
+      value {
+        Overrides {
+          Name: "cs:dragPanel"
+          ObjectReference {
+            SelfId: 7766030862912006558
+          }
+        }
+        Overrides {
+          Name: "cs:HoverPanel"
+          ObjectReference {
+            SelfId: 13209850701844341350
+          }
+        }
+        Overrides {
+          Name: "cs:MaterialsBar"
+          ObjectReference {
+            SelfId: 12567454318801872352
+          }
         }
       }
     }

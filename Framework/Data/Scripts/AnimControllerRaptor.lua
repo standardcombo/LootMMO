@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Raptor
-	v1.3.0
+	v1.3
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Raptor Animated Mesh.

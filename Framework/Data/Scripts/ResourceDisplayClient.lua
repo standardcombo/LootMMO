@@ -64,44 +64,45 @@ end
 
 -- nil Tick(float)
 -- Check for changes to our resource and update UI
-function Tick(deltaTime)
-	if not IsValidAppState() then
-		lastResource = -1
-		PANEL.visibility = Visibility.FORCE_OFF
-		return
-	end
+-- function Tick(deltaTime)
+-- 	if not IsValidAppState() then
+-- 		lastResource = -1
+-- 		PANEL.visibility = Visibility.FORCE_OFF
+-- 		return
+-- 	end
 
-    local resource = LOCAL_PLAYER:GetResource(RESOURCE_NAME)
+--     local resource = LOCAL_PLAYER:GetResource(RESOURCE_NAME)
 
-    -- Update things if our resource changed
-    if resource ~= lastResource then
-        lastChangeTime = time()
-        lastResource = resource
-        PANEL.visibility = Visibility.INHERIT
+--     -- Update things if our resource changed
+--     if resource ~= lastResource then
+--         lastChangeTime = time()
+--         lastResource = resource
+--         PANEL.visibility = Visibility.INHERIT
 
-        if SHOW_PROGRESS_BAR then
-            PROGRESS_BAR.progress = resource / MAX_VALUE
-        end
+--         if SHOW_PROGRESS_BAR then
+--             PROGRESS_BAR.progress = resource / MAX_VALUE
+--         end
 
-        if SHOW_TEXT then
-            if SHOW_MAX_IN_TEXT then
-                TEXT_BOX.text = string.format("%d / %d", resource, MAX_VALUE)
-            else
-                TEXT_BOX.text = CommaValue(resource)
-            end
-        end
-    end
+--         if SHOW_TEXT then
+--             if SHOW_MAX_IN_TEXT then
+--                 TEXT_BOX.text = string.format("%d / %d", resource, MAX_VALUE)
+--             else
+--                 TEXT_BOX.text = CommaValue(resource)
+--             end
+--         end
+--     end
 
-    -- Hide the ui if it's been long enough and we aren't always showing
-    if not ALWAYS_SHOW then
-        if time() > lastChangeTime + POPUP_DURATION then
-            PANEL.visibility = Visibility.FORCE_OFF
-        end
-    end
-end
+--     -- Hide the ui if it's been long enough and we aren't always showing
+--     if not ALWAYS_SHOW then
+--         if time() > lastChangeTime + POPUP_DURATION then
+--             PANEL.visibility = Visibility.FORCE_OFF
+--         end
+--     end
+-- end
 
 function IsValidAppState()
-	return _G.AppState.GetLocalState() == _G.AppState.SocialHub	and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
+    local state = _G.AppState.GetLocalState()
+	return state == _G.AppState.SocialHub and _G.QuestController.HasCompleted(LOCAL_PLAYER, "Welcome")
 end
 
 -- Initialize
@@ -121,3 +122,32 @@ if ALWAYS_SHOW then
     PROGRESS_BAR.progress = 0.0
     TEXT_BOX.text = "0"
 end
+
+function OnResourceChanged(player, resourceName, value)
+    if resourceName == RESOURCE_NAME then
+        local resource = LOCAL_PLAYER:GetResource(RESOURCE_NAME)
+        if SHOW_PROGRESS_BAR then
+            PROGRESS_BAR.progress = resource / MAX_VALUE
+        end
+
+        if SHOW_TEXT then
+            if SHOW_MAX_IN_TEXT then
+                TEXT_BOX.text = string.format("%d / %d", resource, MAX_VALUE)
+            else
+                TEXT_BOX.text = CommaValue(resource)
+            end
+        end
+    end
+end
+
+function DisplayOrHideUI()
+    if IsValidAppState() then
+        PANEL.visibility = Visibility.INHERIT
+    else
+		PANEL.visibility = Visibility.FORCE_OFF
+	end
+end
+
+Events.Connect("AppState.Enter", DisplayOrHideUI)
+Events.Connect("Quest.Changed", DisplayOrHideUI)
+LOCAL_PLAYER.resourceChangedEvent:Connect(OnResourceChanged)

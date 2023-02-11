@@ -1,6 +1,6 @@
 --[[
 	NPCAttack - Server
-	v0.14.0 - 2022/10/20
+	v1.0.0
 	by: standardcombo
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
@@ -202,7 +202,7 @@ end
 function DropRewards(killer)
 	local lootDropFactory = LOOT_DROP_FACTORY()
 	
-	if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 2.0 then
+	if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 3.0 then
 		local params = {
 			object = ROOT,
 			killer = killer,

@@ -1,6 +1,8 @@
-local ROOT_CALCULATION_API = require(script:GetCustomProperty('RootCalculation_Api'))
+local CalcAPI = require(script:GetCustomProperty('RootCalculation_Api'))
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local MODIFIERAPI = _G['Ability.Modifiers']
+
+local ABILITY_ID = 'Deaths Shadow'
 
 local modifiers =
     MODIFIERAPI.SetupMultipleNewModifiers(
@@ -12,19 +14,32 @@ local modifiers =
         'Range'
     }
 )
-modifiers['Damage'].calculation = function(stats)
+local mod
+
+mod = modifiers['Damage']
+mod.calculation = function(stats)
     return 55
 end
-modifiers['Cooldown'].calculation = function(stats)
+
+mod = modifiers['Cooldown']
+mod.calculation = function(stats)
     return 48
 end
-modifiers['Duration'].calculation = function(stats)
+
+mod = modifiers['Duration']
+mod.calculation = function(stats)
     return 5
 end
-modifiers['Speed'].calculation = function(stats)
+
+mod = modifiers['Speed']
+mod.calculation = function(stats)
     return 400
 end
-modifiers['Range'].calculation = function(stats)
+
+mod = modifiers['Range']
+mod.calculation = function(stats)
     return 400
 end
-ROOT_CALCULATION_API.RegisterCalculation(ROOT, modifiers)
+
+CalcAPI.RegisterCalculation(ROOT, modifiers)
+

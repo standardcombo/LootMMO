@@ -12,8 +12,8 @@ local NoImpactVFX = script:GetCustomProperty('NoImpactVFX')
 local attackRange = 2000
 local playerImpact = script:GetCustomProperty('ShurikenPlayerImpact')
 local rotationOffset = 7
+local mods
 function OnProjectileImpacted(projectile, other, hitResult)
-    local mods = ROOT.serverUserData.calculateModifier()
     local SpecialAbility = ABILITY
     if
         other and Object.IsValid(SpecialAbility) and Object.IsValid(SpecialAbility.owner) and
@@ -99,7 +99,7 @@ function Execute()
     local rightVector = rightRotation * Vector3.FORWARD
 
     local directionVectors = {leftVector, forwardVector, rightVector}
-    local mods = ROOT.serverUserData.calculateModifier()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
     for i = 1, 3 do
         local throwingStar = Projectile.Spawn(projectileVFX, startPosition, directionVectors[i])
         throwingStar.owner = ABILITY.owner

@@ -1,6 +1,6 @@
 Assets {
   Id: 15545822974565934271
-  Name: "Targeting"
+  Name: "TargetingClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
@@ -11,10 +11,22 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:TargertRender"
+        Name: "cs:UIContainer"
         ObjectReference {
-          SelfId: 6710200269420138766
         }
+      }
+      Overrides {
+        Name: "cs:UIImage"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:LookSpeed"
+        Float: 5
+      }
+      Overrides {
+        Name: "cs:RotationSpeed"
+        Float: -60
       }
     }
   }

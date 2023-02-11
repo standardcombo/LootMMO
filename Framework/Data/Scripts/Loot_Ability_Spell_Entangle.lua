@@ -30,7 +30,6 @@ function Cast(thisAbility)
 end
 
 function Execute()
-	local mod = ROOT.serverUserData.calculateModifier()
 	local owner = ABILITY.owner
 	local targetPosition = owner:GetWorldPosition()
 	local targetRotation = Rotation.ZERO
@@ -59,10 +58,13 @@ function Execute()
 			networkContext = NetworkContextType.NETWORKED
 		}
 	)
+	local bleedMod = ROOT.serverUserData.CalculateModifier('Bleed')
+	local durationMod = ROOT.serverUserData.CalculateModifier('Duration')
+	
 	newTrap.lifeSpan = lifeSpan
 	newTrap:SetCustomProperty('ability', ABILITY)
 	newTrap:SetCustomProperty('lifeSpan', newTrap.lifeSpan)
-	newTrap:SetCustomProperty('damage', mod["Bleed"])
+	newTrap:SetCustomProperty('damage', bleedMod)
 
 	local nearbyEnemies =
 	COMBAT().FindInSphere(owner:GetWorldPosition(), ImpulseRadius, { ignoreTeams = owner.team })
@@ -70,12 +72,12 @@ function Execute()
 	for _, enemy in pairs(nearbyEnemies) do
 		API_SE.ApplyStatusEffect(enemy, "Bleed", {
 			source = ABILITY.owner,
-			duration = mod["Duration"],
-			damage = mod["Bleed"],
+			duration = durationMod,
+			damage = bleedMod,
 		})
 		API_SE.ApplyStatusEffect(enemy, "Slow", {
 			source = ABILITY.owner,
-			duration = mod["Duration"]
+			duration = durationMod
 		})
 	end
 end

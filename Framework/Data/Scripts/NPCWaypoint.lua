@@ -1,7 +1,7 @@
 --[[
-NPC Waypoint
-by: standardcombo
-v1.1.0
+	NPC Waypoint
+	v1.1
+	by: standardcombo
 
 The waypoint detects NPCs entering its trigger and directs them to move to the next objective.
 Can be used for patrolling behaviors, random folks in town, traffic lanes, etc.

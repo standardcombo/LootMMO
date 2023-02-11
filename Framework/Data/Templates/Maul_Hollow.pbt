@@ -222,6 +222,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
           }
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"
@@ -341,6 +342,7 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
           }
+          KeyBinding_v3: "Attack"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:medium"

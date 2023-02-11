@@ -11,7 +11,37 @@ Objects {
     }
   }
   ParentId: 16937607096047638534
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 1443334462669537307
+      value {
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3861733644666963167
+      value {
+        Overrides {
+          Name: "Height"
+          Int: 172
+        }
+        Overrides {
+          Name: "Label"
+          String: "Missing Ability Description: \r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare nunc ac libero rhoncus egestas. Maecenas semper posuere lectus, vitae egestas turpis aliquet ut. Quisque fringilla scelerisque pharetra. Mauris ac molestie mauris, at accumsan libero."
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 8067326117451680903
       value {
@@ -19,25 +49,40 @@ Objects {
           Name: "Name"
           String: "Class, Abilities, Inventory & Shop"
         }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10029502995319538580
-      value {
         Overrides {
-          Name: "Width"
-          Int: 1700
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
     ParameterOverrideMap {
-      key: 16553177687411290700
+      key: 8745204039648026304
       value {
         Overrides {
-          Name: "Visible"
+          Name: "Anchor"
           Enum {
-            Value: "mc:evisibilitysetting:forceoff"
+            Value: "mc:euianchor:topcenter"
           }
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:bottomcenter"
+          }
+        }
+        Overrides {
+          Name: "UIAddSelfSizeToInheritedSize"
+          Bool: true
+        }
+        Overrides {
+          Name: "Width"
+          Int: -200
         }
       }
     }
@@ -137,6 +182,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "Character Select Screen"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }

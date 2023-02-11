@@ -21,12 +21,17 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:PlayerSettingsAdventure"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:StartingState"
         Int: 30
       }
       Overrides {
-        Name: "cs:StartingSpawnKey"
-        String: "BagSelection"
+        Name: "cs:FromSceneTransferState"
+        Int: 40
       }
     }
   }

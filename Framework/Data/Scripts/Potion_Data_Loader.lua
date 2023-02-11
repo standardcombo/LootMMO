@@ -1,7 +1,7 @@
 --[[
 	Potion Data Loader
 	v1.1.0 - 2022/10/25
-	by: Blaking, CommanderFoo, standardcombo
+	by: blaking707, CommanderFoo, standardcombo
 
 	Loads the definitions for potions and provides a global API to access them.
 
@@ -28,24 +28,31 @@ function API.GetEntry(id)
 	return definitions[id]
 end
 
+function API.GetName(id)
+	local potion = API.GetEntry(id)
+	if potion then
+		return potion.name
+	end
+end
+
 function API.GetEquipment(id)
 	local potion = API.GetEntry(id)
 	if potion then
-		return potion['equipment']
+		return potion.equipment
 	end
+end
+
+function API.GetDescription(name)
+    local potion = API.GetEntry(name)
+    if potion then
+        return potion.description
+    end
 end
 
 function API.GetIcon(id)
 	local potion = API.GetEntry(id)
 	if potion then
-		return potion['icon']
-	end
-end
-
-function API.GetName(id)
-	local potion = API.GetEntry(id)
-	if potion then
-		return potion['name']
+		return potion.icon
 	end
 end
 

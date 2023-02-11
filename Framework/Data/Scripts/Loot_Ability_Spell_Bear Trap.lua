@@ -9,7 +9,7 @@ function Execute()
 	if not Object.IsValid(ABILITY) or not Object.IsValid(ABILITY) then
 		return
 	end
-	local mod = ROOT.serverUserData.calculateModifier()
+	local mod = ROOT.serverUserData.CalculateAllModifiers()
 	local targetData = ABILITY:GetTargetData()
 	local position = targetData:GetHitPosition()
 	local v = targetData:GetAimPosition()

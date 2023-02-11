@@ -183,10 +183,6 @@ Objects {
   Id: 11299696855387386535
   Name: "Other Components"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -194,7 +190,26 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 538778299556888211
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 25.1848145
+            Y: -4396.70898
+            Z: 30
+          }
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 4594542242463950141
       value {
@@ -212,12 +227,17 @@ Objects {
           Rotator {
           }
         }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14106919093906510816
+      value {
         Overrides {
-          Name: "Scale"
+          Name: "Position"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 25.1848145
+            Y: -4396.70898
+            Z: 30
           }
         }
       }

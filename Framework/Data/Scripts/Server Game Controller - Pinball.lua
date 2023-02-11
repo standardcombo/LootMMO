@@ -1,3 +1,12 @@
+--[[
+  ------------------
+  Pirate Pinball - Server Game Controller
+  v1.0.3 - 2022/12/08
+  by: varglbargl
+  Modified by: Luapi
+  ------------------
+]]
+
 local PLAY_TRIGGER = script:GetCustomProperty("PlayTrigger"):WaitForObject()
 local LEFT_HAND_ANCHOR = script:GetCustomProperty("LeftHandAnchor"):WaitForObject()
 local RIGHT_HAND_ANCHOR = script:GetCustomProperty("RightHandAnchor"):WaitForObject()
@@ -22,7 +31,9 @@ function handleInteracted(_, player)
 
   player:SetWorldRotation(Rotation.New(0, 0, 180) * PLAY_TRIGGER:GetWorldRotation())
   player.isMovementEnabled = false
-  player:SetMounted(false)
+  if player.isMounted then
+    player:SetMounted(false)
+  end
   player:SetWorldPosition(PLAY_TRIGGER:GetWorldPosition())
   LEFT_HAND_ANCHOR:Activate(player)
   RIGHT_HAND_ANCHOR:Activate(player)
@@ -35,6 +46,12 @@ function handleInteracted(_, player)
       eq.visibility = Visibility.FORCE_OFF
     end
   end
+
+  for _, ability in ipairs(player:GetAbilities()) do --Disable all abilities during pinball
+    player.serverUserData[ability] = ability.isEnabled --Store the original state of the ability
+    ability.isEnabled = false
+  end
+
   player.serverUserData.isInvulnerable = true
 
   Events.BroadcastToPlayer(player, "StartPinball", thisMachine.id, player)
@@ -59,6 +76,13 @@ function handleQuit(machineId, player)
         eq.visibility = Visibility.INHERIT
       end
     end
+
+    for _, ability in ipairs(player:GetAbilities()) do --Re-enable all abilities
+      if player.serverUserData[ability] then
+        ability.isEnabled = player.serverUserData[ability] -- Restore the original state of the ability
+      end
+    end
+
     player.serverUserData.isInvulnerable = false
   end
 

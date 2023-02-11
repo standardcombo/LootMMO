@@ -10,7 +10,7 @@ Assets {
       }
       Overrides {
         Name: "cs:ActionBinding"
-        String: "ability_primary"
+        String: "Drink"
       }
       Overrides {
         Name: "cs:ZeroUsesDestroy"

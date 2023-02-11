@@ -315,23 +315,7 @@ Objects {
         MaxContactOffset: 8
       }
       RelevanceSettings {
-        key: "decal"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
         key: "smartobject"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "vfx"
         value {
           LowDistance: 4500
           MediumDistance: 7000
@@ -375,51 +359,53 @@ Objects {
         Value: "mc:eplayerstoragemode:disabled"
       }
       EnableNetworkedEventsQueuing: true
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "decal"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
         key: "vfx"
         value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "light"
-        value {
           VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
         }
       }
-      PCDistanceRelevanceSettings {
-        key: "mergedmesh"
-        value {
-          VeryLowDistance: 2000
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "mesh"
-        value {
-          VeryLowDistance: 2000
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "smartobject"
+      MobileDistanceRelevanceSettings {
+        key: "decal"
         value {
           VeryLowDistance: 2000
           LowDistance: 4500
@@ -455,7 +441,7 @@ Objects {
         }
       }
       MobileDistanceRelevanceSettings {
-        key: "smartobject"
+        key: "vfx"
         value {
           VeryLowDistance: 2000
           LowDistance: 4500

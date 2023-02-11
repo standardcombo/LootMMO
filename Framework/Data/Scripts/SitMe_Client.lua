@@ -27,6 +27,7 @@ local IKAs = IK_ANCHORS:GetChildren()
 local activateSitMeHandle
 local deactivateByMovement = true --to be used as parameter TODO
 local isShowingPanel = false
+local justBroadcasted = false
 
 function ToggleIKAs(activ)
 	if occupyingPlayer == nil then warn("Call ToggkeIKAs() always prior to setting occupyingPlayer = nil") return end
@@ -45,13 +46,6 @@ function ToggleIKAs(activ)
 			end
 		end
 	end
-end
-
-function GetPlayerFromID(pid)
-	for _, p in ipairs(Game.GetPlayers()) do
-		if p.id == pid then return p end
-	end
-	return false
 end
 
 function EmptySitMe()
@@ -92,10 +86,10 @@ function UpdateSitMeState(player, key)
 	if key ~= SIT_ME_ID then return end
 	local currentOwner = LOCAL_PLAYER:GetPrivateNetworkedData(key)
 	--print("currentOwner",currentOwner)
-	currentOwner = GetPlayerFromID(currentOwner)
-	if currentOwner == false then
+	currentOwner = Game.FindPlayer(currentOwner)
+	if currentOwner == nil then
 		EmptySitMe()
-	elseif currentOwner:IsA("Player") then
+	else
 		OccupySitMe(currentOwner)
 	end
 end
@@ -105,10 +99,13 @@ function ActivateSitMeHandle()
 	DeactivateSitMeHandle()
 	--print("activating handle")
 	activateSitMeHandle = Input.actionPressedEvent:Connect(function(player, action, value)
+		if justBroadcasted == true then return end
 		if action == PRIMARY_ACTION --or action == SECONDARY_ACTION
 			or (deactivateByMovement == true and occupyingPlayer == LOCAL_PLAYER and action == "Move") then
-			DeactivateSitMeHandle()
+			justBroadcasted = true
+			--DeactivateSitMeHandle()
 			Events.BroadcastToServer("SitMe", SIT_ME_ID)
+			Task.Spawn(function() justBroadcasted = false end,.1)
 		end
 	end)
 end

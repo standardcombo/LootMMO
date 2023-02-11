@@ -36,7 +36,7 @@ end
 local function CraftItem(player, itemid)
 	local inventory = GetInventory(player)
 	if not inventory then return end
-	local Recipe = CraftingAPI.GetGreatnessValue(itemid, 5)
+	local Recipe = CraftingAPI.GetRecipeForGreatness(itemid, 5)
 	if not Recipe then
 		return
 	end
@@ -60,47 +60,46 @@ local function CraftItem(player, itemid)
 	end
 end
 
-local function UpgradeNFT(player, Collection, tokenid, itemid)
+local function UpgradeNFT(player, collection, tokenid, itemid)
 	local inventory = GetInventory(player)
 	if not inventory then return end
 
-	AsyncBC.GetTokensForPlayer(player, { contractAddress = Collection }, function(tokens)
-		local function HasToken()
+	AsyncBC.GetTokensForPlayer(player, { contractAddress = collection }, function(tokens)
+		local function FindToken()
 			for index, value in ipairs(tokens) do
 				if value.tokenId == tokenid then
 					return value
 				end
 			end
 		end
-
-		local token = HasToken()
+		local token = FindToken()
 		if not token then return end
-		local Greatness = NFTSaving.LoadNFT(player, token, itemid)
-		if not Greatness then
+
+		local greatness = NFTSaving.LoadNFT(player, token, itemid)
+		if not greatness then
 			local itemdata = LOOT_BAG_PARSER.Parse(token)
 			local items = itemdata.items
 			for key, value in pairs(items) do
 				if itemid == value.name then
-					Greatness = value.greatness
+					greatness = value.greatness
 				end
 			end
 		end
-		if not Greatness then return end
+		if not greatness then return end
 
-		local Recipe = CraftingAPI.GetGreatnessValue(itemid, Greatness + 1)
+		local Recipe = CraftingAPI.GetRecipeForGreatness(itemid, greatness + 1)
 		if inventory:HasRequiredItems(Recipe) then
 			for key, value in pairs(Recipe) do
 				local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 				inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 			end
-			NFTSaving.Save(player, token, itemid, Greatness + 1)
-			NFTSaving.UpdateClient(player)
+			NFTSaving.Save(player, token, itemid, greatness + 1)
 		else
 			return
 		end
 
-		local BagKey = CoreString.Join("|", token.contractAddress, token.tokenId)
-		local itemEntry = ItemApi.GetDefinition(itemid)
+		local bagKey = CoreString.Join("|", token.contractAddress, token.tokenId)
+		local itemEntry = ItemApi.GetDefinition(itemid, true)
 		local icon = nil
 		if itemEntry then
 			icon = itemEntry.icon
@@ -109,8 +108,8 @@ local function UpgradeNFT(player, Collection, tokenid, itemid)
 		for key, item in pairs(inventory:GetItems()) do
 			if item.name == itemid then
 				local value = item:GetCustomProperty("BagKey")
-				if value == BagKey then
-					item:SetCustomProperty("Greatness", Greatness + 1)
+				if value == bagKey then
+					item:SetCustomProperty("Greatness", greatness + 1)
 					Events.BroadcastToPlayer(player, "RewardToast", {
 						icon = icon,
 						message = "Success: NFT Upgraded"
@@ -139,17 +138,20 @@ local function UpgradeItem(player, slot)
 	if itemToUpgrade:GetCustomProperty("IsBag") then return end
 
 	local value, hasProperty = itemToUpgrade:GetCustomProperty("Greatness")
-	if not hasProperty or not CraftingAPI.GetGreatnessValue(itemToUpgrade.name, value + 1) then
+	if not hasProperty then
 		return
 	end
-	local Recipe = CraftingAPI.GetGreatnessValue(itemToUpgrade.name, value + 1)
+	local Recipe = CraftingAPI.GetRecipeForGreatness(itemToUpgrade.name, value + 1)
+	if not Recipe then
+		return
+	end
 	if inventory:HasRequiredItems(Recipe) then
 		for key, value in pairs(Recipe) do
 			local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 			inventory:RemoveItem(materialdata["itemAsset"], { count = value })
 		end
 		itemToUpgrade:SetCustomProperty("Greatness", value + 1)
-		local itemEntry = ItemApi.GetDefinition(itemToUpgrade.name)
+		local itemEntry = ItemApi.GetDefinition(itemToUpgrade.name, true)
 		local icon = nil
 		if itemEntry then
 			icon = itemEntry.icon
@@ -184,7 +186,7 @@ local function ScrapItem(player, slot)
 		local materialdata = ItemApi.GetDefinition(key, true) or Materials.GetDefinition(key, true)
 		inventory:AddItem(materialdata["itemAsset"], { count = value })
 	end
-	local itemEntry = ItemApi.GetDefinition(itemid)
+	local itemEntry = ItemApi.GetDefinition(itemid, true)
 	local icon = nil
 	if itemEntry then
 		icon = itemEntry.icon

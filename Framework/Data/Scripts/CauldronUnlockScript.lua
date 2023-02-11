@@ -35,6 +35,15 @@ local function PlayerEquipped(char, player)
 	if player ~= LOCAL_PLAYER then return end
 	local progress = char:GetComponent("Progression")
 	ProgressEvent = progress.progressionUpdatedEvent:Connect(ProgressUpdated)
+
+	local potions = char:GetComponent("Potions")
+
+	for i = 1, 3 do
+		if not progress:GetProgressionKey("PotionSlot" .. tostring(i)) then
+			potions:SetUnequipped(i)
+		end
+	end
+
 	ProgressUpdated(progress)
 end
 

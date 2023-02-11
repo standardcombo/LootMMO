@@ -1,7 +1,7 @@
 --[[
 	Potion Auto-Equip
 	v1.0.1 - 2022/10/25
-	by: Blaking
+	by: blaking707
 ]]
 local EquipAPI = _G["Character.EquipAPI"]
 local PotionsAPI = _G["Potions.Equipment"]
@@ -14,6 +14,11 @@ local SlotTable = {
 	"z",
 	"x",
 	"c",
+}
+local AutoEquipProgression = {
+	{key = "AcceptPotion1", equip = "Health"},
+	{key = "AcceptPotion2", equip = "Empty"},
+	{key = "AcceptPotion3", equip = "Empty"},
 }
 
 local function UnequipEvent(character)
@@ -56,6 +61,15 @@ local function PotionsChanged(character, PotionComponent, player)
 	end
 end
 
+local function ProgressionChanged(progression, key, character, player)
+	for index, data in ipairs(AutoEquipProgression) do
+		if data.key == key then
+			local PotionComponent = character:GetComponent("Potions")
+			PotionComponent:SetEquipped(data.equip, index)
+		end
+	end
+end
+
 local function PlayerUnequipped(character, player)
 	UnequipEvent(character)
 	for index, value in pairs(spawnnedEquipment[character.id]) do
@@ -72,6 +86,10 @@ local function PlayerEquipped(character, player)
 			PotionsChanged(character, PotionComponent, player)
 		end
 	)
+	local progression = character:GetComponent("Progression")
+	progression.progressionUpdatedEvent:Connect(function(progression, key)
+		ProgressionChanged(progression, key, character, player)
+	end)
 	PotionsChanged(character, PotionComponent, player)
 end
 

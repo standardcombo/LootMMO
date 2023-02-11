@@ -1,17 +1,17 @@
  
 local ROOT = script:GetCustomProperty('Root'):WaitForObject()
 local ABILITY = script:GetCustomProperty('Ability'):WaitForObject()
+local mods = {}
 
 local MAGE_ORC_TORNADO_PLACEMENT_BASIC = script:GetCustomProperty('MageOrcTornadoPlacementBasic')
 
 function Execute()
-    local mod = ROOT.serverUserData.calculateModifier()
-
+    mods = ROOT.serverUserData.CalculateAllModifiers()
     local SpecialAbility = ABILITY
     local targetData = SpecialAbility:GetTargetData()
     local position = targetData:GetHitPosition()
 
-    local radius = mod[ "Radius"]
+    local radius = mods[ "Radius"]
     local vfxScale = CoreMath.Round(radius / 125, 3)
 
     local CurrentTornado =
@@ -19,10 +19,10 @@ function Execute()
         MAGE_ORC_TORNADO_PLACEMENT_BASIC,
         {position = position, scale = vfxScale, networkContext = NetworkContextType.NETWORKED}
     )
-    CurrentTornado.lifeSpan = mod["Duration"]
+    CurrentTornado.lifeSpan = ROOT.serverUserData.CalculateModifier('Duration')
     CurrentTornado:SetCustomProperty('decaleScale', vfxScale)
     CurrentTornado:SetCustomProperty('lifespan', CurrentTornado.lifeSpan)
-    CurrentTornado:SetCustomProperty('damage', mod["DOT"])
+    CurrentTornado:SetCustomProperty('damage', ROOT.serverUserData.CalculateModifier('DOT'))
     CurrentTornado:SetCustomProperty('range', vfxScale)
     CurrentTornado:SetCustomProperty('ability', ABILITY)
 end

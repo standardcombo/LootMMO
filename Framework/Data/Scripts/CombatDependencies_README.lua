@@ -3,16 +3,20 @@
 	v1.3.0 - 2022/10/25
 	by: standardcombo, WaveParadigm
 	
+	Compatible with the NPC AI Kit v1.0.
 	Add a copy of the Combat Dependencies template to the hierarchy.
 	
 	Included components:
 	
 	- Combat Wrap API
 	  Generalizes combat between players and NPCs.
-	  
+
 	- Combat Events
 	  Implements priority order on top of events fired by the Wrap API.
-	  
+
+	- Combat Accountant
+	  Keeps track of who dealt damage to what, and how much. Used for crediting assists.
+
 	- Player Homing Targets
 	  Allows NPCs and weapons to use homing shots against players.
 	  

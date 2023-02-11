@@ -1,6 +1,7 @@
 --[[
 	Settings per Location - Client
 	by: standardcombo
+	v1.1
 	
 	Changes the player's settings depending on their current screen.
 	
@@ -12,9 +13,9 @@
 local SFX = script:GetCustomProperty("SFX"):WaitForObject()
 local CAMERA_SOCIAL_SPACE = script:GetCustomProperty("CameraSocialSpace"):WaitForObject()
 
-local player = Game.GetLocalPlayer()
+-- local player = Game.GetLocalPlayer()
 
-Events.BroadcastToServer("ClientReady")
+--Events.BroadcastToServer("ClientReady")
 
 
 Events.Connect("AppState.Enter", function(player, newState, prevState)

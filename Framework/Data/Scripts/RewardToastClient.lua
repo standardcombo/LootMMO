@@ -1,6 +1,6 @@
 --[[
 	Reward Toast - Client
-	v1.0
+	v1.1
 	by: standardcombo
 	
 	Pop animated UI cards showing rewards or other icon + text information.
@@ -73,7 +73,10 @@ local PROTOTYPE_ROW_COMMON = script:GetCustomProperty("PrototypeRowCommon"):Wait
 
 local EVENT_NAME = "RewardToast" --Pass data table {type, icon, message}
 
-local DURATION = 2.5
+local DURATION_COMMON = 2
+local DURATION_RARE = 3
+local DURATION_EPIC = 3.5
+local DURATION_LEGENDARY = 4
 local FADE_TIME = 0.5
 local LERP_SPEED = 10
 
@@ -101,7 +104,7 @@ Events.Connect(EVENT_NAME, ShowRewardToast)
 
 
 function IsBusy()
-	return #activeRows > 0 and activeRows[1].clientUserData.time <= DURATION
+	return #activeRows > 0 and activeRows[1].clientUserData.time > 0
 end
 
 function Tick(deltaTime)
@@ -118,12 +121,12 @@ function Tick(deltaTime)
 		y = y + row.height
 		
 		-- Time
-		row.clientUserData.time = row.clientUserData.time + deltaTime
+		row.clientUserData.time = row.clientUserData.time - deltaTime
 		
-		if row.clientUserData.time > DURATION then
+		if row.clientUserData.time <= 0 then
 			row.opacity = CoreMath.Lerp(row.opacity, 0, t)
 			
-			if i == #activeRows and row.clientUserData.time > DURATION + FADE_TIME then
+			if i == #activeRows and row.clientUserData.time < -FADE_TIME then
 				table.remove(activeRows, i)
 				RecycleRow(row)
 			end
@@ -185,13 +188,15 @@ function SetupRow(data)
 	
 	-- Add extra time duration, based on rarity
 	if data.type == "Rare" then
-		row.clientUserData.time = -DURATION * 0.25
+		row.clientUserData.time = DURATION_RARE
 		
 	elseif data.type == "Epic" then
-		row.clientUserData.time = -DURATION * 0.5
+		row.clientUserData.time = DURATION_EPIC
 		
 	elseif data.type == "Legendary" then
-		row.clientUserData.time = -DURATION
+		row.clientUserData.time = DURATION_LEGENDARY
+	else
+		row.clientUserData.time = DURATION_COMMON
 	end
 	
 	return row

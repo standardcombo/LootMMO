@@ -220,6 +220,8 @@ local function parse_string(str, i)
   local j = i + 1
   local k = j
 
+  local count = 0
+
   while j <= #str do
     local x = str:byte(j)
 
@@ -250,6 +252,12 @@ local function parse_string(str, i)
     end
 
     j = j + 1
+    count = count + 1
+    
+    if(count == 900) then
+      Task.Wait()
+      count = 0
+    end
   end
 
   decode_error(str, i, "expected closing quote for string")

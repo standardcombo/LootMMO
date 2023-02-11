@@ -1,6 +1,6 @@
 --[[
 	Melee Ability - Client
-	v1.3.0
+	v1.3.1
 	by: standardcombo
 	
 	Handles spawning of VFX for a melee ability.
@@ -101,7 +101,9 @@ function OnExecute(ability)
 	local playerQ = Quaternion.New(EQUIPMENT.owner:GetWorldRotation())
 	local rot = Rotation.New(playerQ * Quaternion.New(SWIPE_ROTATION))
 	local pos = playerPos + playerQ * SWIPE_POSITION
-	currentSwipe = World.SpawnAsset(SWIPE_ASSET, {position = pos, rotation = rot})
+	if SWIPE_ASSET then
+		currentSwipe = World.SpawnAsset(SWIPE_ASSET, {position = pos, rotation = rot})
+	end
      
 	if CALIBRATE_SWIPE then
 		BeginSwipeCalibration()

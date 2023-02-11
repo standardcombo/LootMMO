@@ -1,25 +1,28 @@
-local NOTIFIER = script:GetCustomProperty('Notifier'):WaitForObject()
-local NOTIFICATION_COUNT = script:GetCustomProperty("NotificationCount"):WaitForObject()
+local BADGE_ROOT = script:GetCustomProperty("BadgeRoot"):WaitForObject()
+local BADGE_TEXT = script:GetCustomProperty("BadgeText"):WaitForObject()
+local LEVEL_UP_ICON = script:GetCustomProperty("LevelUpIcon"):WaitForObject()
+local SOUND = script:GetCustomProperty("Sound"):WaitForObject()
 
 local appstate = _G.AppState
-local SOUND = script:GetCustomProperty('Sound'):WaitForObject()
 local hasSeen = true
 local notificationCount = 0
 
 function Seen()
-	NOTIFIER.visibility = Visibility.FORCE_OFF
+	BADGE_ROOT.visibility = Visibility.FORCE_OFF
+	LEVEL_UP_ICON.visibility = Visibility.FORCE_OFF
 	notificationCount = 0
 	hasSeen = true
 end
 
 function NotSeen()
-	NOTIFIER.visibility = Visibility.INHERIT
+	BADGE_ROOT.visibility = Visibility.INHERIT
+	LEVEL_UP_ICON.visibility = Visibility.INHERIT
 	SOUND:Play()
 	hasSeen = false
 end
 
 function UpdateSeen()
-	NOTIFICATION_COUNT.text = tostring(notificationCount)
+	BADGE_TEXT.text = tostring(notificationCount)
 	if notificationCount > 0 then
 		NotSeen()
 	else
@@ -27,8 +30,9 @@ function UpdateSeen()
 	end
 end
 
-local function AddNotification()
-	notificationCount = notificationCount + 1
+local function AddNotification(amount)
+	amount = amount or 1
+	notificationCount = notificationCount + amount
 	UpdateSeen()
 end
 

@@ -92,7 +92,7 @@ function OnPlayerJoined(player)
 	end
 
 	if REPLACE_ON_EACH_RESPAWN then
-		player.respawnedEvent:Connect(OnPlayerRespawned)
+		player.spawnedEvent:Connect(OnPlayerRespawned)
 	end
 
 	if AppliesToPlayersTeam(player) then

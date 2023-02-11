@@ -6,13 +6,12 @@ local projectileVFX = script:GetCustomProperty('HealerOrcSunBeamProjectileBasic'
 function Execute()
     local player = ROOT.owner
     local SpecialAbility = ABILITY
-    local mod = ROOT.serverUserData.calculateModifier()
     if SpecialAbility:GetCurrentPhase() == AbilityPhase.READY then
         return
     end
 
-    local SPEED = mod["Speed"]
-    local RANGE = mod[ "Range"]
+    local SPEED = ROOT.serverUserData.CalculateModifier('Speed')
+    local RANGE = ROOT.serverUserData.CalculateModifier('Range')
     local MOVE_DURATION = RANGE / SPEED
     local LIFE_SPAN = MOVE_DURATION + 5
 
@@ -26,8 +25,8 @@ function Execute()
 
     local newProjectile =
         World.SpawnAsset(projectileVFX, {position = WorldPosition, networkContext = NetworkContextType.NETWORKED})
-    newProjectile:SetCustomProperty('damage', mod ["Damage"])
-    newProjectile:SetCustomProperty('heal', mod['Heal'])
+    newProjectile:SetCustomProperty('damage', ROOT.serverUserData.CalculateModifier('Damage'))
+    newProjectile:SetCustomProperty('heal', ROOT.serverUserData.CalculateModifier('Heal'))
     newProjectile:SetCustomProperty('ability', SpecialAbility)
 
     local ViewRotation = SpecialAbility.owner:GetViewWorldRotation()

@@ -11,7 +11,7 @@ function Execute()
     end
     startTime = time()
     endTime =
-        startTime + (ROOT.clientUserData.calculateModifier()["Duration"] or ABILITY.executeDuration)
+        startTime + (ROOT.clientUserData.CalculateModifier('Duration') or ABILITY.executeDuration)
     while ABILITY:GetCurrentPhase() == AbilityPhase.EXECUTE do
         Task.Wait()
         if time() > endTime then

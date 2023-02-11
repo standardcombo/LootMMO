@@ -8,7 +8,6 @@ local ENDING_FXBASIC = script:GetCustomProperty("AssassinOrcBladeDashEndingFXBas
 local BLADE_DASH_VFXBASIC = script:GetCustomProperty("BladeDashVFXBasic")
 local STAB_ANIMATION = script:GetCustomProperty("StabAnimation"):WaitForObject()
 
-local mods = {}
 local DashImpulseVector = nil
 local originalPlayerSettings = {}
 local isDashing = false
@@ -75,7 +74,7 @@ end
 function Execute()
 	ToggleDash(true)
 	
-	Events.Broadcast("Ability.Used", player, "BladeDash")
+	Events.Broadcast("Ability.Used", ABILITY.owner, "BladeDash")
 end
 
 function OnInterrupted()
@@ -90,6 +89,7 @@ end
 
 function Recovery()
 	Task.Wait(1)--Task.Wait(mod["Range"])
+	if not Object.IsValid(ABILITY) then return end
 	STAB_ANIMATION:Activate()
 	local bashTemplate = World.SpawnAsset(ENDING_FXBASIC, {rotation = ABILITY.owner:GetWorldRotation(), networkContext = NetworkContextType.NETWORKED})
 	-- Task.Spawn(function()
@@ -99,14 +99,14 @@ function Recovery()
 	-- 	end
 	-- end)
 	bashTemplate:AttachToPlayer(ABILITY.owner, 'lower_spine')
-	mods = ROOT.serverUserData.calculateModifier()
+	local dmgMod = ROOT.serverUserData.CalculateModifier('Damage')
 	local nearbyEnemies = COMBAT().FindInSphere(ABILITY.owner:GetWorldPosition(), 1000, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
 	local dmg = Damage.New()
-	dmg.amount = mods['Damage'][1]
+	dmg.amount = dmgMod[1]
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY
-	local isCrit = mods['Damage'][2]
+	local isCrit = dmgMod[2]
 	for i, enemy in pairs(nearbyEnemies) do
 		local attackData = {
 			object = enemy,
@@ -118,9 +118,7 @@ function Recovery()
 		}
 		COMBAT().ApplyDamage(attackData)
 	end
-	if not Object.IsValid(ABILITY) then
-		return
-	end
+	if not Object.IsValid(ABILITY) then return end
 	if ABILITY:GetCurrentPhase() == AbilityPhase.RECOVERY then
 		ABILITY:AdvancePhase()
 	end

@@ -1,7 +1,7 @@
 --[[
 	Loot Ability Spell: Iceberg
 	v1.0.1 - 2022/10/25
-	by: Blaking, Luapi
+	by: blaking707, Luapi
 ]]
 
 local MAGE_ABILITY_BREAK_BASIC = script:GetCustomProperty('MageIcebergBreakBasic')
@@ -41,7 +41,7 @@ function Execute()
         return
     end
     PlayerSettings = {}
-    mods = ROOT.serverUserData.calculateModifier()
+    mods = ROOT.serverUserData.CalculateAllModifiers()
 
     PlayerSettings.movementControlMode = owner.movementControlMode
     PlayerSettings.maxJumpCount = owner.maxJumpCount

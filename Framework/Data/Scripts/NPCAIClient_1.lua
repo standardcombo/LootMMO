@@ -1,11 +1,13 @@
 --[[
 	NPCAI - Client
-	v0.14.0
+	v1.0.0
 	by: standardcombo
+	Modified by: Luapi
 	
 	The client counterpart for NPCAIServer. Detaches and smooths the
 	visual parts of the NPC from the logical ones.
 --]]
+
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local GEO_ROOT = script:GetCustomProperty("GeoRoot"):WaitForObject()
 local FORWARD_NODE = script:GetCustomProperty("ForwardNode"):WaitForObject()
@@ -25,6 +27,7 @@ ROOT.clientUserData.GEO_ROOT = GEO_ROOT
 GEO_ROOT.parent = nil
 GEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)
 
+
 local STATE_SLEEPING = 0
 local STATE_ENGAGING = 1
 local STATE_ATTACK_CAST = 2
@@ -42,24 +45,29 @@ end
 
 local currentState = GetCurrentState()
 
+
 if currentState == STATE_PATROLLING then
 	GEO_ROOT:Follow(script, PATROL_SPEED)
 else
 	GEO_ROOT:Follow(script, MOVE_SPEED)
 end
 
+
 function OnPropertyChanged(object, propertyName)
+	
 	if (propertyName == "CurrentState") then
 		local newState = GetCurrentState()
-		
+
+		if not script then return end
 		if newState == STATE_PATROLLING and currentState ~= STATE_PATROLLING then
 			GEO_ROOT:Follow(script, PATROL_SPEED)
+			
 		elseif newState ~= STATE_PATROLLING and currentState == STATE_PATROLLING then
 			GEO_ROOT:Follow(script, MOVE_SPEED)
 		end
-
+		
 		currentState = newState
 	end
 end
-
 ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
+

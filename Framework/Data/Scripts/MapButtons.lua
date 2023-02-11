@@ -82,6 +82,7 @@ function Tick()
 end
 
 Input.actionPressedEvent:Connect(function(player, action)
+	--print("action = ".. action)
 	if action == "Shoot" and UI.IsCursorVisible() then
 		
 		if LEFT_UIACTIVE.visibility == Visibility.INHERIT then

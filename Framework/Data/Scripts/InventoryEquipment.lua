@@ -2,7 +2,7 @@ local EquipApi        = _G["Character.EquipAPI"]
 local equipmentSlots  = _G['Equipment.Slots']
 local items           = _G.Items
 local equipmentStack  = _G.EquipmentStack
-local defultEquipment = items.GetDefinition("Quarterstaff")
+local defaultEquipment = items.GetDefinition("Punch")
 local Weapons         = items.GetDefinitionsForCategory("weapon")
 local KWeapons        = {}
 for index, value in ipairs(Weapons) do
@@ -25,27 +25,37 @@ local function InventoryUpdated(inv, i)
 	local column
 	for _, equipment in ipairs(owner:GetEquipment()) do
 		if equipment.socket == "right_prop" then
-			for _, Item in ipairs(Weapons) do
+			--for _, Item in ipairs(Weapons) do
+				--[[
 				local templateSplit = CoreString.Split(Item["equipmentHollow"] or "", ":")
 				local templateSplit2 = CoreString.Split(Item["equipment"] or "", ":")
-				if equipment.sourceTemplateId == templateSplit then
-					column = "equipmentHollow"
-				end
-
 				if equipment.sourceTemplateId == templateSplit2 then
+					--column = "equipmentHollow"
+					column = "equipment"
+				elseif equipment.sourceTemplateId == templateSplit then
+					--column = "equipment"
+					column = "equipmentHollow"
+				end]]
+
+				if owner.serverUserData
+				and owner.serverUserData.safeZoneCount
+				and owner.serverUserData.safeZoneCount > 0
+				then
+					column = "equipmentHollow"
+				else
 					column = "equipment"
 				end
 
-				if column then
+				--if column then
 					for key, stackdex in pairs(equipmentStack.GetStackPlayer(owner, socket)) do
 						if stackdex.value == equipment then
 							stackindex = stackdex
 						end
 					end
 					equipment:Destroy()
-					break
-				end
-			end
+					--break
+				--end
+			--end
 		end
 		if column then break end
 	end
@@ -53,7 +63,7 @@ local function InventoryUpdated(inv, i)
 	local item = inv:GetItem(i)
 	Events.Broadcast("WeaponChanged", owner)
 	if item and KWeapons[item.name] then
-		local equipItem = items.GetDefinition(item.name)
+		local equipItem = items.GetDefinition(item.name, true)
 		if equipItem then
 			local newItem =
 			World.SpawnAsset(equipItem[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
@@ -64,10 +74,10 @@ local function InventoryUpdated(inv, i)
 			end
 		end
 	else
-		if defultEquipment then
+		if defaultEquipment then
 			local newItem =
-			World.SpawnAsset(defultEquipment[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
-			assert(newItem, defultEquipment.id .. " should of spawned")
+			World.SpawnAsset(defaultEquipment[column or "equipmentHollow"], { networkContext = NetworkContextType.NETWORKED })
+			assert(newItem, defaultEquipment.id .. " should of spawned")
 			newItem:Equip(owner)
 			if stackindex then
 				stackindex.value = newItem
@@ -84,11 +94,13 @@ end
 local function playerEquipped(character, player)
 	local inventory = character:GetComponent("Inventory")
 	local stats = character:GetComponent("Stats")
-
 	local _inventory = inventory:GetInventory()
 	_inventory.changedEvent:Connect(
 		function(inv, i)
-			if i == 1 then
+			if not player.serverUserData.properWeaponEquipped then
+				InventoryUpdated(inv, 1) -- Ensures the player's weapon is correct
+				player.serverUserData.properWeaponEquipped = true
+			elseif i == 1 then
 				InventoryUpdated(inv, i)
 			end
 			if i <= #equipmentSlots.GetSlots() then

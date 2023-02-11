@@ -1,18 +1,22 @@
--- Call this event to show the UI. Bool param: canSelectSubclass?
-local CLOSE_EVENT = "Ability_Close"
-local PREPARE_TO_CLOSE = "Ability_Prepare"
-local OPEN_EVENT = "Ability_OpenPanel"
+-- Call this event to show the UI
+local EVENT_SHOW_CLASS_SELECT = "ClassSelection.Show"
+-- Called by this script when a class is selected. String param: Class name
+local EVENT_CLASS_SELECTED = "ClassSelection.Selected"
+--local CLOSE_EVENT = "Ability_Close"
+--local PREPARE_TO_CLOSE = "Ability_Prepare"
+--local SHOW_ABILITIES_EVENT = "Ability_OpenPanel"
 
 local classAPI = _G["Character.Classes"]
 local EquipApi = _G["Character.EquipAPI"]
 local EASE_UI = require(script:GetCustomProperty("EaseUI"))
+local EASE_DURATION_SHOW = 0.4
+local EASE_DURATION_HIDE = 0.3
+local EASE_DURATION_DETAILS = 0.25
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local CLASS_IMAGES = require(script:GetCustomProperty("ClassImages"))
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
-
--- Called by this script when a class is selected. String param: Class name
-local EVENT_CLASS_SELECTED = "ClassSelection.Class"
 
 
 local function Get(panel, desendant)
@@ -36,7 +40,7 @@ end
 
 local UnselectableClasses = {
 	["Healer"] = true,
-	["ShadowMancer"] = true,
+	["Shadowmancer"] = true,
 	["Rogue"] = true,
 	["Druid"] = true,
 	["Shaman"] = true,
@@ -44,7 +48,7 @@ local UnselectableClasses = {
 }
 
 local subClass = {
-	["Mage"] = { "Sorcerer", "Healer", "ShadowMancer" },
+	["Mage"] = { "Sorcerer", "Healer", "Shadowmancer" },
 	["Hunter"] = { "Ranger", "Rogue", "Druid" },
 	["Warrior"] = { "Fighter", "Shaman", "Paladin" },
 	["None"] = { "Mage", "Hunter", "Warrior" },
@@ -57,7 +61,7 @@ local detailPanels = {
 	["Paladin"]      = Get(detailPanelsContainer, "DetailsPanel - Paladin"),
 	["Mage"]         = Get(detailPanelsContainer, "DetailsPanel - Mage"),
 	["Sorcerer"]     = Get(detailPanelsContainer, "DetailsPanel - Sorcerer"),
-	["ShadowMancer"] = Get(detailPanelsContainer, "DetailsPanel - Warlock"),
+	["Shadowmancer"] = Get(detailPanelsContainer, "DetailsPanel - Shadowmancer"),
 	["Healer"]       = Get(detailPanelsContainer, "DetailsPanel - Healer"),
 	["Hunter"]       = Get(detailPanelsContainer, "DetailsPanel - Hunter"),
 	["Druid"]        = Get(detailPanelsContainer, "DetailsPanel - Druid"),
@@ -109,60 +113,63 @@ end
 
 local function SelectClass(class)
 	Events.Broadcast(EVENT_CLASS_SELECTED, class)
+	
+	Task.Wait(1.5)
+	
+	Close()
 end
 
 local function ViewClass(class)
 	viewingClass = class
 	if Object.IsValid(currentViewingPanel) then
-		EASE_UI.EaseY(currentViewingPanel, -UI.GetScreenSize().y, .2)
-		EASE_UI.EaseOpacity(currentViewingPanel, 0, .2)
-
+		EASE_UI.EaseY(currentViewingPanel, -UI.GetScreenSize().y, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(currentViewingPanel, 0, EASE_DURATION_DETAILS)
 	end
 
 	currentViewingPanel = detailPanels[class]
+	
 	if Object.IsValid(currentViewingPanel) then
-		EASE_UI.EaseY(currentViewingPanel, 0, .2)
-		EASE_UI.EaseOpacity(currentViewingPanel, 1, .2)
+		EASE_UI.EaseY(currentViewingPanel, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(currentViewingPanel, 1, EASE_DURATION_DETAILS)
 		if currentSelectedClass ~= class then
 			swappingPanelBackGround:SetImage(CLASS_IMAGES[class]["image"])
-			EASE_UI.EaseOpacity(swappingPanel, 1, .2)
-			EASE_UI.EaseOpacity(ClassSelectionPanel, 0, .2)
+			EASE_UI.EaseOpacity(swappingPanel, 1, EASE_DURATION_DETAILS)
+			EASE_UI.EaseOpacity(ClassSelectionPanel, 0, EASE_DURATION_DETAILS)
 
 		else
-			EASE_UI.EaseOpacity(swappingPanel, 0, .2)
-			EASE_UI.EaseOpacity(ClassSelectionPanel, 1, .2)
+			EASE_UI.EaseOpacity(swappingPanel, 0, EASE_DURATION_DETAILS)
+			EASE_UI.EaseOpacity(ClassSelectionPanel, 1, EASE_DURATION_DETAILS)
 		end
 	end
-
 end
 
 local function OpenPanel(panel)
 	local funcMap = {
 		[ClassSelectionPanels["W"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["A"], -UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["A"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
 
 		end,
 		[ClassSelectionPanels["A"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["V"], -UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
 		end,
 		[ClassSelectionPanels["V"]] = function()
-			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, .4)
-			EASE_UI.EaseX(ClassSelectionPanels["A"], UI.GetScreenSize().x, .4)
+			EASE_UI.EaseX(ClassSelectionPanels["W"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
+			EASE_UI.EaseX(ClassSelectionPanels["A"], UI.GetScreenSize().x, EASE_DURATION_SHOW)
 		end,
 	}
 
 	if funcMap[panel] then
 		funcMap[panel]()
-		EASE_UI.EaseWidth(panel, 5000, .2)
-		EASE_UI.EaseHeight(panel, 5000, .2)
-		EASE_UI.EaseOpacity(background, 1, .2)
-		EASE_UI.EaseOpacity(chooseYourClassPanel, 0, .2)
-		EASE_UI.EaseY(classSelectionData[BackMap[panel]].background, -105, .2)
-		EASE_UI.EaseY(classSelectionData[BackMap[panel]].highlight, UI.GetScreenSize().y, .2)
-		EASE_UI.EaseX(classSelectionData[BackMap[panel]].background, 0, .2)
-		EASE_UI.EaseX(panel, 0, .2)
+		EASE_UI.EaseWidth(panel, 5000, EASE_DURATION_DETAILS)
+		EASE_UI.EaseHeight(panel, 5000, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(background, 1, EASE_DURATION_DETAILS)
+		EASE_UI.EaseOpacity(chooseYourClassPanel, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(classSelectionData[BackMap[panel]].background, -105, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(classSelectionData[BackMap[panel]].highlight, UI.GetScreenSize().y, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(classSelectionData[BackMap[panel]].background, 0, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(panel, 0, EASE_DURATION_DETAILS)
 		ViewClass(classSelectionData[BackMap[panel]].class)
 	end
 end
@@ -170,17 +177,17 @@ end
 local function BackToFront()
 	ViewClass(nil)
 
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, .4)
-	EASE_UI.EaseOpacity(background, defaultOpacity, .4)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(background, defaultOpacity, EASE_DURATION_SHOW)
 
 	for key, value in pairs(ClassSelectionPanels) do
 		local data = classSelectionData[key]
-		EASE_UI.EaseWidth(value, data.originalwidth, .2)
-		EASE_UI.EaseHeight(value, data.originalheight, .2)
-		EASE_UI.EaseY(data.background, data.backgroundy, .2)
-		EASE_UI.EaseY(data.highlight, data.highlighty, .2)
-		EASE_UI.EaseX(data.background, data.backgroundx, .2)
-		EASE_UI.EaseX(value, data.originalx, .2)
+		EASE_UI.EaseWidth(value, data.originalwidth, EASE_DURATION_DETAILS)
+		EASE_UI.EaseHeight(value, data.originalheight, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(data.background, data.backgroundy, EASE_DURATION_DETAILS)
+		EASE_UI.EaseY(data.highlight, data.highlighty, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(data.background, data.backgroundx, EASE_DURATION_DETAILS)
+		EASE_UI.EaseX(value, data.originalx, EASE_DURATION_DETAILS)
 
 		data.button.visibility = Visibility.FORCE_OFF
 	end
@@ -226,13 +233,20 @@ local function Reset()
 	background.opacity = 0
 	chooseYourClassPanel.opacity = 0
 	ROOT.opacity = 0
+	ROOT.visibility = Visibility.FORCE_OFF
+end
+
+local function SetTitle(value)
+	chooseYourClassPanel:GetChildren()[1].text = value
 end
 
 local function SetUpPanels(class)
 	if not class:HasClass() then
 		Events.Broadcast("ClassSelect.Open", LOCAL_PLAYER, "BaseClass")
+		SetTitle("Choose Your Class")
 	else
 		Events.Broadcast("ClassSelect.Open", LOCAL_PLAYER, "SubClass")
+		SetTitle("Choose a Subclass")
 	end
 	local myclass = class:GetClass()
 
@@ -241,9 +255,11 @@ local function SetUpPanels(class)
 			for index, value in ipairs(subClass[myclass]) do
 				local childClass = classAPI.GetClass(value)
 				if childClass and childClass["Stat"] == key then
-					local image = CLASS_IMAGES[childClass["ClassIdentifier"]]["image"]
+					local image = CLASS_IMAGES[childClass["ClassIdentifier"]].image
+					local color = CLASS_IMAGES[childClass["ClassIdentifier"]].highlightColor
 					if image then
 						data.background:SetImage(image)
+						data.highlight:SetColor(color)
 					end
 					data.name.text = childClass["ClassIdentifier"]
 					data.class = childClass["ClassIdentifier"]
@@ -270,34 +286,38 @@ end
 local function Show(panel)
 	if not panel == ROOT then return end
 	if currentState ~= states.closed then return end
+
 	local Character = EquipApi.GetCurrentCharacter(LOCAL_PLAYER)
 	if not Character then return end
 	SetState(states.open)
 
-	EASE_UI.EaseY(ClassSelectionPanel, 45, .4)
-	EASE_UI.EaseOpacity(background, defaultOpacity, .4)
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, .4)
-	EASE_UI.EaseOpacity(ROOT, 1, .4)
+	EASE_UI.EaseY(ClassSelectionPanel, 45, 0.6, EASE_UI.EasingDirection.INOUT)
+	EASE_UI.EaseOpacity(background, defaultOpacity, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 1, EASE_DURATION_SHOW)
+	EASE_UI.EaseOpacity(ROOT, 1, EASE_DURATION_SHOW)
 	local class = Character:GetComponent("Class")
 	SetUpPanels(class)
 
+	ROOT.visibility = Visibility.INHERIT
 end
 
-local function Close()
+function Close()
 	if currentState == states.closed then return end
 	SetState(states.closed)
 	Reset()
 end
-
+--[[
 local function Hide()
 	if currentState == states.closing then return end
 	SetState(states.closing)
-	EASE_UI.EaseY(ClassSelectionPanel, UI.GetScreenSize().y, .3)
-	EASE_UI.EaseOpacity(background, 0, .3)
-	EASE_UI.EaseOpacity(chooseYourClassPanel, 0, .3)
-	EASE_UI.EaseOpacity(ROOT, 0, .3)
-end
+	EASE_UI.EaseY(ClassSelectionPanel, UI.GetScreenSize().y, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(background, 0, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(chooseYourClassPanel, 0, EASE_DURATION_HIDE)
+	EASE_UI.EaseOpacity(ROOT, 0, EASE_DURATION_HIDE)
 
+	ROOT.visibility = Visibility.FORCE_OFF
+end
+]]
 local function Back()
 	if currentSelectedClass ~= viewingClass then
 		BackToMain()
@@ -381,6 +401,6 @@ SetData()
 Close()
 
 
-Events.Connect(OPEN_EVENT, Show)
-Events.Connect(PREPARE_TO_CLOSE, Hide)
-Events.Connect(CLOSE_EVENT, Close)
+Events.Connect(EVENT_SHOW_CLASS_SELECT, Show)
+--Events.Connect(PREPARE_TO_CLOSE, Hide)
+--Events.Connect(CLOSE_EVENT, Close)

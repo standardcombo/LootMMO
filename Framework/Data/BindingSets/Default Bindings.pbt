@@ -38,7 +38,7 @@ Assets {
             Value: "mc:ebindingkeyboard:leftcontrol"
           }
           KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:c"
+            Value: "mc:ebindingkeyboard:none"
           }
           Controller {
             Value: "mc:ebindinggamepad:b"

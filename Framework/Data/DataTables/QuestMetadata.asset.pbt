@@ -69,6 +69,15 @@ Assets {
       }
     }
     Assets {
+      Id: 9173135995611232178
+      Name: "Glove"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Glove"
+      }
+    }
+    Assets {
       Id: 338139243958881271
       Name: "Icon Skull"
       PlatformAssetType: 9

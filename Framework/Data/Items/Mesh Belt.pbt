@@ -14,6 +14,10 @@ Assets {
         Bool: false
       }
       Overrides {
+        Name: "cs:PlayerOwnsBag"
+        Bool: false
+      }
+      Overrides {
         Name: "cs:Greatness"
         Int: 0
       }
@@ -39,6 +43,10 @@ Assets {
       }
       Overrides {
         Name: "cs:BagKey:isrep"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:PlayerOwnsBag:isrep"
         Bool: true
       }
     }

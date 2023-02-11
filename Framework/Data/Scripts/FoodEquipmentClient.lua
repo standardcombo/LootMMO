@@ -1,7 +1,8 @@
 --[[
 	Food Equipment - Client
 	by: standardcombo
-	v1.1.1
+	modified by: Luapi
+	v1.2.0
 --]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
@@ -64,25 +65,26 @@ function Stop()
 end
 
 
-function OnBindingPressed(player, action)
-	if player ~= EQUIPMENT.owner then return end
+function OnActionPressed(player, action)
+	if not Object.IsValid(EQUIPMENT) or player ~= EQUIPMENT.owner then return end
 	if EQUIPMENT:GetCustomProperty("usesRemaining") <= 0 then return end
 	
 	if action == BINDING then
 		Start()
 	end
 end
-pressedListener = PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
+pressedListener = Input.actionPressedEvent:Connect(OnActionPressed)
 
 
-function OnBindingReleased(player, action)
+
+function OnActionReleased(player, action)
 	if player ~= EQUIPMENT.owner then return end
 	
 	if action == BINDING then
 		Stop()
 	end
 end
-releasedListener = PLAYER.bindingReleasedEvent:Connect(OnBindingReleased)
+releasedListener = Input.actionReleasedEvent:Connect(OnActionReleased)
 
 
 function OnPropertyChanged(obj, propName, newValue)

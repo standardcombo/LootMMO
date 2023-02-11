@@ -36,11 +36,13 @@ for key, player in ipairs(Game.GetPlayers()) do
     SetPlayerCash(player)
 end
 
-eventListeners[#eventListeners+1] = Chat.receiveMessageHook:Connect( function (player, params)
-    if params.message == "/cash" then
-        player:SetResource(TexasPoker_Settings.resource, 20000)
-    end
-end)
+
+-- Uncomment this section to give /cash command for testing
+-- eventListeners[#eventListeners+1] = Chat.receiveMessageHook:Connect( function (player, params)
+--     if params.message == "/cash" then
+--         player:SetResource(TexasPoker_Settings.resource, 20000)
+--     end
+-- end)
 
 -- Disconnect listeners when script is destroyed
 eventListeners[#eventListeners+1] = script.destroyEvent:Connect(function ()

@@ -34,6 +34,29 @@ Assets {
       BasicBindingData {
         BasicInputs {
           KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:rightclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:a"
+          }
+        }
+      }
+      Action: "Attack Secondary"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
             Value: "mc:ebindingkeyboard:leftshift"
           }
           KeyboardSecondary {
@@ -324,6 +347,54 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:leftclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:x"
+          }
+        }
+      }
+      Action: "Drink"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      Networked: true
+      IsEnabledOnStart: true
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:rightclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:none"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:lefttrigger"
+          }
+        }
+      }
+      Action: "Block"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      Networked: true
       IsEnabledOnStart: true
     }
   }

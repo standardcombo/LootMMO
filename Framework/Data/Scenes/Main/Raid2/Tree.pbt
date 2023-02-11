@@ -1,6 +1,53 @@
 Name: "Raid2"
 RootId: 14500316624661081237
 Objects {
+  Id: 7276940834600322975
+  Name: "ObjectiveSkipIfSafezone"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14500316624661081237
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "Raid2"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 3
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4656347516479980406
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 15649815002900352824
   Name: "ObjectiveEventListener"
   Transform {
@@ -77,7 +124,7 @@ Objects {
     }
     Overrides {
       Name: "cs:EventID"
-      String: "Quest.ClaimReward"
+      String: "Quest.RewardClaimed"
     }
     Overrides {
       Name: "cs:ObjectID"

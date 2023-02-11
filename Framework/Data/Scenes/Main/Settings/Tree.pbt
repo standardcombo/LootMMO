@@ -81,14 +81,6 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
       }
     }
     TemplateAsset {
@@ -150,14 +142,7 @@ Objects {
     }
   }
   ParentId: 1578154111882892155
-  ChildIds: 3935035763877999743
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:SpawnSettings"
-      ObjectReference {
-        SelfId: 3935035763877999743
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -174,50 +159,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 10554421204658470028
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3935035763877999743
-  Name: "Spawn Settings"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1329520542335830021
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Settings {
-    RespawnSettings {
-      RespawnDelay: 8
-      RespawnMode_v2 {
-        Value: "mc:erespawnmode:inplace"
-      }
-      StartSpawned: true
-      SpawnMode {
-        Value: "mc:none:none"
-      }
-      SpawnKey: "BagSelection"
     }
   }
   NetworkRelevanceDistance {
@@ -286,23 +227,7 @@ Objects {
         HighDistance: 9000
       }
       RelevanceSettings {
-        key: "decal"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      RelevanceSettings {
         key: "smartobject"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "vfx"
         value {
           LowDistance: 4500
           MediumDistance: 7000
@@ -347,56 +272,58 @@ Objects {
       }
       EnableConcurrentPlayerStorage: true
       EnableNetworkedEventsQueuing: true
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "decal"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      PCDistanceRelevanceSettings {
         key: "vfx"
         value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "light"
-        value {
           VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
         }
       }
-      PCDistanceRelevanceSettings {
-        key: "mergedmesh"
+      MobileDistanceRelevanceSettings {
+        key: "decal"
         value {
           VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "mesh"
-        value {
-          VeryLowDistance: 2000
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      PCDistanceRelevanceSettings {
-        key: "smartobject"
-        value {
-          VeryLowDistance: 2000
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
         }
       }
       MobileDistanceRelevanceSettings {
@@ -427,7 +354,7 @@ Objects {
         }
       }
       MobileDistanceRelevanceSettings {
-        key: "smartobject"
+        key: "vfx"
         value {
           VeryLowDistance: 2000
           LowDistance: 4500

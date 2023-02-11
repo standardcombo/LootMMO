@@ -17,21 +17,12 @@ Assets {
       }
     }
     Assets {
-      Id: 10269062453722857721
-      Name: "Japanese Ability Dash"
+      Id: 13141977356100001493
+      Name: "Fantasy Ability Green 017"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "IllustratedIcons_Japan_Abilities_Dash"
-      }
-    }
-    Assets {
-      Id: 11538694490835792735
-      Name: "Fantasy Ability Green 016"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Green_016"
+        AssetId: "UI_Fantasy_Ability_Green_017"
       }
     }
     Assets {
@@ -53,21 +44,21 @@ Assets {
       }
     }
     Assets {
-      Id: 3469815303062501792
-      Name: "Fantasy Ability Purple 004"
+      Id: 6307410126904806920
+      Name: "Fantasy Ability Green 006"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_004"
+        AssetId: "UI_Fantasy_Ability_Green_006"
       }
     }
     Assets {
-      Id: 13163109526252587430
-      Name: "Fantasy Ability Yellow 034"
+      Id: 5751567816530114738
+      Name: "Fantasy Ability Red 029"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_034"
+        AssetId: "UI_Fantasy_Ability_Red_029"
       }
     }
     Assets {
@@ -89,15 +80,6 @@ Assets {
       }
     }
     Assets {
-      Id: 17916227224964659027
-      Name: "Fantasy Ability Purple 011"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Purple_011"
-      }
-    }
-    Assets {
       Id: 17365393624783698083
       Name: "Fantasy Ability Yellow 014"
       PlatformAssetType: 9
@@ -116,12 +98,12 @@ Assets {
       }
     }
     Assets {
-      Id: 5751567816530114738
-      Name: "Fantasy Ability Red 029"
+      Id: 17370828256945431127
+      Name: "Fantasy Ability Yellow 026"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Red_029"
+        AssetId: "UI_Fantasy_Ability_Yellow_026"
       }
     }
     Assets {
@@ -134,12 +116,12 @@ Assets {
       }
     }
     Assets {
-      Id: 3369441422951943214
-      Name: "Fantasy Ability Yellow 033"
+      Id: 1004023313208396778
+      Name: "Fantasy Ability Teal 011"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_033"
+        AssetId: "UI_Fantasy_Ability_Teal_011"
       }
     }
     Assets {
@@ -179,21 +161,21 @@ Assets {
       }
     }
     Assets {
-      Id: 7408361315371782589
-      Name: "Fantasy Ability Yellow 025"
+      Id: 9815799220478962354
+      Name: "Fantasy Ability Blue 014"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Yellow_025"
+        AssetId: "UI_Fantasy_Ability_Blue_014"
       }
     }
     Assets {
-      Id: 2396467018832549261
-      Name: "Fantasy Ability Blue 023"
+      Id: 1958896540757858186
+      Name: "Japanese Ability Wind Bending"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_023"
+        AssetId: "IllustratedIcons_Japan_Abilities_WindBending"
       }
     }
   }

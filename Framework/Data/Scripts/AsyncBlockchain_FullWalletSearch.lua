@@ -22,6 +22,8 @@ local collectionsPerPlayer = {}
 local requestQueue = {}
 local activeTask = nil
 
+local botWalletSingleWarning = true
+
 
 function API.IsBusy()
 	return activeTask ~= nil or ASYNC_BLOCKCHAIN.IsBusy()
@@ -39,6 +41,17 @@ end
 
 -- Re-implemented as a full scan and sorting of wallet
 function API.GetTokensForPlayer(player, parameters, callbackFunction)
+	if Environment.IsMultiplayerPreview() and string.sub(player.name, 1, 3) == "Bot" then
+		if botWalletSingleWarning then
+			botWalletSingleWarning = false
+			warn("Call to GetTokensForPlayer() in multiplayer preview returns an empty table, as bots don't have wallets.")
+		end
+		if callbackFunction then
+			callbackFunction({}) -- Empty table result
+		end
+		return
+	end
+
 	local contractAddress = parameters.contractAddress
 	local forceRefreshCache = parameters.forceRefreshCache
 	
@@ -76,39 +89,64 @@ function Runner()
 		local callbackFunction = request.callbackFunction
 		
 		local resultingTokens = nil
-		local collection = nil
+		local wallets = nil
 		
 		-- Check cache again here, as the same request could have been made multiple times, from different code
 		if collectionsPerPlayer[player] then
 			goto continue
 		end
 		
+		-- Get wallets for the player
 		for i = 1, RETRIES do
-			collection, resultCode, err = Blockchain.GetTokensForPlayer(player)
+			if not Object.IsValid(player) then break end
 			
-			if collection and resultCode == BlockchainTokenResultCode.SUCCESS then
+			wallets, resultCode, err = Blockchain.GetWalletsForPlayer(player)
+			
+			if wallets and resultCode == BlockchainTokenResultCode.SUCCESS then
 				break
 			end
 			if TryAgainError(err) then
-				warn("Blockchain error: " ..err.. "\nTrying again in "..ERROR_WAIT.." seconds.")
+				warn("1) Blockchain error: " ..err.. "\nTrying again in "..ERROR_WAIT.." seconds.")
 				Task.Wait(ERROR_WAIT)
 			else
-				warn("Blockchain error: " ..err)
-				break
+				warn("2) Blockchain error: " ..err)
+				goto continue
 			end
 		end
+		wallets = wallets:GetResults()
 		
-		while collection do
-			local tokens = collection:GetResults()
-			
-			AddPlayerCache(player, tokens)
-			
-			if collection.hasMoreResults then
-				collection = collection:GetMoreResults()
-			
-				Task.Wait() -- Wait a frame. Give the CPU breathing room
-			else
-				collection = nil
+		-- Load all tokens from each wallet
+		for _, wallet in pairs(wallets) do
+			for i = 1, RETRIES do
+				collection, resultCode, err = Blockchain.GetTokensForOwner(wallet.address)
+				
+				if not collection or resultCode ~= BlockchainTokenResultCode.SUCCESS then
+					if TryAgainError(err) then
+						warn("3) Blockchain error: " ..err.. "\nTrying again in "..ERROR_WAIT.." seconds.")
+						Task.Wait(ERROR_WAIT)
+						collection = nil
+					else
+						warn("4) Blockchain error: " ..err)
+						goto continue
+					end
+				end
+				
+				while collection do
+					local tokens = collection:GetResults()
+					
+					AddPlayerCache(player, tokens)
+					
+					if collection.hasMoreResults then
+						collection = collection:GetMoreResults()
+					
+						Task.Wait() -- Wait a frame. Give the CPU breathing room
+					else
+						collection = nil
+					end
+				end
+				if not collection then
+					break
+				end
 			end
 		end
 		

@@ -1,6 +1,6 @@
 --[[
 	Damage Feedback - Client
-	v1.1.0
+	v1.1
 	by: Wave Paradigm, standardcombo
 	
 	By default player damaged is server-only.

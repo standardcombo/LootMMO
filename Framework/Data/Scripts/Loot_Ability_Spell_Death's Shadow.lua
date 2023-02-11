@@ -14,7 +14,7 @@ local API_SE = _G["StatusEffects.API"]
 
 local OriginalWalkSpeed = 800
 local EventListeners = {}
-local mods
+
 function Attack()
 	if not Object.IsValid(ABILITY) or not ABILITY.owner then
 		return
@@ -26,11 +26,11 @@ function Attack()
 	)
 
 	local spherePosition = ABILITY.owner:GetWorldPosition()
-	local AttackRadius = mods['Range']
+	local AttackRadius = ROOT.serverUserData.CalculateModifier('Range')
 	local nearbyEnemies =
 	COMBAT().FindInSphere(spherePosition, AttackRadius, { ignoreTeams = ABILITY.owner.team, ignoreDead = true })
 	local dmg = Damage.New()
-	dmg.amount = mods['Damage']
+	dmg.amount = ROOT.serverUserData.CalculateModifier('Damage')
 	dmg.reason = DamageReason.COMBAT
 	dmg.sourcePlayer = ABILITY.owner
 	dmg.sourceAbility = ABILITY
@@ -47,7 +47,7 @@ function Attack()
 		}
 		COMBAT().ApplyDamage(attackData)
 		API_SE.ApplyStatusEffect(enemy, "Stun", {
-			duration = mods["StunDuration"],
+			duration = ROOT.serverUserData.CalculateModifier('StunDuration'),
 			source = ABILITY.owner
 		})
 	end
@@ -60,7 +60,7 @@ function OnPlayerDamaged(player, damage)
 end
 
 function OnAbilityExecute(Ability)
-	mods = ROOT.serverUserData.calculateModifier()
+	local speedModifier = ROOT.serverUserData.CalculateModifier('Speed')
 	World.SpawnAsset(
 		BeginningVFX,
 		{ position = Ability.owner:GetWorldPosition(), networkContext = NetworkContextType.NETWORKED }
@@ -69,7 +69,7 @@ function OnAbilityExecute(Ability)
 	ABILITY.serverUserData.OriginalStance = ABILITY.owner.animationStance
 	ABILITY.owner.animationStance = 'unarmed_sit_chair_upright'
 	API_SE.RemoveAllStatusEffects(ABILITY.owner)
-	Ability.owner.maxWalkSpeed = OriginalWalkSpeed + mods['Speed']
+	Ability.owner.maxWalkSpeed = OriginalWalkSpeed + speedModifier
 	Task.Wait()
 end
 

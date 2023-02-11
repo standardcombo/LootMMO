@@ -1,6 +1,6 @@
 --[[
 	Combat Events (server)
-	v0.14.0 - 2022/10/25
+	v1.0.0
 	by: standardcombo
 	
 	Allows connecting functions to combat events, with the addition of priority

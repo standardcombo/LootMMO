@@ -595,7 +595,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -15813,14 +15813,6 @@ Assets {
                   Yaw: -15.0536537
                 }
               }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
-                }
-              }
             }
           }
           TemplateAsset {
@@ -15847,24 +15839,6 @@ Assets {
         }
         TemplateInstance {
           ParameterOverrideMap {
-            key: 7178602346230973161
-            value {
-              Overrides {
-                Name: "PlayerStart.SpawnKey"
-                String: "BagSelection"
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 9433742131407804268
-            value {
-              Overrides {
-                Name: "Name"
-                String: "BagSelectionCameraScript"
-              }
-            }
-          }
-          ParameterOverrideMap {
             key: 12295150610950578052
             value {
               Overrides {
@@ -15883,14 +15857,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -16.5364208
-                }
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
                 }
               }
             }
@@ -15920,24 +15886,6 @@ Assets {
         }
         TemplateInstance {
           ParameterOverrideMap {
-            key: 7178602346230973161
-            value {
-              Overrides {
-                Name: "PlayerStart.SpawnKey"
-                String: "BagSelection"
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 9433742131407804268
-            value {
-              Overrides {
-                Name: "Name"
-                String: "BagSelectionCameraScript"
-              }
-            }
-          }
-          ParameterOverrideMap {
             key: 12295150610950578052
             value {
               Overrides {
@@ -15956,14 +15904,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -23.9080296
-                }
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
                 }
               }
             }
@@ -15993,24 +15933,6 @@ Assets {
         }
         TemplateInstance {
           ParameterOverrideMap {
-            key: 7178602346230973161
-            value {
-              Overrides {
-                Name: "PlayerStart.SpawnKey"
-                String: "BagSelection"
-              }
-            }
-          }
-          ParameterOverrideMap {
-            key: 9433742131407804268
-            value {
-              Overrides {
-                Name: "Name"
-                String: "BagSelectionCameraScript"
-              }
-            }
-          }
-          ParameterOverrideMap {
             key: 12295150610950578052
             value {
               Overrides {
@@ -16029,14 +15951,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -15.0537329
-                }
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
                 }
               }
             }
@@ -16078,14 +15992,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -15.05369
-                }
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
                 }
               }
             }
@@ -16136,14 +16042,6 @@ Assets {
                   Yaw: -16.5364208
                 }
               }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
-                }
-              }
             }
           }
           TemplateAsset {
@@ -16192,14 +16090,6 @@ Assets {
                   Yaw: -23.9080296
                 }
               }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
-                }
-              }
             }
           }
           TemplateAsset {
@@ -16246,14 +16136,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -15.0537329
-                }
-              }
-              Overrides {
-                Name: "Scale"
-                Vector {
-                  X: 1
-                  Y: 1
-                  Z: 1
                 }
               }
             }

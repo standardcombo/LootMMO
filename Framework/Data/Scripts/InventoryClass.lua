@@ -174,13 +174,13 @@ function inventoryConstructor.NewInventory(Inventory)
 	return newInventory
 end
 
-function inventoryConstructor.FindInventoryFromInventory(inv)
-	for index, value in pairs(SpawnedInventories) do
-		if value._inventory == inv then
-			return value
-		end
-	end
-end
+-- function inventoryConstructor.FindInventoryFromInventory(inv)
+-- 	for index, value in pairs(SpawnedInventories) do
+-- 		if value._inventory == inv then
+-- 			return value
+-- 		end
+-- 	end
+-- end
 
 function inventoryConstructor.WaitForInventory(id)
 	while not SpawnedInventories[id] do
@@ -192,13 +192,13 @@ end
 _G["Inventory.Constructor"] = inventoryConstructor
 
 
-function Tick()
-	local Inventories = World.FindObjectsByType("Inventory")
-	for key, newInventory in pairs(Inventories) do
-		if not inventoryConstructor.FindInventoryFromInventory(newInventory) then
-			inventoryConstructor.NewInventory(newInventory)
-		end
-	end
+-- function Tick()
+-- 	local Inventories = World.FindObjectsByType("Inventory")
+-- 	for key, newInventory in pairs(Inventories) do
+-- 		if not inventoryConstructor.FindInventoryFromInventory(newInventory) then
+-- 			inventoryConstructor.NewInventory(newInventory)
+-- 		end
+-- 	end
 
-	Task.Wait(.5)
-end
+-- 	Task.Wait(.5)
+-- end

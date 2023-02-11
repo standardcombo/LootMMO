@@ -1,7 +1,7 @@
 --[[
 	Character Cheats 
-	v1.0.1 - 2022/10/26
-	by: Blaking, CommanderFoo
+	v1.1.0 - 2022/11/14
+	by: blaking707, CommanderFoo, Luapi
 	
 	To help with testing various parts of the game, cheats can be used to give
 	materials, loot, and other things. These commands can only be used by players
@@ -45,6 +45,9 @@
 		in the stack. See the Loot Items and Loot Materials data tables for
 		the names of items that can be added.
 
+		Overflow isn't supported. Check existing inventory stack size and add
+		to that to make up to 99.
+
 		Example: /additem "Titanium Ring" 1
 		Example: /additem "Metal" 99
 		Example: /additem "Coins" 10000
@@ -80,23 +83,20 @@
 		more locations in the Teleport Locations group inside the Cheats script in
 		the Hierarchy.
 
-		Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs
+		Locations: Cauldron, Crafting, Map, Workshop, Pinball, Chairs, Bar, Spawn
 
 		Example: /teleport Chairs
+		Example: /tp Spawn
 --]]
 
 local TELEPORT_LOCATIONS = script:GetCustomProperty("TeleportLocations"):WaitForObject()
-
-while not _G["Character.Constructor"] do
-	Task.Wait()
-end
-
+Task.Wait()
 --- Add/Remove player names to the table below that can use cheats.
 --- Note: Local preview mode doesn't need names added.
 local AdminList = {
-	["blaking707"] = true,
-	["CommanderFoo"] = true,
-	["Bot1"] = true
+	["Bot1"] = true,
+	["Luapi"] = true,
+	["LootMMO"] = true,
 }
 
 local character = _G["Character.Constructor"]
@@ -119,6 +119,7 @@ cheats = {
 	},
 	["/class"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local class = newCharacter:GetComponent("Class")
 			if class then
@@ -138,7 +139,9 @@ cheats = {
 		func = function(player, message)
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Ability = { CoreString.Split(message, '"') }
+			if not Ability[2] then return end
 			local stats = newCharacter:GetComponent("Stats")
+			Ability[3] = CoreString.Trim(Ability[3])
 			if stats then
 				stats:SetTempStat(Ability[2], tonumber(Ability[3]))
 				stats:SetStat(Ability[2], tonumber(Ability[3]))
@@ -161,7 +164,7 @@ cheats = {
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Inventory = newCharacter:GetComponent("Inventory")
 			local itemstring = { CoreString.Split(message, '"') }
-			local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+			local iteminfo = Itemdat.GetDefinition(itemstring[2], true) or materials.GetDefinition(itemstring[2], true)
 			if iteminfo then
 				Inventory:GetInventory():AddItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 			end
@@ -173,7 +176,7 @@ cheats = {
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local Inventory = newCharacter:GetComponent("Inventory")
 			local itemstring = { CoreString.Split(message, '"') }
-			local iteminfo = Itemdat.GetDefinition(itemstring[2]) or materials.GetDefinition(itemstring[2])
+			local iteminfo = Itemdat.GetDefinition(itemstring[2], true) or materials.GetDefinition(itemstring[2], true)
 			if iteminfo then
 				Inventory:GetInventory():RemoveItem(iteminfo["itemAsset"], { count = tonumber(itemstring[3]) or 1 })
 			end
@@ -219,16 +222,9 @@ cheats = {
 		end,
 		description = "Cheat character to max",
 	},
-	["/progress"] = {
-		func = function(player, _, splitString)
-			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
-			local Progress = newCharacter:GetComponent("Progression")
-			Progress:SetProgression(splitString[2], splitString[3] == "true")
-		end,
-		description = "Set character progress flags",
-	},
 	["/addxp"] = {
 		func = function(player, _, splitString)
+			if not tonumber(splitString[2]) then return end
 			local newCharacter = _G["Character.EquipAPI"].GetCurrentCharacter(player)
 			local level = newCharacter:GetComponent("Level")
 			level:AddXP(tonumber(splitString[2]))
@@ -237,6 +233,7 @@ cheats = {
 	},
 	["/teleport"] = {
 		func = function(player, _, splitString)
+			if not splitString[2] then return end
 			local location = TELEPORT_LOCATIONS:FindChildByName(splitString[2])
 
 			if location ~= nil then
@@ -245,15 +242,23 @@ cheats = {
 			end
 		end,
 		description = "Teleports to various areas for quick testing.",
-	}
+	},
 }
 
 function OnReceiveMessage(player, params)
 	if not AdminList[player.name] and not Environment.IsPreview() then return end
 	local splitString = { CoreString.Split(params.message, " ") }
-
+	
+	if splitString[1] == "/tp" then -- Associate abbreviated commands to full length cheat commands
+		splitString[1] = "/teleport"
+	end
+	
 	if cheats[splitString[1]] then
-		cheats[splitString[1]].func(player, params.message, splitString)
+		Task.Spawn(function()
+			-- We need to put this inside a Task.Spawn because Hook listeners have certain limitations.
+			-- From the point of view of cheats, we can't predict other implementations or debugging.
+			cheats[splitString[1]].func(player, params.message, splitString)
+		end)
 		return
 	end
 	Chat.BroadcastMessage("No command found" .. splitString[1])

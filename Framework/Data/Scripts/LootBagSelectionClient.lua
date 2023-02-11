@@ -108,17 +108,17 @@ function SetupRow(row, lootBag)
 	GET(row, 'TokenText').text = selectionPrefix .. lootBag.tokenId
 
 	if lootBag.class == 'Warrior' then
-		GET(row, 'ClassText').text = 'Warrior'
+		GET(row, 'ClassText').text = 'Melee Loadout'--'Warrior'
 		GET(row, 'IconWarrior').visibility = Visibility.INHERIT
 		GET(row, 'IconHunter').visibility = Visibility.FORCE_OFF
 		GET(row, 'IconMage').visibility = Visibility.FORCE_OFF
 	elseif lootBag.class == 'Hunter' then
-		GET(row, 'ClassText').text = 'Hunter'
+		GET(row, 'ClassText').text = 'Melee Loadout'--'Hunter'
 		GET(row, 'IconWarrior').visibility = Visibility.FORCE_OFF
 		GET(row, 'IconHunter').visibility = Visibility.INHERIT
 		GET(row, 'IconMage').visibility = Visibility.FORCE_OFF
 	elseif lootBag.class == 'Mage' then
-		GET(row, 'ClassText').text = 'Mage'
+		GET(row, 'ClassText').text = 'Ranged Loadout'--'Mage'
 		GET(row, 'IconWarrior').visibility = Visibility.FORCE_OFF
 		GET(row, 'IconHunter').visibility = Visibility.FORCE_OFF
 		GET(row, 'IconMage').visibility = Visibility.INHERIT

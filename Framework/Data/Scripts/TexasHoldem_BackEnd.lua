@@ -463,9 +463,8 @@ function poker:StartGame()
         self.usableCards[index] = value
     end
     local playerCount = 0
-    for key, value in pairs(self.players) do
+    for p, _ in pairs(self.players) do
         playerCount = playerCount + 1
-        
         Events.Broadcast("Quest.Poker", p, "Play")
     end
     if playerCount == 2 then

@@ -6,8 +6,17 @@ Assets {
   DataTableAsset {
     HasKeyColumn: true
     Assets {
-      Id: 6313673757839584065
-      Name: "Fantasy Dagger 005"
+      Id: 17239930915626961643
+      Name: "Military Ability Punch"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Military_Ability_Yellow_011"
+      }
+    }
+    Assets {
+      Id: 1031800327856440791
+      Name: "Fantasy Hammer 005"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"

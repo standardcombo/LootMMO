@@ -54,7 +54,9 @@ function PlayerActivatedSitMe(player)
 	if player == occupyingPlayer then PlayerLeftSitMe(player) return end
 	--print("player entered sitme")
 	occupyingPlayer = player
-	player:SetMounted(false)
+	if player.isMounted then
+		player:SetMounted(false)
+	end
 	playerRestoreMove = player.isMovementEnabled
 	playerRestoreStance = player.animationStance
 	player:ResetVelocity()
@@ -62,7 +64,7 @@ function PlayerActivatedSitMe(player)
 	player:SetWorldRotation(SitMeRot)
 	player.isMovementEnabled = false
 
-	print(PLAYER_STANCE)
+	--print(PLAYER_STANCE)
 
 	if _G.StanceStack then
 		_G.StanceStack.Add(player, PLAYER_STANCE)

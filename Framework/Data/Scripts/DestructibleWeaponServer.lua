@@ -1,6 +1,6 @@
 --[[
 	Destructible Weapon - Server
-	v0.13.0
+	v1.0
 	by: standardcombo, Chris C.
 	
 	Script that specializes a weapon's basic attack to work with the NPC AI Kit.

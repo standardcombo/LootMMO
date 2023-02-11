@@ -29,19 +29,20 @@ end
 
 function EquipedCharacterChanged(player, key)
 	if key ~= networkKey then
-		return
-	end
-	local characterData = player:GetPrivateNetworkedData(key)
-	if not characterData then
-		RemoveCharacter()
-		return
-	end
+            return
+        end
 
-	if not lastCharacter or characterData.id ~= lastCharacter.id then
-		NewCharacter(characterData)
-		return
-	end
-	UpdateCharacter(characterData)
+        local characterData = player:GetPrivateNetworkedData(key)
+        if not characterData then
+            RemoveCharacter()
+            return
+        end
+
+        if not lastCharacter or characterData.id ~= lastCharacter.id then
+            NewCharacter(characterData)
+            return
+        end
+        UpdateCharacter(characterData)
 end
 
 EquipedCharacterChanged(LOCALPLAYER, networkKey)

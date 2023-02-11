@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.15.0
+	v1.0.0
 	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
@@ -16,14 +16,15 @@
 	- IsHeadshot()
 	- IsValidObject()
 	- AddImpulse()
-	- FindInSphere() 
+	- FindInSphere()
 	- GetMaxWalkSpeed()
 	- SetMaxWalkSpeed()
 --]]
 
 -- Component dependencies
-local MODULE = require(script:GetCustomProperty("ModuleManager"))
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
 function NPC_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.NPCManager") end
+
 
 local wrapper = {}
 
@@ -41,6 +42,7 @@ function wrapper.GetName(npc)
 	return npc.name
 end
 
+
 -- GetTeam()
 function wrapper.GetTeam(npc)
 	if npc.team ~= nil then
@@ -53,6 +55,7 @@ function wrapper.GetTeam(npc)
 	return nil
 end
 
+
 -- GetHitPoints()
 function wrapper.GetHitPoints(npc)
 	if Object.IsValid(npc) then
@@ -64,26 +67,28 @@ function wrapper.GetHitPoints(npc)
 	return nil
 end
 
+
 -- GetMaxHitPoints()
 function wrapper.GetMaxHitPoints(obj)
 
 	if not Object.IsValid(obj) then
 		return 0
 	end
-
+	
 	if obj.context and obj.context.MAX_HEALTH then
 		return obj.context.MAX_HEALTH
 	end
-
+	
 	local npcScript = FindNPCScript(obj)
-
+	
 	if not npcScript then return false end
-
+	
 	if npcScript.context and npcScript.context.MAX_HEALTH then
 		return npcScript.context.MAX_HEALTH
 	end
 	return 0
 end
+
 
 -- GetVelocity()
 function wrapper.GetVelocity(obj)
@@ -91,20 +96,21 @@ function wrapper.GetVelocity(obj)
 	if not Object.IsValid(obj) then
 		return Vector3.ZERO
 	end
-
+	
 	if obj.context and obj.context.GetVelocity then
 		return obj.context.GetVelocity()
 	end
-
+	
 	local npcScript = FindNPCScript(obj)
-
+	
 	if not npcScript then return Vector3.ZERO end
-
+	
 	if npcScript.context and npcScript.context.GetVelocity then
 		return npcScript.context.GetVelocity()
 	end
 	return Vector3.ZERO
 end
+
 
 -- ApplyDamage()
 function wrapper.ApplyDamage(attackData)
@@ -130,7 +136,7 @@ function wrapper.ApplyDamage(attackData)
 
 	if damageableRoot then
 		damageableRoot:ApplyDamage(attackData.damage)
-
+		
 	else -- v0.11 compatibility
 		local destructibleManager = _G["standardcombo.NPCKit.DestructibleManager"]
 		if destructibleManager then
@@ -139,10 +145,12 @@ function wrapper.ApplyDamage(attackData)
 	end
 end
 
+
 -- AddImpulse()
 function wrapper.AddImpulse(npc, direction)
 	-- TODO
 end
+
 
 -- IsDead()
 function wrapper.IsDead(obj)
@@ -150,20 +158,21 @@ function wrapper.IsDead(obj)
 	if not Object.IsValid(obj) then
 		return true
 	end
-
+	
 	if obj.context and obj.context.IsAlive then
 		return (not obj.context.IsAlive())
 	end
-
+	
 	local npcScript = FindNPCScript(obj)
-
+	
 	if not npcScript then return false end
-
+	
 	if npcScript.context and npcScript.context.IsAlive then
 		return (not npcScript.context.IsAlive())
 	end
 	return false
 end
+
 
 -- IsHeadshot()
 function wrapper.IsHeadshot(obj, dmg, position)
@@ -171,11 +180,11 @@ function wrapper.IsHeadshot(obj, dmg, position)
 	if not Object.IsValid(obj) then
 		return false
 	end
-
+	
 	if not obj:IsA("CoreObject") then
 		return false
 	end
-
+	
 	local root = FindRoot(obj)
 	if root then
 		local headShotComponent = root:FindDescendantByName("NPCHeadshot")
@@ -185,6 +194,7 @@ function wrapper.IsHeadshot(obj, dmg, position)
 	end
 	return false
 end
+
 
 -- IsValidObject()
 function wrapper.IsValidObject(obj)
@@ -196,20 +206,21 @@ function wrapper.IsValidObject(obj)
 	return false
 end
 
+
 -- FindInSphere()
 function wrapper.FindInSphere(position, radius, parameters)
 	if NPC_MANAGER() then
 		local npcsInArea = NPC_MANAGER().FindInSphere(position, radius, parameters)
-
+		
 		if #npcsInArea > 0 and parameters then
 			local ignoreDead = parameters.ignoreDead
 			local ignoreLiving = parameters.ignoreLiving
 			local ignoreTeams = parameters.ignoreTeams
 			local includeTeams = parameters.includeTeams
-
+			
 			for i = #npcsInArea, 1, -1 do
 				local npc = npcsInArea[i]
-
+				
 				if ignoreDead or ignoreLiving then
 					local isDead = wrapper.IsDead(npc)
 					if (isDead and ignoreDead) or (not isDead and ignoreLiving) then
@@ -217,17 +228,17 @@ function wrapper.FindInSphere(position, radius, parameters)
 						goto continue
 					end
 				end
-
+				
 				if ignoreTeams then
 					local team = wrapper.GetTeam(npc)
-
+					
 					if type(ignoreTeams) == "number" then
 						if team == ignoreTeams then
 							table.remove(npcsInArea, i)
 							goto continue
 						end
 					elseif type(ignoreTeams) == "table" then
-						for _, subTeam in pairs(ignoreTeams) do
+						for _,subTeam in pairs(ignoreTeams) do
 							if subTeam == team then
 								table.remove(npcsInArea, i)
 								goto continue
@@ -235,10 +246,10 @@ function wrapper.FindInSphere(position, radius, parameters)
 						end
 					end
 				end
-
+				
 				if includeTeams then
 					local team = wrapper.GetTeam(npc)
-
+					
 					if type(includeTeams) == "number" then
 						if team ~= includeTeams then
 							table.remove(npcsInArea, i)
@@ -246,7 +257,7 @@ function wrapper.FindInSphere(position, radius, parameters)
 						end
 					elseif type(includeTeams) == "table" then
 						local teamFound = false
-						for _, subTeam in pairs(includeTeams) do
+						for _,subTeam in pairs(includeTeams) do
 							if subTeam == team then
 								teamFound = true
 							end
@@ -260,11 +271,12 @@ function wrapper.FindInSphere(position, radius, parameters)
 				::continue::
 			end
 		end
-
+		
 		return npcsInArea
 	end
 	return {}
 end
+
 
 -- GetMaxWalkSpeed()
 function wrapper.GetMaxWalkSpeed(npc)
@@ -278,6 +290,7 @@ function wrapper.GetMaxWalkSpeed(npc)
 	return 0
 end
 
+
 -- SetMaxWalkSpeed()
 function wrapper.SetMaxWalkSpeed(npc, value)
 	local npcScript = npc
@@ -288,6 +301,7 @@ function wrapper.SetMaxWalkSpeed(npc, value)
 		npcScript.context.SetMaxMoveSpeed(value)
 	end
 end
+
 
 function FindRoot(npc)
 	if not npc:IsA("CoreObject") then
@@ -317,4 +331,6 @@ function FindNPCScript(obj)
 	return nil
 end
 
+
 return wrapper
+

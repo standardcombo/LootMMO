@@ -1,7 +1,13 @@
 local TXT = script.parent
 local action = script:GetCustomProperty("ActionLabel")
 
-local label = Input.GetActionInputLabel(action)
-if label then
-	TXT.text = label
+local function UpdateLabel()
+	local label = Input.GetActionInputLabel(action)
+
+	if label then
+		TXT.text = label
+	end
 end
+
+Input.escapeHook:Connect(UpdateLabel)
+UpdateLabel()

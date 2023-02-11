@@ -19,6 +19,8 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 This script uses the specified hit sphere on ability to damage enemy players or damageable objects on ability execute phase.
 ]]
 
+-- v1.0.1 - Loot MMO
+
 -- Internal custom properties
 local EQUIPMENT = script:FindAncestorByType('Equipment')
 local EquipAPI = _G["Character.EquipAPI"]
@@ -145,6 +147,7 @@ end
 -- Enables collision on player to make the hitbox collidable
 function OnEquipped()
 	Task.Wait(0.1)
+	if not Object.IsValid(EQUIPMENT) then return end
 	EQUIPMENT.collision = Collision.INHERIT
 end
 

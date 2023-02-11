@@ -7,8 +7,8 @@ local DEFAULT_RANGE = script:GetCustomProperty('DefaultRange')
 local DEFAULT_RADIUS = script:GetCustomProperty('DefaultRadius')
 
 local function OverrideValues()
-    DEFAULT_RANGE = ROOT.clientUserData.calculateModifier()['Range'] or DEFAULT_RANGE
-    DEFAULT_RADIUS = ROOT.clientUserData.calculateModifier()['Radius'] or DEFAULT_RADIUS
+    DEFAULT_RANGE = ROOT.clientUserData.CalculateModifier('Range') or DEFAULT_RANGE
+    DEFAULT_RADIUS = ROOT.clientUserData.CalculateModifier('Radius') or DEFAULT_RADIUS
 end
 
 function OnActionPressed(player, action, value)

@@ -7,5 +7,4 @@
 "RngMat","0","Ref(RoyalPermits | Encantations | Gems)"
 "RoyalPermits","0","Material(RoyalPermits=1)"
 "Encantations","0","Material(Encantations=1)"
-"Gems","0","Material(Gems=1)"
-"GLItemDrop","1","RandomItem(Greatness=RNG[1-10]), Wait(0.5), Material(Coins=RNG[5-30],Wait(0.5),Ref(XP)"
+"Gems","0","Material(Gemstones=1)"

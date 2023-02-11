@@ -62,7 +62,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -121,7 +121,7 @@ Assets {
         ParentId: 12747003789844575660
         ChildIds: 12725893298394790007
         ChildIds: 17550528661947375800
-        ChildIds: 9083501205525247991
+        ChildIds: 16769318345177000626
         ChildIds: 16100682337518782701
         ChildIds: 13075968217596916827
         ChildIds: 17513817936175983326
@@ -424,7 +424,7 @@ Assets {
       }
       Objects {
         Id: 8286540904785728888
-        Name: "UI Image"
+        Name: "Level Up Image"
         Transform {
           Location {
           }
@@ -438,7 +438,6 @@ Assets {
         }
         ParentId: 12725893298394790007
         ChildIds: 9681986632303093853
-        ChildIds: 12597899021690356825
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -564,51 +563,6 @@ Assets {
               }
             }
           }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 12597899021690356825
-        Name: "LevelUpIconDisplay"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 8286540904785728888
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:icon"
-            ObjectReference {
-              SubObjectId: 8286540904785728888
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 12826397192546141796
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1544,12 +1498,16 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 9083501205525247991
-        Name: "UI Image"
+        Id: 16769318345177000626
+        Name: "ProgressBars Panel"
         Transform {
           Location {
+            X: -6218.13428
+            Y: -5163.7417
+            Z: 4001.58203
           }
           Rotation {
+            Yaw: -88.0004578
           }
           Scale {
             X: 1
@@ -1558,6 +1516,9 @@ Assets {
           }
         }
         ParentId: 9187517884730030482
+        ChildIds: 10866215677364370753
+        ChildIds: 8260343088974319474
+        ChildIds: 256710435805808675
         ChildIds: 14784392229582859965
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1572,33 +1533,18 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 53
-          Height: 18
-          UIY: -3.39878845
+          Width: 150
+          Height: 20
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          Image {
-            Brush {
-              Id: 9043465979534313612
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
             }
-            Color {
-              R: 0.651405811
-              G: 0.351532698
-              A: 1
-            }
-            TeamSettings {
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            ScreenshotIndex: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -1616,8 +1562,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 14784392229582859965
-        Name: "UI Progress Bar"
+        Id: 10866215677364370753
+        Name: "EffectiveHealthAndBlockProgressBars"
         Transform {
           Location {
           }
@@ -1629,206 +1575,28 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9083501205525247991
-        ChildIds: 2466812921643911333
-        ChildIds: 6087674014057380674
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: -1
-          Height: -1
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          UseParentHeight: true
-          StatBar {
-            Color {
-              R: 0.690000057
-              A: 1
-            }
-            BackgroundColor {
-              A: 1
-            }
-            Percent: 1
-            FillBrush {
-              Id: 841534158063459245
-            }
-            BackgroundBrush {
-              Id: 841534158063459245
-            }
-            FillType {
-              Value: "mc:eprogressbarfilltype:lefttoright"
-            }
-            FillTileType {
-              Value: "mc:eslatebrushtiletype:notile"
-            }
-            BackgroundTileType {
-              Value: "mc:eslatebrushtiletype:notile"
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 2466812921643911333
-        Name: "SerProgressBarToPlayerHealth"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14784392229582859965
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1847797240398441782
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6087674014057380674
-        Name: "UI Progress Bar"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14784392229582859965
-        ChildIds: 14164461812999438253
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Height: 3
-          UIX: -0.5
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          AddSizeToParentIfUsingParentSize: true
-          UseParentWidth: true
-          StatBar {
-            Color {
-              G: 0.381920338
-              B: 0.789999962
-              A: 1
-            }
-            BackgroundColor {
-              A: 1
-            }
-            Percent: 1
-            FillBrush {
-              Id: 841534158063459245
-            }
-            BackgroundBrush {
-              Id: 841534158063459245
-            }
-            FillType {
-              Value: "mc:eprogressbarfilltype:lefttoright"
-            }
-            FillTileType {
-              Value: "mc:eslatebrushtiletype:notile"
-            }
-            BackgroundTileType {
-              Value: "mc:eslatebrushtiletype:notile"
-            }
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:bottomleft"
-              }
-            }
-          }
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 14164461812999438253
-        Name: "SetProgressBarToPlayerBlock"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6087674014057380674
+        ParentId: 16769318345177000626
         UnregisteredParameters {
           Overrides {
-            Name: "cs:UIProgressBar"
+            Name: "cs:HealthDamageProgressBar"
+            ObjectReference {
+              SubObjectId: 256710435805808675
+            }
+          }
+          Overrides {
+            Name: "cs:BlockDamageProgressBar"
+            ObjectReference {
+              SubObjectId: 2565192565675259539
+            }
+          }
+          Overrides {
+            Name: "cs:HealthValueProgressBar"
+            ObjectReference {
+              SubObjectId: 14784392229582859965
+            }
+          }
+          Overrides {
+            Name: "cs:BlockValueProgressBar"
             ObjectReference {
               SubObjectId: 6087674014057380674
             }
@@ -1848,11 +1616,393 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 608982181455099417
+            Id: 11928676660250255589
           }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8260343088974319474
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 10
+          Height: 4
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 14060330023043759337
+            }
+            Color {
+              R: 0.651405811
+              G: 0.351532698
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 256710435805808675
+        Name: "HealthDamageProgressBar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        ChildIds: 2565192565675259539
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Height: 16
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            BackgroundColor {
+              A: 1
+            }
+            Percent: 0.664060891
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2565192565675259539
+        Name: "BlockDamageProgressBar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 256710435805808675
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Height: 4
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            BackgroundColor {
+              A: 1
+            }
+            Percent: 0.841503322
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14784392229582859965
+        Name: "HealthValueProgressBar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16769318345177000626
+        ChildIds: 6087674014057380674
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 2
+          Height: 16
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 0.690000057
+              A: 1
+            }
+            BackgroundColor {
+            }
+            Percent: 0.569616079
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+          }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6087674014057380674
+        Name: "BlockValueProgressBar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14784392229582859965
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 1
+          Height: 4
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              G: 0.381920338
+              B: 0.789999962
+              A: 1
+            }
+            BackgroundColor {
+            }
+            Percent: 0.689818561
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2859,9 +3009,15 @@ Assets {
         ChildIds: 550539640962032595
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Notifier"
+            Name: "cs:BadgeRoot"
             ObjectReference {
               SubObjectId: 16100682337518782701
+            }
+          }
+          Overrides {
+            Name: "cs:BadgeText"
+            ObjectReference {
+              SubObjectId: 10987501359313334672
             }
           }
           Overrides {
@@ -2874,12 +3030,6 @@ Assets {
             Name: "cs:Sound"
             ObjectReference {
               SubObjectId: 550539640962032595
-            }
-          }
-          Overrides {
-            Name: "cs:NotificationCount"
-            ObjectReference {
-              SubObjectId: 10987501359313334672
             }
           }
         }

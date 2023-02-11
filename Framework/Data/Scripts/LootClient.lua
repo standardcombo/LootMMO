@@ -173,6 +173,7 @@ function UpdateCharactersButton()
 	end
 end
 function HasCharacters()
+    Task.Wait()
 	local data = Game.GetLocalPlayer():GetPrivateNetworkedData('Cselect')
 	return #data > 0
 end
