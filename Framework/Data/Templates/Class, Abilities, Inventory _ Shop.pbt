@@ -221,7 +221,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         TemplateInstance {
           ParameterOverrideMap {
@@ -243,6 +243,12 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -102.870392
+                }
+              }
+              Overrides {
+                Name: "Visible"
+                Enum {
+                  Value: "mc:evisibilitysetting:forceoff"
                 }
               }
             }

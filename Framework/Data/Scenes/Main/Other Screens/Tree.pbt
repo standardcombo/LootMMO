@@ -19,6 +19,39 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 818846036172377395
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 1906330821133065852
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4701203326673532013
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 8067326117451680903
       value {
         Overrides {
@@ -33,6 +66,61 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 9419591027367816534
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11076679475220455610
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14204967939976225582
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 15446451858021390363
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17975137821765129122
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
           }
         }
       }
