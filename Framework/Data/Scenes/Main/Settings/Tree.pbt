@@ -294,27 +294,11 @@ Objects {
         }
       }
       RelevanceSettings {
-        key: "light"
+        key: "smartobject"
         value {
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "mergedmesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
-        }
-      }
-      RelevanceSettings {
-        key: "mesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 45000
         }
       }
       RelevanceSettings {
@@ -372,32 +356,80 @@ Objects {
         }
       }
       MobileRelevanceSettings {
-        key: "light"
+        key: "vfx"
         value {
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
         key: "mergedmesh"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
+      PCDistanceRelevanceSettings {
         key: "mesh"
         value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 45000
         }
       }
-      MobileRelevanceSettings {
-        key: "vfx"
+      PCDistanceRelevanceSettings {
+        key: "smartobject"
         value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 45000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "smartobject"
+        value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000

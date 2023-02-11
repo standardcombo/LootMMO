@@ -2,7 +2,7 @@ Assets {
   Id: 17516666276478285552
   Name: "Custom Bark Bamboo Dead 01_2"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 597335972945904129
     ParameterOverrides {

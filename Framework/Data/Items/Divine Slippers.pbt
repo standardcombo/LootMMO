@@ -2,7 +2,7 @@ Assets {
   Id: 17232721522409207248
   Name: "Divine Slippers"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

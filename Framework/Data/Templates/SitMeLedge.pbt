@@ -376,6 +376,9 @@ Assets {
           TeamSettings {
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         IsReplicationEnabledByDefault: true
       }
       Objects {
@@ -435,6 +438,9 @@ Assets {
           }
           TeamSettings {
           }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -502,5 +508,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
 }

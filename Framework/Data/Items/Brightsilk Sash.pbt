@@ -2,7 +2,7 @@ Assets {
   Id: 5351203832718825219
   Name: "Brightsilk Sash"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

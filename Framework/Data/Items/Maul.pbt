@@ -2,7 +2,7 @@ Assets {
   Id: 13203734735643782231
   Name: "Maul"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

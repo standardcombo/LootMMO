@@ -2,7 +2,7 @@ Assets {
   Id: 12959924435605692174
   Name: "SK wood dark"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 13711677265034246201
     ParameterOverrides {

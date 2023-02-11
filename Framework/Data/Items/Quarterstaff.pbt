@@ -2,7 +2,7 @@ Assets {
   Id: 14069501428207538866
   Name: "Quarterstaff"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

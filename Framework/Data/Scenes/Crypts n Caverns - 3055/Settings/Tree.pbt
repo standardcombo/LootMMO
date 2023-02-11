@@ -363,23 +363,7 @@ Objects {
         }
       }
       RelevanceSettings {
-        key: "light"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "mergedmesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "mesh"
+        key: "smartobject"
         value {
           LowDistance: 4500
           MediumDistance: 7000
@@ -440,32 +424,80 @@ Objects {
         }
       }
       MobileRelevanceSettings {
-        key: "light"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      MobileRelevanceSettings {
-        key: "mergedmesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      MobileRelevanceSettings {
-        key: "mesh"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      MobileRelevanceSettings {
         key: "vfx"
         value {
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      PCDistanceRelevanceSettings {
+        key: "smartobject"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "light"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mergedmesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "mesh"
+        value {
+          VeryLowDistance: 2000
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      MobileDistanceRelevanceSettings {
+        key: "smartobject"
+        value {
+          VeryLowDistance: 2000
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000

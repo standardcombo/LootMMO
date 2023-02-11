@@ -217,7 +217,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -274,7 +274,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -330,7 +330,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -392,7 +392,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -448,7 +448,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -510,7 +510,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -569,7 +569,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -631,7 +631,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -696,7 +696,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -767,7 +767,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -827,7 +827,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1761,7 +1761,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1838,7 +1838,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

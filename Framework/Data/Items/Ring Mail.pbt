@@ -2,7 +2,7 @@ Assets {
   Id: 15557951194196990737
   Name: "Ring Mail"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

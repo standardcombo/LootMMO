@@ -2,7 +2,7 @@ Assets {
   Id: 3843313135130509578
   Name: "Studded Leather Belt"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

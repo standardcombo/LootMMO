@@ -154,7 +154,7 @@ Objects {
     WasRoot: true
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1229,7 +1229,7 @@ Objects {
     TemplateId: 3913565970023041867
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1433,7 +1433,7 @@ Objects {
     TemplateId: 16950761026157849342
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1506,7 +1506,7 @@ Objects {
     TemplateId: 16950761026157849342
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1578,7 +1578,7 @@ Objects {
     TemplateId: 16950761026157849342
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1650,7 +1650,7 @@ Objects {
     TemplateId: 16950761026157849342
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2317,7 +2317,7 @@ Objects {
     WasRoot: true
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

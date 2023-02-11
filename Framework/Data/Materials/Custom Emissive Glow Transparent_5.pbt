@@ -2,7 +2,7 @@ Assets {
   Id: 11413009373670830295
   Name: "Treasure Fade Out"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 675563715440209277
     ParameterOverrides {

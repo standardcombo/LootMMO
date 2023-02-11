@@ -2,7 +2,7 @@ Assets {
   Id: 7950873289177142561
   Name: "Custom Base Material from Urban Pipe Elbow 01"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 2041134495423984771
     ParameterOverrides {

@@ -83,7 +83,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Ability"
   VirtualFolderPath: "Abilities"

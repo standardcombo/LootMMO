@@ -1274,7 +1274,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1345,6 +1345,9 @@ Assets {
           }
           TeamSettings {
           }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1450,6 +1453,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "NPC Templates"
 }

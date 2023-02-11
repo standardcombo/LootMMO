@@ -2,7 +2,7 @@ Assets {
   Id: 15240738019177200097
   Name: "Jade Door Knob"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 16167005355717555960
     ParameterOverrides {

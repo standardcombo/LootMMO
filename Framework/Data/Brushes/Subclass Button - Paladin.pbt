@@ -2,7 +2,7 @@ Assets {
   Id: 4826614723879821845
   Name: "Subclass Button - Paladin"
   PlatformAssetType: 34
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "f35c4c53194241ec9ec5733b8eb8b633"

@@ -1134,7 +1134,7 @@ Assets {
 }
 Assets {
   Id: 13676719582689907132
-  Name: "Curtains Tied"
+  Name: "Urban Curtains Tied 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"

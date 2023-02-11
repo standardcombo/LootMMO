@@ -207,6 +207,9 @@ Assets {
             Id: 7887238662729938253
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -302,6 +305,9 @@ Assets {
             Id: 16910278292812118833
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -373,6 +379,9 @@ Assets {
             Id: 11515840070784317904
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -422,6 +431,9 @@ Assets {
             Id: 2224571462023946700
           }
         }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -469,5 +481,5 @@ Assets {
       AssetId: "Sky_Early_Morning_01"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 15287332810036665253
   Name: "Studded Leather Boots"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

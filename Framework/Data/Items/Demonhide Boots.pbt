@@ -2,7 +2,7 @@ Assets {
   Id: 14766596910578834527
   Name: "Demonhide Boots"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

@@ -3151,7 +3151,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3214,7 +3214,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3296,7 +3296,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3368,7 +3368,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3449,7 +3449,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3525,7 +3525,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3601,7 +3601,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3677,7 +3677,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3753,7 +3753,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3829,7 +3829,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3907,7 +3907,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -3983,7 +3983,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4059,7 +4059,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4136,7 +4136,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4214,7 +4214,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4291,7 +4291,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4367,7 +4367,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4448,7 +4448,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4529,7 +4529,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4610,7 +4610,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4691,7 +4691,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4772,7 +4772,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4853,7 +4853,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -4934,7 +4934,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5015,7 +5015,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5075,7 +5075,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5127,7 +5127,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5187,7 +5187,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5260,7 +5260,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5343,7 +5343,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5419,7 +5419,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5495,7 +5495,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5571,7 +5571,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5647,7 +5647,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5724,7 +5724,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5802,7 +5802,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5880,7 +5880,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -5957,7 +5957,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6033,7 +6033,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6109,7 +6109,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6185,7 +6185,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6261,7 +6261,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6375,7 +6375,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6489,7 +6489,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6592,7 +6592,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6688,7 +6688,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6771,7 +6771,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6848,7 +6848,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6926,7 +6926,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7004,7 +7004,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7082,7 +7082,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7183,7 +7183,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7298,7 +7298,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7358,7 +7358,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7418,7 +7418,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7484,7 +7484,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7550,7 +7550,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7611,7 +7611,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7670,7 +7670,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7742,7 +7742,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7814,7 +7814,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7887,7 +7887,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -7961,7 +7961,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8021,7 +8021,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8081,7 +8081,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8150,7 +8150,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8220,7 +8220,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8325,7 +8325,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8393,7 +8393,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8456,7 +8456,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8519,7 +8519,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8631,7 +8631,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8710,7 +8710,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -8789,7 +8789,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -9051,7 +9051,7 @@ Assets {
     }
     Assets {
       Id: 16209745308327449207
-      Name: "Curtain Rod 01"
+      Name: "Urban Curtain Rod 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -9099,5 +9099,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
 }

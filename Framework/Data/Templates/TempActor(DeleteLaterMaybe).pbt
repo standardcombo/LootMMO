@@ -62,7 +62,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -81,5 +81,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
 }

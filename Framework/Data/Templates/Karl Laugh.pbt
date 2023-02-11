@@ -56,7 +56,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Talking Heads"
   VirtualFolderPath: "Example"
   VirtualFolderPath: "Audio"

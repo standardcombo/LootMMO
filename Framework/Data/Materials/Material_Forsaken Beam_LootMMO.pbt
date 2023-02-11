@@ -2,7 +2,7 @@ Assets {
   Id: 14321570095503431778
   Name: "Material_Forsaken Beam_LootMMO"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 5512000712628422335
     ParameterOverrides {

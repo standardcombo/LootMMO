@@ -96,6 +96,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -170,6 +173,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -213,6 +219,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -287,6 +296,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -330,6 +342,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -382,6 +397,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -485,6 +503,9 @@ Objects {
       Id: 2224571462023946700
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -528,6 +549,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -614,6 +638,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -685,6 +712,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -795,6 +825,9 @@ Objects {
     BlueprintAsset {
       Id: 11515840070784317904
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -930,6 +963,9 @@ Objects {
     BlueprintAsset {
       Id: 16910278292812118833
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1125,6 +1161,9 @@ Objects {
     BlueprintAsset {
       Id: 7887238662729938253
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

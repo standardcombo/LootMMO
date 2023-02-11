@@ -2,7 +2,7 @@ Assets {
   Id: 17612044950969815030
   Name: "BB glow pink"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 13835931345456269078
     ParameterOverrides {

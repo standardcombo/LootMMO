@@ -782,6 +782,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -1305,6 +1308,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1830,6 +1836,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -2353,6 +2362,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2878,6 +2890,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -3401,6 +3416,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3927,6 +3945,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -4450,6 +4471,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -4975,6 +4999,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -5498,6 +5525,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6023,6 +6053,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -6546,6 +6579,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7071,6 +7107,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -7594,6 +7633,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8119,6 +8161,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -8642,6 +8687,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9167,6 +9215,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -9690,6 +9741,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10215,6 +10269,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -10738,6 +10795,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11263,6 +11323,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -11787,6 +11850,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -12310,6 +12376,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -12846,6 +12915,9 @@ Objects {
     SubobjectId: 16244529152849912169
     InstanceId: 16993035516010665953
     TemplateId: 13009181929419590369
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -13884,6 +13956,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -14406,6 +14481,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -14930,6 +15008,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -15452,6 +15533,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -15976,6 +16060,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -16498,6 +16585,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -17022,6 +17112,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -17544,6 +17637,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -18068,6 +18164,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -18590,6 +18689,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -19114,6 +19216,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -19636,6 +19741,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -20160,6 +20268,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -20682,6 +20793,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -21206,6 +21320,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -21729,6 +21846,9 @@ Objects {
     TeamSettings {
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -22251,6 +22371,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -22786,6 +22909,9 @@ Objects {
     SubobjectId: 8378117207410341724
     InstanceId: 13759334827943474409
     TemplateId: 15659573485548842509
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

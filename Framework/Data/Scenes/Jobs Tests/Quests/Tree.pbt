@@ -1991,7 +1991,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2066,6 +2066,9 @@ Objects {
     }
     TeamSettings {
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }

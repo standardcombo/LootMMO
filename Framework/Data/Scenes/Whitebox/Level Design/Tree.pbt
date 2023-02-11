@@ -146,7 +146,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -291,7 +291,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -437,6 +437,9 @@ Objects {
       Id: 16910278292812118833
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -522,6 +525,9 @@ Objects {
     BlueprintAsset {
       Id: 11515840070784317904
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -659,6 +665,9 @@ Objects {
     BlueprintAsset {
       Id: 7887238662729938253
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -971,6 +980,9 @@ Objects {
     BlueprintAsset {
       Id: 6677237403455816226
     }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

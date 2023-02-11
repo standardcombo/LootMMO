@@ -2,7 +2,7 @@ Assets {
   Id: 11690719340044745639
   Name: "ENV_MetalTarnished"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 14622979062053066025
     ParameterOverrides {

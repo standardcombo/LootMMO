@@ -2,7 +2,7 @@ Assets {
   Id: 16582650616127206033
   Name: "Custom Base Material from Humanoid 1 Yasmine"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 11504230223148348398
     ParameterOverrides {

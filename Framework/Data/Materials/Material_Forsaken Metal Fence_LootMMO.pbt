@@ -2,7 +2,7 @@ Assets {
   Id: 15977950252524559562
   Name: "Material_Forsaken Metal Fence_LootMMO"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 4235739338052230523
     ParameterOverrides {

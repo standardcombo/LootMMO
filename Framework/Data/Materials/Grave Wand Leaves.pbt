@@ -2,7 +2,7 @@ Assets {
   Id: 12014003355559678959
   Name: "Grave Wand Leaves"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 8180797745802022317
     ParameterOverrides {

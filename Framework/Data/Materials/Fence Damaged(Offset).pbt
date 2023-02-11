@@ -2,7 +2,7 @@ Assets {
   Id: 13109598462262747889
   Name: "Fence Damaged(Offset)"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 4235739338052230523
     ParameterOverrides {

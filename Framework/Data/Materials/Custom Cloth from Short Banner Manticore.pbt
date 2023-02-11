@@ -2,7 +2,7 @@ Assets {
   Id: 16768160451417428872
   Name: "Custom Cloth from Short Banner Manticore"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 8960969514190589221
     ParameterOverrides {

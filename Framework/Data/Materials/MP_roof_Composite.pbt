@@ -2,7 +2,7 @@ Assets {
   Id: 10044473527013964890
   Name: "MP_roof_Composite"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 14496936826203266768
     ParameterOverrides {

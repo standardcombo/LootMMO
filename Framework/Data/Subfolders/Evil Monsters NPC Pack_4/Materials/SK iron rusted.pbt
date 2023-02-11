@@ -2,7 +2,7 @@ Assets {
   Id: 6915034096929735106
   Name: "SK iron rusted"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 1550569900168609970
     ParameterOverrides {

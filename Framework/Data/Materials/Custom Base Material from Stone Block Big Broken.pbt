@@ -2,7 +2,7 @@ Assets {
   Id: 5393554861105022824
   Name: "Custom Base Material from Stone Block Big Broken"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 7307669298863394
     ParameterOverrides {

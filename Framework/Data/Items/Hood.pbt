@@ -2,7 +2,7 @@ Assets {
   Id: 11362177021220044547
   Name: "Hood"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

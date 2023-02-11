@@ -2,7 +2,7 @@ Assets {
   Id: 605494609026665590
   Name: "Button Back BG"
   PlatformAssetType: 34
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "4ffb6cee806d450eb2ef104883f058f4"

@@ -2,7 +2,7 @@ Assets {
   Id: 14098019906676820682
   Name: "Skeleton Material - Rare"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 12125245193133919026
     ParameterOverrides {

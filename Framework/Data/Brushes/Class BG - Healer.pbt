@@ -2,7 +2,7 @@ Assets {
   Id: 5272307967272972381
   Name: "Class BG - Healer"
   PlatformAssetType: 34
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "b764fafdbcf04ad8ae6def19a824154b"

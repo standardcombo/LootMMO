@@ -2,7 +2,7 @@ Assets {
   Id: 16588950320620419957
   Name: "Long Sword"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

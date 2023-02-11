@@ -2,7 +2,7 @@ Assets {
   Id: 10832772471328803191
   Name: "Silver_1"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 14212988502358508072
     ParameterOverrides {

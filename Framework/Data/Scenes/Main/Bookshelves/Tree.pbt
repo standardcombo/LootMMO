@@ -51,7 +51,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -155,7 +155,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -207,7 +207,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -253,7 +253,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -305,7 +305,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -383,7 +383,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -435,7 +435,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -506,7 +506,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -576,7 +576,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -645,7 +645,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -706,7 +706,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -771,7 +771,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -841,7 +841,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -903,7 +903,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -961,7 +961,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1026,7 +1026,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1129,7 +1129,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1179,7 +1179,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1249,7 +1249,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1313,7 +1313,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1374,7 +1374,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1435,7 +1435,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1496,7 +1496,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1557,7 +1557,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1618,7 +1618,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1697,7 +1697,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1762,7 +1762,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1832,7 +1832,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1894,7 +1894,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1952,7 +1952,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2017,7 +2017,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2117,7 +2117,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2167,7 +2167,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2217,7 +2217,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2272,7 +2272,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2324,7 +2324,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2376,7 +2376,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2428,7 +2428,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2480,7 +2480,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2526,7 +2526,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2578,7 +2578,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2656,7 +2656,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2721,7 +2721,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -2791,7 +2791,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2853,7 +2853,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2911,7 +2911,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2976,7 +2976,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

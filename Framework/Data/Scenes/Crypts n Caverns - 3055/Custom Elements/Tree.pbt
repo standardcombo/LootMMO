@@ -228,6 +228,9 @@ Objects {
       Id: 6677237403455816226
     }
   }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -714,7 +717,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -766,7 +769,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1550,7 +1553,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1818,7 +1821,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1905,7 +1908,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1993,7 +1996,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2190,7 +2193,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2346,7 +2349,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2507,7 +2510,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2581,7 +2584,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2655,7 +2658,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2815,7 +2818,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2886,7 +2889,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -2957,7 +2960,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3027,7 +3030,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3184,7 +3187,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3398,7 +3401,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3479,7 +3482,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3559,7 +3562,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3635,7 +3638,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3707,7 +3710,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3791,7 +3794,7 @@ Objects {
     TemplateId: 8874753243177893219
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:low"
@@ -4949,7 +4952,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -4997,7 +5000,7 @@ Objects {
     }
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -5781,7 +5784,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:critical"
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6048,7 +6051,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6135,7 +6138,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6223,7 +6226,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6420,7 +6423,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6576,7 +6579,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6737,7 +6740,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6811,7 +6814,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -6885,7 +6888,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7045,7 +7048,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7116,7 +7119,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7187,7 +7190,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7257,7 +7260,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7414,7 +7417,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7675,7 +7678,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7761,7 +7764,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7847,7 +7850,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -7933,7 +7936,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8019,7 +8022,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8105,7 +8108,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8191,7 +8194,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8277,7 +8280,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8363,7 +8366,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8449,7 +8452,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8535,7 +8538,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8621,7 +8624,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8707,7 +8710,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8793,7 +8796,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8879,7 +8882,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -8965,7 +8968,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9051,7 +9054,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9137,7 +9140,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9223,7 +9226,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9309,7 +9312,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9395,7 +9398,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9481,7 +9484,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9567,7 +9570,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9653,7 +9656,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9739,7 +9742,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9825,7 +9828,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9911,7 +9914,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -9997,7 +10000,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10083,7 +10086,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10169,7 +10172,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10255,7 +10258,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10341,7 +10344,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10427,7 +10430,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10511,7 +10514,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10586,7 +10589,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10646,7 +10649,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10726,7 +10729,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10806,7 +10809,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10886,7 +10889,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -10963,7 +10966,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11040,7 +11043,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:medium"
+    Value: "mc:edistancerelevance:medium"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11125,7 +11128,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11210,7 +11213,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11295,7 +11298,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11380,7 +11383,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11457,7 +11460,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:low"
+    Value: "mc:edistancerelevance:low"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11532,7 +11535,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -11616,7 +11619,7 @@ Objects {
     TemplateId: 12376745787390098485
   }
   Relevance {
-    Value: "mc:eproxyrelevance:high"
+    Value: "mc:edistancerelevance:high"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:low"

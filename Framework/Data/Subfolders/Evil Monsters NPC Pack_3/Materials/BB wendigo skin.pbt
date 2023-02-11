@@ -2,7 +2,7 @@ Assets {
   Id: 14559987214770829186
   Name: "BB wendigo skin"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 786133954022034419
     ParameterOverrides {

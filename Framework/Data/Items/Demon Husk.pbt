@@ -2,7 +2,7 @@ Assets {
   Id: 4070867159438729421
   Name: "Demon Husk"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

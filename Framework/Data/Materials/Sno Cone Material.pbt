@@ -2,7 +2,7 @@ Assets {
   Id: 9247967537477553295
   Name: "Sno Cone Material"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   CustomMaterialAsset {
     BaseMaterialId: 17117735896314006411
     ParameterOverrides {

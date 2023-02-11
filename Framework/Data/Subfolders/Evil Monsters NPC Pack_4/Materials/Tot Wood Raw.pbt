@@ -2,7 +2,7 @@ Assets {
   Id: 4629730429533628215
   Name: "Tot Wood Raw"
   PlatformAssetType: 13
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "totems"
   CustomMaterialAsset {
     BaseMaterialId: 13711677265034246201

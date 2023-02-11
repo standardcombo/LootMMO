@@ -2,7 +2,7 @@ Assets {
   Id: 17377120702413632790
   Name: "Demon Crown"
   PlatformAssetType: 33
-  SerializationVersion: 120
+  SerializationVersion: 123
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"
