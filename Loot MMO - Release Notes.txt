@@ -1,4 +1,10 @@
 
+**Version 1.3.1**
+- Fixed bugs in the Whitebox scene where the character would not load correctly.
+- Big doors with portal are now closed.
+- The inventory now highlights the target slot when dragging an equipment.
+
+
 **Version 1.3.0**
 
 Improvements
