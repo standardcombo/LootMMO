@@ -19,30 +19,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 1443334462669537307
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 3861733644666963167
-      value {
-        Overrides {
-          Name: "Height"
-          Int: 172
-        }
-        Overrides {
-          Name: "Label"
-          String: "Missing Ability Description: \r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare nunc ac libero rhoncus egestas. Maecenas semper posuere lectus, vitae egestas turpis aliquet ut. Quisque fringilla scelerisque pharetra. Mauris ac molestie mauris, at accumsan libero."
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 8067326117451680903
       value {
         Overrides {
@@ -58,31 +34,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8745204039648026304
-      value {
-        Overrides {
-          Name: "Anchor"
-          Enum {
-            Value: "mc:euianchor:topcenter"
-          }
-        }
-        Overrides {
-          Name: "Dock"
-          Enum {
-            Value: "mc:euianchor:bottomcenter"
-          }
-        }
-        Overrides {
-          Name: "UIAddSelfSizeToInheritedSize"
-          Bool: true
-        }
-        Overrides {
-          Name: "Width"
-          Int: -200
         }
       }
     }

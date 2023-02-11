@@ -152,6 +152,55 @@ Assets {
               }
             }
           }
+          ParameterOverrideMap {
+            key: 10846534887957406504
+            value {
+              Overrides {
+                Name: "Height"
+                Int: 172
+              }
+              Overrides {
+                Name: "Label"
+                String: "Missing Ability Description: \r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare nunc ac libero rhoncus egestas. Maecenas semper posuere lectus, vitae egestas turpis aliquet ut. Quisque fringilla scelerisque pharetra. Mauris ac molestie mauris, at accumsan libero."
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 13192944649928894444
+            value {
+              Overrides {
+                Name: "Visible"
+                Enum {
+                  Value: "mc:evisibilitysetting:forceoff"
+                }
+              }
+            }
+          }
+          ParameterOverrideMap {
+            key: 15730005821420058935
+            value {
+              Overrides {
+                Name: "Anchor"
+                Enum {
+                  Value: "mc:euianchor:topcenter"
+                }
+              }
+              Overrides {
+                Name: "Dock"
+                Enum {
+                  Value: "mc:euianchor:bottomcenter"
+                }
+              }
+              Overrides {
+                Name: "UIAddSelfSizeToInheritedSize"
+                Bool: true
+              }
+              Overrides {
+                Name: "Width"
+                Int: -200
+              }
+            }
+          }
           TemplateAsset {
             Id: 13661131819183159129
           }
@@ -172,7 +221,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         TemplateInstance {
           ParameterOverrideMap {
@@ -194,12 +243,6 @@ Assets {
                 Name: "Rotation"
                 Rotator {
                   Yaw: -102.870392
-                }
-              }
-              Overrides {
-                Name: "Visible"
-                Enum {
-                  Value: "mc:evisibilitysetting:forceoff"
                 }
               }
             }

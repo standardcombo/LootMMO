@@ -157,20 +157,31 @@ end
 
 --equipment slots highlighting, if a valid item is being dragged
 local slotTypes = _G["Equipment.Slots"]
+local savedSlotTypes = {}
 
-local function SetSlotHighlight(slot,color)
-	if not color or not color:IsA("Color") then color = Color.New(0,0,0,.25) end
-	slot.gradient:SetColor(color)
+local function SetSlotHighlight(slot,isOn)
+	if isOn == true then
+		slot.highlight.visibility = Visibility.INHERIT
+		slot.border.visibility = Visibility.INHERIT
+	else
+		slot.highlight.visibility = Visibility.FORCE_OFF
+		slot.border.visibility = Visibility.FORCE_OFF
+	end
 end
 
 local function HighlightValidSlot()
 	if not currentInventory then return end
 	if isDragging == nil then return end
 	for i=1,8 do
-		local isAccepting = slotTypes.GetAcceptingSlots(currentInventory:GetSlotType(i))
+		local slotType = currentInventory:GetSlotType(i)
+		local isAccepting = savedSlotTypes[slotType]
+		if isAccepting == nil then
+			savedSlotTypes[slotType] = slotTypes.GetAcceptingSlots(slotType)
+			isAccepting = savedSlotTypes[slotType]
+		end
 		for _,accepts in pairs(isAccepting)do
 			if isDragging.type == accepts then
-				SetSlotHighlight(slots[i],Color.WHITE)
+				SetSlotHighlight(slots[i],true)
 				return
 			end
 		end
@@ -179,7 +190,7 @@ end
 
 local function ResetHighlights()
 	for i=1,8 do
-		SetSlotHighlight(slots[i])
+		SetSlotHighlight(slots[i],false)
 	end
 end
 ----------------------------------------------------------------
@@ -375,7 +386,8 @@ for index, value in ipairs(SLOTS) do
 	slots[index] = {}
 	slots[index].index = index
 	slots[index].icon = value:FindChildByName("icon")
-	slots[index].gradient = value:FindChildByName("Gradient")
+	slots[index].highlight = value:FindChildByName("highlight")
+	slots[index].border = value:FindChildByName("border")
 	slots[index].bg = value:FindChildByName("bg")
 	slots[index].count = value:FindChildByName("count")
 	slots[index].Button = value:FindChildByName("Button")
