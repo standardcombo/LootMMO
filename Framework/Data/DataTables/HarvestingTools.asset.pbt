@@ -2,7 +2,7 @@ Assets {
   Id: 5490973462993262132
   Name: "HarvestingTools"
   PlatformAssetType: 31
-  SerializationVersion: 123
+  SerializationVersion: 124
   DataTableAsset {
     Assets {
       Id: 13565653469877167903

@@ -2,7 +2,7 @@ Assets {
   Id: 14633239373909032918
   Name: "Linen Sash"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

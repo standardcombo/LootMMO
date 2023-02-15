@@ -2,7 +2,7 @@ Assets {
   Id: 10103398261764165750
   Name: "Loot_Ability_AbilityItem"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   ItemAsset {
     MaximumStackCount: 1
     CustomParameters {

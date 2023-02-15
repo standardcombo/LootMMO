@@ -2,7 +2,7 @@ Assets {
   Id: 6249025671079555628
   Name: "Mailbox Stucco"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 4247430867898109902
     ParameterOverrides {

@@ -88,5 +88,5 @@ Assets {
       AssetId: "Object_Rotator_Continuous"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

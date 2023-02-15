@@ -2,7 +2,7 @@ Assets {
   Id: 336677205481674324
   Name: "Divine Robe"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

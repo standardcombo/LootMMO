@@ -2,7 +2,7 @@ Assets {
   Id: 16769658948368062728
   Name: "Grimoire Gem"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 13599958480671257357
     ParameterOverrides {

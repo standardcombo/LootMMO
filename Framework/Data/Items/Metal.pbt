@@ -2,7 +2,7 @@ Assets {
   Id: 3360181639376465724
   Name: "Metal"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"

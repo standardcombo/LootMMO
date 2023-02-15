@@ -2,7 +2,7 @@ Assets {
   Id: 13102848364934644067
   Name: "Holy Chestplate"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

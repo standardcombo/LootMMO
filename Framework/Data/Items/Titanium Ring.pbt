@@ -2,7 +2,7 @@ Assets {
   Id: 13063163332503413816
   Name: "Titanium Ring"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

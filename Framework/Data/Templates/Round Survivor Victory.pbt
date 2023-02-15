@@ -98,5 +98,5 @@ Assets {
       AssetId: "Round_Survivor_Victory"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

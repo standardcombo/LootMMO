@@ -2,7 +2,7 @@ Assets {
   Id: 16587533487447719899
   Name: "Crown"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

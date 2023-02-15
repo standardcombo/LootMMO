@@ -2,7 +2,7 @@ Assets {
   Id: 8018334512775472871
   Name: "Warhammer"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

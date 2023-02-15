@@ -2,7 +2,7 @@ Assets {
   Id: 17583774027684274893
   Name: "Lock Material"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 10313519700874090434
     ParameterOverrides {
