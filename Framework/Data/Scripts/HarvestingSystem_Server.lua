@@ -89,7 +89,7 @@ function OnPlayerHarvestRequest(player, nodeId)
     Events.Broadcast("Harvest.Start",player,3)
 end
 
-function OnHarvestCompleted(player)
+function OnHarvestCompleted(player) --this comes from server script on tool ability
     --find the node being mined by the player
     local node = CurrentlyMiningNodeForPlayer[player]
     if Object.IsValid(node) ~= true then warn("currently mining node is not valid?") end
@@ -101,7 +101,9 @@ function OnHarvestCompleted(player)
 end
 
 function OnHarvestFailed(player)
-    --release node
+    print("node failed request arrived on server",LockedNodeByPlayer[player])
+    if LockedNodeByPlayer[player] == nil then return end
+    UnlockNode(LockedNodeByPlayer[player])
 end
 
 ------------------------
@@ -113,9 +115,11 @@ function LockNode(node,player)
         warn("node is locked for harvest by "..node:GetCustomProperty("Owner"))
         return false
     end
+    if LockedNodeByPlayer[player] ~= nil then warn("one node per player violation") return false end
     node:SetCustomProperty("Owner", player.id)
     node:ForceReplication()
     LockedNodeByPlayer[player] = node
+    print("locked node",LockedNodeByPlayer[player])
     return true
 end
 
@@ -123,12 +127,13 @@ function UnlockNode(node)
     local lastOwnerId = node:GetCustomProperty("Owner")
     local ownerPlayer = Game.FindPlayer(lastOwnerId)
     if ownerPlayer then
-        if LockedNodeByPlayer[ownerPlayer] then
+        if LockedNodeByPlayer[ownerPlayer] == node then
             LockedNodeByPlayer[ownerPlayer] = nil
         end
     end
     node:SetCustomProperty("Owner", "")
     node:ForceReplication()
+    print("node unlocked on server")
 end
 
 function UpdateFreeNodesTotalCount()
@@ -186,8 +191,8 @@ function OnNodeProximityEntered(node,other)
     if playerHandlesOnNode[node][player] ~= nil then DisconnectPlayerHandlesOnNode(node, player) end
     playerHandlesOnNode[node][player] = {}
     table.insert(playerHandlesOnNode[node][player], Events.ConnectForPlayer("Harvest",OnPlayerHarvestRequest))
-    table.insert(playerHandlesOnNode[node][player], Events.Connect("Harvest.Complete",OnHarvestCompleted))
-    table.insert(playerHandlesOnNode[node][player], Events.Connect("Harvest.Failed",OnHarvestFailed))
+    table.insert(playerHandlesOnNode[node][player], Events.Connect("Harvest.Complete",OnHarvestCompleted)) --this connects from player ability on harvesting tool
+    table.insert(playerHandlesOnNode[node][player], Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed))
 
     --add current node to stack
     AddNodeToPlayersNodesStack(player,node)
@@ -196,6 +201,7 @@ end
 function OnNodeProximityExit(node,other)
     if other:IsA("Player") ~= true then return end
     local player = other
+    OnHarvestFailed(player)
     DisconnectPlayerHandlesOnNode(node, player)
     RemoveNodeFromPlayersNodesStack(player,node)
 end
@@ -245,8 +251,6 @@ Game.playerLeftEvent:Connect(OnPlayerLeft)
 
 --init nodes for use during runtime
 AHS.InitNodesData()
-
-
 
 
 

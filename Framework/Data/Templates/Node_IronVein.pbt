@@ -87,13 +87,14 @@ Assets {
         Name: "ProximityTrigger"
         Transform {
           Location {
+            Z: 177.168045
           }
           Rotation {
           }
           Scale {
-            X: 5
-            Y: 5
-            Z: 5
+            X: 3.3
+            Y: 4.5
+            Z: 3.5
           }
         }
         ParentId: 17706867916820843333
@@ -115,7 +116,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
           InteractionTemplate {
             Id: 841534158063459245

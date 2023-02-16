@@ -16,6 +16,12 @@ Assets {
           SelfId: 15640135615803179142
         }
       }
+      Overrides {
+        Name: "cs:HarvestingProgressionPanel"
+        ObjectReference {
+          SelfId: 17462997620930657643
+        }
+      }
     }
   }
   SerializationVersion: 124

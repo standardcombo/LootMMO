@@ -78,6 +78,7 @@ Assets {
           CastPhaseSettings {
             Duration: 0.5
             CanMove: true
+            CanJump: true
             PreventOtherAbilities: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:none"
@@ -86,6 +87,7 @@ Assets {
           ExecutePhaseSettings {
             Duration: 0.25
             CanMove: true
+            CanJump: true
             PreventOtherAbilities: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:none"

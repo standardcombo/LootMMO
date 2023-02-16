@@ -45,6 +45,7 @@ Assets {
           Location {
           }
           Rotation {
+            Pitch: -0.449432373
           }
           Scale {
             X: 1
@@ -536,10 +537,10 @@ Assets {
         }
         ParentId: 1066424421309578147
         ChildIds: 10610510421403665689
-        ChildIds: 9770773312830391537
-        ChildIds: 16128365028645166526
-        ChildIds: 280885407367377596
-        ChildIds: 5810530091301856446
+        ChildIds: 10497367844191643280
+        ChildIds: 15324097850659361467
+        ChildIds: 16213359060037374806
+        ChildIds: 13788622403439057062
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -598,25 +599,422 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 10497367844191643280
+        Name: "I-Beam 4m"
+        Transform {
+          Location {
+            X: -321.440308
+            Y: 183.174316
+            Z: 647.533875
+          }
+          Rotation {
+            Pitch: 7.33534956
+            Yaw: 2.60754132
+          }
+          Scale {
+            X: 0.809728205
+            Y: 0.809728205
+            Z: 0.809728205
+          }
+        }
+        ParentId: 11895434627195948658
+        ChildIds: 280885407367377596
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6797114215504932443
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 280885407367377596
+        Name: "Nature - Stick 01"
+        Transform {
+          Location {
+            X: 316.619629
+            Y: -5.96655464
+            Z: -26.0579205
+          }
+          Rotation {
+            Pitch: -7.32770681
+            Yaw: -2.62902832
+            Roll: 0.335549265
+          }
+          Scale {
+            X: 2.46996474
+            Y: 2.46996474
+            Z: 2.46996474
+          }
+        }
+        ParentId: 10497367844191643280
+        ChildIds: 15055784277903859137
+        ChildIds: 14044037388520678423
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 14002452738625205946
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 709692719045995053
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15055784277903859137
+        Name: "Bush 01"
+        Transform {
+          Location {
+            X: -89.6412354
+            Y: -9.96203613
+            Z: -6.69540405
+          }
+          Rotation {
+            Pitch: 98.3925323
+            Yaw: 0.0692138672
+            Roll: 0.340026855
+          }
+          Scale {
+            X: 0.336398244
+            Y: 0.336398244
+            Z: 0.336398244
+          }
+        }
+        ParentId: 280885407367377596
+        ChildIds: 8693987795016085870
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 8418025582587939029
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 901541979513849367
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8693987795016085870
+        Name: "Bush 01"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 180
+            Roll: 4.75091433e-09
+          }
+          Scale {
+            X: 0.99999994
+            Y: 0.99999994
+            Z: 0.99999994
+          }
+        }
+        ParentId: 15055784277903859137
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 8418025582587939029
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 901541979513849367
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14044037388520678423
+        Name: "Decal Wood Ends Variations"
+        Transform {
+          Location {
+            X: 31.6366577
+            Y: -8.94671631
+            Z: 25.2037964
+          }
+          Rotation {
+            Yaw: -128.564224
+            Roll: 28.8139439
+          }
+          Scale {
+            X: 0.27783367
+            Y: 0.277832747
+            Z: 0.0586986691
+          }
+        }
+        ParentId: 280885407367377596
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14463303659751748326
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15324097850659361467
+        Name: "I-Beam 4m"
+        Transform {
+          Location {
+            X: -217.783966
+            Y: -99.595459
+            Z: 621.481079
+          }
+          Rotation {
+            Pitch: 6.54404497
+            Yaw: 0.752087891
+            Roll: -6.63547325
+          }
+          Scale {
+            X: 0.414754
+            Y: 0.414754
+            Z: 0.414754
+          }
+        }
+        ParentId: 11895434627195948658
+        ChildIds: 9770773312830391537
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6797114215504932443
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 9770773312830391537
         Name: "Nature - Stick 01"
         Transform {
           Location {
-            X: -149.199463
-            Y: -103.425537
-            Z: 618.448425
+            X: 163.316559
+            Y: -14.3432274
+            Z: -24.6020565
           }
           Rotation {
-            Pitch: 26.4690723
-            Roll: 48
+            Pitch: 19.8691902
+            Yaw: 1.68832314
+            Roll: 55.1481552
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 4.82213545
+            Y: 4.82213545
+            Z: 4.82213545
           }
         }
-        ParentId: 11895434627195948658
+        ParentId: 15324097850659361467
         ChildIds: 3607654013501910898
         ChildIds: 18063055052987894954
         ChildIds: 1481194652805748585
@@ -997,29 +1395,98 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 16213359060037374806
+        Name: "I-Beam 4m"
+        Transform {
+          Location {
+            X: 78.6160812
+            Y: -31.1699219
+            Z: 704.400757
+          }
+          Rotation {
+            Pitch: 0.751477838
+            Yaw: -19.9173508
+            Roll: 2.1532135
+          }
+          Scale {
+            X: 0.518607795
+            Y: 0.518607795
+            Z: 0.518607795
+          }
+        }
+        ParentId: 11895434627195948658
+        ChildIds: 16128365028645166526
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6797114215504932443
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 16128365028645166526
         Name: "Nature - Stick 01"
         Transform {
           Location {
-            X: 171.796143
-            Y: -70.5686
-            Z: 718.066772
+            X: 195.135452
+            Y: -11.1043901
+            Z: 23.3934269
           }
           Rotation {
-            Pitch: -169.65
-            Yaw: -23.8704834
+            Pitch: -9.44544
+            Yaw: 175.695648
+            Roll: -177.874893
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 3.85647893
+            Y: 3.85647893
+            Z: 3.85647893
           }
         }
-        ParentId: 11895434627195948658
+        ParentId: 16213359060037374806
         ChildIds: 7825022674531118590
         ChildIds: 501639721878984614
         ChildIds: 9116558090169365680
         ChildIds: 6015884503810428538
+        ChildIds: 13269538997168898164
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1121,6 +1588,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1188,6 +1657,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1260,6 +1731,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1327,6 +1800,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1399,6 +1874,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1466,6 +1943,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1536,229 +2015,26 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 280885407367377596
-        Name: "Nature - Stick 01"
-        Transform {
-          Location {
-            X: -64.5150146
-            Y: 190.038818
-            Z: 659.339905
-          }
-          Rotation {
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-        ParentId: 11895434627195948658
-        ChildIds: 15055784277903859137
-        ChildIds: 14044037388520678423
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 14002452738625205946
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 709692719045995053
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15055784277903859137
-        Name: "Bush 01"
-        Transform {
-          Location {
-            X: -89.6412354
-            Y: -9.96203613
-            Z: -6.69540405
-          }
-          Rotation {
-            Pitch: 98.3925323
-            Yaw: 0.0692138672
-            Roll: 0.340026855
-          }
-          Scale {
-            X: 0.336398244
-            Y: 0.336398244
-            Z: 0.336398244
-          }
-        }
-        ParentId: 280885407367377596
-        ChildIds: 8693987795016085870
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8693987795016085870
-        Name: "Bush 01"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 180
-            Roll: 4.75091433e-09
-          }
-          Scale {
-            X: 0.99999994
-            Y: 0.99999994
-            Z: 0.99999994
-          }
-        }
-        ParentId: 15055784277903859137
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 14044037388520678423
+        Id: 13269538997168898164
         Name: "Decal Wood Ends Variations"
         Transform {
           Location {
-            X: 31.6366577
-            Y: -8.94671631
-            Z: 25.2037964
+            X: -35.703495
+            Y: 18.9298935
+            Z: -3.3603344
           }
           Rotation {
-            Yaw: -128.564224
-            Roll: 28.8139439
+            Pitch: 3.46444941
+            Yaw: -109.358871
+            Roll: -134.868774
           }
           Scale {
-            X: 0.27783367
-            Y: 0.277832747
-            Z: 0.0586986691
+            X: 0.131662413
+            Y: 0.13166216
+            Z: 0.033267349
           }
         }
-        ParentId: 280885407367377596
+        ParentId: 16128365028645166526
         UnregisteredParameters {
           Overrides {
             Name: "bp:Shape Index"
@@ -1792,30 +2068,97 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 13788622403439057062
+        Name: "I-Beam 4m"
+        Transform {
+          Location {
+            X: -4.43539429
+            Y: 71.0240479
+            Z: 745.339111
+          }
+          Rotation {
+            Pitch: 63.9360237
+            Yaw: 25.6237564
+            Roll: 28.8544979
+          }
+          Scale {
+            X: 0.767929673
+            Y: 0.767929673
+            Z: 0.767929673
+          }
+        }
+        ParentId: 11895434627195948658
+        ChildIds: 5810530091301856446
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 12889861000896994476
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6797114215504932443
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 5810530091301856446
         Name: "Nature - Stick 01"
         Transform {
           Location {
-            X: 70.9869385
-            Y: 95.9521484
-            Z: 894.971924
+            X: 220.113892
+            Y: -8.40582848
+            Z: -12.1074677
           }
           Rotation {
-            Pitch: -59.8351746
-            Yaw: -158.709747
-            Roll: 44.623642
+            Pitch: 4.57861042
+            Yaw: -179.963608
+            Roll: 69.6545639
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 2.60440516
+            Y: 2.60440516
+            Z: 2.60440516
           }
         }
-        ParentId: 11895434627195948658
+        ParentId: 13788622403439057062
         ChildIds: 9017666929416503846
-        ChildIds: 4135829265180989004
-        ChildIds: 4211606663831766274
         ChildIds: 3332379486140371105
+        ChildIds: 17777293472226569446
+        ChildIds: 613966909669516846
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1917,6 +2260,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -1984,284 +2329,8 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 4135829265180989004
-        Name: "Bush 01"
-        Transform {
-          Location {
-            X: 2.98667145
-            Y: 43.0710373
-            Z: 0.0902509689
-          }
-          Rotation {
-            Pitch: 82.7506866
-            Yaw: -108.524338
-            Roll: -57.0748
-          }
-          Scale {
-            X: 0.294149309
-            Y: 0.294149309
-            Z: 0.294149309
-          }
-        }
-        ParentId: 5810530091301856446
-        ChildIds: 8646337806391252324
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8646337806391252324
-        Name: "Bush 01"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 180
-            Roll: 4.75091433e-09
-          }
-          Scale {
-            X: 0.99999994
-            Y: 0.99999994
-            Z: 0.99999994
-          }
-        }
-        ParentId: 4135829265180989004
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 4211606663831766274
-        Name: "Bush 01"
-        Transform {
-          Location {
-            X: -45.4798
-            Y: -53.6126289
-            Z: -13.5302525
-          }
-          Rotation {
-            Pitch: 82.7485199
-            Yaw: -108.524384
-            Roll: 14.174715
-          }
-          Scale {
-            X: 0.294149309
-            Y: 0.294149309
-            Z: 0.294149309
-          }
-        }
-        ParentId: 5810530091301856446
-        ChildIds: 3219497979326893290
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 3219497979326893290
-        Name: "Bush 01"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 180
-            Roll: 4.75091433e-09
-          }
-          Scale {
-            X: 0.99999994
-            Y: 0.99999994
-            Z: 0.99999994
-          }
-        }
-        ParentId: 4211606663831766274
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 12889861000896994476
-            }
-          }
-          Overrides {
-            Name: "ma:Nature_Leaves:id"
-            AssetReference {
-              Id: 8418025582587939029
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 901541979513849367
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -2296,6 +2365,112 @@ Assets {
             X: 0.132949367
             Y: 0.132950157
             Z: 0.0524041913
+          }
+        }
+        ParentId: 5810530091301856446
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14463303659751748326
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17777293472226569446
+        Name: "Decal Wood Ends Variations"
+        Transform {
+          Location {
+            X: 72.6688309
+            Y: -11.5569458
+            Z: -6.79286194
+          }
+          Rotation {
+            Pitch: -58.3627319
+            Yaw: 150.641296
+            Roll: 95.5828171
+          }
+          Scale {
+            X: 0.0592438281
+            Y: 0.0592439473
+            Z: 0.0382932797
+          }
+        }
+        ParentId: 5810530091301856446
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14463303659751748326
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 613966909669516846
+        Name: "Decal Wood Ends Variations"
+        Transform {
+          Location {
+            X: -32.2604828
+            Y: -30.3068199
+            Z: 5.16605759
+          }
+          Rotation {
+            Pitch: -60.0995331
+            Yaw: -109.550407
+            Roll: -8.76503372
+          }
+          Scale {
+            X: 0.0936199725
+            Y: 0.0936202
+            Z: 0.0307914838
           }
         }
         ParentId: 5810530091301856446
@@ -2378,12 +2553,30 @@ Assets {
       }
     }
     Assets {
-      Id: 16893878159981768955
-      Name: "Nature - Stick 01"
+      Id: 6797114215504932443
+      Name: "I-Beam 4m"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_nat_stick_001_ref"
+        AssetId: "sm_i-beam_4m_001"
+      }
+    }
+    Assets {
+      Id: 12889861000896994476
+      Name: "Invisible"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_invisible_001"
+      }
+    }
+    Assets {
+      Id: 709692719045995053
+      Name: "Nature - Stick 03"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_nat_stick_003_ref"
       }
     }
     Assets {
@@ -2405,15 +2598,6 @@ Assets {
       }
     }
     Assets {
-      Id: 12889861000896994476
-      Name: "Invisible"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_invisible_001"
-      }
-    }
-    Assets {
       Id: 14463303659751748326
       Name: "Decal Wood Ends Variations"
       PlatformAssetType: 14
@@ -2423,21 +2607,21 @@ Assets {
       }
     }
     Assets {
+      Id: 16893878159981768955
+      Name: "Nature - Stick 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_nat_stick_001_ref"
+      }
+    }
+    Assets {
       Id: 1092484818309203751
       Name: "Nature - Stick 02"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_prop_nat_stick_002_ref"
-      }
-    }
-    Assets {
-      Id: 709692719045995053
-      Name: "Nature - Stick 03"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_nat_stick_003_ref"
       }
     }
     Assets {

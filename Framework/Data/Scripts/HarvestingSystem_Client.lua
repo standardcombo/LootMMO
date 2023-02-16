@@ -13,13 +13,29 @@ local HARVESTING_INTERACTION_PANEL = script:GetCustomProperty("HarvestingInterac
 local HARVEST_NODE_LABEL = HARVESTING_INTERACTION_PANEL:GetCustomProperty("HarvestNodeLabel"):WaitForObject()
 local LabelPanelDefWidth = HARVESTING_INTERACTION_PANEL.width
 
+---@type UIPanel
+local HARVESTING_PROGRESSION_PANEL = script:GetCustomProperty("HarvestingProgressionPanel"):WaitForObject()
+---@type UIText
+local HARVESTING_NOW = HARVESTING_PROGRESSION_PANEL:GetCustomProperty("HarvestingNow"):WaitForObject()
+---@type UIProgressBar
+local UI_PROGRESS_BAR = HARVESTING_PROGRESSION_PANEL:GetCustomProperty("UI Progress Bar"):WaitForObject()
+
+
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local nodeInteractionStack = {}
 local handles = {}
 local harvestRequestSent = false
 
+local NodeHarvest_CancelActions = {
+    Move = true,
+    Shoot = true,
+    Aim = true,
+    Jump = true
+}
+
 --this is handled on tool ability scripts
 LOCAL_PLAYER.clientUserData.isHarvesting = false
+LOCAL_PLAYER.clientUserData.myNode = nil
 local LocalUserData = LOCAL_PLAYER.clientUserData
 
 --LocalPreview delay, for server to set up
@@ -30,7 +46,7 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 --LOCAL PLAYER INTERACTION AND HANDLES 
 ------------------------------------
 
-function UpdateInteractionLable()
+function UpdateInteractionLabel()
     --TODO check if the proper tool is owned
     if #nodeInteractionStack == 0 then
         HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
@@ -50,7 +66,7 @@ end
 
 function AddNodeToInteractionStack(node)
     table.insert(nodeInteractionStack, node)
-    UpdateInteractionLable()
+    UpdateInteractionLabel()
 end
 
 function RemoveNodeFromInteractionStack(node)
@@ -62,10 +78,13 @@ function RemoveNodeFromInteractionStack(node)
     if toRemove == 0 then return end
     table.remove(nodeInteractionStack,toRemove)
     --update label
-    UpdateInteractionLable()
+    UpdateInteractionLabel()
 end
 
 function OnActionPressed(player,action,values)
+    if NodeHarvest_CancelActions[action] == true and LocalUserData.isHarvesting == true then
+        Events.BroadcastToServer("Harvest.Cancel")
+        return end
     if action ~= "Interact" then return end
     if LocalUserData.isHarvesting == true then return end
     if harvestRequestSent == true then return end
@@ -91,6 +110,21 @@ function SafelySpawnRichnessGeometryForNode(node)
 end
 
 function OnNodePropChanged(node,propName)
+    if propName == "Owner" then
+        local currentOwner = node:GetCustomProperty(propName)
+        if currentOwner == LOCAL_PLAYER.id then
+            --server is responsible for one node per player at a time
+            --node is locked for us, the server has spoken
+            LocalUserData.myNode = node
+            LocalUserData.isHarvesting = true
+            --TODO show progress
+        elseif LocalUserData.myNode == node then
+            --my node was just released
+            print("node released")
+            LocalUserData.myNode = nil
+            LocalUserData.isHarvesting = false
+        end
+    end
     if propName ~= "Richness" then return end
     --print("richness changed on client",node)
     SafelySpawnRichnessGeometryForNode(node)

@@ -10,23 +10,25 @@ if HARVEST_ABILITY == nil then warn("Harvest Ability script needs equipment with
 local handles = {}
 local RequiredCycles = 0
 local currentCycles = 0
+local isInterrupted = false
 
 function OnHarvestCast(ability)
     
 end
 
 function OnHarvestInterrupted(ability)
-    
+    isInterrupted = true
 end
 
 function OnHarvestReady(ability)
     currentCycles = currentCycles + 1
-    if currentCycles >= RequiredCycles then
+    if currentCycles >= RequiredCycles and not isInterrupted then
         --TODO connect to server to proceed the node mining success
         Events.Broadcast("Harvest.Complete",ability.owner)
-    else
+    elseif not isInterrupted then
         HARVEST_ABILITY:Activate()
     end
+    isInterrupted = false
 end
 
 function OnHarvestStartRequest(player,cycles)
@@ -41,8 +43,6 @@ end
 function OnHarvestCancel(player)
     if player ~= HARVEST_ABILITY.owner then return end
     HARVEST_ABILITY:Interrupt()
-    --TODO connect to server to release node
-    --and client to hide progress bar
 end
 
 function Cleanup()
