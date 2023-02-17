@@ -18,6 +18,26 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 7285366825552098446
         ChildIds: 11098999217164233769
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:OnCastEffect"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+          Overrides {
+            Name: "cs:OnExecuteEffect"
+            AssetReference {
+              Id: 2596677899789152655
+            }
+          }
+          Overrides {
+            Name: "cs:OnCooldownEffect"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -47,9 +67,6 @@ Assets {
         Name: "Harvest_Axe"
         Transform {
           Location {
-            X: -248.466797
-            Y: -66.9710541
-            Z: -54.7470398
           }
           Rotation {
           }

@@ -15,13 +15,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5708377708482190084
+        ParentId: 16436247575342307599
         ChildIds: 14256533548007396969
         ChildIds: 3603586386088584385
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
             String: "pick"
+          }
+          Overrides {
+            Name: "cs:SwingsToHarvest"
+            Int: 4
           }
           Overrides {
             Name: "cs:RewardPerUse"
@@ -87,14 +91,14 @@ Assets {
         Name: "ProximityTrigger"
         Transform {
           Location {
-            Z: 177.168045
+            Z: 105.190857
           }
           Rotation {
           }
           Scale {
             X: 3.3
             Y: 4.5
-            Z: 3.5
+            Z: 2
           }
         }
         ParentId: 17706867916820843333

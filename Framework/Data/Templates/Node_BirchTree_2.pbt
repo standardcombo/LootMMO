@@ -353,7 +353,7 @@ Assets {
           Volume: 1
           Falloff: 2500
           Radius: 500
-          EnableOcclusion: true
+          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
         }
         NetworkRelevanceDistance {
@@ -396,10 +396,10 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          EnableOcclusion: true
-          FadeInTime: 1
+          FadeOutTime: 1
+          IsSpatializationEnabled: true
           IsAttenuationEnabled: true
-          StopTime: 2
+          StopTime: 3
           StartDelayMin: 0.1
           StartDelayMax: 0.1
         }
@@ -414,7 +414,7 @@ Assets {
         Transform {
           Location {
             X: 43.4234619
-            Z: 772.944
+            Z: 581.802185
           }
           Rotation {
           }
@@ -435,7 +435,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Density"
-            Float: 10
+            Float: 20
           }
           Overrides {
             Name: "bp:Color"
@@ -444,6 +444,10 @@ Assets {
               G: 0.36
               A: 1
             }
+          }
+          Overrides {
+            Name: "bp:Gravity"
+            Float: -9.8
           }
         }
         Collidable_v2 {
@@ -634,7 +638,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -652,6 +656,7 @@ Assets {
               IsEnabled: true
               Mass: 100
               LinearDamping: 0.01
+              AngularDamping: 0.1
             }
             BoundsScale: 1
           }
@@ -964,7 +969,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -982,6 +987,7 @@ Assets {
               IsEnabled: true
               Mass: 100
               LinearDamping: 0.01
+              AngularDamping: 0.1
             }
             BoundsScale: 1
           }
@@ -1431,7 +1437,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -1449,6 +1455,7 @@ Assets {
               IsEnabled: true
               Mass: 100
               LinearDamping: 0.01
+              AngularDamping: 0.1
             }
             BoundsScale: 1
           }
@@ -2104,7 +2111,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -2122,6 +2129,7 @@ Assets {
               IsEnabled: true
               Mass: 100
               LinearDamping: 0.01
+              AngularDamping: 0.1
             }
             BoundsScale: 1
           }

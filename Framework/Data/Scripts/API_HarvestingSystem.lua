@@ -120,24 +120,27 @@ function API.RemoveNode(node)
     FREE_NODES_DATA[newIndex] = {Type = nodeType, Transform = nodeTransform, originIndex = newIndex}
     --remove the node, so it is now really empty. Client will spawn harvesting effect on child removal
     node:Destroy()
+    --cleanup table
+    SPAWNED_NODES[node] = nil
 end
 
 function API.MineNode(node,player)
+    --this function is called from server controlling if the player is able to do so
     if API.GetNodePlacementStatus() ~= true then return end
     if Object.IsValid(node) ~= true then return end
     if SPAWNED_NODES[node] == nil then warn("existing node is missing its data??"..tostring(node)) return end
-    --check player proximity at the node
-    --check if the node is free to mine
-    --lock node, activate player ability
     --deplete one richness from the node
     local richness = node:GetCustomProperty("Richness")
     richness = richness - 1
+    --update node geometry or remove if depleted
     if richness > 0 then
         node:SetCustomProperty("Richness",richness)
         node:ForceReplication()
+    else
+        API.RemoveNode(node)
     end
+    print("new richness is ",richness)
     --add resources to player involved
-    --update node geometry or remove if depleted
 end
 
 function API.LockNode(node,player)
@@ -170,6 +173,15 @@ function API.RegisterNodeOnClient(node)
     SPAWNED_NODES[node].GeoStagesTable = nodeTableData.NodeStageGeoTable
     local proxTirgger = node:GetCustomProperty("ProximityTrigger"):WaitForObject()
     SPAWNED_NODES[node].proximityTrigger = proxTirgger
+    SPAWNED_NODES[node].FinishedTemplate = nodeTableData.FinishedTemplate
+end
+
+function API.NodeDestroyedOnClient(node)
+    print(node)
+    print(SPAWNED_NODES[node].FinishedTemplate)
+    local effect = World.SpawnAsset(SPAWNED_NODES[node].FinishedTemplate, {transform = node:GetWorldTransform()})
+    if effect.lifeSpan == 0 then effect.lifeSpan = 3 end
+    SPAWNED_NODES[node] = nil
 end
 
 -----------------------

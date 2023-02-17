@@ -606,6 +606,7 @@ Assets {
         ChildIds: 11239384860660353789
         ChildIds: 942755702492398427
         ChildIds: 13897944412986352433
+        ChildIds: 5482944613249784748
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1974,6 +1975,49 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 5482944613249784748
+        Name: "Rock Boulder Ground Impact 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5300176834751714295
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 932158708029872139
+          }
+          AutoPlay: true
+          Volume: 1
+          Falloff: 2500
+          Radius: 250
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 6981536508008379085
@@ -2036,6 +2080,15 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_rock_granite_001_uv_ref"
+      }
+    }
+    Assets {
+      Id: 932158708029872139
+      Name: "Rock Boulder Ground Impact 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_rock_boulder_ground_impact_01a_Cue_ref"
       }
     }
     PrimaryAssetId {

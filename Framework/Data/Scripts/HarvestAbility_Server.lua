@@ -12,6 +12,12 @@ local RequiredCycles = 0
 local currentCycles = 0
 local isInterrupted = false
 
+local FullDuration =
+HARVEST_ABILITY.castPhaseSettings.duration +
+HARVEST_ABILITY.executePhaseSettings.duration +
+HARVEST_ABILITY.recoveryPhaseSettings.duration +
+HARVEST_ABILITY.cooldownPhaseSettings.duration
+
 function OnHarvestCast(ability)
     
 end
@@ -36,6 +42,8 @@ function OnHarvestStartRequest(player,cycles)
     RequiredCycles = cycles
     currentCycles = 0
     HARVEST_ABILITY:Activate()
+    local TTL = time() + FullDuration * RequiredCycles
+    Events.BroadcastToPlayer(HARVEST_ABILITY.owner,"Harvest.FinTime",TTL)
     --TODO connect to server to lock node
     --and client to show progress bar
 end

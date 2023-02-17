@@ -18,6 +18,26 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 3650084907798502440
         ChildIds: 12229066144326834071
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:OnCastEffect"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+          Overrides {
+            Name: "cs:OnExecuteEffect"
+            AssetReference {
+              Id: 2956106482249457866
+            }
+          }
+          Overrides {
+            Name: "cs:OnCooldownEffect"
+            AssetReference {
+              Id: 7798315095738769456
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -47,9 +67,6 @@ Assets {
         Name: "Harvest_Pick"
         Transform {
           Location {
-            X: -266.796936
-            Y: -384.001892
-            Z: -54.7471
           }
           Rotation {
           }

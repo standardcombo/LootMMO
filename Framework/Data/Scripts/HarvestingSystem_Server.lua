@@ -85,8 +85,9 @@ function OnPlayerHarvestRequest(player, nodeId)
     if LockNode(node,player) == false then return end
     --save the node being mined
     CurrentlyMiningNodeForPlayer[player] = node
+    local harvestCount = node:GetCustomProperty("SwingsToHarvest") or 3
     --activate ability
-    Events.Broadcast("Harvest.Start",player,3)
+    Events.Broadcast("Harvest.Start",player,harvestCount)
 end
 
 function OnHarvestCompleted(player) --this comes from server script on tool ability
@@ -124,6 +125,7 @@ function LockNode(node,player)
 end
 
 function UnlockNode(node)
+    if Object.IsValid(node) ~= true then return end
     local lastOwnerId = node:GetCustomProperty("Owner")
     local ownerPlayer = Game.FindPlayer(lastOwnerId)
     if ownerPlayer then

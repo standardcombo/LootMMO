@@ -21,18 +21,36 @@ if HARVEST_ABILITY == nil then
     if HARVEST_ABILITY == nil then warn("Harvest Ability script needs equipment with one ability") return end
 end
 
+---@type string
+local ON_CAST_EFFECT = ROOT:GetCustomProperty("OnCastEffect")
+---@type string
+local ON_EXECUTE_EFFECT = ROOT:GetCustomProperty("OnExecuteEffect")
+---@type string
+local ON_COOLDOWN_EFFECT = ROOT:GetCustomProperty("OnCooldownEffect")
+
+
 local handles = {}
 
 function OnHarvestCast(ability)
-    
-end
-
-function OnHarvestInterrupted(ability)
-    
+    if not ON_CAST_EFFECT then return end
+    local effect = World.SpawnAsset(ON_CAST_EFFECT, {position = script:GetWorldPosition()})
+    if effect.lifeSpan == 0 then effect.lifeSpan = 3 end --failsafe
 end
 
 function OnHarvesExecuted(ability)
-    
+    if not ON_EXECUTE_EFFECT then return end
+    local effect = World.SpawnAsset(ON_EXECUTE_EFFECT, {position = script:GetWorldPosition()})
+    if effect.lifeSpan == 0 then effect.lifeSpan = 3 end --failsafe
+end
+
+function OnHarvesCooldown(ability)
+    if not ON_COOLDOWN_EFFECT then return end
+    local effect = World.SpawnAsset(ON_COOLDOWN_EFFECT, {position = script:GetWorldPosition()})
+    if effect.lifeSpan == 0 then effect.lifeSpan = 3 end --failsafe
+end
+
+function OnHarvestInterrupted(ability)
+
 end
 
 function OnHarvestReady(ability)
@@ -51,5 +69,6 @@ end
 table.insert(handles,HARVEST_ABILITY.readyEvent:Connect(OnHarvestReady))
 table.insert(handles,HARVEST_ABILITY.castEvent:Connect(OnHarvestCast))
 table.insert(handles,HARVEST_ABILITY.executeEvent:Connect(OnHarvesExecuted))
+table.insert(handles,HARVEST_ABILITY.cooldownEvent:Connect(OnHarvesCooldown))
 table.insert(handles,HARVEST_ABILITY.interruptedEvent:Connect(OnHarvestInterrupted))
 table.insert(handles,ROOT.destroyEvent:Connect(Cleanup))

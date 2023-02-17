@@ -15,13 +15,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5708377708482190084
+        ParentId: 16436247575342307599
         ChildIds: 14332983166853498675
         ChildIds: 4107481648242273051
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
             String: "axe"
+          }
+          Overrides {
+            Name: "cs:SwingsToHarvest"
+            Int: 2
           }
           Overrides {
             Name: "cs:RewardPerUse"
@@ -92,8 +96,8 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 3
-            Y: 3
+            X: 2.5
+            Y: 2.5
             Z: 4
           }
         }

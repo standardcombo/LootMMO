@@ -25,6 +25,10 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 local nodeInteractionStack = {}
 local handles = {}
 local harvestRequestSent = false
+local HarvestingNodeTTL = 0
+local HarvestingNodeTimePassed = 0
+local LastTimeTaken = 0
+local HarvestingProgressBarTask = nil
 
 local NodeHarvest_CancelActions = {
     Move = true,
@@ -45,6 +49,25 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 ------------------------------------
 --LOCAL PLAYER INTERACTION AND HANDLES 
 ------------------------------------
+function CleanupHarvestingProgress()
+    HARVESTING_PROGRESSION_PANEL.visibility = Visibility.FORCE_OFF
+    UpdateInteractionLabel()
+end
+
+function UpdateMiningProgressBar()
+    --add dt
+    local curTime = time()
+    local dt = curTime - LastTimeTaken
+    LastTimeTaken = curTime
+    HarvestingNodeTimePassed = HarvestingNodeTimePassed + dt
+    --update progressbar
+    local progress = HarvestingNodeTimePassed / HarvestingNodeTTL --this is witout an offset here, from 0 to TTL
+    UI_PROGRESS_BAR.progress = progress
+    if HarvestingNodeTTL <= HarvestingNodeTimePassed then
+        CleanupHarvestingProgress()
+        return end
+    HarvestingProgressBarTask = Task.Spawn(UpdateMiningProgressBar)
+end
 
 function UpdateInteractionLabel()
     --TODO check if the proper tool is owned
@@ -84,6 +107,8 @@ end
 function OnActionPressed(player,action,values)
     if NodeHarvest_CancelActions[action] == true and LocalUserData.isHarvesting == true then
         Events.BroadcastToServer("Harvest.Cancel")
+        if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end
+        CleanupHarvestingProgress()
         return end
     if action ~= "Interact" then return end
     if LocalUserData.isHarvesting == true then return end
@@ -172,8 +197,28 @@ function HookNode(node)
     end
 end
 
+function OnFinishTimeUpdated(timeStamp)
+    --overall informational, if a local player is harvesting, lets assume the server knows that for sure
+    if LocalUserData.myNode == nil then return end
+    local originRow = LocalUserData.myNode:GetCustomProperty("OriginRow")
+    HARVESTING_NOW.text = HARVESTING_NODES[originRow].FriendlyName
+    LastTimeTaken = time()
+    local ttlTest = timeStamp - LastTimeTaken
+    if ttlTest <= 0 then warn("bad timestamp from server for progress bar") return end
+    if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end --to be sure no other task is handling the progress bar
+    HarvestingNodeTTL = ttlTest
+    HarvestingNodeTimePassed = 0
+    HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
+    HARVESTING_PROGRESSION_PANEL.visibility = Visibility.INHERIT
+    HarvestingProgressBarTask = Task.Spawn(UpdateMiningProgressBar)
+end
+
 function OnNodeAdded(_,newNode)
     HookNode(newNode)
+end
+
+function OnNodeRemoved(_,nodeGone)
+    AHS.NodeDestroyedOnClient(nodeGone)
 end
 
 --init current nodes
@@ -183,3 +228,8 @@ end
 
 --connect events
 NODES.childAddedEvent:Connect(OnNodeAdded)
+Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
+
+--wait a little for the initial nodes placeholder cleanup
+Task.Wait(1)
+NODES.childRemovedEvent:Connect(OnNodeRemoved)

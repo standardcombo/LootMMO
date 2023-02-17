@@ -105,6 +105,8 @@ Assets {
         }
         ParentId: 580886008929811058
         ChildIds: 3836542137723768864
+        ChildIds: 3312006797012450470
+        ChildIds: 1908006036195064222
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -174,7 +176,7 @@ Assets {
           Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -307,6 +309,93 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 3312006797012450470
+        Name: "Object Wood Creak 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9837872744292855616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 15045940509392288686
+          }
+          AutoPlay: true
+          Volume: 1
+          Falloff: 2500
+          Radius: -1
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1908006036195064222
+        Name: "Large Wooden Structure Break Destroy Impact 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9837872744292855616
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 3428834575922087743
+          }
+          AutoPlay: true
+          Pitch: -2400
+          Volume: 1
+          Falloff: 3000
+          Radius: 500
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 2719050674458418510
@@ -333,6 +422,24 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_birch_tree_01_crown_bare_01_ref"
+      }
+    }
+    Assets {
+      Id: 15045940509392288686
+      Name: "Object Wood Creak 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_object_wood_creak_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 3428834575922087743
+      Name: "Large Wooden Structure Break Destroy Impact 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_large_wooden_structure_break_impact_01a_Cue_ref"
       }
     }
     PrimaryAssetId {
