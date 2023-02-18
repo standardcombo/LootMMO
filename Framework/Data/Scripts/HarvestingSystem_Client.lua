@@ -11,6 +11,7 @@ local HARVESTING_NODES = require(ROOT:GetCustomProperty("HarvestingNodes"))
 
 local HARVESTING_INTERACTION_PANEL = script:GetCustomProperty("HarvestingInteractionPanel"):WaitForObject()
 local HARVEST_NODE_LABEL = HARVESTING_INTERACTION_PANEL:GetCustomProperty("HarvestNodeLabel"):WaitForObject()
+local HARVEST_NODE_HOTKEY = HARVESTING_INTERACTION_PANEL:GetCustomProperty("HarvestNodeHotkey"):WaitForObject()
 local LabelPanelDefWidth = HARVESTING_INTERACTION_PANEL.width
 
 ---@type UIPanel
@@ -70,13 +71,30 @@ function UpdateMiningProgressBar()
 end
 
 function UpdateInteractionLabel()
-    --TODO check if the proper tool is owned
+    --if currentNodeOwner == LOCAL_PLAYER then the node is being harvested by us, this function is not called at all
     if #nodeInteractionStack == 0 then
         HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
     else
         local currentNode = nodeInteractionStack[#nodeInteractionStack]
+        local currentNodeOwner = currentNode:GetCustomProperty("Owner")
         local originRow = currentNode:GetCustomProperty("OriginRow")
-        HARVEST_NODE_LABEL.text = HARVESTING_NODES[originRow].FriendlyName
+        local toolNeeded = currentNode:GetCustomProperty("ToolReq")
+        --if tools were not unlocked yet, no label
+        if LocalUserData.Tools == nil then
+            HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
+            return
+        end
+        --check it the player owns the tool needed
+        if LocalUserData.Tools[toolNeeded] == 0 then
+            HARVEST_NODE_LABEL.text = toolNeeded.." required"
+            HARVEST_NODE_HOTKEY.text = "[  ]"
+        elseif currentNodeOwner == "" then
+            HARVEST_NODE_LABEL.text = HARVESTING_NODES[originRow].FriendlyName
+            HARVEST_NODE_HOTKEY.text = "[F]"
+        elseif currentNodeOwner ~= LOCAL_PLAYER.id then
+            HARVEST_NODE_LABEL.text = "OCCUPIED"
+            HARVEST_NODE_HOTKEY.text = "[  ]"
+        end
         local sizeApprox = HARVEST_NODE_LABEL:ComputeApproximateSize()
         if sizeApprox then
             HARVESTING_INTERACTION_PANEL.width = sizeApprox.x + 80
@@ -105,7 +123,7 @@ function RemoveNodeFromInteractionStack(node)
 end
 
 function OnActionPressed(player,action,values)
-    if NodeHarvest_CancelActions[action] == true and LocalUserData.isHarvesting == true then
+    if (NodeHarvest_CancelActions[action] == true) and (LocalUserData.isHarvesting == true) then
         Events.BroadcastToServer("Harvest.Cancel")
         if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end
         CleanupHarvestingProgress()
@@ -117,6 +135,7 @@ function OnActionPressed(player,action,values)
     harvestRequestSent = true
     --send harvest request of the last node in stack
     local lastNode = nodeInteractionStack[#nodeInteractionStack]
+    print("harvest request sent to server")
     Events.BroadcastToServer("Harvest",lastNode.id)
     --reconnect flag
     Task.Wait(.1)
@@ -148,6 +167,10 @@ function OnNodePropChanged(node,propName)
             print("node released on client")
             LocalUserData.myNode = nil
             LocalUserData.isHarvesting = false
+        end
+        --update label if the node is the last in stack and not being harvested by us
+        if node == nodeInteractionStack[#nodeInteractionStack] then
+            if currentOwner ~= LOCAL_PLAYER.id then UpdateInteractionLabel() end
         end
     end
     if propName ~= "Richness" then return end
@@ -198,8 +221,8 @@ function HookNode(node)
 end
 
 function OnFinishTimeUpdated(timeStamp)
-    --overall informational, if a local player is harvesting, lets assume the server knows that for sure
-    --wait for the node to lock on current player
+    --overall informational, about a local player has started harvesting, assuming that the server knows for sure,no checks
+    --wait for the node to lock on current player, as broadcast if faster than networked property change
     local ticks = 0
     while LocalUserData.myNode == nil do
         Task.Wait(.1)
@@ -208,6 +231,12 @@ function OnFinishTimeUpdated(timeStamp)
     end
     local originRow = LocalUserData.myNode:GetCustomProperty("OriginRow")
     HARVESTING_NOW.text = HARVESTING_NODES[originRow].FriendlyName
+    local sizeApprox = HARVESTING_NOW:ComputeApproximateSize()
+    if sizeApprox then
+        HARVESTING_PROGRESSION_PANEL.width = sizeApprox.x + 80
+    else
+        HARVESTING_PROGRESSION_PANEL.width = LabelPanelDefWidth
+    end
     LastTimeTaken = time()
     local ttlTest = timeStamp - LastTimeTaken
     if ttlTest <= 0 then warn("bad timestamp from server for progress bar") return end
@@ -232,9 +261,18 @@ for _,node in ipairs(NODES:GetChildren())do
     HookNode(node)
 end
 
+function OnPND_Changed(player,PNDname)
+    if PNDname ~= "Tools" then return end
+    LocalUserData.Tools = LOCAL_PLAYER:GetPrivateNetworkedData(PNDname)
+end
+
 --connect events
 NODES.childAddedEvent:Connect(OnNodeAdded)
 Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
+LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
+
+--load PNDs
+OnPND_Changed(LOCAL_PLAYER,"Tools")
 
 --wait a little for the initial nodes placeholder cleanup
 Task.Wait(1)

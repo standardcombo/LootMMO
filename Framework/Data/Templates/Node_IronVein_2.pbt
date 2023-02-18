@@ -543,6 +543,8 @@ Assets {
         ChildIds: 3341768347570693500
         ChildIds: 13998391544308970713
         ChildIds: 8499510104544579101
+        ChildIds: 14437646152734094708
+        ChildIds: 825376152252449070
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1957,6 +1959,129 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 14437646152734094708
+        Name: "Decal Dirt Patch"
+        Transform {
+          Location {
+            X: 1.76989746
+            Y: 61.4942627
+          }
+          Rotation {
+            Yaw: 37.7636375
+          }
+          Scale {
+            X: 0.613403201
+            Y: 0.613403201
+            Z: 0.0613403209
+          }
+        }
+        ParentId: 16197793920449581316
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11380357722301189422
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 825376152252449070
+        Name: "Decal Rubble Concrete 02"
+        Transform {
+          Location {
+            X: 22.2169189
+            Y: 89.6820679
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.485766292
+            Y: 0.485766292
+            Z: 0.0710800961
+          }
+        }
+        ParentId: 16197793920449581316
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.700000048
+              G: 0.250331134
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 8
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4358765911904981813
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 6981536508008379085
@@ -2028,6 +2153,24 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_rock_boulder_ground_impact_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 11380357722301189422
+      Name: "Decal Dirt Patch"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_dirt_patch_001"
+      }
+    }
+    Assets {
+      Id: 4358765911904981813
+      Name: "Decal Rubble Concrete 02"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_mil_rubble_concrete_002_ref"
       }
     }
     PrimaryAssetId {

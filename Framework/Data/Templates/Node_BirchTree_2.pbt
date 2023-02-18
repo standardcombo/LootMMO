@@ -108,6 +108,7 @@ Assets {
         ChildIds: 10177527589757249963
         ChildIds: 865038408221472666
         ChildIds: 15422697182479427676
+        ChildIds: 10384045374226408306
         ChildIds: 7469067251079475803
         ChildIds: 6439409603353384263
         ChildIds: 14888941316808008963
@@ -306,6 +307,62 @@ Assets {
         Blueprint {
           BlueprintAsset {
             Id: 5615488110411963137
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10384045374226408306
+        Name: "Decal Leaves 02"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: 33.504425
+          }
+          Scale {
+            X: 1.5
+            Y: 1.5
+            Z: 0.1
+          }
+        }
+        ParentId: 1066424421309578147
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 6
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11209210947411218482
           }
           TeamSettings {
           }
@@ -2531,6 +2588,15 @@ Assets {
       PrimaryAsset {
         AssetType: "DecalBlueprintAssetRef"
         AssetId: "bp_decal_bullet_stone_001"
+      }
+    }
+    Assets {
+      Id: 11209210947411218482
+      Name: "Decal Leaves 02"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_leaves_002"
       }
     }
     Assets {

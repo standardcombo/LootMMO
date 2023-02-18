@@ -18,6 +18,8 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 1511469934351021638
         ChildIds: 9837872744292855616
+        ChildIds: 5897808277015372246
+        ChildIds: 3682533131322031390
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -396,6 +398,120 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 5897808277015372246
+        Name: "Decals Wood Chips 01"
+        Transform {
+          Location {
+            X: 17
+            Y: -18
+          }
+          Rotation {
+            Yaw: -30.888
+          }
+          Scale {
+            X: 0.909574628
+            Y: 0.909574628
+            Z: 0.113696828
+          }
+        }
+        ParentId: 580886008929811058
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4201767319321391847
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3682533131322031390
+        Name: "Decal Leaves 02"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: 33.5044556
+          }
+          Scale {
+            X: 1.5
+            Y: 1.5
+            Z: 0.1
+          }
+        }
+        ParentId: 580886008929811058
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 6
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11209210947411218482
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 2719050674458418510
@@ -440,6 +556,24 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_large_wooden_structure_break_impact_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 4201767319321391847
+      Name: "Decals Wood Chips 01"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_strand_board_001_ref"
+      }
+    }
+    Assets {
+      Id: 11209210947411218482
+      Name: "Decal Leaves 02"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_leaves_002"
       }
     }
     PrimaryAssetId {

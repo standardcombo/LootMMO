@@ -16,13 +16,19 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 5245869237819729510
+        ChildIds: 11770645244340733024
+        ChildIds: 18408211673899945905
         ChildIds: 6601570877591652683
         ChildIds: 15528129915150141334
         ChildIds: 16253154085476436372
         ChildIds: 10791789009587479769
         ChildIds: 7021197784117267859
         ChildIds: 17968838722833087960
-        Lifespan: 3
+        ChildIds: 17855564397190769531
+        ChildIds: 11116491116158513027
+        ChildIds: 2636758389682898319
+        Lifespan: 5
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -40,6 +46,187 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5245869237819729510
+        Name: "Decal Dirt Patch"
+        Transform {
+          Location {
+            X: -7.80065918
+            Y: -73.4188843
+          }
+          Rotation {
+            Yaw: 37.7637749
+          }
+          Scale {
+            X: 0.732111096
+            Y: 0.732111096
+            Z: 0.0732111111
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11380357722301189422
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11770645244340733024
+        Name: "Decal Soil Cracks Big 01"
+        Transform {
+          Location {
+            X: -4.03503418
+            Y: -92.1117706
+            Z: 4.82177734
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.421985626
+            Y: 0.421985626
+            Z: 0.0869109258
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 6
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 6433548446612999816
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 18408211673899945905
+        Name: "Decal Rubble Concrete 02"
+        Transform {
+          Location {
+            X: -4.9621582
+            Y: -102.120667
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.683406949
+            Y: 0.683406949
+            Z: 0.1
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.700000048
+              G: 0.250331134
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 8
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4358765911904981813
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1464,6 +1651,218 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17855564397190769531
+        Name: "Decal Dirt Patch"
+        Transform {
+          Location {
+            X: 41.2450104
+            Y: 44.4653931
+            Z: -1.90734863e-05
+          }
+          Rotation {
+            Yaw: -11.3373718
+          }
+          Scale {
+            X: 0.543362379
+            Y: 0.543362379
+            Z: 0.0543362387
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11380357722301189422
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11116491116158513027
+        Name: "Decal Rubble Concrete 02"
+        Transform {
+          Location {
+            X: 28.6086121
+            Y: 40.9342651
+            Z: -1.90734863e-05
+          }
+          Rotation {
+            Yaw: -49.100708
+          }
+          Scale {
+            X: 0.683406949
+            Y: 0.683406949
+            Z: 0.1
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.700000048
+              G: 0.250331134
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 8
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4358765911904981813
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2636758389682898319
+        Name: "Decal Soil Cracks Big 01"
+        Transform {
+          Location {
+            X: 42.8806763
+            Y: 54.0123291
+            Z: 4.82175827
+          }
+          Rotation {
+            Yaw: -49.100708
+          }
+          Scale {
+            X: 0.39242655
+            Y: 0.39242655
+            Z: 0.0808230191
+          }
+        }
+        ParentId: 11074869989684709533
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 6
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 6433548446612999816
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+    }
+    Assets {
+      Id: 11380357722301189422
+      Name: "Decal Dirt Patch"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_dirt_patch_001"
+      }
+    }
+    Assets {
+      Id: 6433548446612999816
+      Name: "Decal Soil Cracks Big 01"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_soil_cracks_001"
+      }
+    }
+    Assets {
+      Id: 4358765911904981813
+      Name: "Decal Rubble Concrete 02"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_mil_rubble_concrete_002_ref"
       }
     }
     Assets {

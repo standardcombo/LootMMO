@@ -1,1 +1,1 @@
-script.parent:Destroy()
+script:Destroy()

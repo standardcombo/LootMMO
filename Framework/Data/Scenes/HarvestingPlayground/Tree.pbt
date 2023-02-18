@@ -18,6 +18,7 @@ Objects {
   ChildIds: 16813558807825262224
   ChildIds: 10005074784157121906
   ChildIds: 14982843161775482339
+  ChildIds: 6687243479689433930
   ChildIds: 11717113739800138726
   UnregisteredParameters {
   }
@@ -57,15 +58,31 @@ Objects {
   ChildIds: 16436247575342307599
   UnregisteredParameters {
     Overrides {
-      Name: "cs:API_HarvestingSystem"
-      AssetReference {
-        Id: 10330204589680347581
-      }
+      Name: "cs:RespawnNodes"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:RespawnByTypeOnly"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:InitNodesSpawnedPerCent"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:InitSpawnEvenByType"
+      Bool: false
     }
     Overrides {
       Name: "cs:NODES"
       ObjectReference {
         SelfId: 16436247575342307599
+      }
+    }
+    Overrides {
+      Name: "cs:API_HarvestingSystem"
+      AssetReference {
+        Id: 10330204589680347581
       }
     }
     Overrides {
@@ -79,6 +96,22 @@ Objects {
       AssetReference {
         Id: 5490973462993262132
       }
+    }
+    Overrides {
+      Name: "cs:RespawnNodes:tooltip"
+      String: "If true, the mined node will be replaced by a random one. This is overriden by RespawnByTypeOnly"
+    }
+    Overrides {
+      Name: "cs:RespawnByTypeOnly:tooltip"
+      String: "If true, the mined node will be replaced by the same type. This has precedense prior the RespawnNodes"
+    }
+    Overrides {
+      Name: "cs:InitNodesSpawnedPerCent:tooltip"
+      String: "How many nodes in the world will spawn populated, per cent value of all nodes."
+    }
+    Overrides {
+      Name: "cs:InitSpawnEvenByType:tooltip"
+      String: "If true, the initial node spawning will be per type. If false, the nodes will be populated at random."
     }
   }
   Collidable_v2 {
@@ -116,12 +149,16 @@ Objects {
     }
   }
   ParentId: 11717113739800138726
-  ChildIds: 310574385923013214
-  ChildIds: 10692709390813869499
-  ChildIds: 2124620778518276734
-  ChildIds: 455132029350085611
-  ChildIds: 9564196302267392663
-  ChildIds: 143328057191515706
+  ChildIds: 10543776999897222165
+  ChildIds: 7362614949103988672
+  ChildIds: 11661932222438382807
+  ChildIds: 7713403776046212267
+  ChildIds: 12937503451302202870
+  ChildIds: 11643129877591646696
+  ChildIds: 15429192212951400503
+  ChildIds: 16491153041466999187
+  ChildIds: 16194422057622290702
+  ChildIds: 549473810619940493
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -143,16 +180,303 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 143328057191515706
+  Id: 549473810619940493
   Name: "Node_BirchTree"
   Transform {
-    Location {
-      X: 1268.35706
-      Y: -877.291626
+    Scale {
+      X: 0.901870787
+      Y: 0.901870787
+      Z: 0.901870787
     }
-    Rotation {
-      Yaw: 33.4545517
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2206.06323
+            Y: -1303.73889
+            Z: 2.28881836e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 111.976028
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
     }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 16194422057622290702
+  Name: "Node_BirchTree"
+  Transform {
+    Scale {
+      X: 0.881447792
+      Y: 0.881447792
+      Z: 0.881447792
+    }
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1676.93396
+            Y: -1339.11658
+            Z: 1.90734863e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 9.97591782
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 16491153041466999187
+  Name: "Node_BirchTree"
+  Transform {
+    Scale {
+      X: 1.198645
+      Y: 1.198645
+      Z: 1.198645
+    }
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1222.06897
+            Y: -2177.57056
+            Z: 2.28881836e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -147.48494
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 15429192212951400503
+  Name: "Node_BirchTree"
+  Transform {
+    Scale {
+      X: 0.946134865
+      Y: 0.946134865
+      Z: 0.946134865
+    }
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 350.427521
+            Y: -2012.43384
+            Z: 2.28881836e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 68.3480453
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 11643129877591646696
+  Name: "Node_BirchTree"
+  Transform {
+    Scale {
+      X: 1.1289407
+      Y: 1.1289407
+      Z: 1.1289407
+    }
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 1021.30841
+            Y: -1804.14282
+            Z: 2.28881836e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 118.699913
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 12937503451302202870
+  Name: "Node_BirchTree"
+  Transform {
+    Scale {
+      X: 1.16776037
+      Y: 1.16776037
+      Z: 1.16776037
+    }
+  }
+  ParentId: 16436247575342307599
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -468.070038
+            Y: -2098.84595
+            Z: 2.28881836e-05
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 95.8256836
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 7713403776046212267
+  Name: "Node_BirchTree"
+  Transform {
     Scale {
       X: 1
       Y: 1
@@ -178,22 +502,15 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 1665.51721
-            Y: -1746.39917
+            X: -1777.93127
+            Y: -1785.29028
+            Z: 2.28881836e-05
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -173.82988
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            Yaw: -53.6478958
           }
         }
       }
@@ -204,91 +521,17 @@ Objects {
   }
 }
 Objects {
-  Id: 9564196302267392663
-  Name: "Node_BirchTree"
-  Transform {
-    Location {
-      X: 483.613403
-      Y: -998.931641
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16436247575342307599
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 10735264763254810291
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Node_BirchTree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1046.9397
-            Y: -1716.0509
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -79.0091858
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 2231785504448967504
-    }
-  }
-}
-Objects {
-  Id: 455132029350085611
+  Id: 11661932222438382807
   Name: "Node_IronVein"
   Transform {
-    Location {
-      X: 1552.41675
-      Y: -101.5896
-      Z: -6.10351562e-05
-    }
-    Rotation {
-      Yaw: -31.9959621
-    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 1.11131322
+      Y: 1.11131322
+      Z: 1.11131322
     }
   }
   ParentId: 16436247575342307599
   WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 17706867916820843333
@@ -300,15 +543,17 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 754.720215
-            Y: -1219.89185
-            Z: -0.000183105469
+            X: -399.973297
+            Y: -942.860352
+            Z: 279.741547
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -95.5305176
+            Pitch: 7.15815401
+            Yaw: -32.1705055
+            Roll: 3.19095254
           }
         }
         Overrides {
@@ -327,30 +572,17 @@ Objects {
   }
 }
 Objects {
-  Id: 2124620778518276734
+  Id: 7362614949103988672
   Name: "Node_IronVein"
   Transform {
-    Location {
-      X: 1131.83032
-      Y: 1167.38586
-      Z: -6.10351562e-05
-    }
-    Rotation {
-    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 1.11752677
+      Y: 1.11752677
+      Z: 1.11752677
     }
   }
   ParentId: 16436247575342307599
   WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 17706867916820843333
@@ -362,15 +594,17 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 1314.33838
-            Y: -1077.61377
-            Z: -6.10351562e-05
+            X: -1344.74
+            Y: -392.68103
+            Z: 150.458954
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -54.726593
+            Pitch: 1.38151503
+            Yaw: 68.5711594
+            Roll: 23.6615677
           }
         }
         Overrides {
@@ -389,53 +623,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10692709390813869499
-  Name: "Node_BirchTree"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16436247575342307599
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 10735264763254810291
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Node_BirchTree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1845.08472
-            Y: -1177.84497
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 102.860542
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 2231785504448967504
-    }
-  }
-}
-Objects {
-  Id: 310574385923013214
+  Id: 10543776999897222165
   Name: "Node_IronVein"
   Transform {
     Scale {
@@ -463,14 +651,17 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 1511.63013
-            Y: -593.23645
-            Z: -0.000183105469
+            X: -896.273132
+            Y: -1102.0459
+            Z: 105.990807
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
+            Pitch: -10.0689821
+            Yaw: 129.883057
+            Roll: 29.3229504
           }
         }
       }
@@ -860,7 +1051,7 @@ Objects {
   }
   Control {
     Width: -20
-    Height: 28
+    Height: 40
     UIY: -5
     RenderTransformPivot {
       Anchor {
@@ -894,7 +1085,6 @@ Objects {
         X: 2
         Y: 2
       }
-      ScaleToFit: true
       OutlineColor {
         A: 1
       }
@@ -1006,6 +1196,12 @@ Objects {
       Name: "cs:HarvestNodeLabel"
       ObjectReference {
         SelfId: 14468028034368088323
+      }
+    }
+    Overrides {
+      Name: "cs:HarvestNodeHotkey"
+      ObjectReference {
+        SelfId: 9521731039009986691
       }
     }
   }
@@ -1319,6 +1515,60 @@ Objects {
     ScriptAsset {
       Id: 11638447669813120456
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 6687243479689433930
+  Name: "Hill 02"
+  Transform {
+    Location {
+      X: -757.663574
+      Y: -797.715515
+      Z: 6.10351562e-05
+    }
+    Rotation {
+    }
+    Scale {
+      X: 3.34565306
+      Y: 3.34565306
+      Z: 3.34565306
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 14270419193600238466
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1756,9 +2006,12 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
-      Z: 115
+      X: -784.097595
+      Y: -590.688782
+      Z: 334.220459
     }
     Rotation {
+      Yaw: -113.950165
     }
     Scale {
       X: 1

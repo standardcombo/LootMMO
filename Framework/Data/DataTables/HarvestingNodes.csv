@@ -1,3 +1,3 @@
-"Type[String]","FriendlyName[String]","Template[Asset Reference]","NodeStageGeoTable[Asset Reference]","FinishedTemplate[Asset Reference]"
-"vein","Iron Vein","893A6EF774ECFE14","08812AEB96C98787","2EA2FCE6A73F752B"
-"tree","Birch Tree","1EF8E5177F8BF350","7F8473B721BF74A7","7D61E7202076614B"
+"Type[String]","FriendlyName[String]","WeightChance[Int]","Template[Asset Reference]","NodeStageGeoTable[Asset Reference]","FinishedTemplate[Asset Reference]"
+"vein","Iron Vein","10","893A6EF774ECFE14","08812AEB96C98787","2EA2FCE6A73F752B"
+"tree","Birch Tree","10","1EF8E5177F8BF350","7F8473B721BF74A7","7D61E7202076614B"

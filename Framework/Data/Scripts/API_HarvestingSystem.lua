@@ -132,6 +132,8 @@ function API.MineNode(node,player)
     --deplete one richness from the node
     local richness = node:GetCustomProperty("Richness")
     richness = richness - 1
+    --TODO add resources to player involved
+    print("award the player "..player.name.." with",node:GetCustomProperty("RewardPerUse"))
     --update node geometry or remove if depleted
     if richness > 0 then
         node:SetCustomProperty("Richness",richness)
@@ -139,8 +141,7 @@ function API.MineNode(node,player)
     else
         API.RemoveNode(node)
     end
-    print("new richness is ",richness)
-    --add resources to player involved
+    print("node mined, new richness is ",richness)
 end
 
 function API.LockNode(node,player)
@@ -177,8 +178,8 @@ function API.RegisterNodeOnClient(node)
 end
 
 function API.NodeDestroyedOnClient(node)
-    print(node)
-    print(SPAWNED_NODES[node].FinishedTemplate)
+    --print(node)
+    --print(SPAWNED_NODES[node].FinishedTemplate)
     local effect = World.SpawnAsset(SPAWNED_NODES[node].FinishedTemplate, {transform = node:GetWorldTransform()})
     if effect.lifeSpan == 0 then effect.lifeSpan = 3 end
     SPAWNED_NODES[node] = nil

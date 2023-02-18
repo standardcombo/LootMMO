@@ -29,7 +29,7 @@ end
 function OnHarvestReady(ability)
     currentCycles = currentCycles + 1
     if currentCycles >= RequiredCycles and not isInterrupted then
-        --TODO connect to server to proceed the node mining success
+        print("ability done on server for player",ability.owner.name)
         Events.Broadcast("Harvest.Complete",ability.owner)
     elseif not isInterrupted then
         HARVEST_ABILITY:Activate()
@@ -43,7 +43,7 @@ function OnHarvestStartRequest(player,cycles)
     currentCycles = 0
     HARVEST_ABILITY:Activate()
     local TTL = time() + FullDuration * RequiredCycles
-    print("Broadcasting Harvest.FinTime to",HARVEST_ABILITY.owner.name)
+    --print("Broadcasting Harvest.FinTime to",HARVEST_ABILITY.owner.name)
     Events.BroadcastToPlayer(HARVEST_ABILITY.owner,"Harvest.FinTime",TTL)
     --TODO connect to server to lock node
     --and client to show progress bar

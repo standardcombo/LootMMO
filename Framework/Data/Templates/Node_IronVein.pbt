@@ -17,7 +17,7 @@ Assets {
         }
         ParentId: 16436247575342307599
         ChildIds: 14256533548007396969
-        ChildIds: 3603586386088584385
+        ChildIds: 7501421119021291441
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
@@ -135,16 +135,94 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 7501421119021291441
+        Name: "RemovePlaceholder"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 0.99999994
+            Z: 1
+          }
+        }
+        ParentId: 17706867916820843333
+        ChildIds: 13209447801237628346
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 10947307648199128843
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13209447801237628346
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 1.36603776e-05
+            Roll: -3.41509417e-06
+          }
+          Scale {
+            X: 1
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 7501421119021291441
+        ChildIds: 3603586386088584385
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 3603586386088584385
         Name: "Rock 01"
         Transform {
           Location {
-            X: -13.2644043
-            Y: 22.8234863
-            Z: 26.2346802
+            X: -13.2643948
+            Y: 22.8234634
+            Z: 26.2346725
           }
           Rotation {
-            Yaw: -68.9967117
+            Yaw: -68.9967194
+            Roll: -9.23699588e-07
           }
           Scale {
             X: 1.00000036
@@ -152,8 +230,7 @@ Assets {
             Z: 0.590595126
           }
         }
-        ParentId: 17706867916820843333
-        ChildIds: 7501421119021291441
+        ParentId: 13209447801237628346
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -192,44 +269,6 @@ Assets {
         }
         Relevance {
           Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 7501421119021291441
-        Name: "RemovePlaceholder"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: 6.83018879e-06
-          }
-          Scale {
-            X: 0.999999642
-            Y: 0.903456271
-            Z: 1.69320738
-          }
-        }
-        ParentId: 3603586386088584385
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 10947307648199128843
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

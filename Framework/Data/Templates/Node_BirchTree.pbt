@@ -17,7 +17,7 @@ Assets {
         }
         ParentId: 16436247575342307599
         ChildIds: 14332983166853498675
-        ChildIds: 4107481648242273051
+        ChildIds: 1184223795842543187
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
@@ -135,6 +135,80 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 1184223795842543187
+        Name: "RemovePlaceholder"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10735264763254810291
+        ChildIds: 2824750870149332841
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 10947307648199128843
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2824750870149332841
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1184223795842543187
+        ChildIds: 4107481648242273051
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 4107481648242273051
         Name: "Placeholder_Remove"
         Transform {
@@ -148,8 +222,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10735264763254810291
-        ChildIds: 1184223795842543187
+        ParentId: 2824750870149332841
         UnregisteredParameters {
           Overrides {
             Name: "ma:Nature_Trunk:id"
@@ -194,43 +267,6 @@ Assets {
         }
         Relevance {
           Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1184223795842543187
-        Name: "RemovePlaceholder"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4107481648242273051
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 10947307648199128843
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

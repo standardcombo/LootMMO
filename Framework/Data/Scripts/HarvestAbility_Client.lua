@@ -17,7 +17,7 @@ local HARVEST_ABILITY = HARVEST_ABILITIES[1]
 if HARVEST_ABILITY == nil then
     Task.Wait(.1)
     HARVEST_ABILITY = HARVEST_ABILITIES[1]
-    print(ROOT)
+    --print(ROOT)
     if HARVEST_ABILITY == nil then warn("Harvest Ability script needs equipment with one ability") return end
 end
 
