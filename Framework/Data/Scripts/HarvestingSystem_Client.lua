@@ -145,7 +145,7 @@ function OnNodePropChanged(node,propName)
             --TODO show progress
         elseif LocalUserData.myNode == node then
             --my node was just released
-            print("node released")
+            print("node released on client")
             LocalUserData.myNode = nil
             LocalUserData.isHarvesting = false
         end
@@ -199,7 +199,13 @@ end
 
 function OnFinishTimeUpdated(timeStamp)
     --overall informational, if a local player is harvesting, lets assume the server knows that for sure
-    if LocalUserData.myNode == nil then return end
+    --wait for the node to lock on current player
+    local ticks = 0
+    while LocalUserData.myNode == nil do
+        Task.Wait(.1)
+        ticks = ticks + 1
+        if ticks > 10 then return end
+    end
     local originRow = LocalUserData.myNode:GetCustomProperty("OriginRow")
     HARVESTING_NOW.text = HARVESTING_NODES[originRow].FriendlyName
     LastTimeTaken = time()
@@ -233,3 +239,8 @@ Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
 --wait a little for the initial nodes placeholder cleanup
 Task.Wait(1)
 NODES.childRemovedEvent:Connect(OnNodeRemoved)
+Events.Connect("Node.ForceRelease",function(node)
+    if LocalUserData.myNode ~= node then return end
+    LocalUserData.myNode = nil
+    LocalUserData.isHarvesting = false
+end)

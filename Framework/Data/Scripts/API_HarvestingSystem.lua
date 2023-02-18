@@ -182,6 +182,7 @@ function API.NodeDestroyedOnClient(node)
     local effect = World.SpawnAsset(SPAWNED_NODES[node].FinishedTemplate, {transform = node:GetWorldTransform()})
     if effect.lifeSpan == 0 then effect.lifeSpan = 3 end
     SPAWNED_NODES[node] = nil
+    Events.Broadcast("Node.ForceRelease",node)
 end
 
 -----------------------

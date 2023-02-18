@@ -43,6 +43,7 @@ function OnHarvestStartRequest(player,cycles)
     currentCycles = 0
     HARVEST_ABILITY:Activate()
     local TTL = time() + FullDuration * RequiredCycles
+    print("Broadcasting Harvest.FinTime to",HARVEST_ABILITY.owner.name)
     Events.BroadcastToPlayer(HARVEST_ABILITY.owner,"Harvest.FinTime",TTL)
     --TODO connect to server to lock node
     --and client to show progress bar
