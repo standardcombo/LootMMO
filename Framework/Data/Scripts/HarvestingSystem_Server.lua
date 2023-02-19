@@ -9,10 +9,23 @@ local NODES = ROOT:GetCustomProperty("NODES"):WaitForObject()
 local HARVESTING_NODES = require(ROOT:GetCustomProperty("HarvestingNodes"))
 local HARVESTING_TOOLS = require(ROOT:GetCustomProperty("HarvestingTools"))
 
-local RESPAWN_NODES = ROOT:GetCustomProperty("RespawnNodes")
+--CUSTOM VARS OF THE HARVESTING SYSTEM
+local RESPAWN_NODES_INTERVAL = ROOT:GetCustomProperty("RespawnNodesInterval")
 local RESPAWN_BY_TYPE_ONLY = ROOT:GetCustomProperty("RespawnByTypeOnly")
 local INIT_NODES_SPAWNED_PER_CENT = ROOT:GetCustomProperty("InitNodesSpawnedPerCent")
 local INIT_SPAWN_EVEN_BY_TYPE = ROOT:GetCustomProperty("InitSpawnEvenByType")
+local REMOVE_PARTIALLY_MINED_NODES_AFTER = ROOT:GetCustomProperty("RemovePartiallyMinedNodesAfter")
+local SPAWN_ONLY_FULL_NODES = ROOT:GetCustomProperty("SpawnOnlyFullNodes")
+
+--respawn timer limits, both x and y greater than 0 and x less or equal y
+if RESPAWN_NODES_INTERVAL.x < 0 then RESPAWN_NODES_INTERVAL.x = 0 end
+if RESPAWN_NODES_INTERVAL.y < 0 then RESPAWN_NODES_INTERVAL.y = 0 end
+if RESPAWN_NODES_INTERVAL.x > RESPAWN_NODES_INTERVAL.y then
+    local temp = RESPAWN_NODES_INTERVAL.x
+    RESPAWN_NODES_INTERVAL.x = RESPAWN_NODES_INTERVAL.y
+    RESPAWN_NODES_INTERVAL.y = temp
+end
+local RESPAWN_ALLOWED = (RESPAWN_NODES_INTERVAL ~= Vector2.ZERO)
 
 local NodesById = {}
 local TotalNodesAvailable = 0
@@ -96,6 +109,12 @@ function OnPlayerHarvestRequest(player, nodeId)
     rotToNode.x = 0
     rotToNode.y = 0
     player:SetWorldRotation(rotToNode)
+    --append node to be respawned if a partially mined nodes do reswpawn
+    if REMOVE_PARTIALLY_MINED_NODES_AFTER <= 0 then return end
+    Task.Spawn(function ()
+        if Object.IsValid(node) ~= true then return end
+        AHS.RemoveNode(node)
+    end,REMOVE_PARTIALLY_MINED_NODES_AFTER)
 end
 
 function OnHarvestCompleted(player) --this comes from server script on tool ability
@@ -121,7 +140,6 @@ end
 --Respawn Logic
 ------------------------
 
---TODO NODES RESPAWNING
 
 ------------------------
 --Nodes Handling
@@ -166,6 +184,7 @@ end
 function OnNodePropChanged(node,propName)
     if propName ~= "Richness" then return end
     --keep the node geo in line for colliders
+    print("spawning richness on SERVER, is new == false")
     AHS.SpawnProperRichnessGeometryForNode(node)
 end
 
@@ -206,6 +225,9 @@ function OnNodeProximityExit(node,other)
 end
 
 function HookNode(node)
+    print("spawning richness on SERVER, is new == true")
+    AHS.SpawnProperRichnessGeometryForNode(node,true)
+
     handles[node] = {}
     NodesById[node.id] = node --for faster search
 
@@ -216,7 +238,6 @@ function HookNode(node)
     table.insert(handles[node],PROXIMITY_TRIGGER.beginOverlapEvent:Connect(function(trig,other) OnNodeProximityEntered(node,other) end))
     table.insert(handles[node],PROXIMITY_TRIGGER.endOverlapEvent:Connect(function(trig,other) OnNodeProximityExit(node,other) end))
 
-    AHS.SpawnProperRichnessGeometryForNode(node)
     --check for player proximity on spawn, add to interaction stack
     for _,p in ipairs(Game.GetPlayers())do
         if PROXIMITY_TRIGGER:IsOverlapping(p) then
@@ -228,6 +249,20 @@ end
 
 function OnNodeAdded(_,newNode)
     HookNode(newNode)
+end
+
+function OnNodeRemoved(_,deadNode)
+    print("node removed, allow for respawn",RESPAWN_ALLOWED)
+    if RESPAWN_ALLOWED == false then return end
+    local randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
+    local nodeType = nil
+    if RESPAWN_BY_TYPE_ONLY == true then nodeType = deadNode:GetCustomProperty("Type") end
+    local richnessPerCent = 100
+    if SPAWN_ONLY_FULL_NODES ~= true then richnessPerCent = math.random(1,100) end
+    --spawn task to respawn a node. This assumes, that it is always allowed to spawn a node
+    Task.Spawn(function ()
+        AHS.SpawnRandomNode(nodeType,richnessPerCent)
+    end, randomTime)
 end
 
 function OnPlayerJoined(player)
@@ -255,11 +290,21 @@ Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed)
 --init nodes for use during runtime
 AHS.InitNodesData()
 
+--get the count of free nodes
+local freeCount = AHS.GetFreeNodesCount()
 
+--init the active nodes at instance start
+AHS.SpawnInitialNodes(INIT_NODES_SPAWNED_PER_CENT, INIT_SPAWN_EVEN_BY_TYPE, SPAWN_ONLY_FULL_NODES)
 
---TESTTESTTEST
-AHS.SpawnRandomNode("tree")
-AHS.SpawnRandomNode("vein")
+--connect the nodes removal for respawn timer
+NODES.childRemovedEvent:Connect(OnNodeRemoved)
+
+--[[TESTTESTTEST
+AHS.SpawnRandomNode("tree",100)
+AHS.SpawnRandomNode("tree",60)
+AHS.SpawnRandomNode("tree",30)
+AHS.SpawnRandomNode("vein",30)
+AHS.SpawnRandomNode("vein",90)
 AHS.SpawnRandomNode()
 --[[
 print("node spawned")

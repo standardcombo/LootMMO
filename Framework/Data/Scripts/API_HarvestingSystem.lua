@@ -18,6 +18,7 @@ for rowNum,rowData in ipairs(HARVESTING_NODES)do
     if NODES_DATA[rowData.Type] == nil then NODES_DATA[rowData.Type] = {} end
     --insert row data to the appropriate node type table for future usage
     rowData.rowNum = rowNum
+    rowData.maxRichness = #rowData.NodeStageGeoTable
     table.insert(NODES_DATA[rowData.Type], rowData)
 end
 
@@ -30,6 +31,27 @@ for rowNum,rowData in ipairs(HARVESTING_TOOLS)do
     TOOLS_DATA[rowData.Type][rowData.Level].Stance = rowData.Stance
 end
 
+-----------------------
+--INTERNALS
+-----------------------
+
+function GetWeightedRandomNodeIndex(NodeTypeTable,nodeType)
+    --count total weight
+    local totalWeight = 0
+    for _,typeData in ipairs(NodeTypeTable)do
+        totalWeight = totalWeight + typeData.WeightChance
+    end
+    --roll random
+    local randomRoll = math.random(1,totalWeight)
+    --choose final index based on weight
+    for i,typeData in ipairs(NodeTypeTable)do
+        randomRoll = randomRoll - typeData.WeightChance
+        if randomRoll < 1 then return i end
+    end
+    --failsafe, this should never happen
+    warn("?? bad weight values for "..nodeType)
+    return 1
+end
 
 -----------------------
 --SERVER CONTEXT
@@ -65,7 +87,7 @@ function API.InitNodesData()
     serverNodesReady = true
 end
 
-function API.SpawnRandomNode(type)
+function API.SpawnRandomNode(type,richnessPerCent)
     if API.GetNodePlacementStatus() ~= true then return end
     if API.GetFreeNodesCount() == 0 then warn("all node places are occupied, ready to be harvested") return end
     --build temporary table to choose from
@@ -78,27 +100,37 @@ function API.SpawnRandomNode(type)
             table.insert(tempTable,FREE_NODES_DATA[i])
         end
     end
-    --choose a random node of the type (or all nodes if type == nil)
+    --choose a random node of the type (or choose from all nodes if type == nil)
     if #tempTable == 0 then warn("There are no free nodes of the "..tostring(type).." type") return end
     local randomNodeFromTempTable = math.random(1,#tempTable)
     local randomNodeTransform = tempTable[randomNodeFromTempTable].Transform
     local randomNodeType = tempTable[randomNodeFromTempTable].Type
     local randomNode_NodesData = NODES_DATA[randomNodeType]
-    local randomNodeIndex = math.random(1,#randomNode_NodesData)
+    --local randomNodeIndex = math.random(1,#randomNode_NodesData)
+    --weighted chances
+    local randomNodeIndex = GetWeightedRandomNodeIndex(NODES_DATA[randomNodeType],randomNodeType)
     local randomNodeData = randomNode_NodesData[randomNodeIndex]
-    --load the node stages and spawn the top stage
+    --load the node stages and spawn the required richness
     local GeoStagesTable = randomNodeData.NodeStageGeoTable
-    if not GeoStagesTable then warn("The node geometry definition table is missing") return end
+    --if not GeoStagesTable then warn("The node geometry definition table is missing") return end
     local maxRichness = #GeoStagesTable
+    --required richness perc cent value
+    local requiredRichness = maxRichness
+    if richnessPerCent then
+        requiredRichness = maxRichness*richnessPerCent/100
+        requiredRichness = math.floor(requiredRichness + 1) --ceil
+        if requiredRichness > maxRichness then requiredRichness = maxRichness
+        elseif requiredRichness < 1 then requiredRichness = 1 end
+    end
     --spawn node
     local NewNode = World.SpawnAsset(randomNodeData.Template, {parent = NODES_PARENT, transform = randomNodeTransform, networkContext = NetworkContextType.NETWORKED})
     --setup node custom properties
-    NewNode:SetCustomProperty("Richness",maxRichness)
+    NewNode:SetCustomProperty("Richness",requiredRichness)
     --add the origin template table row for client context effects
     NewNode:SetCustomProperty("OriginRow",randomNodeData.rowNum)
     --save for the script logic
     SPAWNED_NODES[NewNode] = {}
-    SPAWNED_NODES[NewNode].GeoStagesTable = GeoStagesTable
+    SPAWNED_NODES[NewNode].GeoStagesTable = randomNodeData.NodeStageGeoTable
     local proxTirgger = NewNode:GetCustomProperty("ProximityTrigger"):WaitForObject()
     SPAWNED_NODES[NewNode].proximityTrigger = proxTirgger
     --remove the position from the free ones
@@ -108,6 +140,37 @@ function API.SpawnRandomNode(type)
     NewNode:ForceReplication()
     --is this needed?
     return NewNode
+end
+
+function API.SpawnInitialNodes(perCent, spawnEven, spawnFull)
+    if API.GetNodePlacementStatus() ~= true then return end
+    if spawnEven == true then
+        --build temporary table of types available
+        local tempTable = {}
+        for _,nodePlacementData in ipairs(FREE_NODES_DATA)do
+            if tempTable[nodePlacementData.Type] == nil then tempTable[nodePlacementData.Type] = 0 end
+            tempTable[nodePlacementData.Type] = tempTable[nodePlacementData.Type] + 1
+        end
+        --per cent count for each type (always at least one)
+        for nodeType,totalCountOfType in pairs(tempTable)do
+            local spawnTotalOfType = math.floor(totalCountOfType * perCent / 100 + .5) --math.round()
+            if spawnTotalOfType < 1 then spawnTotalOfType = 1 end
+            for i=1,spawnTotalOfType do
+                local richnessPerCent = 100
+                if spawnFull ~= true then richnessPerCent = math.random(1,100) end
+                API.SpawnRandomNode(nodeType,richnessPerCent)
+            end
+        end
+    else
+        local freeNodesCount = API.GetFreeNodesCount()
+        local spawnTotal = math.floor(freeNodesCount * perCent / 100 + .5) --math.round()
+        if spawnTotal < 1 then spawnTotal = 1 end
+        for i=1,spawnTotal do
+            local richnessPerCent = 100
+            if spawnFull ~= true then richnessPerCent = math.random(1,100) end
+            API.SpawnRandomNode(nil,richnessPerCent)
+        end
+    end
 end
 
 function API.RemoveNode(node)
@@ -189,7 +252,6 @@ end
 -----------------------
 --Any Context
 -----------------------
-
 function API.GetProperToolTemplate(type,level)
     if TOOLS_DATA[type] == nil then return end
     return TOOLS_DATA[type][level].Equipment
@@ -201,7 +263,7 @@ function API.GetProperToolStance(type,level)
 end
 
 --this function has to be connected (NODES_PARENT.OnChildAdded) for server AND client context, as the nodes geo is Local Context
-function API.SpawnProperRichnessGeometryForNode(node)
+function API.SpawnProperRichnessGeometryForNode(node,isNew)
     if Object.IsValid(node) ~= true then warn("node richness update is for non-valid node, I quit.") return end
     local waits = 0
     while SPAWNED_NODES[node] == nil do
@@ -217,6 +279,12 @@ function API.SpawnProperRichnessGeometryForNode(node)
     --spawn node geometry
     local NodeGeo = World.SpawnAsset(GeoStagesTable[currRichness].Template, {parent = node, networkContext = NetworkContextType.LOCAL_CONTEXT})
     SPAWNED_NODES[node].NodeGeo = NodeGeo
+    print("is new",isNew)
+    if isNew == true then
+        print("scaling new")
+        NodeGeo:SetWorldScale(Vector3.ONE * 0.01)
+        NodeGeo:ScaleTo(Vector3.ONE,2)
+    end
 end
 
 function API.GetFreeNodesCount()

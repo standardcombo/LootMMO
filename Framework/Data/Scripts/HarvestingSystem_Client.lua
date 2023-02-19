@@ -147,10 +147,11 @@ Input.actionPressedEvent:Connect(OnActionPressed)
 ------------------------------------
 --NODE HANDLES 
 ------------------------------------
-function SafelySpawnRichnessGeometryForNode(node)
+function SafelySpawnRichnessGeometryForNode(node,isNew)
     --in singleplayer preview, the local context would be spawned twice, that is not good
     if Environment.IsSinglePlayerPreview() then return end
-    AHS.SpawnProperRichnessGeometryForNode(node)
+    print("spawning richness on CLIENT, is new ==",isNew)
+    AHS.SpawnProperRichnessGeometryForNode(node,isNew)
 end
 
 function OnNodePropChanged(node,propName)
@@ -213,7 +214,7 @@ function HookNode(node)
     table.insert(handles[node],PROXIMITY_TRIGGER.beginOverlapEvent:Connect(function(trig,other) OnNodeProximityEntered(node,other) end))
     table.insert(handles[node],PROXIMITY_TRIGGER.endOverlapEvent:Connect(function(trig,other) OnNodeProximityExit(node,other) end))
 
-    SafelySpawnRichnessGeometryForNode(node)
+    SafelySpawnRichnessGeometryForNode(node,true)
     --if the node is spawned in player proximity, add it to stack
     if PROXIMITY_TRIGGER:IsOverlapping(LOCAL_PLAYER) then
         AddNodeToInteractionStack(node)
