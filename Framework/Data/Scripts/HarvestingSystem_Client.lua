@@ -1,3 +1,11 @@
+-----------------------------------------
+-- HARVESTING SYSTEM FOR LootMMO
+-- By Morituri_SK, v 1.0
+-----------------------------------------
+-- Harvesting control CLIENT script
+--
+-- Client logic for harvesting system
+-----------------------------------------
 ---@type Folder
 local ROOT = script:GetCustomProperty("ROOT"):WaitForObject()
 
@@ -43,7 +51,7 @@ LOCAL_PLAYER.clientUserData.isHarvesting = false
 LOCAL_PLAYER.clientUserData.myNode = nil
 local LocalUserData = LOCAL_PLAYER.clientUserData
 
---LocalPreview delay, for server to set up
+--LocalPreview delay, simulate that server starts first
 if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 
 
@@ -56,13 +64,13 @@ function CleanupHarvestingProgress()
 end
 
 function UpdateMiningProgressBar()
-    --add dt
+    --calculate dt
     local curTime = time()
     local dt = curTime - LastTimeTaken
     LastTimeTaken = curTime
     HarvestingNodeTimePassed = HarvestingNodeTimePassed + dt
     --update progressbar
-    local progress = HarvestingNodeTimePassed / HarvestingNodeTTL --this is witout an offset here, from 0 to TTL
+    local progress = HarvestingNodeTimePassed / HarvestingNodeTTL
     UI_PROGRESS_BAR.progress = progress
     if HarvestingNodeTTL <= HarvestingNodeTimePassed then
         CleanupHarvestingProgress()
@@ -71,7 +79,8 @@ function UpdateMiningProgressBar()
 end
 
 function UpdateInteractionLabel()
-    --if currentNodeOwner == LOCAL_PLAYER then the node is being harvested by us, this function is not called at all
+    --note that if currentNodeOwner == LOCAL_PLAYER ->
+    --then the node is being harvested by us and this function is not called at all
     if #nodeInteractionStack == 0 then
         HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
     else
@@ -131,11 +140,10 @@ function OnActionPressed(player,action,values)
     if action ~= "Interact" then return end
     if LocalUserData.isHarvesting == true then return end
     if harvestRequestSent == true then return end
-    if #nodeInteractionStack < 1 then print("node interaction stack is empty") return end
+    if #nodeInteractionStack < 1 then warn("node interaction stack is empty") return end
     harvestRequestSent = true
     --send harvest request of the last node in stack
     local lastNode = nodeInteractionStack[#nodeInteractionStack]
-    print("harvest request sent to server")
     Events.BroadcastToServer("Harvest",lastNode.id)
     --reconnect flag
     Task.Wait(.1)
@@ -148,9 +156,8 @@ Input.actionPressedEvent:Connect(OnActionPressed)
 --NODE HANDLES 
 ------------------------------------
 function SafelySpawnRichnessGeometryForNode(node,isNew)
-    --in singleplayer preview, the local context would be spawned twice, that is not good
+    --in singleplayer preview, the local context would be spawned twice, and we do not want that
     if Environment.IsSinglePlayerPreview() then return end
-    print("spawning richness on CLIENT, is new ==",isNew)
     AHS.SpawnProperRichnessGeometryForNode(node,isNew)
 end
 
@@ -159,13 +166,11 @@ function OnNodePropChanged(node,propName)
         local currentOwner = node:GetCustomProperty(propName)
         if currentOwner == LOCAL_PLAYER.id then
             --server is responsible for one node per player at a time
-            --node is locked for us, the server has spoken
+            --if a node is locked for us, the server is right, period.
             LocalUserData.myNode = node
             LocalUserData.isHarvesting = true
-            --TODO show progress
         elseif LocalUserData.myNode == node then
-            --my node was just released
-            print("node released on client")
+            --my node was just released and is ready for harvest request
             LocalUserData.myNode = nil
             LocalUserData.isHarvesting = false
         end
@@ -175,7 +180,6 @@ function OnNodePropChanged(node,propName)
         end
     end
     if propName ~= "Richness" then return end
-    --print("richness changed on client",node)
     SafelySpawnRichnessGeometryForNode(node)
 end
 
@@ -203,9 +207,7 @@ function OnNodeProximityExit(node,other)
 end
 
 function HookNode(node)
-    --print("node registered on client",node)
     AHS.RegisterNodeOnClient(node)
-    --print("node hooked on client")
     handles[node] = {}
     table.insert(handles[node],node.customPropertyChangedEvent:Connect(OnNodePropChanged))
     table.insert(handles[node],node.destroyEvent:Connect(CleanupNodeHandles))
@@ -222,8 +224,9 @@ function HookNode(node)
 end
 
 function OnFinishTimeUpdated(timeStamp)
-    --overall informational, about a local player has started harvesting, assuming that the server knows for sure,no checks
-    --wait for the node to lock on current player, as broadcast if faster than networked property change
+    --overall informational, about if a local player has started harvesting,
+    --           assuming that the server knows for sure, no checks on client is needed
+    --wait for the node to lock on current player, as a broadcast is faster than networked property change
     local ticks = 0
     while LocalUserData.myNode == nil do
         Task.Wait(.1)
@@ -241,7 +244,8 @@ function OnFinishTimeUpdated(timeStamp)
     LastTimeTaken = time()
     local ttlTest = timeStamp - LastTimeTaken
     if ttlTest <= 0 then warn("bad timestamp from server for progress bar") return end
-    if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end --to be sure no other task is handling the progress bar
+    --prevent any previous task to handle the progress bar
+    if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end
     HarvestingNodeTTL = ttlTest
     HarvestingNodeTimePassed = 0
     HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
@@ -275,7 +279,7 @@ LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
 --load PNDs
 OnPND_Changed(LOCAL_PLAYER,"Tools")
 
---wait a little for the initial nodes placeholder cleanup
+--wait a little for the initial nodes placeholder cleanup to finish
 Task.Wait(1)
 NODES.childRemovedEvent:Connect(OnNodeRemoved)
 Events.Connect("Node.ForceRelease",function(node)

@@ -1,3 +1,12 @@
+-----------------------------------------
+-- HARVESTING SYSTEM FOR LootMMO
+-- By Morituri_SK, v 1.0
+-----------------------------------------
+-- Harvesting control SERVER script
+--
+-- Server logic for harvesting system
+-----------------------------------------
+
 ---@type Folder
 local ROOT = script:GetCustomProperty("ROOT"):WaitForObject()
 
@@ -28,7 +37,6 @@ end
 local RESPAWN_ALLOWED = (RESPAWN_NODES_INTERVAL ~= Vector2.ZERO)
 
 local NodesById = {}
-local TotalNodesAvailable = 0
 local handles = {}
 local spawnedToolsOnPlayers = {}
 local PlayerActiveNodesStack = {}
@@ -53,24 +61,20 @@ function EquipToolForPlayer(player,nodeToolType,toolLevel)
     if not toolTemplate then warn("unknown definition for tool level "..nodeToolType..", "..tostring(toolLevel)) return end
     spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {networkContext = NetworkContextType.NETWORKED})
     spawnedToolsOnPlayers[player]:Equip(player)
-    --print("tool equipped",spawnedToolsOnPlayers[player])
     --TODO set invisible unless used
 end
 
 function HandlePlayerNodesStack(player)
     local latestNode = PlayerActiveNodesStack[player][#PlayerActiveNodesStack[player]]
-    --print("latestNode",latestNode)
     --check if there is another tool in place, in case of nodes overlap and remove it
     UnequipToolForPlayer(player)
     if latestNode == nil then return end
     --check if the player owns the proper tool
     local nodeToolType = latestNode:GetCustomProperty("ToolReq")
     local toolLevel = PLAYER_TOOLS[player][nodeToolType]
-    --print("checking tool for player",nodeToolType,toolLevel)
     if toolLevel == nil then return end
     if toolLevel < 1 then return end
     --spawn appropriate tool
-    --print("spawning tool for player",nodeToolType,toolLevel)
     EquipToolForPlayer(player,nodeToolType,toolLevel)
 end
 
@@ -96,8 +100,7 @@ function OnPlayerHarvestRequest(player, nodeId)
     local node = NodesById[nodeId]
     if Object.IsValid(node) ~= true then return end
     --lock node if there is no other lock associated with the player
-    print("player harvest request on server, for ",player.name,node)
-    if LockNode(node,player) == false then print("forfeit the harvesting request") return end
+    if LockNode(node,player) == false then return end
     --save the node being mined
     CurrentlyMiningNodeForPlayer[player] = node
     local harvestCount = node:GetCustomProperty("SwingsToHarvest") or 3
@@ -117,12 +120,13 @@ function OnPlayerHarvestRequest(player, nodeId)
     end,REMOVE_PARTIALLY_MINED_NODES_AFTER)
 end
 
-function OnHarvestCompleted(player) --this comes from server script on tool ability
+--this function connects to server script on harvesting tool equipped
+function OnHarvestCompleted(player)
     --find the node being mined by the player
     local node = CurrentlyMiningNodeForPlayer[player]
     if Object.IsValid(node) ~= true then warn("currently mining node is not valid? Quit") return end
-    --TODO check if the player is in the proximity
-    print("node ",node," is about to be mined by "..player.name)
+    --check if the player is in the proximity
+    if AHS.IsPlayerInPoximity(node,player) ~= true then warn("player is not in the requested node proximity") return end
     --mine node
     AHS.MineNode(node,player)
     --release node
@@ -130,16 +134,9 @@ function OnHarvestCompleted(player) --this comes from server script on tool abil
 end
 
 function OnHarvestFailed(player)
-    print("node failed request arrived on server",LockedNodeByPlayer[player])
-    if LockedNodeByPlayer[player] == nil then print('ignored, no unlocks') return end
+    if LockedNodeByPlayer[player] == nil then return end
     UnlockNode(LockedNodeByPlayer[player])
-    print("node unlocked")
 end
-
-------------------------
---Respawn Logic
-------------------------
-
 
 ------------------------
 --Nodes Handling
@@ -147,9 +144,14 @@ end
 
 function LockNode(node,player)
     --check if the player is in proximity
+    if AHS.IsPlayerInPoximity(node,player) ~= true then warn("player is not in the requested node proximity") return end
     --check if the proper tool is owned
+    local reqTool = node:GetCustomProperty("ToolReq")
+    if PLAYER_TOOLS[player][reqTool] == nil or PLAYER_TOOLS[player][reqTool] == 0 then
+        warn("Player is requesting to mine a node without a proper tool?? "..player.name.." is trying to cheat?")
+        return
+    end
     --check if the node is free to be locked
-    print("Locking node",node,"on server for "..player.name)
     if node:GetCustomProperty("Owner") ~= "" then
         warn("node is locked for harvest by "..node:GetCustomProperty("Owner"))
         return false
@@ -159,7 +161,6 @@ function LockNode(node,player)
     node:SetCustomProperty("Owner", player.id)
     node:ForceReplication()
     LockedNodeByPlayer[player] = node
-    print("locked node",LockedNodeByPlayer[player])
     return true
 end
 
@@ -174,7 +175,6 @@ function UnlockNode(node)
     end
     node:SetCustomProperty("Owner", "")
     node:ForceReplication()
-    print("node unlocked on server")
 end
 
 function UpdateFreeNodesTotalCount()
@@ -184,7 +184,6 @@ end
 function OnNodePropChanged(node,propName)
     if propName ~= "Richness" then return end
     --keep the node geo in line for colliders
-    print("spawning richness on SERVER, is new == false")
     AHS.SpawnProperRichnessGeometryForNode(node)
 end
 
@@ -206,9 +205,10 @@ function OnNodeProximityEntered(node,other)
     if other:IsA("Player") ~= true then return end
     local player = other
 
-    --check if the player owns the proper tool
+    --check if player has tools unlocked
     if PLAYER_TOOLS[player] == nil then return end
 
+    --check if player does have a proper tool
     local nodeToolType = node:GetCustomProperty("ToolReq")
     local toolLevel = PLAYER_TOOLS[player][nodeToolType]
     if toolLevel < 1 then return end
@@ -225,7 +225,6 @@ function OnNodeProximityExit(node,other)
 end
 
 function HookNode(node)
-    print("spawning richness on SERVER, is new == true")
     AHS.SpawnProperRichnessGeometryForNode(node,true)
 
     handles[node] = {}
@@ -252,7 +251,6 @@ function OnNodeAdded(_,newNode)
 end
 
 function OnNodeRemoved(_,deadNode)
-    print("node removed, allow for respawn",RESPAWN_ALLOWED)
     if RESPAWN_ALLOWED == false then return end
     local randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
     local nodeType = nil
@@ -268,7 +266,6 @@ end
 function OnPlayerJoined(player)
     --prepare the node stack for player
     PlayerActiveNodesStack[player] = {}
-    --temp test
     --TODO proper tools save and load
     PLAYER_TOOLS[player] = {axe = 1, pick = 1}
     player:SetPrivateNetworkedData("Tools",PLAYER_TOOLS[player])
@@ -298,40 +295,3 @@ AHS.SpawnInitialNodes(INIT_NODES_SPAWNED_PER_CENT, INIT_SPAWN_EVEN_BY_TYPE, SPAW
 
 --connect the nodes removal for respawn timer
 NODES.childRemovedEvent:Connect(OnNodeRemoved)
-
---[[TESTTESTTEST
-AHS.SpawnRandomNode("tree",100)
-AHS.SpawnRandomNode("tree",60)
-AHS.SpawnRandomNode("tree",30)
-AHS.SpawnRandomNode("vein",30)
-AHS.SpawnRandomNode("vein",90)
-AHS.SpawnRandomNode()
---[[
-print("node spawned")
-
-AHS.GetFreeNodesCount()
-for i=1,4 do
-    Task.Wait(5)
-    AHS.MineNode(NewNode,_)
-end
-Task.Wait(10)
-AHS.RemoveNode(NewNode)
-print("node removed")
-AHS.GetFreeNodesCount()
-
-Task.Wait(10)
-
-AHS.GetFreeNodesCount()
-
-NewNode = AHS.SpawnRandomNode("tree")
-print("node spawned")
-
-AHS.GetFreeNodesCount()
-for i=1,2 do
-    Task.Wait(5)
-    AHS.MineNode(NewNode,_)
-end
-Task.Wait(10)
-AHS.RemoveNode(NewNode)
-print("node removed")
-AHS.GetFreeNodesCount()]]

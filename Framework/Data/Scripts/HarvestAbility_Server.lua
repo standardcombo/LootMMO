@@ -1,3 +1,13 @@
+-----------------------------------------
+-- HARVESTING SYSTEM FOR LootMMO
+-- By Morituri_SK, v 1.0
+-----------------------------------------
+-- Harvesting ability server script
+--
+-- Animates the harvesting and sends completed event
+-- for HarvestingSystem_Server script
+-----------------------------------------
+
 local ROOT = script:FindAncestorByType("Equipment")
 if not ROOT then warn("Harvest Ability script has to be a child of an equipment object") return end
 
@@ -18,10 +28,6 @@ HARVEST_ABILITY.executePhaseSettings.duration +
 HARVEST_ABILITY.recoveryPhaseSettings.duration +
 HARVEST_ABILITY.cooldownPhaseSettings.duration
 
-function OnHarvestCast(ability)
-    
-end
-
 function OnHarvestInterrupted(ability)
     isInterrupted = true
 end
@@ -29,7 +35,6 @@ end
 function OnHarvestReady(ability)
     currentCycles = currentCycles + 1
     if currentCycles >= RequiredCycles and not isInterrupted then
-        print("ability done on server for player",ability.owner.name)
         Events.Broadcast("Harvest.Complete",ability.owner)
     elseif not isInterrupted then
         HARVEST_ABILITY:Activate()
@@ -42,11 +47,9 @@ function OnHarvestStartRequest(player,cycles)
     RequiredCycles = cycles
     currentCycles = 0
     HARVEST_ABILITY:Activate()
+    --send ability total duration for client progress bar
     local TTL = time() + FullDuration * RequiredCycles
-    --print("Broadcasting Harvest.FinTime to",HARVEST_ABILITY.owner.name)
     Events.BroadcastToPlayer(HARVEST_ABILITY.owner,"Harvest.FinTime",TTL)
-    --TODO connect to server to lock node
-    --and client to show progress bar
 end
 
 function OnHarvestCancel(player)
@@ -64,7 +67,6 @@ end
 --handles
 table.insert(handles,HARVEST_ABILITY.readyEvent:Connect(OnHarvestReady))
 table.insert(handles,HARVEST_ABILITY.interruptedEvent:Connect(OnHarvestInterrupted))
-table.insert(handles,HARVEST_ABILITY.castEvent:Connect(OnHarvestCast))
 table.insert(handles,ROOT.destroyEvent:Connect(Cleanup))
 table.insert(handles,Events.Connect("Harvest.Start",OnHarvestStartRequest))
 table.insert(handles,Events.ConnectForPlayer("Harvest.Cancel",OnHarvestCancel))

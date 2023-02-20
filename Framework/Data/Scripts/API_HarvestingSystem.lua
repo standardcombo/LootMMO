@@ -1,3 +1,12 @@
+-----------------------------------------
+-- HARVESTING SYSTEM FOR LootMMO
+-- By Morituri_SK, v 1.0
+-----------------------------------------
+-- Harvesting API for Server and Client
+--
+-- API for nodes handling
+-----------------------------------------
+
 local API = {}
 
 ---@type string
@@ -58,7 +67,7 @@ end
 -----------------------
 
 function API.GetNodePlacementStatus()
-    if Environment.IsServer() ~= true then warn("API.GetNodePlacementStatus is for server context purposes only") return end
+    if Environment.IsServer() ~= true then warn("Required function is for server context purposes only") return end
     if serverNodesReady == true then return true end
     warn("FREE_NODES_DATA is not ready on server, API.InitNodesData")
     return false
@@ -70,7 +79,7 @@ function API.InitNodesData()
     local AllNodes = NODES_PARENT:GetChildren()
     if #AllNodes == 0 then warn("No children in NODES_PARENT for API.InitNodesData") return end
 
-    --save the placed nodes data and remove them for runtime
+    --save the placed nodes data for use during runtime
     for _,nodeObject in ipairs(AllNodes)do
         local nodeData = {}
         nodeData.Type = nodeObject:GetCustomProperty("Type")
@@ -83,7 +92,7 @@ function API.InitNodesData()
         nodeObject:Destroy()
     end
 
-    --API is ready to handle nodes on server
+    --from now on, API is ready to handle nodes on server
     serverNodesReady = true
 end
 
@@ -106,15 +115,13 @@ function API.SpawnRandomNode(type,richnessPerCent)
     local randomNodeTransform = tempTable[randomNodeFromTempTable].Transform
     local randomNodeType = tempTable[randomNodeFromTempTable].Type
     local randomNode_NodesData = NODES_DATA[randomNodeType]
-    --local randomNodeIndex = math.random(1,#randomNode_NodesData)
     --weighted chances
     local randomNodeIndex = GetWeightedRandomNodeIndex(NODES_DATA[randomNodeType],randomNodeType)
     local randomNodeData = randomNode_NodesData[randomNodeIndex]
     --load the node stages and spawn the required richness
     local GeoStagesTable = randomNodeData.NodeStageGeoTable
-    --if not GeoStagesTable then warn("The node geometry definition table is missing") return end
     local maxRichness = #GeoStagesTable
-    --required richness perc cent value
+    --required richness per cent value
     local requiredRichness = maxRichness
     if richnessPerCent then
         requiredRichness = maxRichness*richnessPerCent/100
@@ -134,11 +141,10 @@ function API.SpawnRandomNode(type,richnessPerCent)
     local proxTirgger = NewNode:GetCustomProperty("ProximityTrigger"):WaitForObject()
     SPAWNED_NODES[NewNode].proximityTrigger = proxTirgger
     --remove the position from the free ones
-    --print("removing from the free node placements",tempTable[randomNodeFromTempTable].originIndex)
     table.remove(FREE_NODES_DATA,tempTable[randomNodeFromTempTable].originIndex)
     --force replication
     NewNode:ForceReplication()
-    --is this needed?
+    --return spawned node, for later use if needed
     return NewNode
 end
 
@@ -151,7 +157,7 @@ function API.SpawnInitialNodes(perCent, spawnEven, spawnFull)
             if tempTable[nodePlacementData.Type] == nil then tempTable[nodePlacementData.Type] = 0 end
             tempTable[nodePlacementData.Type] = tempTable[nodePlacementData.Type] + 1
         end
-        --per cent count for each type (always at least one)
+        --per cent count for each type (always at least one is being spawned)
         for nodeType,totalCountOfType in pairs(tempTable)do
             local spawnTotalOfType = math.floor(totalCountOfType * perCent / 100 + .5) --math.round()
             if spawnTotalOfType < 1 then spawnTotalOfType = 1 end
@@ -181,14 +187,14 @@ function API.RemoveNode(node)
     --add the node back to free nodes table
     local newIndex = #FREE_NODES_DATA + 1
     FREE_NODES_DATA[newIndex] = {Type = nodeType, Transform = nodeTransform, originIndex = newIndex}
-    --remove the node, so it is now really empty. Client will spawn harvesting effect on child removal
+    --remove the node, so it is now really empty. Client will spawn '_fin' harvesting effect on child removal
     node:Destroy()
     --cleanup table
     SPAWNED_NODES[node] = nil
 end
 
 function API.MineNode(node,player)
-    --this function is called from server controlling if the player is able to do so
+    --the HarvestingSystem_Server.lua is responsible to check if player is able to do so
     if API.GetNodePlacementStatus() ~= true then return end
     if Object.IsValid(node) ~= true then return end
     if SPAWNED_NODES[node] == nil then warn("existing node is missing its data??"..tostring(node)) return end
@@ -204,20 +210,6 @@ function API.MineNode(node,player)
     else
         API.RemoveNode(node)
     end
-    print("node mined, new richness is ",richness)
-end
-
-function API.LockNode(node,player)
-    if API.GetNodePlacementStatus() ~= true then return end
-    --check if the node is free
-    --check player proximity at the node
-    --lock node for the player requesting
-end
-
-function API.ReleaseNode(node,player)
-    if API.GetNodePlacementStatus() ~= true then return end
-    --check if the node is locked
-    --unlock node
 end
 
 -----------------------
@@ -241,8 +233,7 @@ function API.RegisterNodeOnClient(node)
 end
 
 function API.NodeDestroyedOnClient(node)
-    --print(node)
-    --print(SPAWNED_NODES[node].FinishedTemplate)
+    if Environment.IsClient() ~= true then return end
     local effect = World.SpawnAsset(SPAWNED_NODES[node].FinishedTemplate, {transform = node:GetWorldTransform()})
     if effect.lifeSpan == 0 then effect.lifeSpan = 3 end
     SPAWNED_NODES[node] = nil
@@ -268,7 +259,6 @@ function API.SpawnProperRichnessGeometryForNode(node,isNew)
     local waits = 0
     while SPAWNED_NODES[node] == nil do
         Task.Wait(.1)
-        --print("waiting for node data")
         waits = waits + 1
         if Object.IsValid(node) ~= true then warn("node is no longer valid, richness geometry quits") return end
         if waits > 20 then warn("node data are delayed too much, richness geometry quits") return end
@@ -279,22 +269,18 @@ function API.SpawnProperRichnessGeometryForNode(node,isNew)
     --spawn node geometry
     local NodeGeo = World.SpawnAsset(GeoStagesTable[currRichness].Template, {parent = node, networkContext = NetworkContextType.LOCAL_CONTEXT})
     SPAWNED_NODES[node].NodeGeo = NodeGeo
-    print("is new",isNew)
     if isNew == true then
-        print("scaling new")
         NodeGeo:SetWorldScale(Vector3.ONE * 0.01)
         NodeGeo:ScaleTo(Vector3.ONE,2)
     end
 end
 
+function API.IsPlayerInPoximity(node,player)
+    if Object.IsValid(node) ~= true then return end
+    return SPAWNED_NODES[node].proximityTrigger:IsOverlapping(player)
+end
+
 function API.GetFreeNodesCount()
-    --[[for r,tbl in ipairs(FREE_NODES_DATA)do
-        print(r)
-        for k,v in pairs(tbl)do
-            print(k,v)
-        end
-    end]]
-    --print("Free nodes count:",#FREE_NODES_DATA)
     return #FREE_NODES_DATA
 end
 
