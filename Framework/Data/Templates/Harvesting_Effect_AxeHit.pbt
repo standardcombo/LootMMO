@@ -1,13 +1,13 @@
 Assets {
-  Id: 4454864279360093658
-  Name: "Urban Iron Pickaxe 01 Template"
+  Id: 2596677899789152655
+  Name: "Harvesting_Effect_AxeHit"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 17427950119200585681
+      RootId: 8940546454683045157
       Objects {
-        Id: 17427950119200585681
-        Name: "Urban Iron Pickaxe 01 Template"
+        Id: 8940546454683045157
+        Name: "Harvesting_Effect_AxeHit"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,9 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 8779886575694950504
-        ChildIds: 12631186328336070392
+        ChildIds: 5641915831673438195
+        ChildIds: 10506580378161055564
+        Lifespan: 3
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -39,8 +40,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8779886575694950504
-        Name: "Urban - Iron Pickaxe 01 - Handle 01"
+        Id: 5641915831673438195
+        Name: "Wood Impact VFX"
         Transform {
           Location {
           }
@@ -52,7 +53,13 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17427950119200585681
+        ParentId: 8940546454683045157
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Enable Dust"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -65,24 +72,18 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        CoreMesh {
-          MeshAsset {
-            Id: 11484500551665139989
+        Blueprint {
+          BlueprintAsset {
+            Id: 8878501670300775206
           }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
+          TeamSettings {
           }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
+          Vfx {
+            AutoPlay: true
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:critical"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -90,12 +91,10 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12631186328336070392
-        Name: "Urban - Iron Pickaxe 01 - Head 01"
+        Id: 10506580378161055564
+        Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
         Transform {
           Location {
-            X: -0.0544433594
-            Z: 56.0249329
           }
           Rotation {
           }
@@ -105,7 +104,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17427950119200585681
+        ParentId: 8940546454683045157
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -118,24 +117,16 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        CoreMesh {
-          MeshAsset {
-            Id: 16118006961303645159
+        AudioInstance {
+          AudioAsset {
+            Id: 6567081915764399691
           }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
+          AutoPlay: true
+          Volume: 1
+          Falloff: 2500
+          Radius: -1
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -144,21 +135,21 @@ Assets {
       }
     }
     Assets {
-      Id: 11484500551665139989
-      Name: "Urban - Iron Pickaxe 01 - Handle 01"
-      PlatformAssetType: 1
+      Id: 8878501670300775206
+      Name: "Wood Impact VFX"
+      PlatformAssetType: 8
       PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_urb_pickaxe_iron_001_handle_001_ref"
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_gun_impact_wood_sm"
       }
     }
     Assets {
-      Id: 16118006961303645159
-      Name: "Urban - Iron Pickaxe 01 - Head 01"
-      PlatformAssetType: 1
+      Id: 6567081915764399691
+      Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
+      PlatformAssetType: 7
       PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_urb_pickaxe_iron_001_head_001_ref"
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_axe_tree_wood_chop_hit_impact_01a_Cue_ref"
       }
     }
     PrimaryAssetId {

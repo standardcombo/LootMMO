@@ -19,26 +19,35 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 1443334462669537307
+      key: 818846036172377395
       value {
         Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
           }
         }
       }
     }
     ParameterOverrideMap {
-      key: 3861733644666963167
+      key: 1906330821133065852
       value {
         Overrides {
-          Name: "Height"
-          Int: 172
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
         }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4701203326673532013
+      value {
         Overrides {
-          Name: "Label"
-          String: "Missing Ability Description: \r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare nunc ac libero rhoncus egestas. Maecenas semper posuere lectus, vitae egestas turpis aliquet ut. Quisque fringilla scelerisque pharetra. Mauris ac molestie mauris, at accumsan libero."
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
         }
       }
     }
@@ -62,27 +71,57 @@ Objects {
       }
     }
     ParameterOverrideMap {
-      key: 8745204039648026304
+      key: 9419591027367816534
       value {
         Overrides {
-          Name: "Anchor"
-          Enum {
-            Value: "mc:euianchor:topcenter"
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
           }
         }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11076679475220455610
+      value {
         Overrides {
-          Name: "Dock"
-          Enum {
-            Value: "mc:euianchor:bottomcenter"
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
           }
         }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14204967939976225582
+      value {
         Overrides {
-          Name: "UIAddSelfSizeToInheritedSize"
-          Bool: true
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
         }
+      }
+    }
+    ParameterOverrideMap {
+      key: 15446451858021390363
+      value {
         Overrides {
-          Name: "Width"
-          Int: -200
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17975137821765129122
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 2764905514123890102
+          }
         }
       }
     }

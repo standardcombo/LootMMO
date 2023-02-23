@@ -1,0 +1,5 @@
+"Type[String]","Level[Int]","Equipment[Asset Reference]","Stance[String]","Icon[Asset Reference]"
+"axe","1","327EAFB8601C3E08","1hand_melee_stance","BC42E1F4FA12E71F"
+"axe","2","0BADBADBADBADBAD","1hand_melee_stance","E9EB5ABBF951C7D3"
+"pick","1","C2D3A8E018B4DC96","2hand_staff_idle_ready","6D3E5A34AAC526B1"
+"pick","2","0BADBADBADBADBAD","2hand_staff_idle_ready","99EAC39C020B7608"
