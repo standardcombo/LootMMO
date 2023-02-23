@@ -2,7 +2,7 @@ Assets {
   Id: 11653561262359954568
   Name: "Trim Brick"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 14775259986279630015
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 15011219379918960360
   Name: "Fire Magic Edge Outlineas"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 2721411165435899975
     ParameterOverrides {

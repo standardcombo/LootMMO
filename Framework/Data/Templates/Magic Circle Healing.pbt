@@ -1379,5 +1379,5 @@ Assets {
       AssetId: "Magic_Circle_Healing"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

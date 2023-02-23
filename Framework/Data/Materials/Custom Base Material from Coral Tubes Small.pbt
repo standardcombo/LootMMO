@@ -2,7 +2,7 @@ Assets {
   Id: 11093182246568588739
   Name: "Custom Base Material from Coral Tubes Small"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 3466602182312630727
     ParameterOverrides {

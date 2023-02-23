@@ -2,7 +2,7 @@ Assets {
   Id: 17884173335671130846
   Name: "SK eyes"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 6640175192592813417
     ParameterOverrides {

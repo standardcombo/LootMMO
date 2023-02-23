@@ -78,6 +78,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -415,6 +430,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -706,6 +736,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -1012,6 +1057,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -2145,6 +2205,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }

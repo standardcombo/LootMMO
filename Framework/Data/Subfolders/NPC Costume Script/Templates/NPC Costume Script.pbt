@@ -53,5 +53,5 @@ Assets {
     Version: "1.0.0"
     Description: "An example case with simple script that attaches gear to an animated mesh."
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

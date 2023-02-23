@@ -2,7 +2,7 @@ Assets {
   Id: 14937973355870707994
   Name: "Material_Forsaken Wood Plank_LootMMO"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 7754470856388882901
     ParameterOverrides {

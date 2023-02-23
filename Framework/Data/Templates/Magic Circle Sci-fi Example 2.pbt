@@ -2899,5 +2899,5 @@ Assets {
       AssetId: "Magic_Circle_Sci_Fi_Example_2"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

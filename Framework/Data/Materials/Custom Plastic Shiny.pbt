@@ -2,7 +2,7 @@ Assets {
   Id: 5958878754776095236
   Name: "Shiny Black Nail"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 15740376057655838420
     ParameterOverrides {

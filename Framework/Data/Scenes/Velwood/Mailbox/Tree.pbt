@@ -104,6 +104,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 2165889417338758892

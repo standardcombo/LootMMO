@@ -2,7 +2,7 @@ Assets {
   Id: 3674014084409593141
   Name: "Mesh Belt"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

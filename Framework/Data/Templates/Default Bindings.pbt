@@ -46,6 +46,6 @@ Assets {
       AssetId: "Default_Bindings"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Hierarchy"
 }

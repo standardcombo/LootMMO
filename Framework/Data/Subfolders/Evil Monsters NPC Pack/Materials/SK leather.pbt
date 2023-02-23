@@ -2,7 +2,7 @@ Assets {
   Id: 3085478208052536478
   Name: "SK leather"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 1755439287395444805
     ParameterOverrides {

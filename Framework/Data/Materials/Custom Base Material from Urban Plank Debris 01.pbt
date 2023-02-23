@@ -2,7 +2,7 @@ Assets {
   Id: 17103289655528844900
   Name: "Custom Base Material from Urban Plank Debris 01"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 16812937548138327434
     ParameterOverrides {

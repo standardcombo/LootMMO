@@ -2,7 +2,7 @@ Assets {
   Id: 6569353921713618743
   Name: "Tot Metal Iron"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "totems"
   CustomMaterialAsset {
     BaseMaterialId: 15610797113222205011

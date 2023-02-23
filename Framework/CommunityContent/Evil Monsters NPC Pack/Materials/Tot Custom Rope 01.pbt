@@ -2,7 +2,7 @@ Assets {
   Id: 14178389470093147280
   Name: "Tot Custom Rope 01"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "totems"
   CustomMaterialAsset {
     BaseMaterialId: 9376620373317289136

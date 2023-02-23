@@ -2,7 +2,7 @@ Assets {
   Id: 3556416912647019080
   Name: "Crossbow Magic Glow"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 675563715440209277
     ParameterOverrides {

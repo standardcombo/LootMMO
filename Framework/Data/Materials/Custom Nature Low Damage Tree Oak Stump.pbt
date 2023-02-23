@@ -2,7 +2,7 @@ Assets {
   Id: 2814887662127979152
   Name: "Custom Nature Low Damage Tree Oak Stump"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 11149009074442978378
     ParameterOverrides {

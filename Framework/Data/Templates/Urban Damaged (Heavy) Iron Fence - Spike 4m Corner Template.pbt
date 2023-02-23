@@ -932,5 +932,5 @@ Assets {
       AssetId: "Urban_Damaged_H_Iron_Fence_-_Spike_4m_Corner_Template"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

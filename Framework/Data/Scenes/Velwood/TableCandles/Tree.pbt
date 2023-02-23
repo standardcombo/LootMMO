@@ -130,6 +130,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 6698488956585063059
@@ -328,6 +343,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 3367257344212312970
@@ -523,6 +553,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -723,6 +768,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 4015757182124893724
@@ -867,6 +927,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -1235,6 +1310,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 18027596011202757113
@@ -1434,6 +1524,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 16749099704953699793
@@ -1631,6 +1736,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -1946,6 +2066,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 5869891389378559654
@@ -2144,6 +2279,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 938202035800219807
@@ -2288,6 +2438,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -2656,6 +2821,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 7400500689805893873
@@ -2855,6 +3035,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 18254103670067946831
@@ -3052,6 +3247,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -3367,6 +3577,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 15066675588969777923
@@ -3625,6 +3850,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }
@@ -3992,6 +4232,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 15185384131403672937
@@ -4190,6 +4445,21 @@ Objects {
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
   }
   InstanceHistory {
     SelfId: 6060251461529226595
@@ -4385,6 +4655,21 @@ Objects {
       Value: "mc:edetaillevel:low"
     }
     MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
     }
   }

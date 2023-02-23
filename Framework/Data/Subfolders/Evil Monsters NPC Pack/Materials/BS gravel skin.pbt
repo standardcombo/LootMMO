@@ -2,7 +2,7 @@ Assets {
   Id: 6220717959608009167
   Name: "BS gravel skin"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 8595673856484582967
     ParameterOverrides {

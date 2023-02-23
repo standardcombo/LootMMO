@@ -2,7 +2,7 @@ Assets {
   Id: 8075246860133622111
   Name: "Loot Items"
   PlatformAssetType: 31
-  SerializationVersion: 123
+  SerializationVersion: 124
   DataTableAsset {
     HasKeyColumn: true
     Assets {
@@ -16,7 +16,7 @@ Assets {
     }
     Assets {
       Id: 1031800327856440791
-      Name: "Fantasy Hammer 005"
+      Name: "Fantasy Dagger 005"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
@@ -30,15 +30,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Weapon_Staff_028"
-      }
-    }
-    Assets {
-      Id: 1031800327856440791
-      Name: "Fantasy Hammer 005"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Weapon_Hammer_005"
       }
     }
     Assets {

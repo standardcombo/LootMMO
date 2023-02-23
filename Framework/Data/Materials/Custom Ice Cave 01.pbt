@@ -2,7 +2,7 @@ Assets {
   Id: 7971606428973861966
   Name: "Custom Ice Cave 01"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 15590341936192246015
     ParameterOverrides {

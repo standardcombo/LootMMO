@@ -2,7 +2,7 @@ Assets {
   Id: 6368651057372365617
   Name: "Studded Leather Armor"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

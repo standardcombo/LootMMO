@@ -2,7 +2,7 @@ Assets {
   Id: 15293322600645500032
   Name: "Workshop_StoneFurnace"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 6891716641358995367
     ParameterOverrides {

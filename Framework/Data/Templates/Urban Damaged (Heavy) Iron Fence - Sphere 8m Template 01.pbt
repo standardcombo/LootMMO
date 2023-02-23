@@ -706,5 +706,5 @@ Assets {
       AssetId: "Urban_Damaged_H_Iron_Fence_-_Sphere_8m_Template_01"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

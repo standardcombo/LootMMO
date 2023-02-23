@@ -406,5 +406,5 @@ Assets {
       AssetId: "Fantasy_Clay_Pot_Debris_01_Template"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

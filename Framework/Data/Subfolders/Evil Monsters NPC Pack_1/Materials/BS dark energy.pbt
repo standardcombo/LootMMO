@@ -2,7 +2,7 @@ Assets {
   Id: 5595281316289087827
   Name: "BS dark energy"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 8678051747435424214
     ParameterOverrides {

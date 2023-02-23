@@ -2,7 +2,7 @@ Assets {
   Id: 5109375556399989387
   Name: "Damaged Iron Gate Top"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 7559988236414083754
     ParameterOverrides {

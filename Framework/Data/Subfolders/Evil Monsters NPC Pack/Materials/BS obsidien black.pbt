@@ -2,7 +2,7 @@ Assets {
   Id: 13605276571711673694
   Name: "BS obsidien black"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 800921879308005468
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 17947426394362982948
   Name: "OrcBoulder"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 1512708355930270667
     ParameterOverrides {

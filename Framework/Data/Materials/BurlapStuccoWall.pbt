@@ -2,7 +2,7 @@ Assets {
   Id: 2798961446587151812
   Name: "BurlapStuccoWall"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 14496936826203266768
     ParameterOverrides {

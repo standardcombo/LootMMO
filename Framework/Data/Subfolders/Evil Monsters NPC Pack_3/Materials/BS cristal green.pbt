@@ -2,7 +2,7 @@ Assets {
   Id: 11282557416078001886
   Name: "BS cristal green"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 552968362047900815
     ParameterOverrides {

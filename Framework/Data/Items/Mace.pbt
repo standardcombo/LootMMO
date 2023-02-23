@@ -2,7 +2,7 @@ Assets {
   Id: 1208525551723278981
   Name: "Mace"
   PlatformAssetType: 33
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

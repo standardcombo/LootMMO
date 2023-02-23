@@ -2,7 +2,7 @@ Assets {
   Id: 14018637134857526964
   Name: "BS iron dark"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 15610797113222205011
     ParameterOverrides {

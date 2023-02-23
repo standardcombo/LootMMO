@@ -2,7 +2,7 @@ Assets {
   Id: 16213423284384879375
   Name: "Equipment Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 123
+  SerializationVersion: 124
   BindingSetAsset {
     Bindings {
       BindingType {

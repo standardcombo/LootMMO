@@ -2,7 +2,7 @@ Assets {
   Id: 17169039943065315560
   Name: "Custom Desert Cactus 03"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 4255313032811468897
     ParameterOverrides {

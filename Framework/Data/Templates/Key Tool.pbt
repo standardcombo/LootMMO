@@ -391,6 +391,21 @@ Assets {
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
           }
+          IsAllowedForPC: true
+          IsAllowedForMobile: true
+          IsAllowedForLowMemoryMobile: true
+          PCMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          PCMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          MobileMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MobileMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -988,6 +1003,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "Tools"
 }

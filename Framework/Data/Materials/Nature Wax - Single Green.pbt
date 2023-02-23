@@ -2,7 +2,7 @@ Assets {
   Id: 16863348544923374460
   Name: "Nature Wax - Single Green"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 1710131613286116827
     ParameterOverrides {

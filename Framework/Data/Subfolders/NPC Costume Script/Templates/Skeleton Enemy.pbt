@@ -71,6 +71,21 @@ Assets {
           MaxDetailLevel {
             Value: "mc:edetaillevel:ultra"
           }
+          IsAllowedForPC: true
+          IsAllowedForMobile: true
+          IsAllowedForLowMemoryMobile: true
+          PCMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          PCMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          MobileMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MobileMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -6936,6 +6951,6 @@ Assets {
   Marketplace {
     Description: "An example case with simple script that attaches gear to an animated mesh."
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
   DirectlyPublished: true
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 6988837137112378008
   Name: "BB blood"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 1699895661322077824
     ParameterOverrides {

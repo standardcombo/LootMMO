@@ -166,5 +166,5 @@ Assets {
       AssetId: "Urban_Iron_Pickaxe_01_Template"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

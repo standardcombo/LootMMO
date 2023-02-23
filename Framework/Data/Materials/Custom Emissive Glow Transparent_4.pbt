@@ -2,7 +2,7 @@ Assets {
   Id: 13991406898625561976
   Name: "Objective Highlight Emissive Glow"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 675563715440209277
     ParameterOverrides {

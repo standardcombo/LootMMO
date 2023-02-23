@@ -2,7 +2,7 @@ Assets {
   Id: 14924350122593897194
   Name: "Damaged Stone Base"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 17612372645832794042
     ParameterOverrides {

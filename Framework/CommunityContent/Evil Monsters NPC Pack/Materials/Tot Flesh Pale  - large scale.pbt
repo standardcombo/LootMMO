@@ -2,7 +2,7 @@ Assets {
   Id: 2524121356196452134
   Name: "Tot Flesh Pale  - large scale"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   VirtualFolderPath: "totems"
   CustomMaterialAsset {
     BaseMaterialId: 532575097750415901

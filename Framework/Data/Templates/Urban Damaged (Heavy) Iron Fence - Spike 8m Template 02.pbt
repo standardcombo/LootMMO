@@ -809,5 +809,5 @@ Assets {
       AssetId: "Urban_Damaged_H_Iron_Fence_-_Spike_8m_Template_02"
     }
   }
-  SerializationVersion: 123
+  SerializationVersion: 124
 }

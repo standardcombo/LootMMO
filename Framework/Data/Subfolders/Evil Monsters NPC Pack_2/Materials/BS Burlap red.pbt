@@ -2,7 +2,7 @@ Assets {
   Id: 5775077190602029858
   Name: "BS Burlap red"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 17074639259213442164
     ParameterOverrides {

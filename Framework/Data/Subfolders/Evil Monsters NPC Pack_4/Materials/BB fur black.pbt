@@ -2,7 +2,7 @@ Assets {
   Id: 3617332778707173320
   Name: "BB fur black"
   PlatformAssetType: 13
-  SerializationVersion: 123
+  SerializationVersion: 124
   CustomMaterialAsset {
     BaseMaterialId: 9633713149667831124
     ParameterOverrides {
