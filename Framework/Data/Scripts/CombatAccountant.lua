@@ -1,6 +1,6 @@
 --[[
 	Combat Accountant (server)
-	v1.0 - 2022/10/20
+	v1.0.1 - 2022/10/20
 	by: standardcombo
 	
 	Keeps track of who dealt damage to what.
@@ -76,7 +76,7 @@ function _Boilerplate(attackData)
 	local target = attackData.object
 	local source = attackData.source
 	
-	if not source or not source.id then return end
+	if not Object.IsValid(source) or not source.id then return end
 	
 	local id = target.id
 	local sId = source.id

@@ -24,7 +24,6 @@ function SetUpPlayer(character, inventory)
     local NetworkInventories = World.FindObjectsByType('Inventory')
     for index, curinventory in ipairs(NetworkInventories) do
         if curinventory.name == character.id then
-            print( inventory.backpack)
             inventory.backpack = curinventory
             curinventory.changedEvent:Connect(
                 function(networkedInventory, slot)
