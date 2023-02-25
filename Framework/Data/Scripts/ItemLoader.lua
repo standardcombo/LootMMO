@@ -6,9 +6,7 @@ local API = {}
 _G.Items = API
 
 local definitions = require(script:GetCustomProperty("DataTable"))
--- for keyString, row in pairs(definitions) do
--- 	print("loot", keyString, row.Order)
--- end
+
 
 function API.GetDefinition(id, suppressWarning)
 	if not definitions[id] and not suppressWarning then

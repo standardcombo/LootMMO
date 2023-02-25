@@ -8,6 +8,7 @@ function OnEvent(player, objectId)
 	if objectId == nil and type(player) == "string" then
 		objectId = player
 		if OBJECT_ID ~= "" and objectId ~= OBJECT_ID then return end
+
 		local obj = _G.QuestController.GetQuestObjective(QUEST_ID, OBJECTIVE_INDEX)
 
 		for _, p in ipairs(Game.GetPlayers()) do

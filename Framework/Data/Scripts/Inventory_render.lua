@@ -399,7 +399,6 @@ for index, value in ipairs(SLOTS) do
 end
 
 local function InventoryChanged(inv, slot)
-	UpdateValues()
 	local item = inv:GetItem(slot)
 
 	local childIcon = slots[slot].icon

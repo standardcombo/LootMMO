@@ -118,7 +118,8 @@ local customMaxMoveSpeed = MOVE_SPEED
 
 
 function SetState(newState)
-	--print("NewState = " .. newState.."and old = "..currentState)
+	--print("NewState = " .. newState)
+
 	if (newState == STATE_SLEEPING) then
 		RootStopRotate()
 		
@@ -178,14 +179,12 @@ function SetState(newState)
 		RootStopRotate()
 	end
 
-	if newState == currentState then return end
-
+	currentState = newState
+	stateTime = 0
+	
 	if Object.IsValid(ROOT) then
 		ROOT:SetCustomProperty("CurrentState", newState)
 	end
-
-	currentState = newState
-	stateTime = 0
 end
 
 function GoToStunState()
@@ -568,8 +567,7 @@ function UpdateMovement(deltaTime)
 		local overlaps = overlappingObjects
 		for i,other in ipairs(overlaps) do
 			if not Object.IsValid(other) then goto continue end
-			if other:IsA("Player") then goto continue end
-
+			
 			local triggerPos = TRIGGER:GetWorldPosition()
 			local otherPos = other:GetWorldPosition()
 			
@@ -588,55 +586,51 @@ function UpdateMovement(deltaTime)
 	end
 	
 	-- Move forward
-	if currentState == STATE_ATTACK_CAST then
-
-	else
-		if navMeshPath then
-			local moveAmount = GetMoveSpeed() * deltaTime
-			while moveAmount > 0 do
-				stepDestination = navMeshPath[1]
-				local moveV = stepDestination - pos
-				local distance = moveV.size
-
-				if (distance <= moveAmount) then
-					pos = stepDestination
-
-					table.remove(navMeshPath, 1)
-					if #navMeshPath > 0 then
-						moveAmount = moveAmount - distance
-					else
-						navMeshPath = nil
-						moveAmount = 0
-					end
-				else
-					pos = pos + moveV / distance * moveAmount
-					moveAmount = 0
-				end
-			end
-		else
+	if navMeshPath then
+		local moveAmount = GetMoveSpeed() * deltaTime
+		while moveAmount > 0 do
+			stepDestination = navMeshPath[1]
 			local moveV = stepDestination - pos
 			local distance = moveV.size
-			local moveAmount = GetMoveSpeed() * deltaTime 
-
+			
 			if (distance <= moveAmount) then
 				pos = stepDestination
+
+				table.remove(navMeshPath, 1)
+				if #navMeshPath > 0 then
+					moveAmount = moveAmount - distance
+				else
+					navMeshPath = nil
+					moveAmount = 0
+				end
 			else
-				pos = pos + moveV  / distance * moveAmount
+				pos = pos + moveV / distance * moveAmount
+				moveAmount = 0
 			end
 		end
-
-		ROOT:SetWorldPosition(pos)
-
-		if NAV_MESH_ZONES() and
-			NAV_MESH_ZONES().IsInsideZone(script) and
-			not NAV_MESH_ZONES().IsInsideValidNavMesh(script) then
-
-			ROOT:SetWorldPosition(lastValidRootPosition)
-
-			attemptOrthogonal = true
+	else
+		local moveV = stepDestination - pos
+		local distance = moveV.size
+		local moveAmount = GetMoveSpeed() * deltaTime
+		
+		if (distance <= moveAmount) then
+			pos = stepDestination
 		else
-			lastValidRootPosition = pos
+			pos = pos + moveV / distance * moveAmount
 		end
+	end
+	
+	ROOT:SetWorldPosition(pos)
+	
+	if NAV_MESH_ZONES() and 
+		NAV_MESH_ZONES().IsInsideZone(script) and 
+		not NAV_MESH_ZONES().IsInsideValidNavMesh(script) then
+	
+		ROOT:SetWorldPosition(lastValidRootPosition)
+		
+		attemptOrthogonal = true
+	else
+		lastValidRootPosition = pos
 	end
 end
 

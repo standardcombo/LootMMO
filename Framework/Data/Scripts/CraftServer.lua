@@ -201,4 +201,4 @@ end
 Events.ConnectForPlayer(events.upgrade, UpgradeItem)
 Events.ConnectForPlayer(events.scrap, ScrapItem)
 Events.ConnectForPlayer(events.upgradeNFT, UpgradeNFT)
-Events.ConnectForPlayer(events.craftItem, CraftItem)
+--Events.ConnectForPlayer(events.craftItem, CraftItem)

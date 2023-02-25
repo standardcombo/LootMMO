@@ -89,18 +89,14 @@ function API.Drop(eventData)
 	local encounterId
 	if target and _G.CombatAccountant then
 		local report = _G.CombatAccountant.GetReportForTarget(target)
-		if report == "Gatherable" then
-			if Object.IsValid(eventData.killer) and eventData.killer:IsA("Player") then
-				table.insert(players, eventData.killer)
-			end
-		else
-			for sourceId,v in pairs(report.preDamage) do
-				local player = Game.FindPlayer(sourceId)
-				if player then
-					table.insert(players, player)
-				end
+		
+		for sourceId,v in pairs(report.preDamage) do
+			local player = Game.FindPlayer(sourceId)
+			if player then
+				table.insert(players, player)
 			end
 		end
+		
 	elseif Object.IsValid(eventData.killer) and eventData.killer:IsA("Player") then
 		table.insert(players, eventData.killer)
 	else

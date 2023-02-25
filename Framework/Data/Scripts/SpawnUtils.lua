@@ -41,7 +41,6 @@ end
 
 
 function API.SpawnPlayerAt(player, point)
-	Task.Wait(0.2)
 	local key
 	if point == nil or point == "" then
 		API.SpawnInPlace(player)

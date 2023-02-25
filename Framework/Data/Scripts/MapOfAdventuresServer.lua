@@ -26,32 +26,30 @@ Events.ConnectForPlayer("Map.Play", function(player, selectedIndex)
 		local quest = mapQuests[selectedIndex]
 
 		Events.Broadcast("Quest.Map", player, "Play:"..quest.id)
+		
 		if quest then
-			-- Activate the map quest
-			_G.QuestController.ActivateForPlayer(player, quest.id)
-			_G.QuestController.SavePlayerData(player)
+			local hasQuest = false
+			for _, questTbl in pairs(_G.QuestController.GetActiveObjectives(player)) do
+				if questTbl.questId == quest.id then
+					--Player is already on this quest or has a reward waiting for this quest
+					hasQuest = true
+					break
+				end
+			end
+			if not hasQuest then
+				-- Activate the map quest
+				_G.QuestController.ActivateForPlayer(player, quest.id)
+				_G.QuestController.SavePlayerData(player)
+			end
+			
 			-- See if the player should be teleported or transferred
-			Events.BroadcastToPlayer(player, "FadeOut", 8)
 			if _G.QuestController.IsLocalGame(quest) then
 				-- Spawn player at the right place
-				--Check scene, if current scene is quest scene, then 
-				-- spawn, else Transfer
-				if quest.sceneString == nil or quest.sceneString == "" then
-					SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
-				else
-					local CurrentScene = Game.GetCurrentSceneName()
-					if CurrentScene ~= quest.sceneString then 
-						Events.Broadcast("GoingToTravel", player)
-						player:TransferToScene(quest.sceneString,{spawnKey = quest.spawnKey})
-						return
-					end
-					SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
-				end
+				SPAWN_UTILS.SpawnPlayerAt(player, quest.spawnKey)
 			else
-				Events.Broadcast("GoingToTravel", player)
+				--player:TransferToScene(sceneName)
+			--else
 				player:TransferToGame(quest.gameId)
-				--only transfer to scene, in a new game, is un accounted for.
-				-- need to consider a check like above for quest.sceneString.
 			end
 		end
 	end

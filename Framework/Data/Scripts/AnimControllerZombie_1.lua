@@ -86,20 +86,14 @@ function Tick(deltaTime)
 		
 	else
 		if currentState == STATE_ENGAGING then
-			if MESH.animationStance ~= WALK_STANCE and MESH.animationStance ~= RUN_STANCE then
-				MESH:StopAnimations()
-			end
+			MESH:StopAnimations()
 		end
 		
 		if speed < RUNNING_SPEED then
-			if MESH.animationStance ~= WALK_STANCE then
-				MESH.animationStance = WALK_STANCE
-			end
-			MESH.animationStancePlaybackRate = 2.2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)
+			MESH.animationStance = WALK_STANCE
+			MESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)
 		else
-			if MESH.animationStance ~= RUN_STANCE then
-				MESH.animationStance = RUN_STANCE
-			end
+			MESH.animationStance = RUN_STANCE
 			MESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002
 		end
 	end
