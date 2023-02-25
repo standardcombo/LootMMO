@@ -99,7 +99,8 @@ function UpdateInteractionLabel()
             HARVEST_NODE_HOTKEY.text = "[  ]"
         elseif currentNodeOwner == "" then
             HARVEST_NODE_LABEL.text = HARVESTING_NODES[originRow].FriendlyName
-            HARVEST_NODE_HOTKEY.text = "[F]"
+            local label = Input.GetActionInputLabel("Interact")
+            HARVEST_NODE_HOTKEY.text = "["..label.."]"
         elseif currentNodeOwner ~= LOCAL_PLAYER.id then
             HARVEST_NODE_LABEL.text = "OCCUPIED"
             HARVEST_NODE_HOTKEY.text = "[  ]"
