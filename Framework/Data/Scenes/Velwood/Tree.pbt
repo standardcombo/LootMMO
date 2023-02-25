@@ -19,8 +19,8 @@ Objects {
   ChildIds: 5387736946797339937
   ChildIds: 9970684983361868256
   ChildIds: 5984199028671989143
-  ChildIds: 7475499298705237626
-  ChildIds: 11299696855387386535
+  ChildIds: 8772647101561410579
+  ChildIds: 7752804201856156501
   ChildIds: 16194698060440896494
   ChildIds: 4246661819917374883
   ChildIds: 4244745184024888751
@@ -467,7 +467,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11299696855387386535
+  Id: 7752804201856156501
   Name: "Other Components"
   Transform {
     Location {
@@ -481,7 +481,26 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 538778299556888211
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 25.1848145
+            Y: -4396.70898
+            Z: 30
+          }
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 4594542242463950141
       value {
@@ -509,19 +528,28 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 14106919093906510816
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 25.1848145
+            Y: -4396.70898
+            Z: 30
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 5338087018861399484
     }
   }
 }
 Objects {
-  Id: 7475499298705237626
+  Id: 8772647101561410579
   Name: "Settings Per State"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -546,9 +574,9 @@ Objects {
     FilePartitionName: "Settings Per State"
   }
   InstanceHistory {
-    SelfId: 7475499298705237626
+    SelfId: 8772647101561410579
     SubobjectId: 11056115110144583225
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
     WasRoot: true
   }

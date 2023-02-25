@@ -1,7 +1,7 @@
 Name: "Settings Per State"
-RootId: 7475499298705237626
+RootId: 8772647101561410579
 Objects {
-  Id: 1812585782909057970
+  Id: 515488593097771483
   Name: "Settings Per State"
   Transform {
     Location {
@@ -17,10 +17,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7475499298705237626
-  ChildIds: 973192404999963815
-  ChildIds: 15269362046813652132
-  ChildIds: 5802672306196322542
+  ParentId: 8772647101561410579
+  ChildIds: 1405547874800760526
+  ChildIds: 14836916488669279949
+  ChildIds: 5658703360178023047
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -57,9 +57,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 1812585782909057970
+    SelfId: 515488593097771483
     SubobjectId: 16714793592765905905
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -68,7 +68,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5802672306196322542
+  Id: 5658703360178023047
   Name: "Metal Door & Hatch Close Shut Set 01 SFX"
   Transform {
     Location {
@@ -84,7 +84,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1812585782909057970
+  ParentId: 515488593097771483
   UnregisteredParameters {
     Overrides {
       Name: "bp:Type"
@@ -121,9 +121,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 5802672306196322542
+    SelfId: 5658703360178023047
     SubobjectId: 12562301516212000941
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -132,7 +132,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15269362046813652132
+  Id: 14836916488669279949
   Name: "Third Person Camera"
   Transform {
     Location {
@@ -148,7 +148,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1812585782909057970
+  ParentId: 515488593097771483
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -161,7 +161,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Camera {
-    UseAsDefault: true
     AttachToLocalPlayer: true
     InitialDistance: 400
     MinDistance: 300
@@ -183,9 +182,9 @@ Objects {
     IsCameraCollisionEnabled: true
   }
   InstanceHistory {
-    SelfId: 15269362046813652132
+    SelfId: 14836916488669279949
     SubobjectId: 3258023367585170663
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -194,7 +193,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 973192404999963815
+  Id: 1405547874800760526
   Name: "SettingsPerStateClient"
   Transform {
     Location {
@@ -209,18 +208,18 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1812585782909057970
+  ParentId: 515488593097771483
   UnregisteredParameters {
     Overrides {
       Name: "cs:SFX"
       ObjectReference {
-        SelfId: 5802672306196322542
+        SelfId: 5658703360178023047
       }
     }
     Overrides {
       Name: "cs:CameraSocialSpace"
       ObjectReference {
-        SelfId: 15269362046813652132
+        SelfId: 14836916488669279949
       }
     }
   }
@@ -242,9 +241,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 973192404999963815
+    SelfId: 1405547874800760526
     SubobjectId: 17532513668051191012
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -253,8 +252,8 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 8620156611437105232
-  Name: "Player Settings - Social Space"
+  Id: 2531383648338611233
+  Name: "Player Settings - Adventure"
   Transform {
     Location {
     }
@@ -266,7 +265,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7475499298705237626
+  ParentId: 8772647101561410579
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -306,8 +305,8 @@ Objects {
       LookAtCursorProjectionPlane {
         Value: "mc:eprojectionplane:xy"
       }
-      MountedMaxAcceleration: 5000
-      MountedWalkSpeed: 700
+      MountedMaxAcceleration: 1800
+      MountedWalkSpeed: 960
       MountedJumpMaxCount: 1
       MountedJumpVelocity: 900
       HeadVisibleToSelf: true
@@ -332,9 +331,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 8620156611437105232
-    SubobjectId: 9903850815411408915
-    InstanceId: 4467219278668593436
+    SelfId: 2531383648338611233
+    SubobjectId: 14119007029773614603
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -343,7 +342,96 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17099038963757719120
+  Id: 7611094134830260793
+  Name: "Player Settings - Social Space"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8772647101561410579
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Settings {
+    PlayerMovementSettings {
+      WalkSpeed: 640
+      MaxAcceleration: 1800
+      WalkableFloorAngle: 55
+      JumpMaxCount: 1
+      JumpVelocity: 900
+      GroundFriction: 8
+      GravityScale: 1.9
+      MaxSwimSpeed: 420
+      Buoyancy: 1
+      TouchForceFactor: 1
+      BrakingDecelerationFlying: 600
+      MaxFlightSpeed: 600
+      MovementControlMode {
+        Value: "mc:emovementcontrolmode:lookrelative"
+      }
+      LookControlMode {
+        Value: "mc:elookcontrolmode:relative"
+      }
+      FacingMode {
+        Value: "mc:efacingmode:facemovement"
+      }
+      DefaultRotationRate: 540
+      SlideRotationRate: 20
+      LookAtCursorProjectionPlane {
+        Value: "mc:eprojectionplane:xy"
+      }
+      MountedMaxAcceleration: 1800
+      MountedWalkSpeed: 960
+      MountedJumpMaxCount: 1
+      MountedJumpVelocity: 900
+      HeadVisibleToSelf: true
+      IsSlideEnabled: true
+      IsCrouchEnabled: true
+      IsJumpEnabled: true
+      CanMoveForward: true
+      CanMoveBackward: true
+      CanMoveLeft: true
+      CanMoveRight: true
+      AbilityAimMode {
+        Value: "mc:eabilityaimmode:viewrelative"
+      }
+      MountChannelingTime: 1
+      FlipOnMultiJump: true
+      CanMoveUp: true
+      CanMoveDown: true
+      MaxHitpoints: 100
+      PlayerMasterVolumeMultiplier: 1
+      ComplexCollision: true
+    }
+  }
+  InstanceHistory {
+    SelfId: 7611094134830260793
+    SubobjectId: 9903850815411408915
+    InstanceId: 6022071548977971730
+    TemplateId: 18354689802855935396
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17531112956563811385
   Name: "Player Settings - Bag Selection"
   Transform {
     Location {
@@ -360,7 +448,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7475499298705237626
+  ParentId: 8772647101561410579
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -412,16 +500,15 @@ Objects {
       }
       MountChannelingTime: 1
       FlipOnMultiJump: true
-      IsMountEnabled: true
       MaxHitpoints: 100
       PlayerMasterVolumeMultiplier: 1
       ComplexCollision: true
     }
   }
   InstanceHistory {
-    SelfId: 17099038963757719120
+    SelfId: 17531112956563811385
     SubobjectId: 1412586894929780243
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -430,7 +517,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 15188225210109952857
+  Id: 14755922501839155504
   Name: "CharacterSelect_Connector"
   Transform {
     Location {
@@ -443,7 +530,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7475499298705237626
+  ParentId: 8772647101561410579
   UnregisteredParameters {
     Overrides {
       Name: "cs:LoadGearOnJoin"
@@ -468,9 +555,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 15188225210109952857
+    SelfId: 14755922501839155504
     SubobjectId: 3176747785450046234
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {
@@ -479,7 +566,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16901587125587718980
+  Id: 17622168624151445805
   Name: "SettingsPerStateServer"
   Transform {
     Location {
@@ -495,23 +582,25 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7475499298705237626
+  ParentId: 8772647101561410579
   UnregisteredParameters {
     Overrides {
       Name: "cs:PlayerSettingsBagSelection"
       ObjectReference {
-        SelfId: 17099038963757719120
+        SelfId: 17531112956563811385
       }
     }
     Overrides {
       Name: "cs:PlayerSettingsSocialSpace"
       ObjectReference {
-        SelfId: 8620156611437105232
+        SelfId: 7611094134830260793
       }
     }
     Overrides {
-      Name: "cs:StartingSpawnKey"
-      String: "Social"
+      Name: "cs:PlayerSettingsAdventure"
+      ObjectReference {
+        SelfId: 2531383648338611233
+      }
     }
     Overrides {
       Name: "cs:StartingState"
@@ -536,9 +625,9 @@ Objects {
     }
   }
   InstanceHistory {
-    SelfId: 16901587125587718980
+    SelfId: 17622168624151445805
     SubobjectId: 1467899618607395591
-    InstanceId: 4467219278668593436
+    InstanceId: 6022071548977971730
     TemplateId: 18354689802855935396
   }
   NetworkRelevanceDistance {

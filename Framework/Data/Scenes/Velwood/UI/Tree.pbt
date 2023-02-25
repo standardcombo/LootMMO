@@ -1342,63 +1342,6 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 16828587767645149894
-  Name: "Limits UI"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11253819601202032990
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 1211479898346926528
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Limits UI"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 2657193457405286556
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 14027057674042611773
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 2590529061107699677
   Name: "Loading Screen Component"
   Transform {
