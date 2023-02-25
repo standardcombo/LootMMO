@@ -255,6 +255,8 @@ end
 function OnUpdate()
     local lookRotation = LOCAL_PLAYER:GetLookWorldRotation()
     local cam = LOCAL_PLAYER:GetActiveCamera()
+    if not cam then return end
+    
     local cameraOffset = LOCAL_PLAYER:GetActiveCamera():GetPositionOffset()
     local lookForward = lookRotation * Vector3.FORWARD
     local cameraPivotPosition = LOCAL_PLAYER:GetWorldPosition() - lookForward + lookRotation * cameraOffset + Vector3.UP * 74
