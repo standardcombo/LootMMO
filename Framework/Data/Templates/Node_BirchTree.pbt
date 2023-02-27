@@ -15,9 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16436247575342307599
+        ParentId: 14517073988449193345
         ChildIds: 14332983166853498675
         ChildIds: 1184223795842543187
+        ChildIds: 3459541637518131370
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
@@ -26,10 +27,6 @@ Assets {
           Overrides {
             Name: "cs:SwingsToHarvest"
             Int: 2
-          }
-          Overrides {
-            Name: "cs:RewardPerUse"
-            String: ""
           }
           Overrides {
             Name: "cs:Type"
@@ -51,6 +48,12 @@ Assets {
             Name: "cs:ProximityTrigger"
             ObjectReference {
               SubObjectId: 14332983166853498675
+            }
+          }
+          Overrides {
+            Name: "cs:CalloutEffects"
+            ObjectReference {
+              SubObjectId: 3459541637518131370
             }
           }
           Overrides {
@@ -273,6 +276,151 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
+      Objects {
+        Id: 3459541637518131370
+        Name: "CalloutEffects"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10735264763254810291
+        ChildIds: 2791753143323213173
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          IsAllowedForPC: true
+          IsAllowedForMobile: true
+          IsAllowedForLowMemoryMobile: true
+          PCMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          PCMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          MobileMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MobileMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2791753143323213173
+        Name: "Callout Sparkle"
+        Transform {
+          Location {
+            X: 14.0397949
+            Y: 0.665039062
+            Z: 260.463135
+          }
+          Rotation {
+          }
+          Scale {
+            X: 2
+            Y: 2
+            Z: 5
+          }
+        }
+        ParentId: 3459541637518131370
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Life"
+            Float: 3
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.3
+          }
+          Overrides {
+            Name: "bp:Volume Type"
+            Enum {
+              Value: "mc:evfxvolumetype:2"
+            }
+          }
+          Overrides {
+            Name: "bp:Gravity"
+            Float: 0.1
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 20
+          }
+          Overrides {
+            Name: "bp:Curl Offset"
+            Vector {
+              Z: 10
+            }
+          }
+          Overrides {
+            Name: "bp:Initial Velocity"
+            Vector {
+              Z: 10
+            }
+          }
+          Overrides {
+            Name: "bp:Local Space"
+            Bool: false
+          }
+          Overrides {
+            Name: "bp:Initial Start Delay"
+            Float: 2
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 14231394991004806063
+          }
+          TeamSettings {
+          }
+          Vfx {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
     }
     Assets {
       Id: 7136798186812893292
@@ -301,10 +449,21 @@ Assets {
         AssetId: "mi_invisible_001"
       }
     }
+    Assets {
+      Id: 14231394991004806063
+      Name: "Callout Sparkle"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_sparkles_volume_vfx"
+      }
+    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
   SerializationVersion: 124
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "Nodes"
 }

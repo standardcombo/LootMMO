@@ -15,6 +15,8 @@ local HARVESTING_NODES = require(script:GetCustomProperty("HarvestingNodes"))
 local HARVESTING_TOOLS = require(script:GetCustomProperty("HarvestingTools"))
 ---@type Folder
 local NODES_PARENT = script:GetCustomProperty("NODES"):WaitForObject()
+---@type string
+local REWARDS_PARSER = require(script:GetCustomProperty("RewardsParser"))
 
 local NODES_DATA = {}
 local TOOLS_DATA = {}
@@ -201,8 +203,11 @@ function API.MineNode(node,player)
     --deplete one richness from the node
     local richness = node:GetCustomProperty("Richness")
     richness = richness - 1
-    --TODO add resources to player involved
-    print("award the player "..player.name.." with",node:GetCustomProperty("RewardPerUse"))
+    --add resources to player involved
+    local originRow = node:GetCustomProperty("OriginRow") or 0
+    if originRow > 0 then
+        Task.Spawn(function() REWARDS_PARSER.Parse(player, HARVESTING_NODES, originRow) end)
+    end
     --update node geometry or remove if depleted
     if richness > 0 then
         node:SetCustomProperty("Richness",richness)
@@ -215,6 +220,8 @@ end
 -----------------------
 --Client Context
 -----------------------
+local LOCAL_PLAYER = nil
+if Environment.IsClient() then LOCAL_PLAYER = Game.GetLocalPlayer() end
 
 function API.RegisterNodeOnClient(node)
     if Environment.IsClient() ~= true then return end
@@ -222,7 +229,7 @@ function API.RegisterNodeOnClient(node)
     while originRow == 0 do
         Task.Wait(.1)
         originRow = node:GetCustomProperty("OriginRow")
-        warn("waiting for node origin row on client")
+        --warn("waiting for node origin row on client")
     end
     local nodeTableData = HARVESTING_NODES[originRow]
     SPAWNED_NODES[node] = {}
@@ -230,14 +237,45 @@ function API.RegisterNodeOnClient(node)
     local proxTirgger = node:GetCustomProperty("ProximityTrigger"):WaitForObject()
     SPAWNED_NODES[node].proximityTrigger = proxTirgger
     SPAWNED_NODES[node].FinishedTemplate = nodeTableData.FinishedTemplate
+    SPAWNED_NODES[node].calloutParent = node:GetCustomProperty("CalloutEffects"):WaitForObject()
+    SPAWNED_NODES[node].calloutParent.parent = nil --deparent for smooth effects
+    _UpdateNodeCallout(node) --play if needed
 end
 
 function API.NodeDestroyedOnClient(node)
     if Environment.IsClient() ~= true then return end
     local effect = World.SpawnAsset(SPAWNED_NODES[node].FinishedTemplate, {transform = node:GetWorldTransform()})
     if effect.lifeSpan == 0 then effect.lifeSpan = 3 end
+    --remove the callout effects too (let them disappear first)
+    SPAWNED_NODES[node].calloutParent.lifeSpan = 3
+    _PlayNodeCallout(SPAWNED_NODES[node].calloutParent,false)
+    --clear node data
     SPAWNED_NODES[node] = nil
     Events.Broadcast("Node.ForceRelease",node)
+end
+
+function API.UpdateAllNodesCallouts()
+    for node,nodeData in pairs(SPAWNED_NODES) do
+        _UpdateNodeCallout(node)
+    end
+end
+
+function _UpdateNodeCallout(currentNode)
+    local toolReq = currentNode:GetCustomProperty("ToolReq")
+    if LOCAL_PLAYER.clientUserData.Tools == nil or LOCAL_PLAYER.clientUserData.Tools[toolReq] == nil then
+        _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,false)
+    elseif LOCAL_PLAYER.clientUserData.Tools[toolReq] > 0 then
+        _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,true)
+    else
+        _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,false)
+    end
+end
+
+function _PlayNodeCallout(calloutParent,playMe)
+    for _,effect in ipairs(calloutParent:GetChildren())do
+        if playMe == true then effect:Play()
+        else effect:Stop() end
+    end
 end
 
 -----------------------

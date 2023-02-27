@@ -39,12 +39,37 @@ local HarvestingNodeTimePassed = 0
 local LastTimeTaken = 0
 local HarvestingProgressBarTask = nil
 
-local NodeHarvest_CancelActions = {
+local PreventNodeHarvestingAction = {
     Move = true,
+    Jump = true,
+    Crouch = true,
+    Attack = true,
+    Cancel = true,
+    z = true,
+    x = true,
+    c = true,
+    Shift = true,
+    Target = true,
+    Throw = true,
+    Drink = true,
+    Block = true,
+    Mount = true,
     Shoot = true,
     Aim = true,
-    Jump = true
+    Reload = true,
+    OpenBars = true,
+    OpenAbility = true,
+    OpenInventory = true,
+    OpenShop = true,
+    OpenQUests = true,
+    BackToTavern  = true
 }
+PreventNodeHarvestingAction["Attack Secondary"] = true
+PreventNodeHarvestingAction["1"] = true
+PreventNodeHarvestingAction["2"] = true
+PreventNodeHarvestingAction["3"] = true
+PreventNodeHarvestingAction["4"] = true
+PreventNodeHarvestingAction["5"] = true
 
 --this is handled on tool ability scripts
 LOCAL_PLAYER.clientUserData.isHarvesting = false
@@ -63,7 +88,17 @@ function CleanupHarvestingProgress()
     UpdateInteractionLabel()
 end
 
+function IsPlayerAllowedToHarvest()
+    return (_G.AppState.GetLocalState() == _G.AppState.Adventure and LOCAL_PLAYER.isGrounded == true)
+end
+
 function UpdateMiningProgressBar()
+    --cancel the harvesting if the local state does not allow harvest
+    if IsPlayerAllowedToHarvest() == false then
+        Events.BroadcastToServer("Harvest.Cancel")
+        CleanupHarvestingProgress()
+        return
+    end
     --calculate dt
     local curTime = time()
     local dt = curTime - LastTimeTaken
@@ -81,7 +116,7 @@ end
 function UpdateInteractionLabel()
     --note that if currentNodeOwner == LOCAL_PLAYER ->
     --then the node is being harvested by us and this function is not called at all
-    if #nodeInteractionStack == 0 then
+    if #nodeInteractionStack == 0 or (_G.AppState.GetLocalState() ~= _G.AppState.Adventure) then
         HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
     else
         local currentNode = nodeInteractionStack[#nodeInteractionStack]
@@ -133,7 +168,9 @@ function RemoveNodeFromInteractionStack(node)
 end
 
 function OnActionPressed(player,action,values)
-    if (NodeHarvest_CancelActions[action] == true) and (LocalUserData.isHarvesting == true) then
+    if ((PreventNodeHarvestingAction[action] == true) or LOCAL_PLAYER.isGrounded ~= true)
+                and (LocalUserData.isHarvesting == true)
+                    then
         Events.BroadcastToServer("Harvest.Cancel")
         if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end
         CleanupHarvestingProgress()
@@ -141,7 +178,9 @@ function OnActionPressed(player,action,values)
     if action ~= "Interact" then return end
     if LocalUserData.isHarvesting == true then return end
     if harvestRequestSent == true then return end
-    if #nodeInteractionStack < 1 then warn("node interaction stack is empty") return end
+    if #nodeInteractionStack < 1 then --[[warn("node interaction stack is empty")]] return end
+    --do not allow harvest in wrong state
+    if IsPlayerAllowedToHarvest() == false then return end
     harvestRequestSent = true
     --send harvest request of the last node in stack
     local lastNode = nodeInteractionStack[#nodeInteractionStack]
@@ -270,12 +309,20 @@ end
 function OnPND_Changed(player,PNDname)
     if PNDname ~= "Tools" then return end
     LocalUserData.Tools = LOCAL_PLAYER:GetPrivateNetworkedData(PNDname)
+    --play or stop the node callouts
+    AHS.UpdateAllNodesCallouts()
 end
 
 --connect events
 NODES.childAddedEvent:Connect(OnNodeAdded)
 Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
 LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
+
+--conect for local game state (to prevent harvesting on state change if needed)
+Events.Connect(_G.AppState.EnterKey,UpdateInteractionLabel)
+Events.Connect(_G.AppState.ExitKey,UpdateInteractionLabel)
+--no harvesting while jumping
+LOCAL_PLAYER.movementModeChangedEvent:Connect(UpdateInteractionLabel)
 
 --load PNDs
 OnPND_Changed(LOCAL_PLAYER,"Tools")

@@ -7,22 +7,23 @@ Assets {
       Overrides {
         Name: "cs:ROOT"
         ObjectReference {
-          SelfId: 11717113739800138726
+          SelfId: 10373414106376324968
         }
       }
       Overrides {
         Name: "cs:HarvestingInteractionPanel"
         ObjectReference {
-          SelfId: 15640135615803179142
+          SelfId: 17609819517072364552
         }
       }
       Overrides {
         Name: "cs:HarvestingProgressionPanel"
         ObjectReference {
-          SelfId: 17462997620930657643
+          SelfId: 16084410522482813413
         }
       }
     }
   }
   SerializationVersion: 124
+  VirtualFolderPath: "Harvesting"
 }

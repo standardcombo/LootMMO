@@ -60,9 +60,10 @@ end
 function EquipToolForPlayer(player,nodeToolType,toolLevel)
     local toolTemplate = AHS.GetProperToolTemplate(nodeToolType,toolLevel)
     if not toolTemplate then warn("unknown definition for tool level "..nodeToolType..", "..tostring(toolLevel)) return end
-    spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {networkContext = NetworkContextType.NETWORKED})
+    spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {name = "HarvestingTool", networkContext = NetworkContextType.NETWORKED})
     spawnedToolsOnPlayers[player]:Equip(player)
-    --TODO set invisible unless used
+    --set invisible unless used (HarvestAbility_Server controlled)
+    spawnedToolsOnPlayers[player].visibility = Visibility.FORCE_OFF
 end
 
 function HandlePlayerNodesStack(player)

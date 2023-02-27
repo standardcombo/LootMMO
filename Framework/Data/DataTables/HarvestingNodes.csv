@@ -1,4 +1,4 @@
-"Type[String]","FriendlyName[String]","WeightChance[Int]","Template[Asset Reference]","NodeStageGeoTable[Asset Reference]","FinishedTemplate[Asset Reference]"
-"vein","Iron Vein","50","893A6EF774ECFE14","08812AEB96C98787","2EA2FCE6A73F752B"
-"vein","Coal","50","4E3285C807C8F0C9","A2DCC88878FC691A","9EEF8C9D6B6F7280"
-"tree","Birch Tree","10","1EF8E5177F8BF350","7F8473B721BF74A7","7D61E7202076614B"
+"Type[String]","FriendlyName[String]","WeightChance[Int]","Template[Asset Reference]","rewards[String]","NodeStageGeoTable[Asset Reference]","FinishedTemplate[Asset Reference]"
+"vein","Iron Vein","50","893A6EF774ECFE14","XP(5), Wait(1), Material(Metal=RNG[1-2])","08812AEB96C98787","2EA2FCE6A73F752B"
+"vein","Gold","50","4E3285C807C8F0C9","XP(10), Wait(1), Material(Coins=RNG[4-12])","A2DCC88878FC691A","9EEF8C9D6B6F7280"
+"tree","Birch Tree","10","1EF8E5177F8BF350","XP(5), Wait(1), Material(Wood=RNG[1-4])","7F8473B721BF74A7","7D61E7202076614B"

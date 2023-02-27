@@ -1,13 +1,13 @@
 Assets {
-  Id: 11337594691903092617
-  Name: "Node_Coal_2"
+  Id: 12980211676809150175
+  Name: "Node_Gold_1"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 12712995020847930687
+      RootId: 16490221047352115521
       Objects {
-        Id: 12712995020847930687
-        Name: "Node_Coal_2"
+        Id: 16490221047352115521
+        Name: "Node_Gold_1"
         Transform {
           Scale {
             X: 1
@@ -16,14 +16,11 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 8116358211773219865
-        ChildIds: 7267537071711310453
-        ChildIds: 10859857822549934976
-        ChildIds: 7246823517319310307
-        ChildIds: 3215329716375966212
-        ChildIds: 7274225228377461456
-        ChildIds: 1651382166296968729
-        ChildIds: 18240309607507144008
+        ChildIds: 14484499789229613079
+        ChildIds: 912146393787398871
+        ChildIds: 1840973655602098650
+        ChildIds: 17542354615522513180
+        ChildIds: 16625258732997758434
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -45,74 +42,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8116358211773219865
-        Name: "Rock 03"
-        Transform {
-          Location {
-            X: 36.4898682
-            Y: -25.9989319
-            Z: 16.0503082
-          }
-          Rotation {
-            Yaw: -115.173126
-          }
-          Scale {
-            X: 1.0480758
-            Y: 1.0480758
-            Z: 1.0480758
-          }
-        }
-        ParentId: 12712995020847930687
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 7267537071711310453
+        Id: 14484499789229613079
         Name: "Rock 03"
         Transform {
           Location {
@@ -129,7 +59,7 @@ Assets {
             Z: 0.988265634
           }
         }
-        ParentId: 12712995020847930687
+        ParentId: 16490221047352115521
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -179,91 +109,16 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10859857822549934976
+        Id: 912146393787398871
         Name: "Rock 01"
         Transform {
           Location {
-            X: 35.8551025
-            Y: 50.0473022
-            Z: 98.9853592
+            X: 45.0113525
+            Y: -50.6707764
+            Z: 46.4110565
           }
           Rotation {
-            Pitch: -23.9654446
-            Yaw: 86.9403152
-            Roll: -105.347946
-          }
-          Scale {
-            X: 0.1
-            Y: 0.1
-            Z: 0.1
-          }
-        }
-        ParentId: 12712995020847930687
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17118136979191323600
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 7246823517319310307
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: 48.0980225
-            Y: -48.8816528
-            Z: 116.388199
-          }
-          Rotation {
-            Pitch: -0.327937841
+            Pitch: -0.327941895
             Yaw: -178.953094
             Roll: 88.5814438
           }
@@ -273,23 +128,17 @@ Assets {
             Z: 0.1
           }
         }
-        ParentId: 12712995020847930687
+        ParentId: 16490221047352115521
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -329,18 +178,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3215329716375966212
+        Id: 1840973655602098650
         Name: "Rock 01"
         Transform {
           Location {
-            X: -18.3203125
-            Y: -67.9885559
-            Z: 102.990761
+            X: -26.7042236
+            Y: -75.9612427
+            Z: 74.2316513
           }
           Rotation {
-            Pitch: -63.9303436
-            Yaw: -176.786102
-            Roll: 84.2114639
+            Pitch: 30.928154
+            Yaw: 120.763504
+            Roll: -165.200607
           }
           Scale {
             X: 0.1
@@ -348,23 +197,17 @@ Assets {
             Z: 0.1
           }
         }
-        ParentId: 12712995020847930687
+        ParentId: 16490221047352115521
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -404,88 +247,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 7274225228377461456
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -25.482666
-            Y: 56.4425049
-            Z: 52.2751427
-          }
-          Rotation {
-            Pitch: -3.10797119
-            Yaw: 6.80964851
-            Roll: 24.4210873
-          }
-          Scale {
-            X: 0.104515634
-            Y: 0.104515634
-            Z: 0.104515634
-          }
-        }
-        ParentId: 12712995020847930687
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17118136979191323600
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1651382166296968729
+        Id: 17542354615522513180
         Name: "Rock 03"
         Transform {
           Location {
-            X: -38.9105225
-            Y: -8.16595459
-            Z: 81.256752
+            X: -17.1746826
+            Y: -28.5996704
+            Z: 58.8729782
           }
           Rotation {
             Pitch: -20.6420898
@@ -498,23 +266,17 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 12712995020847930687
+        ParentId: 16490221047352115521
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -554,7 +316,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 18240309607507144008
+        Id: 16625258732997758434
         Name: "ClientContext"
         Transform {
           Location {
@@ -567,14 +329,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12712995020847930687
-        ChildIds: 2511337764115123147
-        ChildIds: 2316020073626143558
-        ChildIds: 3713463811175536944
-        ChildIds: 16117470211738994837
-        ChildIds: 7502104564380971601
-        ChildIds: 15399027156796999992
-        ChildIds: 1629410325301083490
+        ParentId: 16490221047352115521
+        ChildIds: 12256019558849662538
+        ChildIds: 11305744527305621576
+        ChildIds: 16766054604611808517
+        ChildIds: 2807328634475856023
+        ChildIds: 7433150638452247548
+        ChildIds: 11844380263640603786
+        ChildIds: 13524602337653106529
+        ChildIds: 762455463459402116
+        ChildIds: 16948192560153790323
+        ChildIds: 3301885991377575630
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -616,18 +381,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2511337764115123147
+        Id: 12256019558849662538
         Name: "Brick Impact VFX"
         Transform {
           Location {
-            X: 60.253418
-            Y: 104.248657
-            Z: 84.5664139
+            X: 65.8752441
+            Y: -30.0530701
+            Z: 61.6350174
           }
           Rotation {
-            Pitch: 53.6942863
-            Yaw: -98.4237671
-            Roll: 14.1476917
+            Pitch: 41.6933899
+            Yaw: -113.145691
+            Roll: 29.5497627
           }
           Scale {
             X: 3
@@ -635,7 +400,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -678,13 +443,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2316020073626143558
+        Id: 11305744527305621576
         Name: "Brick Impact VFX"
         Transform {
           Location {
-            X: 9.0456543
-            Y: 88.9511108
-            Z: 76.1149521
+            X: -45.4157715
+            Y: -9.90551758
+            Z: 80.1725693
           }
           Rotation {
             Pitch: 48.4245033
@@ -697,7 +462,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -740,13 +505,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3713463811175536944
+        Id: 16766054604611808517
         Name: "Dust Puff VFX"
         Transform {
           Location {
-            X: 28.4193115
-            Y: 100.170105
-            Z: 53.3721237
+            X: 39.6671143
+            Y: -2.01708984
+            Z: 67.0599594
           }
           Rotation {
           }
@@ -756,7 +521,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -820,7 +585,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16117470211738994837
+        Id: 2807328634475856023
         Name: "Debris"
         Transform {
           Location {
@@ -833,16 +598,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18240309607507144008
-        ChildIds: 8613438083075185120
-        ChildIds: 12554317465457862256
-        ChildIds: 10148791626634659079
-        ChildIds: 13740737701820808540
-        ChildIds: 17407282888164322329
-        ChildIds: 759754566524815463
-        ChildIds: 6478506051138891605
-        ChildIds: 16304878753649001961
-        ChildIds: 5949246707158278795
+        ParentId: 16625258732997758434
+        ChildIds: 17430257593288296140
+        ChildIds: 4319397995722821978
+        ChildIds: 887761601521178825
+        ChildIds: 16566004271117378622
+        ChildIds: 5296357227207715018
+        ChildIds: 6125583234099183854
+        ChildIds: 4265736137952127076
+        ChildIds: 569234932615806170
+        ChildIds: 9940359161089372548
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -864,13 +629,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8613438083075185120
+        Id: 17430257593288296140
         Name: "Icosahedron"
         Transform {
           Location {
-            X: 70.949707
-            Y: 104.44873
-            Z: 34.95681
+            X: 59.1168213
+            Y: 62.482666
+            Z: 33.8052979
           }
           Rotation {
             Pitch: -7.07929277
@@ -883,8 +648,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 15974888367530699490
+        ParentId: 2807328634475856023
+        ChildIds: 4876544663822772828
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -924,7 +689,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15974888367530699490
+        Id: 4876544663822772828
         Name: "Rock 01"
         Transform {
           Location {
@@ -940,7 +705,7 @@ Assets {
             Z: 0.347675055
           }
         }
-        ParentId: 8613438083075185120
+        ParentId: 17430257593288296140
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -990,12 +755,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 12554317465457862256
+        Id: 4319397995722821978
         Name: "Icosahedron"
         Transform {
           Location {
-            X: -37.6090088
-            Y: 77.5424194
+            X: -36.5922852
+            Y: 31.7687378
             Z: 75.2154694
           }
           Rotation {
@@ -1006,8 +771,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 17138217515582088668
+        ParentId: 2807328634475856023
+        ChildIds: 14318542638024947737
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1047,7 +812,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17138217515582088668
+        Id: 14318542638024947737
         Name: "Rock 01"
         Transform {
           Location {
@@ -1063,7 +828,7 @@ Assets {
             Z: 0.200000018
           }
         }
-        ParentId: 12554317465457862256
+        ParentId: 4319397995722821978
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1113,12 +878,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10148791626634659079
+        Id: 887761601521178825
         Name: "Icosahedron"
         Transform {
           Location {
-            X: -17.512207
-            Y: 142.272644
+            X: 27.7137451
+            Y: 54.4526978
             Z: 27.207531
           }
           Rotation {
@@ -1132,8 +897,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 13730572810048688961
+        ParentId: 2807328634475856023
+        ChildIds: 11059366224885742128
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1173,7 +938,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13730572810048688961
+        Id: 11059366224885742128
         Name: "Rock 01"
         Transform {
           Location {
@@ -1189,7 +954,7 @@ Assets {
             Z: 0.200000018
           }
         }
-        ParentId: 10148791626634659079
+        ParentId: 887761601521178825
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1239,12 +1004,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13740737701820808540
+        Id: 16566004271117378622
         Name: "Icosahedron"
         Transform {
           Location {
-            X: -30.998291
-            Y: 118.684448
+            X: -8.50231934
+            Y: 50.4657
             Z: 54.7662964
           }
           Rotation {
@@ -1258,8 +1023,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 8125318822210928638
+        ParentId: 2807328634475856023
+        ChildIds: 17709787607788185774
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1299,7 +1064,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8125318822210928638
+        Id: 17709787607788185774
         Name: "Rock 01"
         Transform {
           Location {
@@ -1315,7 +1080,7 @@ Assets {
             Z: 0.200000018
           }
         }
-        ParentId: 13740737701820808540
+        ParentId: 16566004271117378622
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1365,12 +1130,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17407282888164322329
+        Id: 5296357227207715018
         Name: "Icosahedron"
         Transform {
           Location {
-            X: -57.9818115
-            Y: 80.449707
+            X: 72.7055664
+            Y: 30.2189941
             Z: 41.2355232
           }
           Rotation {
@@ -1384,8 +1149,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 10694723183076291382
+        ParentId: 2807328634475856023
+        ChildIds: 16246507199415319786
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1425,7 +1190,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 10694723183076291382
+        Id: 16246507199415319786
         Name: "Rock 01"
         Transform {
           Location {
@@ -1441,7 +1206,7 @@ Assets {
             Z: 0.200000018
           }
         }
-        ParentId: 17407282888164322329
+        ParentId: 5296357227207715018
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1491,13 +1256,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 759754566524815463
+        Id: 6125583234099183854
         Name: "Icosahedron"
         Transform {
           Location {
-            X: -8.2565918
-            Y: 75.5115356
-            Z: 98.6772232
+            X: 25.8685303
+            Y: 22.3915405
+            Z: 57.6621475
           }
           Rotation {
             Pitch: 15.7128563
@@ -1510,8 +1275,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 6787063745206184299
+        ParentId: 2807328634475856023
+        ChildIds: 11882146450566117053
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1551,7 +1316,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6787063745206184299
+        Id: 11882146450566117053
         Name: "Rock 01"
         Transform {
           Location {
@@ -1567,7 +1332,7 @@ Assets {
             Z: 0.347675055
           }
         }
-        ParentId: 759754566524815463
+        ParentId: 6125583234099183854
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1617,13 +1382,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6478506051138891605
+        Id: 4265736137952127076
         Name: "Icosahedron"
         Transform {
           Location {
-            X: 16.7738037
-            Y: 98.0103149
-            Z: 75.4210815
+            X: -40.1549072
+            Y: 64.6784668
+            Z: 39.7819595
           }
           Rotation {
             Pitch: -7.07928562
@@ -1636,8 +1401,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 16027647686696249224
+        ParentId: 2807328634475856023
+        ChildIds: 18168010306167254694
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1677,7 +1442,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16027647686696249224
+        Id: 18168010306167254694
         Name: "Rock 01"
         Transform {
           Location {
@@ -1693,7 +1458,7 @@ Assets {
             Z: 0.347675055
           }
         }
-        ParentId: 6478506051138891605
+        ParentId: 4265736137952127076
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1743,12 +1508,12 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16304878753649001961
+        Id: 569234932615806170
         Name: "Icosahedron"
         Transform {
           Location {
-            X: 13.84375
-            Y: 130.497009
+            X: 94.1014404
+            Y: -4.36724854
             Z: 45.8878555
           }
           Rotation {
@@ -1762,8 +1527,8 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 16117470211738994837
-        ChildIds: 17625701705368197569
+        ParentId: 2807328634475856023
+        ChildIds: 14976004745965557009
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
         }
@@ -1803,7 +1568,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17625701705368197569
+        Id: 14976004745965557009
         Name: "Rock 01"
         Transform {
           Location {
@@ -1819,7 +1584,7 @@ Assets {
             Z: 0.347675055
           }
         }
-        ParentId: 16304878753649001961
+        ParentId: 569234932615806170
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1869,7 +1634,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 5949246707158278795
+        Id: 9940359161089372548
         Name: "RemoveDebrisAfter"
         Transform {
           Location {
@@ -1882,7 +1647,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16117470211738994837
+        ParentId: 2807328634475856023
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1906,7 +1671,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 7502104564380971601
+        Id: 7433150638452247548
         Name: "Rock Boulder Ground Impact 01 SFX"
         Transform {
           Location {
@@ -1919,7 +1684,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1949,23 +1714,82 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 15399027156796999992
+        Id: 11844380263640603786
+        Name: "Decal Soil Cracks Big 01"
+        Transform {
+          Location {
+            X: 42.8806763
+            Y: 54.0123291
+            Z: 4.82177734
+          }
+          Rotation {
+            Yaw: -49.100708
+          }
+          Scale {
+            X: 0.39242655
+            Y: 0.39242655
+            Z: 0.0808230191
+          }
+        }
+        ParentId: 16625258732997758434
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 6
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 6433548446612999816
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13524602337653106529
         Name: "Decal Dirt Patch"
         Transform {
           Location {
-            X: 1.76989746
-            Y: 61.4942627
+            X: 41.2450104
+            Y: 44.4653931
           }
           Rotation {
-            Yaw: 37.7636375
+            Yaw: -11.3373413
           }
           Scale {
-            X: 0.613403201
-            Y: 0.613403201
-            Z: 0.0613403209
+            X: 0.543362379
+            Y: 0.543362379
+            Z: 0.0543362387
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         UnregisteredParameters {
           Overrides {
             Name: "bp:Sort Order"
@@ -2007,22 +1831,23 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1629410325301083490
+        Id: 762455463459402116
         Name: "Decal Rubble Concrete 02"
         Transform {
           Location {
-            X: 22.2169189
-            Y: 89.6820679
+            X: 28.6086121
+            Y: 40.9342651
           }
           Rotation {
+            Yaw: -49.100708
           }
           Scale {
-            X: 0.485766292
-            Y: 0.485766292
-            Z: 0.0710800961
+            X: 0.683406949
+            Y: 0.683406949
+            Z: 0.1
           }
         }
-        ParentId: 18240309607507144008
+        ParentId: 16625258732997758434
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -2044,6 +1869,130 @@ Assets {
           Overrides {
             Name: "bp:Fade Time"
             Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4358765911904981813
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16948192560153790323
+        Name: "Decal Dirt Patch"
+        Transform {
+          Location {
+            X: 1.76989746
+            Y: 61.4942627
+          }
+          Rotation {
+            Yaw: 37.7637
+          }
+          Scale {
+            X: 0.613403201
+            Y: 0.613403201
+            Z: 0.0613403209
+          }
+        }
+        ParentId: 16625258732997758434
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11380357722301189422
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3301885991377575630
+        Name: "Decal Rubble Concrete 02"
+        Transform {
+          Location {
+            X: 22.2169189
+            Y: 89.6820679
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.485766292
+            Y: 0.485766292
+            Z: 0.0710800961
+          }
+        }
+        ParentId: 16625258732997758434
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 8
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 1
           }
         }
         Collidable_v2 {
@@ -2101,12 +2050,12 @@ Assets {
       }
     }
     Assets {
-      Id: 17118136979191323600
-      Name: "Metal Iron 01"
+      Id: 11337413471323694429
+      Name: "Metal Gold 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_metal_iron_001"
+        AssetId: "mi_metal_gold_001"
       }
     }
     Assets {
@@ -2146,6 +2095,15 @@ Assets {
       }
     }
     Assets {
+      Id: 6433548446612999816
+      Name: "Decal Soil Cracks Big 01"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_soil_cracks_001"
+      }
+    }
+    Assets {
       Id: 11380357722301189422
       Name: "Decal Dirt Patch"
       PlatformAssetType: 14
@@ -2169,4 +2127,6 @@ Assets {
     }
   }
   SerializationVersion: 124
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

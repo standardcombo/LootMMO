@@ -1,13 +1,13 @@
 Assets {
-  Id: 13822295421475217790
-  Name: "Node_Coal_3"
+  Id: 11337594691903092617
+  Name: "Node_Gold_2"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 14537459485284768146
+      RootId: 12712995020847930687
       Objects {
-        Id: 14537459485284768146
-        Name: "Node_Coal_3"
+        Id: 12712995020847930687
+        Name: "Node_Gold_2"
         Transform {
           Scale {
             X: 1
@@ -16,15 +16,14 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 3335862907700735928
-        ChildIds: 13390548019088457841
-        ChildIds: 16740789451870595132
-        ChildIds: 12138429602760659558
-        ChildIds: 11798435570754775621
-        ChildIds: 1168921075627129477
-        ChildIds: 13096250982755084323
-        ChildIds: 2921009719126633363
-        ChildIds: 13132999066630288806
+        ChildIds: 8116358211773219865
+        ChildIds: 7267537071711310453
+        ChildIds: 10859857822549934976
+        ChildIds: 7246823517319310307
+        ChildIds: 3215329716375966212
+        ChildIds: 7274225228377461456
+        ChildIds: 1651382166296968729
+        ChildIds: 18240309607507144008
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -46,7 +45,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3335862907700735928
+        Id: 8116358211773219865
         Name: "Rock 03"
         Transform {
           Location {
@@ -63,7 +62,7 @@ Assets {
             Z: 1.0480758
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -113,7 +112,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13390548019088457841
+        Id: 7267537071711310453
         Name: "Rock 03"
         Transform {
           Location {
@@ -130,7 +129,7 @@ Assets {
             Z: 0.988265634
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -180,74 +179,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 16740789451870595132
-        Name: "Rock 03"
-        Transform {
-          Location {
-            X: -12.1329346
-            Y: 90.9170532
-            Z: -51.0219345
-          }
-          Rotation {
-            Yaw: -179.428253
-          }
-          Scale {
-            X: 1.08541822
-            Y: 1.08541822
-            Z: 1.08541822
-          }
-        }
-        ParentId: 14537459485284768146
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 12138429602760659558
+        Id: 10859857822549934976
         Name: "Rock 01"
         Transform {
           Location {
@@ -266,23 +198,17 @@ Assets {
             Z: 0.1
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -322,7 +248,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11798435570754775621
+        Id: 7246823517319310307
         Name: "Rock 01"
         Transform {
           Location {
@@ -341,23 +267,17 @@ Assets {
             Z: 0.1
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -397,7 +317,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 1168921075627129477
+        Id: 3215329716375966212
         Name: "Rock 01"
         Transform {
           Location {
@@ -416,23 +336,17 @@ Assets {
             Z: 0.1
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -472,16 +386,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13096250982755084323
+        Id: 7274225228377461456
         Name: "Rock 01"
         Transform {
           Location {
-            X: -30.8259277
-            Y: 61.1773682
-            Z: 64.2995
+            X: -25.482666
+            Y: 56.4425049
+            Z: 52.2751427
           }
           Rotation {
-            Yaw: 7.48193407
+            Pitch: -3.10797119
+            Yaw: 6.80964851
+            Roll: 24.4210873
           }
           Scale {
             X: 0.104515634
@@ -489,23 +405,17 @@ Assets {
             Z: 0.104515634
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -545,16 +455,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2921009719126633363
+        Id: 1651382166296968729
         Name: "Rock 03"
         Transform {
           Location {
-            X: -51.9326172
-            Y: 5.35751343
-            Z: 90.0794144
+            X: -38.9105225
+            Y: -8.16595459
+            Z: 81.256752
           }
           Rotation {
-            Yaw: -110.701622
+            Pitch: -20.6420898
+            Yaw: -88.3994141
+            Roll: -94.5323181
           }
           Scale {
             X: 0.2
@@ -562,23 +474,17 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 14537459485284768146
+        ParentId: 12712995020847930687
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -618,7 +524,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13132999066630288806
+        Id: 18240309607507144008
         Name: "ClientContext"
         Transform {
           Location {
@@ -631,12 +537,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14537459485284768146
-        ChildIds: 4461407955058223797
-        ChildIds: 7220848368035687596
-        ChildIds: 17499471921755006218
-        ChildIds: 4544309462068135264
-        ChildIds: 12959282463616318973
+        ParentId: 12712995020847930687
+        ChildIds: 2511337764115123147
+        ChildIds: 2316020073626143558
+        ChildIds: 3713463811175536944
+        ChildIds: 16117470211738994837
+        ChildIds: 7502104564380971601
+        ChildIds: 15399027156796999992
+        ChildIds: 1629410325301083490
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -678,16 +586,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4461407955058223797
+        Id: 2511337764115123147
         Name: "Brick Impact VFX"
         Transform {
           Location {
-            X: 22.5222168
-            Y: 100.85498
-            Z: 98.8065
+            X: 60.253418
+            Y: 104.248657
+            Z: 84.5664139
           }
           Rotation {
-            Pitch: 48.89077
+            Pitch: 53.6942863
+            Yaw: -98.4237671
+            Roll: 14.1476917
           }
           Scale {
             X: 3
@@ -695,7 +605,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 13132999066630288806
+        ParentId: 18240309607507144008
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -738,17 +648,18 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 7220848368035687596
+        Id: 2316020073626143558
         Name: "Brick Impact VFX"
         Transform {
           Location {
-            X: -19.3422852
-            Y: 63.8046265
-            Z: 80.8871384
+            X: 9.0456543
+            Y: 88.9511108
+            Z: 76.1149521
           }
           Rotation {
-            Pitch: 34.9874115
-            Yaw: -30.0263977
+            Pitch: 48.4245033
+            Yaw: -30.0264893
+            Roll: 20.1799145
           }
           Scale {
             X: 3
@@ -756,7 +667,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 13132999066630288806
+        ParentId: 18240309607507144008
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -799,13 +710,13 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 17499471921755006218
+        Id: 3713463811175536944
         Name: "Dust Puff VFX"
         Transform {
           Location {
-            X: 26.6792
-            Y: 76.302124
-            Z: 82.5913467
+            X: 28.4193115
+            Y: 100.170105
+            Z: 53.3721237
           }
           Rotation {
           }
@@ -815,7 +726,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13132999066630288806
+        ParentId: 18240309607507144008
         UnregisteredParameters {
           Overrides {
             Name: "bp:Color"
@@ -879,7 +790,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 4544309462068135264
+        Id: 16117470211738994837
         Name: "Debris"
         Transform {
           Location {
@@ -892,16 +803,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13132999066630288806
-        ChildIds: 13514437804983981951
-        ChildIds: 3903043393476646181
-        ChildIds: 1884466719242443616
-        ChildIds: 15657839932332513901
-        ChildIds: 8836362368080213000
-        ChildIds: 1395075150378702058
-        ChildIds: 9145769649669446669
-        ChildIds: 723053905192012181
-        ChildIds: 11824997930928921808
+        ParentId: 18240309607507144008
+        ChildIds: 8613438083075185120
+        ChildIds: 12554317465457862256
+        ChildIds: 10148791626634659079
+        ChildIds: 13740737701820808540
+        ChildIds: 17407282888164322329
+        ChildIds: 759754566524815463
+        ChildIds: 6478506051138891605
+        ChildIds: 16304878753649001961
+        ChildIds: 5949246707158278795
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -923,7 +834,1012 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 13514437804983981951
+        Id: 8613438083075185120
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: 70.949707
+            Y: 104.44873
+            Z: 34.95681
+          }
+          Rotation {
+            Pitch: -7.07929277
+            Yaw: 76.0175934
+            Roll: -164.620483
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 15974888367530699490
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15974888367530699490
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -4.87747288
+            Y: 0.647857189
+            Z: 4.76969814
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.352193385
+            Y: 0.319408923
+            Z: 0.347675055
+          }
+        }
+        ParentId: 8613438083075185120
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6981536508008379085
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 12554317465457862256
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: -37.6090088
+            Y: 77.5424194
+            Z: 75.2154694
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 17138217515582088668
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17138217515582088668
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -7.66143799
+            Y: -8.52554321
+            Z: 10.651474
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.200000018
+            Y: 0.3
+            Z: 0.200000018
+          }
+        }
+        ParentId: 12554317465457862256
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 8021476752120115971
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10148791626634659079
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: -17.512207
+            Y: 142.272644
+            Z: 27.207531
+          }
+          Rotation {
+            Pitch: 43.7832603
+            Yaw: 58.901104
+            Roll: 74.0890427
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 13730572810048688961
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13730572810048688961
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -7.66143799
+            Y: -8.52554321
+            Z: 10.651474
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.200000018
+            Y: 0.3
+            Z: 0.200000018
+          }
+        }
+        ParentId: 10148791626634659079
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 8021476752120115971
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 13740737701820808540
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: -30.998291
+            Y: 118.684448
+            Z: 54.7662964
+          }
+          Rotation {
+            Pitch: 28.2433224
+            Yaw: 179.065536
+            Roll: -107.143288
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 8125318822210928638
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8125318822210928638
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -7.66143799
+            Y: -8.52554321
+            Z: 10.651474
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.200000018
+            Y: 0.3
+            Z: 0.200000018
+          }
+        }
+        ParentId: 13740737701820808540
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 8021476752120115971
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17407282888164322329
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: -57.9818115
+            Y: 80.449707
+            Z: 41.2355232
+          }
+          Rotation {
+            Pitch: 15.7128696
+            Yaw: 156.387634
+            Roll: 90.9461899
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 10694723183076291382
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 10694723183076291382
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -7.66143799
+            Y: -8.52554321
+            Z: 10.651474
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.200000018
+            Y: 0.3
+            Z: 0.200000018
+          }
+        }
+        ParentId: 17407282888164322329
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 8021476752120115971
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 759754566524815463
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: -8.2565918
+            Y: 75.5115356
+            Z: 98.6772232
+          }
+          Rotation {
+            Pitch: 15.7128563
+            Yaw: 156.387634
+            Roll: 90.9461594
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 6787063745206184299
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6787063745206184299
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -4.87747288
+            Y: 0.647857189
+            Z: 4.76969814
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.352193385
+            Y: 0.319408923
+            Z: 0.347675055
+          }
+        }
+        ParentId: 759754566524815463
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6981536508008379085
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6478506051138891605
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: 16.7738037
+            Y: 98.0103149
+            Z: 75.4210815
+          }
+          Rotation {
+            Pitch: -7.07928562
+            Yaw: 76.0176849
+            Roll: -164.620575
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 16027647686696249224
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16027647686696249224
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -4.87747288
+            Y: 0.647857189
+            Z: 4.76969814
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.352193385
+            Y: 0.319408923
+            Z: 0.347675055
+          }
+        }
+        ParentId: 6478506051138891605
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6981536508008379085
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16304878753649001961
+        Name: "Icosahedron"
+        Transform {
+          Location {
+            X: 13.84375
+            Y: 130.497009
+            Z: 45.8878555
+          }
+          Rotation {
+            Pitch: -7.07928562
+            Yaw: 76.0176392
+            Roll: -164.620544
+          }
+          Scale {
+            X: 0.4
+            Y: 0.4
+            Z: 0.4
+          }
+        }
+        ParentId: 16117470211738994837
+        ChildIds: 17625701705368197569
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7467523817040396877
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              IsEnabled: true
+              OverrideMass: true
+              Mass: 250
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17625701705368197569
+        Name: "Rock 01"
+        Transform {
+          Location {
+            X: -4.87747288
+            Y: 0.647857189
+            Z: 4.76969814
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.352193385
+            Y: 0.319408923
+            Z: 0.347675055
+          }
+        }
+        ParentId: 16304878753649001961
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 17686025311361638391
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6981536508008379085
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 5949246707158278795
         Name: "RemoveDebrisAfter"
         Transform {
           Location {
@@ -936,7 +1852,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4544309462068135264
+        ParentId: 16117470211738994837
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -960,1012 +1876,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 3903043393476646181
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: 67.4368896
-            Y: 100.940186
-            Z: 77.8210678
-          }
-          Rotation {
-            Pitch: -7.07929277
-            Yaw: 76.0175934
-            Roll: -164.620483
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 16372490112588096022
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 16372490112588096022
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -4.87747288
-            Y: 0.647857189
-            Z: 4.76969814
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.352193385
-            Y: 0.319408923
-            Z: 0.347675055
-          }
-        }
-        ParentId: 3903043393476646181
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1884466719242443616
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: 29.5081787
-            Y: 107.835876
-            Z: 92.1470184
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 8860105487310050582
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8860105487310050582
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -7.66143799
-            Y: -8.52554321
-            Z: 10.651474
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.200000018
-            Y: 0.3
-            Z: 0.200000018
-          }
-        }
-        ParentId: 1884466719242443616
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15657839932332513901
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: 39.0371094
-            Y: 41.1904297
-            Z: 133.94812
-          }
-          Rotation {
-            Pitch: 43.7832603
-            Yaw: 58.901104
-            Roll: 74.0890427
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 7450721942328192289
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 7450721942328192289
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -7.66143799
-            Y: -8.52554321
-            Z: 10.651474
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.200000018
-            Y: 0.3
-            Z: 0.200000018
-          }
-        }
-        ParentId: 15657839932332513901
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8836362368080213000
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: -1.16564941
-            Y: 83.2456665
-            Z: 111.371643
-          }
-          Rotation {
-            Pitch: 28.2433224
-            Yaw: 179.065536
-            Roll: -107.143288
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 17266763469304587174
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 17266763469304587174
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -7.66143799
-            Y: -8.52554321
-            Z: 10.651474
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.200000018
-            Y: 0.3
-            Z: 0.200000018
-          }
-        }
-        ParentId: 8836362368080213000
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 1395075150378702058
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: -31.3398438
-            Y: 107.289612
-            Z: 89.7934
-          }
-          Rotation {
-            Pitch: 15.7128696
-            Yaw: 156.387634
-            Roll: 90.9461899
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 15688655753177105142
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15688655753177105142
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -7.66143799
-            Y: -8.52554321
-            Z: 10.651474
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.200000018
-            Y: 0.3
-            Z: 0.200000018
-          }
-        }
-        ParentId: 1395075150378702058
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 8021476752120115971
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9145769649669446669
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: -13.3129883
-            Y: 47.2993774
-            Z: 122.376144
-          }
-          Rotation {
-            Pitch: 15.7128563
-            Yaw: 156.387634
-            Roll: 90.9461594
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 5973811779880290413
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 5973811779880290413
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -4.87747288
-            Y: 0.647857189
-            Z: 4.76969814
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.352193385
-            Y: 0.319408923
-            Z: 0.347675055
-          }
-        }
-        ParentId: 9145769649669446669
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 723053905192012181
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: -44.1760254
-            Y: 81.4962769
-            Z: 107.772888
-          }
-          Rotation {
-            Pitch: -7.07928562
-            Yaw: 76.0176849
-            Roll: -164.620575
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 6036620534370318180
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6036620534370318180
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -4.87747288
-            Y: 0.647857189
-            Z: 4.76969814
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.352193385
-            Y: 0.319408923
-            Z: 0.347675055
-          }
-        }
-        ParentId: 723053905192012181
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 11824997930928921808
-        Name: "Icosahedron"
-        Transform {
-          Location {
-            X: 32.2609863
-            Y: 134.884277
-            Z: 60.6528473
-          }
-          Rotation {
-            Pitch: -7.07928562
-            Yaw: 76.0176392
-            Roll: -164.620544
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 4544309462068135264
-        ChildIds: 6008745582427597463
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 7467523817040396877
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              IsEnabled: true
-              OverrideMass: true
-              Mass: 250
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6008745582427597463
-        Name: "Rock 01"
-        Transform {
-          Location {
-            X: -4.87747288
-            Y: 0.647857189
-            Z: 4.76969814
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.352193385
-            Y: 0.319408923
-            Z: 0.347675055
-          }
-        }
-        ParentId: 11824997930928921808
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 17686025311361638391
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6981536508008379085
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 12959282463616318973
+        Id: 7502104564380971601
         Name: "Rock Boulder Ground Impact 01 SFX"
         Transform {
           Location {
@@ -1978,7 +1889,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13132999066630288806
+        ParentId: 18240309607507144008
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2004,6 +1915,130 @@ Assets {
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15399027156796999992
+        Name: "Decal Dirt Patch"
+        Transform {
+          Location {
+            X: 1.76989746
+            Y: 61.4942627
+          }
+          Rotation {
+            Yaw: 37.7636375
+          }
+          Scale {
+            X: 0.613403201
+            Y: 0.613403201
+            Z: 0.0613403209
+          }
+        }
+        ParentId: 18240309607507144008
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 5
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11380357722301189422
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1629410325301083490
+        Name: "Decal Rubble Concrete 02"
+        Transform {
+          Location {
+            X: 22.2169189
+            Y: 89.6820679
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.485766292
+            Y: 0.485766292
+            Z: 0.0710800961
+          }
+        }
+        ParentId: 18240309607507144008
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Sort Order"
+            Int: 8
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 0
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 4358765911904981813
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2036,12 +2071,12 @@ Assets {
       }
     }
     Assets {
-      Id: 17118136979191323600
-      Name: "Metal Iron 01"
+      Id: 11337413471323694429
+      Name: "Metal Gold 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_metal_iron_001"
+        AssetId: "mi_metal_gold_001"
       }
     }
     Assets {
@@ -2080,10 +2115,30 @@ Assets {
         AssetId: "sfx_rock_boulder_ground_impact_01a_Cue_ref"
       }
     }
+    Assets {
+      Id: 11380357722301189422
+      Name: "Decal Dirt Patch"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_dirt_patch_001"
+      }
+    }
+    Assets {
+      Id: 4358765911904981813
+      Name: "Decal Rubble Concrete 02"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_mil_rubble_concrete_002_ref"
+      }
+    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
   SerializationVersion: 124
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

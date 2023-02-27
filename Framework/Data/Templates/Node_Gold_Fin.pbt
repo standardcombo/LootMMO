@@ -1,6 +1,6 @@
 Assets {
   Id: 11452526985166680704
-  Name: "Node_Coal_Fin"
+  Name: "Node_Gold_Fin"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
@@ -1976,4 +1976,6 @@ Assets {
     }
   }
   SerializationVersion: 124
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

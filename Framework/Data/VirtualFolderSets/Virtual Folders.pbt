@@ -369,5 +369,28 @@ Assets {
       VirtualFolderPath: "Hierarchy"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "NodeGeo"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "Tools"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "Nodes"
+      PlatformAssetType: 5
+    }
   }
 }
