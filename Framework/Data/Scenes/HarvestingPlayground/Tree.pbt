@@ -56,7 +56,6 @@ Objects {
   ChildIds: 16824571392837779174
   ChildIds: 11031086880332864695
   ChildIds: 16436247575342307599
-  ChildIds: 11280111225869099925
   UnregisteredParameters {
     Overrides {
       Name: "cs:NODES"
@@ -94,7 +93,7 @@ Objects {
       Name: "cs:RespawnNodesInterval"
       Vector2 {
         X: 5
-        Y: 10
+        Y: 15
       }
     }
     Overrides {
@@ -103,7 +102,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RemovePartiallyMinedNodesAfter"
-      Int: 20
+      Int: 10
     }
     Overrides {
       Name: "cs:SpawnOnlyFullNodes"
@@ -164,43 +163,6 @@ Objects {
   }
   Folder {
     IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 11280111225869099925
-  Name: "HarvestingSystem_ReadMe"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11717113739800138726
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 2827277044402293060
-    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1082,6 +1044,7 @@ Objects {
   ParentId: 11717113739800138726
   ChildIds: 9534852705399491510
   ChildIds: 7068714377157401072
+  ChildIds: 11280111225869099925
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1115,6 +1078,43 @@ Objects {
     }
     MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11280111225869099925
+  Name: "HarvestingSystem_ReadMe"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16824571392837779174
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2827277044402293060
     }
   }
   NetworkRelevanceDistance {

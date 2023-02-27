@@ -42,6 +42,7 @@ local spawnedToolsOnPlayers = {}
 local PlayerActiveNodesStack = {}
 local LockedNodeByPlayer = {}
 local CurrentlyMiningNodeForPlayer =  {}
+local NodeDespawnTask = {}
 
 local PLAYER_TOOLS = {}
 
@@ -114,7 +115,8 @@ function OnPlayerHarvestRequest(player, nodeId)
     player:SetWorldRotation(rotToNode)
     --append node to be respawned if a partially mined nodes do reswpawn
     if REMOVE_PARTIALLY_MINED_NODES_AFTER <= 0 then return end
-    Task.Spawn(function ()
+    if NodeDespawnTask[node] then NodeDespawnTask[node]:Cancel() end
+    NodeDespawnTask[node] = Task.Spawn(function ()
         if Object.IsValid(node) ~= true then return end
         AHS.RemoveNode(node)
     end,REMOVE_PARTIALLY_MINED_NODES_AFTER)
@@ -197,6 +199,8 @@ function CleanupNodeHandles(node)
     for _,p in ipairs(Game.GetPlayers())do
         RemoveNodeFromPlayersNodesStack(p,node)
     end
+    --clear out node despawn task
+    NodeDespawnTask[node] = nil
     --remove node id from table
     NodesById[node.id] = nil
 end
