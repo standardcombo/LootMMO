@@ -28,6 +28,7 @@ Objects {
   ChildIds: 8212739915466549664
   ChildIds: 880106829888079510
   ChildIds: 12626000991766525324
+  ChildIds: 13979517368156756886
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -45,6 +46,46 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13979517368156756886
+  Name: "Node_Grave_3"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7837483978735976246
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_Grave_3"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2788.10718
+            Y: -559.953308
+            Z: 3341.35864
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Roll: 5.19796515
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17014239664727010039
+    }
+  }
 }
 Objects {
   Id: 12626000991766525324

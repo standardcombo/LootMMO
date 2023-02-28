@@ -52,6 +52,31 @@ Assets {
           }
         }
         ParentId: 7927894008764910879
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Nature_Leaves:color"
+            Color {
+              R: 0.182614028
+              G: 0.219000012
+              B: 0.0205311067
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:id"
+            AssetReference {
+              Id: 9650217245010659427
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:utile"
+            Float: 2
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:vtile"
+            Float: 4
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
