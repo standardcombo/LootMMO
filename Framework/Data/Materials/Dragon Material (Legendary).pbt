@@ -2,7 +2,7 @@ Assets {
   Id: 2965201484768663535
   Name: "Dragon Material (Legendary)"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8082551051744776500
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 12143894629036006249
   Name: "Buckskin"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 1523214900353875295
     ParameterOverrides {

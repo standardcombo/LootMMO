@@ -2,7 +2,7 @@ Assets {
   Id: 439922112269025334
   Name: "Subclass Button - Healer"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "8c375f63efb145d6a4932f438e9772eb"

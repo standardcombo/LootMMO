@@ -2,7 +2,7 @@ Assets {
   Id: 4659151989102332900
   Name: "Wool Sash"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

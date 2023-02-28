@@ -2,7 +2,7 @@ Assets {
   Id: 7004603065282695526
   Name: "Gauntlets"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

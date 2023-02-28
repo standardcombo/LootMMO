@@ -2242,5 +2242,5 @@ Assets {
       AssetId: "Magic_Circle_Spherical_Example"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 4137324240776685235
   Name: "Greaves"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

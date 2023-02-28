@@ -2,7 +2,7 @@ Assets {
   Id: 3987509173744237482
   Name: "Cap"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

@@ -2,7 +2,7 @@ Assets {
   Id: 5353012052969013597
   Name: "Punch"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

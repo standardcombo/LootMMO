@@ -2,7 +2,7 @@ Assets {
   Id: 8418025582587939029
   Name: "Custom Leaves from Bush 01_Still"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8610726907152311844
     ParameterOverrides {

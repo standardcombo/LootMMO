@@ -2,7 +2,7 @@ Assets {
   Id: 624906770413420413
   Name: "TRIM"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 14775259986279630015
     ParameterOverrides {

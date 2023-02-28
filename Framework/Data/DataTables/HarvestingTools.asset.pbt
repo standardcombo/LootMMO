@@ -2,7 +2,7 @@ Assets {
   Id: 5490973462993262132
   Name: "HarvestingTools"
   PlatformAssetType: 31
-  SerializationVersion: 124
+  SerializationVersion: 125
   DataTableAsset {
     Assets {
       Id: 13565653469877167903
@@ -38,6 +38,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Survival_Equip_Tool_024"
+      }
+    }
+    Assets {
+      Id: 8780351797436760239
+      Name: "Survival Tool Shovel 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Survival_Equip_Tool_010"
       }
     }
     DeferAssetLoading: true

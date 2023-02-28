@@ -2,7 +2,7 @@ Assets {
   Id: 156202485482064457
   Name: "Book"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

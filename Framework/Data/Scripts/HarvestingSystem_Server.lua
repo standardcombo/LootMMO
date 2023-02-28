@@ -272,7 +272,7 @@ function OnPlayerJoined(player)
     --prepare the node stack for player
     PlayerActiveNodesStack[player] = {}
     --TODO proper tools save and load
-    PLAYER_TOOLS[player] = {axe = 1, pick = 1}
+    PLAYER_TOOLS[player] = {axe = 1, pick = 1, shovel = 1}
     player:SetPrivateNetworkedData("Tools",PLAYER_TOOLS[player])
 end
 
@@ -291,6 +291,7 @@ Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed)
 
 --init nodes for use during runtime
 AHS.InitNodesData()
+--TODO -> Follow the initial nodes transform!
 
 --get the count of free nodes
 local freeCount = AHS.GetFreeNodesCount()

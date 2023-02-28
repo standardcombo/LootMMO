@@ -2,7 +2,7 @@ Assets {
   Id: 4167456069343400489
   Name: "Exterior_SocialHub_BrickWall"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 976160146953564458
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 13173301902394306020
   Name: "Bronze Ring"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

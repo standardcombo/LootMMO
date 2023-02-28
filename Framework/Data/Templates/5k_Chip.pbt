@@ -349,7 +349,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "PokerTemplates"
   VirtualFolderPath: "Chips"
   VirtualFolderPath: "3D"

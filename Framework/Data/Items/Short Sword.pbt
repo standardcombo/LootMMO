@@ -2,7 +2,7 @@ Assets {
   Id: 3052637769946164716
   Name: "Short Sword"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

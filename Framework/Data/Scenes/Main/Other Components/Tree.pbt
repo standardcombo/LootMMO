@@ -785,7 +785,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RemovePartiallyMinedNodesAfter"
-      Int: 10
+      Int: 30
     }
     Overrides {
       Name: "cs:SpawnOnlyFullNodes"
@@ -880,6 +880,7 @@ Objects {
   ChildIds: 5969166789517420973
   ChildIds: 82744001247175728
   ChildIds: 1275116928330618593
+  ChildIds: 12342795210482138116
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -905,6 +906,53 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 12342795210482138116
+  Name: "Node_Grave"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14517073988449193345
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_Grave"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1802.27246
+            Y: -2277.46191
+            Z: 3329.0625
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 175.782593
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5151630942758078215
+    }
+  }
 }
 Objects {
   Id: 1275116928330618593

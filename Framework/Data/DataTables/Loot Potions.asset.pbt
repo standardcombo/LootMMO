@@ -2,7 +2,7 @@ Assets {
   Id: 3151175800723612673
   Name: "Loot Potions"
   PlatformAssetType: 31
-  SerializationVersion: 124
+  SerializationVersion: 125
   DataTableAsset {
     HasKeyColumn: true
     Assets {

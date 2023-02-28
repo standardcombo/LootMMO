@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 14517073988449193345
         ChildIds: 14256533548007396969
         ChildIds: 7501421119021291441
         ChildIds: 17942399676519546689
@@ -26,7 +26,7 @@ Assets {
           }
           Overrides {
             Name: "cs:SwingsToHarvest"
-            Int: 3
+            Int: 4
           }
           Overrides {
             Name: "cs:Type"
@@ -221,13 +221,10 @@ Assets {
         Name: "Hill 03"
         Transform {
           Location {
-            X: -3.57627846e-06
-            Y: -1.78813912e-06
-            Z: -30
+            X: -1.38583687e-06
+            Z: -11.6252441
           }
           Rotation {
-            Pitch: -6.83018879e-06
-            Yaw: -1.36603767e-05
             Roll: 3.41509553e-06
           }
           Scale {
@@ -286,12 +283,12 @@ Assets {
         Name: "Nature - Stick 05"
         Transform {
           Location {
-            X: -19.9491749
-            Y: 154.212906
-            Z: 63.0759811
+            X: -19.9491692
+            Y: 154.212921
+            Z: 81.7805176
           }
           Rotation {
-            Pitch: -79.6590118
+            Pitch: -79.659
             Yaw: -77.8393555
             Roll: 4.75625711e-05
           }
@@ -351,14 +348,14 @@ Assets {
         Name: "Nature - Stick 05"
         Transform {
           Location {
-            X: -4.84175205
-            Y: 155.470703
-            Z: 63.0759811
+            X: -4.84170055
+            Y: 155.470657
+            Z: 81.7805176
           }
           Rotation {
             Pitch: 90
-            Yaw: 18.4349556
-            Roll: 18.4349728
+            Yaw: -176.627716
+            Roll: -176.627701
           }
           Scale {
             X: 1
@@ -599,5 +596,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "Nodes"
 }
