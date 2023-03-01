@@ -290,8 +290,8 @@ Events.Connect("Harvest.Complete",OnHarvestCompleted) --this connects from playe
 Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed)
 
 --init nodes for use during runtime
+--all nodes do follow the origin transform for variability
 AHS.InitNodesData()
---TODO -> Follow the initial nodes transform!
 
 --get the count of free nodes
 local freeCount = AHS.GetFreeNodesCount()

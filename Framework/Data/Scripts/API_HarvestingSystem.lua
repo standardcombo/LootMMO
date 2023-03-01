@@ -71,7 +71,7 @@ end
 function API.GetNodePlacementStatus()
     if Environment.IsServer() ~= true then warn("Required function is for server context purposes only") return end
     if serverNodesReady == true then return true end
-    warn("FREE_NODES_DATA is not ready on server, API.InitNodesData")
+    warn("FREE_NODES_DATA is not ready on server, call API.InitNodesData first")
     return false
 end
 
@@ -79,7 +79,7 @@ function API.InitNodesData()
     if Environment.IsServer() ~= true then warn("API.InitNodesData is server only") return end
     if Object.IsValid(NODES_PARENT) ~= true then warn("Invalid NODES_PARENT in API.InitNodesData") return end
     local AllNodes = NODES_PARENT:GetChildren()
-    if #AllNodes == 0 then warn("No children in NODES_PARENT for API.InitNodesData") return end
+    if #AllNodes == 0 then warn("No children to init in NODES_PARENT for API.InitNodesData") return end
 
     --save the placed nodes data for use during runtime
     for _,nodeObject in ipairs(AllNodes)do
@@ -308,8 +308,8 @@ function API.SpawnProperRichnessGeometryForNode(node,isNew)
     local NodeGeo = World.SpawnAsset(GeoStagesTable[currRichness].Template, {parent = node, networkContext = NetworkContextType.LOCAL_CONTEXT})
     SPAWNED_NODES[node].NodeGeo = NodeGeo
     if isNew == true then
-        NodeGeo:SetWorldScale(Vector3.ONE * 0.01)
-        NodeGeo:ScaleTo(Vector3.ONE,2)
+        NodeGeo:SetScale(Vector3.ONE * 0.01)
+        NodeGeo:ScaleTo(Vector3.ONE,2,true)
     end
 end
 
