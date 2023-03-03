@@ -22,6 +22,10 @@ Assets {
         Bool: false
       }
       Overrides {
+        Name: "cs:HideInsteadOfShow"
+        Bool: false
+      }
+      Overrides {
         Name: "cs:Object:isrep"
         Bool: false
       }

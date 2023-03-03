@@ -278,6 +278,15 @@ Assets {
   }
 }
 Assets {
+  Id: 1550328914402869017
+  Name: "Fantasy Craft Stone 017"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Stone_017"
+  }
+}
+Assets {
   Id: 453487308539368474
   Name: "Craftsman Wall 02"
   PlatformAssetType: 1
