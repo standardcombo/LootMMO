@@ -10,9 +10,9 @@ Assets {
         Name: "Node_Grave"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.4
+            Y: 1.4
+            Z: 1.4
           }
         }
         ParentId: 14517073988449193345
@@ -22,7 +22,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
-            String: "shovel"
+            String: "Tool Shovel"
           }
           Overrides {
             Name: "cs:SwingsToHarvest"
