@@ -22,7 +22,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
-            String: "pick"
+            String: "Tool Pick"
           }
           Overrides {
             Name: "cs:SwingsToHarvest"

@@ -10,9 +10,9 @@ Assets {
         Name: "Node_IronVein"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.8
+            Y: 0.8
+            Z: 0.8
           }
         }
         ParentId: 14517073988449193345
@@ -22,7 +22,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:ToolReq"
-            String: "pick"
+            String: "Tool Pick"
           }
           Overrides {
             Name: "cs:SwingsToHarvest"

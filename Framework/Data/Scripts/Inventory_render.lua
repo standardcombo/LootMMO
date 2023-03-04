@@ -218,7 +218,11 @@ local function HoverSlot(slot)
 		local childIcon = HOVERDATA.icon
 		SetImage(childIcon, icon, itemdata)
 
-		if item:GetCustomProperty("Greatness") then
+		if itemdata.category == "tool" then
+			--TODO_Harvesting keep tool level ups as greatness or another Item?
+			HOVERDATA.name.text = itemdata.name
+			childstats.text = "With this tool present in the inventory, you are able to harvest material nodes in the world."
+		elseif item:GetCustomProperty("Greatness") then
 			local greatness = GetItemGreatness(item)
 			HOVERDATA.name.text =
 			string.format(

@@ -923,5 +923,32 @@ Assets {
         AssetId: "UI_Survival_Equip_Ring_001"
       }
     }
+    Assets {
+      Id: 12994362817398275169
+      Name: "Fantasy Tool 017"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Tool_017"
+      }
+    }
+    Assets {
+      Id: 12098543105828247341
+      Name: "Fantasy Tool 020"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Tool_020"
+      }
+    }
+    Assets {
+      Id: 173604639355708933
+      Name: "Fantasy Tool 009"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Tool_009"
+      }
+    }
   }
 }
