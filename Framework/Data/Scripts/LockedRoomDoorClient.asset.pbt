@@ -1,6 +1,6 @@
 Assets {
-  Id: 162287543469419216
-  Name: "CraftingRoomDoorLocal"
+  Id: 18283052041203097921
+  Name: "LockedRoomDoorClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
