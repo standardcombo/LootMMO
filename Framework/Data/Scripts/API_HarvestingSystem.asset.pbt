@@ -17,12 +17,19 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:RewardsParser"
+        AssetReference {
+          Id: 17106048055230886503
+        }
+      }
+      Overrides {
         Name: "cs:NODES"
         ObjectReference {
-          SelfId: 16436247575342307599
+          SelfId: 14517073988449193345
         }
       }
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
 }

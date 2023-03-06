@@ -2,7 +2,7 @@ Assets {
   Id: 16126475708397980161
   Name: "ShadowFlame"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 1580899145783672584
     ParameterOverrides {

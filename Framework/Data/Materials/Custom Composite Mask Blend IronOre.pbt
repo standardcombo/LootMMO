@@ -2,7 +2,7 @@ Assets {
   Id: 12478815513514975796
   Name: "Custom Composite Mask Blend IronOre"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 14496936826203266768
     ParameterOverrides {

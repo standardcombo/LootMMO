@@ -2,7 +2,7 @@ Assets {
   Id: 6672480838751570682
   Name: "Gold Ring"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

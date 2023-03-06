@@ -2,7 +2,7 @@ Assets {
   Id: 12806033861870926250
   Name: "Subclass Button - Rogue"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "4776c621bb284bf4a56b960db31fb783"

@@ -38,13 +38,39 @@ local HarvestingNodeTTL = 0
 local HarvestingNodeTimePassed = 0
 local LastTimeTaken = 0
 local HarvestingProgressBarTask = nil
+local isHarvestingAvailable = true
 
-local NodeHarvest_CancelActions = {
+local PreventNodeHarvestingAction = {
     Move = true,
+    Jump = true,
+    Crouch = true,
+    Attack = true,
+    Cancel = true,
+    z = true,
+    x = true,
+    c = true,
+    Shift = true,
+    Target = true,
+    Throw = true,
+    Drink = true,
+    Block = true,
+    Mount = true,
     Shoot = true,
     Aim = true,
-    Jump = true
+    Reload = true,
+    OpenBars = true,
+    OpenAbility = true,
+    OpenInventory = true,
+    OpenShop = true,
+    OpenQUests = true,
+    BackToTavern  = true
 }
+PreventNodeHarvestingAction["Attack Secondary"] = true
+PreventNodeHarvestingAction["1"] = true
+PreventNodeHarvestingAction["2"] = true
+PreventNodeHarvestingAction["3"] = true
+PreventNodeHarvestingAction["4"] = true
+PreventNodeHarvestingAction["5"] = true
 
 --this is handled on tool ability scripts
 LOCAL_PLAYER.clientUserData.isHarvesting = false
@@ -56,6 +82,38 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 
 
 ------------------------------------
+--LOOT MMO STUFF
+------------------------------------
+local EquipAPI = _G["Character.EquipAPI"]
+
+local function GetInventory(player)
+	local Character = EquipAPI.GetCurrentCharacter(player)
+	if not Character then return end
+	local inventory = Character:GetComponent("Inventory")
+	local CoreInv = inventory:GetInventory()
+	return CoreInv
+end
+
+--TODO_Harvesting tool upgrades:
+-- New Item ID (and new icon) or just upgrade greatness ?
+local function GetItemGreatness(item)
+	local greatness = item:GetCustomProperty("Greatness")
+	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
+	return greatness, playerOwnsBag
+end
+
+function HasRequredTool(toolName)
+    local inv = GetInventory(LOCAL_PLAYER)
+    local hasItem = false
+    if inv then
+        local reqToolTable = {}
+        reqToolTable[toolName] = 1
+        hasItem = inv:HasRequiredItems(reqToolTable)
+    end
+    return hasItem
+end
+
+------------------------------------
 --LOCAL PLAYER INTERACTION AND HANDLES 
 ------------------------------------
 function CleanupHarvestingProgress()
@@ -63,7 +121,17 @@ function CleanupHarvestingProgress()
     UpdateInteractionLabel()
 end
 
+function IsPlayerAllowedToHarvest()
+    return (_G.AppState.GetLocalState() == _G.AppState.Adventure and LOCAL_PLAYER.isGrounded == true)
+end
+
 function UpdateMiningProgressBar()
+    --cancel the harvesting if the local state does not allow harvest
+    if IsPlayerAllowedToHarvest() == false then
+        Events.BroadcastToServer("Harvest.Cancel")
+        CleanupHarvestingProgress()
+        return
+    end
     --calculate dt
     local curTime = time()
     local dt = curTime - LastTimeTaken
@@ -81,29 +149,35 @@ end
 function UpdateInteractionLabel()
     --note that if currentNodeOwner == LOCAL_PLAYER ->
     --then the node is being harvested by us and this function is not called at all
-    if #nodeInteractionStack == 0 then
+    if #nodeInteractionStack == 0 or (_G.AppState.GetLocalState() ~= _G.AppState.Adventure) then
         HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
     else
         local currentNode = nodeInteractionStack[#nodeInteractionStack]
         local currentNodeOwner = currentNode:GetCustomProperty("Owner")
         local originRow = currentNode:GetCustomProperty("OriginRow")
         local toolNeeded = currentNode:GetCustomProperty("ToolReq")
+        --testetst
+        --print("Player has "..toolNeeded.." =",HasRequredTool(toolNeeded))
+        local requiredToolIsAvailable = HasRequredTool(toolNeeded)
         --if tools were not unlocked yet, no label
-        if LocalUserData.Tools == nil then
+        --[[if LocalUserData.Tools == nil then
             HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
             return
-        end
+        end]]
         --check it the player owns the tool needed
-        if LocalUserData.Tools[toolNeeded] == 0 then
-            HARVEST_NODE_LABEL.text = toolNeeded.." required"
+        if requiredToolIsAvailable == false then --LocalUserData.Tools[toolNeeded] == 0 then
+            HARVEST_NODE_LABEL.text = "Required "..toolNeeded
             HARVEST_NODE_HOTKEY.text = "[  ]"
+            isHarvestingAvailable = false
         elseif currentNodeOwner == "" then
             HARVEST_NODE_LABEL.text = HARVESTING_NODES[originRow].FriendlyName
             local label = Input.GetActionInputLabel("Interact")
             HARVEST_NODE_HOTKEY.text = "["..label.."]"
+            isHarvestingAvailable = true
         elseif currentNodeOwner ~= LOCAL_PLAYER.id then
             HARVEST_NODE_LABEL.text = "OCCUPIED"
             HARVEST_NODE_HOTKEY.text = "[  ]"
+            isHarvestingAvailable = false
         end
         local sizeApprox = HARVEST_NODE_LABEL:ComputeApproximateSize()
         if sizeApprox then
@@ -133,15 +207,20 @@ function RemoveNodeFromInteractionStack(node)
 end
 
 function OnActionPressed(player,action,values)
-    if (NodeHarvest_CancelActions[action] == true) and (LocalUserData.isHarvesting == true) then
+    if ((PreventNodeHarvestingAction[action] == true) or LOCAL_PLAYER.isGrounded ~= true)
+                and (LocalUserData.isHarvesting == true)
+                    then
         Events.BroadcastToServer("Harvest.Cancel")
         if HarvestingProgressBarTask then HarvestingProgressBarTask:Cancel() end
         CleanupHarvestingProgress()
         return end
     if action ~= "Interact" then return end
+    if isHarvestingAvailable ~= true then return end
     if LocalUserData.isHarvesting == true then return end
     if harvestRequestSent == true then return end
-    if #nodeInteractionStack < 1 then warn("node interaction stack is empty") return end
+    if #nodeInteractionStack < 1 then --[[warn("node interaction stack is empty")]] return end
+    --do not allow harvest in wrong state
+    if IsPlayerAllowedToHarvest() == false then return end
     harvestRequestSent = true
     --send harvest request of the last node in stack
     local lastNode = nodeInteractionStack[#nodeInteractionStack]
@@ -267,18 +346,26 @@ for _,node in ipairs(NODES:GetChildren())do
     HookNode(node)
 end
 
-function OnPND_Changed(player,PNDname)
+--[[function OnPND_Changed(player,PNDname)
     if PNDname ~= "Tools" then return end
     LocalUserData.Tools = LOCAL_PLAYER:GetPrivateNetworkedData(PNDname)
-end
+    --play or stop the node callouts
+    AHS.UpdateAllNodesCallouts()
+end]]
 
 --connect events
 NODES.childAddedEvent:Connect(OnNodeAdded)
 Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
-LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
+--LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
+
+--conect for local game state (to prevent harvesting on state change if needed)
+Events.Connect(_G.AppState.EnterKey,UpdateInteractionLabel)
+Events.Connect(_G.AppState.ExitKey,UpdateInteractionLabel)
+--no harvesting while jumping
+LOCAL_PLAYER.movementModeChangedEvent:Connect(UpdateInteractionLabel)
 
 --load PNDs
-OnPND_Changed(LOCAL_PLAYER,"Tools")
+--OnPND_Changed(LOCAL_PLAYER,"Tools")
 
 --wait a little for the initial nodes placeholder cleanup to finish
 Task.Wait(1)

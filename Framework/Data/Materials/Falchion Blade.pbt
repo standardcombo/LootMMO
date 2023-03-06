@@ -2,7 +2,7 @@ Assets {
   Id: 9735399745636622192
   Name: "Falchion Blade"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8485501855831318190
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 3540014510492823334
   Name: "Dragon\'s Crown"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

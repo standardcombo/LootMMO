@@ -44,7 +44,39 @@ local LockedNodeByPlayer = {}
 local CurrentlyMiningNodeForPlayer =  {}
 local NodeDespawnTask = {}
 
-local PLAYER_TOOLS = {}
+--local PLAYER_TOOLS = {}
+
+------------------------------------
+--LOOT MMO STUFF
+------------------------------------
+local EquipAPI = _G["Character.EquipAPI"]
+
+local function GetInventory(player)
+	local Character = EquipAPI.GetCurrentCharacter(player)
+	if not Character then return end
+	local inventory = Character:GetComponent("Inventory")
+	local CoreInv = inventory:GetInventory()
+	return CoreInv
+end
+
+--TODO_Harvesting tool upgrades:
+-- New Item ID (and new icon) or just upgrade greatness ?
+local function GetItemGreatness(item)
+	local greatness = item:GetCustomProperty("Greatness")
+	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
+	return greatness, playerOwnsBag
+end
+
+function HasRequredTool(player,toolName)
+    local inv = GetInventory(player)
+    local hasItem = false
+    if inv then
+        local reqToolTable = {}
+        reqToolTable[toolName] = 1
+        hasItem = inv:HasRequiredItems(reqToolTable)
+    end
+    return hasItem
+end
 
 ------------------------
 --Player Logic
@@ -60,9 +92,10 @@ end
 function EquipToolForPlayer(player,nodeToolType,toolLevel)
     local toolTemplate = AHS.GetProperToolTemplate(nodeToolType,toolLevel)
     if not toolTemplate then warn("unknown definition for tool level "..nodeToolType..", "..tostring(toolLevel)) return end
-    spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {networkContext = NetworkContextType.NETWORKED})
+    spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {name = "HarvestingTool", networkContext = NetworkContextType.NETWORKED})
     spawnedToolsOnPlayers[player]:Equip(player)
-    --TODO set invisible unless used
+    --set invisible unless used (HarvestAbility_Server controlled)
+    spawnedToolsOnPlayers[player].visibility = Visibility.FORCE_OFF
 end
 
 function HandlePlayerNodesStack(player)
@@ -71,12 +104,15 @@ function HandlePlayerNodesStack(player)
     UnequipToolForPlayer(player)
     if latestNode == nil then return end
     --check if the player owns the proper tool
-    local nodeToolType = latestNode:GetCustomProperty("ToolReq")
-    local toolLevel = PLAYER_TOOLS[player][nodeToolType]
+    local ToolReq = latestNode:GetCustomProperty("ToolReq")
+    --[[local toolLevel = PLAYER_TOOLS[player][nodeToolType]
     if toolLevel == nil then return end
-    if toolLevel < 1 then return end
+    if toolLevel < 1 then return end]]
+    --TODO tool levels and upgrades
+    local toolLevel = 1
+    if HasRequredTool(player,ToolReq) ~= true then return end
     --spawn appropriate tool
-    EquipToolForPlayer(player,nodeToolType,toolLevel)
+    EquipToolForPlayer(player,ToolReq,toolLevel)
 end
 
 function AddNodeToPlayersNodesStack(player,node)
@@ -149,7 +185,8 @@ function LockNode(node,player)
     if AHS.IsPlayerInPoximity(node,player) ~= true then warn("player is not in the requested node proximity") return end
     --check if the proper tool is owned
     local reqTool = node:GetCustomProperty("ToolReq")
-    if PLAYER_TOOLS[player][reqTool] == nil or PLAYER_TOOLS[player][reqTool] == 0 then
+    if HasRequredTool(player,reqTool) ~= true then
+    --if PLAYER_TOOLS[player][reqTool] == nil or PLAYER_TOOLS[player][reqTool] == 0 then
         warn("Player is requesting to mine a node without a proper tool?? "..player.name.." is trying to cheat?")
         return
     end
@@ -210,12 +247,13 @@ function OnNodeProximityEntered(node,other)
     local player = other
 
     --check if player has tools unlocked
-    if PLAYER_TOOLS[player] == nil then return end
+    --if PLAYER_TOOLS[player] == nil then return end
 
     --check if player does have a proper tool
-    local nodeToolType = node:GetCustomProperty("ToolReq")
-    local toolLevel = PLAYER_TOOLS[player][nodeToolType]
-    if toolLevel < 1 then return end
+    local reqTool = node:GetCustomProperty("ToolReq")
+    --local toolLevel = PLAYER_TOOLS[player][reqTool]
+    --if toolLevel < 1 then return end
+    if HasRequredTool(player,reqTool) ~= true then return end
 
     --add current node to stack
     AddNodeToPlayersNodesStack(player,node)
@@ -270,9 +308,8 @@ end
 function OnPlayerJoined(player)
     --prepare the node stack for player
     PlayerActiveNodesStack[player] = {}
-    --TODO proper tools save and load
-    PLAYER_TOOLS[player] = {axe = 1, pick = 1}
-    player:SetPrivateNetworkedData("Tools",PLAYER_TOOLS[player])
+    --PLAYER_TOOLS[player] = {axe = 1, pick = 1, shovel = 1}
+    --player:SetPrivateNetworkedData("Tools",PLAYER_TOOLS[player])
 end
 
 function OnPlayerLeft(player)
@@ -289,6 +326,7 @@ Events.Connect("Harvest.Complete",OnHarvestCompleted) --this connects from playe
 Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed)
 
 --init nodes for use during runtime
+--all nodes do follow the origin transform for variability
 AHS.InitNodesData()
 
 --get the count of free nodes

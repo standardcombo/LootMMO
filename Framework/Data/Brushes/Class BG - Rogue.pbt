@@ -2,7 +2,7 @@ Assets {
   Id: 6401870546365574877
   Name: "Class BG - Rogue"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "ac6449dc92b341a794cf3e1c4720b9de"

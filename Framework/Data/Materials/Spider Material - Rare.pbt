@@ -2,7 +2,7 @@ Assets {
   Id: 14353178309515317002
   Name: "Spider Material - Rare"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 10915030033855978113
     ParameterOverrides {

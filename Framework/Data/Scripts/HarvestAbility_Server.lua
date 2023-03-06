@@ -28,14 +28,38 @@ HARVEST_ABILITY.executePhaseSettings.duration +
 HARVEST_ABILITY.recoveryPhaseSettings.duration +
 HARVEST_ABILITY.cooldownPhaseSettings.duration
 
+local PlayerCurrentEquipment = {}
+
+function ShowItemsInHands(isVisible)
+    for _,e in ipairs(PlayerCurrentEquipment)do
+        if Object.IsValid(e) then
+            if e.name == "HarvestingTool" then
+                if isVisible == true then
+                    e.visibility = Visibility.FORCE_OFF
+                else
+                    e.visibility = Visibility.INHERIT
+                end
+            elseif e.socket == "left_prop" or e.socket == "right_prop" then
+                if isVisible == true then
+                    e.visibility = Visibility.INHERIT
+                else
+                    e.visibility = Visibility.FORCE_OFF
+                end
+            end
+        end
+    end
+end
+
 function OnHarvestInterrupted(ability)
     isInterrupted = true
+    ShowItemsInHands(true)
 end
 
 function OnHarvestReady(ability)
     currentCycles = currentCycles + 1
     if currentCycles >= RequiredCycles and not isInterrupted then
         Events.Broadcast("Harvest.Complete",ability.owner)
+        ShowItemsInHands(true)
     elseif not isInterrupted then
         HARVEST_ABILITY:Activate()
     end
@@ -50,6 +74,10 @@ function OnHarvestStartRequest(player,cycles)
     --send ability total duration for client progress bar
     local TTL = time() + FullDuration * RequiredCycles
     Events.BroadcastToPlayer(HARVEST_ABILITY.owner,"Harvest.FinTime",TTL)
+    --save equipped items for later
+    PlayerCurrentEquipment = HARVEST_ABILITY.owner:GetEquipment()
+    --hide weapons in hands
+    ShowItemsInHands(false)
 end
 
 function OnHarvestCancel(player)

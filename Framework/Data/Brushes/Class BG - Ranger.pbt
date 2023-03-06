@@ -2,7 +2,7 @@ Assets {
   Id: 9768695093315551306
   Name: "Class BG - Ranger"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "a937f9bf83f34755ab910576b2c91695"

@@ -2,7 +2,7 @@ Assets {
   Id: 6221849627312449092
   Name: "Class BG - Fighter"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "796e95f00d0e496da56eb31e9dc170ef"

@@ -2,7 +2,7 @@ Assets {
   Id: 12144540298556566583
   Name: "Grimoire"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

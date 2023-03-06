@@ -2,7 +2,7 @@ Assets {
   Id: 9523331630649202490
   Name: "Dragon Material (Epic)"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8082551051744776500
     ParameterOverrides {

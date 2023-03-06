@@ -2,7 +2,7 @@ Assets {
   Id: 7818188349712670985
   Name: "Ancient Helm"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

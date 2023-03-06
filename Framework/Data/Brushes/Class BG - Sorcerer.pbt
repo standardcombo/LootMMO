@@ -2,7 +2,7 @@ Assets {
   Id: 5415702157889423903
   Name: "Class BG - Sorcerer"
   PlatformAssetType: 34
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "ClassSelectionScreen"
   CustomBrushAsset {
     ImageId: "e43b351dcb45422dbe18c3151af6fccc"

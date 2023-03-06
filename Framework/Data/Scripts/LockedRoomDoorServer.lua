@@ -8,6 +8,10 @@
 ]]
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local NET_OBJECT = script:GetCustomProperty("NetObject"):WaitForObject()
+local QUEST_COMPLETED = script:GetCustomProperty("QuestCompletedId")
+local ON_ENTER_BROADCAST_EVENT = script:GetCustomProperty("OnEnterBroadcastId")
+local LOCKED_MESSAGE = script:GetCustomProperty("LockedMessage")
+local LOCKED_EVENT_ID = "LockedDoorMessage"
 
 local STATE_CLOSED = 0
 local STATE_OPEN_IN = 1
@@ -51,13 +55,15 @@ local function OnBeginOverlap(trigger, player)
 	
 	if isOutside then
 		-- Check if the player has access
-		local hasKey = _G.QuestController.HasCompleted(player, "Lv5")
+		local hasKey = _G.QuestController.HasCompleted(player, QUEST_COMPLETED)
 		if not hasKey and IsClosed() then
-			Events.BroadcastToPlayer(player, "CraftingRoom.LockedMessage")
+			if LOCKED_MESSAGE and LOCKED_MESSAGE ~= "" then
+				Events.BroadcastToPlayer(player, LOCKED_EVENT_ID, LOCKED_MESSAGE)
+			end
 			return
 		end
 		
-		Events.Broadcast("Quest.CraftingRoomEnter", player)
+		Events.Broadcast(ON_ENTER_BROADCAST_EVENT, player)
 	end
 	
 	playerCount = playerCount + 1
@@ -70,7 +76,6 @@ local function OnBeginOverlap(trigger, player)
 			SetState(STATE_OPEN_OUT)
 		end
 	end
-	
 end
 
 function ShouldDoorClose(player)

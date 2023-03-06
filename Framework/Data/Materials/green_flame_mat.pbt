@@ -2,7 +2,7 @@ Assets {
   Id: 236958399827788885
   Name: "green_flame_mat"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 10222881209627051538
     ParameterOverrides {

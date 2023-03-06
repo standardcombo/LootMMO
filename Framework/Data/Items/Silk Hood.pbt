@@ -2,7 +2,7 @@ Assets {
   Id: 1063442407796119606
   Name: "Silk Hood"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

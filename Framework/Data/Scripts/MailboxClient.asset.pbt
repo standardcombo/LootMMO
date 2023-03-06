@@ -22,24 +22,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:Page1"
-        ObjectReference {
-          SelfId: 18054123561940012171
-        }
-      }
-      Overrides {
-        Name: "cs:Page2"
-        ObjectReference {
-          SelfId: 1447721764287689417
-        }
-      }
-      Overrides {
-        Name: "cs:BodyPage1"
-        ObjectReference {
-          SelfId: 18078746899537401478
-        }
-      }
-      Overrides {
         Name: "cs:NextButton"
         ObjectReference {
           SelfId: 621503826652085193
@@ -82,30 +64,6 @@ Assets {
         Bool: false
       }
       Overrides {
-        Name: "cs:Page1:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Page1:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Page2:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:Page2:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:BodyPage1:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:BodyPage1:ml"
-        Bool: false
-      }
-      Overrides {
         Name: "cs:NextButton:isrep"
         Bool: false
       }
@@ -131,5 +89,5 @@ Assets {
       }
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

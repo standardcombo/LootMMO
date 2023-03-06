@@ -2,7 +2,7 @@ Assets {
   Id: 14799954515826771887
   Name: "Leather Boots"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

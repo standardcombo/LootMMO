@@ -598,7 +598,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14002452738625205946
+              Id: 9650217245010659427
             }
           }
           Overrides {
@@ -611,7 +611,7 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 2
+            Float: 4
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -690,7 +690,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14002452738625205946
+              Id: 9650217245010659427
             }
           }
           Overrides {
@@ -703,7 +703,7 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 2
+            Float: 4
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -782,7 +782,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14002452738625205946
+              Id: 9650217245010659427
             }
           }
           Overrides {
@@ -795,7 +795,7 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 2
+            Float: 4
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -874,7 +874,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 14002452738625205946
+              Id: 9650217245010659427
             }
           }
           Overrides {
@@ -887,7 +887,7 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 2
+            Float: 4
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -1006,15 +1006,6 @@ Assets {
       }
     }
     Assets {
-      Id: 14002452738625205946
-      Name: "Bark Birch Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_basic_bark_birch_001_uv_ref"
-      }
-    }
-    Assets {
       Id: 7754470856388882901
       Name: "Wood Raw"
       PlatformAssetType: 2
@@ -1028,5 +1019,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 557269768355917371
   Name: "Great Helm"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

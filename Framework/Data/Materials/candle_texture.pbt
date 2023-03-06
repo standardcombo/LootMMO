@@ -2,7 +2,7 @@ Assets {
   Id: 17918743059251077463
   Name: "candle_texture"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 1710131613286116827
     ParameterOverrides {

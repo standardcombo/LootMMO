@@ -2,7 +2,7 @@ Assets {
   Id: 15555827561540487518
   Name: "Custom Energy Distortion Line"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8985351201335818797
     ParameterOverrides {

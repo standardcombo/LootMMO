@@ -20,6 +20,7 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 6687243479689433930
   ChildIds: 11717113739800138726
+  ChildIds: 1882642578214012306
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -39,13 +40,44 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 11717113739800138726
-  Name: "HarvestingSystem"
+  Id: 1882642578214012306
+  Name: "testnodes"
   Transform {
     Location {
     }
     Rotation {
     }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11717113739800138726
+  Name: "HarvestingSystem"
+  Transform {
     Scale {
       X: 1
       Y: 1
@@ -164,6 +196,13 @@ Objects {
   Folder {
     IsGroup: true
   }
+  InstanceHistory {
+    SelfId: 11717113739800138726
+    SubobjectId: 7850202630071972824
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+    WasRoot: true
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -214,6 +253,12 @@ Objects {
   Folder {
     IsGroup: true
   }
+  InstanceHistory {
+    SelfId: 16436247575342307599
+    SubobjectId: 3058860559211657521
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -250,7 +295,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -103.681183
+            Yaw: -103.681206
           }
         }
         Overrides {
@@ -299,7 +344,15 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 3.65856075
+            Yaw: 3.6585629
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
       }
@@ -340,7 +393,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 110.646675
+            Yaw: 110.646652
           }
         }
         Overrides {
@@ -389,7 +442,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 49.6817055
+            Yaw: 49.6817093
           }
         }
         Overrides {
@@ -438,7 +491,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -23.8739929
+            Yaw: -23.8739491
           }
         }
         Overrides {
@@ -487,7 +540,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -47.4733276
+            Yaw: -47.4732819
           }
         }
         Overrides {
@@ -536,7 +589,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 56.438446
+            Yaw: 56.4383965
           }
         }
         Overrides {
@@ -585,7 +638,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 147.649719
+            Yaw: 147.649673
           }
         }
         Overrides {
@@ -634,7 +687,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -64.8323288
+            Yaw: -64.8323669
           }
         }
         Overrides {
@@ -733,8 +786,8 @@ Objects {
           Name: "Rotation"
           Rotator {
             Pitch: -24.0664368
-            Yaw: 27.4059238
-            Roll: -3.32887673
+            Yaw: 27.4058952
+            Roll: -3.32887864
           }
         }
         Overrides {
@@ -783,9 +836,9 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Pitch: -34.2108536
-            Yaw: 91.2772141
-            Roll: -17.4117699
+            Pitch: -34.2108498
+            Yaw: 91.2772217
+            Roll: -17.4117966
           }
         }
         Overrides {
@@ -835,8 +888,8 @@ Objects {
           Name: "Rotation"
           Rotator {
             Pitch: 7.15815401
-            Yaw: -32.1705055
-            Roll: 3.19095254
+            Yaw: -32.1705551
+            Roll: 3.19095397
           }
         }
         Overrides {
@@ -886,8 +939,8 @@ Objects {
           Name: "Rotation"
           Rotator {
             Pitch: 1.38151503
-            Yaw: 68.5711594
-            Roll: 23.6615677
+            Yaw: 68.5711823
+            Roll: 23.6615334
           }
         }
         Overrides {
@@ -942,9 +995,17 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Pitch: -10.0689821
-            Yaw: 129.883057
+            Pitch: -10.0689888
+            Yaw: 129.883041
             Roll: 29.3229504
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
       }
@@ -985,6 +1046,12 @@ Objects {
   NetworkContext {
     Type: Server
   }
+  InstanceHistory {
+    SelfId: 11031086880332864695
+    SubobjectId: 6303986680589352073
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -1021,6 +1088,12 @@ Objects {
     ScriptAsset {
       Id: 10506754159465741130
     }
+  }
+  InstanceHistory {
+    SelfId: 3951470009787439323
+    SubobjectId: 17923333001343236325
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1080,6 +1153,12 @@ Objects {
       Value: "mc:edetaillevel:ultra"
     }
   }
+  InstanceHistory {
+    SelfId: 16824571392837779174
+    SubobjectId: 2816697983493431000
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -1116,6 +1195,12 @@ Objects {
     ScriptAsset {
       Id: 2827277044402293060
     }
+  }
+  InstanceHistory {
+    SelfId: 11280111225869099925
+    SubobjectId: 5972063427784786859
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1182,6 +1267,12 @@ Objects {
         }
       }
     }
+  }
+  InstanceHistory {
+    SelfId: 7068714377157401072
+    SubobjectId: 12426301261115947470
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1257,6 +1348,12 @@ Objects {
         }
       }
     }
+  }
+  InstanceHistory {
+    SelfId: 17462997620930657643
+    SubobjectId: 4337827078867262805
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1341,6 +1438,12 @@ Objects {
       }
     }
   }
+  InstanceHistory {
+    SelfId: 16951164758522023438
+    SubobjectId: 2689963888374935088
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1424,6 +1527,12 @@ Objects {
       }
     }
   }
+  InstanceHistory {
+    SelfId: 3545294881414372721
+    SubobjectId: 18399847187548929359
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1491,6 +1600,12 @@ Objects {
         }
       }
     }
+  }
+  InstanceHistory {
+    SelfId: 3993031295049783395
+    SubobjectId: 17942360296208332893
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1566,6 +1681,12 @@ Objects {
         }
       }
     }
+  }
+  InstanceHistory {
+    SelfId: 15640135615803179142
+    SubobjectId: 1686286987294040248
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   IsReplicationEnabledByDefault: true
 }
@@ -1651,6 +1772,12 @@ Objects {
       }
     }
   }
+  InstanceHistory {
+    SelfId: 14468028034368088323
+    SubobjectId: 478168507041909053
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1733,6 +1860,12 @@ Objects {
       }
     }
   }
+  InstanceHistory {
+    SelfId: 9521731039009986691
+    SubobjectId: 5353076265335421117
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1801,6 +1934,12 @@ Objects {
       }
     }
   }
+  InstanceHistory {
+    SelfId: 5086281564162747235
+    SubobjectId: 9870785702615960413
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
+  }
   IsReplicationEnabledByDefault: true
 }
 Objects {
@@ -1836,6 +1975,12 @@ Objects {
     ScriptAsset {
       Id: 11638447669813120456
     }
+  }
+  InstanceHistory {
+    SelfId: 9534852705399491510
+    SubobjectId: 5348186642771766152
+    InstanceId: 16277170407346932078
+    TemplateId: 10601222624369640402
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

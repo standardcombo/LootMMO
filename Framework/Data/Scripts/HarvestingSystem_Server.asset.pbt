@@ -7,10 +7,11 @@ Assets {
       Overrides {
         Name: "cs:ROOT"
         ObjectReference {
-          SelfId: 11717113739800138726
+          SelfId: 10373414106376324968
         }
       }
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
 }

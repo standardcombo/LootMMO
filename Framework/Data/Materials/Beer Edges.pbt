@@ -2,7 +2,7 @@ Assets {
   Id: 10774243534213072101
   Name: "Beer Edges"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 6414569565439168134
     ParameterOverrides {

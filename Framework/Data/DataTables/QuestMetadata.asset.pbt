@@ -2,7 +2,7 @@ Assets {
   Id: 13135584035263187830
   Name: "QuestMetadata"
   PlatformAssetType: 31
-  SerializationVersion: 124
+  SerializationVersion: 125
   DataTableAsset {
     HasKeyColumn: true
     Assets {

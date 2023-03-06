@@ -1333,5 +1333,5 @@ Assets {
       AssetId: "Magic_Circle_Shielding"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

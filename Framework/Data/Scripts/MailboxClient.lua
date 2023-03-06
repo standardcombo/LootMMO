@@ -5,9 +5,6 @@ local MODAL = script:GetCustomProperty("ModalPopup"):WaitForObject()
 MODAL = MODAL.context
 
 local MAIN_PANEL = script:GetCustomProperty("MainPanel"):WaitForObject()
-local PAGE_1 = script:GetCustomProperty("Page1"):WaitForObject()
-local PAGE_2 = script:GetCustomProperty("Page2"):WaitForObject()
-local BODY_PAGE_1 = script:GetCustomProperty("BodyPage1"):WaitForObject()
 local NEXT_BUTTON = script:GetCustomProperty("NextButton"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 local OPEN_CLOSE_SFX = script:GetCustomProperty("OpenCloseSfx"):WaitForObject()
@@ -29,9 +26,16 @@ local stateElapsedTime = 0
 local pageIndex = 1
 local nextPageIndex = 1
 
--- Replace the player's name in the text body
-local playerName = Game.GetLocalPlayer().name
-BODY_PAGE_1.text = string.gsub(BODY_PAGE_1.text, "%<player name>", playerName)
+-- Find child letter groups
+local PAGE_1
+local PAGE_2
+local letters = {}
+for _,child in ipairs(MAIN_PANEL:GetChildren()) do
+	local prefix = CoreString.Split(child.name, ":")
+	if prefix == "Letter" then
+		table.insert(letters, child)
+	end
+end
 
 
 function SetState(newState)
@@ -51,11 +55,13 @@ function SetState(newState)
 	end
 	
 	if pageIndex == 1 then
-		PAGE_1.visibility = Visibility.INHERIT
-		PAGE_2.visibility = Visibility.FORCE_OFF
+		if PAGE_1 then PAGE_1.visibility = Visibility.INHERIT end
+		if PAGE_2 then PAGE_2.visibility = Visibility.FORCE_OFF end
+		NEXT_BUTTON.visibility = Visibility.INHERIT
 	else
-		PAGE_1.visibility = Visibility.FORCE_OFF
-		PAGE_2.visibility = Visibility.INHERIT
+		if PAGE_1 then PAGE_1.visibility = Visibility.FORCE_OFF end
+		if PAGE_2 then PAGE_2.visibility = Visibility.INHERIT end
+		NEXT_BUTTON.visibility = Visibility.FORCE_OFF
 	end
 	
 	currentState = newState
@@ -97,8 +103,36 @@ function Tick(deltaTime)
 end
 
 
+function PrepareActiveLetter()
+	-- Find the active letter
+	local letter
+	for _,l in ipairs(letters) do
+		if l.visibility == Visibility.INHERIT then
+			letter = l
+			break
+		end
+	end
+	if not letter then return end
+	
+	-- Find pages
+	PAGE_1 = letter:FindChildByName("Page 1")
+	PAGE_2 = letter:FindChildByName("Page 2")
+	bodyPage1 = PAGE_1:FindChildByName("Body")
+	
+	-- Replace player name in body
+	local playerName = Game.GetLocalPlayer().name
+	bodyPage1.text = string.gsub(bodyPage1.text, "%<player name>", playerName)
+	
+	-- Change hierarchy position of [Next] button so it clips with the page
+	NEXT_BUTTON.parent = PAGE_1
+end
+
+
 function OnInteracted(trigger, player)
 	TRIGGER.isInteractable = false
+	
+	PrepareActiveLetter()
+	Task.Wait(0.1)
 	
 	MODAL.Show()
 	SetState(STATE_ENTERING)

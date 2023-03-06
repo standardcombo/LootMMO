@@ -1,10 +1,10 @@
 Assets {
   Id: 18283052041203097921
-  Name: "CraftingRoomDoorClient"
+  Name: "LockedRoomDoorClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

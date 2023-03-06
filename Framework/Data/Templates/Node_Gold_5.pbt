@@ -1,13 +1,13 @@
 Assets {
   Id: 4930395236898864556
-  Name: "Node_Coal_5"
+  Name: "Node_Gold_5"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 17038068481750455569
       Objects {
         Id: 17038068481750455569
-        Name: "Node_IronVein_5"
+        Name: "Node_Gold_5"
         Transform {
           Scale {
             X: 1
@@ -408,18 +408,12 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -483,18 +477,12 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -558,18 +546,12 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -631,18 +613,12 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -704,18 +680,12 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 17118136979191323600
+              Id: 11337413471323694429
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:smart"
             Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
           }
         }
         Collidable_v2 {
@@ -783,12 +753,12 @@ Assets {
       }
     }
     Assets {
-      Id: 17118136979191323600
-      Name: "Metal Iron 01"
+      Id: 11337413471323694429
+      Name: "Metal Gold 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_metal_iron_001"
+        AssetId: "mi_metal_gold_001"
       }
     }
     PrimaryAssetId {
@@ -796,5 +766,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

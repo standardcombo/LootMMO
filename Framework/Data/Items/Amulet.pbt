@@ -2,7 +2,7 @@ Assets {
   Id: 10980822650648021893
   Name: "Amulet"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

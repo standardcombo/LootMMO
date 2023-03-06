@@ -55,6 +55,22 @@ Assets {
           }
         }
         ParentId: 580886008929811058
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Nature_Trunk:id"
+            AssetReference {
+              Id: 9650217245010659427
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:vtile"
+            Float: 4
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:utile"
+            Float: 2
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -229,6 +245,22 @@ Assets {
           }
         }
         ParentId: 3836542137723768864
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Nature_Trunk:id"
+            AssetReference {
+              Id: 9650217245010659427
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:vtile"
+            Float: 4
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:utile"
+            Float: 2
+          }
+        }
         Lifespan: 8
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -581,5 +613,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
+  VirtualFolderPath: "Harvesting"
+  VirtualFolderPath: "NodeGeo"
 }

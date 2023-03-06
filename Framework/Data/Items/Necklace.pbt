@@ -2,7 +2,7 @@ Assets {
   Id: 7148622887563942230
   Name: "Necklace"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Equipment"

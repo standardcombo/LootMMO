@@ -19,8 +19,17 @@ Scripts used:
 Tables:
     - HarvestingTools
     - HarvestingNodes
-        - Each node needs a table with geometry for each richness value
+    - Each node needs a table with geometry for each richness value
 
+
+-----------------------------------------
+MAKE SURE
+-----------------------------------------
+
+Navigate to MyScripts -> Harvesting
+    and make sure all the scripts do have the custom properties connected and none is missing
+        (Root == HarvestingSystem)
+        (Panels == Adequate panel name in harvesting system client context)
 -----------------------------------------
 DEFINITIONS
 -----------------------------------------

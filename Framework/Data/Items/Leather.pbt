@@ -2,7 +2,7 @@ Assets {
   Id: 17758788345919880665
   Name: "Leather"
   PlatformAssetType: 33
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderPath: "Loot"
   VirtualFolderPath: "Items"
   VirtualFolderPath: "Materials"
