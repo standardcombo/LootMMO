@@ -8,9 +8,10 @@ local local_player = Game.GetLocalPlayer()
 local currentTool = nil
 local ToolIcons = {WEAPON, AXE, PICKAXE, SHOVEL}
 
+--[[ DISABLED PRIOR REMOVAL
 function Tick(deltaTime)
     UpdateUI()
-end
+end]]
 
 function UpdateUI()
     local usingTool = false

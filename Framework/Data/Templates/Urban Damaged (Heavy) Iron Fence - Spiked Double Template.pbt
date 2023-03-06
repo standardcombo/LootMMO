@@ -3099,5 +3099,5 @@ Assets {
       AssetId: "Urban_Damaged_H_Iron_Fence_Gate_-_Spiked_Double_Template_"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

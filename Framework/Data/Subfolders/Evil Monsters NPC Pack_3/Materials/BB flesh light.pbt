@@ -2,7 +2,7 @@ Assets {
   Id: 10085492789626752059
   Name: "BB flesh light"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 532575097750415901
     ParameterOverrides {

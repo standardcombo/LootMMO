@@ -481,5 +481,5 @@ Assets {
       AssetId: "Antenna__Prop_"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

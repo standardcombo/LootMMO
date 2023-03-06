@@ -2,7 +2,7 @@ Assets {
   Id: 17898623396791696451
   Name: "BS glow green"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 13835931345456269078
     ParameterOverrides {

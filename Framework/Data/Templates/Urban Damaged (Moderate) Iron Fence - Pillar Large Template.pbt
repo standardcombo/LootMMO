@@ -349,5 +349,5 @@ Assets {
       AssetId: "Urban_Damaged_M_Iron_Fence_-_Pillar_Large_Template"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

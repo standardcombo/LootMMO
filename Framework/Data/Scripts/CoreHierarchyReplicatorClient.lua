@@ -623,7 +623,7 @@ function Tick()
         end
     end
 end
-
+--[[ DISABLED PRIOR REMOVAL
 -- Initialize
 Events.Connect(API.Events.AddInstance, AddInstance)
 Events.Connect(API.Events.DestroyInstance, DestroyInstance)
@@ -681,3 +681,4 @@ end
 
 OnActivationChanged(COMPONENT_ROOT, API_ACTIVE.IsActive(COMPONENT_ROOT))
 API_ACTIVE.ConnectToActivationChange(COMPONENT_ROOT, OnActivationChanged)
+]]

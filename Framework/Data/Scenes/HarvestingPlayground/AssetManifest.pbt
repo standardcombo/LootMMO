@@ -182,6 +182,19 @@ Assets {
   }
 }
 Assets {
+  Id: 12733211509946742997
+  Name: "Character2"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "8282c9acb7614527bbc58af24b84cf44"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 12588189623480869990
   Name: "Gem Pack 2"
   PlatformAssetType: 24
@@ -203,6 +216,32 @@ Assets {
       Key: "c81a7c40c1ba46dbb33f665f92aa360c"
       Type {
         Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 12480589730519194533
+  Name: "Character Additional"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "182c80e9807f4845bac72f741c7c7243"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
+  Id: 12345297212032241821
+  Name: "Character1"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "0322521dcf6a4ce1aed7f85e864ac60b"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
   }
@@ -633,6 +672,19 @@ Assets {
       Key: "e64a8cb38d594df39dad4dc9c79f53bd"
       Type {
         Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 516107605695811306
+  Name: "NFTUpgraded"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "945e15310bc146eab20b8f59cfe2fba4"
+      Type {
+        Value: "mc:enetreferencetype:concurrentplayerpersistence"
       }
     }
   }

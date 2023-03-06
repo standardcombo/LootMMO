@@ -683,5 +683,5 @@ Assets {
       AssetId: "Urban_Outdoor_Stove_01_Template"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

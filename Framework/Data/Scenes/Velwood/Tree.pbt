@@ -20,7 +20,7 @@ Objects {
   ChildIds: 9970684983361868256
   ChildIds: 5984199028671989143
   ChildIds: 8772647101561410579
-  ChildIds: 7752804201856156501
+  ChildIds: 5695316879803964261
   ChildIds: 16194698060440896494
   ChildIds: 4246661819917374883
   ChildIds: 4244745184024888751
@@ -467,7 +467,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 7752804201856156501
+  Id: 5695316879803964261
   Name: "Other Components"
   Transform {
     Location {
@@ -487,64 +487,27 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 538778299556888211
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 25.1848145
-            Y: -4396.70898
-            Z: 30
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4594542242463950141
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Other Components"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 14106919093906510816
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 25.1848145
-            Y: -4396.70898
-            Z: 30
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 5338087018861399484
-    }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Other Components"
+  }
+  InstanceHistory {
+    SelfId: 5695316879803964261
+    SubobjectId: 4594542242463950141
+    InstanceId: 7752804201856156501
+    TemplateId: 5338087018861399484
+    WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 8772647101561410579

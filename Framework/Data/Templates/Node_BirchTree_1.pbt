@@ -59,16 +59,16 @@ Assets {
           Overrides {
             Name: "ma:Nature_Trunk:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
             Name: "ma:Nature_Trunk:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Nature_Trunk:utile"
-            Float: 2
+            Float: 1
           }
         }
         Collidable_v2 {
@@ -249,16 +249,16 @@ Assets {
           Overrides {
             Name: "ma:Nature_Trunk:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
             Name: "ma:Nature_Trunk:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Nature_Trunk:utile"
-            Float: 2
+            Float: 1
           }
         }
         Lifespan: 8

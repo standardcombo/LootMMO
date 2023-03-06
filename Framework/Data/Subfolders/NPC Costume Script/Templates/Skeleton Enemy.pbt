@@ -6951,6 +6951,6 @@ Assets {
   Marketplace {
     Description: "An example case with simple script that attaches gear to an animated mesh."
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
   DirectlyPublished: true
 }

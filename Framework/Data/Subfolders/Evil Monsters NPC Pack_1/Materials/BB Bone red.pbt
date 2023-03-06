@@ -2,7 +2,7 @@ Assets {
   Id: 10866148748928331576
   Name: "BB Bone red"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 786133954022034419
     ParameterOverrides {

@@ -2175,5 +2175,5 @@ Assets {
       AssetId: "Urban_Damaged_H_Iron_Fence_Gate_-_Single_Template"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

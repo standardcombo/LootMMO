@@ -598,7 +598,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
@@ -607,11 +607,11 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -690,7 +690,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
@@ -699,11 +699,11 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -782,7 +782,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
@@ -791,11 +791,11 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -874,7 +874,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
@@ -883,11 +883,11 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Shared_Detail1:id"

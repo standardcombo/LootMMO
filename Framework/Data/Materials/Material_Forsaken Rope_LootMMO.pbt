@@ -2,7 +2,7 @@ Assets {
   Id: 1956043747221747077
   Name: "Material_Forsaken Rope_LootMMO"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 6693051322045641436
     ParameterOverrides {

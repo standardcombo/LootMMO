@@ -773,7 +773,7 @@ function RespawnGatherable(entry)
     end
     return false
 end
-
+--[[ DISABLED PRIOR REMOVAL
 function Tick()
     if Environment.IsServer() and RESPAWN then
         RespawnGatherables()
@@ -783,7 +783,7 @@ function Tick()
         needsUpdating = false
         RefreshCoreObjects()
     end
-end
+end]]
 
 function HandleReset(gatherableGroupId)
     if gatherableGroupId == COMPONENT_ROOT.id or IsChildGroupOfParent(gatherableGroupId) then
@@ -813,7 +813,7 @@ local functionTable = {
     DestroyGatherableAtIndex = DestroyGatherableAtIndex,
     GetState = GetState
 }
-
+--[[ DISABLED PRIOR REMOVAL
 API.RegisterGatherableGroup(GROUP.id, functionTable)
 
 local modifiedListener = Events.Connect("GatherableModified", OnInstanceModified)
@@ -843,4 +843,4 @@ RefreshCoreObjects()
 
 if Environment.IsServer() and RANDOM_SPAWN then
     RandomSpawnObjects()
-end
+end]]

@@ -1,4 +1,17 @@
 Assets {
+  Id: 17157977466683768474
+  Name: "NFTUpgraded"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "5fa066f7d0324fd399216a37ae4a361c"
+      Type {
+        Value: "mc:enetreferencetype:concurrentplayerpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
@@ -286,6 +299,19 @@ Assets {
   }
 }
 Assets {
+  Id: 10441760965546680272
+  Name: "Character Additional"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "9990c175b82342c784bf5360e242fd67"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 10039668417810932723
   Name: "SELFGOLDBOOST"
   PlatformAssetType: 24
@@ -346,6 +372,19 @@ Assets {
       Key: "74e99b0b92e84e3a844820861e1c4f49"
       Type {
         Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 9003723600529713560
+  Name: "Character1"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "66225082990c4a5ca0d0d5323ea57a88"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
   }
@@ -550,6 +589,19 @@ Assets {
       Key: "7faf80a1c1fb4e3ea5ec9333a5128889"
       Type {
         Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 3295690706030492699
+  Name: "Character2"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "01c69676f0a843e09e8665b546791748"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
   }

@@ -3130,5 +3130,5 @@ Assets {
       AssetId: "Rubble_Pile_Concrete_-_Large_Template"
     }
   }
-  SerializationVersion: 124
+  SerializationVersion: 125
 }

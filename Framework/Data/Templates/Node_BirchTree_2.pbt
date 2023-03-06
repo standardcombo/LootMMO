@@ -58,23 +58,29 @@ Assets {
           Overrides {
             Name: "ma:Nature_Trunk:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
             Name: "ma:Nature_Trunk:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Nature_Trunk:vtile"
-            Float: 4
+            Float: 1
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 6788543086576276280
             }
           }
         }
@@ -778,7 +784,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
         }
@@ -851,14 +857,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -928,14 +934,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1126,7 +1132,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
         }
@@ -1199,14 +1205,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1274,14 +1280,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1354,14 +1360,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1429,14 +1435,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1628,7 +1634,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
         }
@@ -1701,14 +1707,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1778,14 +1784,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1860,14 +1866,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -1937,14 +1943,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -2019,14 +2025,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -2096,14 +2102,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -2349,7 +2355,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
         }
@@ -2422,14 +2428,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
@@ -2499,14 +2505,14 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:id"
             AssetReference {
-              Id: 8418025582587939029
+              Id: 6788543086576276280
             }
           }
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.354166657
-              G: 0.31875
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }

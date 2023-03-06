@@ -2,7 +2,7 @@ Assets {
   Id: 15053574073305526264
   Name: "Custom Base Material from Whelp Mob"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 8082551051744776500
     ParameterOverrides {

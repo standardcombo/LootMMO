@@ -56,25 +56,34 @@ Assets {
           Overrides {
             Name: "ma:Nature_Leaves:color"
             Color {
-              R: 0.182614028
-              G: 0.219000012
-              B: 0.0205311067
+              G: 0.121000007
+              B: 0.0705833584
               A: 1
             }
           }
           Overrides {
             Name: "ma:Nature_Trunk:id"
             AssetReference {
-              Id: 9650217245010659427
+              Id: 16312634948617448792
             }
           }
           Overrides {
             Name: "ma:Nature_Trunk:utile"
-            Float: 2
+            Float: 1
           }
           Overrides {
             Name: "ma:Nature_Trunk:vtile"
-            Float: 4
+            Float: 1
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 6788543086576276280
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Trunk:smart"
+            Bool: false
           }
         }
         Collidable_v2 {

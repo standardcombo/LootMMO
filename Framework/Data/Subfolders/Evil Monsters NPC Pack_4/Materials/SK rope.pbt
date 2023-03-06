@@ -2,7 +2,7 @@ Assets {
   Id: 5034610318360332017
   Name: "SK rope"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 9376620373317289136
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 12490803274073903427
   Name: "Stone Floor_sand"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 14496936826203266768
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 4298367287035211518
   Name: "Material_Forsaken Stone_LootMMO"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 7307669298863394
     ParameterOverrides {

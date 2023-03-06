@@ -123,5 +123,7 @@ function Swap(player, oldId, newId)
     end
 end
 
+--[[ DISABLED PRIOR REMOVAL
 Input.actionPressedEvent:Connect(OnActionPressed)
 Events.Connect("WeaponChanged", OnWeaponChange)
+]]

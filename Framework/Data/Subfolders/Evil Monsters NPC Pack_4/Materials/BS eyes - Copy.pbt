@@ -2,7 +2,7 @@ Assets {
   Id: 6599666109801318189
   Name: "BS eyes - Copy"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 6640175192592813417
     ParameterOverrides {

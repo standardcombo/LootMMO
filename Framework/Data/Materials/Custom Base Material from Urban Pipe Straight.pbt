@@ -2,7 +2,7 @@ Assets {
   Id: 11686927537125636225
   Name: "Custom Base Material from Urban Pipe Straight"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 16539342875857949281
     ParameterOverrides {

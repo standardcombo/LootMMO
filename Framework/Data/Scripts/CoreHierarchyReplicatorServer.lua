@@ -793,7 +793,7 @@ function Tick()
     end
     Task.Wait(0.2)
 end
-
+--[[ DISABLED PRIOR REMOVAL
 -- Initialize
 Events.ConnectForPlayer(API.Events.UserAdd, OnPlayerAddInstance)
 Events.ConnectForPlayer(API.Events.UserDestroy, OnPlayerDestroyInstance)
@@ -852,3 +852,4 @@ end
 
 OnActivationChanged(COMPONENT_ROOT, API_ACTIVE.IsActive(COMPONENT_ROOT))
 API_ACTIVE.ConnectToActivationChange(COMPONENT_ROOT, OnActivationChanged)
+]]

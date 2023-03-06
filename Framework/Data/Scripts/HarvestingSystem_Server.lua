@@ -9,7 +9,6 @@
 
 ---@type Folder
 local ROOT = script:GetCustomProperty("ROOT"):WaitForObject()
-
 ---@type string
 local AHS = require(ROOT:GetCustomProperty("API_HarvestingSystem"))
 ---@type Folder
@@ -50,6 +49,11 @@ local NodeDespawnTask = {}
 --LOOT MMO STUFF
 ------------------------------------
 local EquipAPI = _G["Character.EquipAPI"]
+for i=1,20 do
+    if EquipAPI ~= nil then break end
+    EquipAPI = _G["Character.EquipAPI"]
+    Task.Wait(.1)
+end
 
 local function GetInventory(player)
 	local Character = EquipAPI.GetCurrentCharacter(player)

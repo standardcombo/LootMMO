@@ -2,7 +2,7 @@ Assets {
   Id: 6183277435701087268
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "totems"

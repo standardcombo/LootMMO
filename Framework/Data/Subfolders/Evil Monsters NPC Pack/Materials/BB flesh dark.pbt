@@ -2,7 +2,7 @@ Assets {
   Id: 8181295577166702084
   Name: "BB flesh dark"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 532575097750415901
     ParameterOverrides {

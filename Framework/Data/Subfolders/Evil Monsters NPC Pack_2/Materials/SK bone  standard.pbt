@@ -2,7 +2,7 @@ Assets {
   Id: 15870500759731022668
   Name: "SK bone  standard"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 786133954022034419
     ParameterOverrides {

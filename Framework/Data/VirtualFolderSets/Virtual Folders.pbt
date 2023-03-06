@@ -2,7 +2,7 @@ Assets {
   Id: 11237267171393895703
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 124
+  SerializationVersion: 125
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "Utilities"
@@ -546,6 +546,29 @@ Assets {
       VirtualFolderPath: "Talking Heads"
       VirtualFolderPath: "Example"
       VirtualFolderPath: "Audio"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "Tools"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "Nodes"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Harvesting"
+      VirtualFolderPath: "NodeGeo"
       PlatformAssetType: 5
     }
   }

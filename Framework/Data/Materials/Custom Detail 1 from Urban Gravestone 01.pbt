@@ -2,7 +2,7 @@ Assets {
   Id: 14720568933236397359
   Name: "Custom Detail 1 from Urban Gravestone 01"
   PlatformAssetType: 13
-  SerializationVersion: 124
+  SerializationVersion: 125
   CustomMaterialAsset {
     BaseMaterialId: 4212465058647618677
     ParameterOverrides {

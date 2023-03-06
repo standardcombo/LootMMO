@@ -8,6 +8,9 @@
 -----------------------------------------
 
 local API = {}
+--this is the most common error when importing the harvesting system
+local refNODES = script:GetCustomProperty("NODES")
+if refNODES:GetObject() == nil then warn("**** API_HarvestingSystem.lua is missing a reference to the NODES group ****") return end
 
 ---@type string
 local HARVESTING_NODES = require(script:GetCustomProperty("HarvestingNodes"))
