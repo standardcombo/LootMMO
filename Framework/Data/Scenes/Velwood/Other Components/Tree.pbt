@@ -2250,7 +2250,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RespawnByTypeOnly:tooltip"
-      String: "If true, the mined node will be replaced by the same type. This has precedense prior the RespawnNodes"
+      String: "If true, the mined node will be replaced by the same type. This has precedence to RespawnNodes value"
     }
     Overrides {
       Name: "cs:InitNodesSpawnedPerCent:tooltip"
@@ -2379,17 +2379,17 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 4893.16504
-            Y: -21939.5957
-            Z: 926.463501
+            X: 4893.59766
+            Y: -21940.918
+            Z: 910.203186
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Pitch: -0.359619141
-            Yaw: -166.101578
-            Roll: -4.88296509
+            Pitch: 2.74841332
+            Yaw: -166.367111
+            Roll: -4.88851929
           }
         }
       }
