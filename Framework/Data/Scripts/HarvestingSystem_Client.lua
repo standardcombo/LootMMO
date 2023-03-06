@@ -85,6 +85,12 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 --LOOT MMO STUFF
 ------------------------------------
 local EquipAPI = _G["Character.EquipAPI"]
+for i=1,20 do
+    if EquipAPI ~= nil and _G.AppState ~= nil then break end
+    EquipAPI = _G["Character.EquipAPI"]
+    Task.Wait(.1)
+    if i == 20 then error("unable to locate the Character.EquipAPI global or _G.AppState") end
+end
 
 local function GetInventory(player)
 	local Character = EquipAPI.GetCurrentCharacter(player)

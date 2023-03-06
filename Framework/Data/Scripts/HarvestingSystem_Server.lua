@@ -50,6 +50,12 @@ local NodeDespawnTask = {}
 --LOOT MMO STUFF
 ------------------------------------
 local EquipAPI = _G["Character.EquipAPI"]
+for i=1,20 do
+    if EquipAPI ~= nil then break end
+    EquipAPI = _G["Character.EquipAPI"]
+    Task.Wait(.1)
+    if i == 20 then error("unable to locate the Character.EquipAPI global") end
+end
 
 local function GetInventory(player)
 	local Character = EquipAPI.GetCurrentCharacter(player)

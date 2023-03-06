@@ -9,6 +9,10 @@
 
 local API = {}
 
+--this is the most common error, when importing the system, lets warn the creator
+local refNodes = script:GetCustomProperty("NODES")
+if refNodes:GetObject() == nil then error("******* API_HarvestingSystem is missing the reference to NODES folder") return end
+
 ---@type string
 local HARVESTING_NODES = require(script:GetCustomProperty("HarvestingNodes"))
 ---@type string
