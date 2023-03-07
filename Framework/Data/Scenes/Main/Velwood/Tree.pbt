@@ -1,585 +1,6 @@
 Name: "Velwood"
 RootId: 10681643481591542134
 Objects {
-  Id: 18332058501811917834
-  Name: "Logo"
-  Transform {
-    Location {
-      X: -6154.74707
-      Y: -5479.14941
-      Z: -10094.832
-    }
-    Rotation {
-      Pitch: -90
-      Yaw: 90
-      Roll: -40.0006714
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10681643481591542134
-  ChildIds: 1814341030699701172
-  ChildIds: 13208837478439411525
-  ChildIds: 16638135334838373857
-  ChildIds: 11599093350957467092
-  ChildIds: 3032506704756309630
-  ChildIds: 16021451153241126271
-  ChildIds: 13432912958276172760
-  ChildIds: 9858512321518799231
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 9858512321518799231
-  Name: "Decal Fantasy Carved 01"
-  Transform {
-    Location {
-      X: -3.171875
-      Y: -109.849533
-      Z: 10.8869743
-    }
-    Rotation {
-      Pitch: 0.159573704
-      Yaw: -48.5029297
-      Roll: 2.63992548
-    }
-    Scale {
-      X: 0.295573
-      Y: 0.295572937
-      Z: 0.295573
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.17853022
-    }
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 1648351798271745680
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13432912958276172760
-  Name: "Decal Fantasy Carved 01"
-  Transform {
-    Location {
-      X: -3.375
-      Y: -54.1507721
-      Z: 9.07582474
-    }
-    Rotation {
-      Pitch: 0.159546375
-      Yaw: -48.5029297
-      Roll: 2.63990784
-    }
-    Scale {
-      X: 0.295573
-      Y: 0.295572937
-      Z: 0.295573
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.17853022
-    }
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 1648351798271745680
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16021451153241126271
-  Name: "Decal Elven Symbols"
-  Transform {
-    Location {
-      X: -2.23046827
-      Y: 7.28348255
-      Z: 9.28306484
-    }
-    Rotation {
-      Pitch: -0.388824463
-      Yaw: 177.005814
-      Roll: -179.116791
-    }
-    Scale {
-      X: 0.36918366
-      Y: 0.311504424
-      Z: 0.36918366
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.08615255
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 0
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 6289363088155023181
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3032506704756309630
-  Name: "Decal Elven Symbols"
-  Transform {
-    Location {
-      X: -5.02343559
-      Y: 57.7148972
-      Z: 4.20657349
-    }
-    Rotation {
-      Pitch: -3.62216187
-      Yaw: 85.01371
-      Roll: 0.310940862
-    }
-    Scale {
-      X: 0.36918366
-      Y: 0.311504424
-      Z: 0.36918366
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.08615255
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 5
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 6289363088155023181
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 11599093350957467092
-  Name: "Decal Elven Symbols"
-  Transform {
-    Location {
-      X: -8.85155869
-      Y: 93.5989838
-      Z: 8.66370201
-    }
-    Rotation {
-      Pitch: -1.55877686
-      Yaw: 88.391449
-      Roll: -1.04519653
-    }
-    Scale {
-      X: 0.36918366
-      Y: 0.311504424
-      Z: 0.36918366
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.08615255
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 10
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 6289363088155023181
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 16638135334838373857
-  Name: "Decal Elven Symbols"
-  Transform {
-    Location {
-      X: -6.33203125
-      Y: 148.107803
-      Z: 16.1329536
-    }
-    Rotation {
-      Pitch: 1.59507453
-      Yaw: 111.994179
-      Roll: 0.642888
-    }
-    Scale {
-      X: 0.36918366
-      Y: 0.311504424
-      Z: 0.36918366
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.08615255
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 7
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 6289363088155023181
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 13208837478439411525
-  Name: "Decal Fantasy Carved 01"
-  Transform {
-    Location {
-      X: 1.95703125
-      Y: -168.832336
-      Z: 12.6440887
-    }
-    Rotation {
-      Pitch: -2.10299683
-      Yaw: 7.59485483
-      Roll: 1.60376489
-    }
-    Scale {
-      X: 0.223322958
-      Y: 0.223322943
-      Z: 0.223322958
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Emissive Boost"
-      Float: 2.17853022
-    }
-    Overrides {
-      Name: "bp:Color Emissive"
-      Color {
-        R: 0.499735743
-        B: 0.98
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 0
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 1648351798271745680
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:medium"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 1814341030699701172
-  Name: "Cube"
-  Transform {
-    Location {
-      Y: -11.8126583
-      Z: -0.000174999237
-    }
-    Rotation {
-      Yaw: -1.70754709e-06
-      Roll: 4.26886763e-05
-    }
-    Scale {
-      X: 1.12289572
-      Y: 5.09087181
-      Z: 0.50000155
-    }
-  }
-  ParentId: 18332058501811917834
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 4096729604259603915
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:utile"
-      Float: 0.809273958
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:vtile"
-      Float: 0.191773802
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 13642204757580273705
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-  Relevance {
-    Value: "mc:edistancerelevance:high"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
   Id: 9268530066773003686
   Name: "Velwood Door"
   Transform {
@@ -601,6 +22,8 @@ Objects {
   ChildIds: 16546944413873057726
   ChildIds: 6847233342421385052
   ChildIds: 5356350509379687301
+  ChildIds: 8585823007336702067
+  ChildIds: 1814341030699701172
   ChildIds: 12301909330176211710
   UnregisteredParameters {
     Overrides {
@@ -857,6 +280,1301 @@ Objects {
   }
   Relevance {
     Value: "mc:edistancerelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 1814341030699701172
+  Name: "Cube"
+  Transform {
+    Location {
+      X: -84.9393845
+      Y: 18.595417
+      Z: 729.166626
+    }
+    Rotation {
+      Pitch: -90
+      Yaw: -14.0362635
+      Roll: -167.372421
+    }
+    Scale {
+      X: 1.39277577
+      Y: 6.3144269
+      Z: 0.620173395
+    }
+  }
+  ParentId: 9268530066773003686
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 4096729604259603915
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 0.809273958
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 0.191773802
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13642204757580273705
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:high"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8585823007336702067
+  Name: "Door Effects"
+  Transform {
+    Location {
+      X: 350.156311
+      Y: 32.0359612
+      Z: 60.2341576
+    }
+    Rotation {
+      Yaw: 178.585
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9268530066773003686
+  ChildIds: 13074869436922403792
+  ChildIds: 5609906897589465968
+  ChildIds: 3369701264130136332
+  ChildIds: 8683614900039134779
+  ChildIds: 5082768572118827203
+  ChildIds: 10389050137409379946
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IsEnabled"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DestinationName"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IsEnabled:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:DestinationName:isrep"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:high"
+  }
+}
+Objects {
+  Id: 10389050137409379946
+  Name: "Spotlight"
+  Transform {
+    Location {
+      X: 280.55069
+      Y: 43.021244
+      Z: 603.368713
+    }
+    Rotation {
+      Pitch: -51.2073097
+      Yaw: 2.42374587
+      Roll: 26.4281826
+    }
+    Scale {
+      X: 0.69781208
+      Y: 0.69781208
+      Z: 0.69781208
+    }
+  }
+  ParentId: 8585823007336702067
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Light {
+    Intensity: 40.7596245
+    Color {
+      R: 0.17092745
+      B: 0.89
+      A: 1
+    }
+    VolumetricIntensity: 10.8153248
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 1267.51917
+        SpotLight {
+          SourceRadius: 3.76553726
+          SoftSourceRadius: 20
+          FallOffExponent: 6.09396219
+          UseFallOffExponent: true
+          InnerConeAngle: 18.5209141
+          OuterConeAngle: 40
+          Profile {
+            Value: "mc:espotlightprofile:basicspotlight"
+          }
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+    ShadowBias: 0.4
+    ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5082768572118827203
+  Name: "Dust Motes Volume VFX"
+  Transform {
+    Location {
+      X: 516.456482
+      Y: 52.5188522
+      Z: 357.475555
+    }
+    Rotation {
+      Yaw: 10.2368584
+    }
+    Scale {
+      X: 3.27971649
+      Y: 3.27971649
+      Z: 3.27971649
+    }
+  }
+  ParentId: 8585823007336702067
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.240345091
+        G: 0.0970199928
+        B: 0.441
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 35
+    }
+    Overrides {
+      Name: "bp:Particle Scale Multiplier"
+      Float: 0.258567661
+    }
+    Overrides {
+      Name: "bp:Density"
+      Float: 2.76697874
+    }
+    Overrides {
+      Name: "bp:Life"
+      Float: 2.61726427
+    }
+    Overrides {
+      Name: "bp:Curl Variance"
+      Float: 0.534283698
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1565420669897413203
+    }
+    TeamSettings {
+    }
+    Vfx {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8683614900039134779
+  Name: "Flare Ray VFX"
+  Transform {
+    Location {
+      X: 287.124512
+      Y: 44.1488
+      Z: 464.765228
+    }
+    Rotation {
+      Pitch: -33.5536079
+      Yaw: 4.26418972
+      Roll: 30.8102226
+    }
+    Scale {
+      X: 45.0786591
+      Y: 46.753418
+      Z: 50.5913773
+    }
+  }
+  ParentId: 8585823007336702067
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Ray Height"
+      Float: 2.11766529
+    }
+    Overrides {
+      Name: "bp:Ray Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:Color Offset A"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.181921035
+        B: 0.669999957
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color B"
+      Color {
+        R: 0.773377478
+        G: 0.420000017
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color C"
+      Color {
+        R: 0.30463618
+        G: 0.160000026
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color Offset C"
+      Float: 0.234840676
+    }
+    Overrides {
+      Name: "bp:Color Offset B"
+      Float: 0.649454057
+    }
+    Overrides {
+      Name: "bp:Ray Appearance"
+      Enum {
+        Value: "mc:erayappearance:newenumerator0"
+      }
+    }
+    Overrides {
+      Name: "bp:Mote Brightness"
+      Float: 2
+    }
+    Overrides {
+      Name: "bp:Ray Color Method"
+      Enum {
+        Value: "mc:eraycoloringoptions:newenumerator0"
+      }
+    }
+    Overrides {
+      Name: "bp:Align with Sun"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Depth Fade"
+      Float: 8.68277836
+    }
+    Overrides {
+      Name: "bp:Camera Depth Fade Offset"
+      Float: 5
+    }
+    Overrides {
+      Name: "bp:Camera Depth Fade Distance"
+      Float: 3
+    }
+    Overrides {
+      Name: "bp:Emissive Brightness"
+      Float: 0.3
+    }
+    Overrides {
+      Name: "bp:Ray Width"
+      Float: 7.91184139
+    }
+    Overrides {
+      Name: "bp:Ray Speed"
+      Float: 2.2956388
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1548533371028107531
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3369701264130136332
+  Name: "Point Lights"
+  Transform {
+    Location {
+      X: 372.971588
+      Y: 42.2924957
+      Z: 273
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8585823007336702067
+  ChildIds: 4788060157356700205
+  ChildIds: 2619654577323395554
+  ChildIds: 9723701883711025231
+  ChildIds: 11206479000567117674
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11206479000567117674
+  Name: "Point Light"
+  Transform {
+    Location {
+      X: 4.73153295e-06
+      Y: -170
+      Z: -296.999146
+    }
+    Rotation {
+      Yaw: 3.4150944e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3369701264130136332
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 50
+    Color {
+      R: 0.174834609
+      G: 0.110000014
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 45
+        PointLight {
+          SourceRadius: 20
+          SoftSourceRadius: 20
+          FallOffExponent: 8
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+    ShadowBias: 0.4
+    ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9723701883711025231
+  Name: "Point Light"
+  Transform {
+    Location {
+      X: -0.000397448777
+      Y: 170
+      Z: -296.999146
+    }
+    Rotation {
+      Yaw: 1.7075472e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3369701264130136332
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 50
+    Color {
+      R: 0.174834609
+      G: 0.110000014
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 45
+        PointLight {
+          SourceRadius: 20
+          SoftSourceRadius: 20
+          FallOffExponent: 8
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+    ShadowBias: 0.4
+    ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2619654577323395554
+  Name: "Point Light"
+  Transform {
+    Location {
+      X: -0.000458958704
+      Y: -170
+      Z: 296.999146
+    }
+    Rotation {
+      Yaw: 2.04905664e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3369701264130136332
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 50
+    Color {
+      R: 0.174834609
+      G: 0.110000014
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 45
+        PointLight {
+          SourceRadius: 20
+          SoftSourceRadius: 20
+          FallOffExponent: 8
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+    ShadowBias: 0.4
+    ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4788060157356700205
+  Name: "Point Light"
+  Transform {
+    Location {
+      X: -0.000397448777
+      Y: 170
+      Z: 296.999146
+    }
+    Rotation {
+      Yaw: 1.02452832e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3369701264130136332
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 50
+    Color {
+      R: 0.174834609
+      G: 0.110000014
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 45
+        PointLight {
+          SourceRadius: 20
+          SoftSourceRadius: 20
+          FallOffExponent: 8
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+    ShadowBias: 0.4
+    ShadowSlopeBias: 0.6
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5609906897589465968
+  Name: "Logo"
+  Transform {
+    Location {
+      X: 462.429901
+      Y: 23.128376
+      Z: 668.932495
+    }
+    Rotation {
+      Pitch: -90
+      Yaw: 13.2657471
+      Roll: -13.2594604
+    }
+    Scale {
+      X: 1.39277577
+      Y: 6.3144269
+      Z: 0.620173395
+    }
+  }
+  ParentId: 8585823007336702067
+  ChildIds: 3032506704756309630
+  ChildIds: 11599093350957467092
+  ChildIds: 16638135334838373857
+  ChildIds: 16021451153241126271
+  ChildIds: 9858512321518799231
+  ChildIds: 13208837478439411525
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13208837478439411525
+  Name: "Decal Fantasy Carved 01"
+  Transform {
+    Location {
+      X: -3.96921635
+      Y: -30.4886475
+      Z: -0.000587461574
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.217673495
+      Y: 0.0480123647
+      Z: 0.48884806
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 3.00992846
+    }
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 0
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.737910688
+        G: 0.135633349
+        B: 0.135633349
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1648351798271745680
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 9858512321518799231
+  Name: "Decal Fantasy Carved 01"
+  Transform {
+    Location {
+      X: -4.18839
+      Y: -16.2132111
+      Z: 0.000778195856
+    }
+    Rotation {
+      Yaw: -48.5029
+    }
+    Scale {
+      X: 0.246216938
+      Y: 0.0543081947
+      Z: 0.552950561
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 3.00992846
+    }
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 1
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.737910688
+        G: 0.135633349
+        B: 0.135633349
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1648351798271745680
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16021451153241126271
+  Name: "Decal Elven Symbols"
+  Transform {
+    Location {
+      X: -5.73294544
+      Y: -4.41300392
+      Z: 0.000406264
+    }
+    Rotation {
+      Yaw: 147.402435
+    }
+    Scale {
+      X: 0.252239019
+      Y: 0.0469441637
+      Z: 0.566475153
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 3.00992846
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 0
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.737910688
+        G: 0.135633349
+        B: 0.135633349
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 6289363088155023181
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 16638135334838373857
+  Name: "Decal Elven Symbols"
+  Transform {
+    Location {
+      X: 4.19882441
+      Y: 8.49867249
+      Z: 0.000144958045
+    }
+    Rotation {
+      Yaw: -145.211472
+    }
+    Scale {
+      X: 0.274587303
+      Y: 0.0511033386
+      Z: 0.616663754
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 3.00992846
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 4
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.737910688
+        G: 0.135633349
+        B: 0.135633349
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 6289363088155023181
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11599093350957467092
+  Name: "Decal Elven Symbols"
+  Transform {
+    Location {
+      X: -4.42494345
+      Y: 21.708334
+      Z: -0.000183104901
+    }
+    Rotation {
+      Yaw: 95.7215
+    }
+    Scale {
+      X: 0.260419101
+      Y: 0.048466526
+      Z: 0.584845066
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 50
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 10
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.737910688
+        G: 0.135633349
+        B: 0.135633349
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 6289363088155023181
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3032506704756309630
+  Name: "Decal Elven Symbols"
+  Transform {
+    Location {
+      X: -8.30721188
+      Y: 34.1860313
+      Z: 0.00396727305
+    }
+    Rotation {
+      Yaw: -5.18780518
+    }
+    Scale {
+      X: 0.251530707
+      Y: 0.0468122959
+      Z: 0.56488359
+    }
+  }
+  ParentId: 5609906897589465968
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color Emissive"
+      Color {
+        R: 0.277667105
+        B: 0.98
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Shape Index"
+      Int: 13
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 0.152926177
+        G: 0.0284260381
+        B: 0.0284260381
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 6289363088155023181
+    }
+    TeamSettings {
+    }
+    DecalBP {
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13074869436922403792
+  Name: "MagicDoorRevealVFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8585823007336702067
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Logo"
+      ObjectReference {
+        SelfId: 5609906897589465968
+      }
+    }
+    Overrides {
+      Name: "cs:PointLights"
+      ObjectReference {
+        SelfId: 3369701264130136332
+      }
+    }
+    Overrides {
+      Name: "cs:Flare"
+      ObjectReference {
+        SelfId: 8683614900039134779
+      }
+    }
+    Overrides {
+      Name: "cs:Dust"
+      ObjectReference {
+        SelfId: 5082768572118827203
+      }
+    }
+    Overrides {
+      Name: "cs:Spotlight"
+      ObjectReference {
+        SelfId: 10389050137409379946
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14670605079797271038
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

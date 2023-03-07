@@ -133,3 +133,21 @@ Assets {
     AssetId: "bp_decal_fantasy_carved_001"
   }
 }
+Assets {
+  Id: 1565420669897413203
+  Name: "Dust Motes Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_dust_motes"
+  }
+}
+Assets {
+  Id: 1548533371028107531
+  Name: "Flare Ray VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_ray_system"
+  }
+}
