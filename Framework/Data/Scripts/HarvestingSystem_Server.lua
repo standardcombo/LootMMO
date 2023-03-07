@@ -155,13 +155,19 @@ function OnPlayerHarvestRequest(player, nodeId)
     rotToNode.x = 0
     rotToNode.y = 0
     player:SetWorldRotation(rotToNode)
+    --check if the node does have an override
+    local RemovePartiallyMinedAfter = REMOVE_PARTIALLY_MINED_NODES_AFTER
+    local nodeOverride = node:GetCustomProperty("OverrideRespawnOnPartial")
+    if nodeOverride ~= nil then
+        RemovePartiallyMinedAfter = nodeOverride
+    end
     --append node to be respawned if a partially mined nodes do reswpawn
-    if REMOVE_PARTIALLY_MINED_NODES_AFTER <= 0 then return end
+    if RemovePartiallyMinedAfter <= 0 then return end
     if NodeDespawnTask[node] then NodeDespawnTask[node]:Cancel() end
     NodeDespawnTask[node] = Task.Spawn(function ()
         if Object.IsValid(node) ~= true then return end
         AHS.RemoveNode(node)
-    end,REMOVE_PARTIALLY_MINED_NODES_AFTER)
+    end,RemovePartiallyMinedAfter)
 end
 
 --this function connects to server script on harvesting tool equipped
@@ -300,7 +306,14 @@ end
 
 function OnNodeRemoved(_,deadNode)
     if RESPAWN_ALLOWED == false then return end
-    local randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
+    local randomTime = 0
+    local respawnOverride = deadNode:GetCustomProperty("OverrideRespawnTimer")
+    if respawnOverride ~= nil then
+        if respawnOverride == Vector2.ZERO then return end
+        randomTime = math.random(respawnOverride.x,respawnOverride.y)
+    else
+        randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
+    end
     local nodeType = nil
     if RESPAWN_BY_TYPE_ONLY == true then nodeType = deadNode:GetCustomProperty("Type") end
     local richnessPerCent = 100
