@@ -1398,7 +1398,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Emissive Boost"
-      Float: 50
+      Float: 100
     }
     Overrides {
       Name: "bp:Shape Index"
