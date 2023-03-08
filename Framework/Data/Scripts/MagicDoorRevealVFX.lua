@@ -64,16 +64,21 @@ end
 
 
 function PlayAnimation()
-	-- Point Lights
-	AnimatePointLights()
+	Events.Broadcast("Velwood.DoorCinematicCam")
+	Task.Wait(0.7)
 	
 	-- Logo
 	for _,glyph in ipairs(LOGO) do
 		AnimateLogoGlyph(glyph)
-		Task.Wait(0.1)--(0.3334)
+		Task.Wait(0.1)
 	end
 	
-	Task.Wait(2.1)
+	Task.Wait(1.4)
+	
+	-- Point Lights
+	AnimatePointLights()
+	
+	Task.Wait(0.7)
 	
 	-- Dust Motes
 	DUST:Play()
@@ -109,8 +114,6 @@ function AnimatePointLights()
 	end
 	
 	Task.Spawn(function()
-		Task.Wait(1)
-		
 		local step = 0.0333333334
 		-- Move vertical
 		local t = 0		
@@ -119,7 +122,7 @@ function AnimatePointLights()
 			local pos = Vector3.New(0, 0, CoreMath.Lerp(0, pointLightZ, t))
 			for i,p in ipairs(POINT_LIGHTS) do
 				p.intensity = CoreMath.Lerp(p.intensity, pointLightIntensity, t * 5)
-				if i >= 3 then
+				if i == 3 then
 					pos.z = -pos.z
 				end
 				p:SetPosition(pos)
@@ -133,10 +136,8 @@ function AnimatePointLights()
 			t = t + step
 			local pos = Vector3.New(0, CoreMath.Lerp(0, pointLightY, t), pointLightZ)
 			for i,p in ipairs(POINT_LIGHTS) do
-				if i == 2 or i == 4 then
-					pos.y = -pos.y
-				end
-				if i >= 3 then
+				pos.y = -pos.y
+				if i == 3 then
 					pos.z = -pos.z
 				end
 				p:SetPosition(pos)

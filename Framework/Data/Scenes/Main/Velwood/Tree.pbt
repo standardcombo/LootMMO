@@ -1,6 +1,293 @@
 Name: "Velwood"
 RootId: 10681643481591542134
 Objects {
+  Id: 1445534127684311904
+  Name: "CinematicShot"
+  Transform {
+    Location {
+      Z: -40193.9
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10681643481591542134
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3694843055699485210
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -6195.17676
+            Y: -5522.36133
+            Z: -10362.9805
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10467714333780274479
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -5682.73193
+            Y: -4864.83496
+            Z: -10395.0469
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 2.73829103
+            Yaw: -129.135208
+          }
+        }
+        Overrides {
+          Name: "CameraMinimumDistance"
+          Float: 0
+        }
+        Overrides {
+          Name: "CameraMaximumDistance"
+          Float: 0
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11337539924846704978
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -5607.07617
+            Y: -4771.85742
+            Z: -10400.7656
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 2.73829103
+            Yaw: -129.135208
+          }
+        }
+        Overrides {
+          Name: "CameraMinimumDistance"
+          Float: 0
+        }
+        Overrides {
+          Name: "CameraMaximumDistance"
+          Float: 0
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16121779860319454006
+      value {
+        Overrides {
+          Name: "Name"
+          String: "CinematicShot"
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:Duration"
+          Float: 5
+        }
+        Overrides {
+          Name: "cs:OrbitShortPath"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:LookAtTarget"
+          Bool: true
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "cs:LinearPath"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:UseEaseFunction"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:PlayOnKey"
+          String: ""
+        }
+        Overrides {
+          Name: "cs:PlayOnEvent"
+          String: "Velwood.DoorCinematicCam"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 14099964740102800412
+    }
+  }
+}
+Objects {
+  Id: 17020583842861226211
+  Name: "CinematicShot"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10681643481591542134
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3694843055699485210
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -6195.17676
+            Y: -5522.36133
+            Z: -10292.2031
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10467714333780274479
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -4693.70557
+            Y: -3964.00146
+            Z: -10545.2148
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 4.56367254
+            Yaw: -136.247314
+          }
+        }
+        Overrides {
+          Name: "CameraMinimumDistance"
+          Float: 0
+        }
+        Overrides {
+          Name: "CameraMaximumDistance"
+          Float: 0
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11337539924846704978
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -4533.85059
+            Y: -4137.13574
+            Z: -10547.4961
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 4.831532
+            Yaw: -143.939575
+            Roll: 1.07102274e-07
+          }
+        }
+        Overrides {
+          Name: "CameraMinimumDistance"
+          Float: 0
+        }
+        Overrides {
+          Name: "CameraMaximumDistance"
+          Float: 0
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16121779860319454006
+      value {
+        Overrides {
+          Name: "Name"
+          String: "CinematicShot"
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:Duration"
+          Float: 2.7
+        }
+        Overrides {
+          Name: "cs:OrbitShortPath"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:LookAtTarget"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:PlayOnKey"
+          String: ""
+        }
+        Overrides {
+          Name: "cs:PlayOnEvent"
+          String: "Velwood.DoorCinematicCam"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 14099964740102800412
+    }
+  }
+}
+Objects {
   Id: 9268530066773003686
   Name: "Velwood Door"
   Transform {
