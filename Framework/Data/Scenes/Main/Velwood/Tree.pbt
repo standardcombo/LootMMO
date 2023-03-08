@@ -262,7 +262,7 @@ Objects {
         }
         Overrides {
           Name: "cs:Duration"
-          Float: 2.7
+          Float: 3.2
         }
         Overrides {
           Name: "cs:OrbitShortPath"
@@ -675,6 +675,7 @@ Objects {
   ChildIds: 8683614900039134779
   ChildIds: 5082768572118827203
   ChildIds: 10389050137409379946
+  ChildIds: 4664333446618820277
   UnregisteredParameters {
     Overrides {
       Name: "cs:IsEnabled"
@@ -728,6 +729,61 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:high"
   }
+}
+Objects {
+  Id: 4664333446618820277
+  Name: "\"Halloween Critter Mischief\" Music Stingers Set 01"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8585823007336702067
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:emx_halloween_critter_mischief_stingers:45"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 7132969047535755013
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      Volume: 1
+      Falloff: 3600
+      Radius: 400
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 10389050137409379946
@@ -1843,6 +1899,18 @@ Objects {
       Name: "cs:Spotlight"
       ObjectReference {
         SelfId: 10389050137409379946
+      }
+    }
+    Overrides {
+      Name: "cs:Audio"
+      ObjectReference {
+        SelfId: 4664333446618820277
+      }
+    }
+    Overrides {
+      Name: "cs:MainTavernMusic"
+      ObjectReference {
+        SelfId: 16625153366079412303
       }
     }
   }

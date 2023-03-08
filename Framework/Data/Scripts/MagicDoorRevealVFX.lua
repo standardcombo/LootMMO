@@ -4,6 +4,8 @@ local POINT_LIGHTS = script:GetCustomProperty("PointLights"):WaitForObject()
 local FLARE = script:GetCustomProperty("Flare"):WaitForObject()
 local DUST = script:GetCustomProperty("Dust"):WaitForObject()
 local SPOTLIGHT = script:GetCustomProperty("Spotlight"):WaitForObject()
+local AUDIO = script:GetCustomProperty("Audio"):WaitForObject()
+local MAIN_TAVERN_MUSIC = script:GetCustomProperty("MainTavernMusic"):WaitForObject()
 
 local logoColorOff
 local logoColorOn
@@ -64,8 +66,14 @@ end
 
 
 function PlayAnimation()
+	local mainVolume = MAIN_TAVERN_MUSIC.volume
+	MAIN_TAVERN_MUSIC.volume = 0
+	
 	Events.Broadcast("Velwood.DoorCinematicCam")
-	Task.Wait(0.7)
+	Task.Wait(0.3)
+	
+	AUDIO:Play()
+	Task.Wait(0.8)
 	
 	-- Logo
 	for _,glyph in ipairs(LOGO) do
@@ -73,7 +81,7 @@ function PlayAnimation()
 		Task.Wait(0.1)
 	end
 	
-	Task.Wait(1.4)
+	Task.Wait(1.5)
 	
 	-- Point Lights
 	AnimatePointLights()
@@ -104,6 +112,9 @@ function PlayAnimation()
 			Task.Wait(step)
 		end
 	end)
+	
+	Task.Wait(4.8)
+	MAIN_TAVERN_MUSIC.volume = mainVolume
 end
 
 function AnimatePointLights()

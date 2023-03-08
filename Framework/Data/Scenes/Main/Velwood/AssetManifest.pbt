@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7132969047535755013
+  Name: "\"Halloween Critter Mischief\" Music Stingers Set 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_halloween_critter_mischief_stingers_ref"
+  }
+}
+Assets {
   Id: 6677237403455816226
   Name: "Portal VFX"
   PlatformAssetType: 6
