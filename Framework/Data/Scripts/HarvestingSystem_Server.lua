@@ -75,13 +75,17 @@ end
 
 function HasRequredTool(player,toolName)
     local inv = GetInventory(player)
-    local hasItem = false
+    --local hasItem = false
+    local toolGreatness = nil
     if inv then
-        local reqToolTable = {}
-        reqToolTable[toolName] = 1
-        hasItem = inv:HasRequiredItems(reqToolTable)
+        --local reqToolTable = {}
+        --reqToolTable[toolName] = 1
+        --hasItem = inv:HasRequiredItems(reqToolTable)
+        toolGreatness = inv:GetToolGreatness(toolName)
+        --print("toolGreatness",toolGreatness)
     end
-    return hasItem
+    if Environment.IsSinglePlayerPreview() then print("Found "..toolName.." with greatness of",toolGreatness) end
+    return toolGreatness
 end
 
 ------------------------
@@ -116,7 +120,7 @@ function HandlePlayerNodesStack(player)
     if toolLevel < 1 then return end]]
     --TODO tool levels and upgrades
     local toolLevel = 1
-    if HasRequredTool(player,ToolReq) ~= true then return end
+    if HasRequredTool(player,ToolReq) == nil then return end
     --spawn appropriate tool
     EquipToolForPlayer(player,ToolReq,toolLevel)
 end
@@ -197,7 +201,7 @@ function LockNode(node,player)
     if AHS.IsPlayerInPoximity(node,player) ~= true then warn("player is not in the requested node proximity") return end
     --check if the proper tool is owned
     local reqTool = node:GetCustomProperty("ToolReq")
-    if HasRequredTool(player,reqTool) ~= true then
+    if HasRequredTool(player,reqTool) == nil then
     --if PLAYER_TOOLS[player][reqTool] == nil or PLAYER_TOOLS[player][reqTool] == 0 then
         warn("Player is requesting to mine a node without a proper tool?? "..player.name.." is trying to cheat?")
         return
@@ -265,7 +269,7 @@ function OnNodeProximityEntered(node,other)
     local reqTool = node:GetCustomProperty("ToolReq")
     --local toolLevel = PLAYER_TOOLS[player][reqTool]
     --if toolLevel < 1 then return end
-    if HasRequredTool(player,reqTool) ~= true then return end
+    if HasRequredTool(player,reqTool) == nil then return end
 
     --add current node to stack
     AddNodeToPlayersNodesStack(player,node)
