@@ -245,7 +245,8 @@ function API.RegisterNodeOnClient(node)
     SPAWNED_NODES[node].proximityTrigger = proxTirgger
     SPAWNED_NODES[node].FinishedTemplate = nodeTableData.FinishedTemplate
     SPAWNED_NODES[node].calloutParent = node:GetCustomProperty("CalloutEffects"):WaitForObject()
-    SPAWNED_NODES[node].calloutParent.parent = nil --deparent for smooth effects
+    --SPAWNED_NODES[node].calloutParent.parent = nil --deparent for smooth effects
+    --TODO the callout is not playing if unparented >>> !?? this works as intended in upstream\lootmmo
     _UpdateNodeCallout(node) --play if needed
 end
 

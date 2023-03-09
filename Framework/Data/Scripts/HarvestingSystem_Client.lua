@@ -84,7 +84,6 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 ------------------------------------
 --LOOT MMO STUFF
 ------------------------------------
---[[
 local EquipAPI = _G["Character.EquipAPI"]
 for i=1,20 do
     if EquipAPI ~= nil and _G.AppState ~= nil then break end
@@ -93,22 +92,48 @@ for i=1,20 do
     if i == 20 then error("unable to locate the Character.EquipAPI global or _G.AppState") end
 end
 
-local function GetInventory(player)
-	local Character = EquipAPI.GetCurrentCharacter(player)
-	if not Character then return end
-	local inventory = Character:GetComponent("Inventory")
-	local CoreInv = inventory:GetInventory()
-	return CoreInv
+local events, CURRENT_INVENTORY
+
+local function dataUpdated(character)
+	if character then
+		if events then
+			events:Disconnect()
+		end
+		events = nil
+		local inventory = character:GetComponent("Inventory")
+		local newInventory = inventory:GetInventory()
+		if not newInventory then
+			return
+		end
+
+        CURRENT_INVENTORY = newInventory
+        AHS.UpdateAllNodesCallouts()
+		events = newInventory.changedEvent:Connect(AHS.UpdateAllNodesCallouts)
+	end
 end
 
-function HasRequredTool(toolName)
-    local inv = GetInventory(LOCAL_PLAYER)
-    local toolGreatness = nil
-    if inv then
-        toolGreatness = inv:GetToolGreatness(toolName)
-    end
-    return toolGreatness
-end]]
+local function CharacterEquipped(character, player)
+	if player == LOCAL_PLAYER then
+		if character then
+			character.dataloadedEvent:Connect(dataUpdated)
+			dataUpdated(character)
+		end
+	end
+end
+
+local function CharacterUnequip(character, player)
+	if player == LOCAL_PLAYER then
+        CURRENT_INVENTORY = nil
+
+		if events then
+			events:Disconnect()
+			events = nil
+		end
+	end
+end
+
+EquipAPI.playerEquippedEvent:Connect(CharacterEquipped)
+EquipAPI.playerUnequippedEvent:Connect(CharacterUnequip)
 
 ------------------------------------
 --LOCAL PLAYER INTERACTION AND HANDLES 
@@ -348,17 +373,9 @@ for _,node in ipairs(NODES:GetChildren())do
     HookNode(node)
 end
 
---[[function OnPND_Changed(player,PNDname)
-    if PNDname ~= "Tools" then return end
-    LocalUserData.Tools = LOCAL_PLAYER:GetPrivateNetworkedData(PNDname)
-    --play or stop the node callouts
-    AHS.UpdateAllNodesCallouts()
-end]]
-
 --connect events
 NODES.childAddedEvent:Connect(OnNodeAdded)
 Events.Connect("Harvest.FinTime",OnFinishTimeUpdated)
---LOCAL_PLAYER.privateNetworkedDataChangedEvent:Connect(OnPND_Changed)
 
 --conect for local game state (to prevent harvesting on state change if needed)
 Events.Connect(_G.AppState.EnterKey,UpdateInteractionLabel)
@@ -377,3 +394,5 @@ Events.Connect("Node.ForceRelease",function(node)
     LocalUserData.myNode = nil
     LocalUserData.isHarvesting = false
 end)
+
+AHS.UpdateAllNodesCallouts()
