@@ -25,6 +25,10 @@ Assets {
             String: "Tool Pick"
           }
           Overrides {
+            Name: "cs:GreatnessRequired"
+            Int: 1
+          }
+          Overrides {
             Name: "cs:SwingsToHarvest"
             Int: 5
           }

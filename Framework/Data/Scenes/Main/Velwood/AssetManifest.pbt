@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13934907904162102494
+  Name: "Hand Cast VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_cast_hands"
+  }
+}
+Assets {
   Id: 13642204757580273705
   Name: "Cube - Chamfered Small Polished"
   PlatformAssetType: 1
@@ -71,6 +80,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7132969047535755013
+  Name: "\"Halloween Critter Mischief\" Music Stingers Set 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_halloween_critter_mischief_stingers_ref"
+  }
+}
+Assets {
   Id: 6677237403455816226
   Name: "Portal VFX"
   PlatformAssetType: 6
@@ -116,6 +134,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3336018558241619144
+  Name: "Basic Water Splash VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_watersplash"
+  }
+}
+Assets {
   Id: 2635330027741249494
   Name: "Diamond - 6-Sided"
   PlatformAssetType: 1
@@ -131,5 +158,23 @@ Assets {
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_fantasy_carved_001"
+  }
+}
+Assets {
+  Id: 1565420669897413203
+  Name: "Dust Motes Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_dust_motes"
+  }
+}
+Assets {
+  Id: 1548533371028107531
+  Name: "Flare Ray VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_ray_system"
   }
 }

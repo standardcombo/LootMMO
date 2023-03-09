@@ -9,6 +9,8 @@
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local NET_OBJECT = script:GetCustomProperty("NetObject"):WaitForObject()
 local QUEST_COMPLETED = script:GetCustomProperty("QuestCompletedId")
+local QUEST_ACTIVE_ID = script:GetCustomProperty("QuestActiveId")
+local ACTIVE_OBJECTIVE_INDEX = script:GetCustomProperty("ActiveObjectiveIndex")
 local ON_ENTER_BROADCAST_EVENT = script:GetCustomProperty("OnEnterBroadcastId")
 local LOCKED_MESSAGE = script:GetCustomProperty("LockedMessage")
 local LOCKED_EVENT_ID = "LockedDoorMessage"
@@ -56,6 +58,12 @@ local function OnBeginOverlap(trigger, player)
 	if isOutside then
 		-- Check if the player has access
 		local hasKey = _G.QuestController.HasCompleted(player, QUEST_COMPLETED)
+		if not hasKey and QUEST_ACTIVE_ID ~= "" then
+			local obj = _G.QuestController.GetQuestObjective(QUEST_ACTIVE_ID, ACTIVE_OBJECTIVE_INDEX)
+			if _G.QuestController.IsActive(player, obj) then
+				hasKey = true
+			end
+		end
 		if not hasKey and IsClosed() then
 			if LOCKED_MESSAGE and LOCKED_MESSAGE ~= "" then
 				Events.BroadcastToPlayer(player, LOCKED_EVENT_ID, LOCKED_MESSAGE)

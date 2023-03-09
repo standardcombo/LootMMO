@@ -62,6 +62,25 @@ function lootmmoInv:GetItemCount(itemId)
 	return count
 end
 
+--harvesting system call, each tool should be unique item
+function lootmmoInv:GetToolGreatness(itemId)
+	local items
+	local itemAssetId = FindAssetIdFromId(itemId)
+	if itemAssetId then
+		items = self:GetItems({ itemAssetId = itemAssetId })
+	else
+		items = self:GetItems({ itemAssetId = itemId })
+	end
+	local highestGreatness = nil
+	for key, value in pairs(items) do
+		local currGreatness = value:GetCustomProperty("Greatness")
+		if highestGreatness == nil
+			or highestGreatness < currGreatness then
+				highestGreatness = currGreatness
+		end
+	end
+	return highestGreatness
+end
 
 function Slot:isAcceptingType(type,name)
 	type = type or ""

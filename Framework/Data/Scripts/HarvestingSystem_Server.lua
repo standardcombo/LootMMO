@@ -9,6 +9,7 @@
 
 ---@type Folder
 local ROOT = script:GetCustomProperty("ROOT"):WaitForObject()
+
 ---@type string
 local AHS = require(ROOT:GetCustomProperty("API_HarvestingSystem"))
 ---@type Folder
@@ -48,11 +49,13 @@ local NodeDespawnTask = {}
 ------------------------------------
 --LOOT MMO STUFF
 ------------------------------------
+--[[
 local EquipAPI = _G["Character.EquipAPI"]
 for i=1,20 do
     if EquipAPI ~= nil then break end
     EquipAPI = _G["Character.EquipAPI"]
     Task.Wait(.1)
+    if i == 20 then error("unable to locate the Character.EquipAPI global") end
 end
 
 local function GetInventory(player)
@@ -63,24 +66,20 @@ local function GetInventory(player)
 	return CoreInv
 end
 
---TODO_Harvesting tool upgrades:
--- New Item ID (and new icon) or just upgrade greatness ?
-local function GetItemGreatness(item)
-	local greatness = item:GetCustomProperty("Greatness")
-	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
-	return greatness, playerOwnsBag
-end
-
 function HasRequredTool(player,toolName)
     local inv = GetInventory(player)
-    local hasItem = false
+    --local hasItem = false
+    local toolGreatness = nil
     if inv then
-        local reqToolTable = {}
-        reqToolTable[toolName] = 1
-        hasItem = inv:HasRequiredItems(reqToolTable)
+        --local reqToolTable = {}
+        --reqToolTable[toolName] = 1
+        --hasItem = inv:HasRequiredItems(reqToolTable)
+        toolGreatness = inv:GetToolGreatness(toolName)
+        --print("toolGreatness",toolGreatness)
     end
-    return hasItem
-end
+    if Environment.IsSinglePlayerPreview() then print("Found "..toolName.." with greatness of",toolGreatness) end
+    return toolGreatness
+end]]
 
 ------------------------
 --Player Logic
@@ -94,6 +93,10 @@ function UnequipToolForPlayer(player)
 end
 
 function EquipToolForPlayer(player,nodeToolType,toolLevel)
+    --TODO if there are more tool templates based on level, here needs the code to be added
+    --for now, all tool greatness transfers to default template of level 1
+    toolLevel = 1
+
     local toolTemplate = AHS.GetProperToolTemplate(nodeToolType,toolLevel)
     if not toolTemplate then warn("unknown definition for tool level "..nodeToolType..", "..tostring(toolLevel)) return end
     spawnedToolsOnPlayers[player] = World.SpawnAsset(toolTemplate, {name = "HarvestingTool", networkContext = NetworkContextType.NETWORKED})
@@ -109,12 +112,14 @@ function HandlePlayerNodesStack(player)
     if latestNode == nil then return end
     --check if the player owns the proper tool
     local ToolReq = latestNode:GetCustomProperty("ToolReq")
+    local greatnessRequired = latestNode:GetCustomProperty("GreatnessRequired") or 0
     --[[local toolLevel = PLAYER_TOOLS[player][nodeToolType]
     if toolLevel == nil then return end
     if toolLevel < 1 then return end]]
     --TODO tool levels and upgrades
-    local toolLevel = 1
-    if HasRequredTool(player,ToolReq) ~= true then return end
+    local toolLevel = AHS.HasRequredTool(player,ToolReq)
+    if toolLevel == nil then return end
+    if toolLevel < greatnessRequired then return end
     --spawn appropriate tool
     EquipToolForPlayer(player,ToolReq,toolLevel)
 end
@@ -153,13 +158,19 @@ function OnPlayerHarvestRequest(player, nodeId)
     rotToNode.x = 0
     rotToNode.y = 0
     player:SetWorldRotation(rotToNode)
+    --check if the node does have an override
+    local RemovePartiallyMinedAfter = REMOVE_PARTIALLY_MINED_NODES_AFTER
+    local nodeOverride = node:GetCustomProperty("OverrideRespawnOnPartial")
+    if nodeOverride ~= nil then
+        RemovePartiallyMinedAfter = nodeOverride
+    end
     --append node to be respawned if a partially mined nodes do reswpawn
-    if REMOVE_PARTIALLY_MINED_NODES_AFTER <= 0 then return end
+    if RemovePartiallyMinedAfter <= 0 then return end
     if NodeDespawnTask[node] then NodeDespawnTask[node]:Cancel() end
     NodeDespawnTask[node] = Task.Spawn(function ()
         if Object.IsValid(node) ~= true then return end
         AHS.RemoveNode(node)
-    end,REMOVE_PARTIALLY_MINED_NODES_AFTER)
+    end,RemovePartiallyMinedAfter)
 end
 
 --this function connects to server script on harvesting tool equipped
@@ -189,9 +200,14 @@ function LockNode(node,player)
     if AHS.IsPlayerInPoximity(node,player) ~= true then warn("player is not in the requested node proximity") return end
     --check if the proper tool is owned
     local reqTool = node:GetCustomProperty("ToolReq")
-    if HasRequredTool(player,reqTool) ~= true then
-    --if PLAYER_TOOLS[player][reqTool] == nil or PLAYER_TOOLS[player][reqTool] == 0 then
-        warn("Player is requesting to mine a node without a proper tool?? "..player.name.." is trying to cheat?")
+    local greatnessRequired = node:GetCustomProperty("GreatnessRequired") or 0
+    local toolLevel = AHS.HasRequredTool(player,reqTool)
+    if toolLevel == nil then
+        warn("Player has sent to server a request to mine a node without a proper tool?? "..player.name.." is trying to cheat?")
+        return
+    end
+    if toolLevel < greatnessRequired then
+        warn("Player has sent to server a request to mine with low tool greatness?? "..player.name.." is trying to cheat?")
         return
     end
     --check if the node is free to be locked
@@ -255,9 +271,12 @@ function OnNodeProximityEntered(node,other)
 
     --check if player does have a proper tool
     local reqTool = node:GetCustomProperty("ToolReq")
+    local greatnessRequired = node:GetCustomProperty("GreatnessRequired") or 0
     --local toolLevel = PLAYER_TOOLS[player][reqTool]
     --if toolLevel < 1 then return end
-    if HasRequredTool(player,reqTool) ~= true then return end
+    local toolLevel = AHS.HasRequredTool(player,reqTool)
+    if toolLevel == nil then return end
+    if toolLevel < greatnessRequired then return end
 
     --add current node to stack
     AddNodeToPlayersNodesStack(player,node)
@@ -298,7 +317,14 @@ end
 
 function OnNodeRemoved(_,deadNode)
     if RESPAWN_ALLOWED == false then return end
-    local randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
+    local randomTime = 0
+    local respawnOverride = deadNode:GetCustomProperty("OverrideRespawnTimer")
+    if respawnOverride ~= nil then
+        if respawnOverride == Vector2.ZERO then return end
+        randomTime = math.random(respawnOverride.x,respawnOverride.y)
+    else
+        randomTime = math.random(RESPAWN_NODES_INTERVAL.x,RESPAWN_NODES_INTERVAL.y)
+    end
     local nodeType = nil
     if RESPAWN_BY_TYPE_ONLY == true then nodeType = deadNode:GetCustomProperty("Type") end
     local richnessPerCent = 100

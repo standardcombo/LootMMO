@@ -7,6 +7,8 @@
 	API
 	===
 	-- Client/Server
+	GestQuest(questId)
+	GetQuestObjective(questId, objectiveIndex)
 	GetUnlockedMapQuests(player)
 	GetCompletedQuestIDs(player)
 	HasCompleted(player, questId)

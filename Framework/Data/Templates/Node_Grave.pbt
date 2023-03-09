@@ -57,6 +57,15 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:OverrideRespawnTimer"
+            Vector2 {
+            }
+          }
+          Overrides {
+            Name: "cs:OverrideRespawnOnPartial"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:Richness:isrep"
             Bool: true
           }
@@ -67,6 +76,14 @@ Assets {
           Overrides {
             Name: "cs:OriginRow:isrep"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:OverrideRespawnTimer:tooltip"
+            String: "overrides the \"RespawnNodesInterval\" for this particular node"
+          }
+          Overrides {
+            Name: "cs:OverrideRespawnOnPartial:tooltip"
+            String: "overrides the \"RemovePartiallyMinedNodesAfter\" for this particular node"
           }
         }
         WantsNetworking: true

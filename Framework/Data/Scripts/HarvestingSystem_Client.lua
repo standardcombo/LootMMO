@@ -84,11 +84,13 @@ if Environment.IsSinglePlayerPreview() then Task.Wait(.1) end
 ------------------------------------
 --LOOT MMO STUFF
 ------------------------------------
+--[[
 local EquipAPI = _G["Character.EquipAPI"]
 for i=1,20 do
     if EquipAPI ~= nil and _G.AppState ~= nil then break end
     EquipAPI = _G["Character.EquipAPI"]
     Task.Wait(.1)
+    if i == 20 then error("unable to locate the Character.EquipAPI global or _G.AppState") end
 end
 
 local function GetInventory(player)
@@ -99,24 +101,14 @@ local function GetInventory(player)
 	return CoreInv
 end
 
---TODO_Harvesting tool upgrades:
--- New Item ID (and new icon) or just upgrade greatness ?
-local function GetItemGreatness(item)
-	local greatness = item:GetCustomProperty("Greatness")
-	local playerOwnsBag = item:GetCustomProperty("PlayerOwnsBag")
-	return greatness, playerOwnsBag
-end
-
 function HasRequredTool(toolName)
     local inv = GetInventory(LOCAL_PLAYER)
-    local hasItem = false
+    local toolGreatness = nil
     if inv then
-        local reqToolTable = {}
-        reqToolTable[toolName] = 1
-        hasItem = inv:HasRequiredItems(reqToolTable)
+        toolGreatness = inv:GetToolGreatness(toolName)
     end
-    return hasItem
-end
+    return toolGreatness
+end]]
 
 ------------------------------------
 --LOCAL PLAYER INTERACTION AND HANDLES 
@@ -161,17 +153,22 @@ function UpdateInteractionLabel()
         local currentNodeOwner = currentNode:GetCustomProperty("Owner")
         local originRow = currentNode:GetCustomProperty("OriginRow")
         local toolNeeded = currentNode:GetCustomProperty("ToolReq")
+        local greatnessRequired = currentNode:GetCustomProperty("GreatnessRequired") or 0
         --testetst
         --print("Player has "..toolNeeded.." =",HasRequredTool(toolNeeded))
-        local requiredToolIsAvailable = HasRequredTool(toolNeeded)
+        local requiredToolIsAvailable = AHS.HasRequredTool(LOCAL_PLAYER,toolNeeded)
         --if tools were not unlocked yet, no label
         --[[if LocalUserData.Tools == nil then
             HARVESTING_INTERACTION_PANEL.visibility = Visibility.FORCE_OFF
             return
         end]]
         --check it the player owns the tool needed
-        if requiredToolIsAvailable == false then --LocalUserData.Tools[toolNeeded] == 0 then
+        if requiredToolIsAvailable == nil then
             HARVEST_NODE_LABEL.text = "Required "..toolNeeded
+            HARVEST_NODE_HOTKEY.text = "[  ]"
+            isHarvestingAvailable = false
+        elseif requiredToolIsAvailable < greatnessRequired then --LocalUserData.Tools[toolNeeded] == 0 then
+            HARVEST_NODE_LABEL.text = toolNeeded.." of Greatness >= "..tostring(greatnessRequired).." required."
             HARVEST_NODE_HOTKEY.text = "[  ]"
             isHarvestingAvailable = false
         elseif currentNodeOwner == "" then

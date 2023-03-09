@@ -19,6 +19,14 @@ Assets {
         String: "Lv5"
       }
       Overrides {
+        Name: "cs:QuestActiveId"
+        String: ""
+      }
+      Overrides {
+        Name: "cs:ActiveObjectiveIndex"
+        Int: 0
+      }
+      Overrides {
         Name: "cs:OnEnterBroadcastId"
         String: "Quest.CraftingRoomEnter"
       }

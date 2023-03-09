@@ -10,9 +10,9 @@ Assets {
         Name: "Node_BirchTree"
         Transform {
           Scale {
-            X: 0.8
-            Y: 0.8
-            Z: 0.8
+            X: 1.1
+            Y: 1.1
+            Z: 1.1
           }
         }
         ParentId: 14517073988449193345
@@ -23,6 +23,10 @@ Assets {
           Overrides {
             Name: "cs:ToolReq"
             String: "Tool Axe"
+          }
+          Overrides {
+            Name: "cs:GreatnessRequired"
+            Int: 0
           }
           Overrides {
             Name: "cs:SwingsToHarvest"

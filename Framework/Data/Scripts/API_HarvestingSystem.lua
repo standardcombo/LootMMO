@@ -12,6 +12,10 @@ local API = {}
 local refNODES = script:GetCustomProperty("NODES")
 if refNODES:GetObject() == nil then warn("**** API_HarvestingSystem.lua is missing a reference to the NODES group ****") return end
 
+--this is the most common error, when importing the system, lets warn the creator
+local refNodes = script:GetCustomProperty("NODES")
+if refNodes:GetObject() == nil then error("******* API_HarvestingSystem is missing the reference to NODES folder") return end
+
 ---@type string
 local HARVESTING_NODES = require(script:GetCustomProperty("HarvestingNodes"))
 ---@type string
@@ -264,10 +268,13 @@ function API.UpdateAllNodesCallouts()
 end
 
 function _UpdateNodeCallout(currentNode)
+    if LOCAL_PLAYER == nil then return end
     local toolReq = currentNode:GetCustomProperty("ToolReq")
-    if LOCAL_PLAYER.clientUserData.Tools == nil or LOCAL_PLAYER.clientUserData.Tools[toolReq] == nil then
+    local greatnessRequired = currentNode:GetCustomProperty("GreatnessRequired") or 0
+    local toolGreatness = API.HasRequredTool(LOCAL_PLAYER,toolReq)
+    if toolGreatness == nil or toolGreatness < greatnessRequired then
         _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,false)
-    elseif LOCAL_PLAYER.clientUserData.Tools[toolReq] > 0 then
+    elseif toolGreatness >= greatnessRequired then
         _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,true)
     else
         _PlayNodeCallout(SPAWNED_NODES[currentNode].calloutParent,false)
@@ -279,6 +286,34 @@ function _PlayNodeCallout(calloutParent,playMe)
         if playMe == true then effect:Play()
         else effect:Stop() end
     end
+end
+
+------------------------------------
+--LOOT MMO STUFF
+------------------------------------
+local EquipAPI = _G["Character.EquipAPI"]
+for i=1,20 do
+    if EquipAPI ~= nil and _G.AppState ~= nil then break end
+    EquipAPI = _G["Character.EquipAPI"]
+    Task.Wait(.1)
+    if i == 20 then error("unable to locate the Character.EquipAPI global or _G.AppState") end
+end
+
+local function GetInventory(player)
+	local Character = EquipAPI.GetCurrentCharacter(player)
+	if not Character then return end
+	local inventory = Character:GetComponent("Inventory")
+	local CoreInv = inventory:GetInventory()
+	return CoreInv
+end
+
+function API.HasRequredTool(player,toolName)
+    local inv = GetInventory(player)
+    local toolGreatness = nil
+    if inv then
+        toolGreatness = inv:GetToolGreatness(toolName)
+    end
+    return toolGreatness
 end
 
 -----------------------

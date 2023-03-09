@@ -39,7 +39,9 @@ function FlashColor()
 end
 
 function Enable()
-	INTERACTION_TRIGGER.isEnabled = false
+	if INTERACTION_TRIGGER then
+		INTERACTION_TRIGGER.isEnabled = false
+	end
 	TRANSFER_TRIGGER.isEnabled = true
 	PORTAL_VFX.visibility = Visibility.INHERIT
 	
@@ -49,12 +51,12 @@ function Enable()
 end
 
 function Disable()
-	INTERACTION_TRIGGER.isEnabled = true
+	if INTERACTION_TRIGGER then
+		INTERACTION_TRIGGER.isEnabled = true
+	end
 	TRANSFER_TRIGGER.isEnabled = false
 	PORTAL_VFX.visibility = Visibility.FORCE_OFF
 end
-
-Disable()
 
 
 function OnCustomPropertyChanged(obj, propName)
@@ -84,6 +86,12 @@ function OnBeginOverlap(trigger, player)
 	end
 end
 
-INTERACTION_TRIGGER.interactedEvent:Connect(OnInteracted)
+
+if INTERACTION_TRIGGER then
+	INTERACTION_TRIGGER.interactedEvent:Connect(OnInteracted)
+	
+	Disable()
+end
+
 TRANSFER_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)
 
