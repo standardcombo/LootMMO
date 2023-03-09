@@ -37,6 +37,7 @@ Assets {
         ChildIds: 13836523838949576650
         ChildIds: 9360743438752598428
         ChildIds: 16914859641837291799
+        ChildIds: 6687489877449245621
         ChildIds: 12498343613210813967
         ChildIds: 6234568694236918399
         ChildIds: 16012557571510256135
@@ -29802,6 +29803,32 @@ Assets {
           }
           TemplateAsset {
             Id: 15018293112981776438
+          }
+        }
+      }
+      Objects {
+        Id: 6687489877449245621
+        Name: "HarvestingSystem"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4594542242463950141
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 1814903886876349253
+            value {
+              Overrides {
+                Name: "Name"
+                String: "HarvestingSystem"
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 4523092629825599592
           }
         }
       }
