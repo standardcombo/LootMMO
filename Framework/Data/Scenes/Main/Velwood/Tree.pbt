@@ -1,6 +1,163 @@
 Name: "Velwood"
 RootId: 10681643481591542134
 Objects {
+  Id: 8740467491177856248
+  Name: "Freeze Camera"
+  Transform {
+    Location {
+      Z: 40193.9
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10681643481591542134
+  ChildIds: 5288281068873659161
+  ChildIds: 13197579381780805398
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 13197579381780805398
+  Name: "Freeze Cam"
+  Transform {
+    Location {
+      Z: -500
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8740467491177856248
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  Camera {
+    InitialDistance: 400
+    MinDistance: 300
+    MaxDistance: 600
+    PositionOffset {
+      Y: 60
+    }
+    RotationOffset {
+    }
+    FieldOfView: 90
+    ViewWidth: 1200
+    RotationMode {
+      Value: "mc:erotationmode:default"
+    }
+    MinPitch: -89
+    MaxPitch: 89
+    DoesPositionOffsetSpring: true
+    IsCameraCollisionEnabled: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5288281068873659161
+  Name: "FreezeCamera"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8740467491177856248
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:FreezeCam"
+      ObjectReference {
+        SelfId: 13197579381780805398
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7302290040465476668
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 1445534127684311904
   Name: "CinematicShot"
   Transform {
@@ -4168,7 +4325,15 @@ Objects {
     }
     Overrides {
       Name: "cs:QuestCompletedId"
-      String: "Velwood1"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:QuestActiveId"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:ActiveObjectiveIndex"
+      Int: 2
     }
   }
   WantsNetworking: true
@@ -4213,7 +4378,8 @@ Objects {
     }
   }
   ParentId: 10681643481591542134
-  ChildIds: 7817716061954578138
+  ChildIds: 17881241156566137207
+  ChildIds: 5391637608810386062
   UnregisteredParameters {
     Overrides {
       Name: "cs:IsEnabled"
@@ -4269,23 +4435,393 @@ Objects {
   }
 }
 Objects {
-  Id: 7817716061954578138
-  Name: "Portal VFX"
+  Id: 5391637608810386062
+  Name: "VFX"
   Transform {
     Location {
-      X: 3.17255616
-      Y: 40.2553444
-      Z: 451.22229
+      X: 2400.08203
+      Y: -469.650513
+      Z: -411.27771
+    }
+    Rotation {
+      Yaw: -49.9926376
+    }
+    Scale {
+      X: 1.61290324
+      Y: 1.61290324
+      Z: 1.61290324
+    }
+  }
+  ParentId: 16301414005635609904
+  ChildIds: 11708555435680538656
+  ChildIds: 2269234317135195746
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 2269234317135195746
+  Name: "Hand Cast VFX"
+  Transform {
+    Location {
+      X: -0.388671875
+      Y: -22.3852539
+      Z: 79.4707
+    }
+    Rotation {
+      Yaw: 97.6694183
+    }
+    Scale {
+      X: 2.12674046
+      Y: 2.12674046
+      Z: 2.56223893
+    }
+  }
+  ParentId: 5391637608810386062
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Enable Energy Swirl"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Enable Flares"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Enable Plasma Ball"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Edge Color"
+      Color {
+        R: 1
+        G: 0.833333373
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 1
+        G: 0.945933819
+        B: 0.371999979
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 13934907904162102494
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11708555435680538656
+  Name: "Basic Water Splash VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Roll: 34.4996796
+    }
+    Scale {
+      X: 2.06990695
+      Y: 2.06990695
+      Z: 2.06990695
+    }
+  }
+  ParentId: 5391637608810386062
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Enable Mist"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Looping"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Enable Drops"
+      Bool: false
+    }
+    Overrides {
+      Name: "bp:Color"
+      Color {
+        R: 4
+        G: 3.15066671
+        B: 0.0799999237
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "bp:Loop Duration"
+      Float: 0.75
+    }
+    Overrides {
+      Name: "bp:Local Space"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 3336018558241619144
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:edistancerelevance:medium"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17881241156566137207
+  Name: "QuestObjectiveSelectedObject"
+  Transform {
+    Location {
+      X: 2404.68115
+      Y: -465.790436
+      Z: -377.78479
+    }
+    Rotation {
+      Yaw: -49.9926376
+    }
+    Scale {
+      X: 1.61290324
+      Y: 1.61290324
+      Z: 1.61290324
+    }
+  }
+  ParentId: 16301414005635609904
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:Object"
+      ObjectReference {
+        SelfId: 5391637608810386062
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15213057634937597698
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 17144743954583124466
+  Name: "Game Portal"
+  Transform {
+    Location {
+      X: -6356.72705
+      Y: -5760.94141
+      Z: -10653.9453
+    }
+    Rotation {
+      Yaw: 140.125916
+    }
+    Scale {
+      X: 0.746701717
+      Y: 0.746701717
+      Z: 0.746701717
+    }
+  }
+  ParentId: 10681643481591542134
+  ChildIds: 472384872815779021
+  ChildIds: 11020121601952781040
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:DestinationGame"
+      String: "15499c/velwood"
+    }
+    Overrides {
+      Name: "cs:DestinationGame:tooltip"
+      String: "The id of the game that this will portal players to. Example: The game ID for the URL https://www.coregames.com/games/577d80/core-royale is 577d80/core-royale."
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 11020121601952781040
+  Name: "ClientContext"
+  Transform {
+    Location {
+      Z: 150
     }
     Rotation {
     }
     Scale {
-      X: 0.900004387
-      Y: 1.49567628
-      Z: 2.23203206
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 16301414005635609904
+  ParentId: 17144743954583124466
+  ChildIds: 8662965592267498188
+  ChildIds: 18334220522573907737
+  ChildIds: 7817716061954578138
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IsEnabled"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IsEnabled:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+    MinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    IsAllowedForPC: true
+    IsAllowedForMobile: true
+    IsAllowedForLowMemoryMobile: true
+    PCMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    PCMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+    MobileMinDetailLevel {
+      Value: "mc:edetaillevel:low"
+    }
+    MobileMaxDetailLevel {
+      Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:low"
+  }
+}
+Objects {
+  Id: 7817716061954578138
+  Name: "Portal VFX"
+  Transform {
+    Location {
+      X: 26.9253464
+      Y: 3.62268209
+      Z: 251.177536
+    }
+    Rotation {
+      Yaw: -90.1333
+    }
+    Scale {
+      X: 0.74729
+      Y: 1.24188721
+      Z: 1.853297
+    }
+  }
+  ParentId: 11020121601952781040
   UnregisteredParameters {
     Overrides {
       Name: "bp:Portal Shape"
@@ -4397,32 +4933,25 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 5084986856120036296
-  Name: "Trigger - Portal to Velwood"
+  Id: 18334220522573907737
+  Name: "Transfer Trigger"
   Transform {
     Location {
-      X: -6358.94141
-      Y: -5720.24316
-      Z: -10516.2148
+      X: 21.8982334
+      Y: -8.79573631
+      Z: 121.822205
     }
     Rotation {
-      Yaw: 49.9926758
     }
     Scale {
-      X: 0.51303339
-      Y: 2.40888762
-      Z: 1.9
+      X: 4.34665155
+      Y: 0.445152372
+      Z: 4.49705076
     }
   }
-  ParentId: 10681643481591542134
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:GameID"
-      String: "Whitebox"
-    }
-  }
+  ParentId: 11020121601952781040
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -4430,12 +4959,8 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
   Trigger {
-    Interactable: true
-    InteractionLabel: "Travel to Velwood"
+    InteractionLabel: "Take Portal to Another Core Game"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
@@ -4446,6 +4971,185 @@ Objects {
     InteractionTemplate {
     }
     BreadcrumbTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8662965592267498188
+  Name: "PortalPaintingClient"
+  Transform {
+    Location {
+      Z: -150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11020121601952781040
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TransferTrigger"
+      ObjectReference {
+        SelfId: 18334220522573907737
+      }
+    }
+    Overrides {
+      Name: "cs:PortalVFX"
+      ObjectReference {
+        SelfId: 7817716061954578138
+      }
+    }
+    Overrides {
+      Name: "cs:Root"
+      ObjectReference {
+        SelfId: 17144743954583124466
+      }
+    }
+    Overrides {
+      Name: "cs:NetObject"
+      ObjectReference {
+        SelfId: 11020121601952781040
+      }
+    }
+    Overrides {
+      Name: "cs:ScaleOnEnable"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:InteractionTrigger"
+      ObjectReference {
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9636815241709916745
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 472384872815779021
+  Name: "PortalPaintingServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.33922279
+      Y: 1.33922279
+      Z: 1.33922279
+    }
+  }
+  ParentId: 17144743954583124466
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Root"
+      ObjectReference {
+        SelfId: 17144743954583124466
+      }
+    }
+    Overrides {
+      Name: "cs:NetObject"
+      ObjectReference {
+        SelfId: 11020121601952781040
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15281295104358832901
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 4675207411841648837
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10681643481591542134
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "CloseMail"
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "Quest.Welcome"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
     }
   }
   NetworkRelevanceDistance {

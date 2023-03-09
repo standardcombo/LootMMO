@@ -105,6 +105,15 @@ Assets {
       }
     }
     Assets {
+      Id: 11023936511749395776
+      Name: "Fantasy Symbol 05"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Icon_Symbol_05"
+      }
+    }
+    Assets {
       Id: 1028246385114766807
       Name: "Anvil"
       PlatformAssetType: 9

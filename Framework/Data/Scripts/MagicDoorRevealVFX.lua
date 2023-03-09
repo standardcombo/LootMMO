@@ -7,6 +7,12 @@ local SPOTLIGHT = script:GetCustomProperty("Spotlight"):WaitForObject()
 local AUDIO = script:GetCustomProperty("Audio"):WaitForObject()
 local MAIN_TAVERN_MUSIC = script:GetCustomProperty("MainTavernMusic"):WaitForObject()
 
+local QUEST_ID = "VelwoodIntro"
+local OBJECTIVE_INDEX = 2
+
+local PLAYER = Game.GetLocalPlayer()
+
+local isEnabled
 local logoColorOff
 local logoColorOn
 local logoEmissivePeak
@@ -20,6 +26,8 @@ local spotLightIntensity
 
 
 function SetDisabled()
+	isEnabled = false
+	
 	-- Logo
 	for _,glyph in ipairs(LOGO) do
 		glyph:SetSmartProperty("Color", logoColorOff)
@@ -43,6 +51,8 @@ end
 
 
 function SetEnabled()
+	isEnabled = true
+	
 	-- Logo
 	for _,glyph in ipairs(LOGO) do
 		glyph:SetSmartProperty("Color", logoColorOn)
@@ -66,6 +76,8 @@ end
 
 
 function PlayAnimation()
+	isEnabled = true
+	
 	local mainVolume = MAIN_TAVERN_MUSIC.volume
 	MAIN_TAVERN_MUSIC.volume = 0
 	
@@ -226,8 +238,28 @@ InitPointLights()
 InitOtherFX()
 
 
-----[[ Debug
-Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
+function OnObjectiveSelected(obj)
+	if not isEnabled and obj.index == OBJECTIVE_INDEX and obj.questId == QUEST_ID then
+		PlayAnimation()
+	end
+end
+
+Events.Connect("Quest.ObjectiveSelected", OnObjectiveSelected)
+
+
+Task.Wait()
+_G['Character.EquipAPI'].playerEquippedEvent:Connect(function(character, player)
+	if player == PLAYER then
+		if _G.QuestController.HasCompleted(PLAYER, QUEST_ID) then
+			SetEnabled()
+		else
+			SetDisabled()
+		end
+	end
+end)
+
+--[[ Debug
+PLAYER.bindingPressedEvent:Connect(function(player, action)
 	if action == "ability_extra_0" then
 		SetDisabled()
 	elseif action == "ability_extra_9" then
