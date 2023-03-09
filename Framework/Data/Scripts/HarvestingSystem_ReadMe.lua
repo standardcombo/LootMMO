@@ -65,11 +65,15 @@ Node geometry is being spawned inside the local context for both client and serv
         OriginRow - table row number of a node template spawned, for reference if needed
 
     Optional custom properties (see below for the HarvestingSystem custom properties)
+    
+        GreatnessRequired - optional parameter on the node, the minimal required tool greatness to allow harvesting (Defaults to 0)
+
         OverrideRespawnTimer - overrides the "RespawnNodesInterval" for this particular node.
                                 NOTE that the node could be respawned when there are more nodes of the same type that do allow respawn
                                 or the nodes are not being respawned explicitly by type (as the node free space is still available).
                                 To absolutely disable the node respawning, it has to be of its own unique type and
                                 the nodes respwaning has to be set to respawn by type.
+
         OverrideRespawnOnPartial - overrides the "RemovePartiallyMinedNodesAfter" for this particular node
 
         *In the original lootmmo project, the Grave node does have this properties set to disallow respawn

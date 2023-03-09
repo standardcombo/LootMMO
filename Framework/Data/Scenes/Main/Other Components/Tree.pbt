@@ -1021,6 +1021,12 @@ Objects {
   }
   ParentId: 14517073988449193345
   WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 10735264763254810291
@@ -1041,14 +1047,6 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: -155.558212
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1.1
-            Y: 1.1
-            Z: 1.1
           }
         }
       }
