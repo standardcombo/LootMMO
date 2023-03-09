@@ -355,6 +355,16 @@ Events.ConnectForPlayer("Harvest",OnPlayerHarvestRequest)
 Events.Connect("Harvest.Complete",OnHarvestCompleted) --this connects from player ability on harvesting tool
 Events.ConnectForPlayer("Harvest.Cancel",OnHarvestFailed)
 
+--singleplayer preview override for large projects
+if Environment.IsSinglePlayerPreview() then
+    local singlePlayer = Game.GetPlayers()
+    while singlePlayer == nil do
+        Task.Wait()
+        singlePlayer = Game.GetPlayers()
+    end
+    PlayerActiveNodesStack[singlePlayer[1]] = {}
+end
+
 --init nodes for use during runtime
 --all nodes do follow the origin transform for variability
 AHS.InitNodesData()
