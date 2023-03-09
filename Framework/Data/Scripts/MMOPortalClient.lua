@@ -92,6 +92,10 @@ function OnInteracted(trigger, player)
 	if player == Game.GetLocalPlayer() then
 		Events.BroadcastToServer(TRANSFER_EVENT_ID, ROOT.id)
 		Events.Broadcast("FreezeCamera")
+		--TODO unfreeze camera? Do not freeze camera?
+		Task.Spawn(function()
+			Events.Broadcast("UnfreezeCamera")
+		end,.1)
 	end
 end
 
