@@ -78,6 +78,8 @@ end
 function PlayAnimation()
 	isEnabled = true
 	
+	_G.AppState.SetLocalState(_G.AppState.Cinematic)
+	
 	local mainVolume = MAIN_TAVERN_MUSIC.volume
 	MAIN_TAVERN_MUSIC.volume = 0
 	
@@ -127,6 +129,10 @@ function PlayAnimation()
 	
 	Task.Wait(4.8)
 	MAIN_TAVERN_MUSIC.volume = mainVolume
+	
+	if _G.AppState.GetLocalState() == _G.AppState.Cinematic then
+		_G.AppState.SetLocalState(_G.AppState.GetPreviousLocalState())
+	end
 end
 
 function AnimatePointLights()

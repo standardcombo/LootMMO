@@ -149,13 +149,32 @@ function OnModalHidden(modal)
 		Events.BroadcastToServer("MailboxClosed", player)
 		
 		Task.Wait(1.5)
-		TRIGGER.isInteractable = true
+		
+		local appState = _G.AppState.GetLocalState()
+		if appState == _G.AppState.SocialHub
+		or appState == _G.AppState.Adventure then
+			TRIGGER.isInteractable = true
+		end
 		
 		SetState(STATE_DISABLED)
 	end
 end
 
 Events.Connect("ModalHidden", OnModalHidden)
+
+
+function OnAppStateEnter(player, newAppState, prevAppState)
+	if newAppState == _G.AppState.SocialHub
+	or newAppState == _G.AppState.Adventure then
+		TRIGGER.isInteractable = true
+		
+	elseif newAppState ~= _G.AppState.Mailbox then
+		TRIGGER.isInteractable = false
+		MODAL.Hide() -- No effect if it's already hidden
+	end
+end
+
+Events.Connect("AppState.Enter", OnAppStateEnter)
 
 
 function OnNextPage(btn)

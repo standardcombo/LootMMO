@@ -10,6 +10,7 @@
 	Client-only
 		GetLocalState()
 		SetLocalState(newState)
+		GetPreviousLocalState()
 		
 	Events
 		AppState.Exit<player, currentState, newState>
@@ -41,6 +42,7 @@ API.LevelUp = 140
 API.Inventory = 150
 API.ItemFound = 160
 API.Ability = 170
+API.Cinematic = 180
 
 -- Server/Client
 function API.GetStateForPlayer(player)
@@ -78,6 +80,11 @@ local _prevLocalPlayerState = 0
 -- Client
 function API.GetLocalState()
 	return _localPlayerState
+end
+
+-- Client
+function API.GetPreviousLocalState()
+	return _prevLocalPlayerState
 end
 
 function DoLocalStateChange(newState)
