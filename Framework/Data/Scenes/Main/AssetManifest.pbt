@@ -1,13 +1,4 @@
 Assets {
-  Id: 17905940288338811126
-  Name: "Mecha Weapon - Laser - Blade 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_jpn_mecha_gun_blade_001_ref"
-  }
-}
-Assets {
   Id: 17157977466683768474
   Name: "NFTUpgraded"
   PlatformAssetType: 23
@@ -18,24 +9,6 @@ Assets {
         Value: "mc:enetreferencetype:concurrentplayerpersistence"
       }
     }
-  }
-}
-Assets {
-  Id: 17118136979191323600
-  Name: "Metal Iron 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_iron_001"
-  }
-}
-Assets {
-  Id: 16845241941935487831
-  Name: "Glass 01 (no distortion)"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_basic_glass_001"
   }
 }
 Assets {
@@ -52,12 +25,12 @@ Assets {
   }
 }
 Assets {
-  Id: 16585282183739788606
-  Name: "Water Jet VFX"
-  PlatformAssetType: 8
+  Id: 16615096695749140385
+  Name: "Decal Stone Cracks Variants 01"
+  PlatformAssetType: 14
   PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_water_jet"
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_stone_cracks_001"
   }
 }
 Assets {
@@ -80,24 +53,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rocks_small_002"
-  }
-}
-Assets {
-  Id: 16372496464315477095
-  Name: "Ring - Beveled Thick"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ring_faceted_003"
-  }
-}
-Assets {
-  Id: 16353917461806733124
-  Name: "Ring - Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torus_003"
   }
 }
 Assets {
@@ -210,12 +165,12 @@ Assets {
   }
 }
 Assets {
-  Id: 14525364215432239736
-  Name: "Decal Sci-fi Details 01"
+  Id: 14633329416983781101
+  Name: "Decal Moss Patch"
   PlatformAssetType: 14
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_scf_details_001_ref"
+    AssetId: "bp_decal_moss_patch_001"
   }
 }
 Assets {
@@ -259,6 +214,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13138720253851148982
+  Name: "Rain Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_rain_volume_vfx"
+  }
+}
+Assets {
   Id: 12997470107562757952
   Name: "Bush Leafy Tall 01"
   PlatformAssetType: 1
@@ -278,15 +242,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 12889861000896994476
-  Name: "Invisible"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_invisible_001"
   }
 }
 Assets {
@@ -325,30 +280,12 @@ Assets {
   }
 }
 Assets {
-  Id: 12095835209017042614
-  Name: "Cube"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_002"
-  }
-}
-Assets {
   Id: 11972672084376847955
   Name: "Hill 03"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_hill_003"
-  }
-}
-Assets {
-  Id: 11892494746123028781
-  Name: "Cylinder - Chamfered Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_hq_002"
   }
 }
 Assets {
@@ -391,6 +328,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11380357722301189422
+  Name: "Decal Dirt Patch"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_dirt_patch_001"
+  }
+}
+Assets {
   Id: 11232852364461677985
   Name: "JewelPack3"
   PlatformAssetType: 24
@@ -413,6 +359,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11209210947411218482
+  Name: "Decal Leaves 02"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_leaves_002"
+  }
+}
+Assets {
   Id: 10784387645319107096
   Name: "Tree Oak 01"
   PlatformAssetType: 1
@@ -432,15 +387,6 @@ Assets {
         Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
-  }
-}
-Assets {
-  Id: 10313519700874090434
-  Name: "Metal Basic 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_basic_001"
   }
 }
 Assets {
@@ -557,15 +503,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8638549693405445583
-  Name: "Mecha Weapon - Sword Blade - Tip 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_jpn_mecha_sword_blade_tip_001_ref"
-  }
-}
-Assets {
   Id: 8553298544017934648
   Name: "Grass Tall"
   PlatformAssetType: 1
@@ -610,15 +547,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7631463875583446719
-  Name: "Cone - Soft 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prim_cylinder_soft_001_ref"
-  }
-}
-Assets {
   Id: 7169333528181342794
   Name: "Starter Pack"
   PlatformAssetType: 24
@@ -638,15 +566,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_003"
-  }
-}
-Assets {
-  Id: 6530006698448607407
-  Name: "Cone - Truncated Wide"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cone_truncated_003"
   }
 }
 Assets {
@@ -789,15 +708,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3682206342183528038
-  Name: "Fantasy Sword Grip 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_weap_fan_grip_sword_001"
-  }
-}
-Assets {
   Id: 3295690706030492699
   Name: "Character2"
   PlatformAssetType: 23
@@ -824,21 +734,12 @@ Assets {
   }
 }
 Assets {
-  Id: 1719518823045382149
-  Name: "Cylinder Half "
-  PlatformAssetType: 1
+  Id: 1646441689297635943
+  Name: "Rain Splash Volume VFX"
+  PlatformAssetType: 8
   PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_half_001_ref"
-  }
-}
-Assets {
-  Id: 1137112816547272582
-  Name: "Cylinder"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_002"
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_rainsplash_volume"
   }
 }
 Assets {
@@ -877,33 +778,6 @@ Assets {
   }
 }
 Assets {
-  Id: 828929565136389057
-  Name: "Urban Mug 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_urb_mug_002_ref"
-  }
-}
-Assets {
-  Id: 818783603953564962
-  Name: "Metal Painted Old 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_painted_old_001_uv"
-  }
-}
-Assets {
-  Id: 678451992582982053
-  Name: "Ring Half Y Half Z - Beveled - Thick - Large"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ring_half_faceted_half_z_thick_lg_001_ref"
-  }
-}
-Assets {
   Id: 607962893157595191
   Name: "Gold 4"
   PlatformAssetType: 24
@@ -927,15 +801,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 132672053610873933
-  Name: "Plastic Matte"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "plastic_matte_001"
   }
 }
 Assets {
