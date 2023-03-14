@@ -25,15 +25,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16615096695749140385
-  Name: "Decal Stone Cracks Variants 01"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_stone_cracks_001"
-  }
-}
-Assets {
   Id: 16543004399599665760
   Name: "Self Gold"
   PlatformAssetType: 24
@@ -156,39 +147,12 @@ Assets {
   }
 }
 Assets {
-  Id: 14643090495247569259
-  Name: "Dirt 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "dirt_001"
-  }
-}
-Assets {
-  Id: 14633329416983781101
-  Name: "Decal Moss Patch"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_moss_patch_001"
-  }
-}
-Assets {
   Id: 14293176668765266901
   Name: "Rock Pile 001"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rocks_small_001"
-  }
-}
-Assets {
-  Id: 14231394991004806063
-  Name: "Callout Sparkle"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_sparkles_volume_vfx"
   }
 }
 Assets {
@@ -211,24 +175,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 13138720253851148982
-  Name: "Rain Volume VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_rain_volume_vfx"
-  }
-}
-Assets {
-  Id: 12997470107562757952
-  Name: "Bush Leafy Tall 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_foliage_gen_leafy_bush_001"
   }
 }
 Assets {
@@ -271,24 +217,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12307252604743719184
-  Name: "Decal Soil Cracks Smal Variants 02"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_soil_cracks_002"
-  }
-}
-Assets {
-  Id: 11972672084376847955
-  Name: "Hill 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_hill_003"
-  }
-}
-Assets {
   Id: 11738101196508092081
   Name: "Server Gold"
   PlatformAssetType: 24
@@ -328,15 +256,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11380357722301189422
-  Name: "Decal Dirt Patch"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_dirt_patch_001"
-  }
-}
-Assets {
   Id: 11232852364461677985
   Name: "JewelPack3"
   PlatformAssetType: 24
@@ -356,15 +275,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_foliage_gen_leafy_groundcover_002"
-  }
-}
-Assets {
-  Id: 11209210947411218482
-  Name: "Decal Leaves 02"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_leaves_002"
   }
 }
 Assets {
@@ -491,15 +401,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 8772778959370683656
-  Name: "Gravel Raked 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_gravel_001_uv"
   }
 }
 Assets {
@@ -731,15 +632,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 1646441689297635943
-  Name: "Rain Splash Volume VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_rainsplash_volume"
   }
 }
 Assets {

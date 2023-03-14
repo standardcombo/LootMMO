@@ -9,6 +9,7 @@ local CREATURE_CLAWS_BLADE_SCRAPE_SLICE_01_SFX = script:GetCustomProperty("Creat
 
 local openRot = Rotation.New(0,0,0)
 local closedRot = Rotation.New(0,8,0)
+local handles = {}
 
 function OnExecute()
     local ttl = ABILITY:GetPhaseTimeRemaining()/2
@@ -20,4 +21,12 @@ function OnExecute()
     RIGHT_PART:RotateTo(openRot,ttl,true)
 end
 
-ABILITY.executeEvent:Connect(OnExecute)
+function Cleanup()
+    for _,h in ipairs(handles)do
+        h:Disconnect()
+    end
+    handles = nil
+end
+
+table.insert(handles,ABILITY.executeEvent:Connect(OnExecute))
+table.insert(handles,ABILITY.destroyEvent:Connect(Cleanup))

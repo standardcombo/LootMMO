@@ -37,7 +37,7 @@ Assets {
         ChildIds: 13836523838949576650
         ChildIds: 9360743438752598428
         ChildIds: 16914859641837291799
-        ChildIds: 6687489877449245621
+        ChildIds: 3591875655364116644
         ChildIds: 12498343613210813967
         ChildIds: 6234568694236918399
         ChildIds: 16012557571510256135
@@ -29807,7 +29807,7 @@ Assets {
         }
       }
       Objects {
-        Id: 6687489877449245621
+        Id: 3591875655364116644
         Name: "HarvestingSystem"
         Transform {
           Scale {
@@ -29817,18 +29817,2018 @@ Assets {
           }
         }
         ParentId: 4594542242463950141
+        ChildIds: 16157400370095868963
+        ChildIds: 15091929838635277497
+        ChildIds: 15990108991850228001
+        ChildIds: 16052619567247279589
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:NODES"
+            ObjectReference {
+              SubObjectId: 16052619567247279589
+            }
+          }
+          Overrides {
+            Name: "cs:API_HarvestingSystem"
+            AssetReference {
+              Id: 10330204589680347581
+            }
+          }
+          Overrides {
+            Name: "cs:HarvestingNodes"
+            AssetReference {
+              Id: 5382877410966996753
+            }
+          }
+          Overrides {
+            Name: "cs:HarvestingTools"
+            AssetReference {
+              Id: 5490973462993262132
+            }
+          }
+          Overrides {
+            Name: "cs:InitNodesSpawnedPerCent"
+            Int: 50
+          }
+          Overrides {
+            Name: "cs:InitSpawnEvenByType"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:RespawnNodesInterval"
+            Vector2 {
+              X: 5
+              Y: 15
+            }
+          }
+          Overrides {
+            Name: "cs:RespawnByTypeOnly"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:RemovePartiallyMinedNodesAfter"
+            Int: 30
+          }
+          Overrides {
+            Name: "cs:SpawnOnlyFullNodes"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:RespawnByTypeOnly:tooltip"
+            String: "If true, the mined node will be replaced by the same type. This has precedense prior the RespawnNodes"
+          }
+          Overrides {
+            Name: "cs:InitNodesSpawnedPerCent:tooltip"
+            String: "How many nodes in the world will spawn populated, per cent value of all nodes."
+          }
+          Overrides {
+            Name: "cs:InitSpawnEvenByType:tooltip"
+            String: "If true, the initial node spawning will be per type. If false, the nodes will be populated at random."
+          }
+          Overrides {
+            Name: "cs:RemovePartiallyMinedNodesAfter:tooltip"
+            String: "timeout in seconds after the at least once mined node will be destroyed and sent to respawn handler. Set to 0 to keep partially mined nodes without reset."
+          }
+          Overrides {
+            Name: "cs:SpawnOnlyFullNodes:tooltip"
+            String: "If false, the newly spawned nodes do have random richness <1,maxAllowedForNode>. If false, nodes do always spawn with max richness."
+          }
+          Overrides {
+            Name: "cs:NODES:category"
+            String: "InnerVars"
+          }
+          Overrides {
+            Name: "cs:API_HarvestingSystem:category"
+            String: "InnerVars"
+          }
+          Overrides {
+            Name: "cs:HarvestingNodes:category"
+            String: "InnerVars"
+          }
+          Overrides {
+            Name: "cs:HarvestingTools:category"
+            String: "InnerVars"
+          }
+          Overrides {
+            Name: "cs:RespawnNodesInterval:tooltip"
+            String: "min max time in seconds when a node will respawn after being mined. set to <0,0> to disable respawning."
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
+        }
+        InstanceHistory {
+          SelfId: 9317339382110433241
+          SubobjectId: 1814903886876349253
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+          WasRoot: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16157400370095868963
+        Name: "ClientContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3591875655364116644
+        ChildIds: 6482939083732187652
+        ChildIds: 4213973713748357300
+        ChildIds: 7587617609772071906
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          MinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          IsAllowedForPC: true
+          IsAllowedForMobile: true
+          IsAllowedForLowMemoryMobile: true
+          PCMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          PCMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          MobileMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MobileMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+        }
+        InstanceHistory {
+          SelfId: 14603687714065384153
+          SubobjectId: 5965223518924979781
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6482939083732187652
+        Name: "HarvestingSystem_Client"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16157400370095868963
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ROOT"
+            ObjectReference {
+              SubObjectId: 3591875655364116644
+            }
+          }
+          Overrides {
+            Name: "cs:HarvestingInteractionPanel"
+            ObjectReference {
+              SubObjectId: 17008535329491848692
+            }
+          }
+          Overrides {
+            Name: "cs:HarvestingProgressionPanel"
+            ObjectReference {
+              SubObjectId: 16197389280354887653
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11638447669813120456
+          }
+        }
+        InstanceHistory {
+          SelfId: 12070984094412158857
+          SubobjectId: 4604582766902577941
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 4213973713748357300
+        Name: "UI Container"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16157400370095868963
+        ChildIds: 17008535329491848692
+        ChildIds: 16197389280354887653
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Canvas {
+            ContentType {
+              Value: "mc:ecanvascontenttype:dynamic"
+            }
+            Opacity: 1
+            IsHUD: true
+            CanvasWorldSize {
+              X: 1024
+              Y: 1024
+            }
+            RedrawTime: 30
+            UseSafeZoneAdjustment: true
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 4742084071133816271
+          SubobjectId: 15685272121078356307
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 17008535329491848692
+        Name: "HarvestingInteractionPanel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4213973713748357300
+        ChildIds: 14164303880416372539
+        ChildIds: 2617483737610933075
+        ChildIds: 1272877766019308635
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HarvestNodeLabel"
+            ObjectReference {
+              SubObjectId: 1272877766019308635
+            }
+          }
+          Overrides {
+            Name: "cs:HarvestNodeHotkey"
+            ObjectReference {
+              SubObjectId: 2617483737610933075
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 210
+          Height: 60
+          UIX: 100
+          UIY: 50
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 18075960624901504185
+          SubobjectId: 7113635583665963045
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 14164303880416372539
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17008535329491848692
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 200
+          Height: 200
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 13835327457650939377
+            }
+            Color {
+              A: 0.4
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 7295901983395288924
+          SubobjectId: 18240215690195151808
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2617483737610933075
+        Name: "HarvestNodeHotkey"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17008535329491848692
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 40
+          Height: 60
+          UIX: 10
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "[F]"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Size: 20
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            Font {
+              Id: 841534158063459245
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+              X: 2
+              Y: 2
+            }
+            OutlineColor {
+              A: 1
+            }
+            OutlineSize: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleleft"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 12102757686807995580
+          SubobjectId: 4582309590625884192
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1272877766019308635
+        Name: "HarvestNodeLabel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17008535329491848692
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: -65
+          UIX: -15
+          UIY: 2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          UseParentHeight: true
+          Text {
+            Label: "Harvest node here"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Size: 20
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            Font {
+              Id: 841534158063459245
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+              X: 2
+              Y: 2
+            }
+            OutlineColor {
+              A: 1
+            }
+            OutlineSize: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleright"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 16942146829002659132
+          SubobjectId: 8321697126744091040
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16197389280354887653
+        Name: "HarvestingProgressionPanel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4213973713748357300
+        ChildIds: 3807383968960889630
+        ChildIds: 2863123300897513104
+        ChildIds: 9901091652621432222
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HarvestingNow"
+            ObjectReference {
+              SubObjectId: 2863123300897513104
+            }
+          }
+          Overrides {
+            Name: "cs:UI Progress Bar"
+            ObjectReference {
+              SubObjectId: 9901091652621432222
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 210
+          Height: 60
+          UIX: 100
+          UIY: 50
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            Opacity: 1
+            OpacityMaskBrush {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 15100391157005402452
+          SubobjectId: 5327017794578906568
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 3807383968960889630
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16197389280354887653
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 200
+          Height: 200
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 13835327457650939377
+            }
+            Color {
+              A: 0.4
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 1494142698597393500
+          SubobjectId: 10150622539658467520
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 2863123300897513104
+        Name: "HarvestingNow"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16197389280354887653
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: -20
+          Height: 40
+          UIY: -5
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          Text {
+            Label: "SHORT"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Size: 20
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            Font {
+              Id: 841534158063459245
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:bottom"
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+              X: 2
+              Y: 2
+            }
+            OutlineColor {
+              A: 1
+            }
+            OutlineSize: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 1361548310928105806
+          SubobjectId: 9982003503916752338
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 9901091652621432222
+        Name: "UI Progress Bar"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16197389280354887653
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: -8
+          Height: 5
+          UIY: -2
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          AddSizeToParentIfUsingParentSize: true
+          UseParentWidth: true
+          StatBar {
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            BackgroundColor {
+              R: 0.02
+              G: 0.02
+              B: 0.02
+              A: 0.8
+            }
+            Percent: 0.375002861
+            FillBrush {
+              Id: 841534158063459245
+            }
+            BackgroundBrush {
+              Id: 841534158063459245
+            }
+            FillType {
+              Value: "mc:eprogressbarfilltype:lefttoright"
+            }
+            FillTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+            BackgroundTileType {
+              Value: "mc:eslatebrushtiletype:notile"
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+        InstanceHistory {
+          SelfId: 14477094341937639985
+          SubobjectId: 5803727238428626605
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 7587617609772071906
+        Name: "HarvestingSystem_ReadMe"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16157400370095868963
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2827277044402293060
+          }
+        }
+        InstanceHistory {
+          SelfId: 13789278194345648042
+          SubobjectId: 2828076676423721782
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15091929838635277497
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3591875655364116644
+        ChildIds: 16892854160493166360
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        InstanceHistory {
+          SelfId: 13456774387867295880
+          SubobjectId: 2495577722444127252
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16892854160493166360
+        Name: "HarvestingSystem_Server"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15091929838635277497
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ROOT"
+            ObjectReference {
+              SubObjectId: 3591875655364116644
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 10506754159465741130
+          }
+        }
+        InstanceHistory {
+          SelfId: 1513256863153300708
+          SubobjectId: 10187750026984429688
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 15990108991850228001
+        Name: "NodesStaticGeo"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3591875655364116644
+        ChildIds: 11831355364811710046
+        ChildIds: 6627870416849594211
+        ChildIds: 1579756469753456066
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          IsAllowedForPC: true
+          IsAllowedForMobile: true
+          IsAllowedForLowMemoryMobile: true
+          PCMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          PCMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+          MobileMinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MobileMaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11831355364811710046
+        Name: "Bush 01"
+        Transform {
+          Location {
+            X: -1258.43958
+            Y: -1313.94092
+            Z: 3341.60547
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15990108991850228001
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 901541979513849367
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 6627870416849594211
+        Name: "Bush 01"
+        Transform {
+          Location {
+            X: -1513.24951
+            Y: -1127.36084
+            Z: 3341.60547
+          }
+          Rotation {
+            Yaw: -99.3235168
+          }
+          Scale {
+            X: 0.837471724
+            Y: 0.837471724
+            Z: 0.837471724
+          }
+        }
+        ParentId: 15990108991850228001
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 901541979513849367
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1579756469753456066
+        Name: "Bush 01"
+        Transform {
+          Location {
+            X: -1075.93579
+            Y: -1645.71399
+            Z: 3341.60547
+          }
+          Rotation {
+            Yaw: 83.8369675
+          }
+          Scale {
+            X: 1.09332228
+            Y: 1.09332228
+            Z: 1.09332228
+          }
+        }
+        ParentId: 15990108991850228001
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 901541979513849367
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16052619567247279589
+        Name: "NODES"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3591875655364116644
+        ChildIds: 11160127100542024307
+        ChildIds: 18219167668295862307
+        ChildIds: 7542624694038639790
+        ChildIds: 11023432081646710875
+        ChildIds: 6351554481760902419
+        ChildIds: 5865853455400912985
+        ChildIds: 9773997458962403234
+        ChildIds: 14129598342404384688
+        ChildIds: 3991691959333648814
+        ChildIds: 13956336563693299839
+        ChildIds: 17855449536319573633
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
+        }
+        InstanceHistory {
+          SelfId: 14397746353112786224
+          SubobjectId: 6894186068622973356
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11160127100542024307
+        Name: "Node_IronVein"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
         TemplateInstance {
           ParameterOverrideMap {
-            key: 1814903886876349253
+            key: 17706867916820843333
             value {
               Overrides {
                 Name: "Name"
-                String: "HarvestingSystem"
+                String: "Node_IronVein"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -1489.99951
+                  Y: 976.169067
+                  Z: 3260.10352
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: 54.3729324
+                }
               }
             }
           }
           TemplateAsset {
-            Id: 4523092629825599592
+            Id: 9888337940943011348
+          }
+        }
+        InstanceHistory {
+          SelfId: 12736346590856474634
+          SubobjectId: 2928065486208846998
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+      }
+      Objects {
+        Id: 18219167668295862307
+        Name: "Node_Coal"
+        Transform {
+          Location {
+            X: -2071.51245
+            Y: 1755.10132
+            Z: 3210.98584
+          }
+          Rotation {
+            Yaw: -160.927505
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_Gold"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -2729.93213
+                  Y: 1523.98499
+                  Z: 3210.98584
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: 109.95047
+                }
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1.2
+                  Y: 1.2
+                  Z: 1.2
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 5634713177964474569
+          }
+        }
+        InstanceHistory {
+          SelfId: 12294662096312468834
+          SubobjectId: 3674209128133474814
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+      }
+      Objects {
+        Id: 7542624694038639790
+        Name: "Node_BirchTree"
+        Transform {
+          Location {
+            X: -2289.89844
+            Y: 672.193359
+            Z: 3264.09131
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 10735264763254810291
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_BirchTree"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -2048.04419
+                  Y: -150.774658
+                  Z: 3302.96045
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 2231785504448967504
+          }
+        }
+        InstanceHistory {
+          SelfId: 16860341827338730030
+          SubobjectId: 8185842330870335154
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+      }
+      Objects {
+        Id: 11023432081646710875
+        Name: "Node_Grave"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_Grave"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -2098.45776
+                  Y: -3519.89062
+                  Z: 3339.31274
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: 139.070526
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 5151630942758078215
+          }
+        }
+        InstanceHistory {
+          SelfId: 5981832819401986251
+          SubobjectId: 14655204621093710935
+          InstanceId: 6687489877449245621
+          TemplateId: 4523092629825599592
+        }
+      }
+      Objects {
+        Id: 6351554481760902419
+        Name: "Node_PlantRed"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_PlantRed"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -755.451904
+                  Y: -1721.41602
+                  Z: 3325.58691
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 10284139420588369540
+          }
+        }
+      }
+      Objects {
+        Id: 5865853455400912985
+        Name: "Node_PlantRed"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_PlantRed"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -1496.41553
+                  Y: -1684.79346
+                  Z: 3321.50366
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: -112.179321
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 10284139420588369540
+          }
+        }
+      }
+      Objects {
+        Id: 9773997458962403234
+        Name: "Node_BushCotton"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_BushCotton"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -1258.43958
+                  Y: -1313.94092
+                  Z: 3341.60547
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                }
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 13864945263057182222
+          }
+        }
+      }
+      Objects {
+        Id: 14129598342404384688
+        Name: "Node_BushCotton"
+        Transform {
+          Location {
+            X: -1258.43958
+            Y: -1313.94092
+            Z: 3341.60547
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_BushCotton"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -1513.24951
+                  Y: -1127.36084
+                  Z: 3341.60547
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: -99.3235168
+                }
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 0.837471724
+                  Y: 0.837471724
+                  Z: 0.837471724
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 13864945263057182222
+          }
+        }
+      }
+      Objects {
+        Id: 3991691959333648814
+        Name: "Node_BushCotton"
+        Transform {
+          Location {
+            X: -1258.43958
+            Y: -1313.94092
+            Z: 3341.60547
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 17706867916820843333
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_BushCotton"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -1075.93579
+                  Y: -1645.71399
+                  Z: 3341.60547
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Yaw: 83.8369675
+                }
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1.09332228
+                  Y: 1.09332228
+                  Z: 1.09332228
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 13864945263057182222
+          }
+        }
+      }
+      Objects {
+        Id: 13956336563693299839
+        Name: "Node_RockCaveIn"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 13748851510511670791
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_RockCaveIn"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -2295.8728
+                  Y: 1879.67444
+                  Z: 3361.75244
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Pitch: 89.6368332
+                  Yaw: -166.448624
+                  Roll: -179.997238
+                }
+              }
+              Overrides {
+                Name: "cs:SwingsToHarvest"
+                Int: 8
+              }
+              Overrides {
+                Name: "cs:Type"
+                String: "cavein"
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 1587296676542032873
+          }
+        }
+      }
+      Objects {
+        Id: 17855449536319573633
+        Name: "Node_RockCaveIn"
+        Transform {
+          Location {
+            X: -2295.97461
+            Y: 1879.65
+            Z: 3378.17578
+          }
+          Rotation {
+            Pitch: 89.6352234
+            Yaw: -166.448181
+            Roll: -179.997299
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16052619567247279589
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        TemplateInstance {
+          ParameterOverrideMap {
+            key: 13748851510511670791
+            value {
+              Overrides {
+                Name: "Name"
+                String: "Node_RockCaveIn"
+              }
+              Overrides {
+                Name: "Position"
+                Vector {
+                  X: -2497.98804
+                  Y: 1877.59607
+                  Z: 3356.08691
+                }
+              }
+              Overrides {
+                Name: "Rotation"
+                Rotator {
+                  Pitch: 78.2920532
+                  Yaw: -83.2280884
+                  Roll: 65.7297058
+                }
+              }
+              Overrides {
+                Name: "cs:SwingsToHarvest"
+                Int: 8
+              }
+              Overrides {
+                Name: "cs:Type"
+                String: "cavein"
+              }
+              Overrides {
+                Name: "Scale"
+                Vector {
+                  X: 1
+                  Y: 1
+                  Z: 1
+                }
+              }
+            }
+          }
+          TemplateAsset {
+            Id: 1587296676542032873
           }
         }
       }
@@ -30571,6 +32571,24 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Military_Ability_Yellow_011"
+      }
+    }
+    Assets {
+      Id: 13835327457650939377
+      Name: "UI Gradient Rectangular 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Basic_Shape_003"
+      }
+    }
+    Assets {
+      Id: 901541979513849367
+      Name: "Bush 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_bush_generic_001"
       }
     }
     PrimaryAssetId {

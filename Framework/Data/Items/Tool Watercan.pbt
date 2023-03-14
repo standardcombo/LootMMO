@@ -1,6 +1,6 @@
 Assets {
-  Id: 4419392505810272844
-  Name: "Tool Shovel"
+  Id: 16981868821221918128
+  Name: "Tool Watercan"
   PlatformAssetType: 33
   SerializationVersion: 125
   ItemAsset {

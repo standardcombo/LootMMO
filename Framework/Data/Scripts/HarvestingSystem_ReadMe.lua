@@ -55,10 +55,20 @@ a trigger that controls the player proximity to a node. Note template is not rep
 :ForceReplication() method on dynamic property changed event.
 Node geometry is being spawned inside the local context for both client and server, based on node richenss changes.
 
+    Harvesting Nodes table
+        Type                - type of a node, this defines where the node can appear at in the world
+        FriendlyName        - name to use for client UI tooltip
+        WeightChances       - weight chances that this node will appear from all the nodes available of the same type
+        Template            - node template itself
+        rewards             - rewards granted for the node harvested
+        AwardsPerSwing      - if this is true, the node process "rewards" column after each richness decrease,
+                                if false, the node process "rewards" column after the node is depleted completely
+        NodeStageGeoTable   - table that holds all the different node richness stages geometry, sorted from least to most
+        FinishedTemplate    - client context template that will spawn once the node is completely depleted 
+
     Custom properties of a Node:
         ToolReq - a string of a tool type that allows the node harvesting
         SwingsToHarvest - number of an ability activations to harvest a node
-        RewardPerUse - reward for each mining success, LootMMO item drop language
         Type - Node type, to define the different nodes that do spawn in this place
         Richness - how many times the node can be harvested. This connets directly to the spawned node geometry
         Owner - if the node is being harvested, this value will be a harvesting player.id
@@ -75,6 +85,9 @@ Node geometry is being spawned inside the local context for both client and serv
                                 the nodes respwaning has to be set to respawn by type.
 
         OverrideRespawnOnPartial - overrides the "RemovePartiallyMinedNodesAfter" for this particular node
+
+        AlwaysSpawn - optional parameter that will make the node always spawn when server instance starts
+        
 
         *In the original lootmmo project, the Grave node does have this properties set to disallow respawn
 

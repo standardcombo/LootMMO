@@ -1,11 +1,8 @@
 Assets {
-  Id: 6049130577343501346
+  Id: 11342313058110795057
   Name: "Tool Pick"
   PlatformAssetType: 33
   SerializationVersion: 125
-  VirtualFolderPath: "Loot"
-  VirtualFolderPath: "Items"
-  VirtualFolderPath: "Equipment"
   ItemAsset {
     MaximumStackCount: 1
     CustomParameters {
@@ -34,6 +31,10 @@ Assets {
         Bool: true
       }
       Overrides {
+        Name: "cs:PlayerOwnsBag:isrep"
+        Bool: true
+      }
+      Overrides {
         Name: "cs:Greatness:isrep"
         Bool: true
       }
@@ -43,10 +44,6 @@ Assets {
       }
       Overrides {
         Name: "cs:BagKey:isrep"
-        Bool: true
-      }
-      Overrides {
-        Name: "cs:PlayerOwnsBag:isrep"
         Bool: true
       }
     }

@@ -28,13 +28,13 @@ Assets {
           Overrides {
             Name: "cs:OnExecuteEffect"
             AssetReference {
-              Id: 2956106482249457866
+              Id: 841534158063459245
             }
           }
           Overrides {
             Name: "cs:OnCooldownEffect"
             AssetReference {
-              Id: 7798315095738769456
+              Id: 841534158063459245
             }
           }
         }
@@ -1421,7 +1421,7 @@ Assets {
           Overrides {
             Name: "cs:Ability"
             ObjectReference {
-              SelfId: 841534158063459245
+              SubObjectId: 3650084907798502440
             }
           }
           Overrides {

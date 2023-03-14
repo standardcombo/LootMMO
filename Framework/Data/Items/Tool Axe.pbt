@@ -1,11 +1,8 @@
 Assets {
-  Id: 12721228860678323437
+  Id: 5096111525338891810
   Name: "Tool Axe"
   PlatformAssetType: 33
   SerializationVersion: 125
-  VirtualFolderPath: "Loot"
-  VirtualFolderPath: "Items"
-  VirtualFolderPath: "Equipment"
   ItemAsset {
     MaximumStackCount: 1
     CustomParameters {
@@ -34,6 +31,10 @@ Assets {
         Bool: true
       }
       Overrides {
+        Name: "cs:PlayerOwnsBag:isrep"
+        Bool: true
+      }
+      Overrides {
         Name: "cs:Greatness:isrep"
         Bool: true
       }
@@ -43,10 +44,6 @@ Assets {
       }
       Overrides {
         Name: "cs:BagKey:isrep"
-        Bool: true
-      }
-      Overrides {
-        Name: "cs:PlayerOwnsBag:isrep"
         Bool: true
       }
     }
