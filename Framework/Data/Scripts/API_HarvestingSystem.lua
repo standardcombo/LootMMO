@@ -238,11 +238,14 @@ function API.MineNode(node,player)
             Task.Spawn(function() REWARDS_PARSER.Parse(player, HARVESTING_NODES, originRow) end)
         end
     end
+    local nodeType = node:GetCustomProperty("Type")
     --update node geometry or remove if depleted
     if richness > 0 then
         node:SetCustomProperty("Richness",richness)
         node:ForceReplication()
+        Events.Broadcast("Node.Harvested",player,nodeType)
     else
+        Events.Broadcast("Node.Depleted",player,nodeType)
         API.RemoveNode(node)
     end
 end
