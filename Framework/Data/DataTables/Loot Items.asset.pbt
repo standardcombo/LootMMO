@@ -950,5 +950,23 @@ Assets {
         AssetId: "UI_Fantasy_Equip_Tool_009"
       }
     }
+    Assets {
+      Id: 11362733785075044576
+      Name: "Survival Bucket 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Survival_Equip_Bucket_001"
+      }
+    }
+    Assets {
+      Id: 15855709839504121279
+      Name: "Fantasy Knife 001"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Equip_Knife_001"
+      }
+    }
   }
 }

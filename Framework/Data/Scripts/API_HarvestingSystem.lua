@@ -26,6 +26,7 @@ local NODES_DATA = {}
 local TOOLS_DATA = {}
 local FREE_NODES_DATA = {}
 local SPAWNED_NODES = {}
+local FORCE_SPAWN = {}
 local serverNodesReady = false
 
 --load nodes and tools table data
@@ -50,7 +51,7 @@ end
 --INTERNALS
 -----------------------
 
-function GetWeightedRandomNodeIndex(NodeTypeTable,nodeType)
+function GetWeightedRandomNodeIndex(NodeTypeTable)
     --count total weight
     local totalWeight = 0
     for _,typeData in ipairs(NodeTypeTable)do
@@ -64,7 +65,7 @@ function GetWeightedRandomNodeIndex(NodeTypeTable,nodeType)
         if randomRoll < 1 then return i end
     end
     --failsafe, this should never happen
-    warn("?? bad weight values for "..nodeType)
+    warn("?? bad weight values for "..NodeTypeTable.Type)
     return 1
 end
 
@@ -79,6 +80,26 @@ function API.GetNodePlacementStatus()
     return false
 end
 
+local function SpawnNode(nodeData, richness, transform, freeNodesTableIndex)
+    --spawn node
+    local NewNode = World.SpawnAsset(nodeData.Template, {parent = NODES_PARENT, transform = transform, networkContext = NetworkContextType.NETWORKED})
+    --setup node custom properties
+    NewNode:SetCustomProperty("Richness",richness)
+    --add the origin template table row for client context effects
+    NewNode:SetCustomProperty("OriginRow",nodeData.rowNum)
+    --save for the script logic
+    SPAWNED_NODES[NewNode] = {}
+    SPAWNED_NODES[NewNode].GeoStagesTable = nodeData.NodeStageGeoTable
+    local proxTirgger = NewNode:GetCustomProperty("ProximityTrigger"):WaitForObject()
+    SPAWNED_NODES[NewNode].proximityTrigger = proxTirgger
+    --remove the position from the free ones
+    table.remove(FREE_NODES_DATA,freeNodesTableIndex)
+    --force replication
+    NewNode:ForceReplication()
+    --return spawned node, for later use if needed
+    return NewNode
+end
+
 function API.InitNodesData()
     if Environment.IsServer() ~= true then warn("API.InitNodesData is server only") return end
     if Object.IsValid(NODES_PARENT) ~= true then warn("Invalid NODES_PARENT in API.InitNodesData") return end
@@ -86,16 +107,33 @@ function API.InitNodesData()
     if #AllNodes == 0 then warn("No children to init in NODES_PARENT for API.InitNodesData") return end
 
     --save the placed nodes data for use during runtime
-    for _,nodeObject in ipairs(AllNodes)do
+    for freeNodeIndex,nodeObject in ipairs(AllNodes)do
         local nodeData = {}
         nodeData.Type = nodeObject:GetCustomProperty("Type")
         nodeData.Transform = nodeObject:GetWorldTransform()
-        table.insert(FREE_NODES_DATA,nodeData)
+        FREE_NODES_DATA[freeNodeIndex] = nodeData
+        --spawn the nodes marked for force spawn
+        if nodeObject:GetCustomProperty("AlwaysSpawn") == true then
+            table.insert(FORCE_SPAWN, freeNodeIndex)
+        end
     end
 
     --remove current nodes, the server will handle them from now on
     for _,nodeObject in ipairs(AllNodes)do
         nodeObject:Destroy()
+    end
+
+    --force spawn the selected nodes
+    if #FORCE_SPAWN > 0 then
+        for i=#FORCE_SPAWN,1,-1 do
+            local freeNodeIndex = FORCE_SPAWN[i]
+            local nodeType = FREE_NODES_DATA[freeNodeIndex].Type
+            local randomNodeIndex = GetWeightedRandomNodeIndex(NODES_DATA[nodeType])
+            local randomNodeData = NODES_DATA[nodeType][randomNodeIndex]
+            local GeoStagesTable = randomNodeData.NodeStageGeoTable
+            local maxRichness = #GeoStagesTable
+            SpawnNode(randomNodeData, maxRichness, FREE_NODES_DATA[freeNodeIndex].Transform, freeNodeIndex)
+        end
     end
 
     --from now on, API is ready to handle nodes on server
@@ -122,7 +160,7 @@ function API.SpawnRandomNode(type,richnessPerCent)
     local randomNodeType = tempTable[randomNodeFromTempTable].Type
     local randomNode_NodesData = NODES_DATA[randomNodeType]
     --weighted chances
-    local randomNodeIndex = GetWeightedRandomNodeIndex(NODES_DATA[randomNodeType],randomNodeType)
+    local randomNodeIndex = GetWeightedRandomNodeIndex(NODES_DATA[randomNodeType])
     local randomNodeData = randomNode_NodesData[randomNodeIndex]
     --load the node stages and spawn the required richness
     local GeoStagesTable = randomNodeData.NodeStageGeoTable
@@ -135,23 +173,8 @@ function API.SpawnRandomNode(type,richnessPerCent)
         if requiredRichness > maxRichness then requiredRichness = maxRichness
         elseif requiredRichness < 1 then requiredRichness = 1 end
     end
-    --spawn node
-    local NewNode = World.SpawnAsset(randomNodeData.Template, {parent = NODES_PARENT, transform = randomNodeTransform, networkContext = NetworkContextType.NETWORKED})
-    --setup node custom properties
-    NewNode:SetCustomProperty("Richness",requiredRichness)
-    --add the origin template table row for client context effects
-    NewNode:SetCustomProperty("OriginRow",randomNodeData.rowNum)
-    --save for the script logic
-    SPAWNED_NODES[NewNode] = {}
-    SPAWNED_NODES[NewNode].GeoStagesTable = randomNodeData.NodeStageGeoTable
-    local proxTirgger = NewNode:GetCustomProperty("ProximityTrigger"):WaitForObject()
-    SPAWNED_NODES[NewNode].proximityTrigger = proxTirgger
-    --remove the position from the free ones
-    table.remove(FREE_NODES_DATA,tempTable[randomNodeFromTempTable].originIndex)
-    --force replication
-    NewNode:ForceReplication()
-    --return spawned node, for later use if needed
-    return NewNode
+    local newNode = SpawnNode(randomNodeData, requiredRichness, randomNodeTransform, tempTable[randomNodeFromTempTable].originIndex)
+    return newNode
 end
 
 function API.SpawnInitialNodes(perCent, spawnEven, spawnFull)
@@ -207,16 +230,22 @@ function API.MineNode(node,player)
     --deplete one richness from the node
     local richness = node:GetCustomProperty("Richness")
     richness = richness - 1
-    --add resources to player involved
+    --add resources to player involved 
     local originRow = node:GetCustomProperty("OriginRow") or 0
     if originRow > 0 then
-        Task.Spawn(function() REWARDS_PARSER.Parse(player, HARVESTING_NODES, originRow) end)
+        --award when perSwing is true or the node is depleted
+        if HARVESTING_NODES[originRow].awardsPerSwing == true or richness == 0 then
+            Task.Spawn(function() REWARDS_PARSER.Parse(player, HARVESTING_NODES, originRow) end)
+        end
     end
+    local nodeType = node:GetCustomProperty("Type")
     --update node geometry or remove if depleted
     if richness > 0 then
         node:SetCustomProperty("Richness",richness)
         node:ForceReplication()
+        Events.Broadcast("Node.Harvested",player,nodeType)
     else
+        Events.Broadcast("Node.Depleted",player,nodeType)
         API.RemoveNode(node)
     end
 end

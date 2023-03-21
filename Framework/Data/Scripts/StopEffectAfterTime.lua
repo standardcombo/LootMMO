@@ -4,4 +4,10 @@ local TIME = script:GetCustomProperty("Time")
 
 Task.Wait(TIME)
 
-VFX:Stop()
+if VFX:IsA("Folder") then
+    for _,e in ipairs(VFX:GetChildren())do
+        e:Stop()
+    end
+else
+    VFX:Stop()
+end

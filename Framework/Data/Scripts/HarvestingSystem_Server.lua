@@ -370,7 +370,7 @@ end
 AHS.InitNodesData()
 
 --get the count of free nodes
-local freeCount = AHS.GetFreeNodesCount()
+--local freeCount = AHS.GetFreeNodesCount()
 
 --init the active nodes at instance start
 AHS.SpawnInitialNodes(INIT_NODES_SPAWNED_PER_CENT, INIT_SPAWN_EVEN_BY_TYPE, SPAWN_ONLY_FULL_NODES)
