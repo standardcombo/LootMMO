@@ -22,6 +22,7 @@ Objects {
   ChildIds: 13620541732778982903
   ChildIds: 16937607096047638534
   ChildIds: 2130210533214886950
+  ChildIds: 5794691834349856623
   ChildIds: 1888181817911919837
   ChildIds: 17798732759644559527
   ChildIds: 764194984864902660
@@ -1286,6 +1287,651 @@ Objects {
     Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5794691834349856623
+  Name: "NODES"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  ChildIds: 2874808333215778692
+  ChildIds: 4743028169230136788
+  ChildIds: 15395884873989196121
+  ChildIds: 2737902255194688940
+  ChildIds: 16510376196262502628
+  ChildIds: 17033264878078916014
+  ChildIds: 4224891494356152917
+  ChildIds: 8724466841249552967
+  ChildIds: 9971167738991854681
+  ChildIds: 8983340555216917896
+  ChildIds: 5390437440275182454
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 5390437440275182454
+  Name: "Node_RockCaveIn"
+  Transform {
+    Location {
+      X: -2295.97461
+      Y: 1879.65
+      Z: 3378.17578
+    }
+    Rotation {
+      Pitch: 89.6352234
+      Yaw: -166.448181
+      Roll: -179.997299
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13748851510511670791
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_RockCaveIn"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2497.98804
+            Y: 1877.59607
+            Z: 3356.08691
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 78.2920532
+            Yaw: -83.2280884
+            Roll: 65.7297058
+          }
+        }
+        Overrides {
+          Name: "cs:SwingsToHarvest"
+          Int: 8
+        }
+        Overrides {
+          Name: "cs:Type"
+          String: "cavein"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1587296676542032873
+    }
+  }
+}
+Objects {
+  Id: 8983340555216917896
+  Name: "Node_RockCaveIn"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13748851510511670791
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_RockCaveIn"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2295.8728
+            Y: 1879.67444
+            Z: 3361.75244
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: 89.6368332
+            Yaw: -166.448624
+            Roll: -179.997238
+          }
+        }
+        Overrides {
+          Name: "cs:SwingsToHarvest"
+          Int: 8
+        }
+        Overrides {
+          Name: "cs:Type"
+          String: "cavein"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1587296676542032873
+    }
+  }
+}
+Objects {
+  Id: 9971167738991854681
+  Name: "Node_BushCotton"
+  Transform {
+    Location {
+      X: -1258.43958
+      Y: -1313.94092
+      Z: 3341.60547
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BushCotton"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1075.93579
+            Y: -1645.71399
+            Z: 3341.60547
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 83.8369675
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1.09332228
+            Y: 1.09332228
+            Z: 1.09332228
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13864945263057182222
+    }
+  }
+}
+Objects {
+  Id: 8724466841249552967
+  Name: "Node_BushCotton"
+  Transform {
+    Location {
+      X: -1258.43958
+      Y: -1313.94092
+      Z: 3341.60547
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BushCotton"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1513.24951
+            Y: -1127.36084
+            Z: 3341.60547
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -99.3235168
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.837471724
+            Y: 0.837471724
+            Z: 0.837471724
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13864945263057182222
+    }
+  }
+}
+Objects {
+  Id: 4224891494356152917
+  Name: "Node_BushCotton"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BushCotton"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1258.43958
+            Y: -1313.94092
+            Z: 3341.60547
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13864945263057182222
+    }
+  }
+}
+Objects {
+  Id: 17033264878078916014
+  Name: "Node_PlantRed"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_PlantRed"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1496.41553
+            Y: -1684.79346
+            Z: 3321.50366
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -112.179321
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 10284139420588369540
+    }
+  }
+}
+Objects {
+  Id: 16510376196262502628
+  Name: "Node_PlantRed"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_PlantRed"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -755.451904
+            Y: -1721.41602
+            Z: 3325.58691
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 10284139420588369540
+    }
+  }
+}
+Objects {
+  Id: 2737902255194688940
+  Name: "Node_Grave"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_Grave"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2098.45776
+            Y: -3519.89062
+            Z: 3339.31274
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 139.070526
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5151630942758078215
+    }
+  }
+}
+Objects {
+  Id: 15395884873989196121
+  Name: "Node_BirchTree"
+  Transform {
+    Location {
+      X: -2289.89844
+      Y: 672.193359
+      Z: 3264.09131
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10735264763254810291
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_BirchTree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2048.04419
+            Y: -150.774658
+            Z: 3302.96045
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2231785504448967504
+    }
+  }
+}
+Objects {
+  Id: 4743028169230136788
+  Name: "Node_Coal"
+  Transform {
+    Location {
+      X: -2071.51245
+      Y: 1755.10132
+      Z: 3210.98584
+    }
+    Rotation {
+      Yaw: -160.927505
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_Gold"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2729.93213
+            Y: 1523.98499
+            Z: 3210.98584
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 109.95047
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1.2
+            Y: 1.2
+            Z: 1.2
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5634713177964474569
+    }
+  }
+}
+Objects {
+  Id: 2874808333215778692
+  Name: "Node_IronVein"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5794691834349856623
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17706867916820843333
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Node_IronVein"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1489.99951
+            Y: 976.169067
+            Z: 3260.10352
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 54.3729324
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9888337940943011348
+    }
+  }
 }
 Objects {
   Id: 2130210533214886950
