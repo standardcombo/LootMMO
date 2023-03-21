@@ -5103,6 +5103,62 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 4460784204591113454
+  Name: "ObjectiveEventListener"
+  Transform {
+    Location {
+      Z: -14645.0859
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10681643481591542134
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:QuestID"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 2
+    }
+    Overrides {
+      Name: "cs:ObjectID"
+      String: "EDEE5DCA39F3F9F2:Game Portal"
+    }
+    Overrides {
+      Name: "cs:EventID"
+      String: "TransferPortal"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9246345034586664616
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 4675207411841648837
   Name: "ObjectiveEventListener"
   Transform {
