@@ -427,7 +427,7 @@ function API.ParseItemByFullName(fullName, indexInBag)
 	
 	-- Greatness
 	local greatness = 1
-	if bonus > 0 then
+	--[[if bonus > 0 then
 		greatness = 20
 		
 	elseif prefix ~= nil then
@@ -435,7 +435,7 @@ function API.ParseItemByFullName(fullName, indexInBag)
 		
 	elseif order then
 		greatness = 15
-	end
+	end]]
 	
 	--print(fullName)
 	--print(TYPES[i], prefix, suffix, itemName, order, bonus)
