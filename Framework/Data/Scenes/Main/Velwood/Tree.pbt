@@ -4713,7 +4713,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:DestinationGame"
-      String: "15499c/velwood"
+      String: "0b2301/loot-mmo-velwood"
     }
     Overrides {
       Name: "cs:DestinationGame:tooltip"
