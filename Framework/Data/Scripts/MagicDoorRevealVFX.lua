@@ -256,6 +256,8 @@ Events.Connect("Quest.ObjectiveSelected", OnObjectiveSelected)
 
 Task.Wait()
 _G['Character.EquipAPI'].playerEquippedEvent:Connect(function(character, player)
+	Task.Wait(1.5)
+	
 	if player == PLAYER then
 		if _G.QuestController.HasCompleted(PLAYER, QUEST_ID) then
 			SetEnabled()
