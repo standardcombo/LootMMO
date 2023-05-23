@@ -1,7 +1,7 @@
 
 --[[
 	Quest Controller (Server + Client)
-	v1.0.3
+	v1.1.0
 	by: standardcombo
 	
 	API
@@ -14,6 +14,7 @@
 	HasCompleted(player, questId)
 	GetActiveObjectives(player)
 	GetObjectiveProgress(player, obj)
+	IsActive(player, questId)
 	IsActive(player, obj)
 	IsLocalGame(questData)
 	IsLocalScene(questData)
@@ -254,10 +255,38 @@ end
 
 
 -- Client/Server
-function API.IsActive(player, obj)
-	if not player or not obj then
+function API.IsActive(player, param1)
+	if not player or not param1 then
 		error("Invalid parameters to QuestController::IsActive(Player, objective data)")
 	end
+	if type(param1) == "string" then
+		return _IsActive_Quest(player, param1)
+	end
+	return _IsActive_Objective(player, param1)
+end
+
+function _IsActive_Quest(player, questId)
+	local playerData = API.GetPlayerData(player)
+	if playerData then
+		-- Reward entries
+		if playerData.rewards then
+			for k,id in ipairs(playerData.rewards) do
+				if id == questId then
+					return true
+				end
+			end
+		end
+		-- Active objectives
+		for k,entry in ipairs(playerData.active) do
+			if entry.id == questId then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function _IsActive_Objective(player, obj)
 	local playerData = API.GetPlayerData(player)
 	if playerData then
 		for k,entry in ipairs(playerData.active) do
