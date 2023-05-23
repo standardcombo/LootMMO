@@ -114,6 +114,15 @@ Assets {
       }
     }
     Assets {
+      Id: 12624750946940194539
+      Name: "Alien Symbol 1"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Scifi_Icon_049"
+      }
+    }
+    Assets {
       Id: 1028246385114766807
       Name: "Anvil"
       PlatformAssetType: 9

@@ -2070,6 +2070,18 @@ Objects {
         SelfId: 16625153366079412303
       }
     }
+    Overrides {
+      Name: "cs:QuestId"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:ObjectiveIndex"
+      Int: 2
+    }
+    Overrides {
+      Name: "cs:CinematicEventId"
+      String: "Velwood.DoorCinematicCam"
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

@@ -7,8 +7,9 @@ local SPOTLIGHT = script:GetCustomProperty("Spotlight"):WaitForObject()
 local AUDIO = script:GetCustomProperty("Audio"):WaitForObject()
 local MAIN_TAVERN_MUSIC = script:GetCustomProperty("MainTavernMusic"):WaitForObject()
 
-local QUEST_ID = "VelwoodIntro"
-local OBJECTIVE_INDEX = 2
+local QUEST_ID = script:GetCustomProperty("QuestId")
+local OBJECTIVE_INDEX = script:GetCustomProperty("ObjectiveIndex")
+local CINEMATIC_EVENT_ID = script:GetCustomProperty("CinematicEventId")
 
 local PLAYER = Game.GetLocalPlayer()
 
@@ -83,7 +84,7 @@ function PlayAnimation()
 	local mainVolume = MAIN_TAVERN_MUSIC.volume
 	MAIN_TAVERN_MUSIC.volume = 0
 	
-	Events.Broadcast("Velwood.DoorCinematicCam")
+	Events.Broadcast(CINEMATIC_EVENT_ID)
 	Task.Wait(0.3)
 	
 	AUDIO:Play()

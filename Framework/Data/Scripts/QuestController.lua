@@ -105,6 +105,9 @@ end
 -- Client/Server
 function API.GetQuestObjective(questId, objectiveIndex)
 	local quest = QUEST_METADATA[questId]
+	if not quest then
+		error("No quest found with id ".. tostring(questId))
+	end
 	return quest.objectives[objectiveIndex]
 end
 

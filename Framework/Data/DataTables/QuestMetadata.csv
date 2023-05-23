@@ -12,6 +12,7 @@
 "Spiders1","B148283A6669C779","D0BF72662C5769DB","True","Material(Coins=RNG[7-15]), Wait(1), Material(Silk=1)","","5cb37e/loot-mmo","Spiders1"
 "Equip","D52F16542F2B437F","0BADBADBADBADBAD","False","","VelwoodIntro, Pint","5cb37e/loot-mmo","Social"
 "VelwoodIntro","98FCE3D9A1481540","0BADBADBADBADBAD","False","","Lv5","5cb37e/loot-mmo","Social"
+"GreenDoorIntro","AF342018F2258EEB","0BADBADBADBADBAD","False","","","5cb37e/loot-mmo","Social"
 "Lv5","8E63C9B05FD519E8","0BADBADBADBADBAD","False","Material(RoyalPermits=1), Wait(1), Material(Encantations=1), Wait(1), Material(Gemstones=1), Wait(1), Item(CraftingKey)","Craft1, Lv8","5cb37e/loot-mmo","Social"
 "Craft1","0E4510A3AE585DD7","0BADBADBADBADBAD","False","Material(Coins=40)","Raid3, Undead1","5cb37e/loot-mmo","Social"
 "Lv8","8E63C9B05FD519E8","0BADBADBADBADBAD","False","Material(Gemstones=1), Wait(0.5), Material(Gemstones=1), Wait(0.5), Material(Encantations=1), Wait(0.5), Material(Encantations=1)","Spiders1","5cb37e/loot-mmo","Social"
