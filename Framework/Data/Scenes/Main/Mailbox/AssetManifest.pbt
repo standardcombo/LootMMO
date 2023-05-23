@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17344694692909779607
+  Name: "Fantasy Craft Stone 018"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Stone_018"
+  }
+}
+Assets {
   Id: 16400015035755492128
   Name: "Military Crate Hinge 01"
   PlatformAssetType: 1

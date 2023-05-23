@@ -6854,7 +6854,7 @@ Objects {
     }
   }
   ParentId: 11917060380754017302
-  ChildIds: 10522694688377926696
+  ChildIds: 12999522544714292915
   ChildIds: 12422634920658945
   ChildIds: 208663882053532347
   Collidable_v2 {
@@ -6981,7 +6981,7 @@ Objects {
     }
     Image {
       Brush {
-        Id: 1550328914402869017
+        Id: 17344694692909779607
       }
       Color {
         R: 1
@@ -7345,13 +7345,10 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 10522694688377926696
-  Name: "QuestStateCompletedObject"
+  Id: 12999522544714292915
+  Name: "QuestStateObject"
   Transform {
     Location {
-      X: 1453.06885
-      Y: 366.85791
-      Z: 90.328125
     }
     Rotation {
     }
@@ -7364,18 +7361,18 @@ Objects {
   ParentId: 4512127774116739544
   UnregisteredParameters {
     Overrides {
-      Name: "cs:QuestID"
-      String: "Welcome"
-    }
-    Overrides {
       Name: "cs:Object"
       ObjectReference {
         SelfId: 4512127774116739544
       }
     }
     Overrides {
-      Name: "cs:SetCollision"
-      Bool: false
+      Name: "cs:EnabledByActiveQuestId"
+      String: "GreenDoorIntro"
+    }
+    Overrides {
+      Name: "cs:EnabledByCompletedQuestId"
+      String: "GreenDoorIntro"
     }
   }
   Collidable_v2 {
@@ -7392,7 +7389,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 13588614092371762332
+      Id: 16508853602943742961
     }
   }
   NetworkRelevanceDistance {
@@ -7415,7 +7412,7 @@ Objects {
     }
   }
   ParentId: 11917060380754017302
-  ChildIds: 12136196288040423584
+  ChildIds: 9329734088596065042
   ChildIds: 16622539968903598733
   ChildIds: 4762688480820252196
   Collidable_v2 {
@@ -7906,13 +7903,10 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 12136196288040423584
-  Name: "QuestStateCompletedObject"
+  Id: 9329734088596065042
+  Name: "QuestStateObject"
   Transform {
     Location {
-      X: 1453.06885
-      Y: 366.85791
-      Z: 90.328125
     }
     Rotation {
     }
@@ -7931,8 +7925,20 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:SetCollision"
-      Bool: false
+      Name: "cs:DisabledByCompletedQuestId"
+      String: "GreenDoorIntro"
+    }
+    Overrides {
+      Name: "cs:DisabledByActiveQuestId"
+      String: "GreenDoorIntro"
+    }
+    Overrides {
+      Name: "cs:EnabledByActiveQuestId"
+      String: "VelwoodIntro"
+    }
+    Overrides {
+      Name: "cs:EnabledByCompletedQuestId"
+      String: "VelwoodIntro"
     }
   }
   Collidable_v2 {
@@ -7949,7 +7955,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 13588614092371762332
+      Id: 16508853602943742961
     }
   }
   NetworkRelevanceDistance {
@@ -7972,7 +7978,7 @@ Objects {
     }
   }
   ParentId: 11917060380754017302
-  ChildIds: 9948836169039595161
+  ChildIds: 9140914145053330618
   ChildIds: 18054123561940012171
   ChildIds: 1447721764287689417
   Collidable_v2 {
@@ -8743,16 +8749,12 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 9948836169039595161
-  Name: "QuestStateCompletedObject"
+  Id: 9140914145053330618
+  Name: "QuestStateObject"
   Transform {
     Location {
-      X: 1453.06885
-      Y: 366.85791
-      Z: 90.328125
     }
     Rotation {
-      Yaw: -1.23797172e-05
     }
     Scale {
       X: 1
@@ -8763,22 +8765,26 @@ Objects {
   ParentId: 8316675507848892822
   UnregisteredParameters {
     Overrides {
-      Name: "cs:QuestID"
-      String: "Welcome"
-    }
-    Overrides {
       Name: "cs:Object"
       ObjectReference {
         SelfId: 8316675507848892822
       }
     }
     Overrides {
-      Name: "cs:SetCollision"
-      Bool: false
+      Name: "cs:DisabledByCompletedQuestId"
+      String: "VelwoodIntro"
     }
     Overrides {
-      Name: "cs:HideInsteadOfShow"
-      Bool: true
+      Name: "cs:EnabledByCompletedQuestId"
+      String: "Welcome"
+    }
+    Overrides {
+      Name: "cs:EnabledByActiveQuestId"
+      String: "Welcome"
+    }
+    Overrides {
+      Name: "cs:DisabledByActiveQuestId"
+      String: "VelwoodIntro"
     }
   }
   Collidable_v2 {
@@ -8795,7 +8801,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 13588614092371762332
+      Id: 16508853602943742961
     }
   }
   NetworkRelevanceDistance {
